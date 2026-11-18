@@ -22,7 +22,7 @@ Only GHC and its boot packages (`containers`, `mtl`, `parsec`, `directory`,
 `filepath`) are needed:
 
 ```sh
-make            # ghc -O -isrc -outputdir build -o hs2fol src/Main.hs
+make            # builds ./hs2fol and ./witness2input
 # or
 cabal build
 ```
@@ -43,6 +43,32 @@ scripts/prove.sh examples/Lists.hs prop_revId vampire   # all of the above
 
 Options: `-o DIR`, `-p/--prop PROP` (repeatable), `--stdout`, `--list`,
 `-I DIR` (import path), `--decode`.
+
+## Checking witnesses: witness2input
+
+```sh
+vampire revId.p --mode casc --question_answering plain -t 60 > revId.out
+./witness2input examples/Lists.hs prop_revId revId.out
+# property:   prop_revId
+# witness:    prop_revId [Suc _X, Zero]
+# input:      prop_revId [Suc undefined, Zero]
+# result:     False -- counterexample confirmed
+```
+
+witness2input reads the output of Vampire or E (`SZS answers`) or Twee, and
+decodes the witness into Haskell arguments. A variable in the witness means
+any value works, so it is replaced by `undefined`. It then runs the property
+on these arguments with GHC (`runghc`, through QuickCheck if the file imports
+it), with a 10 s limit. Exit status: 0 = confirmed (`False`), 1 = not a
+counterexample (`True`, or a `==>` precondition is false), 2 = error.
+
+## Benchmarks
+
+The `benchmarks` branch holds the benchmark programs (see
+`benchmarks/README.md` there). `scripts/run-benchmarks.sh` runs the provers on
+all of them and checks every witness. `scripts/record-solved.sh` commits the
+confirmed counterexamples to the `solved` branch. Prover settings and
+suggestions are in [PROVERS.md](PROVERS.md).
 
 ## Example
 
@@ -94,6 +120,6 @@ used as they are.
 ```
 src/        the translator (see SPEC.md, section 8, for the module map)
 examples/   example programs with true and false properties
-scripts/    prove.sh: translate, run a prover, decode the answer
+scripts/    prove.sh (one property), run-benchmarks.sh, record-solved.sh
 SPEC.md     specification
 ```
