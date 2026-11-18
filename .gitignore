@@ -1,0 +1,6 @@
+build/
+dist-newstyle/
+/hs2fol
+examples/*-fol/
+*.hi
+*.o
