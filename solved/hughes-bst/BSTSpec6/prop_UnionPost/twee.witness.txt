@@ -1,0 +1,7 @@
+property:   prop_UnionPost
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec6.hs
+prover:     twee
+witness:    prop_UnionPost [(Suc _Y, _Z)] [(Zero, _X)] Zero
+input:      prop_UnionPost [(Suc undefined, undefined)] [(Zero, undefined)] Zero
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

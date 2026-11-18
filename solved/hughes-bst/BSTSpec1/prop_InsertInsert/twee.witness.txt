@@ -1,0 +1,7 @@
+property:   prop_InsertInsert
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec1.hs
+prover:     twee
+witness:    prop_InsertInsert (Zero, _X) (Suc _Z, _Y) _W
+input:      prop_InsertInsert (Zero, undefined) (Suc undefined, undefined) undefined
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

@@ -1,0 +1,708 @@
+% Running in auto input_syntax mode. Trying TPTP
+% Detected formulas, will run a generic FOF schedule.
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_tgt=full:sil=2000:alpa=true:random_seed=1024543543:st=5:i=107:sd=1:qa=plain:ss=on:er=filter:ssat=axiom_1 on problem for (1ds/107Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 15 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_2:3_to=lpo:sil=16000:sp=arity:random_seed=3410037588:i=114:bd=all:qa=plain:ss=on:sgt=4_1 on problem for (1ds/114Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 16 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+1011_2_sil=4000:lsd=20:rp=on:sac=on:newcnf=on:random_seed=2921073969:i=132:kws=arity:qa=plain:er=filter_1 on problem for (1ds/132Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 17 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1011_1_sil=2000:slsqr=8,1:fd=off:kmz=on:flr=on:slsq=on:sac=on:random_seed=2662870843:st=2:i=121:sd=30:aac=none:ep=RS:qa=plain:ss=on:sgt=10_1 on problem for (1ds/121Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_1_sil=2000:sos=on:random_seed=4266688269:i=135:sd=2:qa=plain:gtg=position:ss=on_1 on problem for (1ds/135Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_1_sil=16000:random_seed=2940812367:i=269:sd=10:qa=plain:ss=on:sgt=16_2 on problem for (2ds/269Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 25 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1010_4_sil=2000:sos=on:sac=on:random_seed=278499146:i=140:sd=1:qa=plain:ss=on_1 on problem for (1ds/140Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+11_4:1_bsr=on:to=kbo:sil=4000:slsqr=8,1:slsq=on:s2pl=on:random_seed=246994154:st=3:gtgl=4:s2a=on:i=124:sd=1:kws=inv_arity:ep=RST:fsd=on:qa=plain:gtg=position:ss=on_1 on problem for (1ds/124Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.002 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+1010_1_to=lpo:sil=32000:fde=none:sos=on:urr=on:random_seed=2327030903:st=2.5:cts=off:i=297:sd=4:ins=10:qa=plain:gsp=on:ss=on_2 on problem for (2ds/297Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1002_1_sil=2000:random_seed=2921379415:i=641:sd=20:qa=plain:ss=on:sgt=8_4 on problem for (4ds/641Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.400 s
+% Peak memory usage: 35 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_1_sil=4000:plsq=on:sosts=on:sp=occurrence:sos=on:erd=off:plsqr=32,1:random_seed=1609623787:st=5:i=160:qa=plain:sup=off:ss=on:ssat=axiom_1 on problem for (1ds/160Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_16:1_bsr=unit_only:sil=2000:sp=reverse_frequency:lcm=predicate:random_seed=180191182:avsq=on:i=433:bs=unit_only:kws=inv_frequency:qa=plain:gtg=exists_sym_3 on problem for (3ds/433Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.300 s
+% Peak memory usage: 31 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_sfv=off:sil=128000:sosts=on:sos=on:newcnf=on:random_seed=1047831398:cond=fast:i=114:nm=2:fsr=off:qa=plain:gtg=all:ss=on_1 on problem for (1ds/114Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.101 s
+% Peak memory usage: 17 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_64_sil=16000:sos=on:urr=on:br=off:random_seed=3459155748:st=2.2:i=120:sd=1:nm=2:qa=plain:gtg=all:ss=on_1 on problem for (1ds/120Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 16 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+21_1_to=lpo:sil=4000:slsqr=16,1:fs=off:acc=on:alpa=true:slsq=on:random_seed=351148020:i=126:sd=3:aac=none:doe=on:fsr=off:qa=plain:sup=off:ss=on:er=filter:ssat=axiom:sgt=10_1 on problem for (1ds/126Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1011_1_sil=64000:sp=occurrence:nwc=2:sac=on:random_seed=1251050720:gtgl=2:i=161:qa=plain:gtg=exists_sym_1 on problem for (1ds/161Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 11 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+11_1024_sil=2000:drc=off:gs=on:flr=on:random_seed=1219237348:s2a=on:i=137:sd=2:fgj=on:av=off:qa=plain:ss=on:sgt=4_1 on problem for (1ds/137Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 15 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1010_1_anc=none:sil=2000:sims=off:etr=on:sos=on:nwc=2:random_seed=2195562678:i=698:sd=2:kws=arity:aac=none:qa=plain:ss=on:sgt=10_4 on problem for (4ds/698Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+10_1_sil=32000:s2agt=32:random_seed=33788708:st=3:s2a=on:i=183:sd=1:qa=plain:gtg=position:ss=on_1 on problem for (1ds/183Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1010_2_sil=8000:plsq=on:plsqr=1,2:fd=off:random_seed=138461583:st=1.5:s2a=on:i=119:sd=2:qa=plain:sup=off:ss=on_1 on problem for (1ds/119Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1010_3_tgt=full:sil=2000:plsq=on:drc=off:fde=unused:sp=arity:acc=on:nwc=20:flr=on:avsqc=2:sac=on:s2pl=on:random_seed=2596377971:st=3:avsq=on:s2at=5:i=285:sd=10:avsqr=52993,1048576:qa=plain:gtg=exists_sym:ss=on_2 on problem for (2ds/285Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 22 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_1_bsr=on:to=lpo:sil=32000:sp=arity:urr=on:br=off:fd=preordered:nwc=0.968:newcnf=on:random_seed=2554145938:s2a=on:s2at=11:i=130:bd=preordered:nm=20:ins=10:qa=plain:gtg=position:gsp=on_1 on problem for (1ds/130Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.101 s
+% Peak memory usage: 17 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+11_128_sil=2000:lcm=predicate:nwc=20:slsqc=4:slsq=on:random_seed=628425832:cts=off:i=178:slsql=off:nm=2:av=off:fsr=off:qa=plain_1 on problem for (1ds/178Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 15 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-10_3:2_anc=all:sil=8000:plsq=on:plsqc=1:erd=off:plsqr=1,1:urr=on:br=off:rp=on:avsqc=3:sac=on:nicw=on:random_seed=834578597:avsq=on:s2a=on:s2at=2:i=270:qa=plain:ss=on_2 on problem for (2ds/270Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 29 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1011_1_tgt=full:sil=16000:prc=on:bsd=on:sp=unary_first:avsql=on:acc=on:fd=preordered:avsqc=1:random_seed=2040390470:st=4:avsq=on:i=960:kws=precedence:avsqr=1,16:bd=all:ins=10:qa=plain:ss=on_5 on problem for (5ds/960Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.500 s
+% Peak memory usage: 54 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+4_1_sfv=off:sil=16000:sosts=on:sos=on:random_seed=556011683:i=183:av=off:qa=plain_1 on problem for (1ds/183Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+11_8_sil=2000:slsqr=4,1:erd=off:lsd=50:s2agt=8:slsqc=3:slsq=on:s2pl=on:random_seed=1526677236:i=137:sd=2:ep=R:nm=6:av=off:qa=plain:ss=on:sgt=8_1 on problem for (1ds/137Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1010_14_tgt=full:sil=4000:plsq=on:plsqc=3:erd=off:plsqr=1,64:plsql=on:slsqc=3:slsq=on:random_seed=1201762008:s2at=3:i=274:sd=1:kws=arity_squared:fsd=on:qa=plain:gtg=exists_all:ss=on:sgt=16_2 on problem for (2ds/274Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 23 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+34_16:1_anc=all_dependent:to=lpo:sil=2000:sp=unary_first:sos=on:urr=full:fd=off:sac=on:random_seed=2593943421:i=259:aac=none:bd=preordered:qa=plain:ss=on_2 on problem for (2ds/259Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+10_1_sil=8000:drc=ordering:urr=on:br=off:random_seed=965606577:cond=on:s2a=on:i=1197:qa=plain:gtg=position:ss=on:sgt=8_6 on problem for (6ds/1197Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.600 s
+% Peak memory usage: 52 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+22_32_sil=4000:plsq=on:rp=on:newcnf=on:random_seed=3755079595:st=2.5:s2a=on:i=132:sd=5:qa=plain:ss=on:ssat=axiom_1 on problem for (1ds/132Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 17 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1011_1_anc=none:to=lpo:sil=4000:plsq=on:prc=on:plsqc=3:fdtod=off:sp=reverse_frequency:sos=on:plsqr=2804223,1048576:lsd=20:nwc=1:flr=on:prac=on:random_seed=2321940876:cond=fast:st=3:gtgl=2:i=179:bs=unit_only:ep=RS:nm=10:ins=25:qa=plain:amm=off:gtg=all:ss=on:ssat=axiom_1 on problem for (1ds/179Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1002_16:1_sil=2000:sos=on:acc=on:urr=full:fd=off:newcnf=on:random_seed=3749924017:i=1517:sd=1:qa=plain:sup=off:ss=on:ssat=axiom_8 on problem for (8ds/1517Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+11_1_sil=4000:slsqr=12,1:erd=off:urr=on:br=off:slsq=on:random_seed=3895518854:cts=off:i=159:slsql=off:nm=6:qa=plain:gsp=on_1 on problem for (1ds/159Mi)
+%  found proof, printing to "/tmp/vampire-proof-24754-24947"...
+% SZS answers Tuple [∀X2,X1,X0.[cons(pair(zero,zero),nil),cons(pair(X0,X1),nil),cons(pair(fst(X2),snd(X2)),nil)]|_] for problem
+% ...printing done.
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for problem
+% SZS output start Proof for problem
+fof(f7,axiom,(
+  ! [X0] : (opAnd(false,X0) = false)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','opAnd_1')).
+fof(f8,axiom,(
+  ! [X0] : (opAnd(true,X0) = X0)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','opAnd_2')).
+fof(f9,axiom,(
+  ! [X0, X1] : (fst(pair(X0,X1)) = X0)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','fst_1')).
+fof(f10,axiom,(
+  ! [X0, X1] : (snd(pair(X0,X1)) = X1)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','snd_1')).
+fof(f11,axiom,(
+  ! [X0, X1] : (uncurry(X0,X1) = app(app(X0,fst(X1)),snd(X1)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','uncurry_1')).
+fof(f12,axiom,(
+  ! [X0, X1] : (foldr(X0,X1,nil) = X1)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','foldr_1')).
+fof(f13,axiom,(
+  ! [X0, X1, X2, X3] : (foldr(X0,X1,cons(X2,X3)) = app(app(X0,X2),foldr(X0,X1,X3)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','foldr_2')).
+fof(f14,axiom,(
+  ! [X0] : (tree(X0) = foldr(uncurry_1(insertNat_0),nil_1,X0))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','tree_1')).
+fof(f15,axiom,(
+  ! [X0, X1, X2] : (prop_UnionUnionAssoc(X0,X1,X2) = eqBSTNatNat(union(union(tree(X0),tree(X1)),tree(X2)),union(tree(X0),union(tree(X1),tree(X2)))))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','prop_UnionUnionAssoc_1')).
+fof(f16,axiom,(
+  nil_1 = leaf),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','nil_1_1')).
+fof(f17,axiom,(
+  ! [X0] : (union(leaf,X0) = X0)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','union_1')).
+fof(f18,axiom,(
+  ! [X0, X1, X2, X3] : (union(branch(X0,X1,X2,X3),leaf) = branch(X0,X1,X2,X3))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','union_2')).
+fof(f19,axiom,(
+  ! [X0, X1, X2, X3, X4, X5, X6, X7] : (union(branch(X0,X1,X2,X3),branch(X4,X5,X6,X7)) = branch(X0,X1,X2,branch(union(X3,X4),X5,X6,X7)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','union_3')).
+fof(f20,axiom,(
+  ! [X0, X1] : (insertNat(X0,X1,leaf) = branch(leaf,X0,X1,leaf))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','insertNat_1')).
+fof(f22,axiom,(
+  ! [X0, X1, X2, X3, X4, X5] : (insertNat_case1(true,X0,X1,X2,X3,X4,X5) = branch(insertNat(X0,X4,X2),X1,X5,X3))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','insertNat_case1_1')).
+fof(f24,axiom,(
+  ! [X0, X1, X2, X3, X4, X5] : (insertNat_case1_case1(true,X0,X1,X2,X3,X4,X5) = branch(X2,X1,X5,insertNat(X0,X4,X3)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','insertNat_case1_case1_1')).
+fof(f26,axiom,(
+  eqNat(zero,zero) = true),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','eqNat_1')).
+fof(f30,axiom,(
+  eqBSTNatNat(leaf,leaf) = true),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','eqBSTNatNat_1')).
+fof(f32,axiom,(
+  ! [X0, X1, X2, X3] : (eqBSTNatNat(branch(X0,X1,X2,X3),leaf) = false)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','eqBSTNatNat_3')).
+fof(f33,axiom,(
+  ! [X0, X1, X2, X3, X4, X5, X6, X7] : (eqBSTNatNat(branch(X0,X1,X2,X3),branch(X4,X5,X6,X7)) = opAnd(eqBSTNatNat(X0,X4),opAnd(eqNat(X1,X5),opAnd(eqNat(X2,X6),eqBSTNatNat(X3,X7)))))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','eqBSTNatNat_4')).
+fof(f40,axiom,(
+  ! [X0] : (app(insertNat_0,X0) = insertNat_1(X0))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','app_insertNat_0_1')).
+fof(f41,axiom,(
+  ! [X0, X1] : (app(insertNat_1(X0),X1) = insertNat_2(X0,X1))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','app_insertNat_1_1')).
+fof(f42,axiom,(
+  ! [X0, X1, X2] : (app(insertNat_2(X0,X1),X2) = insertNat(X0,X1,X2))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','app_insertNat_2_1')).
+fof(f43,axiom,(
+  ! [X0, X1] : (app(uncurry_1(X0),X1) = uncurry(X0,X1))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','app_uncurry_1_1')).
+fof(f44,conjecture,(
+  ? [X0, X1, X2] : (prop_UnionUnionAssoc(X0,X1,X2) = false)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionUnionAssoc/problem.p','prop_UnionUnionAssoc')).
+fof(f45,negated_conjecture,(
+  ~ ? [X0, X1, X2] : (prop_UnionUnionAssoc(X0,X1,X2) = false)),
+  inference(conjecture_negation,[status(cth)],[f44])).
+fof(f46,plain,(
+  ~ ? [X0, X1, X2] : ((prop_UnionUnionAssoc(X0,X1,X2) = false) & ans0(X0,X1,X2))),
+  inference(answer_literal_injection,[],[f45])).
+fof(f47,plain,(
+  ! [X0, X1, X2] : ((false != prop_UnionUnionAssoc(X0,X1,X2)) | ~ans0(X0,X1,X2))),
+  inference(ennf_transformation,[],[f46])).
+fof(f54,plain,(
+  (! [X0] : (false = opAnd(false,X0)))),
+  inference(cnf_transformation,[],[f7])).
+fof(f55,plain,(
+  (! [X0] : (opAnd(true,X0) = X0))),
+  inference(cnf_transformation,[],[f8])).
+fof(f56,plain,(
+  (! [X0,X1] : (fst(pair(X0,X1)) = X0))),
+  inference(cnf_transformation,[],[f9])).
+fof(f57,plain,(
+  (! [X0,X1] : (snd(pair(X0,X1)) = X1))),
+  inference(cnf_transformation,[],[f10])).
+fof(f58,plain,(
+  (! [X0,X1] : (uncurry(X0,X1) = app(app(X0,fst(X1)),snd(X1))))),
+  inference(cnf_transformation,[],[f11])).
+fof(f59,plain,(
+  (! [X0,X1] : (foldr(X0,X1,nil) = X1))),
+  inference(cnf_transformation,[],[f12])).
+fof(f60,plain,(
+  (! [X0,X1,X2,X3] : (foldr(X0,X1,cons(X2,X3)) = app(app(X0,X2),foldr(X0,X1,X3))))),
+  inference(cnf_transformation,[],[f13])).
+fof(f61,plain,(
+  (! [X0] : (tree(X0) = foldr(uncurry_1(insertNat_0),nil_1,X0)))),
+  inference(cnf_transformation,[],[f14])).
+fof(f62,plain,(
+  (! [X0,X1,X2] : (prop_UnionUnionAssoc(X0,X1,X2) = eqBSTNatNat(union(union(tree(X0),tree(X1)),tree(X2)),union(tree(X0),union(tree(X1),tree(X2))))))),
+  inference(cnf_transformation,[],[f15])).
+fof(f63,plain,(
+  nil_1 = leaf),
+  inference(cnf_transformation,[],[f16])).
+fof(f64,plain,(
+  (! [X0] : (union(leaf,X0) = X0))),
+  inference(cnf_transformation,[],[f17])).
+fof(f65,plain,(
+  (! [X0,X1,X2,X3] : (branch(X0,X1,X2,X3) = union(branch(X0,X1,X2,X3),leaf)))),
+  inference(cnf_transformation,[],[f18])).
+fof(f66,plain,(
+  (! [X0,X1,X2,X3,X4,X5,X6,X7] : (union(branch(X0,X1,X2,X3),branch(X4,X5,X6,X7)) = branch(X0,X1,X2,branch(union(X3,X4),X5,X6,X7))))),
+  inference(cnf_transformation,[],[f19])).
+fof(f67,plain,(
+  (! [X0,X1] : (insertNat(X0,X1,leaf) = branch(leaf,X0,X1,leaf)))),
+  inference(cnf_transformation,[],[f20])).
+fof(f69,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (insertNat_case1(true,X0,X1,X2,X3,X4,X5) = branch(insertNat(X0,X4,X2),X1,X5,X3)))),
+  inference(cnf_transformation,[],[f22])).
+fof(f71,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (insertNat_case1_case1(true,X0,X1,X2,X3,X4,X5) = branch(X2,X1,X5,insertNat(X0,X4,X3))))),
+  inference(cnf_transformation,[],[f24])).
+fof(f73,plain,(
+  true = eqNat(zero,zero)),
+  inference(cnf_transformation,[],[f26])).
+fof(f77,plain,(
+  true = eqBSTNatNat(leaf,leaf)),
+  inference(cnf_transformation,[],[f30])).
+fof(f79,plain,(
+  (! [X0,X1,X2,X3] : (false = eqBSTNatNat(branch(X0,X1,X2,X3),leaf)))),
+  inference(cnf_transformation,[],[f32])).
+fof(f80,plain,(
+  (! [X0,X1,X2,X3,X4,X5,X6,X7] : (eqBSTNatNat(branch(X0,X1,X2,X3),branch(X4,X5,X6,X7)) = opAnd(eqBSTNatNat(X0,X4),opAnd(eqNat(X1,X5),opAnd(eqNat(X2,X6),eqBSTNatNat(X3,X7))))))),
+  inference(cnf_transformation,[],[f33])).
+fof(f87,plain,(
+  (! [X0] : (app(insertNat_0,X0) = insertNat_1(X0)))),
+  inference(cnf_transformation,[],[f40])).
+fof(f88,plain,(
+  (! [X0,X1] : (app(insertNat_1(X0),X1) = insertNat_2(X0,X1)))),
+  inference(cnf_transformation,[],[f41])).
+fof(f89,plain,(
+  (! [X0,X1,X2] : (app(insertNat_2(X0,X1),X2) = insertNat(X0,X1,X2)))),
+  inference(cnf_transformation,[],[f42])).
+fof(f90,plain,(
+  (! [X0,X1] : (uncurry(X0,X1) = app(uncurry_1(X0),X1)))),
+  inference(cnf_transformation,[],[f43])).
+fof(f91,plain,(
+  (! [X0,X1,X2] : (false != prop_UnionUnionAssoc(X0,X1,X2) | ~ans0(X0,X1,X2)))),
+  inference(cnf_transformation,[],[f47])).
+fof(f92,plain,(
+  (! [X0,X1] : (insertNat_2(X0,X1) = app(app(insertNat_0,X0),X1)))),
+  inference(definition_unfolding,[],[f88,f87])).
+fof(f93,plain,(
+  (! [X0] : (tree(X0) = foldr(uncurry_1(insertNat_0),leaf,X0)))),
+  inference(definition_unfolding,[],[f61,f63])).
+fof(f94,plain,(
+  (! [X0,X1,X2] : (prop_UnionUnionAssoc(X0,X1,X2) = eqBSTNatNat(union(union(foldr(uncurry_1(insertNat_0),leaf,X0),foldr(uncurry_1(insertNat_0),leaf,X1)),foldr(uncurry_1(insertNat_0),leaf,X2)),union(foldr(uncurry_1(insertNat_0),leaf,X0),union(foldr(uncurry_1(insertNat_0),leaf,X1),foldr(uncurry_1(insertNat_0),leaf,X2))))))),
+  inference(definition_unfolding,[],[f62,f93,f93,f93,f93,f93,f93])).
+fof(f95,plain,(
+  (! [X0,X1,X2] : (insertNat(X0,X1,X2) = app(app(app(insertNat_0,X0),X1),X2)))),
+  inference(definition_unfolding,[],[f89,f92])).
+fof(f96,plain,(
+  (! [X0,X1] : (branch(leaf,X0,X1,leaf) = app(app(app(insertNat_0,X0),X1),leaf)))),
+  inference(definition_unfolding,[],[f67,f95])).
+fof(f98,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (insertNat_case1(true,X0,X1,X2,X3,X4,X5) = branch(app(app(app(insertNat_0,X0),X4),X2),X1,X5,X3)))),
+  inference(definition_unfolding,[],[f69,f95])).
+fof(f100,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (insertNat_case1_case1(true,X0,X1,X2,X3,X4,X5) = branch(X2,X1,X5,app(app(app(insertNat_0,X0),X4),X3))))),
+  inference(definition_unfolding,[],[f71,f95])).
+fof(f101,plain,(
+  (! [X0,X1] : (app(app(X0,fst(X1)),snd(X1)) = app(uncurry_1(X0),X1)))),
+  inference(definition_unfolding,[],[f90,f58])).
+fof(f102,plain,(
+  (! [X0,X1,X2] : (false != eqBSTNatNat(union(union(foldr(uncurry_1(insertNat_0),leaf,X0),foldr(uncurry_1(insertNat_0),leaf,X1)),foldr(uncurry_1(insertNat_0),leaf,X2)),union(foldr(uncurry_1(insertNat_0),leaf,X0),union(foldr(uncurry_1(insertNat_0),leaf,X1),foldr(uncurry_1(insertNat_0),leaf,X2)))) | ~ans0(X0,X1,X2)))),
+  inference(definition_unfolding,[],[f91,f94])).
+fof(f123,plain,(
+  (! [X0,X1,X2] : (ans0(X0,X1,X2)))),
+  introduced(theory,[answer_literal_resolver],[])).
+fof(f179,plain,(
+  (! [X0,X1,X2] : (app(uncurry_1(X1),pair(X2,X0)) = app(app(X1,fst(pair(X2,X0))),X0)))),
+  inference(superposition,[],[f101,f57])).
+fof(f180,plain,(
+  (! [X0,X1,X2] : (app(uncurry_1(X1),pair(X2,X0)) = app(app(X1,X2),X0)))),
+  inference(forward_demodulation,[],[f179,f56])).
+fof(f196,plain,(
+  (! [X0,X1,X2] : (app(app(X1,X2),X0) = foldr(X1,X0,cons(X2,nil))))),
+  inference(superposition,[],[f60,f59])).
+fof(f203,plain,(
+  (! [X0,X1,X2,X3,X4] : (insertNat_case1(true,X0,X2,leaf,X3,X1,X4) = branch(branch(leaf,X0,X1,leaf),X2,X4,X3)))),
+  inference(superposition,[],[f98,f96])).
+fof(f220,plain,(
+  (! [X0,X1,X2] : (false != eqBSTNatNat(union(union(foldr(uncurry_1(insertNat_0),leaf,X1),app(app(uncurry_1(insertNat_0),X0),leaf)),foldr(uncurry_1(insertNat_0),leaf,X2)),union(foldr(uncurry_1(insertNat_0),leaf,X1),union(app(app(uncurry_1(insertNat_0),X0),leaf),foldr(uncurry_1(insertNat_0),leaf,X2)))) | ~ans0(X1,cons(X0,nil),X2)))),
+  inference(superposition,[],[f102,f196])).
+fof(f273,plain,(
+  (! [X0,X1,X2,X3,X4] : (insertNat_case1_case1(true,fst(X0),X1,X2,X3,snd(X0),X4) = branch(X2,X1,X4,app(app(uncurry_1(insertNat_0),X0),X3))))),
+  inference(superposition,[],[f100,f101])).
+fof(f276,plain,(
+  (! [X0,X1,X2,X3,X4] : (insertNat_case1_case1(true,X0,X2,X3,leaf,X1,X4) = branch(X3,X2,X4,branch(leaf,X0,X1,leaf))))),
+  inference(superposition,[],[f100,f96])).
+fof(f305,plain,(
+  (! [X0,X1,X2,X3] : (false != eqBSTNatNat(union(union(foldr(uncurry_1(insertNat_0),leaf,X2),app(app(app(insertNat_0,X0),X1),leaf)),foldr(uncurry_1(insertNat_0),leaf,X3)),union(foldr(uncurry_1(insertNat_0),leaf,X2),union(app(app(app(insertNat_0,X0),X1),leaf),foldr(uncurry_1(insertNat_0),leaf,X3)))) | ~ans0(X2,cons(pair(X0,X1),nil),X3)))),
+  inference(superposition,[],[f220,f180])).
+fof(f309,plain,(
+  (! [X0,X1,X2,X3] : (false != eqBSTNatNat(union(union(foldr(uncurry_1(insertNat_0),leaf,X2),branch(leaf,X0,X1,leaf)),foldr(uncurry_1(insertNat_0),leaf,X3)),union(foldr(uncurry_1(insertNat_0),leaf,X2),union(branch(leaf,X0,X1,leaf),foldr(uncurry_1(insertNat_0),leaf,X3)))) | ~ans0(X2,cons(pair(X0,X1),nil),X3)))),
+  inference(forward_demodulation,[],[f305,f96])).
+fof(f382,plain,(
+  (! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9] : (branch(X6,X7,X8,branch(union(X9,X2),X1,X5,app(app(app(insertNat_0,X0),X4),X3))) = union(branch(X6,X7,X8,X9),insertNat_case1_case1(true,X0,X1,X2,X3,X4,X5))))),
+  inference(superposition,[],[f66,f100])).
+fof(f383,plain,(
+  (! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9] : (union(branch(X6,X7,X8,X9),insertNat_case1_case1(true,X0,X1,X2,X3,X4,X5)) = branch(X6,X7,X8,insertNat_case1_case1(true,X0,X1,union(X9,X2),X3,X4,X5))))),
+  inference(forward_demodulation,[],[f382,f100])).
+fof(f408,plain,(
+  (! [X0,X1,X2,X3] : (false != eqBSTNatNat(union(union(foldr(uncurry_1(insertNat_0),leaf,X1),branch(leaf,X2,X3,leaf)),app(app(uncurry_1(insertNat_0),X0),leaf)),union(foldr(uncurry_1(insertNat_0),leaf,X1),union(branch(leaf,X2,X3,leaf),app(app(uncurry_1(insertNat_0),X0),leaf)))) | ~ans0(X1,cons(pair(X2,X3),nil),cons(X0,nil))))),
+  inference(superposition,[],[f309,f196])).
+fof(f579,plain,(
+  (! [X0,X1,X2,X3,X4] : (false != eqBSTNatNat(union(union(foldr(uncurry_1(insertNat_0),leaf,X2),branch(leaf,X3,X4,leaf)),app(app(app(insertNat_0,X0),X1),leaf)),union(foldr(uncurry_1(insertNat_0),leaf,X2),union(branch(leaf,X3,X4,leaf),app(app(app(insertNat_0,X0),X1),leaf)))) | ~ans0(X2,cons(pair(X3,X4),nil),cons(pair(X0,X1),nil))))),
+  inference(superposition,[],[f408,f180])).
+fof(f580,plain,(
+  (! [X0,X1,X2,X3,X4] : (false != eqBSTNatNat(union(union(foldr(uncurry_1(insertNat_0),leaf,X2),branch(leaf,X3,X4,leaf)),branch(leaf,X0,X1,leaf)),union(foldr(uncurry_1(insertNat_0),leaf,X2),union(branch(leaf,X3,X4,leaf),branch(leaf,X0,X1,leaf)))) | ~ans0(X2,cons(pair(X3,X4),nil),cons(pair(X0,X1),nil))))),
+  inference(forward_demodulation,[],[f579,f96])).
+fof(f582,plain,(
+  (! [X0,X1,X2,X3,X4] : (false != eqBSTNatNat(union(union(foldr(uncurry_1(insertNat_0),leaf,X2),branch(leaf,X3,X4,leaf)),branch(leaf,X0,X1,leaf)),union(foldr(uncurry_1(insertNat_0),leaf,X2),branch(leaf,X3,X4,branch(union(leaf,leaf),X0,X1,leaf)))) | ~ans0(X2,cons(pair(X3,X4),nil),cons(pair(X0,X1),nil))))),
+  inference(forward_demodulation,[],[f580,f66])).
+fof(f584,plain,(
+  (! [X0,X1,X2,X3,X4] : (false != eqBSTNatNat(union(union(foldr(uncurry_1(insertNat_0),leaf,X2),branch(leaf,X3,X4,leaf)),branch(leaf,X0,X1,leaf)),union(foldr(uncurry_1(insertNat_0),leaf,X2),branch(leaf,X3,X4,branch(leaf,X0,X1,leaf)))) | ~ans0(X2,cons(pair(X3,X4),nil),cons(pair(X0,X1),nil))))),
+  inference(forward_demodulation,[],[f582,f64])).
+fof(f585,plain,(
+  (! [X0,X1,X2,X3,X4] : (false != eqBSTNatNat(union(union(foldr(uncurry_1(insertNat_0),leaf,X2),branch(leaf,X3,X4,leaf)),branch(leaf,X0,X1,leaf)),union(foldr(uncurry_1(insertNat_0),leaf,X2),insertNat_case1_case1(true,X0,X3,leaf,leaf,X1,X4))) | ~ans0(X2,cons(pair(X3,X4),nil),cons(pair(X0,X1),nil))))),
+  inference(forward_demodulation,[],[f584,f276])).
+fof(f668,plain,(
+  (! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9] : (eqBSTNatNat(branch(branch(X0,X1,X2,X3),X4,X5,X6),branch(leaf,X7,X8,X9)) = opAnd(false,opAnd(eqNat(X4,X7),opAnd(eqNat(X5,X8),eqBSTNatNat(X6,X9))))))),
+  inference(superposition,[],[f80,f79])).
+fof(f697,plain,(
+  (! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9] : (false = eqBSTNatNat(branch(branch(X0,X1,X2,X3),X4,X5,X6),branch(leaf,X7,X8,X9))))),
+  inference(forward_demodulation,[],[f668,f54])).
+fof(f722,plain,(
+  (! [X0,X1,X2,X3,X4] : (false != eqBSTNatNat(union(union(app(app(uncurry_1(insertNat_0),X0),leaf),branch(leaf,X1,X2,leaf)),branch(leaf,X3,X4,leaf)),union(app(app(uncurry_1(insertNat_0),X0),leaf),insertNat_case1_case1(true,X3,X1,leaf,leaf,X4,X2))) | ~ans0(cons(X0,nil),cons(pair(X1,X2),nil),cons(pair(X3,X4),nil))))),
+  inference(superposition,[],[f585,f196])).
+fof(f972,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (false != eqBSTNatNat(union(union(app(app(app(insertNat_0,X0),X1),leaf),branch(leaf,X2,X3,leaf)),branch(leaf,X4,X5,leaf)),union(app(app(app(insertNat_0,X0),X1),leaf),insertNat_case1_case1(true,X4,X2,leaf,leaf,X5,X3))) | ~ans0(cons(pair(X0,X1),nil),cons(pair(X2,X3),nil),cons(pair(X4,X5),nil))))),
+  inference(superposition,[],[f722,f180])).
+fof(f973,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (false != eqBSTNatNat(union(union(branch(leaf,X0,X1,leaf),branch(leaf,X2,X3,leaf)),branch(leaf,X4,X5,leaf)),union(branch(leaf,X0,X1,leaf),insertNat_case1_case1(true,X4,X2,leaf,leaf,X5,X3))) | ~ans0(cons(pair(X0,X1),nil),cons(pair(X2,X3),nil),cons(pair(X4,X5),nil))))),
+  inference(forward_demodulation,[],[f972,f96])).
+fof(f975,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (false != eqBSTNatNat(union(union(branch(leaf,X0,X1,leaf),branch(leaf,X2,X3,leaf)),branch(leaf,X4,X5,leaf)),branch(leaf,X0,X1,insertNat_case1_case1(true,X4,X2,union(leaf,leaf),leaf,X5,X3))) | ~ans0(cons(pair(X0,X1),nil),cons(pair(X2,X3),nil),cons(pair(X4,X5),nil))))),
+  inference(forward_demodulation,[],[f973,f383])).
+fof(f976,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (false != eqBSTNatNat(union(union(branch(leaf,X0,X1,leaf),branch(leaf,X2,X3,leaf)),branch(leaf,X4,X5,leaf)),branch(leaf,X0,X1,insertNat_case1_case1(true,X4,X2,leaf,leaf,X5,X3))) | ~ans0(cons(pair(X0,X1),nil),cons(pair(X2,X3),nil),cons(pair(X4,X5),nil))))),
+  inference(forward_demodulation,[],[f975,f64])).
+fof(f977,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (false != eqBSTNatNat(union(branch(leaf,X0,X1,branch(union(leaf,leaf),X2,X3,leaf)),branch(leaf,X4,X5,leaf)),branch(leaf,X0,X1,insertNat_case1_case1(true,X4,X2,leaf,leaf,X5,X3))) | ~ans0(cons(pair(X0,X1),nil),cons(pair(X2,X3),nil),cons(pair(X4,X5),nil))))),
+  inference(forward_demodulation,[],[f976,f66])).
+fof(f978,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (false != eqBSTNatNat(branch(leaf,X0,X1,branch(union(branch(union(leaf,leaf),X2,X3,leaf),leaf),X4,X5,leaf)),branch(leaf,X0,X1,insertNat_case1_case1(true,X4,X2,leaf,leaf,X5,X3))) | ~ans0(cons(pair(X0,X1),nil),cons(pair(X2,X3),nil),cons(pair(X4,X5),nil))))),
+  inference(forward_demodulation,[],[f977,f66])).
+fof(f979,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (false != eqBSTNatNat(branch(leaf,X0,X1,branch(branch(union(leaf,leaf),X2,X3,leaf),X4,X5,leaf)),branch(leaf,X0,X1,insertNat_case1_case1(true,X4,X2,leaf,leaf,X5,X3))) | ~ans0(cons(pair(X0,X1),nil),cons(pair(X2,X3),nil),cons(pair(X4,X5),nil))))),
+  inference(forward_demodulation,[],[f978,f65])).
+fof(f980,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (false != eqBSTNatNat(branch(leaf,X0,X1,branch(branch(leaf,X2,X3,leaf),X4,X5,leaf)),branch(leaf,X0,X1,insertNat_case1_case1(true,X4,X2,leaf,leaf,X5,X3))) | ~ans0(cons(pair(X0,X1),nil),cons(pair(X2,X3),nil),cons(pair(X4,X5),nil))))),
+  inference(forward_demodulation,[],[f979,f64])).
+fof(f981,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (false != eqBSTNatNat(branch(leaf,X0,X1,insertNat_case1(true,X2,X4,leaf,leaf,X3,X5)),branch(leaf,X0,X1,insertNat_case1_case1(true,X4,X2,leaf,leaf,X5,X3))) | ~ans0(cons(pair(X0,X1),nil),cons(pair(X2,X3),nil),cons(pair(X4,X5),nil))))),
+  inference(forward_demodulation,[],[f980,f203])).
+fof(f1586,plain,(
+  (! [X0,X1,X2,X3,X4,X5,X6,X7] : (false = eqBSTNatNat(insertNat_case1(true,X0,X1,leaf,X2,X3,X4),branch(leaf,X5,X6,X7))))),
+  inference(superposition,[],[f697,f203])).
+fof(f1888,plain,(
+  (! [X0,X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11,X12,X13] : (eqBSTNatNat(branch(X0,X1,X2,insertNat_case1(true,X3,X4,leaf,X5,X6,X7)),branch(X8,X9,X10,branch(leaf,X11,X12,X13))) = opAnd(eqBSTNatNat(X0,X8),opAnd(eqNat(X1,X9),opAnd(eqNat(X2,X10),false)))))),
+  inference(superposition,[],[f80,f1586])).
+fof(f2849,plain,(
+  (! [X0,X1,X2,X3,X4] : (false != eqBSTNatNat(branch(leaf,X3,X4,insertNat_case1(true,X0,fst(X2),leaf,leaf,X1,snd(X2))),branch(leaf,X3,X4,branch(leaf,X0,X1,app(app(uncurry_1(insertNat_0),X2),leaf)))) | ~ans0(cons(pair(X3,X4),nil),cons(pair(X0,X1),nil),cons(pair(fst(X2),snd(X2)),nil))))),
+  inference(superposition,[],[f981,f273])).
+fof(f2892,plain,(
+  (! [X0,X1,X2,X3,X4] : (false != opAnd(eqBSTNatNat(leaf,leaf),opAnd(eqNat(X3,X3),opAnd(eqNat(X4,X4),false))) | ~ans0(cons(pair(X3,X4),nil),cons(pair(X0,X1),nil),cons(pair(fst(X2),snd(X2)),nil))))),
+  inference(forward_demodulation,[],[f2849,f1888])).
+fof(f2901,plain,(
+  (! [X0,X1,X2,X3,X4] : (false != opAnd(true,opAnd(eqNat(X3,X3),opAnd(eqNat(X4,X4),false))) | ~ans0(cons(pair(X3,X4),nil),cons(pair(X0,X1),nil),cons(pair(fst(X2),snd(X2)),nil))))),
+  inference(forward_demodulation,[],[f2892,f77])).
+fof(f2905,plain,(
+  (! [X0,X1,X2,X3,X4] : (false != opAnd(eqNat(X3,X3),opAnd(eqNat(X4,X4),false)) | ~ans0(cons(pair(X3,X4),nil),cons(pair(X0,X1),nil),cons(pair(fst(X2),snd(X2)),nil))))),
+  inference(forward_demodulation,[],[f2901,f55])).
+fof(f2908,plain,(
+  (! [X0,X1,X2,X3] : (false != opAnd(eqNat(X0,X0),opAnd(true,false)) | ~ans0(cons(pair(X0,zero),nil),cons(pair(X1,X2),nil),cons(pair(fst(X3),snd(X3)),nil))))),
+  inference(superposition,[],[f2905,f73])).
+fof(f2910,plain,(
+  (! [X0,X1,X2,X3] : (false != opAnd(eqNat(X0,X0),false) | ~ans0(cons(pair(X0,zero),nil),cons(pair(X1,X2),nil),cons(pair(fst(X3),snd(X3)),nil))))),
+  inference(forward_demodulation,[],[f2908,f55])).
+fof(f2914,plain,(
+  (! [X0,X1,X2] : (false != opAnd(true,false) | ~ans0(cons(pair(zero,zero),nil),cons(pair(X0,X1),nil),cons(pair(fst(X2),snd(X2)),nil))))),
+  inference(superposition,[],[f2910,f73])).
+fof(f2916,plain,(
+  (! [X0,X1,X2] : (~ans0(cons(pair(zero,zero),nil),cons(pair(X0,X1),nil),cons(pair(fst(X2),snd(X2)),nil))))),
+  inference(forward_subsumption_resolution,[],[f2914,f55])).
+fof(f2917,plain,(
+  $false),
+  inference(unit_resulting_resolution,[],[f2916,f123])).
+% SZS output end Proof for problem
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation
+% Time elapsed: 0.032 s
+% Peak memory usage: 12 MB
+% Success in time 3.699 s

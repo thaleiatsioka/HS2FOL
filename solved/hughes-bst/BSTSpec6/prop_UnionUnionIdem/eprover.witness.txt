@@ -1,0 +1,6 @@
+property:   prop_UnionUnionIdem
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec6.hs
+prover:     eprover
+witness:    prop_UnionUnionIdem [(Zero, Zero)]
+input:      prop_UnionUnionIdem [(Zero, Zero)]
+result:     False -- counterexample confirmed

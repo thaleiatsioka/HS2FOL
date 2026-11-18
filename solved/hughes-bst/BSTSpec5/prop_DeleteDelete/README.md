@@ -1,0 +1,20 @@
+# prop_DeleteDelete (hughes-bst/BSTSpec5)
+
+| prover | SZS status | seconds | witness |
+|---|---|---|---|
+| eprover | ResourceOut | 60.40 | - |
+| twee | Theorem | 22.00 | CONFIRMED |
+| vampire | Theorem | 22.00 | CONFIRMED |
+
+Counterexample (decoded from the twee witness, checked with GHC):
+
+```
+property:   prop_DeleteDelete
+file:       benchmarks/hughes-bst/BSTSpec5.hs
+prover:     twee
+witness:    prop_DeleteDelete (Suc Zero) Zero (toList (insert Zero _X (insert (Suc Zero) _Y nil)))
+evaluated:  prop_DeleteDelete (Suc Zero) Zero [(Zero, _X), (Suc Zero, _Y)]
+input:      prop_DeleteDelete (Suc Zero) Zero [(Zero, undefined), (Suc Zero, undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed
+```

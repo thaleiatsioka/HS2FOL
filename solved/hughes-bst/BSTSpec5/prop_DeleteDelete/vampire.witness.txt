@@ -1,0 +1,7 @@
+property:   prop_DeleteDelete
+file:       benchmarks/hughes-bst/BSTSpec5.hs
+prover:     vampire
+witness:    prop_DeleteDelete Zero (Suc Zero) [(Zero, _X0), (Suc Zero, _X1)]
+input:      prop_DeleteDelete Zero (Suc Zero) [(Zero, undefined), (Suc Zero, undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

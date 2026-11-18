@@ -1,0 +1,7 @@
+property:   prop_InsertPost
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec3.hs
+prover:     twee
+witness:    prop_InsertPost Zero (Suc _X) [(Zero, Zero)] Zero
+input:      prop_InsertPost Zero (Suc undefined) [(Zero, Zero)] Zero
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

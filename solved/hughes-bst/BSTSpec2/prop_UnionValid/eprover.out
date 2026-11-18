@@ -1,0 +1,808 @@
+% Preprocessing class: FSMSSMSMSSSNFFN.
+% Configuration: G-E--_207_C18_F1_SE_CS_SP_PI_PS_S2SI
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFMM32-DFFFFFNN
+% partial match(2): FUUPM-FFMM32-DFFFFFNN
+% Configuration: G-E--_208_C18C--_F1_SE_CS_SP_PS_S5PRR_RG_S04AN
+% Initializing proof state
+% Scanning for AC axioms
+%
+%cnf(i_0_25, plain, (nil_1=leaf)).
+%
+%cnf(i_0_7, plain, (not(false)=true)).
+%
+%cnf(i_0_32, plain, (validNat(leaf)=true)).
+%
+%cnf(i_0_2, plain, (isLT(eq)=false)).
+%
+%cnf(i_0_3, plain, (isLT(gt)=false)).
+%
+%cnf(i_0_1, plain, (isLT(lt)=true)).
+%
+%cnf(i_0_4, plain, (isGT(lt)=false)).
+%
+%cnf(i_0_5, plain, (isGT(eq)=false)).
+%
+%cnf(i_0_6, plain, (isGT(gt)=true)).
+%
+%cnf(i_0_8, plain, (not(true)=false)).
+%
+%cnf(i_0_26, plain, (toList(leaf)=nil)).
+%
+%cnf(i_0_9, plain, (opAnd(false,X1)=false)).
+%
+%cnf(i_0_34, plain, (unionNat(leaf,X1)=X1)).
+%
+%cnf(i_0_60, negated_conjecture, ($answer(esk1_2(X1,X2))|validNat(unionNat(foldr(uncurry_1(insertNat_0),leaf,X1),foldr(uncurry_1(insertNat_0),leaf,X2)))!=false)).
+%
+%cnf(i_0_47, plain, (compareNat(zero,zero)=eq)).
+%
+%cnf(i_0_16, plain, (map(X1,nil)=nil)).
+%
+%cnf(i_0_20, plain, (all(X1,nil)=true)).
+%
+%cnf(i_0_39, plain, (belowNat(X1,leaf)=leaf)).
+%
+%cnf(i_0_10, plain, (opAnd(true,X1)=X1)).
+%
+%cnf(i_0_14, plain, (opAppend(nil,X1)=X1)).
+%
+%cnf(i_0_43, plain, (aboveNat(X1,leaf)=leaf)).
+%
+%cnf(i_0_12, plain, (snd(pair(X1,X2))=X2)).
+%
+%cnf(i_0_18, plain, (foldr(X1,X2,nil)=X2)).
+%
+%cnf(i_0_48, plain, (compareNat(zero,suc(X1))=lt)).
+%
+%cnf(i_0_49, plain, (compareNat(suc(X1),zero)=gt)).
+%
+%cnf(i_0_11, plain, (app(fst_0,pair(X1,X2))=X1)).
+%
+%cnf(i_0_57, plain, (app(lam4(X1),X2)=isLT(compareNat(X2,X1)))).
+%
+%cnf(i_0_50, plain, (compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%cnf(i_0_58, plain, (isGT(compareNat(X2,X1))=app(lam5(X1),X2))).
+%
+%cnf(i_0_15, plain, (opAppend(cons(X1,X2),X3)=cons(X1,opAppend(X2,X3)))).
+%
+%cnf(i_0_41, plain, (belowNat_case1(true,X1,X2,X3,X4,X5)=belowNat(X1,X3))).
+%
+%cnf(i_0_45, plain, (aboveNat_case1(true,X1,X2,X3,X4,X5)=aboveNat(X1,X4))).
+%
+%cnf(i_0_35, plain, (unionNat(branch(X1,X2,X3,X4),leaf)=branch(X1,X2,X3,X4))).
+%
+%cnf(i_0_28, plain, (app(app(app(insertNat_0,X1),X2),leaf)=branch(leaf,X1,X2,leaf))).
+%
+%cnf(i_0_13, plain, (app(app(X1,app(fst_0,X2)),snd(X2))=app(uncurry_1(X1),X2))).
+%
+%cnf(i_0_17, plain, (cons(app(X1,X2),map(X1,X3))=map(X1,cons(X2,X3)))).
+%
+%cnf(i_0_21, plain, (opAnd(app(X1,X2),all(X1,X3))=all(X1,cons(X2,X3)))).
+%
+%cnf(i_0_42, plain, (belowNat_case1(false,X1,X2,X3,X4,X5)=branch(X3,X2,X5,belowNat(X1,X4)))).
+%
+%cnf(i_0_19, plain, (foldr(X1,X2,cons(X3,X4))=app(app(X1,X3),foldr(X1,X2,X4)))).
+%
+%cnf(i_0_46, plain, (aboveNat_case1(false,X1,X2,X3,X4,X5)=branch(aboveNat(X1,X3),X2,X5,X4))).
+%
+%cnf(i_0_31, plain, (insertNat_case1(false,X1,X2,X3,X4,X5,X6)=branch(X3,X2,X6,app(app(app(insertNat_0,X1),X5),X4)))).
+%
+%cnf(i_0_30, plain, (insertNat_case1(true,X1,X2,X3,X4,X5,X6)=branch(app(app(app(insertNat_0,X1),X5),X3),X2,X6,X4))).
+%
+%cnf(i_0_40, plain, (belowNat_case1(not(app(lam5(X3),X1)),X1,X3,X2,X5,X4)=belowNat(X1,branch(X2,X3,X4,X5)))).
+%
+%cnf(i_0_44, plain, (aboveNat_case1(not(isLT(compareNat(X1,X3))),X1,X3,X2,X5,X4)=aboveNat(X1,branch(X2,X3,X4,X5)))).
+%
+%cnf(i_0_27, plain, (opAppend(toList(X1),cons(pair(X2,X3),toList(X4)))=toList(branch(X1,X2,X3,X4)))).
+%
+%cnf(i_0_29, plain, (insertNat_case1(isLT(compareNat(X1,X4)),X1,X4,X3,X6,X2,X5)=app(app(app(insertNat_0,X1),X2),branch(X3,X4,X5,X6)))).
+%
+%cnf(i_0_33, plain, (validNat(branch(X1,X2,X3,X4))=opAnd(validNat(X1),opAnd(validNat(X4),opAnd(all(lam4(X2),map(fst_0,toList(X1))),all(lam5(X2),map(fst_0,toList(X4)))))))).
+%
+%cnf(i_0_36, plain, (branch(unionNat(X1,belowNat(X2,branch(X5,X6,X7,X8))),X2,X3,unionNat(X4,aboveNat(X2,branch(X5,X6,X7,X8))))=unionNat(branch(X1,X2,X3,X4),branch(X5,X6,X7,X8)))).
+% Presaturation interreduction done
+%
+%cnf(i_0_25, plain, (nil_1=leaf)).
+%
+%cnf(i_0_7, plain, (not(false)=true)).
+%
+%cnf(i_0_32, plain, (validNat(leaf)=true)).
+%
+%cnf(i_0_2, plain, (isLT(eq)=false)).
+%
+%cnf(i_0_3, plain, (isLT(gt)=false)).
+%
+%cnf(i_0_1, plain, (isLT(lt)=true)).
+%
+%cnf(i_0_4, plain, (isGT(lt)=false)).
+%
+%cnf(i_0_5, plain, (isGT(eq)=false)).
+%
+%cnf(i_0_8, plain, (not(true)=false)).
+%
+%cnf(i_0_9, plain, (opAnd(false,X1)=false)).
+%
+%cnf(i_0_6, plain, (isGT(gt)=true)).
+%
+%cnf(i_0_26, plain, (toList(leaf)=nil)).
+%
+%cnf(i_0_34, plain, (unionNat(leaf,X1)=X1)).
+%
+%cnf(i_0_47, plain, (compareNat(zero,zero)=eq)).
+%
+%cnf(i_0_10, plain, (opAnd(true,X1)=X1)).
+%
+%cnf(i_0_14, plain, (opAppend(nil,X1)=X1)).
+%
+%cnf(i_0_16, plain, (map(X1,nil)=nil)).
+%
+%cnf(i_0_20, plain, (all(X1,nil)=true)).
+%
+%cnf(i_0_39, plain, (belowNat(X1,leaf)=leaf)).
+%
+%cnf(i_0_43, plain, (aboveNat(X1,leaf)=leaf)).
+%
+%cnf(i_0_18, plain, (foldr(X1,X2,nil)=X2)).
+%
+%cnf(i_0_12, plain, (snd(pair(X1,X2))=X2)).
+%
+%cnf(i_0_48, plain, (compareNat(zero,suc(X1))=lt)).
+%
+%cnf(i_0_49, plain, (compareNat(suc(X1),zero)=gt)).
+%
+%cnf(i_0_11, plain, (app(fst_0,pair(X1,X2))=X1)).
+%
+%cnf(i_0_57, plain, (app(lam4(X1),X2)=isLT(compareNat(X2,X1)))).
+%
+%cnf(i_0_58, plain, (isGT(compareNat(X1,X2))=app(lam5(X2),X1))).
+%
+%cnf(i_0_50, plain, (compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%cnf(i_0_15, plain, (opAppend(cons(X1,X2),X3)=cons(X1,opAppend(X2,X3)))).
+%
+%cnf(i_0_41, plain, (belowNat_case1(true,X1,X2,X3,X4,X5)=belowNat(X1,X3))).
+%
+%cnf(i_0_63, plain, (app(lam5(zero),zero)=false)).
+%
+%cnf(i_0_60, negated_conjecture, ($answer(esk1_2(X1,X2))|validNat(unionNat(foldr(uncurry_1(insertNat_0),leaf,X1),foldr(uncurry_1(insertNat_0),leaf,X2)))!=false)).
+%
+%cnf(i_0_66, negated_conjecture, ($answer(esk1_2(nil,X1))|validNat(foldr(uncurry_1(insertNat_0),leaf,X1))!=false)).
+%
+%cnf(i_0_67, negated_conjecture, ($answer(esk1_2(nil,nil))|true!=false)).
+%
+%cnf(i_0_45, plain, (aboveNat_case1(true,X1,X2,X3,X4,X5)=aboveNat(X1,X4))).
+%
+%cnf(i_0_62, plain, (app(lam5(suc(X1)),zero)=false)).
+%
+%cnf(i_0_35, plain, (unionNat(branch(X1,X2,X3,X4),leaf)=branch(X1,X2,X3,X4))).
+%
+%cnf(i_0_17, plain, (cons(app(X1,X2),map(X1,X3))=map(X1,cons(X2,X3)))).
+%
+%cnf(i_0_21, plain, (opAnd(app(X1,X2),all(X1,X3))=all(X1,cons(X2,X3)))).
+%
+%cnf(i_0_42, plain, (belowNat_case1(false,X1,X2,X3,X4,X5)=branch(X3,X2,X5,belowNat(X1,X4)))).
+%
+%cnf(i_0_28, plain, (app(app(app(insertNat_0,X1),X2),leaf)=branch(leaf,X1,X2,leaf))).
+%
+%cnf(i_0_65, negated_conjecture, ($answer(esk1_2(X1,nil))|validNat(unionNat(foldr(uncurry_1(insertNat_0),leaf,X1),leaf))!=false)).
+%%
+%cnf(i_0_61, plain, (app(lam5(zero),suc(X1))=true)).
+%
+%cnf(i_0_76, plain, (all(lam5(zero),cons(zero,X1))=false)).
+%
+%cnf(i_0_13, plain, (app(app(X1,app(fst_0,X2)),snd(X2))=app(uncurry_1(X1),X2))).
+%
+%cnf(i_0_75, plain, (all(lam5(suc(X1)),cons(zero,X2))=false)).
+%
+%cnf(i_0_46, plain, (aboveNat_case1(false,X1,X2,X3,X4,X5)=branch(aboveNat(X1,X3),X2,X5,X4))).
+%
+%cnf(i_0_31, plain, (insertNat_case1(false,X1,X2,X3,X4,X5,X6)=branch(X3,X2,X6,app(app(app(insertNat_0,X1),X5),X4)))).
+%
+%cnf(i_0_30, plain, (insertNat_case1(true,X1,X2,X3,X4,X5,X6)=branch(app(app(app(insertNat_0,X1),X5),X3),X2,X6,X4))).
+%
+%cnf(i_0_19, plain, (foldr(X1,X2,cons(X3,X4))=app(app(X1,X3),foldr(X1,X2,X4)))).
+%
+%cnf(i_0_44, plain, (aboveNat_case1(not(isLT(compareNat(X1,X2))),X1,X2,X3,X4,X5)=aboveNat(X1,branch(X3,X2,X5,X4)))).
+%
+%cnf(i_0_69, plain, (map(X1,cons(X2,nil))=cons(app(X1,X2),nil))).
+%
+%cnf(i_0_74, plain, (all(X1,cons(X2,nil))=opAnd(app(X1,X2),true))).
+%
+%cnf(i_0_88, plain, (app(uncurry_1(X1),pair(X2,X3))=app(app(X1,X2),X3))).
+%%
+%cnf(i_0_40, plain, (belowNat_case1(not(app(lam5(X1),X2)),X2,X1,X3,X4,X5)=belowNat(X2,branch(X3,X1,X5,X4)))).
+%
+%cnf(i_0_64, plain, (app(lam5(suc(X2)),suc(X1))=app(lam5(X2),X1))).
+%
+%cnf(i_0_29, plain, (insertNat_case1(isLT(compareNat(X1,X2)),X1,X2,X3,X4,X5,X6)=app(app(app(insertNat_0,X1),X5),branch(X3,X2,X6,X4)))).
+%
+%cnf(i_0_36, plain, (branch(unionNat(X1,belowNat(X2,branch(X3,X4,X5,X6))),X2,X7,unionNat(X8,aboveNat(X2,branch(X3,X4,X5,X6))))=unionNat(branch(X1,X2,X7,X8),branch(X3,X4,X5,X6)))).
+%
+%cnf(i_0_33, plain, (validNat(branch(X1,X2,X3,X4))=opAnd(validNat(X1),opAnd(validNat(X4),opAnd(all(lam4(X2),map(fst_0,toList(X1))),all(lam5(X2),map(fst_0,toList(X4)))))))).
+%
+%cnf(i_0_96, plain, (foldr(X1,X2,cons(X3,nil))=app(app(X1,X3),X2))).
+%
+%cnf(i_0_107, plain, (aboveNat(zero,branch(X1,zero,X3,X2))=aboveNat(zero,X2))).
+%
+%cnf(i_0_140, negated_conjecture, ($answer(esk1_2(nil,cons(X1,nil)))|validNat(app(app(uncurry_1(insertNat_0),X1),leaf))!=false)).
+%
+%cnf(i_0_139, negated_conjecture, ($answer(esk1_2(cons(X1,nil),nil))|validNat(unionNat(app(app(uncurry_1(insertNat_0),X1),leaf),leaf))!=false)).
+%
+%cnf(i_0_138, negated_conjecture, ($answer(esk1_2(cons(X1,nil),X2))|validNat(unionNat(app(app(uncurry_1(insertNat_0),X1),leaf),foldr(uncurry_1(insertNat_0),leaf,X2)))!=false)).
+%%
+%cnf(i_0_27, plain, (opAppend(toList(X1),cons(pair(X2,X3),toList(X4)))=toList(branch(X1,X2,X3,X4)))).
+%
+%cnf(i_0_117, plain, (belowNat(zero,branch(X1,zero,X3,X2))=belowNat(zero,X1))).
+%
+%cnf(i_0_152, plain, (cons(pair(X1,X2),toList(X3))=toList(branch(leaf,X1,X2,X3)))).
+%
+%cnf(i_0_157, plain, (cons(pair(X1,X2),nil)=toList(branch(leaf,X1,X2,leaf)))).
+%
+%cnf(i_0_146, negated_conjecture, ($answer(esk1_2(nil,toList(branch(leaf,X1,X2,leaf))))|validNat(branch(leaf,X1,X2,leaf))!=false)).
+%
+%cnf(i_0_163, negated_conjecture, ($answer(esk1_2(nil,toList(branch(leaf,X1,X2,leaf))))|true!=false)).
+%
+%cnf(i_0_71, plain, (map(lam5(zero),cons(zero,X1))=cons(false,map(lam5(zero),X1)))).
+%
+%cnf(i_0_141, negated_conjecture, ($answer(esk1_2(X1,cons(X2,nil)))|validNat(unionNat(foldr(uncurry_1(insertNat_0),leaf,X1),app(app(uncurry_1(insertNat_0),X2),leaf)))!=false)).
+%%
+%cnf(i_0_147, negated_conjecture, ($answer(esk1_2(toList(branch(leaf,X1,X2,leaf)),nil))|validNat(branch(leaf,X1,X2,leaf))!=false)).
+%
+%cnf(i_0_169, negated_conjecture, ($answer(esk1_2(toList(branch(leaf,X1,X2,leaf)),nil))|true!=false)).
+%
+%cnf(i_0_27, plain, (opAppend(toList(X1),toList(branch(leaf,X2,X3,X4)))=toList(branch(X1,X2,X3,X4)))).
+%
+%cnf(i_0_83, plain, (all(lam5(zero),cons(suc(X1),X2))=all(lam5(zero),X2))).
+%
+%cnf(i_0_116, plain, (belowNat(zero,branch(X2,suc(X1),X4,X3))=belowNat(zero,X2))).
+%
+%cnf(i_0_73, plain, (map(fst_0,cons(pair(X1,X2),X3))=cons(X1,map(fst_0,X3)))).
+%
+%cnf(i_0_78, plain, (all(fst_0,cons(pair(X1,X2),X3))=opAnd(X1,all(fst_0,X3)))).
+%
+%cnf(i_0_105, plain, (aboveNat(suc(X1),branch(X2,zero,X4,X3))=aboveNat(suc(X1),X3))).
+%
+%cnf(i_0_178, plain, (map(fst_0,toList(branch(leaf,X1,X2,leaf)))=cons(X1,nil))).
+%
+%cnf(i_0_150, negated_conjecture, ($answer(esk1_2(toList(branch(leaf,X1,X2,leaf)),X3))|validNat(unionNat(branch(leaf,X1,X2,leaf),foldr(uncurry_1(insertNat_0),leaf,X3)))!=false)).
+%%
+%cnf(i_0_99, plain, (foldr(lam5(zero),X1,cons(zero,X2))=app(false,foldr(lam5(zero),X1,X2)))).
+%
+%cnf(i_0_166, negated_conjecture, ($answer(esk1_2(X1,toList(branch(leaf,X2,X3,leaf))))|validNat(unionNat(foldr(uncurry_1(insertNat_0),leaf,X1),branch(leaf,X2,X3,leaf)))!=false)).
+%
+%cnf(i_0_68, plain, (cons(app(X1,X2),opAppend(map(X1,X3),X4))=opAppend(map(X1,cons(X2,X3)),X4))).
+%
+%cnf(i_0_182, plain, (all(fst_0,toList(branch(leaf,X1,X2,leaf)))=opAnd(X1,true))).
+%%
+%cnf(i_0_158, plain, (opAppend(toList(branch(leaf,X1,X2,leaf)),X3)=cons(pair(X1,X2),X3))).
+%
+%cnf(i_0_82, plain, (map(lam5(zero),cons(suc(X1),X2))=cons(true,map(lam5(zero),X2)))).
+%
+%cnf(i_0_130, plain, (validNat(branch(X1,X2,X3,X4))=validNat(branch(X1,X2,X5,X4)))).
+%%
+%cnf(i_0_218, negated_conjecture, ($answer(esk1_2(nil,toList(branch(leaf,X1,X2,leaf))))|validNat(branch(leaf,X1,X3,leaf))!=false)).
+%%
+%cnf(i_0_219, negated_conjecture, ($answer(esk1_2(toList(branch(leaf,X1,X2,leaf)),nil))|validNat(branch(leaf,X1,X3,leaf))!=false)).
+%%
+%cnf(i_0_70, plain, (map(lam5(suc(X1)),cons(zero,X2))=cons(false,map(lam5(suc(X1)),X2)))).
+%%%%%%%
+%cnf(i_0_149, negated_conjecture, ($answer(esk1_2(cons(X1,nil),cons(X2,nil)))|validNat(unionNat(app(app(uncurry_1(insertNat_0),X1),leaf),app(app(uncurry_1(insertNat_0),X2),leaf)))!=false)).
+%%%
+%cnf(i_0_87, plain, (branch(leaf,app(fst_0,X1),snd(X1),leaf)=app(app(uncurry_1(insertNat_0),X1),leaf))).
+%
+%cnf(i_0_72, plain, (cons(isLT(compareNat(X2,X1)),map(lam4(X1),X3))=map(lam4(X1),cons(X2,X3)))).
+%
+%cnf(i_0_264, plain, (map(lam4(zero),cons(zero,X1))=cons(false,map(lam4(zero),X1)))).
+%
+%cnf(i_0_262, plain, (map(lam4(zero),cons(suc(X1),X2))=cons(false,map(lam4(zero),X2)))).
+%
+%cnf(i_0_263, plain, (map(lam4(suc(X1)),cons(zero,X2))=cons(true,map(lam4(suc(X1)),X2)))).
+%
+%cnf(i_0_106, plain, (aboveNat(zero,branch(X2,suc(X1),X4,X3))=branch(aboveNat(zero,X2),suc(X1),X4,X3))).
+%
+%cnf(i_0_115, plain, (belowNat(suc(X1),branch(X2,zero,X4,X3))=branch(X2,zero,X4,belowNat(suc(X1),X3)))).
+%
+%cnf(i_0_243, plain, (unionNat(app(app(uncurry_1(insertNat_0),X1),leaf),leaf)=app(app(uncurry_1(insertNat_0),X1),leaf))).
+%
+%cnf(i_0_139, negated_conjecture, ($answer(esk1_2(cons(X1,nil),nil))|validNat(app(app(uncurry_1(insertNat_0),X1),leaf))!=false)).
+%%
+%cnf(i_0_247, negated_conjecture, ($answer(esk1_2(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),X2))|validNat(unionNat(app(app(uncurry_1(insertNat_0),X1),leaf),foldr(uncurry_1(insertNat_0),leaf,X2)))!=false)).
+%
+%cnf(i_0_283, negated_conjecture, ($answer(esk1_2(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),nil))|validNat(app(app(uncurry_1(insertNat_0),X1),leaf))!=false)).
+%
+%cnf(i_0_77, plain, (opAnd(isLT(compareNat(X2,X1)),all(lam4(X1),X3))=all(lam4(X1),cons(X2,X3)))).
+%
+%cnf(i_0_292, plain, (all(lam4(zero),cons(zero,X1))=false)).
+%
+%cnf(i_0_290, plain, (all(lam4(zero),cons(suc(X1),X2))=false)).
+%%
+%cnf(i_0_291, plain, (all(lam4(suc(X1)),cons(zero,X2))=all(lam4(suc(X1)),X2))).
+%
+%cnf(i_0_155, plain, (cons(pair(X1,X2),opAppend(toList(X3),X4))=opAppend(toList(branch(leaf,X1,X2,X3)),X4))).
+%
+%cnf(i_0_249, plain, (map(fst_0,toList(app(app(uncurry_1(insertNat_0),X1),leaf)))=cons(app(fst_0,X1),nil))).
+%
+%cnf(i_0_252, negated_conjecture, ($answer(esk1_2(X1,toList(app(app(uncurry_1(insertNat_0),X2),leaf))))|validNat(unionNat(foldr(uncurry_1(insertNat_0),leaf,X1),app(app(uncurry_1(insertNat_0),X2),leaf)))!=false)).
+%
+%cnf(i_0_315, negated_conjecture, ($answer(esk1_2(nil,toList(app(app(uncurry_1(insertNat_0),X1),leaf))))|validNat(app(app(uncurry_1(insertNat_0),X1),leaf))!=false)).
+%%
+%cnf(i_0_253, negated_conjecture, ($answer(esk1_2(nil,toList(branch(leaf,app(fst_0,X1),X2,leaf))))|validNat(app(app(uncurry_1(insertNat_0),X1),leaf))!=false)).
+%
+%cnf(i_0_79, plain, (cons(branch(leaf,X1,X2,leaf),map(app(app(insertNat_0,X1),X2),X3))=map(app(app(insertNat_0,X1),X2),cons(leaf,X3)))).
+%
+%cnf(i_0_250, plain, (all(fst_0,toList(app(app(uncurry_1(insertNat_0),X1),leaf)))=opAnd(app(fst_0,X1),true))).
+%%
+%cnf(i_0_160, plain, (map(X1,toList(branch(leaf,X2,X3,leaf)))=cons(app(X1,pair(X2,X3)),nil))).
+%
+%cnf(i_0_161, plain, (all(X1,toList(branch(leaf,X2,X3,leaf)))=opAnd(app(X1,pair(X2,X3)),true))).
+%
+%cnf(i_0_84, plain, (all(lam5(zero),cons(X1,cons(zero,X2)))=opAnd(app(lam5(zero),X1),false))).
+%
+%cnf(i_0_293, plain, (all(lam4(zero),cons(X1,cons(zero,X2)))=opAnd(isLT(compareNat(X1,zero)),false))).
+%
+%cnf(i_0_254, negated_conjecture, ($answer(esk1_2(toList(branch(leaf,app(fst_0,X1),X2,leaf)),nil))|validNat(app(app(uncurry_1(insertNat_0),X1),leaf))!=false)).
+%%%%
+%cnf(i_0_80, plain, (opAnd(branch(leaf,X1,X2,leaf),all(app(app(insertNat_0,X1),X2),X3))=all(app(app(insertNat_0,X1),X2),cons(leaf,X3)))).
+%%
+%cnf(i_0_90, plain, (app(isLT(compareNat(app(fst_0,X2),X1)),snd(X2))=app(uncurry_1(lam4(X1)),X2))).
+%
+%cnf(i_0_97, plain, (foldr(lam5(zero),X1,cons(suc(X2),X3))=app(true,foldr(lam5(zero),X1,X3)))).
+%
+%cnf(i_0_98, plain, (foldr(lam5(suc(X1)),X2,cons(zero,X3))=app(false,foldr(lam5(suc(X1)),X2,X3)))).
+%
+%cnf(i_0_159, plain, (foldr(X1,X2,toList(branch(leaf,X3,X4,leaf)))=app(app(X1,pair(X3,X4)),X2))).
+%%%%%
+%cnf(i_0_244, plain, (validNat(app(app(uncurry_1(insertNat_0),X1),leaf))=validNat(branch(leaf,app(fst_0,X1),X2,leaf)))).
+%
+%cnf(i_0_140, negated_conjecture, ($answer(esk1_2(nil,cons(X1,nil)))|validNat(branch(leaf,app(fst_0,X1),false,leaf))!=false)).
+%
+%cnf(i_0_374, plain, (validNat(branch(leaf,app(fst_0,X1),false,leaf))=true)).
+%
+%cnf(i_0_140, negated_conjecture, ($answer(esk1_2(nil,cons(X1,nil)))|true!=false)).
+%
+%cnf(i_0_393, plain, (validNat(branch(leaf,X1,false,leaf))=true)).
+%
+%cnf(i_0_396, plain, (validNat(branch(leaf,X1,X2,leaf))=true)).
+%%%
+%cnf(i_0_139, negated_conjecture, ($answer(esk1_2(cons(X1,nil),nil))|true!=false)).
+%
+%cnf(i_0_283, negated_conjecture, ($answer(esk1_2(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),nil))|true!=false)).
+%
+%cnf(i_0_315, negated_conjecture, ($answer(esk1_2(nil,toList(app(app(uncurry_1(insertNat_0),X1),leaf))))|true!=false)).
+%%%
+%cnf(i_0_296, plain, (all(lam4(zero),cons(X1,cons(suc(X2),X3)))=opAnd(isLT(compareNat(X1,zero)),false))).
+%%
+%cnf(i_0_171, plain, (all(lam5(zero),cons(X1,cons(suc(X2),X3)))=all(lam5(zero),cons(X1,X3)))).
+%%
+%cnf(i_0_299, plain, (all(lam4(suc(X1)),cons(X2,cons(zero,X3)))=all(lam4(suc(X1)),cons(X2,X3)))).
+%%
+%cnf(i_0_284, negated_conjecture, ($answer(esk1_2(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),cons(X2,nil)))|validNat(unionNat(app(app(uncurry_1(insertNat_0),X1),leaf),app(app(uncurry_1(insertNat_0),X2),leaf)))!=false)).
+%
+%cnf(i_0_316, negated_conjecture, ($answer(esk1_2(cons(X1,nil),toList(app(app(uncurry_1(insertNat_0),X2),leaf))))|validNat(unionNat(app(app(uncurry_1(insertNat_0),X1),leaf),app(app(uncurry_1(insertNat_0),X2),leaf)))!=false)).
+%
+%cnf(i_0_189, negated_conjecture, ($answer(esk1_2(toList(branch(leaf,X1,X2,leaf)),cons(X3,nil)))|validNat(unionNat(branch(leaf,X1,X2,leaf),app(app(uncurry_1(insertNat_0),X3),leaf)))!=false)).
+%%
+%cnf(i_0_85, plain, (cons(app(uncurry_1(X1),X2),map(app(X1,app(fst_0,X2)),X3))=map(app(X1,app(fst_0,X2)),cons(snd(X2),X3)))).
+%
+%cnf(i_0_91, plain, (all(lam5(suc(X1)),cons(X2,cons(zero,X3)))=opAnd(app(lam5(suc(X1)),X2),false))).
+%%
+%cnf(i_0_100, plain, (app(isLT(compareNat(X3,X1)),foldr(lam4(X1),X2,X4))=foldr(lam4(X1),X2,cons(X3,X4)))).
+%
+%cnf(i_0_441, plain, (foldr(lam4(zero),X1,cons(zero,X2))=app(false,foldr(lam4(zero),X1,X2)))).
+%
+%cnf(i_0_439, plain, (foldr(lam4(zero),X2,cons(suc(X1),X3))=app(false,foldr(lam4(zero),X2,X3)))).
+%
+%cnf(i_0_440, plain, (foldr(lam4(suc(X1)),X2,cons(zero,X3))=app(true,foldr(lam4(suc(X1)),X2,X3)))).
+%
+%cnf(i_0_193, negated_conjecture, ($answer(esk1_2(cons(X1,nil),toList(branch(leaf,X2,X3,leaf))))|validNat(unionNat(app(app(uncurry_1(insertNat_0),X1),leaf),branch(leaf,X2,X3,leaf)))!=false)).
+%%%%
+%cnf(i_0_86, plain, (opAnd(app(uncurry_1(X1),X2),all(app(X1,app(fst_0,X2)),X3))=all(app(X1,app(fst_0,X2)),cons(snd(X2),X3)))).
+%
+%cnf(i_0_248, plain, (cons(pair(app(fst_0,X1),snd(X1)),X2)=opAppend(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),X2))).
+%
+%cnf(i_0_175, plain, (map(fst_0,cons(X1,cons(pair(X2,X3),X4)))=cons(app(fst_0,X1),cons(X2,map(fst_0,X4))))).
+%
+%cnf(i_0_179, plain, (all(fst_0,cons(X1,cons(pair(X2,X3),X4)))=opAnd(app(fst_0,X1),opAnd(X2,all(fst_0,X4))))).
+%%%
+%cnf(i_0_472, plain, (opAppend(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),nil)=toList(app(app(uncurry_1(insertNat_0),X1),leaf)))).
+%%%%%
+%cnf(i_0_92, plain, (cons(foldr(X1,X3,cons(X2,X4)),map(app(X1,X2),X5))=map(app(X1,X2),cons(foldr(X1,X3,X4),X5)))).
+%
+%cnf(i_0_473, plain, (map(fst_0,opAppend(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),X2))=map(fst_0,cons(X1,X2)))).
+%
+%cnf(i_0_307, plain, (toList(branch(branch(leaf,X1,X2,X3),X4,X5,X6))=toList(branch(leaf,X1,X2,branch(X3,X4,X5,X6))))).
+%
+%cnf(i_0_118, plain, (cons(app(lam5(X1),X2),map(lam5(suc(X1)),X3))=map(lam5(suc(X1)),cons(suc(X2),X3)))).
+%
+%cnf(i_0_550, plain, (map(lam5(suc(zero)),cons(suc(zero),X1))=cons(false,map(lam5(suc(zero)),X1)))).
+%
+%cnf(i_0_548, plain, (map(lam5(suc(zero)),cons(suc(suc(X1)),X2))=cons(true,map(lam5(suc(zero)),X2)))).
+%
+%cnf(i_0_474, plain, (all(fst_0,opAppend(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),X2))=all(fst_0,cons(X1,X2)))).
+%
+%cnf(i_0_549, plain, (map(lam5(suc(suc(X1))),cons(suc(zero),X2))=cons(false,map(lam5(suc(suc(X1))),X2)))).
+%
+%cnf(i_0_365, negated_conjecture, ($answer(esk1_2(toList(branch(leaf,X1,X2,leaf)),toList(app(app(uncurry_1(insertNat_0),X3),leaf))))|validNat(unionNat(branch(leaf,X1,X2,leaf),app(app(uncurry_1(insertNat_0),X3),leaf)))!=false)).
+%
+%cnf(i_0_568, negated_conjecture, ($answer(esk1_2(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),toList(app(app(uncurry_1(insertNat_0),X2),leaf))))|validNat(unionNat(app(app(uncurry_1(insertNat_0),X1),leaf),app(app(uncurry_1(insertNat_0),X2),leaf)))!=false)).
+%
+%cnf(i_0_368, negated_conjecture, ($answer(esk1_2(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),toList(branch(leaf,X2,X3,leaf))))|validNat(unionNat(app(app(uncurry_1(insertNat_0),X1),leaf),branch(leaf,X2,X3,leaf)))!=false)).
+%
+%cnf(i_0_93, plain, (opAnd(foldr(X1,X3,cons(X2,X4)),all(app(X1,X2),X5))=all(app(X1,X2),cons(foldr(X1,X3,X4),X5)))).
+%
+%cnf(i_0_177, plain, (map(fst_0,toList(branch(leaf,X1,X2,X3)))=cons(X1,map(fst_0,toList(X3))))).
+%
+%cnf(i_0_627, plain, (all(lam5(zero),map(fst_0,toList(branch(leaf,zero,X2,X1))))=false)).
+%
+%cnf(i_0_629, plain, (all(lam4(zero),map(fst_0,toList(branch(leaf,zero,X2,X1))))=false)).
+%
+%cnf(i_0_613, plain, (all(lam4(zero),map(fst_0,toList(branch(leaf,suc(X1),X3,X2))))=false)).
+%
+%cnf(i_0_619, plain, (all(lam5(suc(X1)),map(fst_0,toList(branch(leaf,zero,X3,X2))))=false)).
+%
+%cnf(i_0_181, plain, (all(fst_0,toList(branch(leaf,X1,X2,X3)))=opAnd(X1,all(fst_0,toList(X3))))).
+%
+%cnf(i_0_675, plain, (all(fst_0,toList(branch(leaf,false,X2,X1)))=false)).
+%
+%cnf(i_0_676, plain, (all(fst_0,toList(branch(leaf,true,X2,X1)))=all(fst_0,toList(X1)))).
+%
+%cnf(i_0_686, plain, (all(fst_0,cons(X1,toList(branch(leaf,false,X2,X3))))=opAnd(app(fst_0,X1),false))).
+%
+%cnf(i_0_688, plain, (all(fst_0,toList(branch(leaf,X1,X2,branch(leaf,false,X3,X4))))=opAnd(X1,false))).
+%
+%cnf(i_0_94, plain, (app(foldr(X1,X4,cons(X2,X5)),foldr(app(X1,X2),X3,X6))=foldr(app(X1,X2),X3,cons(foldr(X1,X4,X5),X6)))).
+%%
+%cnf(i_0_634, plain, (map(fst_0,toList(branch(leaf,app(fst_0,X1),X3,X2)))=map(fst_0,cons(X1,toList(X2))))).
+%
+%cnf(i_0_674, plain, (all(fst_0,toList(branch(leaf,app(fst_0,X1),X3,X2)))=all(fst_0,cons(X1,toList(X2))))).
+%
+%cnf(i_0_690, plain, (all(fst_0,cons(X1,toList(branch(leaf,true,X2,X3))))=all(fst_0,cons(X1,toList(X3))))).
+%
+%cnf(i_0_119, plain, (opAnd(app(lam5(X1),X2),all(lam5(suc(X1)),X3))=all(lam5(suc(X1)),cons(suc(X2),X3)))).
+%
+%cnf(i_0_775, plain, (all(lam5(suc(zero)),cons(suc(zero),X1))=false)).
+%
+%cnf(i_0_774, plain, (all(lam5(suc(suc(X1))),cons(suc(zero),X2))=false)).
+%
+%cnf(i_0_773, plain, (all(lam5(suc(zero)),cons(suc(suc(X1)),X2))=all(lam5(suc(zero)),X2))).
+%%%
+%cnf(i_0_95, plain, (foldr(X1,X2,cons(X3,cons(X4,X5)))=app(app(X1,X3),app(app(X1,X4),foldr(X1,X2,X5))))).
+%
+%cnf(i_0_780, plain, (all(lam5(suc(zero)),map(fst_0,toList(branch(leaf,suc(zero),X2,X1))))=false)).
+%
+%cnf(i_0_261, plain, (cons(isLT(compareNat(X1,X2)),map(lam4(suc(X2)),X3))=map(lam4(suc(X2)),cons(suc(X1),X3)))).
+%
+%cnf(i_0_873, plain, (map(lam4(suc(zero)),cons(suc(zero),X1))=cons(false,map(lam4(suc(zero)),X1)))).
+%
+%cnf(i_0_871, plain, (map(lam4(suc(zero)),cons(suc(suc(X1)),X2))=cons(false,map(lam4(suc(zero)),X2)))).
+%
+%cnf(i_0_872, plain, (map(lam4(suc(suc(X1))),cons(suc(zero),X2))=cons(true,map(lam4(suc(suc(X1))),X2)))).
+%
+%cnf(i_0_763, plain, (all(fst_0,toList(branch(leaf,X1,X2,X4)))=all(fst_0,toList(branch(leaf,X1,false,X4))))).
+%%%%%
+%cnf(i_0_101, plain, (app(branch(leaf,X1,X2,leaf),foldr(app(app(insertNat_0,X1),X2),X3,X4))=foldr(app(app(insertNat_0,X1),X2),X3,cons(leaf,X4)))).
+%
+%cnf(i_0_776, plain, (all(lam5(suc(zero)),cons(X1,cons(suc(zero),X2)))=opAnd(app(lam5(suc(zero)),X1),false))).
+%
+%cnf(i_0_289, plain, (opAnd(isLT(compareNat(X1,X2)),all(lam4(suc(X2)),X3))=all(lam4(suc(X2)),cons(suc(X1),X3)))).
+%
+%cnf(i_0_940, plain, (all(lam4(suc(zero)),cons(suc(zero),X1))=false)).
+%
+%cnf(i_0_938, plain, (all(lam4(suc(zero)),cons(suc(suc(X1)),X2))=false)).
+%
+%cnf(i_0_939, plain, (all(lam4(suc(suc(X1))),cons(suc(zero),X2))=all(lam4(suc(suc(X1))),X2))).
+%
+%cnf(i_0_946, plain, (all(lam4(suc(zero)),map(fst_0,toList(branch(leaf,suc(zero),X2,X1))))=false)).
+%
+%cnf(i_0_696, plain, (all(fst_0,toList(branch(app(app(uncurry_1(insertNat_0),X1),leaf),false,X2,X3)))=opAnd(app(fst_0,X1),false))).
+%%%%
+%cnf(i_0_102, plain, (foldr(app(X1,app(fst_0,X2)),X3,cons(snd(X2),X4))=app(app(uncurry_1(X1),X2),foldr(app(X1,app(fst_0,X2)),X3,X4)))).
+%
+%cnf(i_0_785, plain, (all(lam5(suc(suc(X1))),map(fst_0,toList(branch(leaf,suc(zero),X3,X2))))=false)).
+%
+%cnf(i_0_482, plain, (map(fst_0,cons(X1,toList(branch(leaf,X2,X3,leaf))))=cons(app(fst_0,X1),cons(X2,nil)))).
+%
+%cnf(i_0_489, plain, (all(fst_0,cons(X1,toList(branch(leaf,X2,X3,leaf))))=opAnd(app(fst_0,X1),opAnd(X2,true)))).
+%%
+%cnf(i_0_302, plain, (cons(pair(X1,X2),opAppend(opAppend(toList(X3),X4),X5))=opAppend(opAppend(toList(branch(leaf,X1,X2,X3)),X4),X5))).
+%
+%cnf(i_0_941, plain, (all(lam4(suc(zero)),cons(X1,cons(suc(zero),X2)))=opAnd(isLT(compareNat(X1,suc(zero))),false))).
+%%%%%
+%cnf(i_0_103, plain, (foldr(X1,X2,map(X3,cons(X4,X5)))=app(app(X1,app(X3,X4)),foldr(X1,X2,map(X3,X5))))).
+%
+%cnf(i_0_952, plain, (all(lam4(suc(zero)),map(fst_0,toList(branch(leaf,suc(suc(X1)),X3,X2))))=false)).
+%
+%cnf(i_0_308, plain, (cons(pair(X1,X2),cons(pair(X3,X4),X5))=opAppend(toList(branch(leaf,X1,X2,branch(leaf,X3,X4,leaf))),X5))).
+%
+%cnf(i_0_156, plain, (app(app(X1,pair(X3,X4)),foldr(X1,X2,toList(X5)))=foldr(X1,X2,toList(branch(leaf,X3,X4,X5))))).
+%
+%cnf(i_0_1161, plain, (foldr(fst_0,X3,toList(branch(leaf,X1,X2,X4)))=app(X1,foldr(fst_0,X3,toList(X4))))).
+%
+%cnf(i_0_1165, plain, (foldr(fst_0,X1,toList(app(app(uncurry_1(insertNat_0),X2),leaf)))=app(app(fst_0,X2),X1))).
+%%
+%cnf(i_0_134, plain, (validNat(branch(leaf,X1,X2,X3))=opAnd(validNat(X3),all(lam5(X1),map(fst_0,toList(X3)))))).
+%%%%
+%cnf(i_0_104, plain, (aboveNat_case1(not(isLT(compareNat(X1,X2))),suc(X1),suc(X2),X3,X4,X5)=aboveNat(suc(X1),branch(X3,suc(X2),X5,X4)))).
+%
+%cnf(i_0_1195, plain, (aboveNat(suc(zero),branch(X1,suc(zero),X3,X2))=aboveNat(suc(zero),X2))).
+%
+%cnf(i_0_1193, plain, (aboveNat(suc(suc(X1)),branch(X2,suc(zero),X4,X3))=aboveNat(suc(suc(X1)),X3))).
+%
+%cnf(i_0_194, plain, (cons(app(X1,X2),opAppend(opAppend(map(X1,X3),X4),X5))=opAppend(opAppend(map(X1,cons(X2,X3)),X4),X5))).
+%
+%cnf(i_0_205, plain, (cons(isLT(compareNat(X2,X1)),opAppend(map(lam4(X1),X3),X4))=opAppend(map(lam4(X1),cons(X2,X3)),X4))).
+%%%%
+%cnf(i_0_1182, plain, (validNat(branch(leaf,suc(X1),X2,branch(leaf,zero,X3,X4)))=opAnd(validNat(branch(leaf,zero,X3,X4)),false))).
+%%%
+%cnf(i_0_108, plain, (cons(app(X1,X2),cons(app(X1,X3),nil))=map(X1,cons(X2,cons(X3,nil))))).
+%
+%cnf(i_0_1300, plain, (map(lam5(zero),cons(X1,cons(zero,nil)))=cons(app(lam5(zero),X1),cons(false,nil)))).
+%
+%cnf(i_0_1298, plain, (map(lam5(zero),cons(X1,cons(suc(X2),nil)))=cons(app(lam5(zero),X1),cons(true,nil)))).
+%
+%cnf(i_0_1299, plain, (map(lam5(suc(X1)),cons(X2,cons(zero,nil)))=cons(app(lam5(suc(X1)),X2),cons(false,nil)))).
+%
+%cnf(i_0_653, plain, (map(fst_0,toList(branch(leaf,X1,X2,branch(leaf,X3,X4,leaf))))=cons(X1,cons(X3,nil)))).
+%
+%cnf(i_0_683, plain, (all(fst_0,toList(branch(leaf,X1,X2,branch(leaf,X3,X4,leaf))))=opAnd(X1,opAnd(X3,true)))).
+%
+%cnf(i_0_333, plain, (cons(app(X1,pair(app(fst_0,X2),snd(X2))),nil)=map(X1,toList(app(app(uncurry_1(insertNat_0),X2),leaf))))).
+%
+%cnf(i_0_1400, plain, (map(uncurry_1(X1),toList(app(app(uncurry_1(insertNat_0),X2),leaf)))=cons(app(uncurry_1(X1),X2),nil))).
+%
+%cnf(i_0_336, plain, (opAnd(app(X1,pair(app(fst_0,X2),snd(X2))),true)=all(X1,toList(app(app(uncurry_1(insertNat_0),X2),leaf))))).
+%
+%cnf(i_0_1410, plain, (all(uncurry_1(X1),toList(app(app(uncurry_1(insertNat_0),X2),leaf)))=opAnd(app(uncurry_1(X1),X2),true))).
+%%
+%cnf(i_0_111, plain, (opAnd(app(X1,X2),opAnd(app(X1,X3),true))=all(X1,cons(X2,cons(X3,nil))))).
+%
+%cnf(i_0_947, plain, (all(lam4(suc(zero)),cons(X1,cons(suc(suc(X2)),X3)))=opAnd(isLT(compareNat(X1,suc(zero))),false))).
+%%%
+%cnf(i_0_1194, plain, (aboveNat(suc(zero),branch(X2,suc(suc(X1)),X4,X3))=branch(aboveNat(suc(zero),X2),suc(suc(X1)),X4,X3))).
+%
+%cnf(i_0_259, plain, (cons(isLT(compareNat(X1,X2)),cons(isLT(compareNat(X3,X2)),nil))=map(lam4(X2),cons(X1,cons(X3,nil))))).
+%
+%cnf(i_0_1481, plain, (map(lam4(zero),cons(X1,cons(zero,nil)))=cons(isLT(compareNat(X1,zero)),cons(false,nil)))).
+%
+%cnf(i_0_1479, plain, (map(lam4(zero),cons(X1,cons(suc(X2),nil)))=cons(isLT(compareNat(X1,zero)),cons(false,nil)))).
+%%%
+%cnf(i_0_1480, plain, (map(lam4(suc(X2)),cons(X1,cons(zero,nil)))=cons(isLT(compareNat(X1,suc(X2))),cons(true,nil)))).
+%
+%cnf(i_0_112, plain, (cons(app(app(X1,X2),X3),map(uncurry_1(X1),X4))=map(uncurry_1(X1),cons(pair(X2,X3),X4)))).
+%
+%cnf(i_0_1543, plain, (map(uncurry_1(lam5(zero)),cons(pair(zero,X1),X2))=cons(app(false,X1),map(uncurry_1(lam5(zero)),X2)))).
+%
+%cnf(i_0_287, plain, (opAnd(isLT(compareNat(X1,X2)),opAnd(isLT(compareNat(X3,X2)),true))=all(lam4(X2),cons(X1,cons(X3,nil))))).
+%
+%cnf(i_0_410, plain, (all(lam5(zero),cons(X1,cons(X2,cons(suc(X3),X4))))=all(lam5(zero),cons(X1,cons(X2,X4))))).
+%
+%cnf(i_0_786, plain, (all(lam5(suc(zero)),cons(X1,cons(suc(suc(X2)),X3)))=all(lam5(suc(zero)),cons(X1,X3)))).
+%%
+%cnf(i_0_1535, plain, (map(uncurry_1(X1),opAppend(toList(app(app(uncurry_1(insertNat_0),X2),leaf)),X3))=map(uncurry_1(X1),cons(X2,X3)))).
+%%
+%cnf(i_0_1571, plain, (cons(app(false,X1),map(uncurry_1(lam5(zero)),toList(X2)))=map(uncurry_1(lam5(zero)),toList(branch(leaf,zero,X1,X2))))).
+%
+%cnf(i_0_1541, plain, (map(uncurry_1(lam5(zero)),cons(pair(suc(X1),X2),X3))=cons(app(true,X2),map(uncurry_1(lam5(zero)),X3)))).
+%
+%cnf(i_0_1542, plain, (map(uncurry_1(lam5(suc(X1))),cons(pair(zero,X2),X3))=cons(app(false,X2),map(uncurry_1(lam5(suc(X1))),X3)))).
+%
+%cnf(i_0_113, plain, (opAnd(app(app(X1,X2),X3),all(uncurry_1(X1),X4))=all(uncurry_1(X1),cons(pair(X2,X3),X4)))).
+%
+%cnf(i_0_1660, plain, (all(uncurry_1(lam5(zero)),cons(pair(zero,X1),X2))=opAnd(app(false,X1),all(uncurry_1(lam5(zero)),X2)))).
+%%%%
+%cnf(i_0_1530, plain, (cons(app(app(X1,X2),X3),map(uncurry_1(X1),toList(X4)))=map(uncurry_1(X1),toList(branch(leaf,X2,X3,X4))))).
+%
+%cnf(i_0_1652, plain, (all(uncurry_1(X1),opAppend(toList(app(app(uncurry_1(insertNat_0),X2),leaf)),X3))=all(uncurry_1(X1),cons(X2,X3)))).
+%%
+%cnf(i_0_1685, plain, (opAnd(app(false,X1),all(uncurry_1(lam5(zero)),toList(X2)))=all(uncurry_1(lam5(zero)),toList(branch(leaf,zero,X1,X2))))).
+%
+%cnf(i_0_1658, plain, (all(uncurry_1(lam5(zero)),cons(pair(suc(X1),X2),X3))=opAnd(app(true,X2),all(uncurry_1(lam5(zero)),X3)))).
+%
+%cnf(i_0_1659, plain, (all(uncurry_1(lam5(suc(X1))),cons(pair(zero,X2),X3))=opAnd(app(false,X2),all(uncurry_1(lam5(suc(X1))),X3)))).
+%
+%cnf(i_0_114, plain, (foldr(uncurry_1(X1),X2,cons(pair(X3,X4),X5))=app(app(app(X1,X3),X4),foldr(uncurry_1(X1),X2,X5)))).
+%
+%cnf(i_0_1785, negated_conjecture, ($answer(esk1_2(nil,cons(pair(X1,X2),X3)))|validNat(app(app(app(insertNat_0,X1),X2),foldr(uncurry_1(insertNat_0),leaf,X3)))!=false)).
+%%
+%cnf(i_0_1784, negated_conjecture, ($answer(esk1_2(cons(pair(X1,X2),X3),nil))|validNat(unionNat(app(app(app(insertNat_0,X1),X2),foldr(uncurry_1(insertNat_0),leaf,X3)),leaf))!=false)).
+%%
+%cnf(i_0_1827, negated_conjecture, ($answer(esk1_2(nil,cons(pair(X1,X2),cons(X3,nil))))|validNat(app(app(app(insertNat_0,X1),X2),app(app(uncurry_1(insertNat_0),X3),leaf)))!=false)).
+%
+%cnf(i_0_1832, negated_conjecture, ($answer(esk1_2(nil,opAppend(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),X2)))|validNat(foldr(uncurry_1(insertNat_0),leaf,cons(X1,X2)))!=false)).
+%%%%%
+%cnf(i_0_120, plain, (foldr(lam5(suc(X1)),X2,cons(suc(X3),X4))=app(app(lam5(X1),X3),foldr(lam5(suc(X1)),X2,X4)))).
+%
+%cnf(i_0_1904, plain, (foldr(lam5(suc(suc(X1))),X2,cons(suc(zero),X3))=app(false,foldr(lam5(suc(suc(X1))),X2,X3)))).
+%%
+%cnf(i_0_1783, negated_conjecture, ($answer(esk1_2(cons(pair(X1,X2),X3),X4))|validNat(unionNat(app(app(app(insertNat_0,X1),X2),foldr(uncurry_1(insertNat_0),leaf,X3)),foldr(uncurry_1(insertNat_0),leaf,X4)))!=false)).
+%%%%
+%cnf(i_0_1839, negated_conjecture, ($answer(esk1_2(opAppend(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),X2),nil))|validNat(unionNat(foldr(uncurry_1(insertNat_0),leaf,cons(X1,X2)),leaf))!=false)).
+%%%%
+%cnf(i_0_121, plain, (belowNat_case1(not(app(lam5(X1),X2)),suc(X2),suc(X1),X3,X4,X5)=belowNat(suc(X2),branch(X3,suc(X1),X5,X4)))).
+%
+%cnf(i_0_1953, plain, (belowNat(suc(zero),branch(X1,suc(zero),X3,X2))=belowNat(suc(zero),X1))).
+%
+%cnf(i_0_1952, plain, (belowNat(suc(zero),branch(X2,suc(suc(X1)),X4,X3))=belowNat(suc(zero),X2))).
+%%
+%cnf(i_0_1789, negated_conjecture, ($answer(esk1_2(X1,cons(pair(X2,X3),X4)))|validNat(unionNat(foldr(uncurry_1(insertNat_0),leaf,X1),app(app(app(insertNat_0,X2),X3),foldr(uncurry_1(insertNat_0),leaf,X4))))!=false)).
+%%%
+%cnf(i_0_1924, negated_conjecture, ($answer(esk1_2(opAppend(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),X2),X3))|validNat(unionNat(foldr(uncurry_1(insertNat_0),leaf,cons(X1,X2)),foldr(uncurry_1(insertNat_0),leaf,X3)))!=false)).
+%%%%
+%cnf(i_0_122, plain, (insertNat_case1(isLT(compareNat(X1,X2)),suc(X1),suc(X2),X3,X4,X5,X6)=app(app(app(insertNat_0,suc(X1)),X5),branch(X3,suc(X2),X6,X4)))).
+%%%%
+%cnf(i_0_1834, negated_conjecture, ($answer(esk1_2(cons(pair(X1,X2),cons(X3,nil)),nil))|validNat(unionNat(app(app(app(insertNat_0,X1),X2),app(app(uncurry_1(insertNat_0),X3),leaf)),leaf))!=false)).
+%
+%cnf(i_0_1951, plain, (belowNat(suc(suc(X1)),branch(X2,suc(zero),X4,X3))=branch(X2,suc(zero),X4,belowNat(suc(suc(X1)),X3)))).
+%%
+%cnf(i_0_1964, negated_conjecture, ($answer(esk1_2(X1,opAppend(toList(app(app(uncurry_1(insertNat_0),X2),leaf)),X3)))|validNat(unionNat(foldr(uncurry_1(insertNat_0),leaf,X1),foldr(uncurry_1(insertNat_0),leaf,cons(X2,X3))))!=false)).
+%%%%
+%cnf(i_0_123, plain, (branch(X2,zero,X5,app(app(app(insertNat_0,suc(X1)),X4),X3))=app(app(app(insertNat_0,suc(X1)),X4),branch(X2,zero,X5,X3)))).
+%
+%cnf(i_0_1178, plain, (validNat(branch(leaf,X1,X2,branch(leaf,X3,X4,leaf)))=opAnd(app(lam5(X1),X3),true))).
+%
+%cnf(i_0_2079, plain, (validNat(branch(leaf,zero,X1,branch(leaf,zero,X2,leaf)))=false)).
+%
+%cnf(i_0_2077, plain, (validNat(branch(leaf,zero,X1,branch(leaf,suc(X2),X3,leaf)))=true)).
+%%
+%cnf(i_0_2081, plain, (validNat(branch(branch(leaf,zero,X1,branch(leaf,zero,X2,leaf)),X3,X4,X5))=false)).
+%
+%cnf(i_0_2083, plain, (validNat(branch(leaf,X1,X2,branch(leaf,zero,X3,branch(leaf,zero,X4,leaf))))=false)).
+%%%
+%cnf(i_0_1843, negated_conjecture, ($answer(esk1_2(nil,opAppend(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),cons(X2,nil))))|validNat(app(app(uncurry_1(insertNat_0),X1),app(app(uncurry_1(insertNat_0),X2),leaf)))!=false)).
+%%
+%cnf(i_0_124, plain, (branch(app(app(app(insertNat_0,zero),X4),X2),suc(X1),X5,X3)=app(app(app(insertNat_0,zero),X4),branch(X2,suc(X1),X5,X3)))).
+%
+%cnf(i_0_2080, plain, (validNat(branch(leaf,X1,X2,app(app(uncurry_1(insertNat_0),X3),leaf)))=validNat(branch(leaf,X1,false,branch(leaf,app(fst_0,X3),false,leaf))))).
+%
+%cnf(i_0_1828, negated_conjecture, ($answer(esk1_2(nil,toList(branch(leaf,X1,X2,branch(leaf,X3,X4,leaf)))))|validNat(app(app(app(insertNat_0,X1),X2),branch(leaf,X3,X4,leaf)))!=false)).
+%%
+%cnf(i_0_1647, plain, (opAnd(app(app(X1,X2),X3),all(uncurry_1(X1),toList(X4)))=all(uncurry_1(X1),toList(branch(leaf,X2,X3,X4))))).
+%%
+%cnf(i_0_1186, plain, (validNat(branch(leaf,X1,X2,branch(leaf,X3,X4,leaf)))=validNat(branch(leaf,X1,false,branch(leaf,X3,false,leaf))))).
+%%
+%cnf(i_0_2112, negated_conjecture, ($answer(esk1_2(nil,toList(branch(app(app(uncurry_1(insertNat_0),X1),leaf),X2,X3,leaf))))|validNat(app(app(uncurry_1(insertNat_0),X1),branch(leaf,X2,X3,leaf)))!=false)).
+%
+%cnf(i_0_1851, negated_conjecture, ($answer(esk1_2(nil,opAppend(toList(app(app(uncurry_1(insertNat_0),app(X1,X2)),leaf)),map(X1,X3))))|validNat(foldr(uncurry_1(insertNat_0),leaf,map(X1,cons(X2,X3))))!=false)).
+%
+%cnf(i_0_2251, negated_conjecture, ($answer(esk1_2(nil,toList(app(app(uncurry_1(insertNat_0),app(X1,X2)),leaf))))|validNat(app(app(uncurry_1(insertNat_0),app(X1,X2)),leaf))!=false)).
+%
+%cnf(i_0_125, plain, (branch(X1,zero,X4,app(app(app(insertNat_0,zero),X3),X2))=app(app(app(insertNat_0,zero),X3),branch(X1,zero,X4,X2)))).
+%%
+%cnf(i_0_2253, negated_conjecture, ($answer(esk1_2(nil,toList(app(app(uncurry_1(insertNat_0),true),leaf))))|validNat(app(app(uncurry_1(insertNat_0),true),leaf))!=false)).
+%
+%cnf(i_0_2254, negated_conjecture, ($answer(esk1_2(nil,toList(app(app(uncurry_1(insertNat_0),false),leaf))))|validNat(app(app(uncurry_1(insertNat_0),false),leaf))!=false)).
+%%%
+%cnf(i_0_2292, plain, (belowNat(zero,app(app(app(insertNat_0,zero),X3),branch(X1,zero,X2,X4)))=belowNat(zero,X1))).
+%%
+%cnf(i_0_2256, negated_conjecture, ($answer(esk1_2(nil,toList(app(app(uncurry_1(insertNat_0),isLT(compareNat(X2,X1))),leaf))))|validNat(app(app(uncurry_1(insertNat_0),isLT(compareNat(X2,X1))),leaf))!=false)).
+%%%
+%cnf(i_0_126, plain, (unionNat(unionNat(branch(X1,X2,X7,X8),branch(X3,X4,X5,X6)),leaf)=unionNat(branch(X1,X2,X7,X8),branch(X3,X4,X5,X6)))).
+%%%%%%
+%cnf(i_0_2056, plain, (belowNat(zero,app(app(app(insertNat_0,suc(X3)),X4),branch(X1,zero,X2,X5)))=belowNat(zero,X1))).
+%%%%%
+%cnf(i_0_127, plain, (branch(unionNat(X1,belowNat(X2,unionNat(branch(X3,X4,X9,X10),branch(X5,X6,X7,X8)))),X2,X11,unionNat(X12,aboveNat(X2,unionNat(branch(X3,X4,X9,X10),branch(X5,X6,X7,X8)))))=unionNat(branch(X1,X2,X11,X12),unionNat(branch(X3,X4,X9,X10),branch(X5,X6,X7,X8))))).
+%%
+%cnf(i_0_692, plain, (all(fst_0,toList(branch(leaf,X1,X2,branch(leaf,true,X3,X4))))=all(fst_0,toList(branch(leaf,X1,false,X4))))).
+%
+%cnf(i_0_2076, plain, (validNat(branch(leaf,suc(X1),X2,branch(leaf,suc(X3),X4,leaf)))=validNat(branch(leaf,X1,false,branch(leaf,X3,false,leaf))))).
+%
+%cnf(i_0_413, plain, (all(lam4(suc(X1)),cons(X2,cons(X3,cons(zero,X4))))=all(lam4(suc(X1)),cons(X2,cons(X3,X4))))).
+%%%%%%
+%cnf(i_0_2261, negated_conjecture, ($answer(esk1_2(nil,toList(app(app(uncurry_1(insertNat_0),branch(leaf,X1,X2,leaf)),leaf))))|validNat(app(app(uncurry_1(insertNat_0),branch(leaf,X1,X2,leaf)),leaf))!=false)).
+%
+%cnf(i_0_128, plain, (branch(unionNat(X1,belowNat(X2,branch(X3,X4,X5,X6))),X2,X7,aboveNat(X2,branch(X3,X4,X5,X6)))=unionNat(branch(X1,X2,X7,leaf),branch(X3,X4,X5,X6)))).
+%
+%cnf(i_0_2082, plain, (validNat(branch(X1,X2,X3,branch(leaf,zero,X4,branch(leaf,zero,X5,leaf))))=opAnd(validNat(X1),false))).
+%
+%cnf(i_0_953, plain, (all(lam4(suc(suc(X1))),cons(X2,cons(suc(zero),X3)))=all(lam4(suc(suc(X1))),cons(X2,X3)))).
+%%
+%cnf(i_0_1561, plain, (map(uncurry_1(X1),cons(pair(X2,foldr(X1,X3,X4)),X5))=cons(foldr(X1,X3,cons(X2,X4)),map(uncurry_1(X1),X5)))).
+%
+%cnf(i_0_1678, plain, (all(uncurry_1(X1),cons(pair(X2,foldr(X1,X3,X4)),X5))=opAnd(foldr(X1,X3,cons(X2,X4)),all(uncurry_1(X1),X5)))).
+%%%%
+%cnf(i_0_2267, negated_conjecture, ($answer(esk1_2(nil,toList(app(app(uncurry_1(insertNat_0),foldr(X1,X3,cons(X2,X4))),leaf))))|validNat(app(app(uncurry_1(insertNat_0),foldr(X1,X3,cons(X2,X4))),leaf))!=false)).
+%%
+%cnf(i_0_129, plain, (branch(belowNat(X1,branch(X2,X3,X4,X5)),X1,X6,unionNat(X7,aboveNat(X1,branch(X2,X3,X4,X5))))=unionNat(branch(leaf,X1,X6,X7),branch(X2,X3,X4,X5)))).
+%
+%cnf(i_0_164, plain, (cons(app(lam5(zero),X1),cons(false,map(lam5(zero),X2)))=map(lam5(zero),cons(X1,cons(zero,X2))))).
+%
+%cnf(i_0_331, plain, (cons(app(X1,X2),cons(app(X1,pair(X3,X4)),nil))=map(X1,cons(X2,toList(branch(leaf,X3,X4,leaf)))))).
+%
+%cnf(i_0_335, plain, (opAnd(app(X1,X2),opAnd(app(X1,pair(X3,X4)),true))=all(X1,cons(X2,toList(branch(leaf,X3,X4,leaf)))))).
+%
+%cnf(i_0_781, plain, (all(lam5(suc(suc(X1))),cons(X2,cons(suc(zero),X3)))=opAnd(app(lam5(suc(suc(X1))),X2),false))).
+%%
+%cnf(i_0_265, plain, (cons(isLT(compareNat(X1,zero)),cons(false,map(lam4(zero),X2)))=map(lam4(zero),cons(X1,cons(zero,X2))))).
+%
+%cnf(i_0_2005, negated_conjecture, ($answer(esk1_2(opAppend(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),cons(X2,nil)),nil))|validNat(unionNat(app(app(uncurry_1(insertNat_0),X1),app(app(uncurry_1(insertNat_0),X2),leaf)),leaf))!=false)).
+%%%%
+%cnf(i_0_131, plain, (validNat(branch(branch(X1,X2,X3,X4),X5,X6,X7))=opAnd(validNat(branch(X1,X2,false,X4)),opAnd(validNat(X7),opAnd(all(lam4(X5),map(fst_0,toList(branch(X1,X2,X3,X4)))),all(lam5(X5),map(fst_0,toList(X7)))))))).
+%%%
+%cnf(i_0_1708, plain, (map(uncurry_1(fst_0),toList(branch(leaf,pair(X1,X2),X3,X4)))=cons(app(X1,X3),map(uncurry_1(fst_0),toList(X4))))).
+%
+%cnf(i_0_1726, plain, (map(uncurry_1(X1),toList(branch(leaf,app(fst_0,X2),snd(X2),X3)))=map(uncurry_1(X1),cons(X2,toList(X3))))).
+%
+%cnf(i_0_2154, plain, (all(uncurry_1(fst_0),toList(branch(leaf,pair(X1,X2),X3,X4)))=opAnd(app(X1,X3),all(uncurry_1(fst_0),toList(X4))))).
+%%%%
+%cnf(i_0_1970, negated_conjecture, ($answer(esk1_2(opAppend(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),X2),cons(X3,nil)))|validNat(unionNat(foldr(uncurry_1(insertNat_0),leaf,cons(X1,X2)),app(app(uncurry_1(insertNat_0),X3),leaf)))!=false)).
+%%
+%cnf(i_0_132, plain, (validNat(branch(X1,X2,X3,branch(X4,X5,X6,X7)))=opAnd(validNat(X1),opAnd(validNat(branch(X4,X5,false,X7)),opAnd(all(lam4(X2),map(fst_0,toList(X1))),all(lam5(X2),map(fst_0,toList(branch(X4,X5,X6,X7))))))))).
+%%%
+%cnf(i_0_2176, plain, (all(uncurry_1(X1),toList(branch(leaf,app(fst_0,X2),snd(X2),X3)))=all(uncurry_1(X1),cons(X2,toList(X3))))).
+%
+%cnf(i_0_364, negated_conjecture, ($answer(esk1_2(toList(branch(leaf,X1,X2,leaf)),toList(branch(leaf,X3,X4,leaf))))|validNat(unionNat(branch(leaf,X1,X2,leaf),branch(leaf,X3,X4,leaf)))!=false)).
+%%%
+%cnf(i_0_2034, negated_conjecture, ($answer(esk1_2(cons(X1,nil),opAppend(toList(app(app(uncurry_1(insertNat_0),X2),leaf)),X3)))|validNat(unionNat(app(app(uncurry_1(insertNat_0),X1),leaf),foldr(uncurry_1(insertNat_0),leaf,cons(X2,X3))))!=false)).
+%%%%
+%cnf(i_0_133, plain, (validNat(branch(X1,X2,X3,leaf))=opAnd(validNat(X1),opAnd(all(lam4(X2),map(fst_0,toList(X1))),true)))).
+%%%%%%
+%cnf(i_0_309, plain, (map(fst_0,cons(X1,toList(app(app(uncurry_1(insertNat_0),X2),leaf))))=cons(app(fst_0,X1),cons(app(fst_0,X2),nil)))).
+%%%%%%
+%cnf(i_0_325, plain, (all(fst_0,cons(X1,toList(app(app(uncurry_1(insertNat_0),X2),leaf))))=opAnd(app(fst_0,X1),opAnd(app(fst_0,X2),true)))).
+%
+%cnf(i_0_143, plain, (foldr(X1,X2,cons(X3,cons(X4,nil)))=app(app(X1,X3),app(app(X1,X4),X2)))).
+%
+%cnf(i_0_3068, negated_conjecture, ($answer(esk1_2(nil,cons(X1,cons(X2,nil))))|validNat(app(app(uncurry_1(insertNat_0),X1),app(app(uncurry_1(insertNat_0),X2),leaf)))!=false)).
+%
+%cnf(i_0_3067, negated_conjecture, ($answer(esk1_2(cons(X1,cons(X2,nil)),nil))|validNat(unionNat(app(app(uncurry_1(insertNat_0),X1),app(app(uncurry_1(insertNat_0),X2),leaf)),leaf))!=false)).
+%
+%cnf(i_0_3157, negated_conjecture, ($answer(esk1_2(nil,cons(X1,toList(branch(leaf,X2,X3,leaf)))))|validNat(app(app(uncurry_1(insertNat_0),X1),branch(leaf,X2,X3,leaf)))!=false)).
+%
+%cnf(i_0_3060, plain, (foldr(X1,foldr(X1,X2,X5),cons(X3,cons(X4,nil)))=foldr(X1,X2,cons(X3,cons(X4,X5))))).
+%
+%cnf(i_0_3161, negated_conjecture, ($answer(esk1_2(nil,cons(X1,toList(app(app(uncurry_1(insertNat_0),X2),leaf)))))|validNat(app(app(uncurry_1(insertNat_0),X1),app(app(uncurry_1(insertNat_0),X2),leaf)))!=false)).
+%
+%cnf(i_0_3066, negated_conjecture, ($answer(esk1_2(cons(X1,cons(X2,nil)),X3))|validNat(unionNat(app(app(uncurry_1(insertNat_0),X1),app(app(uncurry_1(insertNat_0),X2),leaf)),foldr(uncurry_1(insertNat_0),leaf,X3)))!=false)).
+%%
+%cnf(i_0_3074, negated_conjecture, ($answer(esk1_2(X1,cons(X2,cons(X3,nil))))|validNat(unionNat(foldr(uncurry_1(insertNat_0),leaf,X1),app(app(uncurry_1(insertNat_0),X2),app(app(uncurry_1(insertNat_0),X3),leaf))))!=false)).
+%
+%cnf(i_0_137, plain, (validNat(unionNat(branch(X1,X2,X7,X8),branch(X3,X4,X5,X6)))=validNat(unionNat(branch(X1,X2,false,X8),branch(X3,X4,X5,X6))))).
+%%%%
+%cnf(i_0_3159, negated_conjecture, ($answer(esk1_2(cons(X1,toList(branch(leaf,X2,X3,leaf))),nil))|validNat(unionNat(app(app(uncurry_1(insertNat_0),X1),branch(leaf,X2,X3,leaf)),leaf))!=false)).
+%
+%cnf(i_0_3107, plain, (foldr(lam5(suc(X1)),X2,cons(X3,cons(zero,nil)))=app(app(lam5(suc(X1)),X3),app(false,X2)))).
+%
+%cnf(i_0_644, plain, (map(fst_0,toList(branch(leaf,X1,X2,X3)))=map(fst_0,toList(branch(leaf,X1,X4,X3))))).
+%
+%cnf(i_0_3273, negated_conjecture, ($answer(esk1_2(cons(X1,toList(app(app(uncurry_1(insertNat_0),X2),leaf))),nil))|validNat(unionNat(app(app(uncurry_1(insertNat_0),X1),app(app(uncurry_1(insertNat_0),X2),leaf)),leaf))!=false)).
+%%%%
+%cnf(i_0_144, plain, (branch(unionNat(X1,belowNat(zero,X2)),zero,X5,unionNat(X6,aboveNat(zero,X4)))=unionNat(branch(X1,zero,X5,X6),branch(X2,zero,X3,X4)))).
+%
+%cnf(i_0_3352, negated_conjecture, ($answer(esk1_2(toList(branch(leaf,zero,X1,leaf)),toList(branch(leaf,zero,X2,leaf))))|true!=false)).
+%%%%%
+%cnf(i_0_677, plain, (all(fst_0,toList(branch(leaf,X1,X2,X3)))=all(fst_0,toList(branch(leaf,X1,X4,X3))))).
+%%
+%cnf(i_0_2139, negated_conjecture, ($answer(esk1_2(nil,toList(branch(leaf,X1,X2,app(app(uncurry_1(insertNat_0),X3),leaf)))))|validNat(app(app(app(insertNat_0,X1),X2),app(app(uncurry_1(insertNat_0),X3),leaf)))!=false)).
+%
+%cnf(i_0_2713, negated_conjecture, ($answer(esk1_2(toList(branch(app(app(uncurry_1(insertNat_0),X1),leaf),X2,X3,leaf)),nil))|validNat(unionNat(app(app(uncurry_1(insertNat_0),X1),branch(leaf,X2,X3,leaf)),leaf))!=false)).
+%%
+%cnf(i_0_145, plain, (aboveNat(zero,unionNat(branch(X1,zero,X6,X7),branch(X2,X3,X4,X5)))=aboveNat(zero,unionNat(X7,aboveNat(zero,branch(X2,X3,X4,X5)))))).
+%%%
+%cnf(i_0_3248, negated_conjecture, ($answer(esk1_2(toList(branch(leaf,X1,X2,leaf)),toList(branch(leaf,X3,X4,leaf))))|validNat(unionNat(branch(leaf,X1,false,leaf),branch(leaf,X3,X4,leaf)))!=false)).
+%%
+%cnf(i_0_3471, negated_conjecture, ($answer(esk1_2(toList(branch(leaf,X1,X2,leaf)),toList(branch(leaf,X3,X4,leaf))))|validNat(unionNat(branch(leaf,X1,X5,leaf),branch(leaf,X3,X4,leaf)))!=false)).
+%%
+%cnf(i_0_1932, negated_conjecture, ($answer(esk1_2(opAppend(toList(app(app(uncurry_1(insertNat_0),app(X1,X2)),leaf)),map(X1,X3)),nil))|validNat(unionNat(foldr(uncurry_1(insertNat_0),leaf,map(X1,cons(X2,X3))),leaf))!=false)).
+%
+%cnf(i_0_3531, negated_conjecture, ($answer(esk1_2(toList(app(app(uncurry_1(insertNat_0),app(X1,X2)),leaf)),nil))|validNat(app(app(uncurry_1(insertNat_0),app(X1,X2)),leaf))!=false)).
+%%
+%cnf(i_0_3534, negated_conjecture, ($answer(esk1_2(toList(app(app(uncurry_1(insertNat_0),false),leaf)),nil))|validNat(app(app(uncurry_1(insertNat_0),false),leaf))!=false)).
+%
+%cnf(i_0_153, plain, (unionNat(branch(X1,zero,X5,X6),branch(X2,zero,false,X4))=unionNat(branch(X1,zero,X5,X6),branch(X2,zero,X3,X4)))).
+%%
+%cnf(i_0_3533, negated_conjecture, ($answer(esk1_2(toList(app(app(uncurry_1(insertNat_0),true),leaf)),nil))|validNat(app(app(uncurry_1(insertNat_0),true),leaf))!=false)).
+%%
+%cnf(i_0_3536, negated_conjecture, ($answer(esk1_2(toList(app(app(uncurry_1(insertNat_0),isLT(compareNat(X2,X1))),leaf)),nil))|validNat(app(app(uncurry_1(insertNat_0),isLT(compareNat(X2,X1))),leaf))!=false)).
+%%%%%%%
+%cnf(i_0_154, plain, (belowNat(zero,unionNat(branch(X1,zero,X6,X7),branch(X2,X3,X4,X5)))=belowNat(zero,unionNat(X1,belowNat(zero,branch(X2,X3,X4,X5)))))).
+%%%%%%%%%%%
+%cnf(i_0_173, plain, (branch(unionNat(X1,belowNat(zero,X2)),zero,X6,unionNat(X7,branch(aboveNat(zero,X2),suc(X3),X4,X5)))=unionNat(branch(X1,zero,X6,X7),branch(X2,suc(X3),X4,X5)))).
+%%%
+%cnf(i_0_2295, plain, (app(app(app(insertNat_0,zero),X3),branch(X1,zero,X2,leaf))=branch(X1,zero,X2,branch(leaf,zero,X3,leaf)))).
+%% SZS status Theorem
+% SZS answers Tuple [[nil, toList(branch(leaf,zero,X1,branch(leaf,zero,X2,leaf)))]|_]
+
+% Proof found!

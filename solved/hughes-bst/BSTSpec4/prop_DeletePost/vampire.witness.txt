@@ -1,0 +1,7 @@
+property:   prop_DeletePost
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec4.hs
+prover:     vampire
+witness:    prop_DeletePost (Suc _X0) [(Zero, _X1)] Zero
+input:      prop_DeletePost (Suc undefined) [(Zero, undefined)] Zero
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

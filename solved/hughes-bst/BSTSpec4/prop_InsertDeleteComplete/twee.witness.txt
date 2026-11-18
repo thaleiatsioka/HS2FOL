@@ -1,0 +1,7 @@
+property:   prop_InsertDeleteComplete
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec4.hs
+prover:     twee
+witness:    prop_InsertDeleteComplete Zero [(Suc _X, _Y)]
+input:      prop_InsertDeleteComplete Zero [(Suc undefined, undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

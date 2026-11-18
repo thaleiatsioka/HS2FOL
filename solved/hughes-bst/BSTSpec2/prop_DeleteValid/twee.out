@@ -1,0 +1,1586 @@
+Here is the input problem:
+  Axiom 1 (nil_1_1): nil_1 = leaf.
+  Axiom 2 (toList_1): toList(leaf) = nil.
+  Axiom 3 (isLT_1): isLT(lt) = true.
+  Axiom 4 (isLT_2): isLT(eq) = false.
+  Axiom 5 (isLT_3): isLT(gt) = false.
+  Axiom 6 (isGT_1): isGT(lt) = false.
+  Axiom 7 (isGT_2): isGT(eq) = false.
+  Axiom 8 (isGT_3): isGT(gt) = true.
+  Axiom 9 (validNat_1): validNat(leaf) = true.
+  Axiom 10 (map_1): map(X, nil) = nil.
+  Axiom 11 (keys_1): keys(X) = map(fst_0, toList(X)).
+  Axiom 12 (opAppend_1): opAppend(nil, X) = X.
+  Axiom 13 (all_1): all(X, nil) = true.
+  Axiom 14 (deleteNat_1): deleteNat(X, leaf) = leaf.
+  Axiom 15 (join_1): join(leaf, X) = X.
+  Axiom 16 (opAnd_2): opAnd(true, X) = X.
+  Axiom 17 (opAnd_1): opAnd(false, X) = false.
+  Axiom 18 (compareNat_1): compareNat(zero, zero) = eq.
+  Axiom 19 (app_insertNat_0_1): app(insertNat_0, X) = insertNat_1(X).
+  Axiom 20 (app_fst_0_1): app(fst_0, X) = fst(X).
+  Axiom 21 (snd_1): snd(pair(X, Y)) = Y.
+  Axiom 22 (fst_1): fst(pair(X, Y)) = X.
+  Axiom 23 (ltNat_1): ltNat(X, Y) = isLT(compareNat(X, Y)).
+  Axiom 24 (gtNat_1): gtNat(X, Y) = isGT(compareNat(X, Y)).
+  Axiom 25 (foldr_1): foldr(X, Y, nil) = Y.
+  Axiom 26 (compareNat_2): compareNat(zero, suc(X)) = lt.
+  Axiom 27 (compareNat_3): compareNat(suc(X), zero) = gt.
+  Axiom 28 (app_uncurry_1_1): app(uncurry_1(X), Y) = uncurry(X, Y).
+  Axiom 29 (app_insertNat_1_1): app(insertNat_1(X), Y) = insertNat_2(X, Y).
+  Axiom 30 (app_lam4_1): app(lam4(X), Y) = ltNat(Y, X).
+  Axiom 31 (app_lam5_1): app(lam5(X), Y) = gtNat(Y, X).
+  Axiom 32 (tree_1): tree(X) = foldr(uncurry_1(insertNat_0), nil_1, X).
+  Axiom 33 (prop_DeleteValid_1): prop_DeleteValid(X, Y) = validNat(deleteNat(X, tree(Y))).
+  Axiom 34 (opAppend_2): opAppend(cons(X, Y), Z) = cons(X, opAppend(Y, Z)).
+  Axiom 35 (compareNat_4): compareNat(suc(X), suc(Y)) = compareNat(X, Y).
+  Axiom 36 (app_insertNat_2_1): app(insertNat_2(X, Y), Z) = insertNat(X, Y, Z).
+  Axiom 37 (insertNat_1): insertNat(X, Y, leaf) = branch(leaf, X, Y, leaf).
+  Axiom 38 (deleteNat_case1_case1_2): deleteNat_case1_case1(false, X, Y, Z, W, V) = join(Z, W).
+  Axiom 39 (join_2): join(branch(X, Y, Z, W), leaf) = branch(X, Y, Z, W).
+  Axiom 40 (all_2): all(X, cons(Y, Z)) = opAnd(app(X, Y), all(X, Z)).
+  Axiom 41 (map_2): map(X, cons(Y, Z)) = cons(app(X, Y), map(X, Z)).
+  Axiom 42 (uncurry_1): uncurry(X, Y) = app(app(X, fst(Y)), snd(Y)).
+  Axiom 43 (deleteNat_case1_case1_1): deleteNat_case1_case1(true, X, Y, Z, W, V) = branch(Z, Y, V, deleteNat(X, W)).
+  Axiom 44 (deleteNat_case1_1): deleteNat_case1(true, X, Y, Z, W, V) = branch(deleteNat(X, Z), Y, V, W).
+  Axiom 45 (foldr_2): foldr(X, Y, cons(Z, W)) = app(app(X, Z), foldr(X, Y, W)).
+  Axiom 46 (insertNat_case1_2): insertNat_case1(false, X, Y, Z, W, V, U) = branch(Z, Y, U, insertNat(X, V, W)).
+  Axiom 47 (insertNat_case1_1): insertNat_case1(true, X, Y, Z, W, V, U) = branch(insertNat(X, V, Z), Y, U, W).
+  Axiom 48 (deleteNat_2): deleteNat(X, branch(Y, Z, W, V)) = deleteNat_case1(ltNat(X, Z), X, Z, Y, V, W).
+  Axiom 49 (deleteNat_case1_2): deleteNat_case1(false, X, Y, Z, W, V) = deleteNat_case1_case1(gtNat(X, Y), X, Y, Z, W, V).
+  Axiom 50 (toList_2): toList(branch(X, Y, Z, W)) = opAppend(toList(X), opAppend(cons(pair(Y, Z), nil), toList(W))).
+  Axiom 51 (insertNat_2): insertNat(X, Y, branch(Z, W, V, U)) = insertNat_case1(ltNat(X, W), X, W, Z, U, Y, V).
+  Axiom 52 (join_3): join(branch(X, Y, Z, W), branch(V, U, T, S)) = branch(X, Y, Z, branch(join(W, V), U, T, S)).
+  Axiom 53 (validNat_2): validNat(branch(X, Y, Z, W)) = opAnd(validNat(X), opAnd(validNat(W), opAnd(all(lam4(Y), keys(X)), all(lam5(Y), keys(W))))).
+  Axiom 54 (reflexivity): equals(X, X) = true.
+  Axiom 55 (prop_DeleteValid): equals(prop_DeleteValid(X, Y), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. leaf -> nil_1
+2. toList(nil_1) -> nil
+3. isLT(lt) -> true
+4. isLT(eq) -> false
+5. isLT(gt) -> false
+6. isGT(lt) -> false
+7. isGT(eq) -> false
+8. isGT(gt) -> true
+9. validNat(nil_1) -> true
+10. map(X, nil) -> nil
+11. map(fst_0, toList(X)) -> keys(X)
+12. opAppend(nil, X) -> X
+13. all(X, nil) -> true
+14. deleteNat(X, nil_1) -> nil_1
+15. join(nil_1, X) -> X
+16. opAnd(true, X) -> X
+17. opAnd(false, X) -> false
+18. compareNat(zero, zero) -> eq
+19. app(insertNat_0, X) -> insertNat_1(X)
+20. app(fst_0, X) -> fst(X)
+21. snd(pair(X, Y)) -> Y
+22. fst(pair(X, Y)) -> X
+23. isLT(compareNat(X, Y)) -> ltNat(X, Y)
+24. isGT(compareNat(X, Y)) -> gtNat(X, Y)
+25. foldr(X, Y, nil) -> Y
+26. compareNat(zero, suc(X)) -> lt
+27. compareNat(suc(X), zero) -> gt
+28. app(uncurry_1(X), Y) -> uncurry(X, Y)
+29. app(insertNat_1(X), Y) -> insertNat_2(X, Y)
+30. app(lam4(X), Y) -> ltNat(Y, X)
+31. app(lam5(X), Y) -> gtNat(Y, X)
+32. foldr(uncurry_1(insertNat_0), nil_1, X) -> tree(X)
+33. validNat(deleteNat(X, tree(Y))) -> prop_DeleteValid(X, Y)
+34. cons(X, opAppend(Y, Z)) -> opAppend(cons(X, Y), Z)
+35. compareNat(suc(X), suc(Y)) -> compareNat(X, Y)
+36. app(insertNat_2(X, Y), Z) -> insertNat(X, Y, Z)
+37. branch(nil_1, X, Y, nil_1) -> insertNat(X, Y, nil_1)
+38. deleteNat_case1_case1(false, X, Y, Z, W, V) -> join(Z, W)
+39. join(branch(X, Y, Z, W), nil_1) -> branch(X, Y, Z, W)
+40. opAnd(app(X, Y), all(X, Z)) -> all(X, cons(Y, Z))
+41. cons(app(X, Y), map(X, Z)) -> map(X, cons(Y, Z))
+42. app(app(X, fst(Y)), snd(Y)) -> uncurry(X, Y)
+43. branch(X, Y, Z, deleteNat(W, V)) -> deleteNat_case1_case1(true, W, Y, X, V, Z)
+44. branch(deleteNat(X, Y), Z, W, V) -> deleteNat_case1(true, X, Z, Y, V, W)
+45. app(app(X, Y), foldr(X, Z, W)) -> foldr(X, Z, cons(Y, W))
+46. branch(X, Y, Z, insertNat(W, V, U)) -> insertNat_case1(false, W, Y, X, U, V, Z)
+47. branch(insertNat(X, Y, Z), W, V, U) -> insertNat_case1(true, X, W, Z, U, Y, V)
+48. deleteNat_case1(ltNat(X, Y), X, Y, Z, W, V) -> deleteNat(X, branch(Z, Y, V, W))
+49. deleteNat_case1_case1(gtNat(X, Y), X, Y, Z, W, V) -> deleteNat_case1(false, X, Y, Z, W, V)
+50. opAppend(toList(X), opAppend(cons(pair(Y, Z), nil), toList(W))) -> toList(branch(X, Y, Z, W))
+51. insertNat_case1(ltNat(X, Y), X, Y, Z, W, V, U) -> insertNat(X, V, branch(Z, Y, U, W))
+52. branch(X, Y, Z, branch(join(W, V), U, T, S)) -> join(branch(X, Y, Z, W), branch(V, U, T, S))
+53. opAnd(validNat(X), opAnd(validNat(Y), opAnd(all(lam4(Z), keys(X)), all(lam5(Z), keys(Y))))) -> validNat(branch(X, Z, ?, Y))
+54. validNat(branch(X, Y, Z, W)) ~> validNat(branch(X, Y, ?, W))
+55. equals(X, X) -> true
+56. equals(prop_DeleteValid(X, Y), false) -> false
+57. keys(nil_1) -> nil
+58. tree(nil) -> nil_1
+59. ltNat(zero, zero) -> false
+60. gtNat(zero, zero) -> false
+61. prop_DeleteValid(X, nil) -> true
+62. ltNat(zero, suc(X)) -> true
+63. gtNat(zero, suc(X)) -> false
+64. ltNat(suc(X), zero) -> false
+65. gtNat(suc(X), zero) -> true
+66. equals(true, false) -> false
+67. opAppend(cons(X, nil), Y) -> cons(X, Y)
+68. ltNat(suc(X), suc(Y)) -> ltNat(X, Y)
+69. gtNat(suc(X), suc(Y)) -> gtNat(X, Y)
+70. insertNat_2(fst(X), snd(X)) -> uncurry(insertNat_0, X)
+71. app(app(X, Y), Z) -> uncurry(X, pair(Y, Z))
+72. opAnd(app(X, Y), true) -> all(X, cons(Y, nil))
+73. cons(app(X, Y), nil) -> map(X, cons(Y, nil))
+74. uncurry(insertNat_0, pair(X, Y)) -> insertNat_2(X, Y)
+75. validNat(insertNat(X, Y, nil_1)) ~> validNat(insertNat(X, ?, nil_1))
+76. uncurry(fst_0, pair(X, Y)) -> app(fst(X), Y)
+77. all(insertNat_0, cons(X, nil)) -> opAnd(insertNat_1(X), true)
+78. all(fst_0, cons(X, nil)) -> opAnd(fst(X), true)
+79. map(insertNat_0, cons(X, nil)) -> cons(insertNat_1(X), nil)
+80. map(fst_0, cons(X, nil)) -> cons(fst(X), nil)
+81. app(fst(fst(X)), snd(X)) -> uncurry(fst_0, X)
+82. insertNat(X, fst(Y), snd(Y)) -> uncurry(insertNat_1(X), Y)
+83. join(insertNat(X, Y, nil_1), nil_1) -> insertNat(X, Y, nil_1)
+84. uncurry(uncurry_1(insertNat_0), pair(X, tree(Y))) -> tree(cons(X, Y))
+85. foldr(X, Y, cons(Z, nil)) -> uncurry(X, pair(Z, Y))
+86. opAnd(insertNat_1(X), all(insertNat_0, Y)) -> all(insertNat_0, cons(X, Y))
+87. opAnd(fst(X), all(fst_0, Y)) -> all(fst_0, cons(X, Y))
+88. cons(fst(X), keys(Y)) -> map(fst_0, cons(X, toList(Y)))
+89. cons(insertNat_1(X), map(insertNat_0, Y)) -> map(insertNat_0, cons(X, Y))
+90. cons(fst(X), map(fst_0, Y)) -> map(fst_0, cons(X, Y))
+91. foldr(insertNat_0, X, cons(Y, Z)) -> insertNat_2(Y, foldr(insertNat_0, X, Z))
+92. uncurry(insertNat_1(X), pair(Y, Z)) -> insertNat(X, Y, Z)
+93. uncurry(uncurry_1(X), pair(Y, Z)) -> app(uncurry(X, Y), Z)
+94. uncurry(lam4(X), pair(Y, Z)) -> app(ltNat(Y, X), Z)
+95. uncurry(lam5(X), pair(Y, Z)) -> app(gtNat(Y, X), Z)
+96. insertNat(fst(X), snd(X), Y) -> app(uncurry(insertNat_0, X), Y)
+97. app(uncurry(insertNat_0, X), nil_1) -> tree(cons(X, nil))
+98. all(uncurry_1(X), cons(Y, nil)) -> opAnd(uncurry(X, Y), true)
+99. all(insertNat_1(X), cons(Y, nil)) -> opAnd(insertNat_2(X, Y), true)
+100. all(lam4(X), cons(Y, nil)) -> opAnd(ltNat(Y, X), true)
+101. all(lam5(X), cons(Y, nil)) -> opAnd(gtNat(Y, X), true)
+102. map(uncurry_1(X), cons(Y, nil)) -> cons(uncurry(X, Y), nil)
+103. map(insertNat_1(X), cons(Y, nil)) -> cons(insertNat_2(X, Y), nil)
+104. map(lam4(X), cons(Y, nil)) -> cons(ltNat(Y, X), nil)
+105. map(lam5(X), cons(Y, nil)) -> cons(gtNat(Y, X), nil)
+106. app(uncurry(X, fst(Y)), snd(Y)) -> uncurry(uncurry_1(X), Y)
+107. app(ltNat(fst(X), Y), snd(X)) -> uncurry(lam4(Y), X)
+108. app(gtNat(fst(X), Y), snd(X)) -> uncurry(lam5(Y), X)
+109. deleteNat_case1_case1(true, X, Y, Z, nil_1, W) -> branch(Z, Y, W, nil_1)
+110. deleteNat_case1(true, X, Y, nil_1, Z, W) -> branch(nil_1, Y, W, Z)
+111. app(uncurry(insertNat_0, X), tree(Y)) -> tree(cons(X, Y))
+112. tree(cons(pair(X, Y), nil)) -> insertNat(X, Y, nil_1)
+113. deleteNat_case1(false, zero, zero, X, Y, Z) -> join(X, Y)
+114. uncurry(X, pair(fst(Y), snd(Y))) -> uncurry(X, Y)
+115. app(fst(X), foldr(fst_0, Y, Z)) -> foldr(fst_0, Y, cons(X, Z))
+116. opAppend(cons(X, cons(Y, nil)), Z) -> cons(X, cons(Y, Z))
+117. opAppend(map(X, cons(Y, nil)), Z) -> cons(app(X, Y), Z)
+118. tree(cons(pair(X, Y), Z)) -> insertNat(X, Y, tree(Z))
+119. all(fst_0, cons(pair(X, Y), Z)) -> opAnd(X, all(fst_0, Z))
+120. map(fst_0, cons(pair(X, Y), Z)) -> cons(X, map(fst_0, Z))
+121. uncurry(insertNat_2(X, Y), pair(Z, W)) -> app(insertNat(X, Y, Z), W)
+122. validNat(insertNat(fst(X), ?, nil_1)) -> validNat(tree(cons(X, nil)))
+123. all(insertNat_2(X, Y), cons(Z, nil)) -> opAnd(insertNat(X, Y, Z), true)
+124. map(insertNat_2(X, Y), cons(Z, nil)) -> cons(insertNat(X, Y, Z), nil)
+125. app(uncurry(X, pair(Y, Z)), W) -> uncurry(app(X, Y), pair(Z, W))
+126. app(insertNat(X, Y, fst(Z)), snd(Z)) -> uncurry(insertNat_2(X, Y), Z)
+127. deleteNat_case1(false, zero, suc(X), Y, Z, W) -> join(Y, Z)
+128. deleteNat(zero, branch(X, zero, Y, Z)) -> join(X, Z)
+129. deleteNat(zero, insertNat(zero, X, nil_1)) -> nil_1
+130. opAnd(uncurry(X, pair(Y, Z)), true) -> all(app(X, Y), cons(Z, nil))
+131. cons(uncurry(X, pair(Y, Z)), nil) -> map(app(X, Y), cons(Z, nil))
+132. opAnd(uncurry(X, Y), all(uncurry_1(X), Z)) -> all(uncurry_1(X), cons(Y, Z))
+133. opAnd(insertNat_2(X, Y), all(insertNat_1(X), Z)) -> all(insertNat_1(X), cons(Y, Z))
+134. opAnd(ltNat(X, Y), all(lam4(Y), Z)) -> all(lam4(Y), cons(X, Z))
+135. all(lam4(zero), cons(zero, X)) -> false
+136. all(lam4(zero), cons(suc(X), Y)) -> false
+137. all(lam4(suc(X)), cons(zero, Y)) -> all(lam4(suc(X)), Y)
+138. opAnd(gtNat(X, Y), all(lam5(Y), Z)) -> all(lam5(Y), cons(X, Z))
+139. all(lam5(zero), cons(zero, X)) -> false
+140. all(lam5(suc(X)), cons(zero, Y)) -> false
+141. all(lam5(zero), cons(suc(X), Y)) -> all(lam5(zero), Y)
+142. cons(uncurry(X, Y), map(uncurry_1(X), Z)) -> map(uncurry_1(X), cons(Y, Z))
+143. cons(insertNat_2(X, Y), map(insertNat_1(X), Z)) -> map(insertNat_1(X), cons(Y, Z))
+144. cons(ltNat(X, Y), map(lam4(Y), Z)) -> map(lam4(Y), cons(X, Z))
+145. cons(false, map(lam4(zero), X)) -> map(lam4(zero), cons(zero, X))
+146. map(lam4(zero), cons(suc(X), Y)) -> map(lam4(zero), cons(zero, Y))
+147. cons(gtNat(X, Y), map(lam5(Y), Z)) -> map(lam5(Y), cons(X, Z))
+148. cons(false, map(lam5(zero), X)) -> map(lam5(zero), cons(zero, X))
+149. map(lam5(zero), cons(suc(X), Y)) -> cons(true, map(lam5(zero), Y))
+150. cons(true, map(lam4(suc(X)), Y)) -> map(lam4(suc(X)), cons(zero, Y))
+151. cons(false, map(lam5(suc(X)), Y)) -> map(lam5(suc(X)), cons(zero, Y))
+152. insertNat(X, Y, foldr(insertNat_1(X), Z, W)) -> foldr(insertNat_1(X), Z, cons(Y, W))
+153. toList(branch(nil_1, X, Y, Z)) -> cons(pair(X, Y), toList(Z))
+154. cons(pair(X, Y), nil) -> toList(insertNat(X, Y, nil_1))
+155. keys(insertNat(X, Y, nil_1)) -> cons(X, nil)
+156. keys(branch(nil_1, X, Y, Z)) -> cons(X, keys(Z))
+157. keys(tree(cons(X, nil))) -> cons(fst(X), nil)
+158. tree(toList(insertNat(X, Y, nil_1))) -> insertNat(X, Y, nil_1)
+159. all(fst_0, toList(insertNat(X, Y, nil_1))) -> opAnd(X, true)
+160. opAppend(toList(insertNat(X, Y, nil_1)), Z) -> cons(pair(X, Y), Z)
+161. tree(toList(tree(cons(X, nil)))) -> tree(cons(X, nil))
+162. all(lam4(zero), opAppend(cons(zero, X), Y)) -> false
+163. all(lam5(zero), opAppend(cons(zero, X), Y)) -> false
+164. join(tree(cons(X, nil)), nil_1) -> tree(cons(X, nil))
+165. all(insertNat_0, map(X, cons(Y, nil))) -> opAnd(insertNat_1(app(X, Y)), true)
+166. all(fst_0, map(X, cons(Y, nil))) -> opAnd(fst(app(X, Y)), true)
+167. map(insertNat_0, map(X, cons(Y, nil))) -> cons(insertNat_1(app(X, Y)), nil)
+168. map(fst_0, map(X, cons(Y, nil))) -> cons(fst(app(X, Y)), nil)
+169. uncurry(uncurry(insertNat_0, X), pair(nil_1, Y)) -> app(tree(cons(X, nil)), Y)
+170. opAnd(insertNat_1(pair(X, Y)), true) -> all(insertNat_0, toList(insertNat(X, Y, nil_1)))
+171. cons(insertNat_1(pair(X, Y)), nil) -> map(insertNat_0, toList(insertNat(X, Y, nil_1)))
+172. uncurry(X, pair(Y, foldr(X, Z, W))) -> foldr(X, Z, cons(Y, W))
+173. foldr(insertNat_0, X, map(Y, cons(Z, nil))) -> insertNat_2(app(Y, Z), X)
+174. validNat(deleteNat_case1_case1(true, X, Y, Z, W, V)) ~> validNat(deleteNat_case1_case1(true, X, Y, Z, W, ?))
+175. validNat(deleteNat_case1(true, X, Y, Z, W, V)) ~> validNat(deleteNat_case1(true, X, Y, Z, W, ?))
+176. uncurry(fst(fst(X)), pair(snd(X), Y)) -> app(uncurry(fst_0, X), Y)
+177. all(uncurry(insertNat_0, X), cons(nil_1, nil)) -> opAnd(tree(cons(X, nil)), true)
+178. map(uncurry(insertNat_0, X), cons(nil_1, nil)) -> cons(tree(cons(X, nil)), nil)
+179. foldr(fst_0, X, cons(pair(Y, Z), W)) -> app(Y, foldr(fst_0, X, W))
+180. foldr(fst_0, X, toList(insertNat(Y, Z, nil_1))) -> app(Y, X)
+181. all(fst_0, toList(tree(cons(X, nil)))) -> opAnd(fst(X), true)
+182. opAnd(insertNat_1(X), opAnd(insertNat_1(Y), true)) -> all(insertNat_0, cons(X, cons(Y, nil)))
+183. opAnd(fst(X), opAnd(fst(Y), true)) -> all(fst_0, cons(X, cons(Y, nil)))
+184. cons(insertNat_1(X), cons(insertNat_1(Y), nil)) -> map(insertNat_0, cons(X, cons(Y, nil)))
+185. cons(fst(X), cons(fst(Y), nil)) -> map(fst_0, cons(X, cons(Y, nil)))
+186. all(fst(fst(X)), cons(snd(X), nil)) -> opAnd(uncurry(fst_0, X), true)
+187. map(fst(fst(X)), cons(snd(X), nil)) -> cons(uncurry(fst_0, X), nil)
+188. opAnd(validNat(X), all(lam5(Y), keys(X))) -> validNat(branch(nil_1, Y, ?, X))
+189. validNat(insertNat(X, ?, nil_1)) -> true
+190. validNat(tree(cons(X, nil))) -> true
+191. validNat(tree(map(X, cons(Y, nil)))) -> true
+192. foldr(X, Y, map(Z, cons(W, nil))) -> uncurry(X, pair(app(Z, W), Y))
+193. validNat(deleteNat(X, insertNat(Y, Z, nil_1))) -> prop_DeleteValid(X, toList(insertNat(Y, Z, nil_1)))
+194. prop_DeleteValid(zero, toList(insertNat(zero, X, nil_1))) -> true
+195. foldr(fst_0, X, cons(Y, cons(Z, nil))) -> app(fst(Y), app(fst(Z), X))
+196. foldr(insertNat_0, X, toList(insertNat(Y, Z, nil_1))) -> insertNat_2(pair(Y, Z), X)
+197. insertNat(zero, X, branch(Y, zero, Z, W)) -> insertNat_case1(false, zero, zero, Y, W, X, Z)
+198. deleteNat(zero, branch(X, suc(Y), Z, W)) -> deleteNat_case1(true, zero, suc(Y), X, W, Z)
+199. deleteNat(zero, insertNat(suc(X), Y, nil_1)) -> insertNat(suc(X), Y, nil_1)
+200. deleteNat(suc(X), branch(Y, zero, Z, W)) -> deleteNat_case1(false, suc(X), zero, Y, W, Z)
+201. deleteNat_case1_case1(true, suc(X), zero, Y, Z, W) -> deleteNat_case1(false, suc(X), zero, Y, Z, W)
+202. deleteNat_case1(false, suc(X), zero, Y, nil_1, Z) -> branch(Y, zero, Z, nil_1)
+203. foldr(insertNat_0, X, opAppend(cons(Y, Z), W)) -> insertNat_2(Y, foldr(insertNat_0, X, opAppend(Z, W)))
+204. toList(deleteNat_case1_case1(true, X, Y, nil_1, Z, W)) -> cons(pair(Y, W), toList(deleteNat(X, Z)))
+205. all(lam4(zero), opAppend(cons(suc(X), Y), Z)) -> false
+206. all(lam5(suc(X)), opAppend(cons(zero, Y), Z)) -> false
+207. keys(deleteNat_case1_case1(true, X, Y, nil_1, Z, W)) -> cons(Y, keys(deleteNat(X, Z)))
+208. join(deleteNat_case1_case1(true, X, Y, Z, W, V), nil_1) -> deleteNat_case1_case1(true, X, Y, Z, W, V)
+209. join(deleteNat_case1(true, X, Y, Z, W, V), nil_1) -> deleteNat_case1(true, X, Y, Z, W, V)
+210. cons(pair(fst(X), snd(X)), Y) -> opAppend(toList(tree(cons(X, nil))), Y)
+211. prop_DeleteValid(X, toList(tree(cons(Y, nil)))) -> prop_DeleteValid(X, cons(Y, nil))
+212. app(uncurry(X, Y), foldr(uncurry_1(X), Z, W)) -> foldr(uncurry_1(X), Z, cons(Y, W))
+213. app(ltNat(X, Y), foldr(lam4(Y), Z, W)) -> foldr(lam4(Y), Z, cons(X, W))
+214. app(false, foldr(lam4(zero), X, Y)) -> foldr(lam4(zero), X, cons(zero, Y))
+215. foldr(lam4(zero), X, cons(suc(Y), Z)) -> foldr(lam4(zero), X, cons(zero, Z))
+216. app(gtNat(X, Y), foldr(lam5(Y), Z, W)) -> foldr(lam5(Y), Z, cons(X, W))
+217. app(false, foldr(lam5(zero), X, Y)) -> foldr(lam5(zero), X, cons(zero, Y))
+218. foldr(lam5(zero), X, cons(suc(Y), Z)) -> app(true, foldr(lam5(zero), X, Z))
+219. all(lam4(zero), cons(X, cons(zero, Y))) -> opAnd(ltNat(X, zero), false)
+220. all(lam5(zero), cons(X, cons(zero, Y))) -> opAnd(gtNat(X, zero), false)
+221. uncurry(uncurry(insertNat_0, X), pair(tree(Y), Z)) -> app(tree(cons(X, Y)), Z)
+222. prop_DeleteValid(zero, toList(insertNat(suc(X), Y, nil_1))) -> true
+223. app(true, foldr(lam4(suc(X)), Y, Z)) -> foldr(lam4(suc(X)), Y, cons(zero, Z))
+224. app(false, foldr(lam5(suc(X)), Y, Z)) -> foldr(lam5(suc(X)), Y, cons(zero, Z))
+225. foldr(X, Y, toList(insertNat(Z, W, nil_1))) -> uncurry(X, pair(pair(Z, W), Y))
+226. uncurry(app(X, fst(Y)), pair(snd(Y), Z)) -> app(uncurry(X, Y), Z)
+227. opAppend(toList(tree(cons(X, nil))), nil) -> toList(tree(cons(X, nil)))
+228. all(uncurry(insertNat_0, X), cons(tree(Y), nil)) -> opAnd(tree(cons(X, Y)), true)
+229. map(uncurry(insertNat_0, X), cons(tree(Y), nil)) -> cons(tree(cons(X, Y)), nil)
+230. keys(tree(map(X, cons(Y, nil)))) -> cons(fst(app(X, Y)), nil)
+231. foldr(fst_0, X, toList(tree(cons(Y, nil)))) -> app(fst(Y), X)
+232. deleteNat_case1_case1(true, X, Y, deleteNat(Z, W), V, U) -> deleteNat_case1(true, Z, Y, W, deleteNat(X, V), U)
+233. all(uncurry_1(X), map(Y, cons(Z, nil))) -> opAnd(uncurry(X, app(Y, Z)), true)
+234. all(insertNat_1(X), map(Y, cons(Z, nil))) -> opAnd(insertNat_2(X, app(Y, Z)), true)
+235. all(lam4(X), map(Y, cons(Z, nil))) -> opAnd(ltNat(app(Y, Z), X), true)
+236. all(lam5(X), map(Y, cons(Z, nil))) -> opAnd(gtNat(app(Y, Z), X), true)
+237. map(uncurry_1(X), map(Y, cons(Z, nil))) -> cons(uncurry(X, app(Y, Z)), nil)
+238. map(insertNat_1(X), map(Y, cons(Z, nil))) -> cons(insertNat_2(X, app(Y, Z)), nil)
+239. map(lam4(X), map(Y, cons(Z, nil))) -> cons(ltNat(app(Y, Z), X), nil)
+240. map(lam5(X), map(Y, cons(Z, nil))) -> cons(gtNat(app(Y, Z), X), nil)
+241. opAnd(uncurry(X, pair(Y, Z)), true) -> all(uncurry_1(X), toList(insertNat(Y, Z, nil_1)))
+242. opAnd(insertNat_2(X, pair(Y, Z)), true) -> all(insertNat_1(X), toList(insertNat(Y, Z, nil_1)))
+243. opAnd(ltNat(pair(X, Y), Z), true) -> all(lam4(Z), toList(insertNat(X, Y, nil_1)))
+244. opAnd(gtNat(pair(X, Y), Z), true) -> all(lam5(Z), toList(insertNat(X, Y, nil_1)))
+245. cons(uncurry(X, pair(Y, Z)), nil) -> map(uncurry_1(X), toList(insertNat(Y, Z, nil_1)))
+246. cons(insertNat_2(X, pair(Y, Z)), nil) -> map(insertNat_1(X), toList(insertNat(Y, Z, nil_1)))
+247. cons(ltNat(pair(X, Y), Z), nil) -> map(lam4(Z), toList(insertNat(X, Y, nil_1)))
+248. cons(gtNat(pair(X, Y), Z), nil) -> map(lam5(Z), toList(insertNat(X, Y, nil_1)))
+249. all(app(X, fst(Y)), cons(snd(Y), nil)) -> opAnd(uncurry(X, Y), true)
+250. all(app(X, Y), cons(Z, nil)) -> all(uncurry_1(X), toList(insertNat(Y, Z, nil_1)))
+251. map(app(X, fst(Y)), cons(snd(Y), nil)) -> cons(uncurry(X, Y), nil)
+252. map(app(X, Y), cons(Z, nil)) -> map(uncurry_1(X), toList(insertNat(Y, Z, nil_1)))
+253. opAppend(toList(X), cons(pair(Y, Z), toList(W))) -> toList(branch(X, Y, Z, W))
+254. opAppend(toList(X), toList(insertNat(Y, Z, nil_1))) -> toList(branch(X, Y, Z, nil_1))
+255. uncurry(uncurry(X, fst(Y)), pair(snd(Y), Z)) -> app(uncurry(uncurry_1(X), Y), Z)
+256. uncurry(ltNat(fst(X), Y), pair(snd(X), Z)) -> app(uncurry(lam4(Y), X), Z)
+257. uncurry(gtNat(fst(X), Y), pair(snd(X), Z)) -> app(uncurry(lam5(Y), X), Z)
+258. validNat(insertNat_case1(false, X, Y, Z, W, V, U)) ~> validNat(insertNat_case1(false, X, Y, Z, W, V, ?))
+259. validNat(insertNat_case1(true, X, Y, Z, W, V, U)) ~> validNat(insertNat_case1(true, X, Y, Z, W, V, ?))
+260. insertNat_case1(false, zero, zero, nil_1, nil_1, X, Y) -> insertNat(zero, X, insertNat(zero, Y, nil_1))
+261. deleteNat(suc(X), insertNat(zero, Y, nil_1)) -> insertNat(zero, Y, nil_1)
+262. prop_DeleteValid(suc(X), toList(insertNat(zero, Y, nil_1))) -> true
+263. all(uncurry_1(insertNat_0), toList(insertNat(X, Y, nil_1))) -> opAnd(insertNat_2(X, Y), true)
+264. all(uncurry_1(X), toList(tree(cons(Y, nil)))) -> opAnd(uncurry(X, Y), true)
+265. map(uncurry_1(insertNat_0), toList(insertNat(X, Y, nil_1))) -> cons(insertNat_2(X, Y), nil)
+266. map(uncurry_1(X), toList(tree(cons(Y, nil)))) -> cons(uncurry(X, Y), nil)
+267. opAnd(insertNat_2(X, Y), all(uncurry_1(insertNat_0), Z)) -> all(uncurry_1(insertNat_0), cons(pair(X, Y), Z))
+268. cons(insertNat_2(X, Y), map(uncurry_1(insertNat_0), Z)) -> map(uncurry_1(insertNat_0), cons(pair(X, Y), Z))
+269. all(uncurry(X, fst(Y)), cons(snd(Y), nil)) -> opAnd(uncurry(uncurry_1(X), Y), true)
+270. map(uncurry(X, fst(Y)), cons(snd(Y), nil)) -> cons(uncurry(uncurry_1(X), Y), nil)
+271. all(ltNat(fst(X), Y), cons(snd(X), nil)) -> opAnd(uncurry(lam4(Y), X), true)
+272. map(ltNat(fst(X), Y), cons(snd(X), nil)) -> cons(uncurry(lam4(Y), X), nil)
+273. all(gtNat(fst(X), Y), cons(snd(X), nil)) -> opAnd(uncurry(lam5(Y), X), true)
+274. map(gtNat(fst(X), Y), cons(snd(X), nil)) -> cons(uncurry(lam5(Y), X), nil)
+275. foldr(insertNat_1(X), Y, cons(Z, cons(W, nil))) = insertNat(X, Z, insertNat(X, W, Y))
+276. deleteNat(zero, deleteNat_case1_case1(true, X, zero, Y, Z, W)) -> join(Y, deleteNat(X, Z))
+277. deleteNat(zero, deleteNat_case1(true, X, zero, Y, Z, W)) -> join(deleteNat(X, Y), Z)
+278. map(lam4(zero), cons(zero, cons(X, nil))) -> cons(false, cons(ltNat(X, zero), nil))
+279. map(lam5(zero), cons(zero, cons(X, nil))) -> cons(false, cons(gtNat(X, zero), nil))
+280. join(tree(map(X, cons(Y, nil))), nil_1) -> tree(map(X, cons(Y, nil)))
+281. tree(opAppend(toList(tree(cons(X, nil))), Y)) -> tree(cons(X, Y))
+282. all(uncurry_1(fst_0), toList(insertNat(X, Y, nil_1))) -> all(fst(X), cons(Y, nil))
+283. map(uncurry_1(fst_0), toList(insertNat(X, Y, nil_1))) -> map(fst(X), cons(Y, nil))
+284. uncurry(X, pair(Y, uncurry(X, pair(Z, W)))) -> foldr(X, W, cons(Y, cons(Z, nil)))
+285. opAnd(insertNat(X, Y, Z), all(insertNat_2(X, Y), W)) -> all(insertNat_2(X, Y), cons(Z, W))
+286. cons(insertNat(X, Y, Z), map(insertNat_2(X, Y), W)) -> map(insertNat_2(X, Y), cons(Z, W))
+287. all(lam4(zero), cons(X, cons(suc(Y), Z))) -> opAnd(ltNat(X, zero), false)
+288. uncurry(fst(X), pair(foldr(fst_0, Y, Z), W)) -> app(foldr(fst_0, Y, cons(X, Z)), W)
+289. opAnd(ltNat(X, Y), all(lam4(suc(Y)), Z)) -> all(lam4(suc(Y)), cons(suc(X), Z))
+290. all(lam4(suc(zero)), cons(suc(zero), X)) -> false
+291. all(lam4(suc(zero)), cons(suc(suc(X)), Y)) -> false
+292. all(lam4(suc(zero)), opAppend(cons(suc(zero), X), Y)) -> false
+293. opAnd(gtNat(X, Y), all(lam5(suc(Y)), Z)) -> all(lam5(suc(Y)), cons(suc(X), Z))
+294. all(lam5(suc(zero)), cons(suc(zero), X)) -> false
+295. all(lam5(suc(suc(X))), cons(suc(zero), Y)) -> false
+296. all(lam5(suc(zero)), opAppend(cons(suc(zero), X), Y)) -> false
+297. cons(ltNat(X, Y), map(lam4(suc(Y)), Z)) -> map(lam4(suc(Y)), cons(suc(X), Z))
+298. map(lam4(suc(zero)), cons(suc(zero), X)) -> cons(false, map(lam4(suc(zero)), X))
+299. cons(gtNat(X, Y), map(lam5(suc(Y)), Z)) -> map(lam5(suc(Y)), cons(suc(X), Z))
+300. map(lam5(suc(zero)), cons(suc(zero), X)) -> map(lam5(suc(zero)), cons(zero, X))
+301. insertNat(zero, X, branch(Y, suc(Z), W, V)) -> insertNat_case1(true, zero, suc(Z), Y, V, X, W)
+302. insertNat(suc(X), Y, branch(Z, zero, W, V)) -> insertNat_case1(false, suc(X), zero, Z, V, Y, W)
+303. toList(insertNat_case1(false, X, Y, nil_1, Z, W, V)) -> cons(pair(Y, V), toList(insertNat(X, W, Z)))
+304. insertNat_2(pair(fst(X), snd(X)), Y) = foldr(insertNat_0, Y, toList(tree(cons(X, nil))))
+305. keys(insertNat_case1(false, X, Y, nil_1, Z, W, V)) -> cons(Y, keys(insertNat(X, W, Z)))
+306. keys(insertNat(zero, X, insertNat(zero, Y, nil_1))) -> cons(zero, cons(zero, nil))
+307. join(insertNat_case1(false, X, Y, Z, W, V, U), nil_1) -> insertNat_case1(false, X, Y, Z, W, V, U)
+308. join(insertNat_case1(true, X, Y, Z, W, V, U), nil_1) -> insertNat_case1(true, X, Y, Z, W, V, U)
+309. all(lam5(suc(zero)), cons(suc(suc(X)), Y)) -> all(lam5(suc(zero)), Y)
+310. opAnd(uncurry(fst_0, X), all(fst(fst(X)), Y)) -> all(fst(fst(X)), cons(snd(X), Y))
+311. cons(uncurry(fst_0, X), map(fst(fst(X)), Y)) -> map(fst(fst(X)), cons(snd(X), Y))
+312. foldr(insertNat_0, X, map(fst_0, cons(Y, toList(Z)))) -> insertNat_2(fst(Y), foldr(insertNat_0, X, keys(Z)))
+313. insertNat_2(insertNat_1(X), foldr(insertNat_0, Y, map(insertNat_0, Z))) -> foldr(insertNat_0, Y, map(insertNat_0, cons(X, Z)))
+314. insertNat_2(fst(X), foldr(insertNat_0, Y, map(fst_0, Z))) -> foldr(insertNat_0, Y, map(fst_0, cons(X, Z)))
+315. all(fst(X), cons(foldr(fst_0, Y, Z), nil)) -> opAnd(foldr(fst_0, Y, cons(X, Z)), true)
+316. map(fst(X), cons(foldr(fst_0, Y, Z), nil)) -> cons(foldr(fst_0, Y, cons(X, Z)), nil)
+317. opAnd(uncurry(insertNat_0, X), all(insertNat_1(fst(X)), Y)) -> all(insertNat_1(fst(X)), cons(snd(X), Y))
+318. cons(uncurry(insertNat_0, X), map(insertNat_1(fst(X)), Y)) -> map(insertNat_1(fst(X)), cons(snd(X), Y))
+319. app(uncurry(insertNat_0, X), insertNat(Y, Z, nil_1)) -> tree(cons(X, toList(insertNat(Y, Z, nil_1))))
+320. validNat(tree(map(insertNat_0, toList(insertNat(X, Y, nil_1))))) -> true
+321. all(lam5(suc(X)), cons(Y, cons(zero, Z))) -> opAnd(gtNat(Y, suc(X)), false)
+322. all(lam5(zero), opAppend(cons(suc(X), Y), Z)) -> all(lam5(zero), opAppend(Y, Z))
+323. all(lam5(zero), cons(X, cons(suc(Y), Z))) -> all(lam5(zero), cons(X, Z))
+324. app(uncurry(X, Y), app(uncurry(X, Z), W)) -> foldr(uncurry_1(X), W, cons(Y, cons(Z, nil)))
+325. app(ltNat(X, Y), app(ltNat(Z, Y), W)) -> foldr(lam4(Y), W, cons(X, cons(Z, nil)))
+326. app(gtNat(X, Y), app(gtNat(Z, Y), W)) -> foldr(lam5(Y), W, cons(X, cons(Z, nil)))
+327. opAppend(cons(X, cons(Y, cons(Z, nil))), W) -> cons(X, cons(Y, cons(Z, W)))
+328. opAppend(cons(X, map(Y, cons(Z, nil))), W) -> cons(X, cons(app(Y, Z), W))
+329. opAppend(map(X, map(Y, cons(Z, nil))), W) -> cons(app(X, app(Y, Z)), W)
+330. validNat(deleteNat(X, insertNat(Y, Z, tree(W)))) -> prop_DeleteValid(X, cons(pair(Y, Z), W))
+331. tree(opAppend(cons(pair(X, Y), Z), W)) -> insertNat(X, Y, tree(opAppend(Z, W)))
+332. opAppend(cons(X, toList(insertNat(Y, Z, nil_1))), W) -> cons(X, cons(pair(Y, Z), W))
+333. opAppend(map(X, toList(insertNat(Y, Z, nil_1))), W) -> cons(app(X, pair(Y, Z)), W)
+334. all(fst_0, opAppend(cons(pair(X, Y), Z), W)) -> opAnd(X, all(fst_0, opAppend(Z, W)))
+335. map(fst_0, opAppend(cons(pair(X, Y), Z), W)) -> cons(X, map(fst_0, opAppend(Z, W)))
+336. toList(branch(X, fst(Y), snd(Y), nil_1)) -> opAppend(toList(X), toList(tree(cons(Y, nil))))
+337. all(lam4(suc(suc(X))), cons(suc(zero), Y)) -> all(lam4(suc(suc(X))), Y)
+338. tree(cons(X, toList(tree(cons(Y, nil))))) -> tree(cons(X, cons(Y, nil)))
+339. all(lam4(suc(X)), opAppend(cons(zero, Y), Z)) -> all(lam4(suc(X)), opAppend(Y, Z))
+340. all(lam4(suc(X)), cons(Y, cons(zero, Z))) -> all(lam4(suc(X)), cons(Y, Z))
+341. all(uncurry_1(uncurry_1(X)), toList(insertNat(Y, Z, nil_1))) -> all(uncurry(X, Y), cons(Z, nil))
+342. map(uncurry_1(uncurry_1(X)), toList(insertNat(Y, Z, nil_1))) -> map(uncurry(X, Y), cons(Z, nil))
+343. all(uncurry_1(lam4(X)), toList(insertNat(Y, Z, nil_1))) -> all(ltNat(Y, X), cons(Z, nil))
+344. map(uncurry_1(lam4(X)), toList(insertNat(Y, Z, nil_1))) -> map(ltNat(Y, X), cons(Z, nil))
+345. all(uncurry_1(lam5(X)), toList(insertNat(Y, Z, nil_1))) -> all(gtNat(Y, X), cons(Z, nil))
+346. map(uncurry_1(lam5(X)), toList(insertNat(Y, Z, nil_1))) -> map(gtNat(Y, X), cons(Z, nil))
+347. deleteNat_case1(true, X, Y, Z, insertNat(W, V, U), T) -> insertNat_case1(false, W, Y, deleteNat(X, Z), U, V, T)
+348. deleteNat_case1_case1(true, X, Y, insertNat(Z, W, V), U, T) -> insertNat_case1(true, Z, Y, V, deleteNat(X, U), W, T)
+349. validNat(insertNat(zero, X, insertNat(zero, Y, nil_1))) ~> validNat(insertNat(zero, X, insertNat(zero, ?, nil_1)))
+350. all(insertNat_2(X, Y), map(Z, cons(W, nil))) -> opAnd(insertNat(X, Y, app(Z, W)), true)
+351. map(insertNat_2(X, Y), map(Z, cons(W, nil))) -> cons(insertNat(X, Y, app(Z, W)), nil)
+352. opAnd(insertNat(X, Y, pair(Z, W)), true) -> all(insertNat_2(X, Y), toList(insertNat(Z, W, nil_1)))
+353. cons(insertNat(X, Y, pair(Z, W)), nil) -> map(insertNat_2(X, Y), toList(insertNat(Z, W, nil_1)))
+354. foldr(uncurry_1(insertNat_0), X, cons(pair(Y, Z), W)) -> insertNat(Y, Z, foldr(uncurry_1(insertNat_0), X, W))
+355. opAnd(uncurry(X, Y), opAnd(uncurry(X, Z), true)) -> all(uncurry_1(X), cons(Y, cons(Z, nil)))
+356. opAnd(insertNat_2(X, Y), opAnd(insertNat_2(X, Z), true)) -> all(insertNat_1(X), cons(Y, cons(Z, nil)))
+357. opAnd(ltNat(X, Y), opAnd(ltNat(Z, Y), true)) -> all(lam4(Y), cons(X, cons(Z, nil)))
+358. opAnd(gtNat(X, Y), opAnd(gtNat(Z, Y), true)) -> all(lam5(Y), cons(X, cons(Z, nil)))
+359. cons(uncurry(X, Y), cons(uncurry(X, Z), nil)) -> map(uncurry_1(X), cons(Y, cons(Z, nil)))
+360. cons(insertNat_2(X, Y), cons(insertNat_2(X, Z), nil)) -> map(insertNat_1(X), cons(Y, cons(Z, nil)))
+361. cons(ltNat(X, Y), cons(ltNat(Z, Y), nil)) -> map(lam4(Y), cons(X, cons(Z, nil)))
+362. map(lam4(zero), cons(X, cons(zero, nil))) -> cons(ltNat(X, zero), cons(false, nil))
+363. cons(gtNat(X, Y), cons(gtNat(Z, Y), nil)) -> map(lam5(Y), cons(X, cons(Z, nil)))
+364. map(lam5(zero), cons(X, cons(zero, nil))) -> cons(gtNat(X, zero), cons(false, nil))
+365. all(fst_0, cons(X, cons(pair(Y, Z), W))) -> opAnd(fst(X), opAnd(Y, all(fst_0, W)))
+366. map(fst_0, cons(X, cons(pair(Y, Z), W))) -> cons(fst(X), cons(Y, map(fst_0, W)))
+367. all(lam4(zero), opAppend(opAppend(cons(zero, X), Y), Z)) -> false
+368. all(lam5(zero), opAppend(opAppend(cons(zero, X), Y), Z)) -> false
+369. validNat(tree(map(X, map(Y, cons(Z, nil))))) -> true
+370. validNat(tree(map(X, toList(insertNat(Y, Z, nil_1))))) -> true
+371. validNat(insertNat_case1(false, X, Y, nil_1, nil_1, ?, ?)) -> opAnd(gtNat(X, Y), true)
+372. validNat(insertNat(zero, ?, insertNat(zero, ?, nil_1))) -> false
+373. foldr(lam4(zero), X, cons(zero, cons(Y, nil))) -> app(false, app(ltNat(Y, zero), X))
+374. foldr(lam5(zero), X, cons(zero, cons(Y, nil))) -> app(false, app(gtNat(Y, zero), X))
+375. foldr(lam4(zero), X, cons(Y, cons(zero, nil))) -> app(ltNat(Y, zero), app(false, X))
+376. foldr(lam5(zero), X, cons(Y, cons(zero, nil))) -> app(gtNat(Y, zero), app(false, X))
+377. opAnd(uncurry(X, Y), all(app(X, fst(Y)), Z)) -> all(app(X, fst(Y)), cons(snd(Y), Z))
+378. cons(uncurry(X, Y), map(app(X, fst(Y)), Z)) -> map(app(X, fst(Y)), cons(snd(Y), Z))
+379. uncurry(insertNat(X, Y, fst(Z)), pair(snd(Z), W)) -> app(uncurry(insertNat_2(X, Y), Z), W)
+380. map(lam4(suc(zero)), cons(suc(suc(X)), Y)) -> cons(false, map(lam4(suc(zero)), Y))
+381. map(lam5(suc(zero)), cons(suc(suc(X)), Y)) -> cons(true, map(lam5(suc(zero)), Y))
+382. uncurry(app(X, Y), pair(foldr(X, Z, W), V)) -> app(foldr(X, Z, cons(Y, W)), V)
+383. insertNat_case1(false, X, Y, Z, snd(W), fst(W), V) -> branch(Z, Y, V, uncurry(insertNat_1(X), W))
+384. insertNat_case1(true, X, Y, snd(Z), W, fst(Z), V) -> branch(uncurry(insertNat_1(X), Z), Y, V, W)
+385. opAnd(app(fst(X), Y), all(uncurry_1(fst_0), Z)) -> all(uncurry_1(fst_0), cons(pair(X, Y), Z))
+386. cons(app(fst(X), Y), map(uncurry_1(fst_0), Z)) -> map(uncurry_1(fst_0), cons(pair(X, Y), Z))
+387. all(uncurry_1(insertNat_1(X)), toList(insertNat(Y, Z, nil_1))) -> opAnd(insertNat(X, Y, Z), true)
+388. map(uncurry_1(insertNat_1(X)), toList(insertNat(Y, Z, nil_1))) -> cons(insertNat(X, Y, Z), nil)
+389. insertNat_case1(true, zero, suc(X), nil_1, nil_1, Y, Z) -> insertNat(zero, Y, insertNat(suc(X), Z, nil_1))
+390. insertNat_case1(false, suc(X), zero, nil_1, nil_1, Y, Z) -> insertNat(suc(X), Y, insertNat(zero, Z, nil_1))
+391. validNat(insertNat(suc(X), ?, insertNat(zero, ?, nil_1))) -> true
+392. opAnd(validNat(X), opAnd(all(lam4(Y), keys(X)), true)) -> validNat(branch(X, Y, ?, nil_1))
+393. validNat(insertNat_case1(true, X, Y, nil_1, nil_1, Z, ?)) -> opAnd(opAnd(ltNat(X, Y), true), true)
+394. validNat(insertNat(zero, X, insertNat(suc(Y), ?, nil_1))) -> true
+395. map(lam4(zero), opAppend(cons(suc(X), Y), Z)) -> map(lam4(zero), opAppend(cons(zero, Y), Z))
+396. map(lam4(zero), cons(X, cons(suc(Y), Z))) -> map(lam4(zero), cons(X, cons(zero, Z)))
+397. map(lam5(zero), opAppend(cons(suc(X), Y), Z)) -> cons(true, map(lam5(zero), opAppend(Y, Z)))
+398. map(fst_0, cons(X, toList(insertNat(Y, Z, nil_1)))) -> cons(fst(X), cons(Y, nil))
+399. all(fst_0, cons(X, toList(insertNat(Y, Z, nil_1)))) -> opAnd(fst(X), opAnd(Y, true))
+400. keys(insertNat(suc(X), Y, insertNat(zero, Z, nil_1))) -> cons(zero, cons(suc(X), nil))
+401. all(uncurry(X, pair(Y, Z)), cons(W, nil)) -> all(uncurry_1(app(X, Y)), toList(insertNat(Z, W, nil_1)))
+402. map(uncurry(X, pair(Y, Z)), cons(W, nil)) -> map(uncurry_1(app(X, Y)), toList(insertNat(Z, W, nil_1)))
+403. all(insertNat(X, Y, fst(Z)), cons(snd(Z), nil)) -> opAnd(uncurry(insertNat_2(X, Y), Z), true)
+404. map(insertNat(X, Y, fst(Z)), cons(snd(Z), nil)) -> cons(uncurry(insertNat_2(X, Y), Z), nil)
+405. validNat(tree(map(insertNat_0, toList(tree(cons(X, nil)))))) -> true
+406. map(lam4(suc(X)), cons(zero, cons(Y, nil))) -> cons(true, cons(ltNat(Y, suc(X)), nil))
+407. map(lam5(suc(X)), cons(zero, cons(Y, nil))) -> cons(false, cons(gtNat(Y, suc(X)), nil))
+408. tree(toList(tree(map(X, cons(Y, nil))))) -> tree(map(X, cons(Y, nil)))
+409. map(lam4(suc(suc(X))), cons(suc(zero), Y)) -> map(lam4(suc(suc(X))), cons(zero, Y))
+410. map(lam5(suc(suc(X))), cons(suc(zero), Y)) -> map(lam5(suc(suc(X))), cons(zero, Y))
+411. all(uncurry_1(X), toList(insertNat(Y, foldr(X, Z, W), nil_1))) -> opAnd(foldr(X, Z, cons(Y, W)), true)
+412. map(uncurry_1(X), toList(insertNat(Y, foldr(X, Z, W), nil_1))) -> cons(foldr(X, Z, cons(Y, W)), nil)
+413. insertNat_2(app(X, Y), foldr(insertNat_0, Z, map(X, W))) -> foldr(insertNat_0, Z, map(X, cons(Y, W)))
+414. deleteNat(zero, insertNat_case1(false, X, zero, Y, Z, W, V)) -> join(Y, insertNat(X, W, Z))
+415. deleteNat(zero, insertNat(zero, X, insertNat(zero, Y, nil_1))) -> insertNat(zero, X, nil_1)
+416. deleteNat(zero, insertNat_case1(true, X, zero, Y, Z, W, V)) -> join(insertNat(X, W, Y), Z)
+417. map(lam5(zero), cons(zero, cons(suc(X), Y))) -> cons(false, cons(true, map(lam5(zero), Y)))
+418. validNat(deleteNat_case1(false, suc(X), zero, Y, Z, W)) ~> validNat(deleteNat_case1(false, suc(X), zero, Y, Z, ?))
+419. all(lam4(suc(zero)), cons(X, cons(suc(zero), Y))) -> opAnd(ltNat(X, suc(zero)), false)
+420. all(lam5(suc(zero)), cons(X, cons(suc(zero), Y))) -> opAnd(gtNat(X, suc(zero)), false)
+421. opAppend(map(insertNat_0, cons(X, cons(Y, nil))), Z) -> cons(insertNat_1(X), cons(insertNat_1(Y), Z))
+422. opAppend(map(fst_0, cons(X, cons(Y, nil))), Z) -> cons(fst(X), cons(fst(Y), Z))
+423. toList(deleteNat_case1(false, suc(X), zero, nil_1, Y, Z)) -> cons(pair(zero, Z), toList(deleteNat(suc(X), Y)))
+424. app(foldr(lam4(zero), X, cons(zero, Y)), Z) -> uncurry(false, pair(foldr(lam4(zero), X, Y), Z))
+425. app(foldr(lam5(zero), X, cons(zero, Y)), Z) -> uncurry(false, pair(foldr(lam5(zero), X, Y), Z))
+426. keys(deleteNat_case1(false, suc(X), zero, nil_1, Y, Z)) -> cons(zero, keys(deleteNat(suc(X), Y)))
+427. app(insertNat(X, Y, Z), foldr(insertNat_2(X, Y), W, V)) -> foldr(insertNat_2(X, Y), W, cons(Z, V))
+428. all(uncurry_1(X), opAppend(toList(tree(cons(Y, nil))), Z)) -> all(uncurry_1(X), cons(Y, Z))
+429. map(uncurry_1(X), opAppend(toList(tree(cons(Y, nil))), Z)) -> map(uncurry_1(X), cons(Y, Z))
+430. foldr(fst_0, X, cons(Y, toList(insertNat(Z, W, nil_1)))) -> app(fst(Y), app(Z, X))
+431. uncurry(X, pair(pair(fst(Y), snd(Y)), Z)) -> foldr(X, Z, toList(tree(cons(Y, nil))))
+432. foldr(uncurry_1(X), Y, toList(tree(cons(Z, nil)))) -> app(uncurry(X, Z), Y)
+433. opAnd(tree(cons(X, Y)), all(uncurry(insertNat_0, X), Z)) -> all(uncurry(insertNat_0, X), cons(tree(Y), Z))
+434. cons(tree(cons(X, Y)), map(uncurry(insertNat_0, X), Z)) -> map(uncurry(insertNat_0, X), cons(tree(Y), Z))
+435. foldr(insertNat_0, X, map(lam4(zero), cons(zero, Y))) -> insertNat_2(false, foldr(insertNat_0, X, map(lam4(zero), Y)))
+436. foldr(insertNat_0, X, map(lam5(zero), cons(zero, Y))) -> insertNat_2(false, foldr(insertNat_0, X, map(lam5(zero), Y)))
+437. all(insertNat_0, map(insertNat_0, toList(insertNat(X, Y, nil_1)))) -> opAnd(insertNat_1(insertNat_1(pair(X, Y))), true)
+438. all(fst_0, map(insertNat_0, toList(insertNat(X, Y, nil_1)))) -> opAnd(fst(insertNat_1(pair(X, Y))), true)
+439. map(insertNat_0, map(insertNat_0, toList(insertNat(X, Y, nil_1)))) -> cons(insertNat_1(insertNat_1(pair(X, Y))), nil)
+440. map(fst_0, map(insertNat_0, toList(insertNat(X, Y, nil_1)))) -> cons(fst(insertNat_1(pair(X, Y))), nil)
+441. all(fst_0, opAppend(toList(tree(cons(X, nil))), Y)) -> all(fst_0, cons(X, Y))
+442. map(fst_0, opAppend(toList(tree(cons(X, nil))), Y)) -> map(fst_0, cons(X, Y))
+443. opAnd(foldr(lam4(zero), X, cons(zero, Y)), true) -> all(false, cons(foldr(lam4(zero), X, Y), nil))
+444. cons(foldr(lam4(zero), X, cons(zero, Y)), nil) -> map(false, cons(foldr(lam4(zero), X, Y), nil))
+445. opAnd(foldr(lam5(zero), X, cons(zero, Y)), true) -> all(false, cons(foldr(lam5(zero), X, Y), nil))
+446. cons(foldr(lam5(zero), X, cons(zero, Y)), nil) -> map(false, cons(foldr(lam5(zero), X, Y), nil))
+447. join(insertNat(zero, X, insertNat(zero, Y, nil_1)), nil_1) -> insertNat(zero, X, insertNat(zero, Y, nil_1))
+448. app(ltNat(X, Y), foldr(lam4(suc(Y)), Z, W)) -> foldr(lam4(suc(Y)), Z, cons(suc(X), W))
+449. foldr(lam4(suc(zero)), X, cons(suc(zero), Y)) -> app(false, foldr(lam4(suc(zero)), X, Y))
+450. app(gtNat(X, Y), foldr(lam5(suc(Y)), Z, W)) -> foldr(lam5(suc(Y)), Z, cons(suc(X), W))
+451. foldr(lam5(suc(zero)), X, cons(suc(zero), Y)) -> foldr(lam5(suc(zero)), X, cons(zero, Y))
+452. map(lam5(zero), cons(X, cons(suc(Y), nil))) -> cons(gtNat(X, zero), cons(true, nil))
+453. all(insertNat_0, map(X, map(Y, cons(Z, nil)))) -> opAnd(insertNat_1(app(X, app(Y, Z))), true)
+454. opAnd(insertNat_1(app(X, pair(Y, Z))), true) -> all(insertNat_0, map(X, toList(insertNat(Y, Z, nil_1))))
+455. all(fst_0, map(X, map(Y, cons(Z, nil)))) -> opAnd(fst(app(X, app(Y, Z))), true)
+456. opAnd(fst(app(X, pair(Y, Z))), true) -> all(fst_0, map(X, toList(insertNat(Y, Z, nil_1))))
+457. map(insertNat_0, map(X, map(Y, cons(Z, nil)))) -> cons(insertNat_1(app(X, app(Y, Z))), nil)
+458. cons(insertNat_1(app(X, pair(Y, Z))), nil) -> map(insertNat_0, map(X, toList(insertNat(Y, Z, nil_1))))
+459. map(fst_0, map(X, map(Y, cons(Z, nil)))) -> cons(fst(app(X, app(Y, Z))), nil)
+460. cons(fst(app(X, pair(Y, Z))), nil) -> map(fst_0, map(X, toList(insertNat(Y, Z, nil_1))))
+461. foldr(uncurry_1(insertNat_0), tree(X), cons(Y, cons(Z, nil))) -> tree(cons(Y, cons(Z, X)))
+462. validNat(tree(map(X, toList(tree(cons(Y, nil)))))) -> true
+463. join(branch(X, Y, Z, nil_1), branch(W, V, U, T)) -> branch(X, Y, Z, branch(W, V, U, T))
+464. join(branch(X, Y, Z, nil_1), insertNat(W, V, nil_1)) -> insertNat_case1(false, W, Y, X, nil_1, V, Z)
+465. join(insertNat(X, Y, nil_1), insertNat(Z, W, nil_1)) -> insertNat_case1(false, Z, X, nil_1, nil_1, W, Y)
+466. join(insertNat(X, Y, nil_1), branch(Z, W, V, U)) -> branch(nil_1, X, Y, branch(Z, W, V, U))
+467. cons(app(X, Y), cons(app(X, Z), W)) -> opAppend(map(X, cons(Y, cons(Z, nil))), W)
+468. app(uncurry(fst_0, X), foldr(fst(fst(X)), Y, Z)) -> foldr(fst(fst(X)), Y, cons(snd(X), Z))
+469. foldr(insertNat_0, X, map(Y, map(Z, cons(W, nil)))) -> insertNat_2(app(Y, app(Z, W)), X)
+470. foldr(insertNat_0, X, map(Y, toList(insertNat(Z, W, nil_1)))) -> insertNat_2(app(Y, pair(Z, W)), X)
+471. toList(insertNat_case1(true, X, Y, nil_1, nil_1, Z, W)) -> cons(pair(X, Z), toList(insertNat(Y, W, nil_1)))
+472. keys(insertNat_case1(true, X, Y, nil_1, nil_1, Z, W)) -> cons(X, cons(Y, nil))
+473. foldr(X, snd(Y), cons(Z, cons(fst(Y), nil))) = uncurry(X, pair(Z, uncurry(X, Y)))
+474. deleteNat_case1_case1(true, zero, X, Y, insertNat(zero, Z, nil_1), W) -> branch(Y, X, W, nil_1)
+475. deleteNat_case1(true, zero, X, insertNat(zero, Y, nil_1), Z, W) -> branch(nil_1, X, W, Z)
+476. all(fst_0, toList(tree(map(X, cons(Y, nil))))) -> opAnd(fst(app(X, Y)), true)
+477. validNat(branch(nil_1, X, ?, tree(cons(Y, nil)))) -> opAnd(gtNat(fst(Y), X), true)
+478. cons(pair(zero, X), toList(insertNat(zero, Y, nil_1))) -> toList(insertNat(zero, Y, insertNat(zero, X, nil_1)))
+479. map(lam4(suc(X)), cons(Y, cons(zero, nil))) -> cons(ltNat(Y, suc(X)), cons(true, nil))
+480. map(lam5(suc(X)), cons(Y, cons(zero, nil))) -> cons(gtNat(Y, suc(X)), cons(false, nil))
+481. foldr(fst_0, X, opAppend(cons(pair(Y, Z), W), V)) -> app(Y, foldr(fst_0, X, opAppend(W, V)))
+482. all(lam4(zero), opAppend(opAppend(cons(suc(X), Y), Z), W)) -> false
+483. all(lam5(suc(X)), opAppend(opAppend(cons(zero, Y), Z), W)) -> false
+484. cons(app(X, pair(fst(Y), snd(Y))), Z) -> opAppend(map(X, toList(tree(cons(Y, nil)))), Z)
+485. insertNat_case1(false, fst(X), Y, Z, W, snd(X), V) -> branch(Z, Y, V, app(uncurry(insertNat_0, X), W))
+486. insertNat_case1(true, fst(X), Y, Z, W, snd(X), V) -> branch(app(uncurry(insertNat_0, X), Z), Y, V, W)
+487. validNat(branch(tree(cons(X, nil)), Y, ?, nil_1)) -> opAnd(opAnd(ltNat(fst(X), Y), true), true)
+488. prop_DeleteValid(X, opAppend(toList(tree(cons(Y, nil))), Z)) -> prop_DeleteValid(X, cons(Y, Z))
+489. foldr(insertNat_0, X, map(insertNat_0, cons(Y, cons(Z, nil)))) -> insertNat_2(insertNat_1(Y), insertNat_2(insertNat_1(Z), X))
+490. foldr(insertNat_0, X, map(fst_0, cons(Y, cons(Z, nil)))) -> insertNat_2(fst(Y), insertNat_2(fst(Z), X))
+491. opAppend(map(X, cons(Y, cons(Z, nil))), nil) -> map(X, cons(Y, cons(Z, nil)))
+492. opAnd(uncurry(X, pair(Y, Z)), all(app(X, Y), W)) -> all(app(X, Y), cons(Z, W))
+493. cons(uncurry(X, pair(Y, Z)), map(app(X, Y), W)) -> map(app(X, Y), cons(Z, W))
+494. foldr(lam4(zero), X, cons(Y, cons(suc(Z), nil))) -> app(ltNat(Y, zero), app(false, X))
+495. foldr(lam5(zero), X, cons(Y, cons(suc(Z), nil))) -> app(gtNat(Y, zero), app(true, X))
+496. deleteNat(zero, insertNat(suc(X), Y, insertNat(zero, Z, nil_1))) -> insertNat(suc(X), Y, nil_1)
+497. validNat(insertNat_case1(false, X, Y, nil_1, nil_1, Z, ?)) -> opAnd(gtNat(X, Y), true)
+498. validNat(insertNat(zero, X, insertNat(zero, ?, nil_1))) -> false
+499. validNat(insertNat(suc(X), Y, insertNat(zero, ?, nil_1))) -> true
+500. all(lam4(zero), opAppend(cons(X, cons(zero, Y)), Z)) -> opAnd(ltNat(X, zero), false)
+501. all(lam5(zero), opAppend(cons(X, cons(zero, Y)), Z)) -> opAnd(gtNat(X, zero), false)
+502. app(uncurry(insertNat_0, X), insertNat(Y, Z, tree(W))) -> tree(cons(X, cons(pair(Y, Z), W)))
+503. join(deleteNat_case1(false, suc(X), zero, Y, Z, W), nil_1) -> deleteNat_case1(false, suc(X), zero, Y, Z, W)
+504. all(uncurry_1(insertNat_2(X, Y)), toList(insertNat(Z, W, nil_1))) -> all(insertNat(X, Y, Z), cons(W, nil))
+505. map(uncurry_1(insertNat_2(X, Y)), toList(insertNat(Z, W, nil_1))) -> map(insertNat(X, Y, Z), cons(W, nil))
+506. all(lam4(suc(zero)), opAppend(cons(suc(suc(X)), Y), Z)) -> false
+507. insertNat_case1(false, X, Y, insertNat(Z, W, V), U, T, S) -> insertNat_case1(true, Z, Y, V, insertNat(X, T, U), W, S)
+508. deleteNat(zero, deleteNat_case1(false, suc(X), zero, Y, Z, W)) -> join(Y, deleteNat(suc(X), Z))
+509. all(lam5(suc(suc(X))), opAppend(cons(suc(zero), Y), Z)) -> false
+510. validNat(insertNat(zero, X, insertNat(suc(Y), Z, nil_1))) -> true
+511. validNat(insertNat(suc(X), Y, insertNat(zero, Z, nil_1))) -> true
+512. foldr(X, Y, map(Z, map(W, cons(V, nil)))) -> uncurry(X, pair(app(Z, app(W, V)), Y))
+513. foldr(X, Y, map(Z, toList(insertNat(W, V, nil_1)))) -> uncurry(X, pair(app(Z, pair(W, V)), Y))
+514. map(fst_0, cons(X, toList(tree(cons(Y, nil))))) -> map(fst_0, cons(X, cons(Y, nil)))
+515. keys(tree(map(insertNat_0, toList(insertNat(X, Y, nil_1))))) -> cons(fst(insertNat_1(pair(X, Y))), nil)
+516. all(fst_0, cons(X, toList(tree(cons(Y, nil))))) -> all(fst_0, cons(X, cons(Y, nil)))
+517. map(lam4(suc(zero)), opAppend(cons(suc(zero), X), Y)) -> cons(false, map(lam4(suc(zero)), opAppend(X, Y)))
+518. map(lam5(suc(zero)), opAppend(cons(suc(zero), X), Y)) -> map(lam5(suc(zero)), opAppend(cons(zero, X), Y))
+519. map(lam5(suc(zero)), cons(X, cons(suc(zero), Y))) -> map(lam5(suc(zero)), cons(X, cons(zero, Y)))
+520. tree(toList(insertNat(zero, X, insertNat(zero, Y, nil_1)))) -> insertNat(zero, Y, insertNat(zero, X, nil_1))
+521. opAppend(map(X, toList(tree(cons(Y, nil)))), nil) -> map(X, toList(tree(cons(Y, nil))))
+522. opAnd(insertNat(X, Y, Z), all(uncurry_1(insertNat_1(X)), W)) -> all(uncurry_1(insertNat_1(X)), cons(pair(Y, Z), W))
+523. cons(insertNat(X, Y, Z), map(uncurry_1(insertNat_1(X)), W)) -> map(uncurry_1(insertNat_1(X)), cons(pair(Y, Z), W))
+524. foldr(fst_0, X, cons(Y, cons(pair(Z, W), V))) -> app(fst(Y), app(Z, foldr(fst_0, X, V)))
+525. all(fst(fst(X)), cons(snd(X), cons(snd(X), nil))) -> all(uncurry_1(fst_0), cons(X, cons(X, nil)))
+526. map(fst(fst(X)), cons(snd(X), cons(snd(X), nil))) -> map(uncurry_1(fst_0), cons(X, cons(X, nil)))
+527. insertNat(X, pair(fst(Y), snd(Y)), Z) -> foldr(insertNat_1(X), Z, toList(tree(cons(Y, nil))))
+528. app(uncurry(X, Y), foldr(app(X, fst(Y)), Z, W)) -> foldr(app(X, fst(Y)), Z, cons(snd(Y), W))
+529. app(uncurry(insertNat_0, X), foldr(insertNat_1(fst(X)), Y, Z)) -> foldr(insertNat_1(fst(X)), Y, cons(snd(X), Z))
+530. opAnd(tree(cons(X, Y)), all(uncurry_1(uncurry_1(insertNat_0)), Z)) -> all(uncurry_1(uncurry_1(insertNat_0)), cons(pair(X, tree(Y)), Z))
+531. cons(tree(cons(X, Y)), map(uncurry_1(uncurry_1(insertNat_0)), Z)) -> map(uncurry_1(uncurry_1(insertNat_0)), cons(pair(X, tree(Y)), Z))
+532. foldr(lam4(suc(X)), Y, cons(zero, cons(Z, nil))) -> app(true, app(ltNat(Z, suc(X)), Y))
+533. foldr(lam5(suc(X)), Y, cons(zero, cons(Z, nil))) -> app(false, app(gtNat(Z, suc(X)), Y))
+534. foldr(lam4(suc(X)), Y, cons(Z, cons(zero, nil))) -> app(ltNat(Z, suc(X)), app(true, Y))
+535. foldr(lam5(suc(X)), Y, cons(Z, cons(zero, nil))) -> app(gtNat(Z, suc(X)), app(false, Y))
+536. validNat(foldr(insertNat_1(X), nil_1, toList(tree(cons(Y, nil))))) -> true
+537. foldr(insertNat_0, X, map(Y, cons(Z, cons(W, nil)))) = insertNat_2(app(Y, Z), insertNat_2(app(Y, W), X))
+538. keys(branch(tree(cons(X, nil)), Y, Z, nil_1)) -> cons(fst(X), cons(Y, nil))
+539. foldr(lam4(suc(zero)), X, cons(suc(suc(Y)), Z)) -> app(false, foldr(lam4(suc(zero)), X, Z))
+540. foldr(lam5(suc(zero)), X, cons(suc(suc(Y)), Z)) -> app(true, foldr(lam5(suc(zero)), X, Z))
+541. uncurry(fst(X), pair(Y, foldr(uncurry_1(fst_0), Z, W))) -> foldr(uncurry_1(fst_0), Z, cons(pair(X, Y), W))
+542. keys(insertNat(zero, X, insertNat(suc(Y), Z, nil_1))) -> cons(zero, cons(suc(Y), nil))
+543. foldr(fst_0, X, cons(Y, map(Z, cons(W, nil)))) -> app(fst(Y), app(fst(app(Z, W)), X))
+544. deleteNat_case1(ltNat(X, Y), suc(X), suc(Y), Z, W, V) -> deleteNat(suc(X), branch(Z, suc(Y), V, W))
+545. deleteNat(suc(zero), branch(X, suc(zero), Y, Z)) -> deleteNat_case1(false, suc(zero), suc(zero), X, Z, Y)
+546. deleteNat_case1(false, suc(zero), suc(zero), nil_1, nil_1, X) -> deleteNat(suc(zero), insertNat(suc(zero), X, nil_1))
+547. deleteNat_case1_case1(gtNat(X, Y), suc(X), suc(Y), Z, W, V) -> deleteNat_case1(false, suc(X), suc(Y), Z, W, V)
+548. deleteNat_case1(false, suc(zero), suc(zero), X, Y, Z) -> join(X, Y)
+549. deleteNat(suc(zero), insertNat(suc(zero), X, nil_1)) -> nil_1
+550. prop_DeleteValid(suc(zero), toList(insertNat(suc(zero), X, nil_1))) -> true
+551. deleteNat_case1(false, suc(zero), suc(suc(X)), Y, Z, W) -> join(Y, Z)
+552. foldr(lam4(zero), X, opAppend(cons(suc(Y), Z), W)) -> foldr(lam4(zero), X, opAppend(cons(zero, Z), W))
+553. foldr(lam4(zero), X, cons(Y, cons(suc(Z), W))) -> foldr(lam4(zero), X, cons(Y, cons(zero, W)))
+554. foldr(lam5(zero), X, opAppend(cons(suc(Y), Z), W)) -> app(true, foldr(lam5(zero), X, opAppend(Z, W)))
+555. map(lam4(suc(zero)), cons(zero, cons(suc(zero), X))) -> cons(true, cons(false, map(lam4(suc(zero)), X)))
+556. keys(branch(tree(cons(X, nil)), Y, Z, W)) -> cons(fst(X), cons(Y, keys(W)))
+557. insertNat(zero, X, deleteNat_case1_case1(true, Y, zero, Z, W, V)) -> insertNat_case1(false, zero, zero, Z, deleteNat(Y, W), X, V)
+558. insertNat(zero, X, deleteNat_case1(true, Y, zero, Z, W, V)) -> insertNat_case1(false, zero, zero, deleteNat(Y, Z), W, X, V)
+559. deleteNat(zero, deleteNat_case1_case1(true, X, suc(Y), Z, W, V)) -> deleteNat_case1(true, zero, suc(Y), Z, deleteNat(X, W), V)
+560. deleteNat(zero, deleteNat_case1(true, X, suc(Y), Z, W, V)) -> deleteNat_case1(true, zero, suc(Y), deleteNat(X, Z), W, V)
+561. deleteNat(suc(X), deleteNat_case1_case1(true, Y, zero, Z, W, V)) -> deleteNat_case1(false, suc(X), zero, Z, deleteNat(Y, W), V)
+562. deleteNat(suc(X), deleteNat_case1(true, Y, zero, Z, W, V)) -> deleteNat_case1(false, suc(X), zero, deleteNat(Y, Z), W, V)
+563. foldr(insertNat_0, X, opAppend(opAppend(cons(Y, Z), W), V)) -> insertNat_2(Y, foldr(insertNat_0, X, opAppend(opAppend(Z, W), V)))
+564. deleteNat_case1(false, suc(X), zero, deleteNat(Y, Z), W, V) -> deleteNat_case1(true, Y, zero, Z, deleteNat(suc(X), W), V)
+565. cons(insertNat_1(pair(fst(X), snd(X))), Y) -> opAppend(map(insertNat_0, toList(tree(cons(X, nil)))), Y)
+566. app(ltNat(pair(fst(X), snd(X)), Y), Z) -> foldr(lam4(Y), Z, toList(tree(cons(X, nil))))
+567. app(gtNat(pair(fst(X), snd(X)), Y), Z) -> foldr(lam5(Y), Z, toList(tree(cons(X, nil))))
+568. keys(insertNat_case1(true, X, Y, nil_1, Z, W, V)) -> cons(X, cons(Y, keys(Z)))
+569. deleteNat_case1_case1(true, zero, X, Y, branch(Z, zero, W, V), U) -> branch(Y, X, U, join(Z, V))
+570. deleteNat_case1(true, zero, X, branch(Y, zero, Z, W), V, U) -> branch(join(Y, W), X, U, V)
+571. opAppend(opAppend(toList(tree(cons(X, nil))), Y), Z) -> opAppend(toList(tree(cons(X, nil))), opAppend(Y, Z))
+572. prop_DeleteValid(X, toList(tree(map(Y, cons(Z, nil))))) -> prop_DeleteValid(X, map(Y, cons(Z, nil)))
+573. uncurry(uncurry(X, Y), pair(foldr(uncurry_1(X), Z, W), V)) -> app(foldr(uncurry_1(X), Z, cons(Y, W)), V)
+574. uncurry(ltNat(X, Y), pair(foldr(lam4(Y), Z, W), V)) -> app(foldr(lam4(Y), Z, cons(X, W)), V)
+575. uncurry(gtNat(X, Y), pair(foldr(lam5(Y), Z, W), V)) -> app(foldr(lam5(Y), Z, cons(X, W)), V)
+576. prop_DeleteValid(X, cons(Y, toList(tree(cons(Z, nil))))) -> prop_DeleteValid(X, cons(Y, cons(Z, nil)))
+577. foldr(fst_0, X, cons(Y, toList(tree(cons(Z, nil))))) -> app(fst(Y), app(fst(Z), X))
+578. foldr(lam4(suc(suc(X))), Y, cons(suc(zero), Z)) -> foldr(lam4(suc(suc(X))), Y, cons(zero, Z))
+579. foldr(lam5(suc(suc(X))), Y, cons(suc(zero), Z)) -> foldr(lam5(suc(suc(X))), Y, cons(zero, Z))
+580. foldr(lam5(zero), X, cons(zero, cons(suc(Y), Z))) -> app(false, app(true, foldr(lam5(zero), X, Z)))
+581. join(branch(X, Y, Z, nil_1), tree(cons(W, nil))) -> branch(X, Y, Z, tree(cons(W, nil)))
+582. join(insertNat(X, Y, nil_1), tree(cons(Z, nil))) -> branch(nil_1, X, Y, tree(cons(Z, nil)))
+583. app(foldr(lam4(suc(X)), Y, cons(zero, Z)), W) -> uncurry(true, pair(foldr(lam4(suc(X)), Y, Z), W))
+584. app(foldr(lam5(suc(X)), Y, cons(zero, Z)), W) -> uncurry(false, pair(foldr(lam5(suc(X)), Y, Z), W))
+585. app(foldr(insertNat_0, X, map(insertNat_0, cons(Y, Z))), W) -> insertNat(insertNat_1(Y), foldr(insertNat_0, X, map(insertNat_0, Z)), W)
+586. app(foldr(insertNat_0, X, map(fst_0, cons(Y, Z))), W) -> insertNat(fst(Y), foldr(insertNat_0, X, map(fst_0, Z)), W)
+587. deleteNat(suc(zero), branch(X, suc(suc(Y)), Z, W)) -> deleteNat_case1(true, suc(zero), suc(suc(Y)), X, W, Z)
+588. deleteNat(suc(zero), insertNat(suc(suc(X)), Y, nil_1)) -> insertNat(suc(suc(X)), Y, nil_1)
+589. prop_DeleteValid(suc(zero), toList(insertNat(suc(suc(X)), Y, nil_1))) -> true
+590. deleteNat(suc(suc(X)), branch(Y, suc(zero), Z, W)) -> deleteNat_case1(false, suc(suc(X)), suc(zero), Y, W, Z)
+591. deleteNat_case1_case1(true, suc(suc(X)), suc(zero), Y, Z, W) -> deleteNat_case1(false, suc(suc(X)), suc(zero), Y, Z, W)
+592. deleteNat_case1(false, suc(suc(X)), suc(zero), Y, nil_1, Z) -> branch(Y, suc(zero), Z, nil_1)
+593. app(fst(X), app(fst(Y), app(fst(Z), W))) -> foldr(fst_0, W, cons(X, cons(Y, cons(Z, nil))))
+594. opAppend(cons(X, toList(Y)), toList(insertNat(Z, W, nil_1))) -> cons(X, toList(branch(Y, Z, W, nil_1)))
+595. all(lam4(suc(zero)), opAppend(opAppend(cons(suc(zero), X), Y), Z)) -> false
+596. all(lam5(suc(zero)), opAppend(opAppend(cons(suc(zero), X), Y), Z)) -> false
+597. app(insertNat(X, Y, Z), app(insertNat(X, Y, W), V)) -> foldr(insertNat_2(X, Y), V, cons(Z, cons(W, nil)))
+598. all(uncurry_1(fst_0), cons(pair(pair(X, Y), Z), W)) -> opAnd(app(X, Z), all(uncurry_1(fst_0), W))
+599. map(uncurry_1(fst_0), cons(pair(pair(X, Y), Z), W)) -> cons(app(X, Z), map(uncurry_1(fst_0), W))
+600. validNat(tree(map(insertNat_0, map(X, toList(insertNat(Y, Z, nil_1)))))) -> true
+601. validNat(tree(map(fst_0, map(X, toList(insertNat(Y, Z, nil_1)))))) -> true
+602. cons(gtNat(X, zero), cons(true, map(lam5(zero), Y))) -> map(lam5(zero), cons(X, cons(suc(?), Y)))
+603. map(lam5(zero), cons(X, cons(suc(Y), Z))) ~> map(lam5(zero), cons(X, cons(suc(?), Z)))
+604. cons(pair(X, Y), cons(pair(Z, W), toList(V))) -> toList(insertNat_case1(true, X, Z, nil_1, V, Y, W))
+605. opAnd(uncurry(uncurry_1(X), Y), all(uncurry(X, fst(Y)), Z)) -> all(uncurry(X, fst(Y)), cons(snd(Y), Z))
+606. cons(uncurry(uncurry_1(X), Y), map(uncurry(X, fst(Y)), Z)) -> map(uncurry(X, fst(Y)), cons(snd(Y), Z))
+607. opAnd(uncurry(lam4(X), Y), all(ltNat(fst(Y), X), Z)) -> all(ltNat(fst(Y), X), cons(snd(Y), Z))
+608. cons(uncurry(lam4(X), Y), map(ltNat(fst(Y), X), Z)) -> map(ltNat(fst(Y), X), cons(snd(Y), Z))
+609. opAnd(uncurry(lam5(X), Y), all(gtNat(fst(Y), X), Z)) -> all(gtNat(fst(Y), X), cons(snd(Y), Z))
+610. cons(uncurry(lam5(X), Y), map(gtNat(fst(Y), X), Z)) -> map(gtNat(fst(Y), X), cons(snd(Y), Z))
+611. opAnd(foldr(fst_0, X, cons(Y, Z)), all(fst(Y), W)) -> all(fst(Y), cons(foldr(fst_0, X, Z), W))
+612. cons(foldr(fst_0, X, cons(Y, Z)), map(fst(Y), W)) -> map(fst(Y), cons(foldr(fst_0, X, Z), W))
+613. insertNat_2(uncurry(X, Y), foldr(insertNat_0, Z, map(uncurry_1(X), W))) -> foldr(insertNat_0, Z, map(uncurry_1(X), cons(Y, W)))
+614. insertNat_2(insertNat_2(X, Y), foldr(insertNat_0, Z, map(insertNat_1(X), W))) -> foldr(insertNat_0, Z, map(insertNat_1(X), cons(Y, W)))
+615. insertNat_2(ltNat(X, Y), foldr(insertNat_0, Z, map(lam4(Y), W))) -> foldr(insertNat_0, Z, map(lam4(Y), cons(X, W)))
+616. insertNat_2(gtNat(X, Y), foldr(insertNat_0, Z, map(lam5(Y), W))) -> foldr(insertNat_0, Z, map(lam5(Y), cons(X, W)))
+617. uncurry(uncurry(X, pair(Y, fst(Z))), pair(snd(Z), W)) -> app(uncurry(app(X, Y), Z), W)
+618. opAppend(cons(X, toList(tree(cons(Y, nil)))), nil) -> cons(X, toList(tree(cons(Y, nil))))
+619. opAppend(toList(tree(map(X, cons(Y, nil)))), nil) -> toList(tree(map(X, cons(Y, nil))))
+620. opAnd(uncurry(insertNat_1(X), Y), all(insertNat_2(X, fst(Y)), Z)) -> all(insertNat_2(X, fst(Y)), cons(snd(Y), Z))
+621. cons(uncurry(insertNat_1(X), Y), map(insertNat_2(X, fst(Y)), Z)) -> map(insertNat_2(X, fst(Y)), cons(snd(Y), Z))
+622. app(tree(cons(X, Y)), foldr(uncurry(insertNat_0, X), Z, W)) -> foldr(uncurry(insertNat_0, X), Z, cons(tree(Y), W))
+623. all(uncurry(X, Y), cons(foldr(uncurry_1(X), Z, W), nil)) -> opAnd(foldr(uncurry_1(X), Z, cons(Y, W)), true)
+624. map(uncurry(X, Y), cons(foldr(uncurry_1(X), Z, W), nil)) -> cons(foldr(uncurry_1(X), Z, cons(Y, W)), nil)
+625. all(ltNat(X, Y), cons(foldr(lam4(Y), Z, W), nil)) -> opAnd(foldr(lam4(Y), Z, cons(X, W)), true)
+626. map(ltNat(X, Y), cons(foldr(lam4(Y), Z, W), nil)) -> cons(foldr(lam4(Y), Z, cons(X, W)), nil)
+627. all(gtNat(X, Y), cons(foldr(lam5(Y), Z, W), nil)) -> opAnd(foldr(lam5(Y), Z, cons(X, W)), true)
+628. map(gtNat(X, Y), cons(foldr(lam5(Y), Z, W), nil)) -> cons(foldr(lam5(Y), Z, cons(X, W)), nil)
+629. opAnd(ltNat(X, Y), all(lam4(suc(suc(Y))), Z)) -> all(lam4(suc(suc(Y))), cons(suc(suc(X)), Z))
+630. all(lam4(suc(suc(zero))), cons(suc(suc(zero)), X)) -> false
+631. all(lam4(suc(suc(zero))), opAppend(cons(suc(suc(zero)), X), Y)) -> false
+632. all(lam4(suc(suc(zero))), cons(suc(suc(suc(X))), Y)) -> false
+633. opAnd(ltNat(X, Y), opAnd(ltNat(Z, suc(Y)), true)) -> all(lam4(suc(Y)), cons(suc(X), cons(Z, nil)))
+634. opAnd(gtNat(X, Y), all(lam5(suc(suc(Y))), Z)) -> all(lam5(suc(suc(Y))), cons(suc(suc(X)), Z))
+635. all(lam5(suc(suc(zero))), cons(suc(suc(zero)), X)) -> false
+636. all(lam5(suc(suc(zero))), opAppend(cons(suc(suc(zero)), X), Y)) -> false
+637. all(lam5(suc(suc(suc(X)))), cons(suc(suc(zero)), Y)) -> false
+638. opAnd(gtNat(X, Y), opAnd(gtNat(Z, suc(Y)), true)) -> all(lam5(suc(Y)), cons(suc(X), cons(Z, nil)))
+639. cons(ltNat(X, Y), map(lam4(suc(suc(Y))), Z)) -> map(lam4(suc(suc(Y))), cons(suc(suc(X)), Z))
+640. map(lam4(suc(suc(zero))), cons(suc(suc(zero)), X)) -> cons(false, map(lam4(suc(suc(zero))), X))
+641. cons(ltNat(X, Y), cons(ltNat(Z, suc(Y)), nil)) -> map(lam4(suc(Y)), cons(suc(X), cons(Z, nil)))
+642. cons(gtNat(X, Y), map(lam5(suc(suc(Y))), Z)) -> map(lam5(suc(suc(Y))), cons(suc(suc(X)), Z))
+643. map(lam5(suc(suc(zero))), cons(suc(suc(zero)), X)) -> map(lam5(suc(suc(zero))), cons(zero, X))
+644. cons(gtNat(X, Y), cons(gtNat(Z, suc(Y)), nil)) -> map(lam5(suc(Y)), cons(suc(X), cons(Z, nil)))
+645. keys(foldr(insertNat_1(X), nil_1, toList(tree(cons(Y, nil))))) -> cons(X, nil)
+646. foldr(insertNat_0, X, map(lam4(suc(Y)), cons(zero, Z))) -> insertNat_2(true, foldr(insertNat_0, X, map(lam4(suc(Y)), Z)))
+647. foldr(insertNat_0, X, map(lam5(suc(Y)), cons(zero, Z))) -> insertNat_2(false, foldr(insertNat_0, X, map(lam5(suc(Y)), Z)))
+648. all(uncurry_1(X), map(insertNat_0, toList(insertNat(Y, Z, nil_1)))) -> opAnd(uncurry(X, insertNat_1(pair(Y, Z))), true)
+649. all(insertNat_1(X), map(insertNat_0, toList(insertNat(Y, Z, nil_1)))) -> opAnd(insertNat_2(X, insertNat_1(pair(Y, Z))), true)
+650. all(lam4(X), map(insertNat_0, toList(insertNat(Y, Z, nil_1)))) -> opAnd(ltNat(insertNat_1(pair(Y, Z)), X), true)
+651. all(lam5(X), map(insertNat_0, toList(insertNat(Y, Z, nil_1)))) -> opAnd(gtNat(insertNat_1(pair(Y, Z)), X), true)
+652. map(uncurry_1(X), map(insertNat_0, toList(insertNat(Y, Z, nil_1)))) -> cons(uncurry(X, insertNat_1(pair(Y, Z))), nil)
+653. map(insertNat_1(X), map(insertNat_0, toList(insertNat(Y, Z, nil_1)))) -> cons(insertNat_2(X, insertNat_1(pair(Y, Z))), nil)
+654. map(lam4(X), map(insertNat_0, toList(insertNat(Y, Z, nil_1)))) -> cons(ltNat(insertNat_1(pair(Y, Z)), X), nil)
+655. map(lam5(X), map(insertNat_0, toList(insertNat(Y, Z, nil_1)))) -> cons(gtNat(insertNat_1(pair(Y, Z)), X), nil)
+656. foldr(fst_0, X, opAppend(toList(tree(cons(Y, nil))), Z)) -> foldr(fst_0, X, cons(Y, Z))
+657. opAnd(foldr(lam4(suc(X)), Y, cons(zero, Z)), true) -> all(true, cons(foldr(lam4(suc(X)), Y, Z), nil))
+658. cons(foldr(lam4(suc(X)), Y, cons(zero, Z)), nil) -> map(true, cons(foldr(lam4(suc(X)), Y, Z), nil))
+659. opAnd(foldr(lam5(suc(X)), Y, cons(zero, Z)), true) -> all(false, cons(foldr(lam5(suc(X)), Y, Z), nil))
+660. cons(foldr(lam5(suc(X)), Y, cons(zero, Z)), nil) -> map(false, cons(foldr(lam5(suc(X)), Y, Z), nil))
+661. keys(tree(map(X, map(Y, cons(Z, nil))))) -> cons(fst(app(X, app(Y, Z))), nil)
+662. cons(fst(app(X, pair(Y, Z))), nil) -> keys(tree(map(X, toList(insertNat(Y, Z, nil_1)))))
+663. foldr(fst_0, X, toList(tree(map(Y, cons(Z, nil))))) -> app(fst(app(Y, Z)), X)
+664. all(insertNat_0, map(uncurry_1(X), toList(insertNat(Y, Z, nil_1)))) -> opAnd(insertNat_1(uncurry(X, pair(Y, Z))), true)
+665. all(fst_0, map(uncurry_1(X), toList(insertNat(Y, Z, nil_1)))) -> opAnd(fst(uncurry(X, pair(Y, Z))), true)
+666. map(insertNat_0, map(uncurry_1(X), toList(insertNat(Y, Z, nil_1)))) -> cons(insertNat_1(uncurry(X, pair(Y, Z))), nil)
+667. map(fst_0, map(uncurry_1(X), toList(insertNat(Y, Z, nil_1)))) -> cons(fst(uncurry(X, pair(Y, Z))), nil)
+668. all(insertNat_0, map(insertNat_1(X), toList(insertNat(Y, Z, nil_1)))) -> opAnd(insertNat_1(insertNat_2(X, pair(Y, Z))), true)
+669. all(fst_0, map(insertNat_1(X), toList(insertNat(Y, Z, nil_1)))) -> opAnd(fst(insertNat_2(X, pair(Y, Z))), true)
+670. map(insertNat_0, map(insertNat_1(X), toList(insertNat(Y, Z, nil_1)))) -> cons(insertNat_1(insertNat_2(X, pair(Y, Z))), nil)
+671. map(fst_0, map(insertNat_1(X), toList(insertNat(Y, Z, nil_1)))) -> cons(fst(insertNat_2(X, pair(Y, Z))), nil)
+672. all(insertNat_0, map(lam4(X), toList(insertNat(Y, Z, nil_1)))) -> opAnd(insertNat_1(ltNat(pair(Y, Z), X)), true)
+673. all(fst_0, map(lam4(X), toList(insertNat(Y, Z, nil_1)))) -> opAnd(fst(ltNat(pair(Y, Z), X)), true)
+674. map(insertNat_0, map(lam4(X), toList(insertNat(Y, Z, nil_1)))) -> cons(insertNat_1(ltNat(pair(Y, Z), X)), nil)
+675. map(fst_0, map(lam4(X), toList(insertNat(Y, Z, nil_1)))) -> cons(fst(ltNat(pair(Y, Z), X)), nil)
+676. all(insertNat_0, map(lam5(X), toList(insertNat(Y, Z, nil_1)))) -> opAnd(insertNat_1(gtNat(pair(Y, Z), X)), true)
+677. all(fst_0, map(lam5(X), toList(insertNat(Y, Z, nil_1)))) -> opAnd(fst(gtNat(pair(Y, Z), X)), true)
+678. map(insertNat_0, map(lam5(X), toList(insertNat(Y, Z, nil_1)))) -> cons(insertNat_1(gtNat(pair(Y, Z), X)), nil)
+679. map(fst_0, map(lam5(X), toList(insertNat(Y, Z, nil_1)))) -> cons(fst(gtNat(pair(Y, Z), X)), nil)
+680. opAnd(uncurry(insertNat_0, X), opAnd(insertNat_2(fst(X), Y), true)) -> all(insertNat_1(fst(X)), cons(snd(X), cons(Y, nil)))
+681. cons(uncurry(insertNat_0, X), cons(insertNat_2(fst(X), Y), nil)) -> map(insertNat_1(fst(X)), cons(snd(X), cons(Y, nil)))
+682. join(insertNat(zero, X, insertNat(suc(Y), Z, nil_1)), nil_1) -> insertNat(zero, X, insertNat(suc(Y), Z, nil_1))
+683. join(insertNat(suc(X), Y, insertNat(zero, Z, nil_1)), nil_1) -> insertNat(suc(X), Y, insertNat(zero, Z, nil_1))
+684. all(fst_0, toList(insertNat(zero, X, insertNat(zero, Y, nil_1)))) -> opAnd(zero, opAnd(zero, true))
+685. foldr(X, foldr(X, Y, Z), cons(W, cons(V, nil))) -> foldr(X, Y, cons(W, cons(V, Z)))
+686. cons(uncurry(X, Y), cons(uncurry(X, Z), W)) = opAppend(map(uncurry_1(X), cons(Y, cons(Z, nil))), W)
+687. cons(insertNat_2(X, Y), cons(insertNat_2(X, Z), W)) = opAppend(map(insertNat_1(X), cons(Y, cons(Z, nil))), W)
+688. cons(ltNat(X, Y), cons(ltNat(Z, Y), W)) = opAppend(map(lam4(Y), cons(X, cons(Z, nil))), W)
+689. cons(gtNat(X, Y), cons(gtNat(Z, Y), W)) = opAppend(map(lam5(Y), cons(X, cons(Z, nil))), W)
+690. foldr(uncurry_1(X), Y, opAppend(toList(tree(cons(Z, nil))), W)) -> foldr(uncurry_1(X), Y, cons(Z, W))
+691. foldr(insertNat_1(X), snd(Y), cons(Z, cons(fst(Y), nil))) = insertNat(X, Z, uncurry(insertNat_1(X), Y))
+692. all(uncurry_1(X), map(Y, map(Z, cons(W, nil)))) -> opAnd(uncurry(X, app(Y, app(Z, W))), true)
+693. opAnd(uncurry(X, app(Y, pair(Z, W))), true) -> all(uncurry_1(X), map(Y, toList(insertNat(Z, W, nil_1))))
+694. all(insertNat_1(X), map(Y, map(Z, cons(W, nil)))) -> opAnd(insertNat_2(X, app(Y, app(Z, W))), true)
+695. opAnd(insertNat_2(X, app(Y, pair(Z, W))), true) -> all(insertNat_1(X), map(Y, toList(insertNat(Z, W, nil_1))))
+696. all(lam4(X), map(Y, map(Z, cons(W, nil)))) -> opAnd(ltNat(app(Y, app(Z, W)), X), true)
+697. opAnd(ltNat(app(X, pair(Y, Z)), W), true) -> all(lam4(W), map(X, toList(insertNat(Y, Z, nil_1))))
+698. all(lam5(X), map(Y, map(Z, cons(W, nil)))) -> opAnd(gtNat(app(Y, app(Z, W)), X), true)
+699. opAnd(gtNat(app(X, pair(Y, Z)), W), true) -> all(lam5(W), map(X, toList(insertNat(Y, Z, nil_1))))
+700. map(uncurry_1(X), map(Y, map(Z, cons(W, nil)))) -> cons(uncurry(X, app(Y, app(Z, W))), nil)
+701. cons(uncurry(X, app(Y, pair(Z, W))), nil) -> map(uncurry_1(X), map(Y, toList(insertNat(Z, W, nil_1))))
+702. map(insertNat_1(X), map(Y, map(Z, cons(W, nil)))) -> cons(insertNat_2(X, app(Y, app(Z, W))), nil)
+703. cons(insertNat_2(X, app(Y, pair(Z, W))), nil) -> map(insertNat_1(X), map(Y, toList(insertNat(Z, W, nil_1))))
+704. map(lam4(X), map(Y, map(Z, cons(W, nil)))) -> cons(ltNat(app(Y, app(Z, W)), X), nil)
+705. cons(ltNat(app(X, pair(Y, Z)), W), nil) -> map(lam4(W), map(X, toList(insertNat(Y, Z, nil_1))))
+706. map(lam5(X), map(Y, map(Z, cons(W, nil)))) -> cons(gtNat(app(Y, app(Z, W)), X), nil)
+707. cons(gtNat(app(X, pair(Y, Z)), W), nil) -> map(lam5(W), map(X, toList(insertNat(Y, Z, nil_1))))
+708. all(app(X, Y), map(Z, cons(W, nil))) -> all(uncurry_1(X), toList(insertNat(Y, app(Z, W), nil_1)))
+709. all(uncurry_1(X), toList(insertNat(Y, pair(Z, W), nil_1))) -> all(app(X, Y), toList(insertNat(Z, W, nil_1)))
+710. map(app(X, Y), map(Z, cons(W, nil))) -> map(uncurry_1(X), toList(insertNat(Y, app(Z, W), nil_1)))
+711. map(uncurry_1(X), toList(insertNat(Y, pair(Z, W), nil_1))) -> map(app(X, Y), toList(insertNat(Z, W, nil_1)))
+712. opAnd(insertNat_1(insertNat_1(pair(fst(X), snd(X)))), true) -> all(insertNat_0, map(insertNat_0, toList(tree(cons(X, nil)))))
+713. opAnd(fst(insertNat_1(pair(fst(X), snd(X)))), true) -> all(fst_0, map(insertNat_0, toList(tree(cons(X, nil)))))
+714. cons(insertNat_1(insertNat_1(pair(fst(X), snd(X)))), nil) -> map(insertNat_0, map(insertNat_0, toList(tree(cons(X, nil)))))
+715. cons(fst(insertNat_1(pair(fst(X), snd(X)))), nil) -> map(fst_0, map(insertNat_0, toList(tree(cons(X, nil)))))
+716. insertNat_case1(false, X, fst(Y), nil_1, nil_1, Z, snd(Y)) -> join(tree(cons(Y, nil)), insertNat(X, Z, nil_1))
+717. validNat(join(tree(cons(X, nil)), insertNat(Y, Z, nil_1))) -> opAnd(gtNat(Y, fst(X)), true)
+718. keys(join(tree(cons(X, nil)), insertNat(Y, Z, nil_1))) -> cons(fst(X), cons(Y, nil))
+719. opAppend(cons(X, toList(Y)), cons(pair(Z, W), toList(V))) -> cons(X, toList(branch(Y, Z, W, V)))
+720. join(tree(map(insertNat_0, toList(insertNat(X, Y, nil_1)))), nil_1) -> tree(map(insertNat_0, toList(insertNat(X, Y, nil_1))))
+721. all(lam4(zero), opAppend(cons(X, cons(suc(Y), Z)), W)) -> opAnd(ltNat(X, zero), false)
+722. all(uncurry_1(uncurry(insertNat_0, X)), toList(insertNat(nil_1, Y, nil_1))) -> all(tree(cons(X, nil)), cons(Y, nil))
+723. map(uncurry_1(uncurry(insertNat_0, X)), toList(insertNat(nil_1, Y, nil_1))) -> map(tree(cons(X, nil)), cons(Y, nil))
+724. all(insertNat_1(fst(X)), cons(snd(X), cons(snd(X), nil))) -> all(uncurry_1(insertNat_0), cons(X, cons(X, nil)))
+725. map(insertNat_1(fst(X)), cons(snd(X), cons(snd(X), nil))) -> map(uncurry_1(insertNat_0), cons(X, cons(X, nil)))
+726. insertNat_2(app(X, pair(fst(Y), snd(Y))), Z) = foldr(insertNat_0, Z, map(X, toList(tree(cons(Y, nil)))))
+727. foldr(fst_0, X, map(insertNat_0, cons(Y, cons(Z, nil)))) -> app(fst(insertNat_1(Y)), app(fst(insertNat_1(Z)), X))
+728. foldr(fst_0, X, map(fst_0, cons(Y, cons(Z, nil)))) -> app(fst(fst(Y)), app(fst(fst(Z)), X))
+729. uncurry(app(X, Y), pair(Z, foldr(uncurry_1(X), W, V))) -> foldr(uncurry_1(X), W, cons(pair(Y, Z), V))
+730. all(uncurry_1(X), toList(tree(map(Y, cons(Z, nil))))) -> opAnd(uncurry(X, app(Y, Z)), true)
+731. map(uncurry_1(X), toList(tree(map(Y, cons(Z, nil))))) -> cons(uncurry(X, app(Y, Z)), nil)
+732. all(uncurry_1(insertNat_0), cons(pair(X, Y), cons(Z, nil))) -> opAnd(insertNat_2(X, Y), opAnd(uncurry(insertNat_0, Z), true))
+733. map(uncurry_1(insertNat_0), cons(pair(X, Y), cons(Z, nil))) -> cons(insertNat_2(X, Y), cons(uncurry(insertNat_0, Z), nil))
+734. opAnd(uncurry(insertNat_0, X), opAnd(insertNat_2(Y, Z), true)) -> all(uncurry_1(insertNat_0), cons(X, toList(insertNat(Y, Z, nil_1))))
+735. cons(uncurry(insertNat_0, X), cons(insertNat_2(Y, Z), nil)) -> map(uncurry_1(insertNat_0), cons(X, toList(insertNat(Y, Z, nil_1))))
+736. cons(pair(zero, X), toList(insertNat(suc(Y), Z, nil_1))) -> toList(insertNat(suc(Y), Z, insertNat(zero, X, nil_1)))
+737. opAnd(insertNat(X, Y, Z), opAnd(insertNat(X, Y, W), true)) -> all(insertNat_2(X, Y), cons(Z, cons(W, nil)))
+738. cons(insertNat(X, Y, Z), cons(insertNat(X, Y, W), nil)) -> map(insertNat_2(X, Y), cons(Z, cons(W, nil)))
+739. all(lam4(zero), cons(X, cons(Y, cons(zero, Z)))) -> opAnd(ltNat(X, zero), opAnd(ltNat(Y, zero), false))
+740. all(lam5(zero), cons(X, cons(Y, cons(zero, Z)))) -> opAnd(gtNat(X, zero), opAnd(gtNat(Y, zero), false))
+741. opAnd(foldr(X, Y, cons(Z, W)), all(app(X, Z), V)) -> all(app(X, Z), cons(foldr(X, Y, W), V))
+742. cons(foldr(X, Y, cons(Z, W)), map(app(X, Z), V)) -> map(app(X, Z), cons(foldr(X, Y, W), V))
+743. uncurry(uncurry(insertNat_0, X), pair(insertNat(Y, Z, nil_1), W)) -> app(tree(cons(X, toList(insertNat(Y, Z, nil_1)))), W)
+744. deleteNat(suc(zero), deleteNat_case1_case1(true, X, suc(zero), Y, Z, W)) -> join(Y, deleteNat(X, Z))
+745. deleteNat(suc(zero), deleteNat_case1(true, X, suc(zero), Y, Z, W)) -> join(deleteNat(X, Y), Z)
+746. foldr(uncurry_1(insertNat_0), X, cons(Y, toList(insertNat(Z, W, nil_1)))) -> app(uncurry(insertNat_0, Y), insertNat(Z, W, X))
+747. validNat(tree(map(X, map(insertNat_0, toList(insertNat(Y, Z, nil_1)))))) -> true
+748. foldr(insertNat_1(X), Y, cons(Z, map(W, cons(V, nil)))) = insertNat(X, Z, insertNat(X, app(W, V), Y))
+749. insertNat(X, Y, insertNat(X, pair(Z, W), V)) = foldr(insertNat_1(X), V, cons(Y, toList(insertNat(Z, W, nil_1))))
+750. all(lam5(suc(X)), opAppend(cons(Y, cons(zero, Z)), W)) -> opAnd(gtNat(Y, suc(X)), false)
+751. tree(toList(insertNat_case1(true, X, Y, nil_1, Z, W, V))) -> insertNat(X, W, insertNat(Y, V, tree(toList(Z))))
+752. opAnd(app(uncurry(X, Y), Z), all(uncurry_1(uncurry_1(X)), W)) -> all(uncurry_1(uncurry_1(X)), cons(pair(Y, Z), W))
+753. opAnd(app(ltNat(X, Y), Z), all(uncurry_1(lam4(Y)), W)) -> all(uncurry_1(lam4(Y)), cons(pair(X, Z), W))
+754. opAnd(app(false, X), all(uncurry_1(lam4(zero)), Y)) -> all(uncurry_1(lam4(zero)), cons(pair(zero, X), Y))
+755. all(uncurry_1(lam4(zero)), cons(pair(suc(X), Y), Z)) -> all(uncurry_1(lam4(zero)), cons(pair(zero, Y), Z))
+756. opAnd(app(gtNat(X, Y), Z), all(uncurry_1(lam5(Y)), W)) -> all(uncurry_1(lam5(Y)), cons(pair(X, Z), W))
+757. opAnd(app(false, X), all(uncurry_1(lam5(zero)), Y)) -> all(uncurry_1(lam5(zero)), cons(pair(zero, X), Y))
+758. all(uncurry_1(lam5(zero)), cons(pair(suc(X), Y), Z)) -> opAnd(app(true, Y), all(uncurry_1(lam5(zero)), Z))
+759. cons(app(uncurry(X, Y), Z), map(uncurry_1(uncurry_1(X)), W)) -> map(uncurry_1(uncurry_1(X)), cons(pair(Y, Z), W))
+760. cons(app(ltNat(X, Y), Z), map(uncurry_1(lam4(Y)), W)) -> map(uncurry_1(lam4(Y)), cons(pair(X, Z), W))
+761. cons(app(false, X), map(uncurry_1(lam4(zero)), Y)) -> map(uncurry_1(lam4(zero)), cons(pair(zero, X), Y))
+762. map(uncurry_1(lam4(zero)), cons(pair(suc(X), Y), Z)) -> map(uncurry_1(lam4(zero)), cons(pair(zero, Y), Z))
+763. cons(app(gtNat(X, Y), Z), map(uncurry_1(lam5(Y)), W)) -> map(uncurry_1(lam5(Y)), cons(pair(X, Z), W))
+764. cons(app(false, X), map(uncurry_1(lam5(zero)), Y)) -> map(uncurry_1(lam5(zero)), cons(pair(zero, X), Y))
+765. map(uncurry_1(lam5(zero)), cons(pair(suc(X), Y), Z)) -> cons(app(true, Y), map(uncurry_1(lam5(zero)), Z))
+766. map(lam4(zero), cons(zero, map(X, cons(Y, nil)))) -> cons(false, cons(ltNat(app(X, Y), zero), nil))
+767. map(lam5(zero), cons(zero, map(X, cons(Y, nil)))) -> cons(false, cons(gtNat(app(X, Y), zero), nil))
+768. deleteNat(suc(suc(X)), insertNat(suc(zero), Y, nil_1)) -> insertNat(suc(zero), Y, nil_1)
+769. prop_DeleteValid(suc(suc(X)), toList(insertNat(suc(zero), Y, nil_1))) -> true
+770. insertNat(pair(fst(X), snd(X)), Y, Z) = app(foldr(insertNat_0, Y, toList(tree(cons(X, nil)))), Z)
+771. opAnd(ltNat(X, suc(Y)), opAnd(ltNat(Z, Y), true)) -> all(lam4(suc(Y)), cons(X, cons(suc(Z), nil)))
+772. opAnd(gtNat(X, suc(Y)), opAnd(gtNat(Z, Y), true)) -> all(lam5(suc(Y)), cons(X, cons(suc(Z), nil)))
+773. cons(ltNat(X, suc(Y)), cons(ltNat(Z, Y), nil)) -> map(lam4(suc(Y)), cons(X, cons(suc(Z), nil)))
+774. map(lam4(suc(zero)), cons(X, cons(suc(zero), nil))) -> cons(ltNat(X, suc(zero)), cons(false, nil))
+775. cons(gtNat(X, suc(Y)), cons(gtNat(Z, Y), nil)) -> map(lam5(suc(Y)), cons(X, cons(suc(Z), nil)))
+776. all(lam4(suc(suc(zero))), cons(X, cons(suc(suc(zero)), Y))) -> opAnd(ltNat(X, suc(suc(zero))), false)
+777. all(lam5(suc(suc(zero))), cons(X, cons(suc(suc(zero)), Y))) -> opAnd(gtNat(X, suc(suc(zero))), false)
+778. app(insertNat(X, Y, Z), foldr(uncurry_1(insertNat_1(X)), W, V)) -> foldr(uncurry_1(insertNat_1(X)), W, cons(pair(Y, Z), V))
+779. all(uncurry(insertNat_0, X), cons(insertNat(Y, Z, nil_1), nil)) -> opAnd(tree(cons(X, toList(insertNat(Y, Z, nil_1)))), true)
+780. map(uncurry(insertNat_0, X), cons(insertNat(Y, Z, nil_1), nil)) -> cons(tree(cons(X, toList(insertNat(Y, Z, nil_1)))), nil)
+781. keys(tree(map(uncurry_1(X), toList(insertNat(Y, Z, nil_1))))) -> cons(fst(uncurry(X, pair(Y, Z))), nil)
+782. keys(tree(map(insertNat_1(X), toList(insertNat(Y, Z, nil_1))))) -> cons(fst(insertNat_2(X, pair(Y, Z))), nil)
+783. keys(tree(map(lam4(X), toList(insertNat(Y, Z, nil_1))))) -> cons(fst(ltNat(pair(Y, Z), X)), nil)
+784. keys(tree(map(lam5(X), toList(insertNat(Y, Z, nil_1))))) -> cons(fst(gtNat(pair(Y, Z), X)), nil)
+785. join(tree(map(X, map(Y, cons(Z, nil)))), nil_1) -> tree(map(X, map(Y, cons(Z, nil))))
+786. join(tree(map(X, toList(insertNat(Y, Z, nil_1)))), nil_1) -> tree(map(X, toList(insertNat(Y, Z, nil_1))))
+787. tree(opAppend(toList(tree(map(X, cons(Y, nil)))), Z)) -> tree(cons(app(X, Y), Z))
+788. tree(opAppend(cons(X, toList(tree(cons(Y, nil)))), Z)) -> tree(cons(X, cons(Y, Z)))
+789. uncurry(app(X, Y), pair(uncurry(X, pair(Z, W)), V)) -> app(foldr(X, W, cons(Y, cons(Z, nil))), V)
+790. opAnd(app(fst(X), Y), opAnd(uncurry(fst_0, Z), true)) -> all(uncurry_1(fst_0), cons(pair(X, Y), cons(Z, nil)))
+791. opAnd(uncurry(fst_0, X), all(fst(Y), cons(Z, nil))) -> all(uncurry_1(fst_0), cons(X, toList(insertNat(Y, Z, nil_1))))
+792. opAnd(insertNat_2(fst(X), Y), opAnd(uncurry(insertNat_0, X), true)) -> all(insertNat_1(fst(X)), cons(Y, cons(snd(X), nil)))
+793. cons(app(fst(X), Y), cons(uncurry(fst_0, Z), nil)) -> map(uncurry_1(fst_0), cons(pair(X, Y), cons(Z, nil)))
+794. cons(uncurry(fst_0, X), map(fst(Y), cons(Z, nil))) -> map(uncurry_1(fst_0), cons(X, toList(insertNat(Y, Z, nil_1))))
+795. cons(insertNat_2(fst(X), Y), cons(uncurry(insertNat_0, X), nil)) -> map(insertNat_1(fst(X)), cons(Y, cons(snd(X), nil)))
+796. all(app(X, fst(Y)), cons(snd(Y), cons(snd(Y), nil))) -> all(uncurry_1(X), cons(Y, cons(Y, nil)))
+797. map(app(X, fst(Y)), cons(snd(Y), cons(snd(Y), nil))) -> map(uncurry_1(X), cons(Y, cons(Y, nil)))
+798. insertNat(app(X, Y), foldr(insertNat_0, Z, map(X, W)), V) -> app(foldr(insertNat_0, Z, map(X, cons(Y, W))), V)
+799. validNat(app(foldr(insertNat_0, X, map(Y, cons(Z, W))), nil_1)) -> true
+800. keys(app(foldr(insertNat_0, X, map(Y, cons(Z, W))), nil_1)) -> map(Y, cons(Z, nil))
+801. foldr(lam4(suc(zero)), X, opAppend(cons(suc(zero), Y), Z)) -> app(false, foldr(lam4(suc(zero)), X, opAppend(Y, Z)))
+802. foldr(lam5(suc(zero)), X, opAppend(cons(suc(zero), Y), Z)) -> foldr(lam5(suc(zero)), X, opAppend(cons(zero, Y), Z))
+803. foldr(lam5(suc(zero)), X, cons(Y, cons(suc(zero), Z))) -> foldr(lam5(suc(zero)), X, cons(Y, cons(zero, Z)))
+804. branch(nil_1, fst(X), snd(X), branch(Y, Z, W, V)) -> join(tree(cons(X, nil)), branch(Y, Z, W, V))
+805. tree(toList(insertNat(suc(X), Y, insertNat(zero, Z, nil_1)))) -> insertNat(zero, Z, insertNat(suc(X), Y, nil_1))
+806. opAnd(app(true, X), all(uncurry_1(lam4(suc(Y))), Z)) -> all(uncurry_1(lam4(suc(Y))), cons(pair(zero, X), Z))
+807. opAnd(app(false, X), all(uncurry_1(lam5(suc(Y))), Z)) -> all(uncurry_1(lam5(suc(Y))), cons(pair(zero, X), Z))
+808. cons(app(true, X), map(uncurry_1(lam4(suc(Y))), Z)) -> map(uncurry_1(lam4(suc(Y))), cons(pair(zero, X), Z))
+809. cons(app(false, X), map(uncurry_1(lam5(suc(Y))), Z)) -> map(uncurry_1(lam5(suc(Y))), cons(pair(zero, X), Z))
+810. validNat(tree(map(X, map(insertNat_0, toList(tree(cons(Y, nil))))))) -> true
+811. validNat(tree(map(insertNat_0, map(X, toList(tree(cons(Y, nil))))))) -> true
+812. validNat(tree(map(fst_0, map(X, toList(tree(cons(Y, nil))))))) -> true
+813. validNat(app(foldr(insertNat_0, X, toList(tree(cons(Y, nil)))), nil_1)) -> true
+814. app(tree(cons(X, Y)), foldr(uncurry_1(uncurry_1(insertNat_0)), Z, W)) -> foldr(uncurry_1(uncurry_1(insertNat_0)), Z, cons(pair(X, tree(Y)), W))
+815. foldr(insertNat_1(X), Y, cons(Z, cons(W, cons(V, nil)))) = insertNat(X, Z, insertNat(X, W, insertNat(X, V, Y)))
+816. foldr(insertNat_1(fst(X)), Y, cons(snd(X), cons(Z, nil))) -> app(uncurry(insertNat_0, X), insertNat(fst(X), Z, Y))
+817. foldr(insertNat_1(fst(X)), Y, cons(Z, cons(snd(X), nil))) -> insertNat(fst(X), Z, app(uncurry(insertNat_0, X), Y))
+818. all(lam4(suc(zero)), cons(X, cons(suc(suc(Y)), Z))) -> opAnd(ltNat(X, suc(zero)), false)
+819. map(fst_0, map(insertNat_0, toList(tree(cons(X, nil))))) -> keys(tree(map(insertNat_0, toList(tree(cons(X, nil))))))
+820. map(lam4(zero), cons(zero, cons(zero, cons(X, nil)))) -> cons(false, cons(false, cons(ltNat(X, zero), nil)))
+821. map(lam5(zero), cons(zero, cons(zero, cons(X, nil)))) -> cons(false, cons(false, cons(gtNat(X, zero), nil)))
+822. insertNat_2(uncurry(X, Y), insertNat_2(uncurry(X, Y), Z)) = foldr(insertNat_0, Z, map(uncurry_1(X), cons(Y, cons(Y, nil))))
+823. deleteNat(zero, foldr(insertNat_1(zero), nil_1, toList(tree(cons(X, nil))))) -> nil_1
+824. keys(branch(X, fst(Y), snd(Y), nil_1)) = map(fst_0, opAppend(toList(X), toList(tree(cons(Y, nil)))))
+825. foldr(insertNat_0, X, map(insertNat_0, toList(tree(cons(Y, nil))))) = insertNat_2(insertNat_1(pair(fst(Y), snd(Y))), X)
+826. insertNat_case1(ltNat(X, Y), suc(X), suc(Y), Z, W, V, U) -> insertNat(suc(X), V, branch(Z, suc(Y), U, W))
+827. insertNat(suc(zero), X, branch(Y, suc(zero), Z, W)) -> insertNat_case1(false, suc(zero), suc(zero), Y, W, X, Z)
+828. insertNat_case1(false, suc(zero), suc(zero), nil_1, nil_1, X, Y) -> insertNat(suc(zero), X, insertNat(suc(zero), Y, nil_1))
+829. validNat(insertNat(suc(zero), X, insertNat(suc(zero), Y, nil_1))) -> false
+830. keys(insertNat(suc(zero), X, insertNat(suc(zero), Y, nil_1))) -> cons(suc(zero), cons(suc(zero), nil))
+831. deleteNat_case1(true, suc(X), Y, insertNat(zero, Z, nil_1), W, V) -> insertNat_case1(true, zero, Y, nil_1, W, Z, V)
+832. join(tree(map(X, toList(tree(cons(Y, nil))))), nil_1) -> tree(map(X, toList(tree(cons(Y, nil)))))
+833. foldr(lam4(suc(zero)), X, cons(zero, cons(suc(zero), Y))) -> app(true, app(false, foldr(lam4(suc(zero)), X, Y)))
+834. all(uncurry_1(insertNat_0), cons(X, toList(tree(cons(Y, nil))))) -> all(uncurry_1(insertNat_0), cons(X, cons(Y, nil)))
+835. map(uncurry_1(insertNat_0), cons(X, toList(tree(cons(Y, nil))))) -> map(uncurry_1(insertNat_0), cons(X, cons(Y, nil)))
+836. all(uncurry_1(fst_0), cons(X, toList(tree(cons(Y, nil))))) -> all(uncurry_1(fst_0), cons(X, cons(Y, nil)))
+837. map(uncurry_1(fst_0), cons(X, toList(tree(cons(Y, nil))))) -> map(uncurry_1(fst_0), cons(X, cons(Y, nil)))
+838. join(insertNat(suc(zero), X, insertNat(suc(zero), Y, nil_1)), nil_1) -> insertNat(suc(zero), X, insertNat(suc(zero), Y, nil_1))
+839. deleteNat_case1_case1(true, suc(X), Y, Z, insertNat(zero, W, nil_1), V) -> insertNat_case1(false, zero, Y, Z, nil_1, W, V)
+840. all(lam4(zero), opAppend(opAppend(opAppend(cons(zero, X), Y), Z), W)) -> false
+841. all(lam5(zero), opAppend(opAppend(opAppend(cons(zero, X), Y), Z), W)) -> false
+842. all(lam5(suc(suc(zero))), cons(suc(suc(suc(X))), Y)) -> all(lam5(suc(suc(zero))), Y)
+843. opAnd(foldr(X, Y, cons(Z, W)), all(uncurry_1(X), V)) -> all(uncurry_1(X), cons(pair(Z, foldr(X, Y, W)), V))
+844. cons(foldr(X, Y, cons(Z, W)), map(uncurry_1(X), V)) -> map(uncurry_1(X), cons(pair(Z, foldr(X, Y, W)), V))
+845. insertNat(zero, X, insertNat_case1(false, Y, zero, Z, W, V, U)) -> insertNat_case1(false, zero, zero, Z, insertNat(Y, V, W), X, U)
+846. insertNat(zero, X, insertNat_case1(true, Y, zero, Z, W, V, U)) -> insertNat_case1(true, Y, zero, Z, insertNat(zero, X, W), V, U)
+847. deleteNat(zero, insertNat_case1(false, X, suc(Y), Z, W, V, U)) -> insertNat_case1(false, X, suc(Y), deleteNat(zero, Z), W, V, U)
+848. deleteNat(zero, insertNat(suc(zero), X, insertNat(suc(zero), Y, nil_1))) -> insertNat(suc(zero), X, insertNat(suc(zero), Y, nil_1))
+849. deleteNat(zero, insertNat_case1(true, X, suc(Y), Z, W, V, U)) -> deleteNat_case1(true, zero, suc(Y), insertNat(X, V, Z), W, U)
+850. deleteNat(zero, insertNat(zero, X, insertNat(suc(Y), Z, nil_1))) -> insertNat(suc(Y), Z, nil_1)
+851. deleteNat(suc(X), insertNat_case1(false, Y, zero, Z, W, V, U)) -> deleteNat_case1(false, suc(X), zero, Z, insertNat(Y, V, W), U)
+852. deleteNat(suc(X), insertNat_case1(true, Y, zero, Z, W, V, U)) -> deleteNat_case1(false, suc(X), zero, insertNat(Y, V, Z), W, U)
+853. insertNat(zero, X, deleteNat_case1_case1(true, Y, suc(Z), W, V, U)) -> insertNat_case1(true, zero, suc(Z), W, deleteNat(Y, V), X, U)
+854. insertNat(zero, X, deleteNat_case1(true, Y, suc(Z), W, V, U)) -> insertNat_case1(true, zero, suc(Z), deleteNat(Y, W), V, X, U)
+855. insertNat(suc(X), Y, deleteNat_case1_case1(true, Z, zero, W, V, U)) -> insertNat_case1(false, suc(X), zero, W, deleteNat(Z, V), Y, U)
+856. insertNat(suc(X), Y, deleteNat_case1(true, Z, zero, W, V, U)) -> insertNat_case1(false, suc(X), zero, deleteNat(Z, W), V, Y, U)
+857. deleteNat_case1(false, suc(X), zero, insertNat(Y, Z, W), V, U) -> insertNat_case1(true, Y, zero, W, deleteNat(suc(X), V), Z, U)
+858. validNat(tree(map(X, map(Y, map(Z, cons(W, nil)))))) -> true
+859. validNat(tree(map(X, map(Y, toList(insertNat(Z, W, nil_1)))))) -> true
+860. all(uncurry_1(X), cons(Y, toList(tree(cons(Z, nil))))) -> all(uncurry_1(X), cons(Y, cons(Z, nil)))
+861. map(uncurry_1(X), cons(Y, toList(tree(cons(Z, nil))))) -> map(uncurry_1(X), cons(Y, cons(Z, nil)))
+862. cons(insertNat_2(X, pair(fst(Y), snd(Y))), Z) -> opAppend(map(insertNat_1(X), toList(tree(cons(Y, nil)))), Z)
+863. cons(ltNat(pair(fst(X), snd(X)), Y), Z) -> opAppend(map(lam4(Y), toList(tree(cons(X, nil)))), Z)
+864. cons(gtNat(pair(fst(X), snd(X)), Y), Z) -> opAppend(map(lam5(Y), toList(tree(cons(X, nil)))), Z)
+865. validNat(join(branch(X, Y, Z, W), branch(V, U, T, S))) ~> validNat(join(branch(X, Y, ?, W), branch(V, U, T, S)))
+866. validNat(join(branch(X, Y, Z, W), insertNat(V, U, nil_1))) ~> validNat(join(branch(X, Y, ?, W), insertNat(V, U, nil_1)))
+867. opAnd(foldr(lam4(zero), X, cons(zero, Y)), all(false, Z)) -> all(false, cons(foldr(lam4(zero), X, Y), Z))
+868. cons(foldr(lam4(zero), X, cons(zero, Y)), map(false, Z)) -> map(false, cons(foldr(lam4(zero), X, Y), Z))
+869. foldr(lam4(zero), X, cons(zero, map(Y, cons(Z, nil)))) -> app(false, app(ltNat(app(Y, Z), zero), X))
+870. opAnd(foldr(lam5(zero), X, cons(zero, Y)), all(false, Z)) -> all(false, cons(foldr(lam5(zero), X, Y), Z))
+871. cons(foldr(lam5(zero), X, cons(zero, Y)), map(false, Z)) -> map(false, cons(foldr(lam5(zero), X, Y), Z))
+872. foldr(lam5(zero), X, cons(zero, map(Y, cons(Z, nil)))) -> app(false, app(gtNat(app(Y, Z), zero), X))
+873. cons(pair(zero, X), toList(insertNat(suc(Y), Z, nil_1))) -> toList(insertNat(zero, X, insertNat(suc(Y), Z, nil_1)))
+874. toList(insertNat(suc(X), Y, insertNat(zero, Z, nil_1))) -> toList(insertNat(zero, Z, insertNat(suc(X), Y, nil_1)))
+875. cons(pair(zero, X), cons(pair(zero, Y), Z)) -> opAppend(toList(insertNat(zero, Y, insertNat(zero, X, nil_1))), Z)
+876. all(uncurry(X, fst(Y)), cons(snd(Y), cons(snd(Y), nil))) -> all(uncurry_1(uncurry_1(X)), cons(Y, cons(Y, nil)))
+877. map(uncurry(X, fst(Y)), cons(snd(Y), cons(snd(Y), nil))) -> map(uncurry_1(uncurry_1(X)), cons(Y, cons(Y, nil)))
+878. all(ltNat(fst(X), Y), cons(snd(X), cons(snd(X), nil))) -> all(uncurry_1(lam4(Y)), cons(X, cons(X, nil)))
+879. map(ltNat(fst(X), Y), cons(snd(X), cons(snd(X), nil))) -> map(uncurry_1(lam4(Y)), cons(X, cons(X, nil)))
+880. all(gtNat(fst(X), Y), cons(snd(X), cons(snd(X), nil))) -> all(uncurry_1(lam5(Y)), cons(X, cons(X, nil)))
+881. map(gtNat(fst(X), Y), cons(snd(X), cons(snd(X), nil))) -> map(uncurry_1(lam5(Y)), cons(X, cons(X, nil)))
+882. map(fst_0, map(X, toList(insertNat(Y, Z, nil_1)))) -> keys(tree(map(X, toList(insertNat(Y, Z, nil_1)))))
+883. toList(join(tree(cons(X, nil)), insertNat(Y, Z, nil_1))) -> toList(branch(tree(cons(X, nil)), Y, Z, nil_1))
+884. all(lam5(suc(zero)), opAppend(cons(suc(suc(X)), Y), Z)) -> all(lam5(suc(zero)), opAppend(Y, Z))
+885. all(uncurry_1(fst(fst(X))), toList(insertNat(snd(X), Y, nil_1))) -> all(uncurry(fst_0, X), cons(Y, nil))
+886. map(uncurry_1(fst(fst(X))), toList(insertNat(snd(X), Y, nil_1))) -> map(uncurry(fst_0, X), cons(Y, nil))
+887. all(lam5(suc(suc(X))), cons(Y, cons(suc(zero), Z))) -> opAnd(gtNat(Y, suc(suc(X))), false)
+888. all(lam5(suc(zero)), cons(X, cons(suc(suc(Y)), Z))) -> all(lam5(suc(zero)), cons(X, Z))
+889. foldr(lam4(suc(X)), Y, cons(suc(Z), cons(W, nil))) = app(ltNat(Z, X), app(ltNat(W, suc(X)), Y))
+890. foldr(lam4(suc(X)), Y, cons(Z, cons(suc(W), nil))) = app(ltNat(Z, suc(X)), app(ltNat(W, X), Y))
+891. foldr(lam5(suc(X)), Y, cons(suc(Z), cons(W, nil))) = app(gtNat(Z, X), app(gtNat(W, suc(X)), Y))
+892. foldr(lam5(suc(X)), Y, cons(Z, cons(suc(W), nil))) = app(gtNat(Z, suc(X)), app(gtNat(W, X), Y))
+893. app(insertNat(X, Y, pair(fst(Z), snd(Z))), W) -> foldr(insertNat_2(X, Y), W, toList(tree(cons(Z, nil))))
+894. branch(nil_1, fst(X), snd(X), tree(cons(Y, nil))) -> join(tree(cons(X, nil)), tree(cons(Y, nil)))
+895. foldr(insertNat_0, X, opAppend(map(fst_0, cons(Y, toList(Z))), W)) -> insertNat_2(fst(Y), foldr(insertNat_0, X, opAppend(keys(Z), W)))
+896. insertNat_2(insertNat_1(X), foldr(insertNat_0, Y, opAppend(map(insertNat_0, Z), W))) -> foldr(insertNat_0, Y, opAppend(map(insertNat_0, cons(X, Z)), W))
+897. insertNat_2(fst(X), foldr(insertNat_0, Y, opAppend(map(fst_0, Z), W))) -> foldr(insertNat_0, Y, opAppend(map(fst_0, cons(X, Z)), W))
+898. foldr(uncurry_1(fst_0), X, cons(pair(Y, Z), cons(W, nil))) -> uncurry(fst(Y), pair(Z, app(uncurry(fst_0, W), X)))
+899. app(uncurry(fst_0, X), uncurry(fst(Y), pair(Z, W))) -> foldr(uncurry_1(fst_0), W, cons(X, toList(insertNat(Y, Z, nil_1))))
+900. opAppend(cons(X, map(insertNat_0, toList(insertNat(Y, Z, nil_1)))), W) -> cons(X, cons(insertNat_1(pair(Y, Z)), W))
+901. opAppend(map(X, map(insertNat_0, toList(insertNat(Y, Z, nil_1)))), W) -> cons(app(X, insertNat_1(pair(Y, Z))), W)
+902. app(uncurry(X, Y), uncurry(uncurry_1(X), Z)) = foldr(uncurry_1(X), snd(Z), cons(Y, cons(fst(Z), nil)))
+903. app(ltNat(X, Y), uncurry(lam4(Y), Z)) = foldr(lam4(Y), snd(Z), cons(X, cons(fst(Z), nil)))
+904. app(gtNat(X, Y), uncurry(lam5(Y), Z)) = foldr(lam5(Y), snd(Z), cons(X, cons(fst(Z), nil)))
+905. uncurry(X, pair(fst(Y), uncurry(X, Z))) = foldr(X, snd(Z), map(fst_0, cons(Y, cons(Z, nil))))
+906. foldr(fst_0, X, toList(insertNat(zero, Y, insertNat(zero, Z, nil_1)))) -> app(zero, app(zero, X))
+907. all(lam5(zero), opAppend(opAppend(cons(suc(X), Y), Z), W)) -> all(lam5(zero), opAppend(opAppend(Y, Z), W))
+908. all(lam5(zero), opAppend(cons(X, cons(suc(Y), Z)), W)) -> all(lam5(zero), opAppend(cons(X, Z), W))
+909. all(lam5(zero), cons(X, cons(Y, cons(suc(Z), W)))) -> all(lam5(zero), cons(X, cons(Y, W)))
+910. uncurry(uncurry(X, Y), pair(app(uncurry(X, Z), W), V)) = app(foldr(uncurry_1(X), W, cons(Y, cons(Z, nil))), V)
+911. uncurry(app(X, Y), pair(Z, app(uncurry(X, W), V))) = foldr(uncurry_1(X), V, cons(pair(Y, Z), cons(W, nil)))
+912. app(uncurry(X, Y), uncurry(app(X, Z), pair(W, V))) -> foldr(uncurry_1(X), V, cons(Y, toList(insertNat(Z, W, nil_1))))
+913. uncurry(ltNat(X, Y), pair(app(ltNat(Z, Y), W), V)) = app(foldr(lam4(Y), W, cons(X, cons(Z, nil))), V)
+914. uncurry(gtNat(X, Y), pair(app(gtNat(Z, Y), W), V)) = app(foldr(lam5(Y), W, cons(X, cons(Z, nil))), V)
+915. validNat(tree(map(X, map(Y, toList(tree(cons(Z, nil))))))) -> true
+916. validNat(tree(keys(tree(map(X, toList(insertNat(Y, Z, nil_1))))))) -> true
+917. insertNat_case1(false, X, Y, Z, foldr(insertNat_1(X), W, V), U, T) -> branch(Z, Y, T, foldr(insertNat_1(X), W, cons(U, V)))
+918. insertNat_case1(true, X, Y, foldr(insertNat_1(X), Z, W), V, U, T) -> branch(foldr(insertNat_1(X), Z, cons(U, W)), Y, T, V)
+919. deleteNat_case1(true, zero, X, insertNat(suc(Y), Z, nil_1), W, V) -> insertNat_case1(true, suc(Y), X, nil_1, W, Z, V)
+920. insertNat(suc(zero), X, branch(Y, suc(suc(Z)), W, V)) -> insertNat_case1(true, suc(zero), suc(suc(Z)), Y, V, X, W)
+921. insertNat(suc(suc(X)), Y, branch(Z, suc(zero), W, V)) -> insertNat_case1(false, suc(suc(X)), suc(zero), Z, V, Y, W)
+922. deleteNat_case1_case1(true, zero, X, Y, insertNat(suc(Z), W, nil_1), V) -> insertNat_case1(false, suc(Z), X, Y, nil_1, W, V)
+923. opAppend(cons(X, cons(Y, cons(Z, cons(W, nil)))), V) -> cons(X, cons(Y, cons(Z, cons(W, V))))
+924. opAppend(cons(X, cons(Y, map(Z, cons(W, nil)))), V) -> cons(X, cons(Y, cons(app(Z, W), V)))
+925. opAppend(cons(X, cons(Y, toList(insertNat(Z, W, nil_1)))), V) -> cons(X, cons(Y, cons(pair(Z, W), V)))
+926. opAppend(cons(X, map(Y, map(Z, cons(W, nil)))), V) -> cons(X, cons(app(Y, app(Z, W)), V))
+927. opAppend(cons(X, map(Y, toList(insertNat(Z, W, nil_1)))), V) -> cons(X, cons(app(Y, pair(Z, W)), V))
+928. opAppend(map(X, map(Y, map(Z, cons(W, nil)))), V) -> cons(app(X, app(Y, app(Z, W))), V)
+929. opAppend(map(X, map(Y, toList(insertNat(Z, W, nil_1)))), V) -> cons(app(X, app(Y, pair(Z, W))), V)
+930. tree(opAppend(opAppend(cons(pair(X, Y), Z), W), V)) -> insertNat(X, Y, tree(opAppend(opAppend(Z, W), V)))
+931. all(fst_0, opAppend(opAppend(cons(pair(X, Y), Z), W), V)) -> opAnd(X, all(fst_0, opAppend(opAppend(Z, W), V)))
+932. map(fst_0, opAppend(opAppend(cons(pair(X, Y), Z), W), V)) -> cons(X, map(fst_0, opAppend(opAppend(Z, W), V)))
+933. opAppend(map(X, cons(Y, cons(Z, nil))), map(X, W)) -> map(X, cons(Y, cons(Z, W)))
+934. foldr(uncurry_1(fst_0), X, cons(pair(pair(Y, Z), W), V)) -> uncurry(Y, pair(W, foldr(uncurry_1(fst_0), X, V)))
+935. all(lam4(suc(suc(suc(X)))), cons(suc(suc(zero)), Y)) -> all(lam4(suc(suc(suc(X)))), Y)
+936. validNat(join(tree(cons(X, nil)), tree(cons(Y, nil)))) -> opAnd(gtNat(fst(Y), fst(X)), true)
+937. keys(join(tree(cons(X, nil)), tree(cons(Y, nil)))) -> map(fst_0, cons(X, cons(Y, nil)))
+938. cons(pair(suc(zero), X), toList(insertNat(suc(zero), Y, nil_1))) -> toList(insertNat(suc(zero), Y, insertNat(suc(zero), X, nil_1)))
+939. insertNat_2(pair(fst(X), snd(X)), foldr(insertNat_0, Y, Z)) -> foldr(insertNat_0, Y, opAppend(toList(tree(cons(X, nil))), Z))
+940. app(gtNat(X, zero), app(true, foldr(lam5(zero), Y, Z))) -> foldr(lam5(zero), Y, cons(X, cons(suc(?), Z)))
+941. foldr(lam5(zero), X, cons(Y, cons(suc(Z), W))) ~> foldr(lam5(zero), X, cons(Y, cons(suc(?), W)))
+942. toList(deleteNat_case1(true, X, fst(Y), Z, nil_1, snd(Y))) -> opAppend(toList(deleteNat(X, Z)), toList(tree(cons(Y, nil))))
+943. app(uncurry(uncurry_1(X), Y), foldr(uncurry(X, fst(Y)), Z, W)) -> foldr(uncurry(X, fst(Y)), Z, cons(snd(Y), W))
+944. app(uncurry(lam4(X), Y), foldr(ltNat(fst(Y), X), Z, W)) -> foldr(ltNat(fst(Y), X), Z, cons(snd(Y), W))
+945. app(uncurry(lam5(X), Y), foldr(gtNat(fst(Y), X), Z, W)) -> foldr(gtNat(fst(Y), X), Z, cons(snd(Y), W))
+946. app(foldr(fst_0, X, cons(Y, Z)), foldr(fst(Y), W, V)) -> foldr(fst(Y), W, cons(foldr(fst_0, X, Z), V))
+947. app(uncurry(insertNat_1(X), Y), foldr(insertNat_2(X, fst(Y)), Z, W)) -> foldr(insertNat_2(X, fst(Y)), Z, cons(snd(Y), W))
+948. all(uncurry_1(fst_0), cons(pair(fst(X), Y), cons(X, nil))) -> all(fst(fst(X)), cons(Y, cons(snd(X), nil)))
+949. map(uncurry_1(fst_0), cons(pair(fst(X), Y), cons(X, nil))) -> map(fst(fst(X)), cons(Y, cons(snd(X), nil)))
+950. all(uncurry_1(uncurry(insertNat_0, X)), toList(insertNat(tree(Y), Z, nil_1))) -> all(tree(cons(X, Y)), cons(Z, nil))
+951. map(uncurry_1(uncurry(insertNat_0, X)), toList(insertNat(tree(Y), Z, nil_1))) -> map(tree(cons(X, Y)), cons(Z, nil))
+952. tree(toList(branch(tree(cons(X, nil)), Y, Z, nil_1))) -> tree(cons(X, toList(insertNat(Y, Z, nil_1))))
+953. all(lam4(suc(suc(X))), opAppend(cons(suc(zero), Y), Z)) -> all(lam4(suc(suc(X))), opAppend(Y, Z))
+954. all(lam4(suc(suc(X))), cons(Y, cons(suc(zero), Z))) -> all(lam4(suc(suc(X))), cons(Y, Z))
+955. tree(cons(X, toList(tree(map(Y, cons(Z, nil)))))) -> tree(cons(X, map(Y, cons(Z, nil))))
+956. tree(cons(X, cons(Y, toList(tree(cons(Z, nil)))))) -> tree(cons(X, cons(Y, cons(Z, nil))))
+957. all(uncurry_1(uncurry_1(insertNat_0)), cons(pair(pair(X, Y), nil_1), Z)) -> opAnd(insertNat(X, Y, nil_1), all(uncurry_1(uncurry_1(insertNat_0)), Z))
+958. map(uncurry_1(uncurry_1(insertNat_0)), cons(pair(pair(X, Y), nil_1), Z)) -> cons(insertNat(X, Y, nil_1), map(uncurry_1(uncurry_1(insertNat_0)), Z))
+959. all(lam4(suc(X)), cons(suc(Y), cons(suc(Z), nil))) -> all(lam4(X), cons(Y, cons(Z, nil)))
+960. all(lam5(suc(X)), cons(suc(Y), cons(suc(Z), nil))) -> all(lam5(X), cons(Y, cons(Z, nil)))
+961. map(lam4(suc(X)), cons(suc(Y), cons(suc(Z), nil))) -> map(lam4(X), cons(Y, cons(Z, nil)))
+962. map(lam5(suc(X)), cons(suc(Y), cons(suc(Z), nil))) -> map(lam5(X), cons(Y, cons(Z, nil)))
+963. tree(toList(insertNat(zero, X, insertNat(suc(Y), Z, nil_1)))) -> insertNat(zero, X, insertNat(suc(Y), Z, nil_1))
+964. validNat(tree(map(insertNat_0, toList(tree(map(X, cons(Y, nil))))))) -> true
+965. app(ltNat(X, Y), foldr(lam4(suc(suc(Y))), Z, W)) -> foldr(lam4(suc(suc(Y))), Z, cons(suc(suc(X)), W))
+966. foldr(lam4(suc(suc(zero))), X, cons(suc(suc(zero)), Y)) -> app(false, foldr(lam4(suc(suc(zero))), X, Y))
+967. app(gtNat(X, Y), foldr(lam5(suc(suc(Y))), Z, W)) -> foldr(lam5(suc(suc(Y))), Z, cons(suc(suc(X)), W))
+968. foldr(lam5(suc(suc(zero))), X, cons(suc(suc(zero)), Y)) -> foldr(lam5(suc(suc(zero))), X, cons(zero, Y))
+969. deleteNat(suc(zero), insertNat_case1(true, zero, suc(zero), nil_1, X, Y, Z)) -> join(insertNat(zero, Y, nil_1), X)
+970. deleteNat(suc(zero), insertNat(zero, X, insertNat(suc(zero), Y, nil_1))) -> insertNat(zero, X, nil_1)
+971. insertNat(X, insertNat_1(Y), insertNat(X, insertNat_1(Z), W)) = foldr(insertNat_1(X), W, map(insertNat_0, cons(Y, cons(Z, nil))))
+972. insertNat(X, fst(Y), insertNat(X, fst(Z), W)) = foldr(insertNat_1(X), W, map(fst_0, cons(Y, cons(Z, nil))))
+973. all(uncurry(X, Y), map(uncurry(X, Z), cons(W, nil))) = opAnd(foldr(uncurry_1(X), W, cons(Y, cons(Z, nil))), true)
+974. map(uncurry(X, Y), map(uncurry(X, Z), cons(W, nil))) = cons(foldr(uncurry_1(X), W, cons(Y, cons(Z, nil))), nil)
+975. all(ltNat(X, Y), map(ltNat(Z, Y), cons(W, nil))) = opAnd(foldr(lam4(Y), W, cons(X, cons(Z, nil))), true)
+976. map(ltNat(X, Y), map(ltNat(Z, Y), cons(W, nil))) = cons(foldr(lam4(Y), W, cons(X, cons(Z, nil))), nil)
+977. all(gtNat(X, Y), map(gtNat(Z, Y), cons(W, nil))) = opAnd(foldr(lam5(Y), W, cons(X, cons(Z, nil))), true)
+978. map(gtNat(X, Y), map(gtNat(Z, Y), cons(W, nil))) = cons(foldr(lam5(Y), W, cons(X, cons(Z, nil))), nil)
+979. foldr(insertNat_0, X, map(uncurry_1(Y), cons(Z, cons(W, nil)))) = insertNat_2(uncurry(Y, Z), insertNat_2(uncurry(Y, W), X))
+980. foldr(insertNat_0, X, map(insertNat_1(Y), cons(Z, cons(W, nil)))) = insertNat_2(insertNat_2(Y, Z), insertNat_2(insertNat_2(Y, W), X))
+981. foldr(insertNat_0, X, map(lam4(Y), cons(Z, cons(W, nil)))) = insertNat_2(ltNat(Z, Y), insertNat_2(ltNat(W, Y), X))
+982. foldr(insertNat_0, X, map(lam5(Y), cons(Z, cons(W, nil)))) = insertNat_2(gtNat(Z, Y), insertNat_2(gtNat(W, Y), X))
+983. deleteNat(suc(zero), insertNat_case1(false, zero, suc(zero), X, nil_1, Y, Z)) -> join(X, insertNat(zero, Y, nil_1))
+984. validNat(join(branch(X, Y, Z, W), tree(cons(V, nil)))) ~> validNat(join(branch(X, Y, ?, W), tree(cons(V, nil))))
+985. foldr(fst(fst(X)), Y, cons(snd(X), cons(Z, nil))) -> foldr(uncurry_1(fst_0), Y, cons(X, toList(insertNat(fst(X), Z, nil_1))))
+986. foldr(fst(fst(X)), Y, cons(Z, cons(snd(X), nil))) -> uncurry(fst(fst(X)), pair(Z, app(uncurry(fst_0, X), Y)))
+987. insertNat_2(fst(X), insertNat_2(fst(Y), foldr(insertNat_0, Z, keys(W)))) -> foldr(insertNat_0, Z, map(fst_0, cons(X, cons(Y, toList(W)))))
+988. all(app(X, fst(Y)), cons(Z, cons(snd(Y), nil))) -> all(uncurry_1(X), cons(pair(fst(Y), Z), cons(Y, nil)))
+989. map(app(X, fst(Y)), cons(Z, cons(snd(Y), nil))) -> map(uncurry_1(X), cons(pair(fst(Y), Z), cons(Y, nil)))
+990. foldr(insertNat_0, X, map(uncurry_1(insertNat_0), cons(pair(Y, Z), W))) -> insertNat_2(insertNat_2(Y, Z), foldr(insertNat_0, X, map(uncurry_1(insertNat_0), W)))
+991. all(insertNat_2(X, Y), map(insertNat_0, toList(insertNat(Z, W, nil_1)))) -> opAnd(insertNat(X, Y, insertNat_1(pair(Z, W))), true)
+992. map(insertNat_2(X, Y), map(insertNat_0, toList(insertNat(Z, W, nil_1)))) -> cons(insertNat(X, Y, insertNat_1(pair(Z, W))), nil)
+993. all(uncurry_1(X), map(uncurry_1(Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(uncurry(X, uncurry(Y, pair(Z, W))), true)
+994. all(insertNat_1(X), map(uncurry_1(Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(insertNat_2(X, uncurry(Y, pair(Z, W))), true)
+995. all(lam4(X), map(uncurry_1(Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(ltNat(uncurry(Y, pair(Z, W)), X), true)
+996. all(lam5(X), map(uncurry_1(Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(gtNat(uncurry(Y, pair(Z, W)), X), true)
+997. map(uncurry_1(X), map(uncurry_1(Y), toList(insertNat(Z, W, nil_1)))) -> cons(uncurry(X, uncurry(Y, pair(Z, W))), nil)
+998. map(insertNat_1(X), map(uncurry_1(Y), toList(insertNat(Z, W, nil_1)))) -> cons(insertNat_2(X, uncurry(Y, pair(Z, W))), nil)
+999. map(lam4(X), map(uncurry_1(Y), toList(insertNat(Z, W, nil_1)))) -> cons(ltNat(uncurry(Y, pair(Z, W)), X), nil)
+1000. map(lam5(X), map(uncurry_1(Y), toList(insertNat(Z, W, nil_1)))) -> cons(gtNat(uncurry(Y, pair(Z, W)), X), nil)
+1001. all(uncurry_1(X), map(insertNat_1(Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(uncurry(X, insertNat_2(Y, pair(Z, W))), true)
+1002. all(insertNat_1(X), map(insertNat_1(Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(insertNat_2(X, insertNat_2(Y, pair(Z, W))), true)
+1003. all(lam4(X), map(insertNat_1(Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(ltNat(insertNat_2(Y, pair(Z, W)), X), true)
+1004. all(lam5(X), map(insertNat_1(Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(gtNat(insertNat_2(Y, pair(Z, W)), X), true)
+1005. map(uncurry_1(X), map(insertNat_1(Y), toList(insertNat(Z, W, nil_1)))) -> cons(uncurry(X, insertNat_2(Y, pair(Z, W))), nil)
+1006. map(insertNat_1(X), map(insertNat_1(Y), toList(insertNat(Z, W, nil_1)))) -> cons(insertNat_2(X, insertNat_2(Y, pair(Z, W))), nil)
+1007. map(lam4(X), map(insertNat_1(Y), toList(insertNat(Z, W, nil_1)))) -> cons(ltNat(insertNat_2(Y, pair(Z, W)), X), nil)
+1008. map(lam5(X), map(insertNat_1(Y), toList(insertNat(Z, W, nil_1)))) -> cons(gtNat(insertNat_2(Y, pair(Z, W)), X), nil)
+1009. all(uncurry_1(X), map(lam4(Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(uncurry(X, ltNat(pair(Z, W), Y)), true)
+1010. all(insertNat_1(X), map(lam4(Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(insertNat_2(X, ltNat(pair(Z, W), Y)), true)
+1011. all(lam4(X), map(lam4(Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(ltNat(ltNat(pair(Z, W), Y), X), true)
+1012. all(lam5(X), map(lam4(Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(gtNat(ltNat(pair(Z, W), Y), X), true)
+1013. map(uncurry_1(X), map(lam4(Y), toList(insertNat(Z, W, nil_1)))) -> cons(uncurry(X, ltNat(pair(Z, W), Y)), nil)
+1014. map(insertNat_1(X), map(lam4(Y), toList(insertNat(Z, W, nil_1)))) -> cons(insertNat_2(X, ltNat(pair(Z, W), Y)), nil)
+1015. map(lam4(X), map(lam4(Y), toList(insertNat(Z, W, nil_1)))) -> cons(ltNat(ltNat(pair(Z, W), Y), X), nil)
+1016. map(lam5(X), map(lam4(Y), toList(insertNat(Z, W, nil_1)))) -> cons(gtNat(ltNat(pair(Z, W), Y), X), nil)
+1017. all(uncurry_1(X), map(lam5(Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(uncurry(X, gtNat(pair(Z, W), Y)), true)
+1018. all(insertNat_1(X), map(lam5(Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(insertNat_2(X, gtNat(pair(Z, W), Y)), true)
+1019. all(lam4(X), map(lam5(Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(ltNat(gtNat(pair(Z, W), Y), X), true)
+1020. all(lam5(X), map(lam5(Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(gtNat(gtNat(pair(Z, W), Y), X), true)
+1021. map(uncurry_1(X), map(lam5(Y), toList(insertNat(Z, W, nil_1)))) -> cons(uncurry(X, gtNat(pair(Z, W), Y)), nil)
+1022. map(insertNat_1(X), map(lam5(Y), toList(insertNat(Z, W, nil_1)))) -> cons(insertNat_2(X, gtNat(pair(Z, W), Y)), nil)
+1023. map(lam4(X), map(lam5(Y), toList(insertNat(Z, W, nil_1)))) -> cons(ltNat(gtNat(pair(Z, W), Y), X), nil)
+1024. map(lam5(X), map(lam5(Y), toList(insertNat(Z, W, nil_1)))) -> cons(gtNat(gtNat(pair(Z, W), Y), X), nil)
+1025. tree(toList(branch(tree(cons(X, nil)), Y, Z, W))) -> tree(cons(X, cons(pair(Y, Z), toList(W))))
+1026. all(lam4(suc(zero)), opAppend(cons(X, cons(suc(zero), Y)), Z)) -> opAnd(ltNat(X, suc(zero)), false)
+1027. all(lam5(suc(zero)), opAppend(cons(X, cons(suc(zero), Y)), Z)) -> opAnd(gtNat(X, suc(zero)), false)
+1028. opAppend(cons(X, map(insertNat_0, cons(Y, cons(Z, nil)))), W) -> cons(X, cons(insertNat_1(Y), cons(insertNat_1(Z), W)))
+1029. opAppend(cons(X, map(fst_0, cons(Y, cons(Z, nil)))), W) -> cons(X, cons(fst(Y), cons(fst(Z), W)))
+1030. all(lam4(suc(X)), opAppend(opAppend(cons(zero, Y), Z), W)) -> all(lam4(suc(X)), opAppend(opAppend(Y, Z), W))
+1031. all(lam4(suc(X)), opAppend(cons(Y, cons(zero, Z)), W)) -> all(lam4(suc(X)), opAppend(cons(Y, Z), W))
+1032. all(lam4(suc(X)), cons(Y, cons(Z, cons(zero, W)))) -> all(lam4(suc(X)), cons(Y, cons(Z, W)))
+1033. all(insertNat_0, map(insertNat_2(X, Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(insertNat_1(insertNat(X, Y, pair(Z, W))), true)
+1034. all(fst_0, map(insertNat_2(X, Y), toList(insertNat(Z, W, nil_1)))) -> opAnd(fst(insertNat(X, Y, pair(Z, W))), true)
+1035. map(insertNat_0, map(insertNat_2(X, Y), toList(insertNat(Z, W, nil_1)))) -> cons(insertNat_1(insertNat(X, Y, pair(Z, W))), nil)
+1036. keys(tree(map(insertNat_2(X, Y), toList(insertNat(Z, W, nil_1))))) -> cons(fst(insertNat(X, Y, pair(Z, W))), nil)
+1037. all(fst_0, toList(insertNat(zero, X, insertNat(suc(Y), Z, nil_1)))) -> opAnd(zero, opAnd(suc(Y), true))
+1038. foldr(uncurry_1(X), Y, cons(Z, toList(tree(cons(W, nil))))) -> foldr(uncurry_1(X), Y, cons(Z, cons(W, nil)))
+1039. deleteNat_case1_case1(true, suc(zero), X, Y, insertNat(suc(zero), Z, nil_1), W) -> branch(Y, X, W, nil_1)
+1040. deleteNat_case1(true, suc(zero), X, insertNat(suc(zero), Y, nil_1), Z, W) -> branch(nil_1, X, W, Z)
+1041. map(lam4(zero), cons(zero, cons(X, cons(zero, nil)))) -> cons(false, cons(ltNat(X, zero), cons(false, nil)))
+1042. map(lam5(zero), cons(zero, cons(X, cons(zero, nil)))) -> cons(false, cons(gtNat(X, zero), cons(false, nil)))
+1043. foldr(uncurry_1(insertNat_0), X, opAppend(cons(pair(Y, Z), W), V)) -> insertNat(Y, Z, foldr(uncurry_1(insertNat_0), X, opAppend(W, V)))
+1044. keys(join(tree(cons(X, nil)), branch(Y, Z, W, V))) -> map(fst_0, cons(X, toList(branch(Y, Z, W, V))))
+1045. all(lam4(zero), cons(X, cons(Y, cons(suc(Z), W)))) -> opAnd(ltNat(X, zero), opAnd(ltNat(Y, zero), false))
+1046. opAnd(uncurry(X, insertNat_1(pair(fst(Y), snd(Y)))), true) -> all(uncurry_1(X), map(insertNat_0, toList(tree(cons(Y, nil)))))
+1047. opAnd(insertNat_2(X, insertNat_1(pair(fst(Y), snd(Y)))), true) -> all(insertNat_1(X), map(insertNat_0, toList(tree(cons(Y, nil)))))
+1048. opAnd(ltNat(insertNat_1(pair(fst(X), snd(X))), Y), true) -> all(lam4(Y), map(insertNat_0, toList(tree(cons(X, nil)))))
+1049. opAnd(gtNat(insertNat_1(pair(fst(X), snd(X))), Y), true) -> all(lam5(Y), map(insertNat_0, toList(tree(cons(X, nil)))))
+1050. cons(uncurry(X, insertNat_1(pair(fst(Y), snd(Y)))), nil) -> map(uncurry_1(X), map(insertNat_0, toList(tree(cons(Y, nil)))))
+1051. cons(insertNat_2(X, insertNat_1(pair(fst(Y), snd(Y)))), nil) -> map(insertNat_1(X), map(insertNat_0, toList(tree(cons(Y, nil)))))
+1052. cons(ltNat(insertNat_1(pair(fst(X), snd(X))), Y), nil) -> map(lam4(Y), map(insertNat_0, toList(tree(cons(X, nil)))))
+1053. cons(gtNat(insertNat_1(pair(fst(X), snd(X))), Y), nil) -> map(lam5(Y), map(insertNat_0, toList(tree(cons(X, nil)))))
+1054. opAnd(insertNat_1(insertNat_2(X, pair(fst(Y), snd(Y)))), true) -> all(insertNat_0, map(insertNat_1(X), toList(tree(cons(Y, nil)))))
+1055. opAnd(fst(insertNat_2(X, pair(fst(Y), snd(Y)))), true) -> all(fst_0, map(insertNat_1(X), toList(tree(cons(Y, nil)))))
+1056. cons(insertNat_1(insertNat_2(X, pair(fst(Y), snd(Y)))), nil) -> map(insertNat_0, map(insertNat_1(X), toList(tree(cons(Y, nil)))))
+1057. cons(fst(insertNat_2(X, pair(fst(Y), snd(Y)))), nil) -> map(fst_0, map(insertNat_1(X), toList(tree(cons(Y, nil)))))
+1058. opAnd(insertNat_1(ltNat(pair(fst(X), snd(X)), Y)), true) -> all(insertNat_0, map(lam4(Y), toList(tree(cons(X, nil)))))
+1059. opAnd(fst(ltNat(pair(fst(X), snd(X)), Y)), true) -> all(fst_0, map(lam4(Y), toList(tree(cons(X, nil)))))
+1060. cons(insertNat_1(ltNat(pair(fst(X), snd(X)), Y)), nil) -> map(insertNat_0, map(lam4(Y), toList(tree(cons(X, nil)))))
+1061. cons(fst(ltNat(pair(fst(X), snd(X)), Y)), nil) -> map(fst_0, map(lam4(Y), toList(tree(cons(X, nil)))))
+1062. opAnd(insertNat_1(gtNat(pair(fst(X), snd(X)), Y)), true) -> all(insertNat_0, map(lam5(Y), toList(tree(cons(X, nil)))))
+1063. opAnd(fst(gtNat(pair(fst(X), snd(X)), Y)), true) -> all(fst_0, map(lam5(Y), toList(tree(cons(X, nil)))))
+1064. cons(insertNat_1(gtNat(pair(fst(X), snd(X)), Y)), nil) -> map(insertNat_0, map(lam5(Y), toList(tree(cons(X, nil)))))
+1065. cons(fst(gtNat(pair(fst(X), snd(X)), Y)), nil) -> map(fst_0, map(lam5(Y), toList(tree(cons(X, nil)))))
+1066. validNat(tree(keys(tree(map(insertNat_0, toList(tree(cons(X, nil)))))))) -> true
+1067. all(insertNat_2(X, Y), map(Z, map(W, cons(V, nil)))) -> opAnd(insertNat(X, Y, app(Z, app(W, V))), true)
+1068. opAnd(insertNat(X, Y, app(Z, pair(W, V))), true) -> all(insertNat_2(X, Y), map(Z, toList(insertNat(W, V, nil_1))))
+1069. map(insertNat_2(X, Y), map(Z, map(W, cons(V, nil)))) -> cons(insertNat(X, Y, app(Z, app(W, V))), nil)
+1070. cons(insertNat(X, Y, app(Z, pair(W, V))), nil) -> map(insertNat_2(X, Y), map(Z, toList(insertNat(W, V, nil_1))))
+1071. all(fst_0, opAppend(cons(X, cons(pair(Y, Z), W)), V)) -> opAnd(fst(X), opAnd(Y, all(fst_0, opAppend(W, V))))
+1072. map(fst_0, opAppend(cons(X, cons(pair(Y, Z), W)), V)) -> cons(fst(X), cons(Y, map(fst_0, opAppend(W, V))))
+1073. tree(toList(tree(map(insertNat_0, toList(insertNat(X, Y, nil_1)))))) -> tree(map(insertNat_0, toList(insertNat(X, Y, nil_1))))
+1074. uncurry(X, pair(app(Y, pair(fst(Z), snd(Z))), W)) -> foldr(X, W, map(Y, toList(tree(cons(Z, nil)))))
+1075. uncurry(X, pair(insertNat_1(pair(fst(Y), snd(Y))), Z)) -> foldr(X, Z, map(insertNat_0, toList(tree(cons(Y, nil)))))
+1076. app(fst(app(X, pair(fst(Y), snd(Y)))), Z) -> foldr(fst_0, Z, map(X, toList(tree(cons(Y, nil)))))
+1077. app(fst(app(X, Y)), app(fst(app(X, Z)), W)) -> foldr(fst_0, W, map(X, cons(Y, cons(Z, nil))))
+1078. map(lam4(suc(suc(zero))), opAppend(cons(suc(suc(zero)), X), Y)) -> cons(false, map(lam4(suc(suc(zero))), opAppend(X, Y)))
+1079. map(lam5(suc(suc(zero))), opAppend(cons(suc(suc(zero)), X), Y)) -> map(lam5(suc(suc(zero))), opAppend(cons(zero, X), Y))
+1080. map(lam5(suc(suc(zero))), cons(X, cons(suc(suc(zero)), Y))) -> map(lam5(suc(suc(zero))), cons(X, cons(zero, Y)))
+1081. opAppend(toList(insertNat(zero, X, insertNat(zero, Y, nil_1))), nil) -> toList(insertNat(zero, X, insertNat(zero, Y, nil_1)))
+1082. tree(toList(insertNat(suc(zero), X, insertNat(suc(zero), Y, nil_1)))) -> insertNat(suc(zero), Y, insertNat(suc(zero), X, nil_1))
+1083. all(fst_0, toList(insertNat_case1(true, X, Y, nil_1, Z, W, V))) -> opAnd(X, opAnd(Y, all(fst_0, toList(Z))))
+1084. map(lam4(suc(suc(zero))), cons(suc(suc(suc(X))), Y)) -> cons(false, map(lam4(suc(suc(zero))), Y))
+1085. map(lam5(suc(suc(zero))), cons(suc(suc(suc(X))), Y)) -> cons(true, map(lam5(suc(suc(zero))), Y))
+1086. all(insertNat_0, map(X, map(insertNat_0, toList(insertNat(Y, Z, nil_1))))) -> opAnd(insertNat_1(app(X, insertNat_1(pair(Y, Z)))), true)
+1087. all(fst_0, map(X, map(insertNat_0, toList(insertNat(Y, Z, nil_1))))) -> opAnd(fst(app(X, insertNat_1(pair(Y, Z)))), true)
+1088. map(insertNat_0, map(X, map(insertNat_0, toList(insertNat(Y, Z, nil_1))))) -> cons(insertNat_1(app(X, insertNat_1(pair(Y, Z)))), nil)
+1089. map(fst_0, map(X, map(insertNat_0, toList(insertNat(Y, Z, nil_1))))) -> cons(fst(app(X, insertNat_1(pair(Y, Z)))), nil)
+1090. foldr(insertNat_0, X, opAppend(map(lam4(zero), cons(zero, Y)), Z)) -> insertNat_2(false, foldr(insertNat_0, X, opAppend(map(lam4(zero), Y), Z)))
+1091. foldr(insertNat_0, X, opAppend(map(lam5(zero), cons(zero, Y)), Z)) -> insertNat_2(false, foldr(insertNat_0, X, opAppend(map(lam5(zero), Y), Z)))
+1092. foldr(lam4(zero), X, cons(zero, toList(insertNat(Y, Z, nil_1)))) -> app(false, app(ltNat(pair(Y, Z), zero), X))
+1093. foldr(lam5(zero), X, cons(zero, toList(insertNat(Y, Z, nil_1)))) -> app(false, app(gtNat(pair(Y, Z), zero), X))
+1094. all(fst_0, opAppend(cons(X, toList(tree(cons(Y, nil)))), Z)) -> all(fst_0, cons(X, cons(Y, Z)))
+1095. map(fst_0, opAppend(cons(X, toList(tree(cons(Y, nil)))), Z)) -> map(fst_0, cons(X, cons(Y, Z)))
+1096. all(insertNat_2(X, fst(Y)), cons(snd(Y), cons(snd(Y), nil))) -> all(uncurry_1(insertNat_1(X)), cons(Y, cons(Y, nil)))
+1097. map(insertNat_2(X, fst(Y)), cons(snd(Y), cons(snd(Y), nil))) -> map(uncurry_1(insertNat_1(X)), cons(Y, cons(Y, nil)))
+1098. toList(join(branch(nil_1, X, Y, Z), branch(W, V, U, T))) -> cons(pair(X, Y), toList(branch(join(Z, W), V, U, T)))
+1099. map(lam4(suc(zero)), opAppend(cons(suc(suc(X)), Y), Z)) -> cons(false, map(lam4(suc(zero)), opAppend(Y, Z)))
+1100. map(lam5(suc(zero)), opAppend(cons(suc(suc(X)), Y), Z)) -> cons(true, map(lam5(suc(zero)), opAppend(Y, Z)))
+1101. keys(deleteNat_case1(false, suc(suc(X)), suc(zero), nil_1, Y, Z)) -> cons(suc(zero), keys(deleteNat(suc(suc(X)), Y)))
+1102. keys(join(branch(nil_1, X, Y, Z), branch(W, V, U, T))) -> cons(X, keys(branch(join(Z, W), V, U, T)))
+1103. keys(join(branch(nil_1, X, Y, Z), insertNat(W, V, nil_1))) -> cons(X, keys(branch(join(Z, nil_1), W, V, nil_1)))
+1104. all(uncurry_1(uncurry_1(insertNat_0)), cons(pair(pair(X, Y), Z), W)) -> opAnd(insertNat(X, Y, Z), all(uncurry_1(uncurry_1(insertNat_0)), W))
+1105. map(uncurry_1(uncurry_1(insertNat_0)), cons(pair(pair(X, Y), Z), W)) -> cons(insertNat(X, Y, Z), map(uncurry_1(uncurry_1(insertNat_0)), W))
+1106. cons(insertNat(X, Y, Z), cons(insertNat(X, Y, W), V)) -> opAppend(map(insertNat_2(X, Y), cons(Z, cons(W, nil))), V)
+1107. insertNat(X, app(Y, Z), insertNat(X, app(Y, W), V)) -> foldr(insertNat_1(X), V, map(Y, cons(Z, cons(W, nil))))
+1108. validNat(foldr(insertNat_1(zero), nil_1, map(X, cons(Y, cons(Z, nil))))) -> false
+1109. join(join(branch(X, Y, Z, W), branch(V, U, T, S)), nil_1) -> join(branch(X, Y, Z, W), branch(V, U, T, S))
+1110. join(join(branch(X, Y, Z, W), insertNat(V, U, nil_1)), nil_1) -> join(branch(X, Y, Z, W), insertNat(V, U, nil_1))
+1111. all(lam4(suc(suc(zero))), opAppend(opAppend(cons(suc(suc(zero)), X), Y), Z)) -> false
+1112. all(lam5(suc(suc(zero))), opAppend(opAppend(cons(suc(suc(zero)), X), Y), Z)) -> false
+1113. all(uncurry_1(uncurry(X, fst(Y))), toList(insertNat(snd(Y), Z, nil_1))) -> all(uncurry(uncurry_1(X), Y), cons(Z, nil))
+1114. map(uncurry_1(uncurry(X, fst(Y))), toList(insertNat(snd(Y), Z, nil_1))) -> map(uncurry(uncurry_1(X), Y), cons(Z, nil))
+1115. all(uncurry_1(ltNat(fst(X), Y)), toList(insertNat(snd(X), Z, nil_1))) -> all(uncurry(lam4(Y), X), cons(Z, nil))
+1116. map(uncurry_1(ltNat(fst(X), Y)), toList(insertNat(snd(X), Z, nil_1))) -> map(uncurry(lam4(Y), X), cons(Z, nil))
+1117. all(uncurry_1(gtNat(fst(X), Y)), toList(insertNat(snd(X), Z, nil_1))) -> all(uncurry(lam5(Y), X), cons(Z, nil))
+1118. map(uncurry_1(gtNat(fst(X), Y)), toList(insertNat(snd(X), Z, nil_1))) -> map(uncurry(lam5(Y), X), cons(Z, nil))
+1119. opAnd(gtNat(X, suc(Y)), opAnd(gtNat(Z, suc(Y)), false)) -> all(lam5(suc(Y)), cons(X, cons(Z, cons(zero, ?))))
+1120. all(lam5(suc(X)), cons(Y, cons(Z, cons(zero, W)))) ~> all(lam5(suc(X)), cons(Y, cons(Z, cons(zero, ?))))
+1121. map(lam4(zero), opAppend(opAppend(cons(suc(X), Y), Z), W)) -> map(lam4(zero), opAppend(opAppend(cons(zero, Y), Z), W))
+1122. map(lam4(zero), opAppend(cons(X, cons(suc(Y), Z)), W)) -> map(lam4(zero), opAppend(cons(X, cons(zero, Z)), W))
+1123. map(lam4(zero), cons(X, cons(Y, cons(suc(Z), W)))) -> map(lam4(zero), cons(X, cons(Y, cons(zero, W))))
+1124. map(lam5(zero), opAppend(opAppend(cons(suc(X), Y), Z), W)) -> cons(true, map(lam5(zero), opAppend(opAppend(Y, Z), W)))
+1125. validNat(tree(map(X, toList(tree(map(Y, cons(Z, nil))))))) -> true
+1126. tree(toList(tree(map(insertNat_0, toList(tree(cons(X, nil))))))) -> tree(map(insertNat_0, toList(tree(cons(X, nil)))))
+1127. map(lam4(suc(suc(zero))), cons(zero, cons(suc(suc(zero)), X))) -> cons(true, cons(false, map(lam4(suc(suc(zero))), X)))
+1128. deleteNat_case1(false, suc(X), zero, Y, insertNat(zero, Z, nil_1), W) -> insertNat_case1(false, zero, zero, Y, nil_1, Z, W)
+1129. app(foldr(X, Y, cons(Z, W)), foldr(app(X, Z), V, U)) -> foldr(app(X, Z), V, cons(foldr(X, Y, W), U))
+1130. deleteNat(suc(zero), insertNat_case1(false, X, suc(zero), Y, Z, W, V)) -> join(Y, insertNat(X, W, Z))
+1131. deleteNat(suc(zero), insertNat(suc(zero), X, insertNat(suc(zero), Y, nil_1))) -> insertNat(suc(zero), X, nil_1)
+1132. deleteNat(suc(zero), insertNat_case1(true, X, suc(zero), Y, Z, W, V)) -> join(insertNat(X, W, Y), Z)
+1133. insertNat(zero, X, deleteNat_case1(false, suc(Y), zero, Z, W, V)) -> insertNat_case1(false, zero, zero, Z, deleteNat(suc(Y), W), X, V)
+1134. deleteNat(suc(X), deleteNat_case1(false, suc(Y), zero, Z, W, V)) -> deleteNat_case1(false, suc(X), zero, Z, deleteNat(suc(Y), W), V)
+1135. validNat(branch(nil_1, fst(X), ?, branch(Y, Z, W, V))) -> validNat(join(tree(cons(X, nil)), branch(Y, Z, W, V)))
+1136. insertNat(suc(zero), X, deleteNat_case1_case1(true, Y, suc(zero), Z, W, V)) -> insertNat_case1(false, suc(zero), suc(zero), Z, deleteNat(Y, W), X, V)
+1137. insertNat(suc(zero), X, deleteNat_case1(true, Y, suc(zero), Z, W, V)) -> insertNat_case1(false, suc(zero), suc(zero), deleteNat(Y, Z), W, X, V)
+1138. app(fst(insertNat_1(pair(fst(X), snd(X)))), Y) -> foldr(fst_0, Y, map(insertNat_0, toList(tree(cons(X, nil)))))
+1139. all(fst_0, toList(tree(map(insertNat_0, toList(insertNat(X, Y, nil_1)))))) -> opAnd(fst(insertNat_1(pair(X, Y))), true)
+1140. cons(ltNat(X, suc(zero)), cons(false, map(lam4(suc(zero)), Y))) -> map(lam4(suc(zero)), cons(X, cons(suc(zero), Y)))
+1141. foldr(lam4(zero), X, cons(zero, cons(zero, cons(Y, nil)))) -> app(false, app(false, app(ltNat(Y, zero), X)))
+1142. foldr(lam5(zero), X, cons(zero, cons(zero, cons(Y, nil)))) -> app(false, app(false, app(gtNat(Y, zero), X)))
+1143. foldr(lam4(zero), X, cons(zero, cons(Y, cons(zero, nil)))) -> app(false, app(ltNat(Y, zero), app(false, X)))
+1144. foldr(lam5(zero), X, cons(zero, cons(Y, cons(zero, nil)))) -> app(false, app(gtNat(Y, zero), app(false, X)))
+1145. map(lam4(suc(suc(suc(X)))), cons(suc(suc(zero)), Y)) -> map(lam4(suc(suc(suc(X)))), cons(zero, Y))
+1146. map(lam5(suc(suc(suc(X)))), cons(suc(suc(zero)), Y)) -> map(lam5(suc(suc(suc(X)))), cons(zero, Y))
+1147. map(fst_0, map(X, toList(tree(cons(Y, nil))))) -> keys(tree(map(X, toList(tree(cons(Y, nil))))))
+1148. opAnd(prop_DeleteValid(X, Y), all(lam5(Z), keys(deleteNat(X, tree(Y))))) -> validNat(deleteNat_case1_case1(true, X, Z, nil_1, tree(Y), ?))
+1149. map(lam4(suc(zero)), cons(zero, cons(suc(suc(X)), Y))) -> cons(true, cons(false, map(lam4(suc(zero)), Y)))
+1150. map(lam5(suc(zero)), cons(zero, cons(suc(suc(X)), Y))) -> cons(false, cons(true, map(lam5(suc(zero)), Y)))
+1151. join(deleteNat_case1(true, X, Y, Z, nil_1, W), insertNat(V, U, nil_1)) -> insertNat_case1(false, V, Y, deleteNat(X, Z), nil_1, U, W)
+1152. toList(branch(X, fst(Y), snd(Y), Z)) = opAppend(toList(X), opAppend(toList(tree(cons(Y, nil))), toList(Z)))
+1153. keys(app(foldr(insertNat_0, X, toList(tree(cons(Y, nil)))), nil_1)) -> toList(tree(cons(Y, nil)))
+1154. insertNat_2(app(X, Y), foldr(insertNat_0, Z, opAppend(map(X, W), V))) -> foldr(insertNat_0, Z, opAppend(map(X, cons(Y, W)), V))
+1155. uncurry(uncurry(X, Y), pair(Z, foldr(uncurry_1(uncurry_1(X)), W, V))) -> foldr(uncurry_1(uncurry_1(X)), W, cons(pair(Y, Z), V))
+1156. uncurry(ltNat(X, Y), pair(Z, foldr(uncurry_1(lam4(Y)), W, V))) -> foldr(uncurry_1(lam4(Y)), W, cons(pair(X, Z), V))
+1157. foldr(uncurry_1(lam4(zero)), X, cons(pair(zero, Y), Z)) -> uncurry(false, pair(Y, foldr(uncurry_1(lam4(zero)), X, Z)))
+1158. foldr(uncurry_1(lam4(zero)), X, cons(pair(suc(Y), Z), W)) -> uncurry(false, pair(Z, foldr(uncurry_1(lam4(zero)), X, W)))
+1159. uncurry(gtNat(X, Y), pair(Z, foldr(uncurry_1(lam5(Y)), W, V))) -> foldr(uncurry_1(lam5(Y)), W, cons(pair(X, Z), V))
+1160. foldr(uncurry_1(lam5(zero)), X, cons(pair(zero, Y), Z)) -> uncurry(false, pair(Y, foldr(uncurry_1(lam5(zero)), X, Z)))
+1161. foldr(uncurry_1(lam5(zero)), X, cons(pair(suc(Y), Z), W)) -> uncurry(true, pair(Z, foldr(uncurry_1(lam5(zero)), X, W)))
+1162. map(lam4(suc(X)), cons(zero, map(Y, cons(Z, nil)))) -> cons(true, cons(ltNat(app(Y, Z), suc(X)), nil))
+1163. map(lam5(suc(X)), cons(zero, map(Y, cons(Z, nil)))) -> cons(false, cons(gtNat(app(Y, Z), suc(X)), nil))
+1164. foldr(X, uncurry(X, pair(Y, Z)), cons(W, cons(V, nil))) -> foldr(X, Z, cons(W, cons(V, cons(Y, nil))))
+1165. tree(toList(tree(map(X, map(Y, cons(Z, nil)))))) -> tree(map(X, map(Y, cons(Z, nil))))
+1166. tree(toList(tree(map(X, toList(insertNat(Y, Z, nil_1)))))) -> tree(map(X, toList(insertNat(Y, Z, nil_1))))
+1167. map(lam4(suc(suc(X))), opAppend(cons(suc(zero), Y), Z)) -> map(lam4(suc(suc(X))), opAppend(cons(zero, Y), Z))
+1168. map(lam4(suc(suc(X))), cons(Y, cons(suc(zero), Z))) -> map(lam4(suc(suc(X))), cons(Y, cons(zero, Z)))
+1169. map(lam5(suc(suc(X))), opAppend(cons(suc(zero), Y), Z)) -> map(lam5(suc(suc(X))), opAppend(cons(zero, Y), Z))
+1170. map(lam5(suc(suc(X))), cons(Y, cons(suc(zero), Z))) -> map(lam5(suc(suc(X))), cons(Y, cons(zero, Z)))
+1171. validNat(deleteNat(X, insertNat(zero, Y, insertNat(zero, Z, nil_1)))) -> prop_DeleteValid(X, toList(insertNat(zero, Z, insertNat(zero, Y, nil_1))))
+1172. prop_DeleteValid(zero, toList(insertNat(zero, X, insertNat(zero, Y, nil_1)))) -> true
+1173. insertNat_case1(false, zero, zero, nil_1, insertNat(zero, X, nil_1), Y, Z) -> insertNat(zero, Y, insertNat(zero, X, insertNat(zero, Z, nil_1)))
+1174. keys(insertNat(zero, X, insertNat(zero, Y, insertNat(zero, Z, nil_1)))) -> cons(zero, cons(zero, cons(zero, nil)))
+1175. deleteNat(suc(X), insertNat(zero, Y, insertNat(zero, Z, nil_1))) -> insertNat(zero, Y, insertNat(zero, Z, nil_1))
+1176. prop_DeleteValid(suc(X), toList(insertNat(zero, Y, insertNat(zero, Z, nil_1)))) -> false
+1177. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (nil_1_1): nil_1 = leaf.
+Axiom 2 (toList_1): toList(leaf) = nil.
+Axiom 3 (isLT_2): isLT(eq) = false.
+Axiom 4 (isLT_3): isLT(gt) = false.
+Axiom 5 (isGT_2): isGT(eq) = false.
+Axiom 6 (isGT_3): isGT(gt) = true.
+Axiom 7 (validNat_1): validNat(leaf) = true.
+Axiom 8 (map_1): map(X, nil) = nil.
+Axiom 9 (keys_1): keys(X) = map(fst_0, toList(X)).
+Axiom 10 (opAppend_1): opAppend(nil, X) = X.
+Axiom 11 (all_1): all(X, nil) = true.
+Axiom 12 (deleteNat_1): deleteNat(X, leaf) = leaf.
+Axiom 13 (opAnd_2): opAnd(true, X) = X.
+Axiom 14 (opAnd_1): opAnd(false, X) = false.
+Axiom 15 (compareNat_1): compareNat(zero, zero) = eq.
+Axiom 16 (app_insertNat_0_1): app(insertNat_0, X) = insertNat_1(X).
+Axiom 17 (app_fst_0_1): app(fst_0, X) = fst(X).
+Axiom 18 (snd_1): snd(pair(X, Y)) = Y.
+Axiom 19 (fst_1): fst(pair(X, Y)) = X.
+Axiom 20 (ltNat_1): ltNat(X, Y) = isLT(compareNat(X, Y)).
+Axiom 21 (gtNat_1): gtNat(X, Y) = isGT(compareNat(X, Y)).
+Axiom 22 (foldr_1): foldr(X, Y, nil) = Y.
+Axiom 23 (compareNat_3): compareNat(suc(X), zero) = gt.
+Axiom 24 (app_uncurry_1_1): app(uncurry_1(X), Y) = uncurry(X, Y).
+Axiom 25 (app_insertNat_1_1): app(insertNat_1(X), Y) = insertNat_2(X, Y).
+Axiom 26 (app_lam5_1): app(lam5(X), Y) = gtNat(Y, X).
+Axiom 27 (tree_1): tree(X) = foldr(uncurry_1(insertNat_0), nil_1, X).
+Axiom 28 (prop_DeleteValid_1): prop_DeleteValid(X, Y) = validNat(deleteNat(X, tree(Y))).
+Axiom 29 (opAppend_2): opAppend(cons(X, Y), Z) = cons(X, opAppend(Y, Z)).
+Axiom 30 (app_insertNat_2_1): app(insertNat_2(X, Y), Z) = insertNat(X, Y, Z).
+Axiom 31 (insertNat_1): insertNat(X, Y, leaf) = branch(leaf, X, Y, leaf).
+Axiom 32 (all_2): all(X, cons(Y, Z)) = opAnd(app(X, Y), all(X, Z)).
+Axiom 33 (map_2): map(X, cons(Y, Z)) = cons(app(X, Y), map(X, Z)).
+Axiom 34 (uncurry_1): uncurry(X, Y) = app(app(X, fst(Y)), snd(Y)).
+Axiom 35 (deleteNat_case1_case1_1): deleteNat_case1_case1(true, X, Y, Z, W, V) = branch(Z, Y, V, deleteNat(X, W)).
+Axiom 36 (foldr_2): foldr(X, Y, cons(Z, W)) = app(app(X, Z), foldr(X, Y, W)).
+Axiom 37 (insertNat_case1_2): insertNat_case1(false, X, Y, Z, W, V, U) = branch(Z, Y, U, insertNat(X, V, W)).
+Axiom 38 (deleteNat_2): deleteNat(X, branch(Y, Z, W, V)) = deleteNat_case1(ltNat(X, Z), X, Z, Y, V, W).
+Axiom 39 (deleteNat_case1_2): deleteNat_case1(false, X, Y, Z, W, V) = deleteNat_case1_case1(gtNat(X, Y), X, Y, Z, W, V).
+Axiom 40 (toList_2): toList(branch(X, Y, Z, W)) = opAppend(toList(X), opAppend(cons(pair(Y, Z), nil), toList(W))).
+Axiom 41 (insertNat_2): insertNat(X, Y, branch(Z, W, V, U)) = insertNat_case1(ltNat(X, W), X, W, Z, U, Y, V).
+Axiom 42 (validNat_2): validNat(branch(X, Y, Z, W)) = opAnd(validNat(X), opAnd(validNat(W), opAnd(all(lam4(Y), keys(X)), all(lam5(Y), keys(W))))).
+
+Lemma 43: validNat(nil_1) = true.
+Proof:
+  validNat(nil_1)
+= { by axiom 1 (nil_1_1) }
+  validNat(leaf)
+= { by axiom 7 (validNat_1) }
+  true
+
+Lemma 44: toList(nil_1) = nil.
+Proof:
+  toList(nil_1)
+= { by axiom 1 (nil_1_1) }
+  toList(leaf)
+= { by axiom 2 (toList_1) }
+  nil
+
+Lemma 45: keys(nil_1) = nil.
+Proof:
+  keys(nil_1)
+= { by axiom 9 (keys_1) }
+  map(fst_0, toList(nil_1))
+= { by lemma 44 }
+  map(fst_0, nil)
+= { by axiom 8 (map_1) }
+  nil
+
+Lemma 46: insertNat_2(fst(X), snd(X)) = uncurry(insertNat_0, X).
+Proof:
+  insertNat_2(fst(X), snd(X))
+= { by axiom 25 (app_insertNat_1_1) R->L }
+  app(insertNat_1(fst(X)), snd(X))
+= { by axiom 16 (app_insertNat_0_1) R->L }
+  app(app(insertNat_0, fst(X)), snd(X))
+= { by axiom 34 (uncurry_1) R->L }
+  uncurry(insertNat_0, X)
+
+Lemma 47: uncurry(insertNat_0, pair(X, Y)) = insertNat_2(X, Y).
+Proof:
+  uncurry(insertNat_0, pair(X, Y))
+= { by lemma 46 R->L }
+  insertNat_2(fst(pair(X, Y)), snd(pair(X, Y)))
+= { by axiom 18 (snd_1) }
+  insertNat_2(fst(pair(X, Y)), Y)
+= { by axiom 19 (fst_1) }
+  insertNat_2(X, Y)
+
+Lemma 48: app(app(X, Y), Z) = uncurry(X, pair(Y, Z)).
+Proof:
+  app(app(X, Y), Z)
+= { by axiom 19 (fst_1) R->L }
+  app(app(X, fst(pair(Y, Z))), Z)
+= { by axiom 18 (snd_1) R->L }
+  app(app(X, fst(pair(Y, Z))), snd(pair(Y, Z)))
+= { by axiom 34 (uncurry_1) R->L }
+  uncurry(X, pair(Y, Z))
+
+Lemma 49: uncurry(uncurry_1(X), pair(Y, Z)) = app(uncurry(X, Y), Z).
+Proof:
+  uncurry(uncurry_1(X), pair(Y, Z))
+= { by lemma 48 R->L }
+  app(app(uncurry_1(X), Y), Z)
+= { by axiom 24 (app_uncurry_1_1) }
+  app(uncurry(X, Y), Z)
+
+Lemma 50: uncurry(uncurry_1(insertNat_0), pair(X, tree(Y))) = tree(cons(X, Y)).
+Proof:
+  uncurry(uncurry_1(insertNat_0), pair(X, tree(Y)))
+= { by lemma 48 R->L }
+  app(app(uncurry_1(insertNat_0), X), tree(Y))
+= { by axiom 27 (tree_1) }
+  app(app(uncurry_1(insertNat_0), X), foldr(uncurry_1(insertNat_0), nil_1, Y))
+= { by axiom 36 (foldr_2) R->L }
+  foldr(uncurry_1(insertNat_0), nil_1, cons(X, Y))
+= { by axiom 27 (tree_1) R->L }
+  tree(cons(X, Y))
+
+Lemma 51: app(uncurry(insertNat_0, X), nil_1) = tree(cons(X, nil)).
+Proof:
+  app(uncurry(insertNat_0, X), nil_1)
+= { by lemma 49 R->L }
+  uncurry(uncurry_1(insertNat_0), pair(X, nil_1))
+= { by axiom 22 (foldr_1) R->L }
+  uncurry(uncurry_1(insertNat_0), pair(X, foldr(uncurry_1(insertNat_0), nil_1, nil)))
+= { by axiom 27 (tree_1) R->L }
+  uncurry(uncurry_1(insertNat_0), pair(X, tree(nil)))
+= { by lemma 50 }
+  tree(cons(X, nil))
+
+Lemma 52: toList(branch(nil_1, X, Y, Z)) = cons(pair(X, Y), toList(Z)).
+Proof:
+  toList(branch(nil_1, X, Y, Z))
+= { by axiom 40 (toList_2) }
+  opAppend(toList(nil_1), opAppend(cons(pair(X, Y), nil), toList(Z)))
+= { by lemma 44 }
+  opAppend(nil, opAppend(cons(pair(X, Y), nil), toList(Z)))
+= { by axiom 10 (opAppend_1) }
+  opAppend(cons(pair(X, Y), nil), toList(Z))
+= { by axiom 29 (opAppend_2) }
+  cons(pair(X, Y), opAppend(nil, toList(Z)))
+= { by axiom 10 (opAppend_1) }
+  cons(pair(X, Y), toList(Z))
+
+Lemma 53: branch(nil_1, X, Y, nil_1) = insertNat(X, Y, nil_1).
+Proof:
+  branch(nil_1, X, Y, nil_1)
+= { by axiom 1 (nil_1_1) }
+  branch(leaf, X, Y, nil_1)
+= { by axiom 1 (nil_1_1) }
+  branch(leaf, X, Y, leaf)
+= { by axiom 31 (insertNat_1) R->L }
+  insertNat(X, Y, leaf)
+= { by axiom 1 (nil_1_1) R->L }
+  insertNat(X, Y, nil_1)
+
+Lemma 54: cons(pair(X, Y), nil) = toList(insertNat(X, Y, nil_1)).
+Proof:
+  cons(pair(X, Y), nil)
+= { by lemma 44 R->L }
+  cons(pair(X, Y), toList(nil_1))
+= { by lemma 52 R->L }
+  toList(branch(nil_1, X, Y, nil_1))
+= { by lemma 53 }
+  toList(insertNat(X, Y, nil_1))
+
+Lemma 55: tree(cons(pair(X, Y), nil)) = insertNat(X, Y, nil_1).
+Proof:
+  tree(cons(pair(X, Y), nil))
+= { by lemma 51 R->L }
+  app(uncurry(insertNat_0, pair(X, Y)), nil_1)
+= { by lemma 47 }
+  app(insertNat_2(X, Y), nil_1)
+= { by axiom 30 (app_insertNat_2_1) }
+  insertNat(X, Y, nil_1)
+
+Lemma 56: insertNat(fst(X), snd(X), Y) = app(uncurry(insertNat_0, X), Y).
+Proof:
+  insertNat(fst(X), snd(X), Y)
+= { by axiom 30 (app_insertNat_2_1) R->L }
+  app(insertNat_2(fst(X), snd(X)), Y)
+= { by lemma 46 }
+  app(uncurry(insertNat_0, X), Y)
+
+Lemma 57: opAnd(validNat(X), all(lam5(Y), keys(X))) = validNat(branch(nil_1, Y, Z, X)).
+Proof:
+  opAnd(validNat(X), all(lam5(Y), keys(X)))
+= { by axiom 13 (opAnd_2) R->L }
+  opAnd(validNat(X), opAnd(true, all(lam5(Y), keys(X))))
+= { by axiom 11 (all_1) R->L }
+  opAnd(validNat(X), opAnd(all(lam4(Y), nil), all(lam5(Y), keys(X))))
+= { by axiom 13 (opAnd_2) R->L }
+  opAnd(true, opAnd(validNat(X), opAnd(all(lam4(Y), nil), all(lam5(Y), keys(X)))))
+= { by lemma 43 R->L }
+  opAnd(validNat(nil_1), opAnd(validNat(X), opAnd(all(lam4(Y), nil), all(lam5(Y), keys(X)))))
+= { by lemma 45 R->L }
+  opAnd(validNat(nil_1), opAnd(validNat(X), opAnd(all(lam4(Y), keys(nil_1)), all(lam5(Y), keys(X)))))
+= { by axiom 42 (validNat_2) R->L }
+  validNat(branch(nil_1, Y, Z, X))
+
+Lemma 58: deleteNat(suc(X), branch(Y, zero, Z, W)) = deleteNat_case1(false, suc(X), zero, Y, W, Z).
+Proof:
+  deleteNat(suc(X), branch(Y, zero, Z, W))
+= { by axiom 38 (deleteNat_2) }
+  deleteNat_case1(ltNat(suc(X), zero), suc(X), zero, Y, W, Z)
+= { by axiom 20 (ltNat_1) }
+  deleteNat_case1(isLT(compareNat(suc(X), zero)), suc(X), zero, Y, W, Z)
+= { by axiom 23 (compareNat_3) }
+  deleteNat_case1(isLT(gt), suc(X), zero, Y, W, Z)
+= { by axiom 4 (isLT_3) }
+  deleteNat_case1(false, suc(X), zero, Y, W, Z)
+
+Lemma 59: insertNat_case1(false, zero, zero, nil_1, nil_1, X, Y) = insertNat(zero, X, insertNat(zero, Y, nil_1)).
+Proof:
+  insertNat_case1(false, zero, zero, nil_1, nil_1, X, Y)
+= { by axiom 3 (isLT_2) R->L }
+  insertNat_case1(isLT(eq), zero, zero, nil_1, nil_1, X, Y)
+= { by axiom 15 (compareNat_1) R->L }
+  insertNat_case1(isLT(compareNat(zero, zero)), zero, zero, nil_1, nil_1, X, Y)
+= { by axiom 20 (ltNat_1) R->L }
+  insertNat_case1(ltNat(zero, zero), zero, zero, nil_1, nil_1, X, Y)
+= { by axiom 41 (insertNat_2) R->L }
+  insertNat(zero, X, branch(nil_1, zero, Y, nil_1))
+= { by lemma 53 }
+  insertNat(zero, X, insertNat(zero, Y, nil_1))
+
+Lemma 60: deleteNat_case1_case1(true, suc(X), zero, Y, Z, W) = deleteNat_case1(false, suc(X), zero, Y, Z, W).
+Proof:
+  deleteNat_case1_case1(true, suc(X), zero, Y, Z, W)
+= { by axiom 6 (isGT_3) R->L }
+  deleteNat_case1_case1(isGT(gt), suc(X), zero, Y, Z, W)
+= { by axiom 23 (compareNat_3) R->L }
+  deleteNat_case1_case1(isGT(compareNat(suc(X), zero)), suc(X), zero, Y, Z, W)
+= { by axiom 21 (gtNat_1) R->L }
+  deleteNat_case1_case1(gtNat(suc(X), zero), suc(X), zero, Y, Z, W)
+= { by axiom 39 (deleteNat_case1_2) R->L }
+  deleteNat_case1(false, suc(X), zero, Y, Z, W)
+
+Goal 1 (prop_DeleteValid): prop_DeleteValid(X, Y) = false.
+The goal is true when:
+  X = suc(Z)
+  Y = toList(insertNat(zero, Y, insertNat(zero, X, nil_1)))
+
+Proof:
+  prop_DeleteValid(suc(Z), toList(insertNat(zero, Y, insertNat(zero, X, nil_1))))
+= { by axiom 28 (prop_DeleteValid_1) }
+  validNat(deleteNat(suc(Z), tree(toList(insertNat(zero, Y, insertNat(zero, X, nil_1))))))
+= { by lemma 59 R->L }
+  validNat(deleteNat(suc(Z), tree(toList(insertNat_case1(false, zero, zero, nil_1, nil_1, Y, X)))))
+= { by axiom 37 (insertNat_case1_2) }
+  validNat(deleteNat(suc(Z), tree(toList(branch(nil_1, zero, X, insertNat(zero, Y, nil_1))))))
+= { by lemma 52 }
+  validNat(deleteNat(suc(Z), tree(cons(pair(zero, X), toList(insertNat(zero, Y, nil_1))))))
+= { by lemma 50 R->L }
+  validNat(deleteNat(suc(Z), uncurry(uncurry_1(insertNat_0), pair(pair(zero, X), tree(toList(insertNat(zero, Y, nil_1)))))))
+= { by lemma 49 }
+  validNat(deleteNat(suc(Z), app(uncurry(insertNat_0, pair(zero, X)), tree(toList(insertNat(zero, Y, nil_1))))))
+= { by lemma 47 }
+  validNat(deleteNat(suc(Z), app(insertNat_2(zero, X), tree(toList(insertNat(zero, Y, nil_1))))))
+= { by axiom 30 (app_insertNat_2_1) }
+  validNat(deleteNat(suc(Z), insertNat(zero, X, tree(toList(insertNat(zero, Y, nil_1))))))
+= { by lemma 54 R->L }
+  validNat(deleteNat(suc(Z), insertNat(zero, X, tree(cons(pair(zero, Y), nil)))))
+= { by lemma 55 }
+  validNat(deleteNat(suc(Z), insertNat(zero, X, insertNat(zero, Y, nil_1))))
+= { by lemma 59 R->L }
+  validNat(deleteNat(suc(Z), insertNat_case1(false, zero, zero, nil_1, nil_1, X, Y)))
+= { by axiom 37 (insertNat_case1_2) }
+  validNat(deleteNat(suc(Z), branch(nil_1, zero, Y, insertNat(zero, X, nil_1))))
+= { by lemma 58 }
+  validNat(deleteNat_case1(false, suc(Z), zero, nil_1, insertNat(zero, X, nil_1), Y))
+= { by lemma 60 R->L }
+  validNat(deleteNat_case1_case1(true, suc(Z), zero, nil_1, insertNat(zero, X, nil_1), Y))
+= { by axiom 35 (deleteNat_case1_case1_1) }
+  validNat(branch(nil_1, zero, Y, deleteNat(suc(Z), insertNat(zero, X, nil_1))))
+= { by lemma 53 R->L }
+  validNat(branch(nil_1, zero, Y, deleteNat(suc(Z), branch(nil_1, zero, X, nil_1))))
+= { by lemma 58 }
+  validNat(branch(nil_1, zero, Y, deleteNat_case1(false, suc(Z), zero, nil_1, nil_1, X)))
+= { by lemma 60 R->L }
+  validNat(branch(nil_1, zero, Y, deleteNat_case1_case1(true, suc(Z), zero, nil_1, nil_1, X)))
+= { by axiom 35 (deleteNat_case1_case1_1) }
+  validNat(branch(nil_1, zero, Y, branch(nil_1, zero, X, deleteNat(suc(Z), nil_1))))
+= { by axiom 1 (nil_1_1) }
+  validNat(branch(nil_1, zero, Y, branch(nil_1, zero, X, deleteNat(suc(Z), leaf))))
+= { by axiom 12 (deleteNat_1) }
+  validNat(branch(nil_1, zero, Y, branch(nil_1, zero, X, leaf)))
+= { by axiom 1 (nil_1_1) R->L }
+  validNat(branch(nil_1, zero, Y, branch(nil_1, zero, X, nil_1)))
+= { by lemma 53 }
+  validNat(branch(nil_1, zero, Y, insertNat(zero, X, nil_1)))
+= { by lemma 55 R->L }
+  validNat(branch(nil_1, zero, Y, tree(cons(pair(zero, X), nil))))
+= { by lemma 57 R->L }
+  opAnd(validNat(tree(cons(pair(zero, X), nil))), all(lam5(zero), keys(tree(cons(pair(zero, X), nil)))))
+= { by lemma 51 R->L }
+  opAnd(validNat(app(uncurry(insertNat_0, pair(zero, X)), nil_1)), all(lam5(zero), keys(tree(cons(pair(zero, X), nil)))))
+= { by lemma 56 R->L }
+  opAnd(validNat(insertNat(fst(pair(zero, X)), snd(pair(zero, X)), nil_1)), all(lam5(zero), keys(tree(cons(pair(zero, X), nil)))))
+= { by lemma 53 R->L }
+  opAnd(validNat(branch(nil_1, fst(pair(zero, X)), snd(pair(zero, X)), nil_1)), all(lam5(zero), keys(tree(cons(pair(zero, X), nil)))))
+= { by lemma 57 R->L }
+  opAnd(opAnd(validNat(nil_1), all(lam5(fst(pair(zero, X))), keys(nil_1))), all(lam5(zero), keys(tree(cons(pair(zero, X), nil)))))
+= { by lemma 43 }
+  opAnd(opAnd(true, all(lam5(fst(pair(zero, X))), keys(nil_1))), all(lam5(zero), keys(tree(cons(pair(zero, X), nil)))))
+= { by axiom 13 (opAnd_2) }
+  opAnd(all(lam5(fst(pair(zero, X))), keys(nil_1)), all(lam5(zero), keys(tree(cons(pair(zero, X), nil)))))
+= { by lemma 45 }
+  opAnd(all(lam5(fst(pair(zero, X))), nil), all(lam5(zero), keys(tree(cons(pair(zero, X), nil)))))
+= { by axiom 11 (all_1) }
+  opAnd(true, all(lam5(zero), keys(tree(cons(pair(zero, X), nil)))))
+= { by axiom 13 (opAnd_2) }
+  all(lam5(zero), keys(tree(cons(pair(zero, X), nil))))
+= { by lemma 51 R->L }
+  all(lam5(zero), keys(app(uncurry(insertNat_0, pair(zero, X)), nil_1)))
+= { by lemma 56 R->L }
+  all(lam5(zero), keys(insertNat(fst(pair(zero, X)), snd(pair(zero, X)), nil_1)))
+= { by axiom 9 (keys_1) }
+  all(lam5(zero), map(fst_0, toList(insertNat(fst(pair(zero, X)), snd(pair(zero, X)), nil_1))))
+= { by lemma 54 R->L }
+  all(lam5(zero), map(fst_0, cons(pair(fst(pair(zero, X)), snd(pair(zero, X))), nil)))
+= { by axiom 33 (map_2) }
+  all(lam5(zero), cons(app(fst_0, pair(fst(pair(zero, X)), snd(pair(zero, X)))), map(fst_0, nil)))
+= { by axiom 8 (map_1) }
+  all(lam5(zero), cons(app(fst_0, pair(fst(pair(zero, X)), snd(pair(zero, X)))), nil))
+= { by axiom 17 (app_fst_0_1) }
+  all(lam5(zero), cons(fst(pair(fst(pair(zero, X)), snd(pair(zero, X)))), nil))
+= { by axiom 19 (fst_1) }
+  all(lam5(zero), cons(fst(pair(zero, X)), nil))
+= { by axiom 32 (all_2) }
+  opAnd(app(lam5(zero), fst(pair(zero, X))), all(lam5(zero), nil))
+= { by axiom 11 (all_1) }
+  opAnd(app(lam5(zero), fst(pair(zero, X))), true)
+= { by axiom 26 (app_lam5_1) }
+  opAnd(gtNat(fst(pair(zero, X)), zero), true)
+= { by axiom 19 (fst_1) }
+  opAnd(gtNat(zero, zero), true)
+= { by axiom 21 (gtNat_1) }
+  opAnd(isGT(compareNat(zero, zero)), true)
+= { by axiom 15 (compareNat_1) }
+  opAnd(isGT(eq), true)
+= { by axiom 5 (isGT_2) }
+  opAnd(false, true)
+= { by axiom 14 (opAnd_1) }
+  false
+
+RESULT: Theorem (the conjecture is true).

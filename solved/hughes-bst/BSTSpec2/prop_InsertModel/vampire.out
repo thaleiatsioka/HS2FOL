@@ -1,0 +1,2112 @@
+% Running in auto input_syntax mode. Trying TPTP
+% Detected formulas, will run a generic FOF schedule.
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_tgt=full:sil=2000:alpa=true:random_seed=1510951108:st=5:i=107:sd=1:qa=plain:ss=on:er=filter:ssat=axiom_1 on problem for (1ds/107Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 14 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_2:3_to=lpo:sil=16000:sp=arity:random_seed=2322263489:i=114:bd=all:qa=plain:ss=on:sgt=4_1 on problem for (1ds/114Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 14 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+1011_2_sil=4000:lsd=20:rp=on:sac=on:newcnf=on:random_seed=276704668:i=132:kws=arity:qa=plain:er=filter_1 on problem for (1ds/132Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 18 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1011_1_sil=2000:slsqr=8,1:fd=off:kmz=on:flr=on:slsq=on:sac=on:random_seed=1715141920:st=2:i=121:sd=30:aac=none:ep=RS:qa=plain:ss=on:sgt=10_1 on problem for (1ds/121Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_1_sil=2000:sos=on:random_seed=2151669779:i=135:sd=2:qa=plain:gtg=position:ss=on_1 on problem for (1ds/135Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_1_sil=16000:random_seed=1415340043:i=269:sd=10:qa=plain:ss=on:sgt=16_2 on problem for (2ds/269Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 21 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1010_4_sil=2000:sos=on:sac=on:random_seed=1292688324:i=140:sd=1:qa=plain:ss=on_1 on problem for (1ds/140Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+11_4:1_bsr=on:to=kbo:sil=4000:slsqr=8,1:slsq=on:s2pl=on:random_seed=546035324:st=3:gtgl=4:s2a=on:i=124:sd=1:kws=inv_arity:ep=RST:fsd=on:qa=plain:gtg=position:ss=on_1 on problem for (1ds/124Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.002 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+1010_1_to=lpo:sil=32000:fde=none:sos=on:urr=on:random_seed=2365081645:st=2.5:cts=off:i=297:sd=4:ins=10:qa=plain:gsp=on:ss=on_2 on problem for (2ds/297Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 25 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1002_1_sil=2000:random_seed=1355444520:i=641:sd=20:qa=plain:ss=on:sgt=8_4 on problem for (4ds/641Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.400 s
+% Peak memory usage: 47 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_1_sil=4000:plsq=on:sosts=on:sp=occurrence:sos=on:erd=off:plsqr=32,1:random_seed=825209743:st=5:i=160:qa=plain:sup=off:ss=on:ssat=axiom_1 on problem for (1ds/160Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_16:1_bsr=unit_only:sil=2000:sp=reverse_frequency:lcm=predicate:random_seed=409336364:avsq=on:i=433:bs=unit_only:kws=inv_frequency:qa=plain:gtg=exists_sym_3 on problem for (3ds/433Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.300 s
+% Peak memory usage: 31 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_sfv=off:sil=128000:sosts=on:sos=on:newcnf=on:random_seed=2678692486:cond=fast:i=114:nm=2:fsr=off:qa=plain:gtg=all:ss=on_1 on problem for (1ds/114Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_64_sil=16000:sos=on:urr=on:br=off:random_seed=3986304315:st=2.2:i=120:sd=1:nm=2:qa=plain:gtg=all:ss=on_1 on problem for (1ds/120Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+21_1_to=lpo:sil=4000:slsqr=16,1:fs=off:acc=on:alpa=true:slsq=on:random_seed=731230322:i=126:sd=3:aac=none:doe=on:fsr=off:qa=plain:sup=off:ss=on:er=filter:ssat=axiom:sgt=10_1 on problem for (1ds/126Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1011_1_sil=64000:sp=occurrence:nwc=2:sac=on:random_seed=3834379469:gtgl=2:i=161:qa=plain:gtg=exists_sym_1 on problem for (1ds/161Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 17 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+11_1024_sil=2000:drc=off:gs=on:flr=on:random_seed=3104677753:s2a=on:i=137:sd=2:fgj=on:av=off:qa=plain:ss=on:sgt=4_1 on problem for (1ds/137Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1010_1_anc=none:sil=2000:sims=off:etr=on:sos=on:nwc=2:random_seed=2498503905:i=698:sd=2:kws=arity:aac=none:qa=plain:ss=on:sgt=10_4 on problem for (4ds/698Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+10_1_sil=32000:s2agt=32:random_seed=1017366533:st=3:s2a=on:i=183:sd=1:qa=plain:gtg=position:ss=on_1 on problem for (1ds/183Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1010_2_sil=8000:plsq=on:plsqr=1,2:fd=off:random_seed=3645559925:st=1.5:s2a=on:i=119:sd=2:qa=plain:sup=off:ss=on_1 on problem for (1ds/119Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1010_3_tgt=full:sil=2000:plsq=on:drc=off:fde=unused:sp=arity:acc=on:nwc=20:flr=on:avsqc=2:sac=on:s2pl=on:random_seed=497133558:st=3:avsq=on:s2at=5:i=285:sd=10:avsqr=52993,1048576:qa=plain:gtg=exists_sym:ss=on_2 on problem for (2ds/285Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.203 s
+% Peak memory usage: 21 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_1_bsr=on:to=lpo:sil=32000:sp=arity:urr=on:br=off:fd=preordered:nwc=0.968:newcnf=on:random_seed=1359913591:s2a=on:s2at=11:i=130:bd=preordered:nm=20:ins=10:qa=plain:gtg=position:gsp=on_1 on problem for (1ds/130Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 17 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+11_128_sil=2000:lcm=predicate:nwc=20:slsqc=4:slsq=on:random_seed=454208215:cts=off:i=178:slsql=off:nm=2:av=off:fsr=off:qa=plain_1 on problem for (1ds/178Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 16 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-10_3:2_anc=all:sil=8000:plsq=on:plsqc=1:erd=off:plsqr=1,1:urr=on:br=off:rp=on:avsqc=3:sac=on:nicw=on:random_seed=3419099981:avsq=on:s2a=on:s2at=2:i=270:qa=plain:ss=on_2 on problem for (2ds/270Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 27 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1011_1_tgt=full:sil=16000:prc=on:bsd=on:sp=unary_first:avsql=on:acc=on:fd=preordered:avsqc=1:random_seed=2715489373:st=4:avsq=on:i=960:kws=precedence:avsqr=1,16:bd=all:ins=10:qa=plain:ss=on_5 on problem for (5ds/960Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.500 s
+% Peak memory usage: 43 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+4_1_sfv=off:sil=16000:sosts=on:sos=on:random_seed=1949163159:i=183:av=off:qa=plain_1 on problem for (1ds/183Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+11_8_sil=2000:slsqr=4,1:erd=off:lsd=50:s2agt=8:slsqc=3:slsq=on:s2pl=on:random_seed=2442362628:i=137:sd=2:ep=R:nm=6:av=off:qa=plain:ss=on:sgt=8_1 on problem for (1ds/137Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1010_14_tgt=full:sil=4000:plsq=on:plsqc=3:erd=off:plsqr=1,64:plsql=on:slsqc=3:slsq=on:random_seed=2532932546:s2at=3:i=274:sd=1:kws=arity_squared:fsd=on:qa=plain:gtg=exists_all:ss=on:sgt=16_2 on problem for (2ds/274Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+34_16:1_anc=all_dependent:to=lpo:sil=2000:sp=unary_first:sos=on:urr=full:fd=off:sac=on:random_seed=2819450465:i=259:aac=none:bd=preordered:qa=plain:ss=on_2 on problem for (2ds/259Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+10_1_sil=8000:drc=ordering:urr=on:br=off:random_seed=3276655393:cond=on:s2a=on:i=1197:qa=plain:gtg=position:ss=on:sgt=8_6 on problem for (6ds/1197Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.600 s
+% Peak memory usage: 45 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+22_32_sil=4000:plsq=on:rp=on:newcnf=on:random_seed=2659607848:st=2.5:s2a=on:i=132:sd=5:qa=plain:ss=on:ssat=axiom_1 on problem for (1ds/132Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 16 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1011_1_anc=none:to=lpo:sil=4000:plsq=on:prc=on:plsqc=3:fdtod=off:sp=reverse_frequency:sos=on:plsqr=2804223,1048576:lsd=20:nwc=1:flr=on:prac=on:random_seed=3766897807:cond=fast:st=3:gtgl=2:i=179:bs=unit_only:ep=RS:nm=10:ins=25:qa=plain:amm=off:gtg=all:ss=on:ssat=axiom_1 on problem for (1ds/179Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1002_16:1_sil=2000:sos=on:acc=on:urr=full:fd=off:newcnf=on:random_seed=1664549169:i=1517:sd=1:qa=plain:sup=off:ss=on:ssat=axiom_8 on problem for (8ds/1517Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+11_1_sil=4000:slsqr=12,1:erd=off:urr=on:br=off:slsq=on:random_seed=1220736753:cts=off:i=159:slsql=off:nm=6:qa=plain:gsp=on_1 on problem for (1ds/159Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 10 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1011_1_sil=2000:random_seed=834968933:st=5:avsq=on:i=175:avsqr=1,16:ep=R:qa=plain:ss=on:ssat=axiom_1 on problem for (1ds/175Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1010_8_tgt=ground:sil=4000:drc=off:br=off:slsq=on:random_seed=320993387:i=176:kws=frequency:qa=plain:ss=on_1 on problem for (1ds/176Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.101 s
+% Peak memory usage: 17 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_3:1_to=lpo:sil=2000:plsq=on:plsqc=1:sp=reverse_frequency:sos=on:plsqr=64,1:fd=preordered:rp=on:random_seed=2228020472:i=574:aac=none:bd=all:ins=1:qa=plain_3 on problem for (3ds/574Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1010_7_anc=all_dependent:bsr=on:sil=64000:plsq=on:sp=occurrence:sos=on:plsqr=8,1:urr=ec_only:alpa=true:flr=on:slsq=on:random_seed=3268727811:cond=on:gtgl=5:avsq=on:i=116:aac=none:avsqr=1,32:qa=plain:amm=off:gtg=all:rawr=on_1 on problem for (1ds/116Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 14 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_1_sil=4000:plsq=on:s2agt=16:slsqc=1:slsq=on:random_seed=156055625:st=5:s2a=on:i=879:sd=3:av=off:qa=plain:gtg=exists_top:ss=on_5 on problem for (5ds/879Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.500 s
+% Peak memory usage: 43 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+10_3:10_to=lpo:sil=32000:flr=on:sac=on:random_seed=41028883:i=382:ep=RST:qa=plain_2 on problem for (2ds/382Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.201 s
+% Peak memory usage: 19 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_8:1_sil=4000:plsq=on:plsqc=3:sp=reverse_arity:erd=off:plsqr=32,1:lcm=reverse:acc=on:flr=on:slsq=on:random_seed=1775990911:s2a=on:i=178:kws=precedence:ep=RS:nm=32:qa=plain_1 on problem for (1ds/178Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1004_1024_bsr=on:to=lpo:tgt=ground:sil=128000:irw=on:slsqr=1,4:erd=off:nwc=0.5:slsq=on:random_seed=3865803864:st=1.5:i=120:bs=unit_only:doe=on:ins=7:av=off:qa=plain:ss=on_1 on problem for (1ds/120Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 12 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1011_12_anc=all:bsr=unit_only:sil=16000:plsq=on:fde=none:plsqc=2:sp=unary_frequency:fs=off:plsqr=1,32:plsql=on:gs=on:nwc=2:kmz=on:slsq=on:sac=on:random_seed=83815:st=5:avsq=on:i=141:sd=1:fsd=on:fsr=off:qa=plain:gtg=exists_sym:ss=on_1 on problem for (1ds/141Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1010_128_sil=4000:rp=on:nwc=0.6:alpa=false:random_seed=2810563515:i=625:aac=none:nm=2:qa=plain:gsp=on_4 on problem for (4ds/625Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.400 s
+% Peak memory usage: 38 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1010_1024_tgt=ground:sil=4000:sp=reverse_frequency:random_seed=2756049171:i=292:nm=16:av=off:qa=plain:ss=on_2 on problem for (2ds/292Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 23 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1010_4_to=lpo:sil=4000:fde=unused:sp=reverse_frequency:sos=on:erd=off:fs=off:fd=off:sac=on:random_seed=3588770791:i=324:aac=none:fsr=off:qa=plain_2 on problem for (2ds/324Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 20 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1011_32_anc=all:to=lpo:sil=16000:drc=off:sp=reverse_frequency:fs=off:fd=preordered:sac=on:nicw=on:random_seed=472088468:avsq=on:add=on:i=168:bd=preordered:fsr=off:qa=plain_1 on problem for (1ds/168Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 14 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1011_10_tgt=ground:sil=2000:plsq=on:lsd=10:nwc=5:s2agt=64:random_seed=4097940706:s2a=on:i=123:av=off:qa=plain:ss=on:sgt=20_1 on problem for (1ds/123Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 16 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1011_1_sil=2000:plsq=on:drc=off:fde=none:bsd=on:lma=off:plsqr=1,2:bce=on:rp=on:nwc=20:random_seed=1172955310:st=10:i=123:bs=unit_only:doe=on:av=off:qa=plain:ss=on:er=filter:ssat=axiom:sgt=88_1 on problem for (1ds/123Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 16 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+11_4_sil=4000:prc=on:fd=preordered:random_seed=1068400251:i=1091:kws=arity_squared:av=off:qa=plain_6 on problem for (6ds/1091Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.600 s
+% Peak memory usage: 54 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1002_1_to=lpo:sil=2000:sos=on:random_seed=2489677285:i=1674:sd=3:qa=plain:ss=on:sgt=16_9 on problem for (9ds/1674Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.900 s
+% Peak memory usage: 40 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+10_1_sil=4000:lcm=reverse:urr=ec_only:br=off:gs=on:random_seed=1226895267:cts=off:i=340:nm=0:av=off:fsr=off:qa=plain_2 on problem for (2ds/340Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 21 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1002_5:4_sil=4000:plsq=on:sims=off:sp=const_frequency:sos=on:fs=off:plsqr=256,1:acc=on:fd=off:s2agt=32:random_seed=1523439396:s2a=on:i=124:aac=none:fsr=off:qa=plain_1 on problem for (1ds/124Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1004_1024_tgt=ground:sil=2000:sos=on:newcnf=on:random_seed=3181007376:i=125:sd=1:aac=none:fsr=off:qa=plain:gtg=position:ss=on_1 on problem for (1ds/125Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+11_1_sil=2000:random_seed=3112116802:i=328:sd=2:ep=RS:nm=0:av=off:qa=plain:ss=on:ssat=axiom_2 on problem for (2ds/328Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1010_1_sil=4000:fde=unused:sos=on:urr=ec_only:sac=on:random_seed=2542191027:gtgl=3:i=2032:sd=2:qa=plain:gtg=exists_all:ss=on_11 on problem for (11ds/2032Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 1.100 s
+% Peak memory usage: 119 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1010_2:3_sfv=off:sil=2000:fde=unused:sp=reverse_frequency:flr=on:random_seed=1899338464:st=9:i=237:av=off:qa=plain:ss=on_2 on problem for (2ds/237Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 26 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+10_1_sil=4000:plsq=on:plsqc=1:plsqr=32,1:random_seed=905747766:st=2:i=185:sd=1:bd=all:qa=plain:sup=off:ss=on_1 on problem for (1ds/185Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1011_128_sil=16000:urr=on:bce=on:fd=off:random_seed=3211627667:i=187:av=off:fsr=off:qa=plain_1 on problem for (1ds/187Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 14 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1011_93_tgt=ground:sil=16000:lsd=100:nwc=1.2:lftc=20:random_seed=3460274284:i=1283:bs=on:kws=inv_precedence:av=off:qa=plain_7 on problem for (7ds/1283Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.700 s
+% Peak memory usage: 56 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1010_16_sil=4000:fde=none:sos=on:random_seed=3976946374:st=1.8:i=311:sd=1:aac=none:qa=plain:gtg=exists_top:ss=on_2 on problem for (2ds/311Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+10_1_sfv=off:sil=4000:plsq=on:fde=none:plsqc=1:sosts=on:sos=on:lma=off:avsql=on:plsqr=10,1:acc=on:avsqc=3:random_seed=1138563849:avsq=on:i=161:aac=none:qa=plain_1 on problem for (1ds/161Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+11_1024_sil=4000:plsq=on:plsqc=1:fs=off:plsqr=64,1:lsd=100:alpa=true:random_seed=408494431:i=192:kws=frequency:nm=7:fsr=off:qa=plain_1 on problem for (1ds/192Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1010_4096_sil=64000:sp=occurrence:erd=off:newcnf=on:random_seed=1430024459:st=-1:gtgl=4:i=2238:sd=1:av=off:qa=plain:gtg=exists_sym:ss=on:ssat=axiom_12 on problem for (12ds/2238Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 1.201 s
+% Peak memory usage: 95 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+10_4_sfv=off:sil=4000:s2pl=no:random_seed=2383178363:i=224:sd=1:nm=16:qa=plain:ss=on:er=filter:sgt=4_2 on problem for (2ds/224Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_8:1_bsr=unit_only:sil=2000:plsq=on:plsqc=1:sos=on:plsqr=10,1:lsd=1:urr=on:rp=on:alpa=false:slsq=on:sac=on:newcnf=on:random_seed=1432981531:cts=off:avsq=on:s2a=on:i=292:sd=3:avsqr=1,16:slsql=off:updr=off:bd=preordered:nm=4:qa=plain:sup=off:gsp=on:ss=on:ssat=axiom:sgt=8:rawr=on_2 on problem for (2ds/292Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+2_64_to=lpo:sas=cadical:sil=4000:sos=on:sac=on:random_seed=2632148850:st=1.5:i=165:aac=none:qa=plain:ss=on:ssat=axiom_1 on problem for (1ds/165Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 14 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1011_12:1_bsr=unit_only:sil=32000:plsq=on:plsqc=2:sos=on:fs=off:plsqr=32,1:lsd=20:fd=off:random_seed=97594802:s2a=on:i=167:nm=16:fsr=off:qa=plain:amm=off_1 on problem for (1ds/167Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1010_2:1_to=lpo:sil=16000:slsq=on:random_seed=1114520141:i=170:fsd=on:ins=10:av=off:qa=plain_1 on problem for (1ds/170Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.101 s
+% Peak memory usage: 17 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+1002_10_sfv=off:tgt=full:sil=4000:nwc=1:newcnf=on:random_seed=601517279:i=178:kws=inv_arity:fsd=on:bd=preordered:qa=plain_1 on problem for (1ds/178Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.101 s
+% Peak memory usage: 18 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1004_1_sil=2000:sosts=on:sp=occurrence:sos=on:erd=off:random_seed=1277758822:i=218:aac=none:ep=RS:qa=plain_2 on problem for (2ds/218Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1011_1_sil=2000:sos=on:random_seed=3991784180:i=2073:sd=1:qa=plain:ss=on:sgt=64_11 on problem for (11ds/2073Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1011_1_sil=4000:plsq=on:plsqc=2:sos=on:plsqr=64,1:lsd=1:alpa=false:random_seed=3890801653:avsq=on:i=140:aac=none:avsqr=1,16:ep=RS:nm=4:qa=plain:gsp=on_1 on problem for (1ds/140Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+11_1_sfv=off:sil=2000:plsq=on:plsqc=1:bsd=on:sosts=on:sos=on:plsqr=128,1:s2pl=on:newcnf=on:random_seed=1652421155:i=142:sd=1:fsd=on:qa=plain:ss=on:sgt=32_1 on problem for (1ds/142Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1010_1_sil=4000:random_seed=904315553:i=184:sd=1:ep=RS:nm=2:av=off:qa=plain:ss=on_1 on problem for (1ds/184Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+3_11:1_sil=4000:plsq=on:erd=off:urr=on:br=off:random_seed=1975327623:s2a=on:s2at=7:i=142:sd=1:ep=RS:qa=plain:ss=on:sgt=16_1 on problem for (1ds/142Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1010_1_to=lpo:sil=4000:fde=none:sos=on:erd=off:random_seed=3655145091:cts=off:i=278:sd=1:av=off:qa=plain:ss=on:ssat=axiom_2 on problem for (2ds/278Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 26 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott-1010_32:1_sil=2000:sosts=on:sp=arity:sos=on:s2agt=16:random_seed=365068424:cond=fast:st=2:s2a=on:i=194:av=off:qa=plain:gsp=on:ss=on_1 on problem for (1ds/194Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+10_1_sfv=off:tgt=full:sil=2000:slsqr=1,2:urr=on:br=off:flr=on:slsq=on:random_seed=91564100:st=2:i=292:sd=2:slsql=off:fsd=on:nm=0:ins=20:qa=plain:gsp=on:ss=on_2 on problem for (2ds/292Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_1_to=lpo:sil=4000:plsq=on:plsqc=1:etr=on:sp=const_min:sos=on:plsqr=64,1:br=off:sac=on:random_seed=1935630233:i=196:nm=0:qa=plain_1 on problem for (1ds/196Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1010_6:1_sil=32000:plsq=on:sos=on:plsqr=128,1:urr=on:plsql=on:flr=on:s2pl=on:lwlo=on:newcnf=on:random_seed=1883749288:lrd=on:i=148:ep=RS:qa=plain_1 on problem for (1ds/148Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+10_1_sil=8000:slsqr=4,1:urr=ec_only:br=off:slsqc=2:slsq=on:random_seed=3507598125:s2a=on:s2at=2:i=148:fsd=on:ins=1:qa=plain:gtg=position_1 on problem for (1ds/148Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 15 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_1_sil=16000:irw=on:sosts=on:sos=on:acc=on:urr=on:br=off:newcnf=on:random_seed=1054959308:s2a=on:i=148:bd=preordered:nm=6:ins=10:qa=plain_1 on problem for (1ds/148Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_sil=2000:bce=on:nwc=5:alpa=false:slsq=on:random_seed=529444045:cts=off:i=543:aac=none:fsr=off:qa=plain:amm=off:rawr=on_3 on problem for (3ds/543Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.300 s
+% Peak memory usage: 11 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1011_128_tgt=full:sas=cadical:sil=4000:bce=on:fd=off:rp=on:slsqc=2:slsq=on:sac=on:random_seed=1841189471:s2at=3:i=153:ins=1:qa=plain_1 on problem for (1ds/153Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 16 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1002_3:2_sil=16000:plsq=on:plsqc=1:plsqr=3,1:plsql=on:newcnf=on:random_seed=2969202542:s2a=on:i=632:av=off:qa=plain:gtg=position_4 on problem for (4ds/632Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.401 s
+% Peak memory usage: 31 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+10_14_tgt=full:sil=8000:prc=on:random_seed=551144468:i=2501:fsr=off:qa=plain_13 on problem for (13ds/2501Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 1.300 s
+% Peak memory usage: 96 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1011_1024_sil=8000:slsqr=1,128:br=off:gs=on:slsqc=1:slsq=on:random_seed=2363375827:s2at=5:i=367:sd=3:slsql=off:qa=plain:ss=on:sgt=10_2 on problem for (2ds/367Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 19 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_8_to=lpo:sil=4000:plsq=on:plsqc=1:urr=on:br=off:flr=on:newcnf=on:random_seed=2350762953:st=4:i=207:sd=1:fsr=off:qa=plain:gsp=on:ss=on_2 on problem for (2ds/207Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1010_1_to=lpo:sil=4000:sos=on:random_seed=3099546769:i=3739:sd=2:ins=10:qa=plain:ss=on_19 on problem for (19ds/3739Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1011_1_sil=4000:plsq=on:sos=on:erd=off:plsqr=32,1:lsd=5:fd=off:random_seed=2205997449:i=157:nm=16:av=off:qa=plain_1 on problem for (1ds/157Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_1_sil=4000:sp=occurrence:urr=on:br=off:random_seed=3608839643:st=1.2:s2a=on:s2at=2:i=1800:sd=3:qa=plain:ss=on:ssat=axiom:sgt=20_10 on problem for (10ds/1800Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 1.0000 s
+% Peak memory usage: 80 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1010_4_to=lpo:sil=2000:plsq=on:prc=on:sp=occurrence:plsqr=18,1:fd=off:sac=on:random_seed=1228936936:s2a=on:i=163:nm=7:qa=plain:rawr=on_1 on problem for (1ds/163Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 16 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1011_4:1_anc=all_dependent:to=kbo:tgt=ground:sas=cadical:sil=16000:fde=none:slsqr=5,4:erd=off:fd=preordered:nwc=3:s2agt=16:alpa=true:flr=on:avsqc=2:slsq=on:sac=on:lftc=80:random_seed=585311303:avsq=on:s2a=on:i=163:avsqr=7,8:ep=RST:qa=plain:fdi=8_1 on problem for (1ds/163Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.101 s
+% Peak memory usage: 14 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1011_2:1_sil=8000:plsq=on:sos=on:erd=off:plsqr=1,8:gs=on:random_seed=1848613714:st=10:i=164:sd=1:aac=none:bd=all:nm=3:qa=plain:ss=on:ssat=axiom:rawr=on_1 on problem for (1ds/164Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_2:5_to=lpo:sas=cadical:sil=2000:plsq=on:plsqc=1:slsqr=2,1:sp=const_min:plsqr=64,1:acc=on:bce=on:plsql=on:alpa=random:flr=on:slsq=on:sac=on:random_seed=3180880878:s2a=on:s2at=2:i=230:slsql=off:fsr=off:qa=plain:gsp=on:ss=on:ssat=axiom:sgt=32:rawr=on_2 on problem for (2ds/230Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 25 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1010_16_anc=all_dependent:to=lpo:sil=8000:sp=arity:fd=off:sac=on:random_seed=55956946:st=5:i=165:sd=2:aac=none:fsd=on:ins=10:fsr=off:qa=plain:ss=on_1 on problem for (1ds/165Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 14 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-2_64_sil=4000:sos=on:lcm=predicate:random_seed=2002621813:st=3:i=361:sd=5:av=off:qa=plain:ss=on:ssat=axiom_2 on problem for (2ds/361Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1011_8_sil=4000:fde=none:nwc=2:random_seed=2609576257:st=5:s2a=on:s2at=2:i=231:sd=6:ep=RS:ins=1:qa=plain:ss=on_2 on problem for (2ds/231Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1010_8:1_anc=none:tgt=ground:sil=4000:plsq=on:plsqc=1:slsqr=4,1:plsqr=32,1:nwc=3:slsqc=1:avsqc=1:slsq=on:nicw=on:random_seed=823869920:avsq=on:i=169:doe=on:nm=16:qa=plain:ss=on_1 on problem for (1ds/169Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.101 s
+% Peak memory usage: 16 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+11_32_anc=all:sil=4000:sosts=on:sos=on:erd=off:urr=on:sac=on:nicw=on:random_seed=3262844381:s2a=on:i=169:qa=plain:gtg=position:gsp=on:ss=on:sgt=8_1 on problem for (1ds/169Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+1011_16_sil=2000:lsd=100:newcnf=on:random_seed=3558518688:st=3:s2a=on:i=169:sd=1:av=off:fsr=off:qa=plain:ss=on_1 on problem for (1ds/169Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1002_1_sil=128000:sos=on:random_seed=4172906050:st=1.5:i=170:sd=2:fsd=on:nm=2:qa=plain:gtg=all:ss=on_1 on problem for (1ds/170Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+4_4_sil=16000:plsq=on:sp=unary_frequency:plsqr=1,32:lcm=predicate:fd=off:rp=on:random_seed=634993636:i=170:bd=preordered:nm=2:av=off:qa=plain:sup=off_1 on problem for (1ds/170Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1011_5:1_sil=4000:lsd=50:random_seed=94597516:s2a=on:s2at=1.2:i=171:ep=R:qa=plain:gtg=position_1 on problem for (1ds/171Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_1_sil=4000:plsq=on:sos=on:fs=off:plsqr=32,1:acc=on:urr=ec_only:gs=on:sac=on:random_seed=2404642160:i=530:nm=0:fsr=off:qa=plain_3 on problem for (3ds/530Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1002_1_sil=8000:sos=on:erd=off:sac=on:random_seed=3739234952:st=6:i=1370:sd=4:aac=none:qa=plain:sup=off:ss=on:sgt=16_7 on problem for (7ds/1370Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1011_64_sil=128000:bsd=on:sp=arity:sos=on:lsd=50:fd=off:random_seed=1314905277:gtgl=4:i=252:kws=arity_squared:fsd=on:nm=16:av=off:qa=plain:gtg=exists_sym:gsp=on_2 on problem for (2ds/252Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 19 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1010_3:1_tgt=full:sil=2000:prc=on:drc=off:fde=none:bsd=on:sp=unary_first:br=off:gs=on:random_seed=2838881170:i=178:kws=precedence:fsd=on:av=off:qa=plain_1 on problem for (1ds/178Mi)
+% Memory limit exceeded!
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Memory limit
+% Termination phase: Saturation
+% Time elapsed: 0.074 s
+% Peak memory usage: 23 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+10_8:1_sil=4000:sp=arity:sos=on:acc=on:fd=off:random_seed=236155694:s2a=on:i=927:sd=2:qa=plain:ss=on_5 on problem for (5ds/927Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_1_sil=4000:sos=on:lcm=predicate:urr=on:s2agt=8:slsq=on:sac=on:random_seed=1376518807:st=3.3:s2a=on:i=269:sd=2:doe=on:nm=2:qa=plain:sup=off:gtg=position:ss=on_2 on problem for (2ds/269Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+21_32:1_sil=16000:bsd=on:sos=on:lcm=predicate:flr=on:random_seed=2774303718:s2a=on:s2at=3.5:i=185:kws=arity_squared:qa=plain_1 on problem for (1ds/185Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1010_64_bsr=on:sil=2000:sos=on:erd=off:bce=on:nwc=1:flr=on:newcnf=on:random_seed=2414754689:i=277:av=off:qa=plain:fdi=64_2 on problem for (2ds/277Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1011_64_sil=4000:br=off:fd=preordered:random_seed=2642229926:i=456:sd=2:av=off:qa=plain:ss=on:sgt=32_3 on problem for (3ds/456Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.300 s
+% Peak memory usage: 24 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_32_sil=2000:sosts=on:sp=occurrence:sos=on:urr=on:br=off:random_seed=2040975121:st=3:i=635:sd=5:qa=plain:sup=off:ss=on:ssat=axiom_4 on problem for (4ds/635Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_23:4_sil=32000:plsq=on:fde=none:plsqc=4:slsqr=8,1:plsqr=64,1:acc=on:urr=on:plsql=on:gs=on:slsqc=4:alpa=true:slsq=on:random_seed=406982051:cond=on:add=on:i=190:aac=none:doe=on:slsql=off:bd=preordered:nm=2:qa=plain:sup=off:ss=on_1 on problem for (1ds/190Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 10 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1010_32:1_sil=2000:bsd=on:fd=off:slsq=on:random_seed=216195372:cts=off:i=1282:sd=1:av=off:qa=plain:gtg=position:ss=on_7 on problem for (7ds/1282Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_16_anc=all_dependent:sas=cadical:sil=4000:plsq=on:fde=none:plsqc=1:sos=on:plsqr=64,1:plsql=on:fd=off:alpa=random:sac=on:random_seed=1692302477:avsq=on:i=191:avsqr=1,16:nm=16:ins=1:qa=plain:rawr=on_1 on problem for (1ds/191Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+11_1_anc=all_dependent:bsr=unit_only:sil=2000:plsq=on:fde=unused:plsqr=32,1:gs=on:kmz=on:newcnf=on:random_seed=1289806295:st=1.2:gtgl=3:i=564:sd=3:kws=precedence:qa=plain:gtg=exists_top:fdi=4:ss=on:sgt=10_3 on problem for (3ds/564Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.300 s
+% Peak memory usage: 21 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1011_25:7_bsr=unit_only:sas=cadical:sil=4000:avsql=on:lsd=50:acc=on:nwc=4:avsqc=2:newcnf=on:random_seed=3541355433:avsq=on:s2a=on:s2at=-1:i=193:aac=none:avsqr=2,3:ep=RSTC:qa=plain:rawr=on_1 on problem for (1ds/193Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 13 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1003_12_sil=4000:plsq=on:sosts=on:sos=on:erd=off:lma=off:plsqr=32,1:lcm=predicate:acc=on:urr=full:slsqc=2:slsq=on:newcnf=on:random_seed=2398777387:i=195:updr=off:ins=10:fsr=off:qa=plain:fdi=4:gsp=on_1 on problem for (1ds/195Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 10 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1010_4_to=lpo:sil=4000:drc=off:nwc=5:lftc=50:random_seed=1651228930:s2a=on:i=302:fgj=on:bd=all:qa=plain_2 on problem for (2ds/302Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 20 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_1_sfv=off:to=lpo:sil=4000:sosts=on:sp=arity:sos=on:urr=ec_only:br=off:random_seed=3441868900:i=2020:sd=1:qa=plain:ss=on:ssat=axiom_11 on problem for (11ds/2020Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1011_32_sil=4000:slsqr=1,4:erd=off:s2agt=8:slsqc=3:slsq=on:nicw=on:random_seed=657895571:i=912:sd=4:ep=RS:qa=plain:ss=on:sgt=32_5 on problem for (5ds/912Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-11_23:64_sfv=off:to=lpo:tgt=ground:sil=4000:sosts=on:sp=const_min:sos=on:lcm=predicate:urr=on:fd=preordered:nwc=1:flr=on:lftc=40:random_seed=461617391:st=1.38385:add=off:i=303:aac=none:qa=plain:ss=on_2 on problem for (2ds/303Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1011_3:1_sil=8000:prc=on:drc=off:fde=unused:sp=reverse_arity:random_seed=2138833095:i=817:ins=20:av=off:qa=plain_5 on problem for (5ds/817Mi)
+% Memory limit exceeded!
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Memory limit
+% Termination phase: Saturation
+% Time elapsed: 0.062 s
+% Peak memory usage: 23 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1_32:1_sil=128000:sp=occurrence:acc=on:s2agt=30:s2pl=no:nicw=on:random_seed=2711434119:s2a=on:i=1164:sd=2:fsr=off:qa=plain:ss=on:ssat=axiom_6 on problem for (6ds/1164Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.600 s
+% Peak memory usage: 47 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1011_1_to=lpo:sil=2000:sosts=on:sos=on:random_seed=166884388:i=208:qa=plain_2 on problem for (2ds/208Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 18 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_1_sil=32000:sosts=on:sp=occurrence:sos=on:random_seed=3280488093:st=2.3:i=7185:sd=14:qa=plain:ss=on:sgt=16_36 on problem for (36ds/7185Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1002_2_sil=8000:sos=on:random_seed=3403804788:i=322:sd=2:ep=R:nm=4:qa=plain:gtg=position:ss=on:sgt=4_2 on problem for (2ds/322Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1010_1_sil=2000:plsq=on:plsqr=50755291,524288:urr=on:br=off:rp=on:s2agt=40:random_seed=1320680024:s2a=on:add=off:i=329:sd=1:kws=inv_arity_squared:qa=plain:gsp=on:ss=on:sgt=8_2 on problem for (2ds/329Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1011_1_sil=2000:erd=off:random_seed=4256641746:i=215:ep=RS:nm=2:qa=plain_2 on problem for (2ds/215Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1011_20_to=lpo:sil=4000:bsd=on:slsq=on:newcnf=on:random_seed=3815128183:i=215:sd=1:slsql=off:fsd=on:qa=plain:ss=on_2 on problem for (2ds/215Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_1_sil=256000:plsq=on:newcnf=on:random_seed=2251840398:st=2:i=216:sd=3:ep=R:av=off:qa=plain:ss=on:ssat=axiom:sgt=16_2 on problem for (2ds/216Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1002_50_sas=cadical:sil=2000:sos=on:random_seed=1242994904:i=223:doe=on:fsd=on:bd=all:fsr=off:qa=plain:fsdmm=1_2 on problem for (2ds/223Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1010_1_sil=16000:plsq=on:fde=none:sos=on:erd=off:plsqr=32,1:random_seed=1427907412:cts=off:i=227:av=off:qa=plain_2 on problem for (2ds/227Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1002_1_sil=4000:sp=occurrence:sos=on:erd=off:random_seed=1641862536:i=1636:sd=2:ep=RS:av=off:qa=plain:ss=on_9 on problem for (9ds/1636Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-30_1_to=lpo:sil=16000:random_seed=3391596675:st=3:i=6010:ep=RST:av=off:qa=plain:ss=on:ssat=axiom_31 on problem for (31ds/6010Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 3.100 s
+% Peak memory usage: 92 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+2_1_sil=2000:random_seed=2077380382:i=1044:kws=precedence:fsr=off:qa=plain_6 on problem for (6ds/1044Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.600 s
+% Peak memory usage: 58 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+0_32:1_bsr=on:tgt=ground:sil=64000:irw=on:prc=on:sp=reverse_frequency:bce=on:random_seed=1057046028:i=372:bs=unit_only:sd=1:erml=2:bd=all:av=off:qa=plain:gtg=exists_sym:ss=on:er=filter_2 on problem for (2ds/372Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1010_32_bsr=unit_only:sil=4000:plsq=on:nwc=3:newcnf=on:random_seed=1303611196:cts=off:gtgl=5:i=516:nm=16:av=off:qa=plain:gtg=exists_sym_3 on problem for (3ds/516Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.300 s
+% Peak memory usage: 28 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1010_3:2_sil=4000:irw=on:plsq=on:plsqc=4:fd=preordered:lwlo=on:random_seed=3986663640:lrd=on:i=2469:updr=off:bd=preordered:qa=plain_13 on problem for (13ds/2469Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 1.300 s
+% Peak memory usage: 82 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1011_128_bsr=on:tgt=full:sil=4000:sos=on:lsd=100:br=off:random_seed=3645799682:i=242:sd=1:qa=plain:gtg=position:ss=on:sgt=64_2 on problem for (2ds/242Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1011_12_to=lpo:sil=8000:prc=on:drc=off:sp=reverse_frequency:erd=off:lsd=1:urr=on:bce=on:rp=on:nwc=0.6:avsqc=1:newcnf=on:random_seed=477404562:avsq=on:s2a=on:i=242:fsd=on:bd=preordered:nm=2:qa=plain_2 on problem for (2ds/242Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 20 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1010_6_tgt=full:sil=16000:sp=unary_first:nwc=2:random_seed=3513202213:s2a=on:i=2051:sd=1:nm=4:qa=plain:gsp=on:ss=on:ssat=axiom_11 on problem for (11ds/2051Mi)
+%  found proof, printing to "/tmp/vampire-proof-11290-11893"...
+% SZS answers Tuple [∀X0.[pair(zero,zero),cons(pair(zero,suc(X0)),nil)]|_] for problem
+% ...printing done.
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for problem
+% SZS output start Proof for problem
+fof(f2,axiom,(
+  isLT(eq) = false),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','isLT_2')).
+fof(f11,axiom,(
+  not(true) = false),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','not_2')).
+fof(f12,axiom,(
+  ! [X0] : (opAnd(false,X0) = false)),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','opAnd_1')).
+fof(f13,axiom,(
+  ! [X0] : (opAnd(true,X0) = X0)),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','opAnd_2')).
+fof(f14,axiom,(
+  ! [X0, X1, X2] : (opCompose(X0,X1,X2) = app(X0,app(X1,X2)))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','opCompose_1')).
+fof(f15,axiom,(
+  ! [X0, X1] : (opApply(X0,X1) = app(X0,X1))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','opApply_1')).
+fof(f16,axiom,(
+  ! [X0, X1] : (fst(pair(X0,X1)) = X0)),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','fst_1')).
+fof(f17,axiom,(
+  ! [X0, X1] : (snd(pair(X0,X1)) = X1)),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','snd_1')).
+fof(f18,axiom,(
+  ! [X0, X1] : (uncurry(X0,X1) = app(app(X0,fst(X1)),snd(X1)))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','uncurry_1')).
+fof(f19,axiom,(
+  ! [X0] : (opAppend(nil,X0) = X0)),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','opAppend_1')).
+fof(f20,axiom,(
+  ! [X0, X1, X2] : (opAppend(cons(X0,X1),X2) = cons(X0,opAppend(X1,X2)))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','opAppend_2')).
+fof(f21,axiom,(
+  ! [X0] : (filter(X0,nil) = nil)),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','filter_1')).
+fof(f22,axiom,(
+  ! [X0, X1, X2] : (filter(X0,cons(X1,X2)) = filter_case1(app(X0,X1),X0,X1,X2))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','filter_2')).
+fof(f24,axiom,(
+  ! [X0, X1, X2] : (filter_case1(false,X0,X1,X2) = filter(X0,X2))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','filter_case1_2')).
+fof(f25,axiom,(
+  ! [X0, X1] : (foldr(X0,X1,nil) = X1)),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','foldr_1')).
+fof(f26,axiom,(
+  ! [X0, X1, X2, X3] : (foldr(X0,X1,cons(X2,X3)) = app(app(X0,X2),foldr(X0,X1,X3)))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','foldr_2')).
+fof(f27,axiom,(
+  ! [X0] : (tree(X0) = foldr(uncurry_1(insertNat_0),nil_1,X0))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','tree_1')).
+fof(f28,axiom,(
+  ! [X0, X1, X2] : (prop_InsertModel(pair(X0,X1),X2) = eqListPairNatNat(toList(insertNat(X0,X1,tree(X2))),insertLPairNatNat(pair(X0,X1),opApply(deleteKey_1(X0),toList(tree(X2))))))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','prop_InsertModel_1')).
+fof(f29,axiom,(
+  ! [X0, X1] : (deleteKey(X0,X1) = filter(opCompose_2(lam1(X0),fst_0),X1))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','deleteKey_1')).
+fof(f30,axiom,(
+  nil_1 = leaf),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','nil_1_1')).
+fof(f31,axiom,(
+  toList(leaf) = nil),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','toList_1')).
+fof(f32,axiom,(
+  ! [X0, X1, X2, X3] : (toList(branch(X0,X1,X2,X3)) = opAppend(toList(X0),opAppend(cons(pair(X1,X2),nil),toList(X3))))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','toList_2')).
+fof(f33,axiom,(
+  ! [X0, X1] : (insertNat(X0,X1,leaf) = branch(leaf,X0,X1,leaf))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','insertNat_1')).
+fof(f34,axiom,(
+  ! [X0, X1, X2, X3, X4, X5] : (insertNat(X0,X1,branch(X2,X3,X4,X5)) = insertNat_case1(ltNat(X0,X3),X0,X3,X2,X5,X1,X4))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','insertNat_2')).
+fof(f36,axiom,(
+  ! [X0, X1, X2, X3, X4, X5] : (insertNat_case1(false,X0,X1,X2,X3,X4,X5) = branch(X2,X1,X5,insertNat(X0,X4,X3)))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','insertNat_case1_2')).
+fof(f37,axiom,(
+  eqNat(zero,zero) = true),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','eqNat_1')).
+fof(f39,axiom,(
+  ! [X0] : (eqNat(suc(X0),zero) = false)),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','eqNat_3')).
+fof(f41,axiom,(
+  ! [X0, X1] : (neqNat(X0,X1) = not(eqNat(X0,X1)))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','neqNat_1')).
+fof(f44,axiom,(
+  ! [X0, X1] : (eqListPairNatNat(cons(X0,X1),nil) = false)),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','eqListPairNatNat_3')).
+fof(f45,axiom,(
+  ! [X0, X1, X2, X3] : (eqListPairNatNat(cons(X0,X1),cons(X2,X3)) = opAnd(eqPairNatNat(X0,X2),eqListPairNatNat(X1,X3)))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','eqListPairNatNat_4')).
+fof(f46,axiom,(
+  ! [X0] : (insertLPairNatNat(X0,nil) = cons(X0,nil))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','insertLPairNatNat_1')).
+fof(f50,axiom,(
+  ! [X0, X1] : (ltNat(X0,X1) = isLT(compareNat(X0,X1)))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','ltNat_1')).
+fof(f51,axiom,(
+  ! [X0, X1, X2, X3] : (eqPairNatNat(pair(X0,X1),pair(X2,X3)) = opAnd(eqNat(X0,X2),eqNat(X1,X3)))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','eqPairNatNat_1')).
+fof(f53,axiom,(
+  compareNat(zero,zero) = eq),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','compareNat_1')).
+fof(f58,axiom,(
+  ! [X0, X1, X2] : (app(opCompose_2(X0,X1),X2) = opCompose(X0,X1,X2))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','app_opCompose_2_1')).
+fof(f59,axiom,(
+  ! [X0, X1] : (app(deleteKey_1(X0),X1) = deleteKey(X0,X1))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','app_deleteKey_1_1')).
+fof(f60,axiom,(
+  ! [X0] : (app(fst_0,X0) = fst(X0))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','app_fst_0_1')).
+fof(f61,axiom,(
+  ! [X0] : (app(insertNat_0,X0) = insertNat_1(X0))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','app_insertNat_0_1')).
+fof(f62,axiom,(
+  ! [X0, X1] : (app(insertNat_1(X0),X1) = insertNat_2(X0,X1))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','app_insertNat_1_1')).
+fof(f63,axiom,(
+  ! [X0, X1, X2] : (app(insertNat_2(X0,X1),X2) = insertNat(X0,X1,X2))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','app_insertNat_2_1')).
+fof(f64,axiom,(
+  ! [X0, X1] : (app(lam1(X0),X1) = neqNat(X1,X0))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','app_lam1_1')).
+fof(f65,axiom,(
+  ! [X0, X1] : (app(uncurry_1(X0),X1) = uncurry(X0,X1))),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','app_uncurry_1_1')).
+fof(f66,conjecture,(
+  ? [X0, X1] : (prop_InsertModel(X0,X1) = false)),
+  file('/home/claude/hs2fol/results-60s/hughes-bst/BSTSpec2/prop_InsertModel/problem.p','prop_InsertModel')).
+fof(f67,negated_conjecture,(
+  ~ ? [X0, X1] : (prop_InsertModel(X0,X1) = false)),
+  inference(conjecture_negation,[status(cth)],[f66])).
+fof(f68,plain,(
+  ~ ? [X0, X1] : ((prop_InsertModel(X0,X1) = false) & ans0(X0,X1))),
+  inference(answer_literal_injection,[],[f67])).
+fof(f69,plain,(
+  ! [X0, X1] : ((false != prop_InsertModel(X0,X1)) | ~ans0(X0,X1))),
+  inference(ennf_transformation,[],[f68])).
+fof(f71,plain,(
+  isLT(eq) = false),
+  inference(cnf_transformation,[],[f2])).
+fof(f80,plain,(
+  false = not(true)),
+  inference(cnf_transformation,[],[f11])).
+fof(f81,plain,(
+  (! [X0] : (false = opAnd(false,X0)))),
+  inference(cnf_transformation,[],[f12])).
+fof(f82,plain,(
+  (! [X0] : (opAnd(true,X0) = X0))),
+  inference(cnf_transformation,[],[f13])).
+fof(f83,plain,(
+  (! [X0,X1,X2] : (opCompose(X0,X1,X2) = app(X0,app(X1,X2))))),
+  inference(cnf_transformation,[],[f14])).
+fof(f84,plain,(
+  (! [X0,X1] : (opApply(X0,X1) = app(X0,X1)))),
+  inference(cnf_transformation,[],[f15])).
+fof(f85,plain,(
+  (! [X0,X1] : (fst(pair(X0,X1)) = X0))),
+  inference(cnf_transformation,[],[f16])).
+fof(f86,plain,(
+  (! [X0,X1] : (snd(pair(X0,X1)) = X1))),
+  inference(cnf_transformation,[],[f17])).
+fof(f87,plain,(
+  (! [X0,X1] : (uncurry(X0,X1) = app(app(X0,fst(X1)),snd(X1))))),
+  inference(cnf_transformation,[],[f18])).
+fof(f88,plain,(
+  (! [X0] : (opAppend(nil,X0) = X0))),
+  inference(cnf_transformation,[],[f19])).
+fof(f89,plain,(
+  (! [X0,X1,X2] : (opAppend(cons(X0,X1),X2) = cons(X0,opAppend(X1,X2))))),
+  inference(cnf_transformation,[],[f20])).
+fof(f90,plain,(
+  (! [X0] : (nil = filter(X0,nil)))),
+  inference(cnf_transformation,[],[f21])).
+fof(f91,plain,(
+  (! [X0,X1,X2] : (filter(X0,cons(X1,X2)) = filter_case1(app(X0,X1),X0,X1,X2)))),
+  inference(cnf_transformation,[],[f22])).
+fof(f93,plain,(
+  (! [X0,X1,X2] : (filter(X0,X2) = filter_case1(false,X0,X1,X2)))),
+  inference(cnf_transformation,[],[f24])).
+fof(f94,plain,(
+  (! [X0,X1] : (foldr(X0,X1,nil) = X1))),
+  inference(cnf_transformation,[],[f25])).
+fof(f95,plain,(
+  (! [X0,X1,X2,X3] : (foldr(X0,X1,cons(X2,X3)) = app(app(X0,X2),foldr(X0,X1,X3))))),
+  inference(cnf_transformation,[],[f26])).
+fof(f96,plain,(
+  (! [X0] : (tree(X0) = foldr(uncurry_1(insertNat_0),nil_1,X0)))),
+  inference(cnf_transformation,[],[f27])).
+fof(f97,plain,(
+  (! [X0,X1,X2] : (prop_InsertModel(pair(X0,X1),X2) = eqListPairNatNat(toList(insertNat(X0,X1,tree(X2))),insertLPairNatNat(pair(X0,X1),opApply(deleteKey_1(X0),toList(tree(X2)))))))),
+  inference(cnf_transformation,[],[f28])).
+fof(f98,plain,(
+  (! [X0,X1] : (deleteKey(X0,X1) = filter(opCompose_2(lam1(X0),fst_0),X1)))),
+  inference(cnf_transformation,[],[f29])).
+fof(f99,plain,(
+  nil_1 = leaf),
+  inference(cnf_transformation,[],[f30])).
+fof(f100,plain,(
+  nil = toList(leaf)),
+  inference(cnf_transformation,[],[f31])).
+fof(f101,plain,(
+  (! [X0,X1,X2,X3] : (toList(branch(X0,X1,X2,X3)) = opAppend(toList(X0),opAppend(cons(pair(X1,X2),nil),toList(X3)))))),
+  inference(cnf_transformation,[],[f32])).
+fof(f102,plain,(
+  (! [X0,X1] : (insertNat(X0,X1,leaf) = branch(leaf,X0,X1,leaf)))),
+  inference(cnf_transformation,[],[f33])).
+fof(f103,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (insertNat(X0,X1,branch(X2,X3,X4,X5)) = insertNat_case1(ltNat(X0,X3),X0,X3,X2,X5,X1,X4)))),
+  inference(cnf_transformation,[],[f34])).
+fof(f105,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (insertNat_case1(false,X0,X1,X2,X3,X4,X5) = branch(X2,X1,X5,insertNat(X0,X4,X3))))),
+  inference(cnf_transformation,[],[f36])).
+fof(f106,plain,(
+  true = eqNat(zero,zero)),
+  inference(cnf_transformation,[],[f37])).
+fof(f108,plain,(
+  (! [X0] : (false = eqNat(suc(X0),zero)))),
+  inference(cnf_transformation,[],[f39])).
+fof(f110,plain,(
+  (! [X0,X1] : (neqNat(X0,X1) = not(eqNat(X0,X1))))),
+  inference(cnf_transformation,[],[f41])).
+fof(f113,plain,(
+  (! [X0,X1] : (false = eqListPairNatNat(cons(X0,X1),nil)))),
+  inference(cnf_transformation,[],[f44])).
+fof(f114,plain,(
+  (! [X0,X1,X2,X3] : (eqListPairNatNat(cons(X0,X1),cons(X2,X3)) = opAnd(eqPairNatNat(X0,X2),eqListPairNatNat(X1,X3))))),
+  inference(cnf_transformation,[],[f45])).
+fof(f115,plain,(
+  (! [X0] : (insertLPairNatNat(X0,nil) = cons(X0,nil)))),
+  inference(cnf_transformation,[],[f46])).
+fof(f119,plain,(
+  (! [X0,X1] : (ltNat(X0,X1) = isLT(compareNat(X0,X1))))),
+  inference(cnf_transformation,[],[f50])).
+fof(f120,plain,(
+  (! [X0,X1,X2,X3] : (eqPairNatNat(pair(X0,X1),pair(X2,X3)) = opAnd(eqNat(X0,X2),eqNat(X1,X3))))),
+  inference(cnf_transformation,[],[f51])).
+fof(f122,plain,(
+  eq = compareNat(zero,zero)),
+  inference(cnf_transformation,[],[f53])).
+fof(f127,plain,(
+  (! [X0,X1,X2] : (opCompose(X0,X1,X2) = app(opCompose_2(X0,X1),X2)))),
+  inference(cnf_transformation,[],[f58])).
+fof(f128,plain,(
+  (! [X0,X1] : (deleteKey(X0,X1) = app(deleteKey_1(X0),X1)))),
+  inference(cnf_transformation,[],[f59])).
+fof(f129,plain,(
+  (! [X0] : (app(fst_0,X0) = fst(X0)))),
+  inference(cnf_transformation,[],[f60])).
+fof(f130,plain,(
+  (! [X0] : (app(insertNat_0,X0) = insertNat_1(X0)))),
+  inference(cnf_transformation,[],[f61])).
+fof(f131,plain,(
+  (! [X0,X1] : (app(insertNat_1(X0),X1) = insertNat_2(X0,X1)))),
+  inference(cnf_transformation,[],[f62])).
+fof(f132,plain,(
+  (! [X0,X1,X2] : (app(insertNat_2(X0,X1),X2) = insertNat(X0,X1,X2)))),
+  inference(cnf_transformation,[],[f63])).
+fof(f133,plain,(
+  (! [X0,X1] : (app(lam1(X0),X1) = neqNat(X1,X0)))),
+  inference(cnf_transformation,[],[f64])).
+fof(f134,plain,(
+  (! [X0,X1] : (uncurry(X0,X1) = app(uncurry_1(X0),X1)))),
+  inference(cnf_transformation,[],[f65])).
+fof(f135,plain,(
+  (! [X0,X1] : (false != prop_InsertModel(X0,X1) | ~ans0(X0,X1)))),
+  inference(cnf_transformation,[],[f69])).
+fof(f136,plain,(
+  (! [X0,X1] : (uncurry(X0,X1) = app(app(X0,app(fst_0,X1)),snd(X1))))),
+  inference(definition_unfolding,[],[f87,f129])).
+fof(f137,plain,(
+  (! [X0,X1] : (insertNat_2(X0,X1) = app(app(insertNat_0,X0),X1)))),
+  inference(definition_unfolding,[],[f131,f130])).
+fof(f138,plain,(
+  (! [X0] : (tree(X0) = foldr(uncurry_1(insertNat_0),leaf,X0)))),
+  inference(definition_unfolding,[],[f96,f99])).
+fof(f139,plain,(
+  (! [X0,X1,X2] : (insertNat(X0,X1,X2) = app(app(app(insertNat_0,X0),X1),X2)))),
+  inference(definition_unfolding,[],[f132,f137])).
+fof(f140,plain,(
+  (! [X0,X1] : (app(fst_0,pair(X0,X1)) = X0))),
+  inference(definition_unfolding,[],[f85,f129])).
+fof(f141,plain,(
+  (! [X0,X1,X2] : (prop_InsertModel(pair(X0,X1),X2) = eqListPairNatNat(toList(app(app(app(insertNat_0,X0),X1),foldr(uncurry_1(insertNat_0),leaf,X2))),insertLPairNatNat(pair(X0,X1),app(deleteKey_1(X0),toList(foldr(uncurry_1(insertNat_0),leaf,X2)))))))),
+  inference(definition_unfolding,[],[f97,f139,f138,f84,f138])).
+fof(f142,plain,(
+  (! [X0,X1] : (branch(leaf,X0,X1,leaf) = app(app(app(insertNat_0,X0),X1),leaf)))),
+  inference(definition_unfolding,[],[f102,f139])).
+fof(f143,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (app(app(app(insertNat_0,X0),X1),branch(X2,X3,X4,X5)) = insertNat_case1(isLT(compareNat(X0,X3)),X0,X3,X2,X5,X1,X4)))),
+  inference(definition_unfolding,[],[f103,f139,f119])).
+fof(f145,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (insertNat_case1(false,X0,X1,X2,X3,X4,X5) = branch(X2,X1,X5,app(app(app(insertNat_0,X0),X4),X3))))),
+  inference(definition_unfolding,[],[f105,f139])).
+fof(f147,plain,(
+  (! [X0,X1,X2] : (app(X0,app(X1,X2)) = app(opCompose_2(X0,X1),X2)))),
+  inference(definition_unfolding,[],[f127,f83])).
+fof(f148,plain,(
+  (! [X0,X1] : (filter(opCompose_2(lam1(X0),fst_0),X1) = app(deleteKey_1(X0),X1)))),
+  inference(definition_unfolding,[],[f128,f98])).
+fof(f149,plain,(
+  (! [X0,X1] : (app(lam1(X0),X1) = not(eqNat(X1,X0))))),
+  inference(definition_unfolding,[],[f133,f110])).
+fof(f150,plain,(
+  (! [X0,X1] : (app(uncurry_1(X0),X1) = app(app(X0,app(fst_0,X1)),snd(X1))))),
+  inference(definition_unfolding,[],[f134,f136])).
+fof(f153,plain,(
+  not(true) = app(lam1(zero),zero)),
+  inference(superposition,[],[f149,f106])).
+fof(f158,plain,(
+  false = app(lam1(zero),zero)),
+  inference(forward_demodulation,[],[f153,f80])).
+fof(f161,plain,(
+  (! [X0] : (nil = app(deleteKey_1(X0),nil)))),
+  inference(superposition,[],[f148,f90])).
+fof(f163,plain,(
+  (! [X0,X1,X2,X3] : (toList(branch(X0,X1,X2,X3)) = opAppend(toList(X0),cons(pair(X1,X2),opAppend(nil,toList(X3))))))),
+  inference(forward_demodulation,[],[f101,f89])).
+fof(f164,plain,(
+  (! [X0,X1,X2,X3] : (toList(branch(X0,X1,X2,X3)) = opAppend(toList(X0),cons(pair(X1,X2),toList(X3)))))),
+  inference(forward_demodulation,[],[f163,f88])).
+fof(f165,plain,(
+  (! [X0,X1,X2] : (app(uncurry_1(X1),pair(X0,X2)) = app(app(X1,X0),snd(pair(X0,X2)))))),
+  inference(superposition,[],[f150,f140])).
+fof(f171,plain,(
+  (! [X0,X1,X2] : (app(uncurry_1(X1),pair(X0,X2)) = app(app(X1,X0),X2)))),
+  inference(forward_demodulation,[],[f165,f86])).
+fof(f172,plain,(
+  (! [X0,X1,X2] : (toList(branch(leaf,X0,X1,X2)) = opAppend(nil,cons(pair(X0,X1),toList(X2)))))),
+  inference(superposition,[],[f164,f100])).
+fof(f174,plain,(
+  (! [X0,X1,X2] : (cons(pair(X0,X1),toList(X2)) = toList(branch(leaf,X0,X1,X2))))),
+  inference(forward_demodulation,[],[f172,f88])).
+fof(f188,plain,(
+  (! [X0,X1,X2,X3] : (filter(opCompose_2(X0,X1),cons(X2,X3)) = filter_case1(app(X0,app(X1,X2)),opCompose_2(X0,X1),X2,X3)))),
+  inference(superposition,[],[f91,f147])).
+fof(f203,plain,(
+  (! [X0,X1,X2] : (app(app(X1,X2),X0) = foldr(X1,X0,cons(X2,nil))))),
+  inference(superposition,[],[f95,f94])).
+fof(f207,plain,(
+  (! [X0,X1,X2] : (prop_InsertModel(pair(X1,X2),cons(X0,nil)) = eqListPairNatNat(toList(app(app(app(insertNat_0,X1),X2),app(app(uncurry_1(insertNat_0),X0),leaf))),insertLPairNatNat(pair(X1,X2),app(deleteKey_1(X1),toList(app(app(uncurry_1(insertNat_0),X0),leaf)))))))),
+  inference(superposition,[],[f141,f203])).
+fof(f208,plain,(
+  (! [X0,X1,X2,X3] : (foldr(X0,X2,cons(X3,cons(X1,nil))) = app(app(X0,X3),app(app(X0,X1),X2))))),
+  inference(superposition,[],[f95,f203])).
+fof(f246,plain,(
+  (! [X0,X1,X2,X3] : (eqListPairNatNat(cons(X0,cons(X1,X2)),cons(X3,nil)) = opAnd(eqPairNatNat(X0,X3),false)))),
+  inference(superposition,[],[f114,f113])).
+fof(f256,plain,(
+  (! [X0,X1,X2,X3,X4] : (insertNat_case1(false,X0,X2,X3,leaf,X1,X4) = branch(X3,X2,X4,branch(leaf,X0,X1,leaf))))),
+  inference(superposition,[],[f145,f142])).
+fof(f264,plain,(
+  (! [X0,X1,X2,X3] : (app(app(app(insertNat_0,zero),X0),branch(X1,zero,X2,X3)) = insertNat_case1(isLT(eq),zero,zero,X1,X3,X0,X2)))),
+  inference(superposition,[],[f143,f122])).
+fof(f270,plain,(
+  (! [X0,X1,X2,X3] : (app(app(app(insertNat_0,zero),X0),branch(X1,zero,X2,X3)) = insertNat_case1(false,zero,zero,X1,X3,X0,X2)))),
+  inference(forward_demodulation,[],[f264,f71])).
+fof(f351,plain,(
+  (! [X0,X1,X2,X3] : (cons(pair(X1,X3),toList(branch(leaf,X0,X2,leaf))) = toList(insertNat_case1(false,X0,X1,leaf,leaf,X2,X3))))),
+  inference(superposition,[],[f174,f256])).
+fof(f353,plain,(
+  (! [X0,X1,X2,X3] : (toList(insertNat_case1(false,X0,X1,leaf,leaf,X2,X3)) = cons(pair(X1,X3),cons(pair(X0,X2),toList(leaf)))))),
+  inference(forward_demodulation,[],[f351,f174])).
+fof(f354,plain,(
+  (! [X0,X1,X2,X3] : (toList(insertNat_case1(false,X0,X1,leaf,leaf,X2,X3)) = cons(pair(X1,X3),cons(pair(X0,X2),nil))))),
+  inference(forward_demodulation,[],[f353,f100])).
+fof(f385,plain,(
+  (! [X0,X1,X2] : (foldr(app(insertNat_0,X0),leaf,cons(X2,cons(X1,nil))) = app(app(app(insertNat_0,X0),X2),branch(leaf,X0,X1,leaf))))),
+  inference(superposition,[],[f208,f142])).
+fof(f663,plain,(
+  (! [X0,X1,X2,X3] : (filter(opCompose_2(X1,fst_0),cons(pair(X0,X2),X3)) = filter_case1(app(X1,X0),opCompose_2(X1,fst_0),pair(X0,X2),X3)))),
+  inference(superposition,[],[f188,f140])).
+fof(f1028,plain,(
+  (! [X0,X1] : (ans0(X0,X1)))),
+  introduced(theory,[answer_literal_resolver],[])).
+fof(f3174,plain,(
+  (! [X0,X1,X2,X3] : (prop_InsertModel(pair(X2,X3),cons(pair(X0,X1),nil)) = eqListPairNatNat(toList(app(app(app(insertNat_0,X2),X3),app(app(app(insertNat_0,X0),X1),leaf))),insertLPairNatNat(pair(X2,X3),app(deleteKey_1(X2),toList(app(app(app(insertNat_0,X0),X1),leaf)))))))),
+  inference(superposition,[],[f207,f171])).
+fof(f3176,plain,(
+  (! [X0,X1,X2,X3] : (prop_InsertModel(pair(X2,X3),cons(pair(X0,X1),nil)) = eqListPairNatNat(toList(app(app(app(insertNat_0,X2),X3),branch(leaf,X0,X1,leaf))),insertLPairNatNat(pair(X2,X3),app(deleteKey_1(X2),toList(branch(leaf,X0,X1,leaf)))))))),
+  inference(forward_demodulation,[],[f3174,f142])).
+fof(f3178,plain,(
+  (! [X0,X1,X2,X3] : (prop_InsertModel(pair(X2,X3),cons(pair(X0,X1),nil)) = eqListPairNatNat(toList(app(app(app(insertNat_0,X2),X3),branch(leaf,X0,X1,leaf))),insertLPairNatNat(pair(X2,X3),app(deleteKey_1(X2),cons(pair(X0,X1),toList(leaf)))))))),
+  inference(forward_demodulation,[],[f3176,f174])).
+fof(f3179,plain,(
+  (! [X0,X1,X2,X3] : (prop_InsertModel(pair(X2,X3),cons(pair(X0,X1),nil)) = eqListPairNatNat(toList(app(app(app(insertNat_0,X2),X3),branch(leaf,X0,X1,leaf))),insertLPairNatNat(pair(X2,X3),app(deleteKey_1(X2),cons(pair(X0,X1),nil))))))),
+  inference(forward_demodulation,[],[f3178,f100])).
+fof(f26683,plain,(
+  (! [X0,X1] : (foldr(app(insertNat_0,zero),leaf,cons(X0,cons(X1,nil))) = insertNat_case1(false,zero,zero,leaf,leaf,X0,X1)))),
+  inference(superposition,[],[f270,f385])).
+fof(f43200,plain,(
+  (! [X0,X1] : (filter(opCompose_2(lam1(zero),fst_0),cons(pair(zero,X0),X1)) = filter_case1(false,opCompose_2(lam1(zero),fst_0),pair(zero,X0),X1)))),
+  inference(superposition,[],[f663,f158])).
+fof(f43220,plain,(
+  (! [X0,X1] : (filter(opCompose_2(lam1(zero),fst_0),cons(pair(zero,X0),X1)) = filter(opCompose_2(lam1(zero),fst_0),X1)))),
+  inference(forward_demodulation,[],[f43200,f93])).
+fof(f43223,plain,(
+  (! [X0,X1] : (filter(opCompose_2(lam1(zero),fst_0),cons(pair(zero,X0),X1)) = app(deleteKey_1(zero),X1)))),
+  inference(forward_demodulation,[],[f43220,f148])).
+fof(f43226,plain,(
+  (! [X0,X1] : (app(deleteKey_1(zero),X1) = app(deleteKey_1(zero),cons(pair(zero,X0),X1))))),
+  inference(forward_demodulation,[],[f43223,f148])).
+fof(f43241,plain,(
+  (! [X0,X1] : (prop_InsertModel(pair(zero,X0),cons(pair(zero,X1),nil)) = eqListPairNatNat(toList(app(app(app(insertNat_0,zero),X0),branch(leaf,zero,X1,leaf))),insertLPairNatNat(pair(zero,X0),app(deleteKey_1(zero),nil)))))),
+  inference(superposition,[],[f3179,f43226])).
+fof(f43313,plain,(
+  (! [X0,X1] : (prop_InsertModel(pair(zero,X0),cons(pair(zero,X1),nil)) = eqListPairNatNat(toList(app(app(app(insertNat_0,zero),X0),branch(leaf,zero,X1,leaf))),insertLPairNatNat(pair(zero,X0),nil))))),
+  inference(forward_demodulation,[],[f43241,f161])).
+fof(f43317,plain,(
+  (! [X0,X1] : (prop_InsertModel(pair(zero,X0),cons(pair(zero,X1),nil)) = eqListPairNatNat(toList(app(app(app(insertNat_0,zero),X0),branch(leaf,zero,X1,leaf))),cons(pair(zero,X0),nil))))),
+  inference(forward_demodulation,[],[f43313,f115])).
+fof(f43319,plain,(
+  (! [X0,X1] : (prop_InsertModel(pair(zero,X0),cons(pair(zero,X1),nil)) = eqListPairNatNat(toList(foldr(app(insertNat_0,zero),leaf,cons(X0,cons(X1,nil)))),cons(pair(zero,X0),nil))))),
+  inference(forward_demodulation,[],[f43317,f385])).
+fof(f43320,plain,(
+  (! [X0,X1] : (prop_InsertModel(pair(zero,X0),cons(pair(zero,X1),nil)) = eqListPairNatNat(toList(insertNat_case1(false,zero,zero,leaf,leaf,X0,X1)),cons(pair(zero,X0),nil))))),
+  inference(forward_demodulation,[],[f43319,f26683])).
+fof(f43321,plain,(
+  (! [X0,X1] : (prop_InsertModel(pair(zero,X0),cons(pair(zero,X1),nil)) = eqListPairNatNat(cons(pair(zero,X1),cons(pair(zero,X0),nil)),cons(pair(zero,X0),nil))))),
+  inference(forward_demodulation,[],[f43320,f354])).
+fof(f43322,plain,(
+  (! [X0,X1] : (prop_InsertModel(pair(zero,X0),cons(pair(zero,X1),nil)) = opAnd(eqPairNatNat(pair(zero,X1),pair(zero,X0)),false)))),
+  inference(forward_demodulation,[],[f43321,f246])).
+fof(f43323,plain,(
+  (! [X0,X1] : (prop_InsertModel(pair(zero,X0),cons(pair(zero,X1),nil)) = opAnd(opAnd(eqNat(zero,zero),eqNat(X1,X0)),false)))),
+  inference(forward_demodulation,[],[f43322,f120])).
+fof(f43324,plain,(
+  (! [X0,X1] : (prop_InsertModel(pair(zero,X0),cons(pair(zero,X1),nil)) = opAnd(opAnd(true,eqNat(X1,X0)),false)))),
+  inference(forward_demodulation,[],[f43323,f106])).
+fof(f43325,plain,(
+  (! [X0,X1] : (prop_InsertModel(pair(zero,X0),cons(pair(zero,X1),nil)) = opAnd(eqNat(X1,X0),false)))),
+  inference(forward_demodulation,[],[f43324,f82])).
+fof(f43544,plain,(
+  (! [X0,X1] : (false != opAnd(eqNat(X0,X1),false) | ~ans0(pair(zero,X1),cons(pair(zero,X0),nil))))),
+  inference(superposition,[],[f135,f43325])).
+fof(f43547,plain,(
+  (! [X0] : (false != opAnd(false,false) | ~ans0(pair(zero,zero),cons(pair(zero,suc(X0)),nil))))),
+  inference(superposition,[],[f43544,f108])).
+fof(f43549,plain,(
+  (! [X0] : (~ans0(pair(zero,zero),cons(pair(zero,suc(X0)),nil))))),
+  inference(forward_subsumption_resolution,[],[f43547,f81])).
+fof(f43550,plain,(
+  $false),
+  inference(unit_resulting_resolution,[],[f43549,f1028])).
+% SZS output end Proof for problem
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation
+% Time elapsed: 0.625 s
+% Peak memory usage: 44 MB
+% Success in time 23.62 s

@@ -1,0 +1,264 @@
+% Running in auto input_syntax mode. Trying TPTP
+% Detected formulas, will run a generic FOF schedule.
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_tgt=full:sil=2000:alpa=true:random_seed=2866366719:st=5:i=107:sd=1:qa=plain:ss=on:er=filter:ssat=axiom_1 on problem for (1ds/107Mi)
+%  found proof, printing to "/tmp/vampire-proof-9683-9685"...
+% SZS answers Tuple [∀X1,X0.[pair(suc(X0),X1),zero,nil]|_] for problem
+% ...printing done.
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for problem
+% SZS output start Proof for problem
+fof(f1,axiom,(
+  isLT(lt) = true),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','isLT_1')).
+fof(f12,axiom,(
+  ! [X0] : (opAppend(nil,X0) = X0)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','opAppend_1')).
+fof(f13,axiom,(
+  ! [X0, X1, X2] : (opAppend(cons(X0,X1),X2) = cons(X0,opAppend(X1,X2)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','opAppend_2')).
+fof(f14,axiom,(
+  ! [X0, X1] : (foldr(X0,X1,nil) = X1)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','foldr_1')).
+fof(f16,axiom,(
+  ! [X0] : (tree(X0) = foldr(uncurry_1(insertNat_0),nil_1,X0))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','tree_1')).
+fof(f18,axiom,(
+  ! [X0, X1, X2, X3] : (prop_InsertDelete_case1_case1(false,X0,X1,X2,X3) = deleteNat(X1,insertNat(X0,X3,tree(X2))))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','prop_InsertDelete_case1_case1_2')).
+fof(f19,axiom,(
+  ! [X0, X1, X2, X3] : (prop_InsertDelete_case1(X0,X1,X2,X3) = prop_InsertDelete_case1_case1(eqNat(X0,X1),X0,X1,X2,X3))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','prop_InsertDelete_case1_1')).
+fof(f20,axiom,(
+  ! [X0, X1, X2, X3] : (prop_InsertDelete(pair(X0,X1),X2,X3) = opEqTildeEqNatNat(insertNat(X0,X1,deleteNat(X2,tree(X3))),prop_InsertDelete_case1(X0,X2,X3,X1)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','prop_InsertDelete_1')).
+fof(f21,axiom,(
+  nil_1 = leaf),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','nil_1_1')).
+fof(f25,axiom,(
+  toList(leaf) = nil),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','toList_1')).
+fof(f26,axiom,(
+  ! [X0, X1, X2, X3] : (toList(branch(X0,X1,X2,X3)) = opAppend(toList(X0),opAppend(cons(pair(X1,X2),nil),toList(X3))))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','toList_2')).
+fof(f27,axiom,(
+  ! [X0, X1] : (insertNat(X0,X1,leaf) = branch(leaf,X0,X1,leaf))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','insertNat_1')).
+fof(f33,axiom,(
+  ! [X0] : (deleteNat(X0,leaf) = leaf)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','deleteNat_1')).
+fof(f34,axiom,(
+  ! [X0, X1, X2, X3, X4] : (deleteNat(X0,branch(X1,X2,X3,X4)) = deleteNat_case1(ltNat(X0,X2),X0,X2,X1,X4))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','deleteNat_2')).
+fof(f35,axiom,(
+  ! [X0, X1, X2, X3] : (deleteNat_case1(true,X0,X1,X2,X3) = deleteNat(X0,X2))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','deleteNat_case1_1')).
+fof(f41,axiom,(
+  ! [X0] : (eqNat(suc(X0),zero) = false)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','eqNat_3')).
+fof(f43,axiom,(
+  ! [X0, X1] : (opEqTildeEqNatNat(X0,X1) = eqListPairNatNat(toList(X0),toList(X1)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','opEqTildeEqNatNat_1')).
+fof(f46,axiom,(
+  ! [X0, X1] : (eqListPairNatNat(cons(X0,X1),nil) = false)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','eqListPairNatNat_3')).
+fof(f48,axiom,(
+  ! [X0, X1] : (ltNat(X0,X1) = isLT(compareNat(X0,X1)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','ltNat_1')).
+fof(f52,axiom,(
+  ! [X0] : (compareNat(zero,suc(X0)) = lt)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','compareNat_2')).
+fof(f55,axiom,(
+  ! [X0] : (app(insertNat_0,X0) = insertNat_1(X0))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','app_insertNat_0_1')).
+fof(f56,axiom,(
+  ! [X0, X1] : (app(insertNat_1(X0),X1) = insertNat_2(X0,X1))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','app_insertNat_1_1')).
+fof(f57,axiom,(
+  ! [X0, X1, X2] : (app(insertNat_2(X0,X1),X2) = insertNat(X0,X1,X2))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','app_insertNat_2_1')).
+fof(f59,conjecture,(
+  ? [X0, X1, X2] : (prop_InsertDelete(X0,X1,X2) = false)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec4/prop_InsertDelete/problem.p','prop_InsertDelete')).
+fof(f60,negated_conjecture,(
+  ~ ? [X0, X1, X2] : (prop_InsertDelete(X0,X1,X2) = false)),
+  inference(conjecture_negation,[status(cth)],[f59])).
+fof(f61,plain,(
+  ~ ? [X0, X1, X2] : ((prop_InsertDelete(X0,X1,X2) = false) & ans0(X0,X1,X2))),
+  inference(answer_literal_injection,[],[f60])).
+fof(f62,plain,(
+  ! [X0, X1, X2] : ((false != prop_InsertDelete(X0,X1,X2)) | ~ans0(X0,X1,X2))),
+  inference(ennf_transformation,[],[f61])).
+fof(f63,plain,(
+  isLT(lt) = true),
+  inference(cnf_transformation,[],[f1])).
+fof(f74,plain,(
+  (! [X0] : (opAppend(nil,X0) = X0))),
+  inference(cnf_transformation,[],[f12])).
+fof(f75,plain,(
+  (! [X0,X1,X2] : (opAppend(cons(X0,X1),X2) = cons(X0,opAppend(X1,X2))))),
+  inference(cnf_transformation,[],[f13])).
+fof(f76,plain,(
+  (! [X0,X1] : (foldr(X0,X1,nil) = X1))),
+  inference(cnf_transformation,[],[f14])).
+fof(f78,plain,(
+  (! [X0] : (tree(X0) = foldr(uncurry_1(insertNat_0),nil_1,X0)))),
+  inference(cnf_transformation,[],[f16])).
+fof(f80,plain,(
+  (! [X0,X1,X2,X3] : (prop_InsertDelete_case1_case1(false,X0,X1,X2,X3) = deleteNat(X1,insertNat(X0,X3,tree(X2)))))),
+  inference(cnf_transformation,[],[f18])).
+fof(f81,plain,(
+  (! [X0,X1,X2,X3] : (prop_InsertDelete_case1(X0,X1,X2,X3) = prop_InsertDelete_case1_case1(eqNat(X0,X1),X0,X1,X2,X3)))),
+  inference(cnf_transformation,[],[f19])).
+fof(f82,plain,(
+  (! [X0,X1,X2,X3] : (prop_InsertDelete(pair(X0,X1),X2,X3) = opEqTildeEqNatNat(insertNat(X0,X1,deleteNat(X2,tree(X3))),prop_InsertDelete_case1(X0,X2,X3,X1))))),
+  inference(cnf_transformation,[],[f20])).
+fof(f83,plain,(
+  nil_1 = leaf),
+  inference(cnf_transformation,[],[f21])).
+fof(f87,plain,(
+  nil = toList(leaf)),
+  inference(cnf_transformation,[],[f25])).
+fof(f88,plain,(
+  (! [X0,X1,X2,X3] : (toList(branch(X0,X1,X2,X3)) = opAppend(toList(X0),opAppend(cons(pair(X1,X2),nil),toList(X3)))))),
+  inference(cnf_transformation,[],[f26])).
+fof(f89,plain,(
+  (! [X0,X1] : (insertNat(X0,X1,leaf) = branch(leaf,X0,X1,leaf)))),
+  inference(cnf_transformation,[],[f27])).
+fof(f95,plain,(
+  (! [X0] : (leaf = deleteNat(X0,leaf)))),
+  inference(cnf_transformation,[],[f33])).
+fof(f96,plain,(
+  (! [X0,X1,X2,X3,X4] : (deleteNat(X0,branch(X1,X2,X3,X4)) = deleteNat_case1(ltNat(X0,X2),X0,X2,X1,X4)))),
+  inference(cnf_transformation,[],[f34])).
+fof(f97,plain,(
+  (! [X0,X1,X2,X3] : (deleteNat_case1(true,X0,X1,X2,X3) = deleteNat(X0,X2)))),
+  inference(cnf_transformation,[],[f35])).
+fof(f103,plain,(
+  (! [X0] : (false = eqNat(suc(X0),zero)))),
+  inference(cnf_transformation,[],[f41])).
+fof(f105,plain,(
+  (! [X0,X1] : (opEqTildeEqNatNat(X0,X1) = eqListPairNatNat(toList(X0),toList(X1))))),
+  inference(cnf_transformation,[],[f43])).
+fof(f108,plain,(
+  (! [X0,X1] : (false = eqListPairNatNat(cons(X0,X1),nil)))),
+  inference(cnf_transformation,[],[f46])).
+fof(f110,plain,(
+  (! [X0,X1] : (ltNat(X0,X1) = isLT(compareNat(X0,X1))))),
+  inference(cnf_transformation,[],[f48])).
+fof(f114,plain,(
+  (! [X0] : (lt = compareNat(zero,suc(X0))))),
+  inference(cnf_transformation,[],[f52])).
+fof(f117,plain,(
+  (! [X0] : (app(insertNat_0,X0) = insertNat_1(X0)))),
+  inference(cnf_transformation,[],[f55])).
+fof(f118,plain,(
+  (! [X0,X1] : (app(insertNat_1(X0),X1) = insertNat_2(X0,X1)))),
+  inference(cnf_transformation,[],[f56])).
+fof(f119,plain,(
+  (! [X0,X1,X2] : (app(insertNat_2(X0,X1),X2) = insertNat(X0,X1,X2)))),
+  inference(cnf_transformation,[],[f57])).
+fof(f121,plain,(
+  (! [X0,X1,X2] : (false != prop_InsertDelete(X0,X1,X2) | ~ans0(X0,X1,X2)))),
+  inference(cnf_transformation,[],[f62])).
+fof(f122,plain,(
+  (! [X0,X1] : (insertNat_2(X0,X1) = app(app(insertNat_0,X0),X1)))),
+  inference(definition_unfolding,[],[f118,f117])).
+fof(f123,plain,(
+  (! [X0] : (tree(X0) = foldr(uncurry_1(insertNat_0),leaf,X0)))),
+  inference(definition_unfolding,[],[f78,f83])).
+fof(f124,plain,(
+  (! [X0,X1,X2] : (insertNat(X0,X1,X2) = app(app(app(insertNat_0,X0),X1),X2)))),
+  inference(definition_unfolding,[],[f119,f122])).
+fof(f126,plain,(
+  (! [X0,X1,X2,X3] : (prop_InsertDelete_case1_case1(false,X0,X1,X2,X3) = deleteNat(X1,app(app(app(insertNat_0,X0),X3),foldr(uncurry_1(insertNat_0),leaf,X2)))))),
+  inference(definition_unfolding,[],[f80,f124,f123])).
+fof(f127,plain,(
+  (! [X0,X1,X2,X3] : (prop_InsertDelete(pair(X0,X1),X2,X3) = eqListPairNatNat(toList(app(app(app(insertNat_0,X0),X1),deleteNat(X2,foldr(uncurry_1(insertNat_0),leaf,X3)))),toList(prop_InsertDelete_case1_case1(eqNat(X0,X2),X0,X2,X3,X1)))))),
+  inference(definition_unfolding,[],[f82,f105,f124,f123,f81])).
+fof(f128,plain,(
+  (! [X0,X1] : (branch(leaf,X0,X1,leaf) = app(app(app(insertNat_0,X0),X1),leaf)))),
+  inference(definition_unfolding,[],[f89,f124])).
+fof(f133,plain,(
+  (! [X0,X1,X2,X3,X4] : (deleteNat(X0,branch(X1,X2,X3,X4)) = deleteNat_case1(isLT(compareNat(X0,X2)),X0,X2,X1,X4)))),
+  inference(definition_unfolding,[],[f96,f110])).
+fof(f175,plain,(
+  (! [X0,X1,X2,X3] : (deleteNat(zero,branch(X0,suc(X1),X2,X3)) = deleteNat_case1(isLT(lt),zero,suc(X1),X0,X3)))),
+  inference(superposition,[],[f133,f114])).
+fof(f180,plain,(
+  (! [X0,X1,X2,X3] : (deleteNat(zero,branch(X0,suc(X1),X2,X3)) = deleteNat_case1(true,zero,suc(X1),X0,X3)))),
+  inference(forward_demodulation,[],[f175,f63])).
+fof(f183,plain,(
+  (! [X0,X1,X2,X3] : (deleteNat(zero,branch(X0,suc(X1),X2,X3)) = deleteNat(zero,X0)))),
+  inference(forward_demodulation,[],[f180,f97])).
+fof(f258,plain,(
+  (! [X0,X1,X2] : (toList(branch(leaf,X0,X1,X2)) = opAppend(nil,opAppend(cons(pair(X0,X1),nil),toList(X2)))))),
+  inference(superposition,[],[f88,f87])).
+fof(f263,plain,(
+  (! [X0,X1,X2] : (opAppend(cons(pair(X0,X1),nil),toList(X2)) = toList(branch(leaf,X0,X1,X2))))),
+  inference(forward_demodulation,[],[f258,f74])).
+fof(f265,plain,(
+  (! [X0,X1,X2] : (toList(branch(leaf,X0,X1,X2)) = cons(pair(X0,X1),opAppend(nil,toList(X2)))))),
+  inference(forward_demodulation,[],[f263,f75])).
+fof(f266,plain,(
+  (! [X0,X1,X2] : (toList(branch(leaf,X0,X1,X2)) = cons(pair(X0,X1),toList(X2))))),
+  inference(forward_demodulation,[],[f265,f74])).
+fof(f761,plain,(
+  (! [X0,X1,X2] : (deleteNat(X1,app(app(app(insertNat_0,X0),X2),leaf)) = prop_InsertDelete_case1_case1(false,X0,X1,nil,X2)))),
+  inference(superposition,[],[f126,f76])).
+fof(f765,plain,(
+  (! [X0,X1,X2] : (deleteNat(X1,branch(leaf,X0,X2,leaf)) = prop_InsertDelete_case1_case1(false,X0,X1,nil,X2)))),
+  inference(forward_demodulation,[],[f761,f128])).
+fof(f787,plain,(
+  (! [X0,X1] : (deleteNat(zero,leaf) = prop_InsertDelete_case1_case1(false,suc(X0),zero,nil,X1)))),
+  inference(superposition,[],[f183,f765])).
+fof(f790,plain,(
+  (! [X0,X1] : (leaf = prop_InsertDelete_case1_case1(false,suc(X0),zero,nil,X1)))),
+  inference(forward_demodulation,[],[f787,f95])).
+fof(f2781,plain,(
+  (! [X0,X1,X2] : (prop_InsertDelete(pair(X0,X1),X2,nil) = eqListPairNatNat(toList(app(app(app(insertNat_0,X0),X1),deleteNat(X2,leaf))),toList(prop_InsertDelete_case1_case1(eqNat(X0,X2),X0,X2,nil,X1)))))),
+  inference(superposition,[],[f127,f76])).
+fof(f2793,plain,(
+  (! [X0,X1,X2] : (prop_InsertDelete(pair(X0,X1),X2,nil) = eqListPairNatNat(toList(app(app(app(insertNat_0,X0),X1),leaf)),toList(prop_InsertDelete_case1_case1(eqNat(X0,X2),X0,X2,nil,X1)))))),
+  inference(forward_demodulation,[],[f2781,f95])).
+fof(f2796,plain,(
+  (! [X0,X1,X2] : (prop_InsertDelete(pair(X0,X1),X2,nil) = eqListPairNatNat(toList(branch(leaf,X0,X1,leaf)),toList(prop_InsertDelete_case1_case1(eqNat(X0,X2),X0,X2,nil,X1)))))),
+  inference(forward_demodulation,[],[f2793,f128])).
+fof(f2798,plain,(
+  (! [X0,X1,X2] : (prop_InsertDelete(pair(X0,X1),X2,nil) = eqListPairNatNat(cons(pair(X0,X1),toList(leaf)),toList(prop_InsertDelete_case1_case1(eqNat(X0,X2),X0,X2,nil,X1)))))),
+  inference(forward_demodulation,[],[f2796,f266])).
+fof(f2799,plain,(
+  (! [X0,X1,X2] : (prop_InsertDelete(pair(X0,X1),X2,nil) = eqListPairNatNat(cons(pair(X0,X1),nil),toList(prop_InsertDelete_case1_case1(eqNat(X0,X2),X0,X2,nil,X1)))))),
+  inference(forward_demodulation,[],[f2798,f87])).
+fof(f3224,plain,(
+  (! [X0,X1] : (prop_InsertDelete(pair(suc(X0),X1),zero,nil) = eqListPairNatNat(cons(pair(suc(X0),X1),nil),toList(prop_InsertDelete_case1_case1(false,suc(X0),zero,nil,X1)))))),
+  inference(superposition,[],[f2799,f103])).
+fof(f3227,plain,(
+  (! [X0,X1] : (prop_InsertDelete(pair(suc(X0),X1),zero,nil) = eqListPairNatNat(cons(pair(suc(X0),X1),nil),toList(leaf))))),
+  inference(forward_demodulation,[],[f3224,f790])).
+fof(f3231,plain,(
+  (! [X0,X1] : (prop_InsertDelete(pair(suc(X0),X1),zero,nil) = eqListPairNatNat(cons(pair(suc(X0),X1),nil),nil)))),
+  inference(forward_demodulation,[],[f3227,f87])).
+fof(f3234,plain,(
+  (! [X0,X1] : (false = prop_InsertDelete(pair(suc(X0),X1),zero,nil)))),
+  inference(forward_demodulation,[],[f3231,f108])).
+fof(f3241,plain,(
+  (! [X0,X1] : (false != false | ~ans0(pair(suc(X0),X1),zero,nil)))),
+  inference(superposition,[],[f121,f3234])).
+fof(f3242,plain,(
+  (! [X0,X1] : (~ans0(pair(suc(X0),X1),zero,nil)))),
+  inference(trivial_inequality_removal,[],[f3241])).
+fof(f3243,plain,(
+  (! [X0,X1,X2] : (ans0(X0,X1,X2)))),
+  introduced(theory,[answer_literal_resolver],[])).
+fof(f3244,plain,(
+  $false),
+  inference(unit_resulting_resolution,[],[f3242,f3243])).
+% SZS output end Proof for problem
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation
+% Time elapsed: 0.026 s
+% Peak memory usage: 12 MB
+% Success in time 0.028 s

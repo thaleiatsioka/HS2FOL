@@ -1,0 +1,7 @@
+property:   prop_InsertDeleteComplete
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec4.hs
+prover:     vampire
+witness:    prop_InsertDeleteComplete (Suc _X0) [(Zero, _X1)]
+input:      prop_InsertDeleteComplete (Suc undefined) [(Zero, undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

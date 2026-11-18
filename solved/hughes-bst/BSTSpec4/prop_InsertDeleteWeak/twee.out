@@ -1,0 +1,482 @@
+Here is the input problem:
+  Axiom 1 (nil_1_1): nil_1 = leaf.
+  Axiom 2 (not_2): not(true) = false.
+  Axiom 3 (not_1): not(false) = true.
+  Axiom 4 (isLT_1): isLT(lt) = true.
+  Axiom 5 (isLT_2): isLT(eq) = false.
+  Axiom 6 (isLT_3): isLT(gt) = false.
+  Axiom 7 (isGT_1): isGT(lt) = false.
+  Axiom 8 (isGT_2): isGT(eq) = false.
+  Axiom 9 (isGT_3): isGT(gt) = true.
+  Axiom 10 (toList_1): toList(leaf) = nil.
+  Axiom 11 (implies_2): implies(true, X) = X.
+  Axiom 12 (implies_1): implies(false, X) = true.
+  Axiom 13 (opAnd_2): opAnd(true, X) = X.
+  Axiom 14 (opAnd_1): opAnd(false, X) = false.
+  Axiom 15 (opAppend_1): opAppend(nil, X) = X.
+  Axiom 16 (join_1): join(leaf, X) = X.
+  Axiom 17 (deleteNat_1): deleteNat(X, leaf) = leaf.
+  Axiom 18 (eqListPairNatNat_1): eqListPairNatNat(nil, nil) = true.
+  Axiom 19 (compareNat_1): compareNat(zero, zero) = eq.
+  Axiom 20 (compareNat_2): compareNat(zero, suc(X)) = lt.
+  Axiom 21 (compareNat_3): compareNat(suc(X), zero) = gt.
+  Axiom 22 (compareNat_4): compareNat(suc(X), suc(Y)) = compareNat(X, Y).
+  Axiom 23 (app_insertNat_0_1): app(insertNat_0, X) = insertNat_1(X).
+  Axiom 24 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 25 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 26 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 27 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 28 (fst_1): fst(pair(X, Y)) = X.
+  Axiom 29 (snd_1): snd(pair(X, Y)) = Y.
+  Axiom 30 (neqNat_1): neqNat(X, Y) = not(eqNat(X, Y)).
+  Axiom 31 (ltNat_1): ltNat(X, Y) = isLT(compareNat(X, Y)).
+  Axiom 32 (gtNat_1): gtNat(X, Y) = isGT(compareNat(X, Y)).
+  Axiom 33 (foldr_1): foldr(X, Y, nil) = Y.
+  Axiom 34 (app_uncurry_1_1): app(uncurry_1(X), Y) = uncurry(X, Y).
+  Axiom 35 (app_insertNat_1_1): app(insertNat_1(X), Y) = insertNat_2(X, Y).
+  Axiom 36 (deleteNat_case1_case1_1): deleteNat_case1_case1(true, X, Y, Z) = deleteNat(X, Z).
+  Axiom 37 (deleteNat_case1_case1_2): deleteNat_case1_case1(false, X, Y, Z) = join(Y, Z).
+  Axiom 38 (tree_1): tree(X) = foldr(uncurry_1(insertNat_0), nil_1, X).
+  Axiom 39 (eqListPairNatNat_2): eqListPairNatNat(nil, cons(X, Y)) = false.
+  Axiom 40 (opEqTildeEqNatNat_1): opEqTildeEqNatNat(X, Y) = eqListPairNatNat(toList(X), toList(Y)).
+  Axiom 41 (eqListPairNatNat_3): eqListPairNatNat(cons(X, Y), nil) = false.
+  Axiom 42 (app_insertNat_2_1): app(insertNat_2(X, Y), Z) = insertNat(X, Y, Z).
+  Axiom 43 (opAppend_2): opAppend(cons(X, Y), Z) = cons(X, opAppend(Y, Z)).
+  Axiom 44 (insertNat_1): insertNat(X, Y, leaf) = branch(leaf, X, Y, leaf).
+  Axiom 45 (deleteNat_case1_1): deleteNat_case1(true, X, Y, Z, W) = deleteNat(X, Z).
+  Axiom 46 (deleteNat_case1_2): deleteNat_case1(false, X, Y, Z, W) = deleteNat_case1_case1(gtNat(X, Y), X, Z, W).
+  Axiom 47 (eqPairNatNat_1): eqPairNatNat(pair(X, Y), pair(Z, W)) = opAnd(eqNat(X, Z), eqNat(Y, W)).
+  Axiom 48 (join_2): join(branch(X, Y, Z, W), leaf) = branch(X, Y, Z, W).
+  Axiom 49 (eqListPairNatNat_4): eqListPairNatNat(cons(X, Y), cons(Z, W)) = opAnd(eqPairNatNat(X, Z), eqListPairNatNat(Y, W)).
+  Axiom 50 (uncurry_1): uncurry(X, Y) = app(app(X, fst(Y)), snd(Y)).
+  Axiom 51 (insertNat_case1_case1_2): insertNat_case1_case1(false, X, Y, Z, W, V, U) = branch(Z, Y, V, W).
+  Axiom 52 (deleteNat_2): deleteNat(X, branch(Y, Z, W, V)) = deleteNat_case1(ltNat(X, Z), X, Z, Y, V).
+  Axiom 53 (foldr_2): foldr(X, Y, cons(Z, W)) = app(app(X, Z), foldr(X, Y, W)).
+  Axiom 54 (insertNat_case1_case1_1): insertNat_case1_case1(true, X, Y, Z, W, V, U) = branch(Z, Y, U, insertNat(X, V, W)).
+  Axiom 55 (insertNat_case1_1): insertNat_case1(true, X, Y, Z, W, V, U) = branch(insertNat(X, V, Z), Y, U, W).
+  Axiom 56 (insertNat_2): insertNat(X, Y, branch(Z, W, V, U)) = insertNat_case1(ltNat(X, W), X, W, Z, U, Y, V).
+  Axiom 57 (insertNat_case1_2): insertNat_case1(false, X, Y, Z, W, V, U) = insertNat_case1_case1(gtNat(X, Y), X, Y, Z, W, V, U).
+  Axiom 58 (toList_2): toList(branch(X, Y, Z, W)) = opAppend(toList(X), opAppend(cons(pair(Y, Z), nil), toList(W))).
+  Axiom 59 (join_3): join(branch(X, Y, Z, W), branch(V, U, T, S)) = branch(X, Y, Z, branch(join(W, V), U, T, S)).
+  Axiom 60 (prop_InsertDeleteWeak_1): prop_InsertDeleteWeak(pair(X, Y), Z, W) = implies(neqNat(X, Z), opEqTildeEqNatNat(insertNat(X, Y, deleteNat(Z, tree(W))), deleteNat(Z, insertNat(X, Y, tree(W))))).
+  Axiom 61 (reflexivity): equals(X, X) = true.
+  Axiom 62 (prop_InsertDeleteWeak): equals(prop_InsertDeleteWeak(X, Y, Z), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. leaf -> nil_1
+2. not(true) -> false
+3. not(false) -> true
+4. isLT(lt) -> true
+5. isLT(eq) -> false
+6. isLT(gt) -> false
+7. isGT(lt) -> false
+8. isGT(eq) -> false
+9. isGT(gt) -> true
+10. toList(nil_1) -> nil
+11. implies(true, X) -> X
+12. implies(false, X) -> true
+13. opAnd(true, X) -> X
+14. opAnd(false, X) -> false
+15. opAppend(nil, X) -> X
+16. join(nil_1, X) -> X
+17. deleteNat(X, nil_1) -> nil_1
+18. eqListPairNatNat(nil, nil) -> true
+19. compareNat(zero, zero) -> eq
+20. compareNat(zero, suc(X)) -> lt
+21. compareNat(suc(X), zero) -> gt
+22. compareNat(suc(X), suc(Y)) -> compareNat(X, Y)
+23. app(insertNat_0, X) -> insertNat_1(X)
+24. eqNat(zero, zero) -> true
+25. eqNat(zero, suc(X)) -> false
+26. eqNat(suc(X), zero) -> false
+27. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+28. fst(pair(X, Y)) -> X
+29. snd(pair(X, Y)) -> Y
+30. not(eqNat(X, Y)) -> neqNat(X, Y)
+31. isLT(compareNat(X, Y)) -> ltNat(X, Y)
+32. isGT(compareNat(X, Y)) -> gtNat(X, Y)
+33. foldr(X, Y, nil) -> Y
+34. app(uncurry_1(X), Y) -> uncurry(X, Y)
+35. app(insertNat_1(X), Y) -> insertNat_2(X, Y)
+36. deleteNat_case1_case1(true, X, Y, Z) -> deleteNat(X, Z)
+37. deleteNat_case1_case1(false, X, Y, Z) -> join(Y, Z)
+38. foldr(uncurry_1(insertNat_0), nil_1, X) -> tree(X)
+39. eqListPairNatNat(nil, cons(X, Y)) -> false
+40. eqListPairNatNat(toList(X), toList(Y)) -> opEqTildeEqNatNat(X, Y)
+41. eqListPairNatNat(cons(X, Y), nil) -> false
+42. app(insertNat_2(X, Y), Z) -> insertNat(X, Y, Z)
+43. cons(X, opAppend(Y, Z)) -> opAppend(cons(X, Y), Z)
+44. branch(nil_1, X, Y, nil_1) -> insertNat(X, Y, nil_1)
+45. deleteNat_case1(true, X, Y, Z, W) -> deleteNat(X, Z)
+46. deleteNat_case1_case1(gtNat(X, Y), X, Z, W) -> deleteNat_case1(false, X, Y, Z, W)
+47. opAnd(eqNat(X, Y), eqNat(Z, W)) -> eqPairNatNat(pair(X, Z), pair(Y, W))
+48. join(branch(X, Y, Z, W), nil_1) -> branch(X, Y, Z, W)
+49. eqListPairNatNat(cons(X, Y), cons(Z, W)) -> opAnd(eqPairNatNat(X, Z), eqListPairNatNat(Y, W))
+50. app(app(X, fst(Y)), snd(Y)) -> uncurry(X, Y)
+51. insertNat_case1_case1(false, X, Y, Z, W, V, U) -> branch(Z, Y, V, W)
+52. deleteNat_case1(ltNat(X, Y), X, Y, Z, W) -> deleteNat(X, branch(Z, Y, ?, W))
+53. deleteNat(X, branch(Y, Z, W, V)) ~> deleteNat(X, branch(Y, Z, ?, V))
+54. app(app(X, Y), foldr(X, Z, W)) -> foldr(X, Z, cons(Y, W))
+55. branch(X, Y, Z, insertNat(W, V, U)) -> insertNat_case1_case1(true, W, Y, X, U, V, Z)
+56. branch(insertNat(X, Y, Z), W, V, U) -> insertNat_case1(true, X, W, Z, U, Y, V)
+57. insertNat_case1(ltNat(X, Y), X, Y, Z, W, V, U) -> insertNat(X, V, branch(Z, Y, U, W))
+58. insertNat_case1_case1(gtNat(X, Y), X, Y, Z, W, V, U) -> insertNat_case1(false, X, Y, Z, W, V, U)
+59. opAppend(toList(X), opAppend(cons(pair(Y, Z), nil), toList(W))) -> toList(branch(X, Y, Z, W))
+60. branch(X, Y, Z, branch(join(W, V), U, T, S)) -> join(branch(X, Y, Z, W), branch(V, U, T, S))
+61. implies(neqNat(X, Y), opEqTildeEqNatNat(insertNat(X, Z, deleteNat(Y, tree(W))), deleteNat(Y, insertNat(X, Z, tree(W))))) -> prop_InsertDeleteWeak(pair(X, Z), Y, W)
+62. equals(X, X) -> true
+63. equals(prop_InsertDeleteWeak(X, Y, Z), false) -> false
+64. tree(nil) -> nil_1
+65. neqNat(zero, zero) -> false
+66. ltNat(zero, zero) -> false
+67. gtNat(zero, zero) -> false
+68. neqNat(zero, suc(X)) -> true
+69. neqNat(suc(X), zero) -> true
+70. ltNat(zero, suc(X)) -> true
+71. ltNat(suc(X), zero) -> false
+72. gtNat(zero, suc(X)) -> false
+73. gtNat(suc(X), zero) -> true
+74. eqListPairNatNat(nil, toList(X)) -> opEqTildeEqNatNat(nil_1, X)
+75. opEqTildeEqNatNat(nil_1, nil_1) -> true
+76. eqListPairNatNat(toList(X), nil) -> opEqTildeEqNatNat(X, nil_1)
+77. neqNat(suc(X), suc(Y)) -> neqNat(X, Y)
+78. ltNat(suc(X), suc(Y)) -> ltNat(X, Y)
+79. gtNat(suc(X), suc(Y)) -> gtNat(X, Y)
+80. opAppend(cons(X, nil), Y) -> cons(X, Y)
+81. insertNat_2(fst(X), snd(X)) -> uncurry(insertNat_0, X)
+82. app(app(X, Y), Z) -> uncurry(X, pair(Y, Z))
+83. uncurry(insertNat_0, pair(X, Y)) -> insertNat_2(X, Y)
+84. prop_InsertDeleteWeak(pair(zero, X), zero, Y) -> true
+85. equals(true, false) -> false
+86. insertNat(X, fst(Y), snd(Y)) -> uncurry(insertNat_1(X), Y)
+87. join(insertNat(X, Y, nil_1), nil_1) -> insertNat(X, Y, nil_1)
+88. uncurry(uncurry_1(insertNat_0), pair(X, tree(Y))) -> tree(cons(X, Y))
+89. foldr(X, Y, cons(Z, nil)) -> uncurry(X, pair(Z, Y))
+90. eqListPairNatNat(nil, opAppend(cons(X, Y), Z)) -> false
+91. eqListPairNatNat(opAppend(cons(X, Y), Z), nil) -> false
+92. deleteNat_case1(false, zero, zero, X, Y) -> join(X, Y)
+93. foldr(insertNat_0, X, cons(Y, Z)) -> insertNat_2(Y, foldr(insertNat_0, X, Z))
+94. uncurry(insertNat_1(X), pair(Y, Z)) -> insertNat(X, Y, Z)
+95. deleteNat(X, insertNat(Y, Z, nil_1)) ~> deleteNat(X, insertNat(Y, ?, nil_1))
+96. uncurry(uncurry_1(X), pair(Y, Z)) -> app(uncurry(X, Y), Z)
+97. insertNat(fst(X), snd(X), Y) -> app(uncurry(insertNat_0, X), Y)
+98. app(uncurry(insertNat_0, X), nil_1) -> tree(cons(X, nil))
+99. eqPairNatNat(pair(zero, X), pair(zero, Y)) -> eqNat(X, Y)
+100. app(uncurry(X, fst(Y)), snd(Y)) -> uncurry(uncurry_1(X), Y)
+101. app(uncurry(insertNat_0, X), tree(Y)) -> tree(cons(X, Y))
+102. tree(cons(pair(X, Y), nil)) -> insertNat(X, Y, nil_1)
+103. deleteNat_case1(false, zero, suc(X), Y, Z) -> join(Y, Z)
+104. uncurry(X, pair(fst(Y), snd(Y))) -> uncurry(X, Y)
+105. eqPairNatNat(pair(zero, X), pair(suc(Y), Z)) -> false
+106. eqPairNatNat(pair(suc(X), Y), pair(zero, Z)) -> false
+107. eqPairNatNat(pair(X, zero), pair(Y, zero)) -> opAnd(eqNat(X, Y), true)
+108. deleteNat_case1(false, suc(X), zero, Y, Z) -> deleteNat(suc(X), Z)
+109. opAppend(cons(X, cons(Y, nil)), Z) -> cons(X, cons(Y, Z))
+110. tree(cons(pair(X, Y), Z)) -> insertNat(X, Y, tree(Z))
+111. uncurry(insertNat_2(X, Y), pair(Z, W)) -> app(insertNat(X, Y, Z), W)
+112. app(uncurry(X, pair(Y, Z)), W) -> uncurry(app(X, Y), pair(Z, W))
+113. app(insertNat(X, Y, fst(Z)), snd(Z)) -> uncurry(insertNat_2(X, Y), Z)
+114. deleteNat(zero, branch(X, zero, ?, Y)) -> join(X, Y)
+115. deleteNat(zero, insertNat(zero, ?, nil_1)) -> nil_1
+116. eqPairNatNat(pair(X, zero), pair(Y, suc(Z))) -> opAnd(eqNat(X, Y), false)
+117. eqPairNatNat(pair(X, suc(Y)), pair(Z, zero)) -> opAnd(eqNat(X, Z), false)
+118. deleteNat(zero, branch(X, suc(Y), ?, Z)) -> deleteNat(zero, X)
+119. deleteNat(zero, insertNat(suc(X), ?, nil_1)) -> nil_1
+120. insertNat(X, Y, foldr(insertNat_1(X), Z, W)) -> foldr(insertNat_1(X), Z, cons(Y, W))
+121. cons(pair(X, Y), toList(Z)) -> toList(branch(nil_1, X, Y, Z))
+122. cons(pair(X, Y), nil) -> toList(insertNat(X, Y, nil_1))
+123. opEqTildeEqNatNat(nil_1, insertNat(X, Y, nil_1)) -> false
+124. opEqTildeEqNatNat(insertNat(X, Y, nil_1), nil_1) -> false
+125. opEqTildeEqNatNat(nil_1, branch(nil_1, X, Y, Z)) -> false
+126. opEqTildeEqNatNat(branch(nil_1, X, Y, Z), nil_1) -> false
+127. opEqTildeEqNatNat(nil_1, tree(cons(X, nil))) -> false
+128. opEqTildeEqNatNat(tree(cons(X, nil)), nil_1) -> false
+129. tree(toList(insertNat(X, Y, nil_1))) -> insertNat(X, Y, nil_1)
+130. opAppend(toList(insertNat(X, Y, nil_1)), Z) -> cons(pair(X, Y), Z)
+131. tree(toList(tree(cons(X, nil)))) -> tree(cons(X, nil))
+132. insertNat_case1(false, zero, zero, X, Y, Z, W) -> branch(X, zero, Z, Y)
+133. join(tree(cons(X, nil)), nil_1) -> tree(cons(X, nil))
+134. uncurry(uncurry(insertNat_0, X), pair(nil_1, Y)) -> app(tree(cons(X, nil)), Y)
+135. uncurry(X, pair(Y, foldr(X, Z, W))) -> foldr(X, Z, cons(Y, W))
+136. eqListPairNatNat(nil, opAppend(opAppend(cons(X, Y), Z), W)) -> false
+137. eqListPairNatNat(opAppend(opAppend(cons(X, Y), Z), W), nil) -> false
+138. deleteNat(X, insertNat(fst(Y), ?, nil_1)) -> deleteNat(X, tree(cons(Y, nil)))
+139. deleteNat(suc(X), branch(Y, zero, ?, Z)) -> deleteNat(suc(X), Z)
+140. deleteNat(suc(X), insertNat(zero, ?, nil_1)) -> nil_1
+141. foldr(insertNat_0, X, toList(insertNat(Y, Z, nil_1))) -> insertNat_2(pair(Y, Z), X)
+142. deleteNat_case1_case1(gtNat(X, Y), suc(X), Z, W) -> deleteNat_case1(false, suc(X), suc(Y), Z, W)
+143. deleteNat_case1(false, suc(zero), suc(zero), X, Y) -> join(X, Y)
+144. insertNat(zero, X, branch(Y, zero, Z, W)) -> branch(Y, zero, X, W)
+145. insertNat(zero, X, insertNat(zero, Y, nil_1)) -> insertNat(zero, X, nil_1)
+146. foldr(insertNat_0, X, opAppend(cons(Y, Z), W)) -> insertNat_2(Y, foldr(insertNat_0, X, opAppend(Z, W)))
+147. cons(pair(fst(X), snd(X)), Y) -> opAppend(toList(tree(cons(X, nil))), Y)
+148. app(uncurry(X, Y), foldr(uncurry_1(X), Z, W)) -> foldr(uncurry_1(X), Z, cons(Y, W))
+149. uncurry(uncurry(insertNat_0, X), pair(tree(Y), Z)) -> app(tree(cons(X, Y)), Z)
+150. tree(toList(branch(nil_1, X, Y, Z))) -> insertNat(X, Y, tree(toList(Z)))
+151. eqPairNatNat(pair(suc(X), Y), pair(suc(Z), W)) -> eqPairNatNat(pair(X, Y), pair(Z, W))
+152. eqPairNatNat(pair(X, suc(Y)), pair(Z, suc(W))) -> eqPairNatNat(pair(X, Y), pair(Z, W))
+153. foldr(X, Y, toList(insertNat(Z, W, nil_1))) -> uncurry(X, pair(pair(Z, W), Y))
+154. uncurry(app(X, fst(Y)), pair(snd(Y), Z)) -> app(uncurry(X, Y), Z)
+155. opAppend(toList(tree(cons(X, nil))), nil) -> toList(tree(cons(X, nil)))
+156. insertNat_case1(false, zero, suc(X), Y, Z, W, V) -> branch(Y, suc(X), W, Z)
+157. eqListPairNatNat(nil, opAppend(toList(branch(nil_1, X, Y, Z)), W)) -> false
+158. eqListPairNatNat(opAppend(toList(branch(nil_1, X, Y, Z)), W), nil) -> false
+159. deleteNat_case1(false, suc(zero), suc(suc(X)), Y, Z) -> join(Y, Z)
+160. opAppend(toList(X), toList(branch(nil_1, Y, Z, W))) -> toList(branch(X, Y, Z, W))
+161. opAppend(toList(X), toList(insertNat(Y, Z, nil_1))) -> toList(branch(X, Y, Z, nil_1))
+162. uncurry(uncurry(X, fst(Y)), pair(snd(Y), Z)) -> app(uncurry(uncurry_1(X), Y), Z)
+163. eqListPairNatNat(opAppend(cons(X, Y), Z), cons(W, V)) -> opAnd(eqPairNatNat(X, W), eqListPairNatNat(opAppend(Y, Z), V))
+164. eqListPairNatNat(cons(X, Y), opAppend(cons(Z, W), V)) -> opAnd(eqPairNatNat(X, Z), eqListPairNatNat(Y, opAppend(W, V)))
+165. foldr(insertNat_1(X), Y, cons(Z, cons(W, nil))) = insertNat(X, Z, insertNat(X, W, Y))
+166. opEqTildeEqNatNat(nil_1, insertNat_case1_case1(true, X, Y, nil_1, Z, W, V)) -> false
+167. opEqTildeEqNatNat(insertNat_case1_case1(true, X, Y, nil_1, Z, W, V), nil_1) -> false
+168. tree(opAppend(toList(tree(cons(X, nil))), Y)) -> tree(cons(X, Y))
+169. uncurry(X, pair(Y, uncurry(X, pair(Z, W)))) -> foldr(X, W, cons(Y, cons(Z, nil)))
+170. deleteNat_case1(false, suc(suc(X)), suc(zero), Y, Z) -> deleteNat(suc(suc(X)), Z)
+171. insertNat(zero, X, branch(Y, suc(Z), W, V)) -> insertNat_case1(true, zero, suc(Z), Y, V, X, W)
+172. insertNat(suc(X), Y, branch(Z, zero, W, V)) -> insertNat_case1(false, suc(X), zero, Z, V, Y, W)
+173. insertNat_case1_case1(true, suc(X), zero, Y, Z, W, V) -> insertNat_case1(false, suc(X), zero, Y, Z, W, V)
+174. insertNat_2(pair(fst(X), snd(X)), Y) = foldr(insertNat_0, Y, toList(tree(cons(X, nil))))
+175. join(insertNat_case1_case1(true, X, Y, Z, W, V, U), nil_1) -> insertNat_case1_case1(true, X, Y, Z, W, V, U)
+176. join(insertNat_case1(true, X, Y, Z, W, V, U), nil_1) -> insertNat_case1(true, X, Y, Z, W, V, U)
+177. app(uncurry(insertNat_0, X), insertNat(Y, Z, nil_1)) -> tree(cons(X, toList(insertNat(Y, Z, nil_1))))
+178. eqListPairNatNat(nil, opAppend(toList(tree(cons(X, nil))), Y)) -> false
+179. eqListPairNatNat(opAppend(toList(tree(cons(X, nil))), Y), nil) -> false
+180. app(uncurry(X, Y), app(uncurry(X, Z), W)) -> foldr(uncurry_1(X), W, cons(Y, cons(Z, nil)))
+181. opAppend(cons(X, cons(Y, cons(Z, nil))), W) -> cons(X, cons(Y, cons(Z, W)))
+182. tree(opAppend(cons(pair(X, Y), Z), W)) -> insertNat(X, Y, tree(opAppend(Z, W)))
+183. foldr(insertNat_0, X, toList(branch(nil_1, Y, Z, W))) -> insertNat_2(pair(Y, Z), foldr(insertNat_0, X, toList(W)))
+184. opAppend(cons(X, toList(insertNat(Y, Z, nil_1))), W) -> cons(X, cons(pair(Y, Z), W))
+185. toList(branch(X, fst(Y), snd(Y), nil_1)) -> opAppend(toList(X), toList(tree(cons(Y, nil))))
+186. tree(cons(X, toList(tree(cons(Y, nil))))) -> tree(cons(X, cons(Y, nil)))
+187. foldr(uncurry_1(insertNat_0), X, cons(pair(Y, Z), W)) -> insertNat(Y, Z, foldr(uncurry_1(insertNat_0), X, W))
+188. opEqTildeEqNatNat(nil_1, branch(branch(nil_1, X, Y, Z), W, V, U)) -> false
+189. opEqTildeEqNatNat(nil_1, insertNat_case1(true, X, Y, nil_1, Z, W, V)) -> false
+190. opEqTildeEqNatNat(branch(branch(nil_1, X, Y, Z), W, V, U), nil_1) -> false
+191. opEqTildeEqNatNat(insertNat_case1(true, X, Y, nil_1, Z, W, V), nil_1) -> false
+192. deleteNat(X, insertNat_case1_case1(true, Y, Z, W, V, U, T)) ~> deleteNat(X, insertNat_case1_case1(true, Y, Z, W, V, U, ?))
+193. deleteNat(X, insertNat_case1(true, Y, Z, W, V, U, T)) ~> deleteNat(X, insertNat_case1(true, Y, Z, W, V, U, ?))
+194. uncurry(insertNat(X, Y, fst(Z)), pair(snd(Z), W)) -> app(uncurry(insertNat_2(X, Y), Z), W)
+195. uncurry(app(X, Y), pair(foldr(X, Z, W), V)) -> app(foldr(X, Z, cons(Y, W)), V)
+196. insertNat_case1_case1(true, X, Y, Z, snd(W), fst(W), V) -> branch(Z, Y, V, uncurry(insertNat_1(X), W))
+197. insertNat_case1(true, X, Y, snd(Z), W, fst(Z), V) -> branch(uncurry(insertNat_1(X), Z), Y, V, W)
+198. insertNat_case1(true, zero, suc(X), nil_1, nil_1, Y, Z) -> insertNat(zero, Y, insertNat(suc(X), Z, nil_1))
+199. insertNat_case1(false, suc(X), zero, nil_1, nil_1, Y, Z) -> insertNat(suc(X), Y, insertNat(zero, Z, nil_1))
+200. eqListPairNatNat(nil, opAppend(opAppend(opAppend(cons(X, Y), Z), W), V)) -> false
+201. eqListPairNatNat(opAppend(opAppend(opAppend(cons(X, Y), Z), W), V), nil) -> false
+202. eqListPairNatNat(toList(insertNat(X, Y, nil_1)), cons(Z, W)) -> opAnd(eqPairNatNat(pair(X, Y), Z), eqListPairNatNat(nil, W))
+203. eqListPairNatNat(cons(X, Y), toList(insertNat(Z, W, nil_1))) -> opAnd(eqPairNatNat(X, pair(Z, W)), eqListPairNatNat(Y, nil))
+204. toList(branch(nil_1, fst(X), snd(X), Y)) -> opAppend(toList(tree(cons(X, nil))), toList(Y))
+205. deleteNat_case1(ltNat(X, Y), suc(X), suc(Y), Z, W) -> deleteNat(suc(X), branch(Z, suc(Y), ?, W))
+206. deleteNat(suc(zero), branch(X, suc(zero), ?, Y)) -> join(X, Y)
+207. deleteNat(suc(zero), insertNat(suc(zero), ?, nil_1)) -> nil_1
+208. deleteNat(suc(zero), branch(X, suc(suc(Y)), ?, Z)) -> deleteNat(suc(zero), X)
+209. deleteNat(suc(zero), insertNat(suc(suc(X)), ?, nil_1)) -> nil_1
+210. deleteNat(suc(suc(X)), branch(Y, suc(zero), ?, Z)) -> deleteNat(suc(suc(X)), Z)
+211. deleteNat(suc(suc(X)), insertNat(suc(zero), ?, nil_1)) -> nil_1
+212. deleteNat(zero, insertNat_case1_case1(true, X, zero, Y, Z, W, ?)) -> join(Y, insertNat(X, W, Z))
+213. deleteNat(zero, insertNat_case1(true, X, zero, Y, Z, W, ?)) -> join(insertNat(X, W, Y), Z)
+214. app(insertNat(X, Y, Z), foldr(insertNat_2(X, Y), W, V)) -> foldr(insertNat_2(X, Y), W, cons(Z, V))
+215. uncurry(X, pair(pair(fst(Y), snd(Y)), Z)) -> foldr(X, Z, toList(tree(cons(Y, nil))))
+216. foldr(uncurry_1(X), Y, toList(tree(cons(Z, nil)))) -> app(uncurry(X, Z), Y)
+217. opEqTildeEqNatNat(nil_1, insertNat(zero, X, insertNat(suc(Y), Z, nil_1))) -> false
+218. opEqTildeEqNatNat(insertNat(zero, X, insertNat(suc(Y), Z, nil_1)), nil_1) -> false
+219. foldr(uncurry_1(insertNat_0), tree(X), cons(Y, cons(Z, nil))) -> tree(cons(Y, cons(Z, X)))
+220. join(branch(X, Y, Z, nil_1), branch(W, V, U, T)) -> branch(X, Y, Z, branch(W, V, U, T))
+221. join(branch(X, Y, Z, nil_1), insertNat(W, V, nil_1)) -> insertNat_case1_case1(true, W, Y, X, nil_1, V, Z)
+222. join(insertNat(X, Y, nil_1), insertNat(Z, W, nil_1)) -> insertNat_case1_case1(true, Z, X, nil_1, nil_1, W, Y)
+223. join(insertNat(X, Y, nil_1), branch(Z, W, V, U)) -> branch(nil_1, X, Y, branch(Z, W, V, U))
+224. deleteNat(zero, insertNat_case1_case1(true, X, suc(Y), Z, W, V, ?)) -> deleteNat(zero, Z)
+225. toList(insertNat_case1_case1(true, X, Y, nil_1, nil_1, Z, W)) -> toList(insertNat_case1(true, Y, X, nil_1, nil_1, W, Z))
+226. foldr(X, snd(Y), cons(Z, cons(fst(Y), nil))) = uncurry(X, pair(Z, uncurry(X, Y)))
+227. opAnd(eqPairNatNat(pair(X, Y), pair(Z, W)), true) -> opEqTildeEqNatNat(insertNat(X, Y, nil_1), insertNat(Z, W, nil_1))
+228. opEqTildeEqNatNat(insertNat(zero, X, nil_1), insertNat(suc(Y), Z, nil_1)) -> false
+229. opEqTildeEqNatNat(insertNat(suc(X), Y, nil_1), insertNat(zero, Z, nil_1)) -> false
+230. opEqTildeEqNatNat(insertNat(zero, X, nil_1), insertNat(zero, Y, nil_1)) -> opAnd(eqNat(X, Y), true)
+231. eqListPairNatNat(toList(branch(nil_1, X, Y, Z)), cons(W, V)) -> opAnd(eqPairNatNat(pair(X, Y), W), eqListPairNatNat(toList(Z), V))
+232. eqListPairNatNat(cons(X, Y), toList(branch(nil_1, Z, W, V))) -> opAnd(eqPairNatNat(X, pair(Z, W)), eqListPairNatNat(Y, toList(V)))
+233. opEqTildeEqNatNat(nil_1, insertNat_case1(false, suc(X), zero, nil_1, Y, Z, W)) -> false
+234. opEqTildeEqNatNat(nil_1, insertNat(suc(X), Y, insertNat(zero, Z, nil_1))) -> false
+235. opEqTildeEqNatNat(insertNat_case1(false, suc(X), zero, nil_1, Y, Z, W), nil_1) -> false
+236. opEqTildeEqNatNat(insertNat(suc(X), Y, insertNat(zero, Z, nil_1)), nil_1) -> false
+237. opEqTildeEqNatNat(nil_1, branch(tree(cons(X, nil)), Y, Z, W)) -> false
+238. opEqTildeEqNatNat(branch(tree(cons(X, nil)), Y, Z, W), nil_1) -> false
+239. insertNat_case1_case1(true, fst(X), Y, Z, W, snd(X), V) -> branch(Z, Y, V, app(uncurry(insertNat_0, X), W))
+240. insertNat_case1(true, fst(X), Y, Z, W, snd(X), V) -> branch(app(uncurry(insertNat_0, X), Z), Y, V, W)
+241. deleteNat(suc(X), insertNat_case1(true, Y, zero, Z, W, V, ?)) -> deleteNat(suc(X), W)
+242. app(uncurry(insertNat_0, X), insertNat(Y, Z, tree(W))) -> tree(cons(X, cons(pair(Y, Z), W)))
+243. insertNat_case1_case1(true, X, Y, insertNat(Z, W, V), U, T, S) -> insertNat_case1(true, Z, Y, V, insertNat(X, T, U), W, S)
+244. opEqTildeEqNatNat(insertNat(X, zero, nil_1), insertNat(Y, zero, nil_1)) -> opAnd(opAnd(eqNat(X, Y), true), true)
+245. foldr(insertNat_1(X), Y, toList(tree(cons(Z, nil)))) = insertNat(X, pair(fst(Z), snd(Z)), Y)
+246. app(uncurry(X, Y), foldr(app(X, fst(Y)), Z, W)) -> foldr(app(X, fst(Y)), Z, cons(snd(Y), W))
+247. app(uncurry(insertNat_0, X), foldr(insertNat_1(fst(X)), Y, Z)) -> foldr(insertNat_1(fst(X)), Y, cons(snd(X), Z))
+248. deleteNat_case1_case1(gtNat(X, Y), suc(suc(X)), Z, W) -> deleteNat_case1(false, suc(suc(X)), suc(suc(Y)), Z, W)
+249. deleteNat_case1(false, suc(suc(zero)), suc(suc(zero)), X, Y) -> join(X, Y)
+250. eqListPairNatNat(nil, opAppend(opAppend(toList(branch(nil_1, X, Y, Z)), W), V)) -> false
+251. eqListPairNatNat(opAppend(opAppend(toList(branch(nil_1, X, Y, Z)), W), V), nil) -> false
+252. foldr(insertNat_0, X, opAppend(opAppend(cons(Y, Z), W), V)) -> insertNat_2(Y, foldr(insertNat_0, X, opAppend(opAppend(Z, W), V)))
+253. deleteNat(zero, insertNat_case1(true, X, suc(Y), Z, W, V, ?)) -> deleteNat(zero, insertNat(X, V, Z))
+254. deleteNat(zero, insertNat(zero, X, insertNat(suc(Y), ?, nil_1))) -> nil_1
+255. opAppend(opAppend(toList(tree(cons(X, nil))), Y), Z) -> opAppend(toList(tree(cons(X, nil))), opAppend(Y, Z))
+256. uncurry(uncurry(X, Y), pair(foldr(uncurry_1(X), Z, W), V)) -> app(foldr(uncurry_1(X), Z, cons(Y, W)), V)
+257. toList(insertNat(suc(X), Y, insertNat(zero, Z, nil_1))) -> toList(insertNat(zero, Z, insertNat(suc(X), Y, nil_1)))
+258. deleteNat_case1(false, suc(suc(zero)), suc(suc(suc(X))), Y, Z) -> join(Y, Z)
+259. join(branch(X, Y, Z, nil_1), tree(cons(W, nil))) -> branch(X, Y, Z, tree(cons(W, nil)))
+260. join(insertNat(X, Y, nil_1), tree(cons(Z, nil))) -> branch(nil_1, X, Y, tree(cons(Z, nil)))
+261. opAppend(cons(X, toList(Y)), toList(insertNat(Z, W, nil_1))) -> cons(X, toList(branch(Y, Z, W, nil_1)))
+262. tree(opAppend(toList(branch(nil_1, X, Y, Z)), W)) -> insertNat(X, Y, tree(opAppend(toList(Z), W)))
+263. app(insertNat(X, Y, Z), app(insertNat(X, Y, W), V)) -> foldr(insertNat_2(X, Y), V, cons(Z, cons(W, nil)))
+264. toList(branch(nil_1, X, Y, branch(nil_1, Z, W, V))) -> toList(insertNat_case1(true, X, Z, nil_1, V, Y, W))
+265. uncurry(uncurry(X, pair(Y, fst(Z))), pair(snd(Z), W)) -> app(uncurry(app(X, Y), Z), W)
+266. opAppend(cons(X, toList(tree(cons(Y, nil)))), nil) -> cons(X, toList(tree(cons(Y, nil))))
+267. app(tree(cons(X, Y)), foldr(uncurry(insertNat_0, X), Z, W)) -> foldr(uncurry(insertNat_0, X), Z, cons(tree(Y), W))
+268. deleteNat(suc(X), insertNat_case1_case1(true, Y, zero, Z, W, V, ?)) -> deleteNat(suc(X), insertNat(Y, V, W))
+269. insertNat(zero, X, insertNat_case1_case1(true, Y, zero, Z, W, V, U)) -> insertNat_case1_case1(true, Y, zero, Z, W, V, X)
+270. insertNat(zero, X, insertNat_case1(true, Y, zero, Z, W, V, U)) -> insertNat_case1(true, Y, zero, Z, W, V, X)
+271. join(insertNat(zero, X, insertNat(suc(Y), Z, nil_1)), nil_1) -> insertNat(zero, X, insertNat(suc(Y), Z, nil_1))
+272. foldr(X, foldr(X, Y, Z), cons(W, cons(V, nil))) -> foldr(X, Y, cons(W, cons(V, Z)))
+273. foldr(uncurry_1(X), Y, opAppend(toList(tree(cons(Z, nil))), W)) -> foldr(uncurry_1(X), Y, cons(Z, W))
+274. foldr(insertNat_1(X), snd(Y), cons(Z, cons(fst(Y), nil))) = insertNat(X, Z, uncurry(insertNat_1(X), Y))
+275. foldr(uncurry_1(insertNat_0), X, toList(branch(nil_1, Y, Z, W))) -> insertNat(Y, Z, foldr(uncurry_1(insertNat_0), X, toList(W)))
+276. insertNat_case1_case1(true, X, fst(Y), nil_1, nil_1, Z, snd(Y)) -> join(tree(cons(Y, nil)), insertNat(X, Z, nil_1))
+277. opEqTildeEqNatNat(nil_1, join(tree(cons(X, nil)), insertNat(Y, Z, nil_1))) -> false
+278. opEqTildeEqNatNat(join(tree(cons(X, nil)), insertNat(Y, Z, nil_1)), nil_1) -> false
+279. opAppend(cons(X, toList(Y)), toList(branch(nil_1, Z, W, V))) -> cons(X, toList(branch(Y, Z, W, V)))
+280. toList(branch(branch(nil_1, X, Y, Z), W, V, U)) -> toList(branch(nil_1, X, Y, branch(Z, W, V, U)))
+281. implies(neqNat(X, Y), opEqTildeEqNatNat(insertNat(X, Z, nil_1), deleteNat(Y, insertNat(X, ?, nil_1)))) -> prop_InsertDeleteWeak(pair(X, Z), Y, nil)
+282. prop_InsertDeleteWeak(pair(zero, X), suc(Y), nil) -> false
+283. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (nil_1_1): nil_1 = leaf.
+Axiom 2 (not_1): not(false) = true.
+Axiom 3 (isLT_3): isLT(gt) = false.
+Axiom 4 (isGT_3): isGT(gt) = true.
+Axiom 5 (toList_1): toList(leaf) = nil.
+Axiom 6 (implies_2): implies(true, X) = X.
+Axiom 7 (opAppend_1): opAppend(nil, X) = X.
+Axiom 8 (deleteNat_1): deleteNat(X, leaf) = leaf.
+Axiom 9 (compareNat_3): compareNat(suc(X), zero) = gt.
+Axiom 10 (eqNat_2): eqNat(zero, suc(X)) = false.
+Axiom 11 (neqNat_1): neqNat(X, Y) = not(eqNat(X, Y)).
+Axiom 12 (ltNat_1): ltNat(X, Y) = isLT(compareNat(X, Y)).
+Axiom 13 (gtNat_1): gtNat(X, Y) = isGT(compareNat(X, Y)).
+Axiom 14 (foldr_1): foldr(X, Y, nil) = Y.
+Axiom 15 (deleteNat_case1_case1_1): deleteNat_case1_case1(true, X, Y, Z) = deleteNat(X, Z).
+Axiom 16 (tree_1): tree(X) = foldr(uncurry_1(insertNat_0), nil_1, X).
+Axiom 17 (opEqTildeEqNatNat_1): opEqTildeEqNatNat(X, Y) = eqListPairNatNat(toList(X), toList(Y)).
+Axiom 18 (eqListPairNatNat_3): eqListPairNatNat(cons(X, Y), nil) = false.
+Axiom 19 (opAppend_2): opAppend(cons(X, Y), Z) = cons(X, opAppend(Y, Z)).
+Axiom 20 (insertNat_1): insertNat(X, Y, leaf) = branch(leaf, X, Y, leaf).
+Axiom 21 (deleteNat_case1_2): deleteNat_case1(false, X, Y, Z, W) = deleteNat_case1_case1(gtNat(X, Y), X, Z, W).
+Axiom 22 (deleteNat_2): deleteNat(X, branch(Y, Z, W, V)) = deleteNat_case1(ltNat(X, Z), X, Z, Y, V).
+Axiom 23 (toList_2): toList(branch(X, Y, Z, W)) = opAppend(toList(X), opAppend(cons(pair(Y, Z), nil), toList(W))).
+Axiom 24 (prop_InsertDeleteWeak_1): prop_InsertDeleteWeak(pair(X, Y), Z, W) = implies(neqNat(X, Z), opEqTildeEqNatNat(insertNat(X, Y, deleteNat(Z, tree(W))), deleteNat(Z, insertNat(X, Y, tree(W))))).
+
+Lemma 25: tree(nil) = nil_1.
+Proof:
+  tree(nil)
+= { by axiom 16 (tree_1) }
+  foldr(uncurry_1(insertNat_0), nil_1, nil)
+= { by axiom 14 (foldr_1) }
+  nil_1
+
+Lemma 26: toList(nil_1) = nil.
+Proof:
+  toList(nil_1)
+= { by axiom 1 (nil_1_1) }
+  toList(leaf)
+= { by axiom 5 (toList_1) }
+  nil
+
+Lemma 27: deleteNat(X, nil_1) = nil_1.
+Proof:
+  deleteNat(X, nil_1)
+= { by axiom 1 (nil_1_1) }
+  deleteNat(X, leaf)
+= { by axiom 8 (deleteNat_1) }
+  leaf
+= { by axiom 1 (nil_1_1) R->L }
+  nil_1
+
+Lemma 28: branch(nil_1, X, Y, nil_1) = insertNat(X, Y, nil_1).
+Proof:
+  branch(nil_1, X, Y, nil_1)
+= { by axiom 1 (nil_1_1) }
+  branch(leaf, X, Y, nil_1)
+= { by axiom 1 (nil_1_1) }
+  branch(leaf, X, Y, leaf)
+= { by axiom 20 (insertNat_1) R->L }
+  insertNat(X, Y, leaf)
+= { by axiom 1 (nil_1_1) R->L }
+  insertNat(X, Y, nil_1)
+
+Goal 1 (prop_InsertDeleteWeak): prop_InsertDeleteWeak(X, Y, Z) = false.
+The goal is true when:
+  X = pair(zero, X)
+  Y = suc(Y)
+  Z = nil
+
+Proof:
+  prop_InsertDeleteWeak(pair(zero, X), suc(Y), nil)
+= { by axiom 24 (prop_InsertDeleteWeak_1) }
+  implies(neqNat(zero, suc(Y)), opEqTildeEqNatNat(insertNat(zero, X, deleteNat(suc(Y), tree(nil))), deleteNat(suc(Y), insertNat(zero, X, tree(nil)))))
+= { by lemma 25 }
+  implies(neqNat(zero, suc(Y)), opEqTildeEqNatNat(insertNat(zero, X, deleteNat(suc(Y), nil_1)), deleteNat(suc(Y), insertNat(zero, X, tree(nil)))))
+= { by lemma 27 }
+  implies(neqNat(zero, suc(Y)), opEqTildeEqNatNat(insertNat(zero, X, nil_1), deleteNat(suc(Y), insertNat(zero, X, tree(nil)))))
+= { by lemma 25 }
+  implies(neqNat(zero, suc(Y)), opEqTildeEqNatNat(insertNat(zero, X, nil_1), deleteNat(suc(Y), insertNat(zero, X, nil_1))))
+= { by axiom 11 (neqNat_1) }
+  implies(not(eqNat(zero, suc(Y))), opEqTildeEqNatNat(insertNat(zero, X, nil_1), deleteNat(suc(Y), insertNat(zero, X, nil_1))))
+= { by axiom 10 (eqNat_2) }
+  implies(not(false), opEqTildeEqNatNat(insertNat(zero, X, nil_1), deleteNat(suc(Y), insertNat(zero, X, nil_1))))
+= { by axiom 2 (not_1) }
+  implies(true, opEqTildeEqNatNat(insertNat(zero, X, nil_1), deleteNat(suc(Y), insertNat(zero, X, nil_1))))
+= { by axiom 6 (implies_2) }
+  opEqTildeEqNatNat(insertNat(zero, X, nil_1), deleteNat(suc(Y), insertNat(zero, X, nil_1)))
+= { by lemma 28 R->L }
+  opEqTildeEqNatNat(insertNat(zero, X, nil_1), deleteNat(suc(Y), branch(nil_1, zero, X, nil_1)))
+= { by axiom 22 (deleteNat_2) }
+  opEqTildeEqNatNat(insertNat(zero, X, nil_1), deleteNat_case1(ltNat(suc(Y), zero), suc(Y), zero, nil_1, nil_1))
+= { by axiom 12 (ltNat_1) }
+  opEqTildeEqNatNat(insertNat(zero, X, nil_1), deleteNat_case1(isLT(compareNat(suc(Y), zero)), suc(Y), zero, nil_1, nil_1))
+= { by axiom 9 (compareNat_3) }
+  opEqTildeEqNatNat(insertNat(zero, X, nil_1), deleteNat_case1(isLT(gt), suc(Y), zero, nil_1, nil_1))
+= { by axiom 3 (isLT_3) }
+  opEqTildeEqNatNat(insertNat(zero, X, nil_1), deleteNat_case1(false, suc(Y), zero, nil_1, nil_1))
+= { by axiom 21 (deleteNat_case1_2) }
+  opEqTildeEqNatNat(insertNat(zero, X, nil_1), deleteNat_case1_case1(gtNat(suc(Y), zero), suc(Y), nil_1, nil_1))
+= { by axiom 13 (gtNat_1) }
+  opEqTildeEqNatNat(insertNat(zero, X, nil_1), deleteNat_case1_case1(isGT(compareNat(suc(Y), zero)), suc(Y), nil_1, nil_1))
+= { by axiom 9 (compareNat_3) }
+  opEqTildeEqNatNat(insertNat(zero, X, nil_1), deleteNat_case1_case1(isGT(gt), suc(Y), nil_1, nil_1))
+= { by axiom 4 (isGT_3) }
+  opEqTildeEqNatNat(insertNat(zero, X, nil_1), deleteNat_case1_case1(true, suc(Y), nil_1, nil_1))
+= { by axiom 15 (deleteNat_case1_case1_1) }
+  opEqTildeEqNatNat(insertNat(zero, X, nil_1), deleteNat(suc(Y), nil_1))
+= { by lemma 27 }
+  opEqTildeEqNatNat(insertNat(zero, X, nil_1), nil_1)
+= { by axiom 17 (opEqTildeEqNatNat_1) }
+  eqListPairNatNat(toList(insertNat(zero, X, nil_1)), toList(nil_1))
+= { by lemma 26 }
+  eqListPairNatNat(toList(insertNat(zero, X, nil_1)), nil)
+= { by lemma 28 R->L }
+  eqListPairNatNat(toList(branch(nil_1, zero, X, nil_1)), nil)
+= { by axiom 23 (toList_2) }
+  eqListPairNatNat(opAppend(toList(nil_1), opAppend(cons(pair(zero, X), nil), toList(nil_1))), nil)
+= { by lemma 26 }
+  eqListPairNatNat(opAppend(nil, opAppend(cons(pair(zero, X), nil), toList(nil_1))), nil)
+= { by axiom 7 (opAppend_1) }
+  eqListPairNatNat(opAppend(cons(pair(zero, X), nil), toList(nil_1)), nil)
+= { by axiom 19 (opAppend_2) }
+  eqListPairNatNat(cons(pair(zero, X), opAppend(nil, toList(nil_1))), nil)
+= { by axiom 7 (opAppend_1) }
+  eqListPairNatNat(cons(pair(zero, X), toList(nil_1)), nil)
+= { by lemma 26 }
+  eqListPairNatNat(cons(pair(zero, X), nil), nil)
+= { by axiom 18 (eqListPairNatNat_3) }
+  false
+
+RESULT: Theorem (the conjecture is true).

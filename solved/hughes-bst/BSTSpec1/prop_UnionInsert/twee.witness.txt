@@ -1,0 +1,8 @@
+property:   prop_UnionInsert
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec1.hs
+prover:     twee
+witness:    prop_UnionInsert _W (toList (insert Zero _Z _T)) (Suc _X, _Y)
+evaluated:  prop_UnionInsert _W [(Zero, _Z)] (Suc _X, _Y)
+input:      prop_UnionInsert undefined [(Zero, undefined)] (Suc undefined, undefined)
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

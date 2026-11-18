@@ -1,0 +1,8 @@
+property:   prop_ArbitraryValid
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec2.hs
+prover:     twee
+witness:    prop_ArbitraryValid (toList (insert Zero _Y (insert Zero _X nil)))
+evaluated:  prop_ArbitraryValid [(Zero, _X), (Zero, _Y)]
+input:      prop_ArbitraryValid [(Zero, undefined), (Zero, undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

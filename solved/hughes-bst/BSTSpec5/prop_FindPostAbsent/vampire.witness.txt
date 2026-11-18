@@ -1,0 +1,7 @@
+property:   prop_FindPostAbsent
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec5.hs
+prover:     vampire
+witness:    prop_FindPostAbsent (Suc Zero) [(Suc Zero, _X0), (Zero, _X1)]
+input:      prop_FindPostAbsent (Suc Zero) [(Suc Zero, undefined), (Zero, undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

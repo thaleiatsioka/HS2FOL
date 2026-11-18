@@ -1,0 +1,7 @@
+property:   prop_InsertPost
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec2.hs
+prover:     vampire
+witness:    prop_InsertPost Zero Zero [(Zero, Suc _X0)] Zero
+input:      prop_InsertPost Zero Zero [(Zero, Suc undefined)] Zero
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

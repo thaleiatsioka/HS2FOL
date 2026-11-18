@@ -1,0 +1,874 @@
+% Preprocessing class: FSMSSMSMSSSNFFN.
+% Configuration: G-E--_207_C18_F1_SE_CS_SP_PI_PS_S2SI
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFMM32-MFFFFFNN
+% partial match(1): FUUSM-FFMM32-MFFFFFNN
+% Configuration: G-E--_208_C12_00_F1_SE_CS_PI_SP_PS_S5PRR_RG_S04AN
+% Initializing proof state
+% Scanning for AC axioms
+%
+%cnf(i_0_14, plain, (nil_1=leaf)).
+%
+%cnf(i_0_2, plain, (isLT(eq)=false)).
+%
+%cnf(i_0_3, plain, (isLT(gt)=false)).
+%
+%cnf(i_0_4, plain, (isGT(lt)=false)).
+%
+%cnf(i_0_5, plain, (isGT(eq)=false)).
+%
+%cnf(i_0_1, plain, (isLT(lt)=true)).
+%
+%cnf(i_0_6, plain, (isGT(gt)=true)).
+%
+%cnf(i_0_25, plain, (findNat(X1,leaf)=nothing)).
+%
+%cnf(i_0_21, plain, (eqMaybeNat(nothing,nothing)=true)).
+%
+%cnf(i_0_37, plain, (compareNat(zero,zero)=eq)).
+%
+%cnf(i_0_7, plain, (fst(pair(X1,X2))=X1)).
+%
+%cnf(i_0_22, plain, (eqMaybeNat(nothing,just(X1))=false)).
+%
+%cnf(i_0_23, plain, (eqMaybeNat(just(X1),nothing)=false)).
+%
+%cnf(i_0_45, negated_conjecture, ($answer(esk1_3(X1,X2,X3))|prop_FindPostPresent(X1,X2,X3)!=false)).
+%
+%cnf(i_0_38, plain, (compareNat(zero,suc(X1))=lt)).
+%
+%cnf(i_0_39, plain, (compareNat(suc(X1),zero)=gt)).
+%
+%cnf(i_0_31, plain, (eqMaybeNat(just(zero),just(zero))=true)).
+%
+%cnf(i_0_8, plain, (snd(pair(X1,X2))=X2)).
+%
+%cnf(i_0_10, plain, (foldr(X1,X2,nil)=X2)).
+%
+%cnf(i_0_30, plain, (findNat_case1_case1(false,X1,X2,X3)=just(X3))).
+%
+%cnf(i_0_29, plain, (findNat_case1_case1(true,X1,X2,X3)=findNat(X1,X2))).
+%
+%cnf(i_0_40, plain, (compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%cnf(i_0_32, plain, (eqMaybeNat(just(zero),just(suc(X1)))=false)).
+%
+%cnf(i_0_33, plain, (eqMaybeNat(just(suc(X1)),just(zero))=false)).
+%
+%cnf(i_0_27, plain, (findNat_case1(true,X1,X2,X3,X4,X5)=findNat(X1,X3))).
+%
+%cnf(i_0_9, plain, (app(app(X1,fst(X2)),snd(X2))=app(uncurry_1(X1),X2))).
+%
+%cnf(i_0_34, plain, (eqMaybeNat(just(suc(X1)),just(suc(X2)))=eqMaybeNat(just(X1),just(X2)))).
+%
+%cnf(i_0_11, plain, (app(app(X1,X3),foldr(X1,X2,X4))=foldr(X1,X2,cons(X3,X4)))).
+%
+%cnf(i_0_15, plain, (app(app(app(insertNat_0,X1),X2),leaf)=branch(leaf,X1,X2,leaf))).
+%
+%cnf(i_0_20, plain, (insertNat_case1_case1(false,X1,X2,X3,X4,X5,X6)=branch(X3,X2,X6,X4))).
+%
+%cnf(i_0_26, plain, (findNat_case1(isLT(compareNat(X1,X3)),X1,X3,X2,X5,X4)=findNat(X1,branch(X2,X3,X4,X5)))).
+%
+%cnf(i_0_18, plain, (insertNat_case1_case1(isGT(compareNat(X1,X2)),X1,X2,X3,X4,X5,X6)=insertNat_case1(false,X1,X2,X3,X4,X5,X6))).
+%
+%cnf(i_0_28, plain, (findNat_case1(false,X1,X2,X3,X4,X5)=findNat_case1_case1(isGT(compareNat(X1,X2)),X1,X4,X5))).
+%
+%cnf(i_0_19, plain, (branch(X3,X2,X6,app(app(app(insertNat_0,X1),X5),X4))=insertNat_case1_case1(true,X1,X2,X3,X4,X5,X6))).
+%
+%cnf(i_0_17, plain, (branch(app(app(app(insertNat_0,X1),X5),X3),X2,X6,X4)=insertNat_case1(true,X1,X2,X3,X4,X5,X6))).
+%
+%cnf(i_0_13, plain, (eqMaybeNat(findNat(X1,app(app(app(insertNat_0,X1),X2),foldr(uncurry_1(insertNat_0),leaf,X3))),just(X2))=prop_FindPostPresent(X1,X2,X3))).
+%
+%cnf(i_0_16, plain, (insertNat_case1(isLT(compareNat(X1,X4)),X1,X4,X3,X6,X2,X5)=app(app(app(insertNat_0,X1),X2),branch(X3,X4,X5,X6)))).
+% Presaturation interreduction done
+%
+%cnf(i_0_14, plain, (nil_1=leaf)).
+%
+%cnf(i_0_2, plain, (isLT(eq)=false)).
+%
+%cnf(i_0_3, plain, (isLT(gt)=false)).
+%
+%cnf(i_0_4, plain, (isGT(lt)=false)).
+%
+%cnf(i_0_5, plain, (isGT(eq)=false)).
+%
+%cnf(i_0_1, plain, (isLT(lt)=true)).
+%
+%cnf(i_0_6, plain, (isGT(gt)=true)).
+%
+%cnf(i_0_25, plain, (findNat(X1,leaf)=nothing)).
+%
+%cnf(i_0_21, plain, (eqMaybeNat(nothing,nothing)=true)).
+%
+%cnf(i_0_37, plain, (compareNat(zero,zero)=eq)).
+%
+%cnf(i_0_22, plain, (eqMaybeNat(nothing,just(X1))=false)).
+%
+%cnf(i_0_23, plain, (eqMaybeNat(just(X1),nothing)=false)).
+%
+%cnf(i_0_7, plain, (fst(pair(X1,X2))=X1)).
+%
+%cnf(i_0_38, plain, (compareNat(zero,suc(X1))=lt)).
+%
+%cnf(i_0_8, plain, (snd(pair(X1,X2))=X2)).
+%
+%cnf(i_0_10, plain, (foldr(X1,X2,nil)=X2)).
+%
+%cnf(i_0_39, plain, (compareNat(suc(X1),zero)=gt)).
+%
+%cnf(i_0_45, negated_conjecture, ($answer(esk1_3(X1,X2,X3))|prop_FindPostPresent(X1,X2,X3)!=false)).
+%
+%cnf(i_0_31, plain, (eqMaybeNat(just(zero),just(zero))=true)).
+%
+%cnf(i_0_30, plain, (findNat_case1_case1(false,X1,X2,X3)=just(X3))).
+%
+%cnf(i_0_32, plain, (eqMaybeNat(just(zero),just(suc(X1)))=false)).
+%
+%cnf(i_0_33, plain, (eqMaybeNat(just(suc(X1)),just(zero))=false)).
+%
+%cnf(i_0_29, plain, (findNat_case1_case1(true,X1,X2,X3)=findNat(X1,X2))).
+%
+%cnf(i_0_40, plain, (compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%cnf(i_0_27, plain, (findNat_case1(true,X1,X2,X3,X4,X5)=findNat(X1,X3))).
+%
+%cnf(i_0_9, plain, (app(app(X1,fst(X2)),snd(X2))=app(uncurry_1(X1),X2))).
+%
+%cnf(i_0_20, plain, (insertNat_case1_case1(false,X1,X2,X3,X4,X5,X6)=branch(X3,X2,X6,X4))).
+%
+%cnf(i_0_34, plain, (eqMaybeNat(just(suc(X1)),just(suc(X2)))=eqMaybeNat(just(X1),just(X2)))).
+%
+%cnf(i_0_15, plain, (app(app(app(insertNat_0,X1),X2),leaf)=branch(leaf,X1,X2,leaf))).
+%
+%cnf(i_0_11, plain, (app(app(X1,X2),foldr(X1,X3,X4))=foldr(X1,X3,cons(X2,X4)))).
+%
+%cnf(i_0_28, plain, (findNat_case1(false,X1,X2,X3,X4,X5)=findNat_case1_case1(isGT(compareNat(X1,X2)),X1,X4,X5))).
+%
+%cnf(i_0_26, plain, (findNat_case1(isLT(compareNat(X1,X2)),X1,X2,X3,X4,X5)=findNat(X1,branch(X3,X2,X5,X4)))).
+%
+%cnf(i_0_18, plain, (insertNat_case1_case1(isGT(compareNat(X1,X2)),X1,X2,X3,X4,X5,X6)=insertNat_case1(false,X1,X2,X3,X4,X5,X6))).
+%
+%cnf(i_0_19, plain, (branch(X1,X2,X3,app(app(app(insertNat_0,X4),X5),X6))=insertNat_case1_case1(true,X4,X2,X1,X6,X5,X3))).
+%
+%cnf(i_0_17, plain, (branch(app(app(app(insertNat_0,X1),X2),X3),X4,X5,X6)=insertNat_case1(true,X1,X4,X3,X6,X2,X5))).
+%
+%cnf(i_0_13, plain, (eqMaybeNat(findNat(X1,app(app(app(insertNat_0,X1),X2),foldr(uncurry_1(insertNat_0),leaf,X3))),just(X2))=prop_FindPostPresent(X1,X2,X3))).
+%
+%cnf(i_0_16, plain, (insertNat_case1(isLT(compareNat(X1,X2)),X1,X2,X3,X4,X5,X6)=app(app(app(insertNat_0,X1),X5),branch(X3,X2,X6,X4)))).
+%
+%cnf(i_0_58, plain, (findNat_case1(false,zero,zero,X1,X2,X3)=just(X3))).
+%
+%cnf(i_0_46, plain, (app(uncurry_1(X1),pair(X2,X3))=app(app(X1,X2),X3))).
+%%
+%cnf(i_0_57, plain, (findNat_case1(false,zero,suc(X1),X2,X3,X4)=just(X4))).
+%
+%cnf(i_0_51, plain, (foldr(X1,X3,cons(X2,nil))=app(app(X1,X2),X3))).
+%
+%cnf(i_0_56, plain, (findNat_case1(false,suc(X1),zero,X2,X3,X4)=findNat(suc(X1),X3))).
+%
+%cnf(i_0_61, plain, (findNat(zero,branch(X2,suc(X1),X4,X3))=findNat(zero,X2))).
+%
+%cnf(i_0_66, plain, (insertNat_case1(false,zero,zero,X1,X2,X3,X4)=branch(X1,zero,X4,X2))).
+%
+%cnf(i_0_48, plain, (branch(leaf,fst(X1),snd(X1),leaf)=app(app(uncurry_1(insertNat_0),X1),leaf))).
+%
+%cnf(i_0_62, plain, (findNat(zero,branch(X1,zero,X3,X2))=just(X3))).
+%
+%cnf(i_0_95, plain, (findNat(zero,insertNat_case1(true,X1,zero,X3,X5,X2,X4))=just(X4))).
+%
+%cnf(i_0_96, plain, (findNat(zero,insertNat_case1_case1(true,X3,zero,X1,X5,X4,X2))=just(X2))).
+%
+%cnf(i_0_65, plain, (insertNat_case1(false,zero,suc(X1),X2,X3,X4,X5)=branch(X2,suc(X1),X5,X3))).
+%
+%cnf(i_0_60, plain, (findNat(suc(X1),branch(X2,zero,X4,X3))=findNat(suc(X1),X3))).
+%
+%cnf(i_0_78, plain, (eqMaybeNat(findNat(X1,branch(leaf,X1,X2,leaf)),just(X2))=prop_FindPostPresent(X1,X2,nil))).
+%
+%cnf(i_0_100, plain, (eqMaybeNat(just(X1),just(X1))=prop_FindPostPresent(zero,X1,nil))).
+%
+%cnf(i_0_101, negated_conjecture, ($answer(esk1_3(zero,X1,nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_104, negated_conjecture, ($answer(esk1_3(zero,zero,nil))|true!=false)).
+%%
+%cnf(i_0_49, plain, (app(foldr(X1,X3,cons(X2,X4)),foldr(app(X1,X2),X5,X6))=foldr(app(X1,X2),X5,cons(foldr(X1,X3,X4),X6)))).
+%
+%cnf(i_0_103, negated_conjecture, ($answer(esk1_3(zero,suc(X1),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_116, negated_conjecture, ($answer(esk1_3(zero,suc(zero),nil))|true!=false)).
+%
+%cnf(i_0_117, negated_conjecture, ($answer(esk1_3(zero,suc(X1),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_115, negated_conjecture, ($answer(esk1_3(zero,suc(suc(X1)),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_120, negated_conjecture, ($answer(esk1_3(zero,suc(suc(zero)),nil))|true!=false)).
+%
+%cnf(i_0_121, negated_conjecture, ($answer(esk1_3(zero,suc(suc(X1)),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_119, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(X1))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_124, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(zero))),nil))|true!=false)).
+%
+%cnf(i_0_50, plain, (branch(leaf,X1,foldr(insertNat_0,X2,X3),leaf)=app(foldr(insertNat_0,X2,cons(X1,X3)),leaf))).
+%
+%cnf(i_0_125, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(X1))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_123, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(X1)))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_134, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(zero)))),nil))|true!=false)).
+%
+%cnf(i_0_135, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(X1)))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_102, plain, (prop_FindPostPresent(zero,suc(X1),nil)=eqMaybeNat(just(X1),just(X1)))).
+%
+%cnf(i_0_139, negated_conjecture, ($answer(esk1_3(zero,X1,nil))|prop_FindPostPresent(zero,suc(X1),nil)!=false)).
+%%%%
+%cnf(i_0_52, plain, (app(branch(leaf,X1,X2,leaf),foldr(app(app(insertNat_0,X1),X2),X3,X4))=foldr(app(app(insertNat_0,X1),X2),X3,cons(leaf,X4)))).
+%
+%cnf(i_0_138, plain, (prop_FindPostPresent(zero,suc(X1),nil)=prop_FindPostPresent(zero,X1,nil))).
+%%%%%%%
+%cnf(i_0_165, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(X1))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%%
+%cnf(i_0_53, plain, (app(app(uncurry_1(X1),X2),foldr(app(X1,fst(X2)),X3,X4))=foldr(app(X1,fst(X2)),X3,cons(snd(X2),X4)))).
+%
+%cnf(i_0_166, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(X1)))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_133, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(X1))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_177, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(zero))))),nil))|true!=false)).
+%%%
+%cnf(i_0_174, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(X1))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_175, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(X1)))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_182, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(zero)))))),nil))|true!=false)).
+%%%
+%cnf(i_0_54, plain, (findNat_case1(false,X1,X2,X3,X4,X5)=findNat_case1(false,X1,X2,X6,X4,X5))).
+%
+%cnf(i_0_126, plain, (findNat(zero,app(foldr(insertNat_0,X2,cons(suc(X1),X3)),leaf))=nothing)).
+%
+%cnf(i_0_180, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(X1))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_198, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(zero))))))),nil))|true!=false)).
+%%%
+%cnf(i_0_128, plain, (findNat(suc(X1),app(foldr(insertNat_0,X2,cons(zero,X3)),leaf))=nothing)).
+%
+%cnf(i_0_179, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_201, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_197, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_206, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))),nil))|true!=false)).
+%
+%cnf(i_0_55, plain, (findNat_case1(false,suc(X1),suc(X2),X3,X4,X5)=findNat_case1_case1(isGT(compareNat(X1,X2)),suc(X1),X4,X5))).
+%%
+%cnf(i_0_92, plain, (findNat(zero,insertNat_case1_case1(true,X4,suc(X2),X1,X6,X5,X3))=findNat(zero,X1))).
+%
+%cnf(i_0_69, plain, (branch(X1,X2,X3,branch(leaf,X4,X5,leaf))=insertNat_case1_case1(true,X4,X2,X1,leaf,X5,X3))).
+%
+%cnf(i_0_75, plain, (branch(branch(leaf,X1,X2,leaf),X3,X4,X5)=insertNat_case1(true,X1,X3,leaf,X5,X2,X4))).
+%%
+%cnf(i_0_213, plain, (findNat_case1(false,suc(suc(X1)),suc(zero),X2,X3,X4)=findNat(suc(suc(X1)),X3))).
+%
+%cnf(i_0_203, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_204, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_234, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(zero))))))))),nil))|true!=false)).
+%%
+%cnf(i_0_59, plain, (findNat_case1(isLT(compareNat(X1,X2)),suc(X1),suc(X2),X3,X4,X5)=findNat(suc(X1),branch(X3,suc(X2),X5,X4)))).
+%
+%cnf(i_0_238, plain, (findNat(suc(zero),branch(X2,suc(suc(X1)),X4,X3))=findNat(suc(zero),X2))).
+%
+%cnf(i_0_89, plain, (app(app(X1,X2),app(app(X1,X4),X3))=foldr(X1,X3,cons(X2,cons(X4,nil))))).
+%
+%cnf(i_0_97, plain, (findNat(suc(X1),insertNat_case1(true,X2,zero,X4,X6,X3,X5))=findNat(suc(X1),X6))).
+%%%%%
+%cnf(i_0_231, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_232, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_63, plain, (insertNat_case1_case1(isGT(compareNat(X1,X2)),suc(X1),suc(X2),X3,X4,X5,X6)=insertNat_case1(false,suc(X1),suc(X2),X3,X4,X5,X6))).
+%
+%cnf(i_0_278, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))))),nil))|true!=false)).
+%
+%cnf(i_0_237, plain, (findNat(suc(suc(X1)),branch(X2,suc(zero),X4,X3))=findNat(suc(suc(X1)),X3))).
+%
+%cnf(i_0_64, plain, (insertNat_case1(false,suc(X1),zero,X2,X3,X4,X5)=insertNat_case1_case1(true,suc(X1),zero,X2,X3,X4,X5))).
+%%
+%cnf(i_0_283, plain, (insertNat_case1(false,suc(zero),suc(zero),X1,X2,X3,X4)=branch(X1,suc(zero),X4,X2))).
+%
+%cnf(i_0_127, plain, (findNat(zero,app(foldr(insertNat_0,X1,cons(zero,X2)),leaf))=just(foldr(insertNat_0,X1,X2)))).
+%%%
+%cnf(i_0_275, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_276, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_67, plain, (branch(X1,X2,X3,app(foldr(insertNat_0,X5,cons(X4,X6)),X7))=insertNat_case1_case1(true,X4,X2,X1,X7,foldr(insertNat_0,X5,X6),X3))).
+%
+%cnf(i_0_293, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero))))))))))),nil))|true!=false)).
+%%%
+%cnf(i_0_239, plain, (findNat(suc(zero),branch(X1,suc(zero),X3,X2))=just(X3))).
+%
+%cnf(i_0_304, plain, (eqMaybeNat(just(X1),just(X1))=prop_FindPostPresent(suc(zero),X1,nil))).
+%
+%cnf(i_0_313, plain, (prop_FindPostPresent(suc(zero),X1,nil)=prop_FindPostPresent(zero,X1,nil))).
+%
+%cnf(i_0_326, negated_conjecture, ($answer(esk1_3(suc(zero),X1,nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_327, negated_conjecture, ($answer(esk1_3(suc(zero),suc(X1),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_328, negated_conjecture, ($answer(esk1_3(suc(zero),X1,nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_332, negated_conjecture, ($answer(esk1_3(suc(zero),zero,nil))|true!=false)).
+%%%
+%cnf(i_0_330, negated_conjecture, ($answer(esk1_3(suc(zero),suc(X1),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_335, negated_conjecture, ($answer(esk1_3(suc(zero),suc(zero),nil))|true!=false)).
+%%%
+%cnf(i_0_329, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(X1)),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_337, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(X1))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_334, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(X1)),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_342, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(zero)),nil))|true!=false)).
+%%
+%cnf(i_0_68, plain, (insertNat_case1_case1(true,fst(X4),X2,X1,X5,snd(X4),X3)=branch(X1,X2,X3,app(app(uncurry_1(insertNat_0),X4),X5)))).
+%
+%cnf(i_0_339, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(X1)))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_340, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(X1))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_351, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(zero))),nil))|true!=false)).
+%%
+%cnf(i_0_348, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(X1))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_349, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(X1)))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_356, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(zero)))),nil))|true!=false)).
+%%
+%cnf(i_0_70, plain, (insertNat_case1_case1(true,X4,X2,X1,foldr(app(insertNat_0,X4),X6,X7),X5,X3)=branch(X1,X2,X3,foldr(app(insertNat_0,X4),X6,cons(X5,X7))))).
+%
+%cnf(i_0_353, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(X1)))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_354, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(X1))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_366, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(zero))))),nil))|true!=false)).
+%%
+%cnf(i_0_363, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(X1))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_364, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(X1)))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_371, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(zero)))))),nil))|true!=false)).
+%%
+%cnf(i_0_71, plain, (insertNat_case1_case1(true,X4,X2,X1,snd(X5),fst(X5),X3)=branch(X1,X2,X3,app(uncurry_1(app(insertNat_0,X4)),X5)))).
+%
+%cnf(i_0_368, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_369, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(X1))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_380, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(zero))))))),nil))|true!=false)).
+%%
+%cnf(i_0_305, plain, (findNat(suc(zero),insertNat_case1(true,X1,suc(zero),leaf,X4,X2,X3))=just(X3))).
+%%
+%cnf(i_0_377, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_378, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_385, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))),nil))|true!=false)).
+%
+%cnf(i_0_72, plain, (insertNat_case1(true,X1,X4,X3,app(app(app(insertNat_0,X6),X7),X8),X2,X5)=insertNat_case1_case1(true,X6,X4,app(app(app(insertNat_0,X1),X2),X3),X8,X7,X5))).
+%%
+%cnf(i_0_307, plain, (findNat(suc(zero),insertNat_case1(true,X1,suc(zero),X3,X5,X2,X4))=just(X4))).
+%
+%cnf(i_0_308, plain, (findNat(suc(zero),insertNat_case1_case1(true,X3,suc(zero),X1,X5,X4,X2))=just(X2))).
+%%%
+%cnf(i_0_241, plain, (findNat(suc(zero),app(foldr(insertNat_0,X2,cons(suc(suc(X1)),X3)),leaf))=nothing)).
+%%
+%cnf(i_0_382, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_383, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_405, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(zero))))))))),nil))|true!=false)).
+%
+%cnf(i_0_73, plain, (branch(app(foldr(insertNat_0,X2,cons(X1,X3)),X4),X5,X6,X7)=insertNat_case1(true,X1,X5,X4,X7,foldr(insertNat_0,X2,X3),X6))).
+%%%
+%cnf(i_0_74, plain, (insertNat_case1(true,fst(X1),X3,X2,X5,snd(X1),X4)=branch(app(app(uncurry_1(insertNat_0),X1),X2),X3,X4,X5))).
+%
+%cnf(i_0_77, plain, (insertNat_case1(true,X1,X3,snd(X2),X5,fst(X2),X4)=branch(app(uncurry_1(app(insertNat_0,X1)),X2),X3,X4,X5))).
+%
+%cnf(i_0_266, plain, (foldr(X1,foldr(X1,X4,X5),cons(X2,cons(X3,nil)))=foldr(X1,X4,cons(X2,cons(X3,X5))))).
+%
+%cnf(i_0_285, plain, (findNat(suc(suc(X1)),app(foldr(insertNat_0,X2,cons(suc(zero),X3)),leaf))=nothing)).
+%
+%cnf(i_0_402, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_403, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_450, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))))),nil))|true!=false)).
+%
+%cnf(i_0_76, plain, (insertNat_case1(true,X1,X5,foldr(app(insertNat_0,X1),X3,X4),X7,X2,X6)=branch(foldr(app(insertNat_0,X1),X3,cons(X2,X4)),X5,X6,X7))).
+%%
+%cnf(i_0_282, plain, (insertNat_case1(false,suc(zero),suc(suc(X1)),X2,X3,X4,X5)=branch(X2,suc(suc(X1)),X5,X3))).
+%
+%cnf(i_0_220, plain, (findNat(zero,insertNat_case1(true,X1,suc(X3),leaf,X5,X2,X4))=findNat(zero,branch(leaf,X1,X2,leaf)))).
+%%
+%cnf(i_0_86, plain, (app(app(app(X1,X2),X3),foldr(uncurry_1(X1),X4,X5))=foldr(uncurry_1(X1),X4,cons(pair(X2,X3),X5)))).
+%
+%cnf(i_0_306, plain, (findNat(suc(zero),app(foldr(insertNat_0,X1,cons(suc(zero),X2)),leaf))=just(foldr(insertNat_0,X1,X2)))).
+%
+%cnf(i_0_290, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_447, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_291, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_495, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))))))),nil))|true!=false)).
+%
+%cnf(i_0_13, plain, (eqMaybeNat(findNat(X1,foldr(uncurry_1(insertNat_0),leaf,cons(pair(X1,X2),X3))),just(X2))=prop_FindPostPresent(X1,X2,X3))).
+%%
+%cnf(i_0_487, plain, (foldr(uncurry_1(X1),X3,cons(pair(fst(X2),snd(X2)),X4))=foldr(uncurry_1(X1),X3,cons(X2,X4)))).
+%%%
+%cnf(i_0_217, plain, (findNat(suc(X1),insertNat_case1_case1(true,X4,zero,X2,leaf,X5,X3))=findNat(suc(X1),branch(leaf,X4,X5,leaf)))).
+%
+%cnf(i_0_243, plain, (findNat(suc(zero),insertNat_case1_case1(true,X4,suc(suc(X2)),X1,X6,X5,X3))=findNat(suc(zero),X1))).
+%%
+%cnf(i_0_448, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_512, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero))))))))))),nil))|true!=false)).
+%%
+%cnf(i_0_81, plain, (insertNat_case1(isLT(compareNat(X1,X2)),suc(X1),suc(X2),X3,X4,X5,X6)=app(app(app(insertNat_0,suc(X1)),X5),branch(X3,suc(X2),X6,X4)))).
+%%
+%cnf(i_0_84, plain, (app(app(app(insertNat_0,zero),X3),branch(X1,zero,X4,X2))=branch(X1,zero,X4,X2))).
+%
+%cnf(i_0_535, plain, (app(foldr(insertNat_0,X1,cons(zero,X2)),branch(X3,zero,X4,X5))=branch(X3,zero,X4,X5))).
+%
+%cnf(i_0_91, plain, (findNat(zero,insertNat_case1(true,X1,suc(X4),X3,X6,X2,X5))=findNat(zero,app(app(app(insertNat_0,X1),X2),X3)))).
+%
+%cnf(i_0_131, plain, (app(foldr(insertNat_0,X2,cons(X1,cons(X3,nil))),leaf)=branch(leaf,X1,app(app(insertNat_0,X3),X2),leaf))).
+%%%
+%cnf(i_0_490, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_492, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_491, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_82, plain, (app(app(app(insertNat_0,suc(X1)),X4),branch(X2,zero,X5,X3))=insertNat_case1_case1(true,suc(X1),zero,X2,X3,X4,X5))).
+%
+%cnf(i_0_576, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero))))))))))))),nil))|true!=false)).
+%
+%cnf(i_0_286, plain, (findNat(suc(suc(X1)),insertNat_case1(true,X2,suc(zero),X4,X6,X3,X5))=findNat(suc(suc(X1)),X6))).
+%
+%cnf(i_0_525, plain, (insertNat_case1(true,zero,X5,branch(X2,zero,X3,X4),X7,X1,X6)=branch(branch(X2,zero,X3,X4),X5,X6,X7))).
+%
+%cnf(i_0_526, plain, (insertNat_case1_case1(true,zero,X2,X1,branch(X5,zero,X6,X7),X4,X3)=branch(X1,X2,X3,branch(X5,zero,X6,X7)))).
+%
+%cnf(i_0_98, plain, (findNat(suc(X1),insertNat_case1_case1(true,X4,zero,X2,X6,X5,X3))=findNat(suc(X1),app(app(app(insertNat_0,X4),X5),X6)))).
+%%
+%cnf(i_0_493, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_630, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))))))),nil))|true!=false)).
+%%%
+%cnf(i_0_83, plain, (app(app(app(insertNat_0,zero),X4),branch(X2,suc(X1),X5,X3))=insertNat_case1(true,zero,suc(X1),X2,X3,X4,X5))).
+%%%%
+%cnf(i_0_281, plain, (insertNat_case1(false,suc(suc(X1)),suc(zero),X2,X3,X4,X5)=insertNat_case1_case1(true,suc(suc(X1)),suc(zero),X2,X3,X4,X5))).
+%
+%cnf(i_0_256, plain, (foldr(X1,app(app(X1,X4),X5),cons(X2,cons(X3,nil)))=foldr(X1,X5,cons(X2,cons(X3,cons(X4,nil)))))).
+%
+%cnf(i_0_99, plain, (eqMaybeNat(findNat(fst(X1),app(app(uncurry_1(insertNat_0),X1),leaf)),just(snd(X1)))=prop_FindPostPresent(fst(X1),snd(X1),nil))).
+%
+%cnf(i_0_571, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_573, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_572, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_703, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))))))))),nil))|true!=false)).
+%
+%cnf(i_0_106, plain, (app(foldr(foldr(X1,X2,cons(X3,X4)),X5,cons(foldr(app(X1,X3),X6,X7),X8)),foldr(foldr(app(X1,X3),X6,cons(foldr(X1,X2,X4),X7)),X9,X10))=foldr(foldr(app(X1,X3),X6,cons(foldr(X1,X2,X4),X7)),X9,cons(foldr(foldr(X1,X2,cons(X3,X4)),X5,X8),X10)))).
+%%
+%cnf(i_0_264, plain, (app(app(app(insertNat_0,X1),X2),branch(leaf,X1,X3,leaf))=foldr(app(insertNat_0,X1),leaf,cons(X2,cons(X3,nil))))).
+%
+%cnf(i_0_762, plain, (foldr(app(insertNat_0,zero),leaf,cons(X1,cons(X2,nil)))=branch(leaf,zero,X2,leaf))).
+%
+%cnf(i_0_771, plain, (foldr(app(insertNat_0,zero),leaf,cons(X1,cons(X2,cons(X3,nil))))=branch(leaf,zero,X3,leaf))).
+%%%
+%cnf(i_0_574, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_789, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero))))))))))))),nil))|true!=false)).
+%%%
+%cnf(i_0_107, plain, (app(foldr(app(X1,X3),X5,cons(foldr(X1,X2,X4),X6)),foldr(foldr(X1,X2,cons(X3,X4)),X7,X8))=foldr(foldr(X1,X2,cons(X3,X4)),X7,cons(foldr(app(X1,X3),X5,X6),X8)))).
+%
+%cnf(i_0_517, plain, (app(app(app(insertNat_0,suc(zero)),X3),branch(X1,suc(zero),X4,X2))=branch(X1,suc(zero),X4,X2))).
+%
+%cnf(i_0_851, plain, (foldr(app(insertNat_0,suc(zero)),leaf,cons(X1,cons(X2,nil)))=branch(leaf,suc(zero),X2,leaf))).
+%
+%cnf(i_0_524, plain, (foldr(app(insertNat_0,zero),branch(X3,zero,X4,X5),cons(X1,cons(X2,nil)))=branch(X3,zero,X4,X5))).
+%%%
+%cnf(i_0_864, plain, (foldr(app(insertNat_0,suc(zero)),leaf,cons(X1,cons(X2,cons(X3,nil))))=branch(leaf,suc(zero),X3,leaf))).
+%%
+%cnf(i_0_698, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_700, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_699, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_108, plain, (app(foldr(uncurry_1(X1),X2,cons(pair(X3,X4),X5)),foldr(app(app(X1,X3),X4),X6,X7))=foldr(app(app(X1,X3),X4),X6,cons(foldr(uncurry_1(X1),X2,X5),X7)))).
+%
+%cnf(i_0_912, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero))))))))))))))),nil))|true!=false)).
+%%
+%cnf(i_0_485, plain, (foldr(uncurry_1(X1),X5,cons(pair(X2,foldr(X1,X3,X4)),X6))=app(foldr(X1,X3,cons(X2,X4)),foldr(uncurry_1(X1),X5,X6)))).
+%%%%
+%cnf(i_0_701, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_985, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))))))))),nil))|true!=false)).
+%%%
+%cnf(i_0_109, plain, (app(foldr(app(app(insertNat_0,X1),X2),X3,cons(leaf,X4)),foldr(branch(leaf,X1,X2,leaf),X5,X6))=foldr(branch(leaf,X1,X2,leaf),X5,cons(foldr(app(app(insertNat_0,X1),X2),X3,X4),X6)))).
+%
+%cnf(i_0_781, plain, (foldr(app(insertNat_0,zero),leaf,cons(X1,cons(X2,cons(X3,cons(X4,nil)))))=branch(leaf,zero,X4,leaf))).
+%
+%cnf(i_0_258, plain, (app(app(uncurry_1(X1),X2),app(app(app(X1,X3),X4),X5))=foldr(uncurry_1(X1),X5,cons(X2,cons(pair(X3,X4),nil))))).
+%
+%cnf(i_0_1073, plain, (foldr(uncurry_1(insertNat_0),leaf,cons(X1,cons(pair(X2,X3),nil)))=app(app(uncurry_1(insertNat_0),X1),branch(leaf,X2,X3,leaf)))).
+%
+%cnf(i_0_269, plain, (app(app(app(X1,X2),X3),app(app(uncurry_1(X1),X4),X5))=foldr(uncurry_1(X1),X5,cons(pair(X2,X3),cons(X4,nil))))).
+%
+%cnf(i_0_442, plain, (foldr(X1,foldr(X1,X3,X4),cons(X2,cons(X5,cons(X6,nil))))=foldr(X1,X3,cons(X2,cons(X5,cons(X6,X4)))))).
+%
+%cnf(i_0_503, plain, (eqMaybeNat(findNat(fst(X1),foldr(uncurry_1(insertNat_0),leaf,cons(X1,X2))),just(snd(X1)))=prop_FindPostPresent(fst(X1),snd(X1),X2))).
+%%
+%cnf(i_0_907, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_909, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_908, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%%
+%cnf(i_0_1212, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))))))))))),nil))|true!=false)).
+%%
+%cnf(i_0_500, plain, (foldr(uncurry_1(X1),X3,cons(X2,cons(pair(fst(X4),snd(X4)),X5)))=foldr(uncurry_1(X1),X3,cons(X2,cons(X4,X5))))).
+%
+%cnf(i_0_1227, plain, (prop_FindPostPresent(X1,X2,cons(pair(fst(X3),snd(X3)),X4))=prop_FindPostPresent(X1,X2,cons(X3,X4)))).
+%
+%cnf(i_0_1235, negated_conjecture, ($answer(esk1_3(X1,X2,cons(pair(fst(X3),snd(X3)),X4)))|prop_FindPostPresent(X1,X2,cons(X3,X4))!=false)).
+%%%%
+%cnf(i_0_910, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_1240, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero))))))))))))))),nil))|true!=false)).
+%
+%cnf(i_0_111, plain, (app(foldr(app(X1,fst(X2)),X3,cons(snd(X2),X4)),foldr(app(uncurry_1(X1),X2),X5,X6))=foldr(app(uncurry_1(X1),X2),X5,cons(foldr(app(X1,fst(X2)),X3,X4),X6)))).
+%%%
+%cnf(i_0_859, plain, (app(foldr(insertNat_0,X1,cons(suc(zero),X2)),branch(X3,suc(zero),X4,X5))=branch(X3,suc(zero),X4,X5))).
+%
+%cnf(i_0_224, plain, (insertNat_case1(true,X1,X3,leaf,branch(leaf,X5,X6,leaf),X2,X4)=insertNat_case1_case1(true,X5,X3,branch(leaf,X1,X2,leaf),leaf,X6,X4))).
+%
+%cnf(i_0_240, plain, (findNat(suc(zero),insertNat_case1(true,X1,suc(suc(X3)),leaf,X5,X2,X4))=findNat(suc(zero),branch(leaf,X1,X2,leaf)))).
+%
+%cnf(i_0_267, plain, (app(app(X1,X2),app(uncurry_1(X1),X3))=foldr(X1,snd(X3),cons(X2,cons(fst(X3),nil))))).
+%%%
+%cnf(i_0_1207, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_1209, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_113, plain, (app(foldr(X1,X2,cons(X3,X4)),app(app(app(X1,X3),X6),X5))=foldr(app(X1,X3),X5,cons(foldr(X1,X2,X4),cons(X6,nil))))).
+%%
+%cnf(i_0_531, plain, (app(app(app(insertNat_0,zero),X1),insertNat_case1(true,X2,zero,X4,X6,X3,X5))=insertNat_case1(true,X2,zero,X4,X6,X3,X5))).
+%
+%cnf(i_0_532, plain, (app(app(app(insertNat_0,zero),X1),insertNat_case1_case1(true,X4,zero,X2,X6,X5,X3))=insertNat_case1_case1(true,X4,zero,X2,X6,X5,X3))).
+%%
+%cnf(i_0_288, plain, (findNat(suc(suc(X1)),insertNat_case1_case1(true,X4,suc(zero),X2,leaf,X5,X3))=findNat(suc(suc(X1)),branch(leaf,X4,X5,leaf)))).
+%%
+%cnf(i_0_1208, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_1542, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero))))))))))))))))),nil))|true!=false)).
+%%
+%cnf(i_0_1210, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_129, plain, (eqMaybeNat(findNat(X1,app(foldr(insertNat_0,X2,cons(X1,X3)),leaf)),just(foldr(insertNat_0,X2,X3)))=prop_FindPostPresent(X1,foldr(insertNat_0,X2,X3),nil))).
+%%%
+%cnf(i_0_1545, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))))))))))),nil))|true!=false)).
+%
+%cnf(i_0_242, plain, (findNat(suc(zero),insertNat_case1(true,X1,suc(suc(X4)),X3,X6,X2,X5))=findNat(suc(zero),app(app(app(insertNat_0,X1),X2),X3)))).
+%
+%cnf(i_0_469, plain, (branch(foldr(uncurry_1(insertNat_0),X3,cons(pair(X1,X2),X4)),X5,X6,X7)=insertNat_case1(true,X1,X5,foldr(uncurry_1(insertNat_0),X3,X4),X7,X2,X6))).
+%%%%
+%cnf(i_0_1391, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_1393, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_152, plain, (app(foldr(branch(leaf,X1,X2,leaf),X3,cons(foldr(app(app(insertNat_0,X1),X2),X4,X5),X6)),foldr(foldr(app(app(insertNat_0,X1),X2),X4,cons(leaf,X5)),X7,X8))=foldr(foldr(app(app(insertNat_0,X1),X2),X4,cons(leaf,X5)),X7,cons(foldr(branch(leaf,X1,X2,leaf),X3,X6),X8)))).
+%
+%cnf(i_0_897, plain, (foldr(app(insertNat_0,suc(zero)),leaf,cons(X1,cons(X2,cons(X3,cons(X4,nil)))))=branch(leaf,suc(zero),X4,leaf))).
+%
+%cnf(i_0_470, plain, (branch(X1,X2,X3,foldr(uncurry_1(insertNat_0),X6,cons(pair(X4,X5),X7)))=insertNat_case1_case1(true,X4,X2,X1,foldr(uncurry_1(insertNat_0),X6,X7),X5,X3))).
+%
+%cnf(i_0_585, plain, (insertNat_case1(true,suc(X1),X6,branch(X3,zero,X4,X5),X8,X2,X7)=branch(insertNat_case1_case1(true,suc(X1),zero,X3,X5,X2,X4),X6,X7,X8))).
+%
+%cnf(i_0_586, plain, (insertNat_case1_case1(true,suc(X4),X2,X1,branch(X6,zero,X7,X8),X5,X3)=branch(X1,X2,X3,insertNat_case1_case1(true,suc(X4),zero,X6,X8,X5,X7)))).
+%
+%cnf(i_0_639, plain, (insertNat_case1(true,zero,X6,branch(X2,suc(X3),X4,X5),X8,X1,X7)=branch(insertNat_case1(true,zero,suc(X3),X2,X5,X1,X4),X6,X7,X8))).
+%%
+%cnf(i_0_1392, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_1732, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))))))))))))),nil))|true!=false)).
+%%
+%cnf(i_0_1394, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%%
+%cnf(i_0_1735, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero))))))))))))))))),nil))|true!=false)).
+%
+%cnf(i_0_640, plain, (insertNat_case1_case1(true,zero,X2,X1,branch(X5,suc(X6),X7,X8),X4,X3)=branch(X1,X2,X3,insertNat_case1(true,zero,suc(X6),X5,X8,X4,X7)))).
+%%%
+%cnf(i_0_848, plain, (insertNat_case1(true,suc(zero),X5,branch(X2,suc(zero),X3,X4),X7,X1,X6)=branch(branch(X2,suc(zero),X3,X4),X5,X6,X7))).
+%%%%
+%cnf(i_0_1594, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_1596, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_157, plain, (app(branch(leaf,X1,X2,leaf),app(app(app(app(insertNat_0,X1),X2),X4),X3))=foldr(app(app(insertNat_0,X1),X2),X3,cons(leaf,cons(X4,nil))))).
+%%
+%cnf(i_0_849, plain, (insertNat_case1_case1(true,suc(zero),X2,X1,branch(X5,suc(zero),X6,X7),X4,X3)=branch(X1,X2,X3,branch(X5,suc(zero),X6,X7)))).
+%
+%cnf(i_0_287, plain, (findNat(suc(suc(X1)),insertNat_case1_case1(true,X4,suc(zero),X2,X6,X5,X3))=findNat(suc(suc(X1)),app(app(app(insertNat_0,X4),X5),X6)))).
+%%%
+%cnf(i_0_529, plain, (app(app(app(insertNat_0,zero),X1),app(foldr(insertNat_0,X2,cons(zero,X3)),leaf))=app(foldr(insertNat_0,X2,cons(zero,X3)),leaf))).
+%
+%cnf(i_0_1595, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_1868, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero))))))))))))))))))),nil))|true!=false)).
+%%
+%cnf(i_0_1597, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_168, plain, (app(foldr(app(uncurry_1(X1),X2),X3,cons(foldr(app(X1,fst(X2)),X4,X5),X6)),foldr(foldr(app(X1,fst(X2)),X4,cons(snd(X2),X5)),X7,X8))=foldr(foldr(app(X1,fst(X2)),X4,cons(snd(X2),X5)),X7,cons(foldr(app(uncurry_1(X1),X2),X3,X6),X8)))).
+%
+%cnf(i_0_1871, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))))))))))))),nil))|true!=false)).
+%
+%cnf(i_0_547, plain, (app(foldr(insertNat_0,X1,cons(zero,X2)),insertNat_case1(true,X3,zero,X5,X7,X4,X6))=insertNat_case1(true,X3,zero,X5,X7,X4,X6))).
+%
+%cnf(i_0_548, plain, (app(foldr(insertNat_0,X1,cons(zero,X2)),insertNat_case1_case1(true,X5,zero,X3,X7,X6,X4))=insertNat_case1_case1(true,X5,zero,X3,X7,X6,X4))).
+%%%
+%cnf(i_0_767, plain, (foldr(app(insertNat_0,fst(X1)),leaf,cons(snd(X1),cons(X2,nil)))=app(app(uncurry_1(insertNat_0),X1),branch(leaf,fst(X1),X2,leaf)))).
+%%%%
+%cnf(i_0_1769, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_877, plain, (foldr(app(insertNat_0,zero),branch(X2,zero,X3,X4),cons(X1,cons(X5,cons(X6,nil))))=branch(X2,zero,X3,X4))).
+%%
+%cnf(i_0_595, plain, (app(foldr(insertNat_0,X2,cons(suc(X1),X3)),branch(X4,zero,X5,X6))=insertNat_case1_case1(true,suc(X1),zero,X4,X6,foldr(insertNat_0,X2,X3),X5))).
+%
+%cnf(i_0_649, plain, (app(foldr(insertNat_0,X1,cons(zero,X2)),branch(X3,suc(X4),X5,X6))=insertNat_case1(true,zero,suc(X4),X3,X6,foldr(insertNat_0,X1,X2),X5))).
+%
+%cnf(i_0_172, plain, (foldr(app(X1,fst(X2)),X3,cons(snd(X2),cons(X4,nil)))=foldr(uncurry_1(X1),X3,cons(X2,cons(pair(fst(X2),X4),nil))))).
+%
+%cnf(i_0_1011, plain, (foldr(app(insertNat_0,zero),leaf,cons(X1,cons(X2,cons(X3,cons(X4,cons(X5,nil))))))=branch(leaf,zero,X5,leaf))).
+%
+%cnf(i_0_1771, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_1770, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2118, negated_conjecture, ($answer(esk1_3(zero,suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))))))))))))))),nil))|true!=false)).
+%%
+%cnf(i_0_212, plain, (findNat_case1(false,suc(suc(X1)),suc(suc(X2)),X3,X4,X5)=findNat_case1_case1(isGT(compareNat(X1,X2)),suc(suc(X1)),X4,X5))).
+%
+%cnf(i_0_2126, plain, (findNat_case1(false,suc(suc(suc(X1))),suc(suc(zero)),X2,X3,X4)=findNat(suc(suc(suc(X1))),X3))).
+%
+%cnf(i_0_2097, plain, (foldr(uncurry_1(X1),X4,cons(pair(X2,X3),cons(pair(X2,X5),nil)))=foldr(app(X1,X2),X4,cons(X3,cons(X5,nil))))).
+%%
+%cnf(i_0_2152, plain, (foldr(app(X1,fst(X3)),X2,cons(X4,cons(snd(X3),nil)))=foldr(uncurry_1(X1),X2,cons(pair(fst(X3),X4),cons(X3,nil))))).
+%%
+%cnf(i_0_847, plain, (foldr(app(insertNat_0,suc(zero)),branch(X3,suc(zero),X4,X5),cons(X1,cons(X2,nil)))=branch(X3,suc(zero),X4,X5))).
+%
+%cnf(i_0_1772, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2212, negated_conjecture, ($answer(esk1_3(suc(zero),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero))))))))))))))))))),nil))|true!=false)).
+%%%
+%cnf(i_0_214, plain, (insertNat_case1_case1(true,X6,X4,app(app(app(insertNat_0,X1),X2),X3),leaf,X7,X5)=insertNat_case1(true,X1,X4,X3,branch(leaf,X6,X7,leaf),X2,X5))).
+%%%
+%cnf(i_0_483, plain, (app(branch(leaf,X1,X2,leaf),foldr(uncurry_1(app(insertNat_0,X1)),X3,X4))=foldr(uncurry_1(app(insertNat_0,X1)),X3,cons(pair(X2,leaf),X4)))).
+%
+%cnf(i_0_236, plain, (findNat_case1(isLT(compareNat(X1,X2)),suc(suc(X1)),suc(suc(X2)),X3,X4,X5)=findNat(suc(suc(X1)),branch(X3,suc(suc(X2)),X5,X4)))).
+%
+%cnf(i_0_2268, plain, (findNat(suc(suc(zero)),branch(X2,suc(suc(suc(X1))),X4,X3))=findNat(suc(suc(zero)),X2))).
+%
+%cnf(i_0_2271, plain, (findNat(suc(suc(zero)),app(foldr(insertNat_0,X2,cons(suc(suc(suc(X1))),X3)),leaf))=nothing)).
+%
+%cnf(i_0_2267, plain, (findNat(suc(suc(suc(X1))),branch(X2,suc(suc(zero)),X4,X3))=findNat(suc(suc(suc(X1))),X3))).
+%
+%cnf(i_0_2286, plain, (findNat(suc(suc(suc(X1))),app(foldr(insertNat_0,X2,cons(suc(suc(zero)),X3)),leaf))=nothing)).
+%
+%cnf(i_0_2269, plain, (findNat(suc(suc(zero)),branch(X1,suc(suc(zero)),X3,X2))=just(X3))).
+%
+%cnf(i_0_2300, plain, (eqMaybeNat(just(X1),just(X1))=prop_FindPostPresent(suc(suc(zero)),X1,nil))).
+%%
+%cnf(i_0_2312, plain, (prop_FindPostPresent(suc(suc(zero)),X1,nil)=prop_FindPostPresent(zero,X1,nil))).
+%
+%cnf(i_0_2354, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),X1,nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_2356, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),X1,nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2358, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),zero,nil))|true!=false)).
+%%%
+%cnf(i_0_2355, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(X1),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_2360, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(X1)),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_2357, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(X1),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2365, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(zero),nil))|true!=false)).
+%
+%cnf(i_0_245, plain, (app(foldr(app(X1,X2),X3,cons(app(app(X1,X4),X5),X6)),foldr(foldr(X1,X5,cons(X2,cons(X4,nil))),X7,X8))=foldr(foldr(X1,X5,cons(X2,cons(X4,nil))),X7,cons(foldr(app(X1,X2),X3,X6),X8)))).
+%%%
+%cnf(i_0_2363, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(X1)),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2510, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(zero)),nil))|true!=false)).
+%%
+%cnf(i_0_2362, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(X1))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_2512, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(X1)))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_2509, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(X1))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2517, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(zero))),nil))|true!=false)).
+%
+%cnf(i_0_246, plain, (app(app(app(X1,X2),X3),app(foldr(X1,X5,cons(X2,cons(X4,nil))),X6))=foldr(app(X1,X2),X6,cons(X3,cons(app(app(X1,X4),X5),nil))))).
+%%%
+%cnf(i_0_2515, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(X1)))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2640, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(zero)))),nil))|true!=false)).
+%%
+%cnf(i_0_2514, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(X1))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_2642, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(X1)))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_2639, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(X1))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2647, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(zero))))),nil))|true!=false)).
+%%%%
+%cnf(i_0_2645, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(X1)))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2650, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(zero)))))),nil))|true!=false)).
+%%
+%cnf(i_0_2644, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(X1))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_2652, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_2649, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(X1))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2657, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(zero))))))),nil))|true!=false)).
+%%%%
+%cnf(i_0_2655, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2660, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))),nil))|true!=false)).
+%%
+%cnf(i_0_2654, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_2662, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_2659, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2667, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(zero))))))))),nil))|true!=false)).
+%
+%cnf(i_0_252, plain, (app(branch(leaf,X1,app(app(insertNat_0,X2),X3),leaf),foldr(foldr(insertNat_0,X3,cons(X1,cons(X2,nil))),X4,X5))=foldr(foldr(insertNat_0,X3,cons(X1,cons(X2,nil))),X4,cons(leaf,X5)))).
+%%%
+%cnf(i_0_2305, plain, (findNat(suc(suc(zero)),insertNat_case1(true,X1,suc(suc(zero)),X3,X5,X2,X4))=just(X4))).
+%
+%cnf(i_0_2306, plain, (findNat(suc(suc(zero)),insertNat_case1_case1(true,X3,suc(suc(zero)),X1,X5,X4,X2))=just(X2))).
+%
+%cnf(i_0_2665, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2715, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))))),nil))|true!=false)).
+%%
+%cnf(i_0_2664, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_2717, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%%%
+%cnf(i_0_2714, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2722, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero))))))))))),nil))|true!=false)).
+%%
+%cnf(i_0_2719, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_2720, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2727, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))))))),nil))|true!=false)).
+%%
+%cnf(i_0_254, plain, (insertNat_case1(true,X1,X5,app(app(app(insertNat_0,X1),X3),X4),X7,X2,X6)=branch(foldr(app(insertNat_0,X1),X4,cons(X2,cons(X3,nil))),X5,X6,X7))).
+%
+%cnf(i_0_2302, plain, (findNat(suc(suc(zero)),app(foldr(insertNat_0,X1,cons(suc(suc(zero)),X2)),leaf))=just(foldr(insertNat_0,X1,X2)))).
+%%
+%cnf(i_0_2725, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2767, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero))))))))))))),nil))|true!=false)).
+%%
+%cnf(i_0_2724, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_2769, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_2766, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2774, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))))))))),nil))|true!=false)).
+%
+%cnf(i_0_255, plain, (insertNat_case1_case1(true,X4,X2,X1,app(app(app(insertNat_0,X4),X6),X7),X5,X3)=branch(X1,X2,X3,foldr(app(insertNat_0,X4),X7,cons(X5,cons(X6,nil)))))).
+%%
+%cnf(i_0_2275, plain, (findNat(suc(suc(zero)),insertNat_case1_case1(true,X4,suc(suc(suc(X2))),X1,X6,X5,X3))=findNat(suc(suc(zero)),X1))).
+%%
+%cnf(i_0_2289, plain, (findNat(suc(suc(suc(X1))),insertNat_case1(true,X2,suc(suc(zero)),X4,X6,X3,X5))=findNat(suc(suc(suc(X1))),X6))).
+%%%%
+%cnf(i_0_2771, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_2772, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2827, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero))))))))))))))),nil))|true!=false)).
+%
+%cnf(i_0_257, plain, (app(app(branch(leaf,X1,X2,leaf),X3),app(foldr(app(app(insertNat_0,X1),X2),X4,cons(leaf,X5)),X6))=foldr(branch(leaf,X1,X2,leaf),X6,cons(X3,cons(foldr(app(app(insertNat_0,X1),X2),X4,X5),nil))))).
+%%%%%%%%
+%cnf(i_0_2824, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_2825, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_2875, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))))))))))),nil))|true!=false)).
+%
+%cnf(i_0_259, plain, (app(app(foldr(X1,X2,cons(X3,X4)),X5),app(foldr(app(X1,X3),X6,cons(foldr(X1,X2,X4),X7)),X8))=foldr(foldr(X1,X2,cons(X3,X4)),X8,cons(X5,cons(foldr(app(X1,X3),X6,X7),nil))))).
+%%%
+%cnf(i_0_262, plain, (app(app(app(X1,X2),X3),app(foldr(X1,X4,cons(X2,X5)),X6))=foldr(app(X1,X2),X6,cons(X3,cons(foldr(X1,X4,X5),nil))))).
+%%
+%cnf(i_0_476, plain, (app(app(app(app(X1,X2),X3),X4),foldr(uncurry_1(uncurry_1(X1)),X5,X6))=foldr(uncurry_1(uncurry_1(X1)),X5,cons(pair(pair(X2,X3),X4),X6)))).
+%%%
+%cnf(i_0_2872, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%
+%cnf(i_0_2873, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_3278, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero))))))))))))))))),nil))|true!=false)).
+%
+%cnf(i_0_260, plain, (app(app(app(app(insertNat_0,X1),X2),X3),app(branch(leaf,X1,X2,leaf),X4))=foldr(app(app(insertNat_0,X1),X2),X4,cons(X3,cons(leaf,nil))))).
+%%
+%cnf(i_0_3267, plain, (foldr(uncurry_1(uncurry_1(insertNat_0)),X3,cons(pair(pair(X1,X2),leaf),X4))=app(branch(leaf,X1,X2,leaf),foldr(uncurry_1(uncurry_1(insertNat_0)),X3,X4)))).
+%
+%cnf(i_0_3259, plain, (foldr(uncurry_1(uncurry_1(X1)),X4,cons(pair(pair(fst(X2),snd(X2)),X3),X5))=foldr(uncurry_1(uncurry_1(X1)),X4,cons(pair(X2,X3),X5)))).
+%
+%cnf(i_0_610, plain, (insertNat_case1(true,zero,X1,insertNat_case1(true,X2,zero,X4,X6,X3,X5),X7,X8,X9)=branch(insertNat_case1(true,X2,zero,X4,X6,X3,X5),X1,X9,X7))).
+%
+%cnf(i_0_611, plain, (insertNat_case1(true,zero,X1,insertNat_case1_case1(true,X4,zero,X2,X6,X5,X3),X7,X8,X9)=branch(insertNat_case1_case1(true,X4,zero,X2,X6,X5,X3),X1,X9,X7))).
+%%%
+%cnf(i_0_3275, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1))))))))))))))))))),nil))|prop_FindPostPresent(zero,X1,nil)!=false)).
+%%
+%cnf(i_0_3276, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(X1)))))))))))))))))),nil))|eqMaybeNat(just(X1),just(X1))!=false)).
+%
+%cnf(i_0_261, plain, (app(app(app(uncurry_1(X1),X2),X3),app(foldr(app(X1,fst(X2)),X4,cons(snd(X2),X5)),X6))=foldr(app(uncurry_1(X1),X2),X6,cons(X3,cons(foldr(app(X1,fst(X2)),X4,X5),nil))))).
+%
+%cnf(i_0_3434, negated_conjecture, ($answer(esk1_3(suc(suc(zero)),suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))))))))))))),nil))|true!=false)).
+%
+%cnf(i_0_621, plain, (insertNat_case1_case1(true,zero,X1,X2,insertNat_case1(true,X3,zero,X5,X7,X4,X6),X8,X9)=branch(X2,X1,X9,insertNat_case1(true,X3,zero,X5,X7,X4,X6)))).
+%
+%cnf(i_0_622, plain, (insertNat_case1_case1(true,zero,X1,X2,insertNat_case1_case1(true,X5,zero,X3,X7,X6,X4),X8,X9)=branch(X2,X1,X9,insertNat_case1_case1(true,X5,zero,X3,X7,X6,X4)))).
+%
+%cnf(i_0_670, plain, (foldr(X1,app(app(X1,X3),X4),cons(X2,cons(X5,cons(X6,nil))))=foldr(X1,X4,cons(X2,cons(X5,cons(X6,cons(X3,nil))))))).
+%%
+%cnf(i_0_2144, plain, (eqMaybeNat(findNat(X1,foldr(app(insertNat_0,X1),leaf,cons(X2,cons(X3,nil)))),just(X2))=prop_FindPostPresent(X1,X2,cons(pair(X1,X3),nil)))).
+%
+%cnf(i_0_3674, plain, (prop_FindPostPresent(zero,X1,cons(pair(zero,X2),nil))=eqMaybeNat(just(X2),just(X1)))).
+%
+%cnf(i_0_3675, negated_conjecture, ($answer(esk1_3(zero,X1,cons(pair(zero,X2),nil)))|eqMaybeNat(just(X2),just(X1))!=false)).
+%% SZS status Theorem
+% SZS answers Tuple [[zero, zero, cons(pair(zero,suc(X1)),nil)]|_]
+
+% Proof found!

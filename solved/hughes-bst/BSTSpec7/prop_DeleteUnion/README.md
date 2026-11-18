@@ -1,0 +1,20 @@
+# prop_DeleteUnion (hughes-bst/BSTSpec7)
+
+| prover | SZS status | seconds | witness |
+|---|---|---|---|
+| eprover | ResourceOut | 10.13 | - |
+| twee | Theorem | 11.98 | CONFIRMED |
+| vampire | Timeout | 9.95 | - |
+
+Counterexample (decoded from the twee witness, checked with GHC):
+
+```
+property:   prop_DeleteUnion
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec7.hs
+prover:     twee
+witness:    prop_DeleteUnion Zero (toList (insert Zero _W nil)) (toList (insert Zero _X (insert (Suc _Z) _Y nil)))
+evaluated:  prop_DeleteUnion Zero [(Zero, _W)] [(Zero, _X), (Suc _Z, _Y)]
+input:      prop_DeleteUnion Zero [(Zero, undefined)] [(Zero, undefined), (Suc undefined, undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed
+```

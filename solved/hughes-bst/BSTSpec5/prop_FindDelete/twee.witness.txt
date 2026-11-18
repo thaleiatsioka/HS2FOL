@@ -1,0 +1,7 @@
+property:   prop_FindDelete
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec5.hs
+prover:     twee
+witness:    prop_FindDelete Zero Zero [(Zero, _X), (Suc _Y, _Z)]
+input:      prop_FindDelete Zero Zero [(Zero, undefined), (Suc undefined, undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

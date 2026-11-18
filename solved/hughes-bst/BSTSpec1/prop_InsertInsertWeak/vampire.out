@@ -1,0 +1,183 @@
+% Running in auto input_syntax mode. Trying TPTP
+% Detected formulas, will run a generic FOF schedule.
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_tgt=full:sil=2000:alpa=true:random_seed=3299997390:st=5:i=107:sd=1:qa=plain:ss=on:er=filter:ssat=axiom_1 on problem for (1ds/107Mi)
+%  found proof, printing to "/tmp/vampire-proof-22391-22393"...
+% SZS answers Tuple [∀X3,X2,X1,X0.[pair(suc(X0),X1),pair(zero,X2),X3]|_] for problem
+% ...printing done.
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for problem
+% SZS output start Proof for problem
+fof(f1,axiom,(
+  not(false) = true),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertInsertWeak/problem.p','not_1')).
+fof(f3,axiom,(
+  ! [X0] : (opAnd(false,X0) = false)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertInsertWeak/problem.p','opAnd_1')).
+fof(f6,axiom,(
+  ! [X0] : (implies(true,X0) = X0)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertInsertWeak/problem.p','implies_2')).
+fof(f10,axiom,(
+  ! [X0] : (opAppend(nil,X0) = X0)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertInsertWeak/problem.p','opAppend_1')).
+fof(f11,axiom,(
+  ! [X0, X1, X2] : (opAppend(cons(X0,X1),X2) = cons(X0,opAppend(X1,X2)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertInsertWeak/problem.p','opAppend_2')).
+fof(f15,axiom,(
+  ! [X0, X1, X2, X3, X4] : (prop_InsertInsertWeak(pair(X0,X1),pair(X2,X3),X4) = implies(neqNat(X0,X2),opEqTildeEqNatNat(insert(X0,X1,insert(X2,X3,tree(X4))),insert(X2,X3,insert(X0,X1,tree(X4))))))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertInsertWeak/problem.p','prop_InsertInsertWeak_1')).
+fof(f17,axiom,(
+  ! [X0, X1, X2] : (insert(X0,X1,X2) = branch(leaf,X0,X1,leaf))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertInsertWeak/problem.p','insert_1')).
+fof(f18,axiom,(
+  toList(leaf) = nil),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertInsertWeak/problem.p','toList_1')).
+fof(f19,axiom,(
+  ! [X0, X1, X2, X3] : (toList(branch(X0,X1,X2,X3)) = opAppend(toList(X0),opAppend(cons(pair(X1,X2),nil),toList(X3))))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertInsertWeak/problem.p','toList_2')).
+fof(f22,axiom,(
+  ! [X0] : (eqNat(suc(X0),zero) = false)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertInsertWeak/problem.p','eqNat_3')).
+fof(f24,axiom,(
+  ! [X0, X1] : (neqNat(X0,X1) = not(eqNat(X0,X1)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertInsertWeak/problem.p','neqNat_1')).
+fof(f25,axiom,(
+  ! [X0, X1] : (opEqTildeEqNatNat(X0,X1) = eqListPairNatNat(toList(X0),toList(X1)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertInsertWeak/problem.p','opEqTildeEqNatNat_1')).
+fof(f26,axiom,(
+  eqListPairNatNat(nil,nil) = true),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertInsertWeak/problem.p','eqListPairNatNat_1')).
+fof(f29,axiom,(
+  ! [X0, X1, X2, X3] : (eqListPairNatNat(cons(X0,X1),cons(X2,X3)) = opAnd(eqPairNatNat(X0,X2),eqListPairNatNat(X1,X3)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertInsertWeak/problem.p','eqListPairNatNat_4')).
+fof(f30,axiom,(
+  ! [X0, X1, X2, X3] : (eqPairNatNat(pair(X0,X1),pair(X2,X3)) = opAnd(eqNat(X0,X2),eqNat(X1,X3)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertInsertWeak/problem.p','eqPairNatNat_1')).
+fof(f35,conjecture,(
+  ? [X0, X1, X2] : (prop_InsertInsertWeak(X0,X1,X2) = false)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertInsertWeak/problem.p','prop_InsertInsertWeak')).
+fof(f36,negated_conjecture,(
+  ~ ? [X0, X1, X2] : (prop_InsertInsertWeak(X0,X1,X2) = false)),
+  inference(conjecture_negation,[status(cth)],[f35])).
+fof(f37,plain,(
+  ~ ? [X0, X1, X2] : ((prop_InsertInsertWeak(X0,X1,X2) = false) & ans0(X0,X1,X2))),
+  inference(answer_literal_injection,[],[f36])).
+fof(f38,plain,(
+  ! [X0, X1, X2] : ((false != prop_InsertInsertWeak(X0,X1,X2)) | ~ans0(X0,X1,X2))),
+  inference(ennf_transformation,[],[f37])).
+fof(f39,plain,(
+  not(false) = true),
+  inference(cnf_transformation,[],[f1])).
+fof(f41,plain,(
+  (! [X0] : (false = opAnd(false,X0)))),
+  inference(cnf_transformation,[],[f3])).
+fof(f44,plain,(
+  (! [X0] : (implies(true,X0) = X0))),
+  inference(cnf_transformation,[],[f6])).
+fof(f48,plain,(
+  (! [X0] : (opAppend(nil,X0) = X0))),
+  inference(cnf_transformation,[],[f10])).
+fof(f49,plain,(
+  (! [X0,X1,X2] : (opAppend(cons(X0,X1),X2) = cons(X0,opAppend(X1,X2))))),
+  inference(cnf_transformation,[],[f11])).
+fof(f53,plain,(
+  (! [X0,X1,X2,X3,X4] : (prop_InsertInsertWeak(pair(X0,X1),pair(X2,X3),X4) = implies(neqNat(X0,X2),opEqTildeEqNatNat(insert(X0,X1,insert(X2,X3,tree(X4))),insert(X2,X3,insert(X0,X1,tree(X4)))))))),
+  inference(cnf_transformation,[],[f15])).
+fof(f55,plain,(
+  (! [X0,X1,X2] : (insert(X0,X1,X2) = branch(leaf,X0,X1,leaf)))),
+  inference(cnf_transformation,[],[f17])).
+fof(f56,plain,(
+  nil = toList(leaf)),
+  inference(cnf_transformation,[],[f18])).
+fof(f57,plain,(
+  (! [X0,X1,X2,X3] : (toList(branch(X0,X1,X2,X3)) = opAppend(toList(X0),opAppend(cons(pair(X1,X2),nil),toList(X3)))))),
+  inference(cnf_transformation,[],[f19])).
+fof(f60,plain,(
+  (! [X0] : (false = eqNat(suc(X0),zero)))),
+  inference(cnf_transformation,[],[f22])).
+fof(f62,plain,(
+  (! [X0,X1] : (neqNat(X0,X1) = not(eqNat(X0,X1))))),
+  inference(cnf_transformation,[],[f24])).
+fof(f63,plain,(
+  (! [X0,X1] : (opEqTildeEqNatNat(X0,X1) = eqListPairNatNat(toList(X0),toList(X1))))),
+  inference(cnf_transformation,[],[f25])).
+fof(f64,plain,(
+  true = eqListPairNatNat(nil,nil)),
+  inference(cnf_transformation,[],[f26])).
+fof(f67,plain,(
+  (! [X0,X1,X2,X3] : (eqListPairNatNat(cons(X0,X1),cons(X2,X3)) = opAnd(eqPairNatNat(X0,X2),eqListPairNatNat(X1,X3))))),
+  inference(cnf_transformation,[],[f29])).
+fof(f68,plain,(
+  (! [X0,X1,X2,X3] : (eqPairNatNat(pair(X0,X1),pair(X2,X3)) = opAnd(eqNat(X0,X2),eqNat(X1,X3))))),
+  inference(cnf_transformation,[],[f30])).
+fof(f73,plain,(
+  (! [X0,X1,X2] : (false != prop_InsertInsertWeak(X0,X1,X2) | ~ans0(X0,X1,X2)))),
+  inference(cnf_transformation,[],[f38])).
+fof(f76,plain,(
+  (! [X0,X1,X2,X3,X4] : (prop_InsertInsertWeak(pair(X0,X1),pair(X2,X3),X4) = implies(not(eqNat(X0,X2)),eqListPairNatNat(toList(branch(leaf,X0,X1,leaf)),toList(branch(leaf,X2,X3,leaf))))))),
+  inference(definition_unfolding,[],[f53,f62,f63,f55,f55])).
+fof(f182,plain,(
+  (! [X0,X1] : (eqListPairNatNat(cons(X0,nil),cons(X1,nil)) = opAnd(eqPairNatNat(X0,X1),true)))),
+  inference(superposition,[],[f67,f64])).
+fof(f342,plain,(
+  (! [X0,X1,X2] : (toList(branch(leaf,X0,X1,X2)) = opAppend(nil,opAppend(cons(pair(X0,X1),nil),toList(X2)))))),
+  inference(superposition,[],[f57,f56])).
+fof(f347,plain,(
+  (! [X0,X1,X2] : (opAppend(cons(pair(X0,X1),nil),toList(X2)) = toList(branch(leaf,X0,X1,X2))))),
+  inference(forward_demodulation,[],[f342,f48])).
+fof(f349,plain,(
+  (! [X0,X1,X2] : (toList(branch(leaf,X0,X1,X2)) = cons(pair(X0,X1),opAppend(nil,toList(X2)))))),
+  inference(forward_demodulation,[],[f347,f49])).
+fof(f350,plain,(
+  (! [X0,X1,X2] : (toList(branch(leaf,X0,X1,X2)) = cons(pair(X0,X1),toList(X2))))),
+  inference(forward_demodulation,[],[f349,f48])).
+fof(f803,plain,(
+  (! [X0,X1,X2,X3,X4] : (false != implies(not(eqNat(X0,X1)),eqListPairNatNat(toList(branch(leaf,X0,X2,leaf)),toList(branch(leaf,X1,X3,leaf)))) | ~ans0(pair(X0,X2),pair(X1,X3),X4)))),
+  inference(superposition,[],[f73,f76])).
+fof(f804,plain,(
+  (! [X0,X1,X2,X3,X4] : (false != implies(not(eqNat(X0,X1)),eqListPairNatNat(toList(branch(leaf,X0,X2,leaf)),cons(pair(X1,X3),toList(leaf)))) | ~ans0(pair(X0,X2),pair(X1,X3),X4)))),
+  inference(forward_demodulation,[],[f803,f350])).
+fof(f821,plain,(
+  (! [X0,X1,X2,X3,X4] : (false != implies(not(eqNat(X0,X1)),eqListPairNatNat(toList(branch(leaf,X0,X2,leaf)),cons(pair(X1,X3),nil))) | ~ans0(pair(X0,X2),pair(X1,X3),X4)))),
+  inference(forward_demodulation,[],[f804,f56])).
+fof(f838,plain,(
+  (! [X0,X1,X2,X3,X4] : (false != implies(not(eqNat(X0,X1)),eqListPairNatNat(cons(pair(X0,X2),toList(leaf)),cons(pair(X1,X3),nil))) | ~ans0(pair(X0,X2),pair(X1,X3),X4)))),
+  inference(forward_demodulation,[],[f821,f350])).
+fof(f849,plain,(
+  (! [X0,X1,X2,X3,X4] : (false != implies(not(eqNat(X0,X1)),eqListPairNatNat(cons(pair(X0,X2),nil),cons(pair(X1,X3),nil))) | ~ans0(pair(X0,X2),pair(X1,X3),X4)))),
+  inference(forward_demodulation,[],[f838,f56])).
+fof(f860,plain,(
+  (! [X0,X1,X2,X3,X4] : (false != implies(not(eqNat(X0,X1)),opAnd(eqPairNatNat(pair(X0,X2),pair(X1,X3)),true)) | ~ans0(pair(X0,X2),pair(X1,X3),X4)))),
+  inference(forward_demodulation,[],[f849,f182])).
+fof(f870,plain,(
+  (! [X0,X1,X2,X3,X4] : (false != implies(not(eqNat(X0,X1)),opAnd(opAnd(eqNat(X0,X1),eqNat(X2,X3)),true)) | ~ans0(pair(X0,X2),pair(X1,X3),X4)))),
+  inference(forward_demodulation,[],[f860,f68])).
+fof(f892,plain,(
+  (! [X0,X1,X2,X3] : (false != implies(not(false),opAnd(opAnd(false,eqNat(X1,X2)),true)) | ~ans0(pair(suc(X0),X1),pair(zero,X2),X3)))),
+  inference(superposition,[],[f870,f60])).
+fof(f898,plain,(
+  (! [X0,X1,X2,X3] : (false != implies(not(false),opAnd(false,true)) | ~ans0(pair(suc(X0),X1),pair(zero,X2),X3)))),
+  inference(forward_demodulation,[],[f892,f41])).
+fof(f901,plain,(
+  (! [X0,X1,X2,X3] : (false != implies(not(false),false) | ~ans0(pair(suc(X0),X1),pair(zero,X2),X3)))),
+  inference(forward_demodulation,[],[f898,f41])).
+fof(f904,plain,(
+  (! [X0,X1,X2,X3] : (false != implies(true,false) | ~ans0(pair(suc(X0),X1),pair(zero,X2),X3)))),
+  inference(forward_demodulation,[],[f901,f39])).
+fof(f907,plain,(
+  (! [X0,X1,X2,X3] : (~ans0(pair(suc(X0),X1),pair(zero,X2),X3)))),
+  inference(forward_subsumption_resolution,[],[f904,f44])).
+fof(f908,plain,(
+  (! [X0,X1,X2] : (ans0(X0,X1,X2)))),
+  introduced(theory,[answer_literal_resolver],[])).
+fof(f909,plain,(
+  $false),
+  inference(unit_resulting_resolution,[],[f907,f908])).
+% SZS output end Proof for problem
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation
+% Time elapsed: 0.005 s
+% Peak memory usage: 10 MB
+% Success in time 0.007 s

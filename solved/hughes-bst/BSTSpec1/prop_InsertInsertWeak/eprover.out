@@ -1,0 +1,212 @@
+% Preprocessing class: FSMSSMSSSSSNFFN.
+% Configuration: G-E--_208_C18_F1_SE_CS_SOS_SP_PS_S5PRR_RG_S04AN
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFMM31-DFFFFFNN
+% partial match(1): FHUSM-FFMM21-DFFFFFNN
+% Configuration: new_ho_10
+% Initializing proof state
+% Scanning for AC axioms
+%
+%cnf(i_0_16, plain, (nil_1=leaf)).
+%
+%cnf(i_0_1, plain, (not(false)=true)).
+%
+%cnf(i_0_2, plain, (not(true)=false)).
+%
+%cnf(i_0_3, plain, (opAnd(false,X1)=false)).
+%
+%cnf(i_0_18, plain, (toList(leaf)=nil)).
+%
+%cnf(i_0_5, plain, (implies(false,X1)=true)).
+%
+%cnf(i_0_20, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_26, plain, (eqListPairNatNat(nil,nil)=true)).
+%
+%cnf(i_0_4, plain, (opAnd(true,X1)=X1)).
+%
+%cnf(i_0_6, plain, (implies(true,X1)=X1)).
+%
+%cnf(i_0_10, plain, (opAppend(nil,X1)=X1)).
+%
+%cnf(i_0_7, plain, (fst(pair(X1,X2))=X1)).
+%
+%cnf(i_0_21, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_22, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_35, negated_conjecture, ($answer(esk1_3(X1,X2,X3))|prop_InsertInsertWeak(X1,X2,X3)!=false)).
+%
+%cnf(i_0_8, plain, (snd(pair(X1,X2))=X2)).
+%
+%cnf(i_0_12, plain, (foldr(X1,X2,nil)=X2)).
+%
+%cnf(i_0_27, plain, (eqListPairNatNat(nil,cons(X1,X2))=false)).
+%
+%cnf(i_0_28, plain, (eqListPairNatNat(cons(X1,X2),nil)=false)).
+%
+%cnf(i_0_23, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_9, plain, (app(app(X1,fst(X2)),snd(X2))=app(uncurry_1(X1),X2))).
+%
+%cnf(i_0_11, plain, (opAppend(cons(X1,X2),X3)=cons(X1,opAppend(X2,X3)))).
+%
+%cnf(i_0_29, plain, (opAnd(eqPairNatNat(X1,X3),eqListPairNatNat(X2,X4))=eqListPairNatNat(cons(X1,X2),cons(X3,X4)))).
+%
+%cnf(i_0_30, plain, (eqPairNatNat(pair(X1,X2),pair(X3,X4))=opAnd(eqNat(X1,X3),eqNat(X2,X4)))).
+%
+%cnf(i_0_13, plain, (app(app(X1,X3),foldr(X1,X2,X4))=foldr(X1,X2,cons(X3,X4)))).
+%
+%cnf(i_0_17, plain, (app(app(app(insert_0,X1),X2),X3)=branch(leaf,X1,X2,leaf))).
+%
+%cnf(i_0_19, plain, (opAppend(toList(X1),cons(pair(X2,X3),toList(X4)))=toList(branch(X1,X2,X3,X4)))).
+%
+%cnf(i_0_15, plain, (implies(not(eqNat(X1,X3)),eqListPairNatNat(toList(app(app(app(insert_0,X1),X2),false)),toList(app(app(app(insert_0,X3),X4),false))))=prop_InsertInsertWeak(pair(X1,X2),pair(X3,X4),X5))).
+% Presaturation interreduction done
+%
+%cnf(i_0_16, plain, (nil_1=leaf)).
+%
+%cnf(i_0_1, plain, (not(false)=true)).
+%
+%cnf(i_0_2, plain, (not(true)=false)).
+%
+%cnf(i_0_3, plain, (opAnd(false,X1)=false)).
+%
+%cnf(i_0_18, plain, (toList(leaf)=nil)).
+%
+%cnf(i_0_5, plain, (implies(false,X1)=true)).
+%
+%cnf(i_0_4, plain, (opAnd(true,X1)=X1)).
+%
+%cnf(i_0_6, plain, (implies(true,X1)=X1)).
+%
+%cnf(i_0_20, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_26, plain, (eqListPairNatNat(nil,nil)=true)).
+%
+%cnf(i_0_10, plain, (opAppend(nil,X1)=X1)).
+%
+%cnf(i_0_21, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_22, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_35, negated_conjecture, ($answer(esk1_3(X1,X2,X3))|prop_InsertInsertWeak(X1,X2,X3)!=false)).
+%
+%cnf(i_0_7, plain, (fst(pair(X1,X2))=X1)).
+%
+%cnf(i_0_8, plain, (snd(pair(X1,X2))=X2)).
+%
+%cnf(i_0_12, plain, (foldr(X1,X2,nil)=X2)).
+%
+%cnf(i_0_27, plain, (eqListPairNatNat(nil,cons(X1,X2))=false)).
+%
+%cnf(i_0_28, plain, (eqListPairNatNat(cons(X1,X2),nil)=false)).
+%
+%cnf(i_0_23, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_11, plain, (opAppend(cons(X1,X2),X3)=cons(X1,opAppend(X2,X3)))).
+%
+%cnf(i_0_9, plain, (app(app(X1,fst(X2)),snd(X2))=app(uncurry_1(X1),X2))).
+%
+%cnf(i_0_29, plain, (opAnd(eqPairNatNat(X1,X2),eqListPairNatNat(X3,X4))=eqListPairNatNat(cons(X1,X3),cons(X2,X4)))).
+%
+%cnf(i_0_30, plain, (eqPairNatNat(pair(X1,X2),pair(X3,X4))=opAnd(eqNat(X1,X3),eqNat(X2,X4)))).
+%
+%cnf(i_0_13, plain, (app(app(X1,X2),foldr(X1,X3,X4))=foldr(X1,X3,cons(X2,X4)))).
+%
+%cnf(i_0_17, plain, (app(app(app(insert_0,X1),X2),X3)=app(app(app(insert_0,X1),X2),false))).
+%
+%cnf(i_0_19, plain, (opAppend(toList(X1),cons(pair(X2,X3),toList(X4)))=toList(branch(X1,X2,X3,X4)))).
+%
+%cnf(i_0_15, plain, (implies(not(eqNat(X1,X2)),eqListPairNatNat(toList(app(app(app(insert_0,X1),X3),false)),toList(app(app(app(insert_0,X2),X4),false))))=prop_InsertInsertWeak(pair(X1,X3),pair(X2,X4),X5))).
+%
+%cnf(i_0_36, plain, (app(uncurry_1(X1),pair(X2,X3))=app(app(X1,X2),X3))).
+%
+%cnf(i_0_70, plain, (prop_InsertInsertWeak(pair(zero,X1),pair(zero,X2),X3)=true)).
+%
+%cnf(i_0_72, negated_conjecture, ($answer(esk1_3(pair(zero,X1),pair(zero,X2),X3))|true!=false)).
+%%
+%cnf(i_0_43, plain, (foldr(X1,X3,cons(X2,nil))=app(app(X1,X2),X3))).
+%
+%cnf(i_0_40, plain, (opAnd(eqPairNatNat(X1,X2),true)=eqListPairNatNat(cons(X1,nil),cons(X2,nil)))).
+%
+%cnf(i_0_56, plain, (toList(branch(leaf,X1,X2,X3))=cons(pair(X1,X2),toList(X3)))).
+%
+%cnf(i_0_51, plain, (app(app(app(insert_0,X1),fst(X2)),false)=app(uncurry_1(app(insert_0,X1)),X2))).
+%
+%cnf(i_0_54, plain, (app(app(uncurry_1(insert_0),X1),X2)=app(app(uncurry_1(insert_0),X1),false))).
+%
+%cnf(i_0_55, plain, (opAppend(toList(X1),cons(pair(X2,X3),nil))=toList(branch(X1,X2,X3,leaf)))).
+%
+%cnf(i_0_50, plain, (foldr(app(insert_0,X1),X3,cons(X2,X4))=app(app(app(insert_0,X1),X2),false))).
+%
+%cnf(i_0_38, plain, (opAnd(eqPairNatNat(X1,X2),false)=eqListPairNatNat(cons(X1,cons(X3,X4)),cons(X2,nil)))).
+%
+%cnf(i_0_39, plain, (eqListPairNatNat(cons(X1,cons(false,false)),cons(X2,nil))=eqListPairNatNat(cons(X1,nil),cons(X2,cons(X3,X4))))).
+%
+%cnf(i_0_90, plain, (app(app(uncurry_1(insert_0),fst(X1)),false)=app(uncurry_1(uncurry_1(insert_0)),X1))).
+%
+%cnf(i_0_105, plain, (app(app(uncurry_1(insert_0),fst(X1)),X2)=app(uncurry_1(uncurry_1(insert_0)),X1))).
+%
+%cnf(i_0_89, plain, (foldr(uncurry_1(insert_0),X2,cons(X1,X3))=app(app(uncurry_1(insert_0),X1),false))).
+%
+%cnf(i_0_94, plain, (toList(app(app(app(insert_0,X1),X2),false))=cons(pair(X1,X2),nil))).
+%
+%cnf(i_0_121, plain, (toList(app(uncurry_1(app(insert_0,X1)),X2))=cons(pair(X1,fst(X2)),nil))).
+%
+%cnf(i_0_15, plain, (implies(not(eqNat(X1,X2)),eqListPairNatNat(cons(pair(X1,X3),nil),cons(pair(X2,X4),nil)))=prop_InsertInsertWeak(pair(X1,X3),pair(X2,X4),X5))).
+%%%
+%cnf(i_0_47, plain, (app(app(app(insert_0,X1),X2),X3)=app(app(app(insert_0,X1),X2),X4))).
+%
+%cnf(i_0_129, plain, (prop_InsertInsertWeak(pair(X1,X3),pair(X2,X4),X6)=prop_InsertInsertWeak(pair(X1,X3),pair(X2,X4),X5))).
+%
+%cnf(i_0_127, negated_conjecture, ($answer(esk1_3(pair(X1,X2),pair(X3,X4),X5))|prop_InsertInsertWeak(pair(X1,X2),pair(X3,X4),false)!=false)).
+%
+%cnf(i_0_41, plain, (opAnd(opAnd(eqNat(X1,X3),eqNat(X2,X4)),eqListPairNatNat(X5,X6))=eqListPairNatNat(cons(pair(X1,X2),X5),cons(pair(X3,X4),X6)))).
+%%
+%cnf(i_0_152, negated_conjecture, ($answer(esk1_3(pair(X1,X2),pair(X3,X4),X5))|prop_InsertInsertWeak(pair(X1,X2),pair(X3,X4),X6)!=false)).
+%%%
+%cnf(i_0_119, plain, (cons(pair(fst(X1),snd(X1)),nil)=toList(app(app(uncurry_1(insert_0),X1),false)))).
+%
+%cnf(i_0_131, plain, (prop_InsertInsertWeak(pair(suc(X1),X2),pair(zero,X3),X4)=eqListPairNatNat(cons(pair(suc(X1),X2),nil),cons(pair(zero,X3),nil)))).
+%
+%cnf(i_0_132, plain, (prop_InsertInsertWeak(pair(zero,X2),pair(suc(X1),X3),X4)=eqListPairNatNat(cons(pair(zero,X2),nil),cons(pair(suc(X1),X3),nil)))).
+%
+%cnf(i_0_44, plain, (app(app(uncurry_1(X1),X2),foldr(app(X1,fst(X2)),X3,X4))=foldr(app(X1,fst(X2)),X3,cons(snd(X2),X4)))).
+%
+%cnf(i_0_42, plain, (app(foldr(X1,X3,cons(X2,X4)),foldr(app(X1,X2),X5,X6))=foldr(app(X1,X2),X5,cons(foldr(X1,X3,X4),X6)))).
+%
+%cnf(i_0_130, plain, (implies(not(eqNat(X1,X2)),eqListPairNatNat(cons(pair(suc(X1),X3),nil),cons(pair(suc(X2),X4),nil)))=prop_InsertInsertWeak(pair(suc(X1),X3),pair(suc(X2),X4),X5))).
+%%
+%cnf(i_0_71, plain, (app(app(app(X1,X2),X3),foldr(uncurry_1(X1),X4,X5))=foldr(uncurry_1(X1),X4,cons(pair(X2,X3),X5)))).
+%
+%cnf(i_0_186, plain, (eqListPairNatNat(nil,toList(app(app(uncurry_1(insert_0),X1),false)))=false)).
+%%%
+%cnf(i_0_282, plain, (eqListPairNatNat(nil,toList(app(uncurry_1(uncurry_1(insert_0)),X1)))=false)).
+%
+%cnf(i_0_187, plain, (eqListPairNatNat(toList(app(app(uncurry_1(insert_0),X1),false)),nil)=false)).
+%
+%cnf(i_0_249, plain, (prop_InsertInsertWeak(pair(suc(zero),X1),pair(suc(zero),X2),X3)=true)).
+%%%
+%cnf(i_0_86, plain, (app(app(uncurry_1(insert_0),X1),X2)=app(app(uncurry_1(insert_0),X1),X3))).
+%
+%cnf(i_0_137, plain, (app(app(app(insert_0,X1),fst(X2)),X3)=app(uncurry_1(app(insert_0,X1)),X2))).
+%%
+%cnf(i_0_74, plain, (app(app(X1,X2),app(app(X1,X4),X3))=foldr(X1,X3,cons(X2,cons(X4,nil))))).
+%
+%cnf(i_0_294, negated_conjecture, ($answer(esk1_3(pair(suc(zero),X1),pair(suc(zero),X2),X3))|true!=false)).
+%%
+%cnf(i_0_291, plain, (eqListPairNatNat(toList(app(uncurry_1(uncurry_1(insert_0)),X1)),nil)=false)).
+%
+%cnf(i_0_287, plain, (eqListPairNatNat(nil,toList(app(app(uncurry_1(insert_0),X1),X2)))=false)).
+%
+%cnf(i_0_309, plain, (eqListPairNatNat(toList(app(app(uncurry_1(insert_0),X1),X2)),nil)=false)).
+%%
+%cnf(i_0_176, plain, (eqListPairNatNat(cons(pair(suc(X1),X2),X4),cons(pair(zero,X3),X5))=false)).
+%
+%cnf(i_0_131, plain, (prop_InsertInsertWeak(pair(suc(X1),X2),pair(zero,X3),X4)=false)).
+%% SZS status Theorem
+% SZS answers Tuple [[pair(suc(X1),X2), pair(zero,X3), X4]|_]
+
+% Proof found!

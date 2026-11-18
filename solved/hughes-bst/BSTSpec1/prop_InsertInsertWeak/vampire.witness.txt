@@ -1,0 +1,7 @@
+property:   prop_InsertInsertWeak
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec1.hs
+prover:     vampire
+witness:    prop_InsertInsertWeak (Suc _X0, _X1) (Zero, _X2) _X3
+input:      prop_InsertInsertWeak (Suc undefined, undefined) (Zero, undefined) undefined
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

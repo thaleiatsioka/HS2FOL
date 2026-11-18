@@ -1,0 +1,8 @@
+property:   prop_DeleteInsert
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec2.hs
+prover:     twee
+witness:    prop_DeleteInsert Zero (Zero, _X) (toList (insert Zero _Y nil))
+evaluated:  prop_DeleteInsert Zero (Zero, _X) [(Zero, _Y)]
+input:      prop_DeleteInsert Zero (Zero, undefined) [(Zero, undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

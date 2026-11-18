@@ -1,0 +1,6 @@
+property:   prop_InsertDeleteComplete
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec2.hs
+prover:     eprover
+witness:    prop_InsertDeleteComplete Zero [(Zero, Zero)]
+input:      prop_InsertDeleteComplete Zero [(Zero, Zero)]
+result:     False -- counterexample confirmed

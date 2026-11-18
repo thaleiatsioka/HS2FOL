@@ -1,0 +1,7 @@
+property:   prop_InsertModel
+file:       benchmarks/hughes-bst/BSTSpec2.hs
+prover:     vampire
+witness:    prop_InsertModel (Zero, Zero) [(Zero, Suc _X0)]
+input:      prop_InsertModel (Zero, Zero) [(Zero, Suc undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

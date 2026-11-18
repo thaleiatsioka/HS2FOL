@@ -1,0 +1,7 @@
+property:   prop_FindPostPresent
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec2.hs
+prover:     eprover
+witness:    prop_FindPostPresent Zero Zero [(Zero, Suc _X1)]
+input:      prop_FindPostPresent Zero Zero [(Zero, Suc undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

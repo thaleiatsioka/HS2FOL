@@ -1,0 +1,20 @@
+# prop_InsertCompleteForUnion (hughes-bst/BSTSpec6)
+
+| prover | SZS status | seconds | witness |
+|---|---|---|---|
+| eprover | Theorem | 48.28 | CONFIRMED |
+| twee | Timeout | 65.04 | - |
+| vampire | Timeout | 59.93 | - |
+
+Counterexample (decoded from the eprover witness, checked with GHC):
+
+```
+property:   prop_InsertCompleteForUnion
+file:       benchmarks/hughes-bst/BSTSpec6.hs
+prover:     eprover
+witness:    prop_InsertCompleteForUnion (insertions (Branch Leaf (Suc _X1) _X2 Leaf)) (insertions (Branch Leaf Zero _X3 Leaf))
+evaluated:  prop_InsertCompleteForUnion [(Suc _X1, _X2)] [(Zero, _X3)]
+input:      prop_InsertCompleteForUnion [(Suc undefined, undefined)] [(Zero, undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed
+```

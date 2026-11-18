@@ -1,0 +1,8 @@
+property:   prop_UnionInsert
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec7.hs
+prover:     eprover
+witness:    prop_UnionInsert (toList (Branch Leaf (Suc _X1) _X2 Leaf)) (toList (Branch Leaf Zero Zero Leaf)) (Zero, Zero)
+evaluated:  prop_UnionInsert [(Suc _X1, _X2)] [(Zero, Zero)] (Zero, Zero)
+input:      prop_UnionInsert [(Suc undefined, undefined)] [(Zero, Zero)] (Zero, Zero)
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

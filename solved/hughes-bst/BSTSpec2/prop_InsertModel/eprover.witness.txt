@@ -1,0 +1,6 @@
+property:   prop_InsertModel
+file:       benchmarks/hughes-bst/BSTSpec2.hs
+prover:     eprover
+witness:    prop_InsertModel (Zero, Zero) [(Zero, Zero)]
+input:      prop_InsertModel (Zero, Zero) [(Zero, Zero)]
+result:     False -- counterexample confirmed

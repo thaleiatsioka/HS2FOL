@@ -1,0 +1,444 @@
+% Running in auto input_syntax mode. Trying TPTP
+% Detected formulas, will run a generic FOF schedule.
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_tgt=full:sil=2000:alpa=true:random_seed=862510152:st=5:i=107:sd=1:qa=plain:ss=on:er=filter:ssat=axiom_1 on problem for (1ds/107Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 14 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_2:3_to=lpo:sil=16000:sp=arity:random_seed=3467753566:i=114:bd=all:qa=plain:ss=on:sgt=4_1 on problem for (1ds/114Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 16 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+1011_2_sil=4000:lsd=20:rp=on:sac=on:newcnf=on:random_seed=2057072080:i=132:kws=arity:qa=plain:er=filter_1 on problem for (1ds/132Mi)
+%  found proof, printing to "/tmp/vampire-proof-21215-21221"...
+% SZS answers Tuple [∀X2,X1,X0.[cons(pair(suc(X0),X1),nil),cons(pair(zero,foldr(insertNat_0,X2,nil)),nil)]|_] for problem
+% ...printing done.
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for problem
+% SZS output start Proof for problem
+fof(f4,axiom,(
+  isGT(lt) = false),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','isGT_1')).
+fof(f7,axiom,(
+  ! [X0] : (opAnd(false,X0) = false)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','opAnd_1')).
+fof(f8,axiom,(
+  ! [X0] : (opAnd(true,X0) = X0)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','opAnd_2')).
+fof(f9,axiom,(
+  ! [X0, X1] : (fst(pair(X0,X1)) = X0)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','fst_1')).
+fof(f10,axiom,(
+  ! [X0, X1] : (snd(pair(X0,X1)) = X1)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','snd_1')).
+fof(f11,axiom,(
+  ! [X0, X1] : (uncurry(X0,X1) = app(app(X0,fst(X1)),snd(X1)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','uncurry_1')).
+fof(f12,axiom,(
+  ! [X0] : (opAppend(nil,X0) = X0)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','opAppend_1')).
+fof(f13,axiom,(
+  ! [X0, X1, X2] : (opAppend(cons(X0,X1),X2) = cons(X0,opAppend(X1,X2)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','opAppend_2')).
+fof(f14,axiom,(
+  ! [X0] : (map(X0,nil) = nil)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','map_1')).
+fof(f15,axiom,(
+  ! [X0, X1, X2] : (map(X0,cons(X1,X2)) = cons(app(X0,X1),map(X0,X2)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','map_2')).
+fof(f16,axiom,(
+  ! [X0, X1] : (foldr(X0,X1,nil) = X1)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','foldr_1')).
+fof(f17,axiom,(
+  ! [X0, X1, X2, X3] : (foldr(X0,X1,cons(X2,X3)) = app(app(X0,X2),foldr(X0,X1,X3)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','foldr_2')).
+fof(f18,axiom,(
+  ! [X0] : (all(X0,nil) = true)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','all_1')).
+fof(f19,axiom,(
+  ! [X0, X1, X2] : (all(X0,cons(X1,X2)) = opAnd(app(X0,X1),all(X0,X2)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','all_2')).
+fof(f20,axiom,(
+  ! [X0] : (tree(X0) = foldr(uncurry_1(insertNat_0),nil_1,X0))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','tree_1')).
+fof(f21,axiom,(
+  ! [X0, X1] : (prop_UnionValid(X0,X1) = validNat(union(tree(X0),tree(X1))))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','prop_UnionValid_1')).
+fof(f22,axiom,(
+  ! [X0] : (keys(X0) = map(fst_0,toList(X0)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','keys_1')).
+fof(f23,axiom,(
+  nil_1 = leaf),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','nil_1_1')).
+fof(f24,axiom,(
+  ! [X0] : (union(leaf,X0) = X0)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','union_1')).
+fof(f26,axiom,(
+  ! [X0, X1, X2, X3, X4, X5, X6, X7] : (union(branch(X0,X1,X2,X3),branch(X4,X5,X6,X7)) = branch(X0,X1,X2,branch(union(X3,X4),X5,X6,X7)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','union_3')).
+fof(f27,axiom,(
+  toList(leaf) = nil),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','toList_1')).
+fof(f28,axiom,(
+  ! [X0, X1, X2, X3] : (toList(branch(X0,X1,X2,X3)) = opAppend(toList(X0),opAppend(cons(pair(X1,X2),nil),toList(X3))))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','toList_2')).
+fof(f29,axiom,(
+  ! [X0, X1] : (insertNat(X0,X1,leaf) = branch(leaf,X0,X1,leaf))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','insertNat_1')).
+fof(f33,axiom,(
+  ! [X0, X1, X2, X3, X4, X5] : (insertNat_case1_case1(true,X0,X1,X2,X3,X4,X5) = branch(X2,X1,X5,insertNat(X0,X4,X3)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','insertNat_case1_case1_1')).
+fof(f35,axiom,(
+  validNat(leaf) = true),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','validNat_1')).
+fof(f36,axiom,(
+  ! [X0, X1, X2, X3] : (validNat(branch(X0,X1,X2,X3)) = opAnd(validNat(X0),opAnd(validNat(X3),opAnd(all(lam4(X1),keys(X0)),all(lam5(X1),keys(X3))))))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','validNat_2')).
+fof(f38,axiom,(
+  ! [X0, X1] : (gtNat(X0,X1) = isGT(compareNat(X0,X1)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','gtNat_1')).
+fof(f40,axiom,(
+  ! [X0] : (compareNat(zero,suc(X0)) = lt)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','compareNat_2')).
+fof(f43,axiom,(
+  ! [X0] : (app(fst_0,X0) = fst(X0))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','app_fst_0_1')).
+fof(f44,axiom,(
+  ! [X0] : (app(insertNat_0,X0) = insertNat_1(X0))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','app_insertNat_0_1')).
+fof(f45,axiom,(
+  ! [X0, X1] : (app(insertNat_1(X0),X1) = insertNat_2(X0,X1))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','app_insertNat_1_1')).
+fof(f46,axiom,(
+  ! [X0, X1, X2] : (app(insertNat_2(X0,X1),X2) = insertNat(X0,X1,X2))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','app_insertNat_2_1')).
+fof(f48,axiom,(
+  ! [X0, X1] : (app(lam5(X0),X1) = gtNat(X1,X0))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','app_lam5_1')).
+fof(f49,axiom,(
+  ! [X0, X1] : (app(uncurry_1(X0),X1) = uncurry(X0,X1))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','app_uncurry_1_1')).
+fof(f50,conjecture,(
+  ? [X0, X1] : (prop_UnionValid(X0,X1) = false)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec6/prop_UnionValid/problem.p','prop_UnionValid')).
+fof(f51,negated_conjecture,(
+  ~ ? [X0, X1] : (prop_UnionValid(X0,X1) = false)),
+  inference(conjecture_negation,[status(cth)],[f50])).
+fof(f52,plain,(
+  ~ ? [X0, X1] : ((prop_UnionValid(X0,X1) = false) & ans0(X0,X1))),
+  inference(answer_literal_injection,[],[f51])).
+fof(f53,plain,(
+  ! [X0, X1] : ((false != prop_UnionValid(X0,X1)) | ~ans0(X0,X1))),
+  inference(ennf_transformation,[],[f52])).
+fof(f57,plain,(
+  false = isGT(lt)),
+  inference(cnf_transformation,[],[f4])).
+fof(f60,plain,(
+  (! [X0] : (false = opAnd(false,X0)))),
+  inference(cnf_transformation,[],[f7])).
+fof(f61,plain,(
+  (! [X0] : (opAnd(true,X0) = X0))),
+  inference(cnf_transformation,[],[f8])).
+fof(f62,plain,(
+  (! [X0,X1] : (fst(pair(X0,X1)) = X0))),
+  inference(cnf_transformation,[],[f9])).
+fof(f63,plain,(
+  (! [X0,X1] : (snd(pair(X0,X1)) = X1))),
+  inference(cnf_transformation,[],[f10])).
+fof(f64,plain,(
+  (! [X0,X1] : (uncurry(X0,X1) = app(app(X0,fst(X1)),snd(X1))))),
+  inference(cnf_transformation,[],[f11])).
+fof(f65,plain,(
+  (! [X0] : (opAppend(nil,X0) = X0))),
+  inference(cnf_transformation,[],[f12])).
+fof(f66,plain,(
+  (! [X0,X1,X2] : (opAppend(cons(X0,X1),X2) = cons(X0,opAppend(X1,X2))))),
+  inference(cnf_transformation,[],[f13])).
+fof(f67,plain,(
+  (! [X0] : (nil = map(X0,nil)))),
+  inference(cnf_transformation,[],[f14])).
+fof(f68,plain,(
+  (! [X0,X1,X2] : (map(X0,cons(X1,X2)) = cons(app(X0,X1),map(X0,X2))))),
+  inference(cnf_transformation,[],[f15])).
+fof(f69,plain,(
+  (! [X0,X1] : (foldr(X0,X1,nil) = X1))),
+  inference(cnf_transformation,[],[f16])).
+fof(f70,plain,(
+  (! [X0,X1,X2,X3] : (foldr(X0,X1,cons(X2,X3)) = app(app(X0,X2),foldr(X0,X1,X3))))),
+  inference(cnf_transformation,[],[f17])).
+fof(f71,plain,(
+  (! [X0] : (true = all(X0,nil)))),
+  inference(cnf_transformation,[],[f18])).
+fof(f72,plain,(
+  (! [X0,X1,X2] : (all(X0,cons(X1,X2)) = opAnd(app(X0,X1),all(X0,X2))))),
+  inference(cnf_transformation,[],[f19])).
+fof(f73,plain,(
+  (! [X0] : (tree(X0) = foldr(uncurry_1(insertNat_0),nil_1,X0)))),
+  inference(cnf_transformation,[],[f20])).
+fof(f74,plain,(
+  (! [X0,X1] : (prop_UnionValid(X0,X1) = validNat(union(tree(X0),tree(X1)))))),
+  inference(cnf_transformation,[],[f21])).
+fof(f75,plain,(
+  (! [X0] : (keys(X0) = map(fst_0,toList(X0))))),
+  inference(cnf_transformation,[],[f22])).
+fof(f76,plain,(
+  nil_1 = leaf),
+  inference(cnf_transformation,[],[f23])).
+fof(f77,plain,(
+  (! [X0] : (union(leaf,X0) = X0))),
+  inference(cnf_transformation,[],[f24])).
+fof(f79,plain,(
+  (! [X0,X1,X2,X3,X4,X5,X6,X7] : (union(branch(X0,X1,X2,X3),branch(X4,X5,X6,X7)) = branch(X0,X1,X2,branch(union(X3,X4),X5,X6,X7))))),
+  inference(cnf_transformation,[],[f26])).
+fof(f80,plain,(
+  nil = toList(leaf)),
+  inference(cnf_transformation,[],[f27])).
+fof(f81,plain,(
+  (! [X0,X1,X2,X3] : (toList(branch(X0,X1,X2,X3)) = opAppend(toList(X0),opAppend(cons(pair(X1,X2),nil),toList(X3)))))),
+  inference(cnf_transformation,[],[f28])).
+fof(f82,plain,(
+  (! [X0,X1] : (insertNat(X0,X1,leaf) = branch(leaf,X0,X1,leaf)))),
+  inference(cnf_transformation,[],[f29])).
+fof(f86,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (insertNat_case1_case1(true,X0,X1,X2,X3,X4,X5) = branch(X2,X1,X5,insertNat(X0,X4,X3))))),
+  inference(cnf_transformation,[],[f33])).
+fof(f88,plain,(
+  true = validNat(leaf)),
+  inference(cnf_transformation,[],[f35])).
+fof(f89,plain,(
+  (! [X0,X1,X2,X3] : (validNat(branch(X0,X1,X2,X3)) = opAnd(validNat(X0),opAnd(validNat(X3),opAnd(all(lam4(X1),keys(X0)),all(lam5(X1),keys(X3)))))))),
+  inference(cnf_transformation,[],[f36])).
+fof(f91,plain,(
+  (! [X0,X1] : (gtNat(X0,X1) = isGT(compareNat(X0,X1))))),
+  inference(cnf_transformation,[],[f38])).
+fof(f93,plain,(
+  (! [X0] : (lt = compareNat(zero,suc(X0))))),
+  inference(cnf_transformation,[],[f40])).
+fof(f96,plain,(
+  (! [X0] : (app(fst_0,X0) = fst(X0)))),
+  inference(cnf_transformation,[],[f43])).
+fof(f97,plain,(
+  (! [X0] : (app(insertNat_0,X0) = insertNat_1(X0)))),
+  inference(cnf_transformation,[],[f44])).
+fof(f98,plain,(
+  (! [X0,X1] : (app(insertNat_1(X0),X1) = insertNat_2(X0,X1)))),
+  inference(cnf_transformation,[],[f45])).
+fof(f99,plain,(
+  (! [X0,X1,X2] : (app(insertNat_2(X0,X1),X2) = insertNat(X0,X1,X2)))),
+  inference(cnf_transformation,[],[f46])).
+fof(f101,plain,(
+  (! [X0,X1] : (app(lam5(X0),X1) = gtNat(X1,X0)))),
+  inference(cnf_transformation,[],[f48])).
+fof(f102,plain,(
+  (! [X0,X1] : (uncurry(X0,X1) = app(uncurry_1(X0),X1)))),
+  inference(cnf_transformation,[],[f49])).
+fof(f103,plain,(
+  (! [X0,X1] : (~ans0(X0,X1) | false != prop_UnionValid(X0,X1)))),
+  inference(cnf_transformation,[],[f53])).
+fof(f104,plain,(
+  (! [X0,X1] : (insertNat_2(X0,X1) = app(app(insertNat_0,X0),X1)))),
+  inference(definition_unfolding,[],[f98,f97])).
+fof(f105,plain,(
+  (! [X0,X1,X2] : (insertNat(X0,X1,X2) = app(app(app(insertNat_0,X0),X1),X2)))),
+  inference(definition_unfolding,[],[f99,f104])).
+fof(f106,plain,(
+  (! [X0,X1] : (uncurry(X0,X1) = app(app(X0,app(fst_0,X1)),snd(X1))))),
+  inference(definition_unfolding,[],[f64,f96])).
+fof(f107,plain,(
+  (! [X0] : (tree(X0) = foldr(uncurry_1(insertNat_0),leaf,X0)))),
+  inference(definition_unfolding,[],[f73,f76])).
+fof(f108,plain,(
+  (! [X0,X1] : (prop_UnionValid(X0,X1) = validNat(union(foldr(uncurry_1(insertNat_0),leaf,X0),foldr(uncurry_1(insertNat_0),leaf,X1)))))),
+  inference(definition_unfolding,[],[f74,f107,f107])).
+fof(f109,plain,(
+  (! [X0,X1] : (app(fst_0,pair(X0,X1)) = X0))),
+  inference(definition_unfolding,[],[f62,f96])).
+fof(f110,plain,(
+  (! [X0,X1] : (branch(leaf,X0,X1,leaf) = app(app(app(insertNat_0,X0),X1),leaf)))),
+  inference(definition_unfolding,[],[f82,f105])).
+fof(f114,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (insertNat_case1_case1(true,X0,X1,X2,X3,X4,X5) = branch(X2,X1,X5,app(app(app(insertNat_0,X0),X4),X3))))),
+  inference(definition_unfolding,[],[f86,f105])).
+fof(f115,plain,(
+  (! [X0,X1,X2,X3] : (validNat(branch(X0,X1,X2,X3)) = opAnd(validNat(X0),opAnd(validNat(X3),opAnd(all(lam4(X1),map(fst_0,toList(X0))),all(lam5(X1),map(fst_0,toList(X3))))))))),
+  inference(definition_unfolding,[],[f89,f75,f75])).
+fof(f117,plain,(
+  (! [X0,X1] : (app(lam5(X0),X1) = isGT(compareNat(X1,X0))))),
+  inference(definition_unfolding,[],[f101,f91])).
+fof(f118,plain,(
+  (! [X0,X1] : (app(uncurry_1(X0),X1) = app(app(X0,app(fst_0,X1)),snd(X1))))),
+  inference(definition_unfolding,[],[f102,f106])).
+fof(f119,plain,(
+  (! [X0,X1] : (false != validNat(union(foldr(uncurry_1(insertNat_0),leaf,X0),foldr(uncurry_1(insertNat_0),leaf,X1))) | ~ans0(X0,X1)))),
+  inference(definition_unfolding,[],[f103,f108])).
+fof(f136,plain,(
+  (! [X0,X1] : (ans0(X0,X1)))),
+  introduced(theory,[answer_literal_resolver],[])).
+fof(f152,plain,(
+  (! [X0] : (isGT(lt) = app(lam5(suc(X0)),zero)))),
+  inference(superposition,[],[f117,f93])).
+fof(f157,plain,(
+  (! [X0] : (false = app(lam5(suc(X0)),zero)))),
+  inference(forward_demodulation,[],[f152,f57])).
+fof(f159,plain,(
+  (! [X0,X1,X2] : (map(fst_0,cons(pair(X0,X1),X2)) = cons(X0,map(fst_0,X2))))),
+  inference(superposition,[],[f68,f109])).
+fof(f175,plain,(
+  (! [X0,X1] : (all(X0,cons(X1,nil)) = opAnd(app(X0,X1),true)))),
+  inference(superposition,[],[f72,f71])).
+fof(f193,plain,(
+  (! [X0,X1,X2] : (app(uncurry_1(X1),pair(X2,X0)) = app(app(X1,app(fst_0,pair(X2,X0))),X0)))),
+  inference(superposition,[],[f118,f63])).
+fof(f197,plain,(
+  (! [X0,X1,X2] : (app(uncurry_1(X1),pair(X2,X0)) = app(app(X1,X2),X0)))),
+  inference(forward_demodulation,[],[f193,f109])).
+fof(f240,plain,(
+  (! [X0,X1,X2] : (app(app(X1,X2),X0) = foldr(X1,X0,cons(X2,nil))))),
+  inference(superposition,[],[f70,f69])).
+fof(f241,plain,(
+  (! [X0,X1,X2] : (branch(leaf,X1,foldr(insertNat_0,X0,X2),leaf) = app(foldr(insertNat_0,X0,cons(X1,X2)),leaf)))),
+  inference(superposition,[],[f110,f70])).
+fof(f246,plain,(
+  (! [X0,X1] : (false != validNat(union(foldr(uncurry_1(insertNat_0),leaf,X1),app(app(uncurry_1(insertNat_0),X0),leaf))) | ~ans0(X1,cons(X0,nil))))),
+  inference(superposition,[],[f119,f240])).
+fof(f251,plain,(
+  (! [X0,X1,X2] : (toList(branch(leaf,X0,X1,X2)) = opAppend(nil,opAppend(cons(pair(X0,X1),nil),toList(X2)))))),
+  inference(superposition,[],[f81,f80])).
+fof(f256,plain,(
+  (! [X0,X1,X2] : (opAppend(cons(pair(X0,X1),nil),toList(X2)) = toList(branch(leaf,X0,X1,X2))))),
+  inference(forward_demodulation,[],[f251,f65])).
+fof(f258,plain,(
+  (! [X0,X1,X2] : (toList(branch(leaf,X0,X1,X2)) = cons(pair(X0,X1),opAppend(nil,toList(X2)))))),
+  inference(forward_demodulation,[],[f256,f66])).
+fof(f259,plain,(
+  (! [X0,X1,X2] : (toList(branch(leaf,X0,X1,X2)) = cons(pair(X0,X1),toList(X2))))),
+  inference(forward_demodulation,[],[f258,f65])).
+fof(f271,plain,(
+  (! [X0,X1,X2] : (false != validNat(union(foldr(uncurry_1(insertNat_0),leaf,X2),app(app(app(insertNat_0,X0),X1),leaf))) | ~ans0(X2,cons(pair(X0,X1),nil))))),
+  inference(superposition,[],[f246,f197])).
+fof(f272,plain,(
+  (! [X0,X1,X2] : (false != validNat(union(foldr(uncurry_1(insertNat_0),leaf,X2),branch(leaf,X0,X1,leaf))) | ~ans0(X2,cons(pair(X0,X1),nil))))),
+  inference(forward_demodulation,[],[f271,f110])).
+fof(f276,plain,(
+  (! [X0,X1,X2,X3,X4] : (insertNat_case1_case1(true,X0,X2,X3,leaf,X1,X4) = branch(X3,X2,X4,branch(leaf,X0,X1,leaf))))),
+  inference(superposition,[],[f114,f110])).
+fof(f334,plain,(
+  (! [X0,X1,X2] : (validNat(branch(leaf,X0,X1,X2)) = opAnd(validNat(leaf),opAnd(validNat(X2),opAnd(all(lam4(X0),map(fst_0,nil)),all(lam5(X0),map(fst_0,toList(X2))))))))),
+  inference(superposition,[],[f115,f80])).
+fof(f342,plain,(
+  (! [X0,X1,X2] : (validNat(branch(leaf,X0,X1,X2)) = opAnd(validNat(leaf),opAnd(validNat(X2),opAnd(all(lam4(X0),nil),all(lam5(X0),map(fst_0,toList(X2))))))))),
+  inference(forward_demodulation,[],[f334,f67])).
+fof(f348,plain,(
+  (! [X0,X1,X2] : (validNat(branch(leaf,X0,X1,X2)) = opAnd(validNat(leaf),opAnd(validNat(X2),opAnd(true,all(lam5(X0),map(fst_0,toList(X2))))))))),
+  inference(forward_demodulation,[],[f342,f71])).
+fof(f354,plain,(
+  (! [X0,X1,X2] : (validNat(branch(leaf,X0,X1,X2)) = opAnd(validNat(leaf),opAnd(validNat(X2),all(lam5(X0),map(fst_0,toList(X2)))))))),
+  inference(forward_demodulation,[],[f348,f61])).
+fof(f360,plain,(
+  (! [X0,X1,X2] : (validNat(branch(leaf,X0,X1,X2)) = opAnd(true,opAnd(validNat(X2),all(lam5(X0),map(fst_0,toList(X2)))))))),
+  inference(forward_demodulation,[],[f354,f88])).
+fof(f365,plain,(
+  (! [X0,X1,X2] : (validNat(branch(leaf,X0,X1,X2)) = opAnd(validNat(X2),all(lam5(X0),map(fst_0,toList(X2))))))),
+  inference(forward_demodulation,[],[f360,f61])).
+fof(f571,plain,(
+  (! [X0,X1,X2,X3] : (false != validNat(union(foldr(uncurry_1(insertNat_0),leaf,X3),app(foldr(insertNat_0,X0,cons(X1,X2)),leaf))) | ~ans0(X3,cons(pair(X1,foldr(insertNat_0,X0,X2)),nil))))),
+  inference(superposition,[],[f272,f241])).
+fof(f618,plain,(
+  (! [X0,X1] : (validNat(branch(leaf,X0,X1,leaf)) = opAnd(validNat(leaf),all(lam5(X0),map(fst_0,nil)))))),
+  inference(superposition,[],[f365,f80])).
+fof(f646,plain,(
+  (! [X0,X1] : (validNat(branch(leaf,X0,X1,leaf)) = opAnd(validNat(leaf),all(lam5(X0),nil))))),
+  inference(forward_demodulation,[],[f618,f67])).
+fof(f663,plain,(
+  (! [X0,X1] : (validNat(branch(leaf,X0,X1,leaf)) = opAnd(validNat(leaf),true)))),
+  inference(forward_demodulation,[],[f646,f71])).
+fof(f678,plain,(
+  (! [X0,X1] : (opAnd(true,true) = validNat(branch(leaf,X0,X1,leaf))))),
+  inference(forward_demodulation,[],[f663,f88])).
+fof(f692,plain,(
+  (! [X0,X1] : (true = validNat(branch(leaf,X0,X1,leaf))))),
+  inference(forward_demodulation,[],[f678,f61])).
+fof(f756,plain,(
+  (! [X0,X1,X2,X3] : (validNat(insertNat_case1_case1(true,X0,X1,leaf,leaf,X2,X3)) = opAnd(validNat(branch(leaf,X0,X2,leaf)),all(lam5(X1),map(fst_0,toList(branch(leaf,X0,X2,leaf)))))))),
+  inference(superposition,[],[f365,f276])).
+fof(f760,plain,(
+  (! [X0,X1,X2,X3] : (validNat(insertNat_case1_case1(true,X0,X1,leaf,leaf,X2,X3)) = opAnd(validNat(branch(leaf,X0,X2,leaf)),all(lam5(X1),map(fst_0,cons(pair(X0,X2),toList(leaf)))))))),
+  inference(forward_demodulation,[],[f756,f259])).
+fof(f768,plain,(
+  (! [X0,X1,X2,X3] : (validNat(insertNat_case1_case1(true,X0,X1,leaf,leaf,X2,X3)) = opAnd(validNat(branch(leaf,X0,X2,leaf)),all(lam5(X1),cons(X0,map(fst_0,toList(leaf)))))))),
+  inference(forward_demodulation,[],[f760,f159])).
+fof(f770,plain,(
+  (! [X0,X1,X2,X3] : (validNat(insertNat_case1_case1(true,X0,X1,leaf,leaf,X2,X3)) = opAnd(validNat(branch(leaf,X0,X2,leaf)),all(lam5(X1),cons(X0,map(fst_0,nil))))))),
+  inference(forward_demodulation,[],[f768,f80])).
+fof(f772,plain,(
+  (! [X0,X1,X2,X3] : (validNat(insertNat_case1_case1(true,X0,X1,leaf,leaf,X2,X3)) = opAnd(validNat(branch(leaf,X0,X2,leaf)),all(lam5(X1),cons(X0,nil)))))),
+  inference(forward_demodulation,[],[f770,f67])).
+fof(f774,plain,(
+  (! [X0,X1,X2,X3] : (validNat(insertNat_case1_case1(true,X0,X1,leaf,leaf,X2,X3)) = opAnd(validNat(branch(leaf,X0,X2,leaf)),opAnd(app(lam5(X1),X0),true))))),
+  inference(forward_demodulation,[],[f772,f175])).
+fof(f776,plain,(
+  (! [X0,X1,X2,X3] : (validNat(insertNat_case1_case1(true,X0,X1,leaf,leaf,X2,X3)) = opAnd(true,opAnd(app(lam5(X1),X0),true))))),
+  inference(forward_demodulation,[],[f774,f692])).
+fof(f778,plain,(
+  (! [X0,X1,X2,X3] : (validNat(insertNat_case1_case1(true,X0,X1,leaf,leaf,X2,X3)) = opAnd(app(lam5(X1),X0),true)))),
+  inference(forward_demodulation,[],[f776,f61])).
+fof(f1028,plain,(
+  (! [X0,X1,X2] : (false != validNat(union(foldr(uncurry_1(insertNat_0),leaf,X2),app(app(app(insertNat_0,X0),X1),leaf))) | ~ans0(X2,cons(pair(X0,foldr(insertNat_0,X1,nil)),nil))))),
+  inference(superposition,[],[f571,f240])).
+fof(f1029,plain,(
+  (! [X0,X1,X2] : (false != validNat(union(foldr(uncurry_1(insertNat_0),leaf,X2),branch(leaf,X0,X1,leaf))) | ~ans0(X2,cons(pair(X0,foldr(insertNat_0,X1,nil)),nil))))),
+  inference(forward_demodulation,[],[f1028,f110])).
+fof(f1032,plain,(
+  (! [X0,X1,X2] : (false != validNat(union(app(app(uncurry_1(insertNat_0),X0),leaf),branch(leaf,X1,X2,leaf))) | ~ans0(cons(X0,nil),cons(pair(X1,foldr(insertNat_0,X2,nil)),nil))))),
+  inference(superposition,[],[f1029,f240])).
+fof(f1063,plain,(
+  (! [X0,X1,X2,X3] : (false != validNat(union(app(app(app(insertNat_0,X0),X1),leaf),branch(leaf,X2,X3,leaf))) | ~ans0(cons(pair(X0,X1),nil),cons(pair(X2,foldr(insertNat_0,X3,nil)),nil))))),
+  inference(superposition,[],[f1032,f197])).
+fof(f1066,plain,(
+  (! [X0,X1,X2,X3] : (false != validNat(union(branch(leaf,X0,X1,leaf),branch(leaf,X2,X3,leaf))) | ~ans0(cons(pair(X0,X1),nil),cons(pair(X2,foldr(insertNat_0,X3,nil)),nil))))),
+  inference(forward_demodulation,[],[f1063,f110])).
+fof(f1067,plain,(
+  (! [X0,X1,X2,X3] : (false != validNat(branch(leaf,X0,X1,branch(union(leaf,leaf),X2,X3,leaf))) | ~ans0(cons(pair(X0,X1),nil),cons(pair(X2,foldr(insertNat_0,X3,nil)),nil))))),
+  inference(forward_demodulation,[],[f1066,f79])).
+fof(f1068,plain,(
+  (! [X0,X1,X2,X3] : (false != validNat(branch(leaf,X0,X1,branch(leaf,X2,X3,leaf))) | ~ans0(cons(pair(X0,X1),nil),cons(pair(X2,foldr(insertNat_0,X3,nil)),nil))))),
+  inference(forward_demodulation,[],[f1067,f77])).
+fof(f1069,plain,(
+  (! [X0,X1,X2,X3] : (false != validNat(insertNat_case1_case1(true,X2,X0,leaf,leaf,X3,X1)) | ~ans0(cons(pair(X0,X1),nil),cons(pair(X2,foldr(insertNat_0,X3,nil)),nil))))),
+  inference(forward_demodulation,[],[f1068,f276])).
+fof(f1070,plain,(
+  (! [X0,X1,X2,X3] : (false != opAnd(app(lam5(X0),X2),true) | ~ans0(cons(pair(X0,X1),nil),cons(pair(X2,foldr(insertNat_0,X3,nil)),nil))))),
+  inference(forward_demodulation,[],[f1069,f778])).
+fof(f1073,plain,(
+  (! [X0,X1,X2] : (false != opAnd(false,true) | ~ans0(cons(pair(suc(X0),X1),nil),cons(pair(zero,foldr(insertNat_0,X2,nil)),nil))))),
+  inference(superposition,[],[f1070,f157])).
+fof(f1075,plain,(
+  (! [X0,X1,X2] : (~ans0(cons(pair(suc(X0),X1),nil),cons(pair(zero,foldr(insertNat_0,X2,nil)),nil))))),
+  inference(forward_subsumption_resolution,[],[f1073,f60])).
+fof(f1076,plain,(
+  $false),
+  inference(unit_resulting_resolution,[],[f1075,f136])).
+% SZS output end Proof for problem
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation
+% Time elapsed: 0.007 s
+% Peak memory usage: 10 MB
+% Success in time 0.212 s

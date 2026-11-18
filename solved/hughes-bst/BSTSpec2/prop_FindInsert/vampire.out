@@ -1,0 +1,486 @@
+% Running in auto input_syntax mode. Trying TPTP
+% Detected formulas, will run a generic FOF schedule.
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_tgt=full:sil=2000:alpa=true:random_seed=4073015967:st=5:i=107:sd=1:qa=plain:ss=on:er=filter:ssat=axiom_1 on problem for (1ds/107Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.101 s
+% Peak memory usage: 11 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_2:3_to=lpo:sil=16000:sp=arity:random_seed=3758441166:i=114:bd=all:qa=plain:ss=on:sgt=4_1 on problem for (1ds/114Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 13 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+1011_2_sil=4000:lsd=20:rp=on:sac=on:newcnf=on:random_seed=2593856087:i=132:kws=arity:qa=plain:er=filter_1 on problem for (1ds/132Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 17 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1011_1_sil=2000:slsqr=8,1:fd=off:kmz=on:flr=on:slsq=on:sac=on:random_seed=3572774268:st=2:i=121:sd=30:aac=none:ep=RS:qa=plain:ss=on:sgt=10_1 on problem for (1ds/121Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_1_sil=2000:sos=on:random_seed=1863974554:i=135:sd=2:qa=plain:gtg=position:ss=on_1 on problem for (1ds/135Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_1_sil=16000:random_seed=1831374356:i=269:sd=10:qa=plain:ss=on:sgt=16_2 on problem for (2ds/269Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 26 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis+1010_4_sil=2000:sos=on:sac=on:random_seed=2874434728:i=140:sd=1:qa=plain:ss=on_1 on problem for (1ds/140Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+11_4:1_bsr=on:to=kbo:sil=4000:slsqr=8,1:slsq=on:s2pl=on:random_seed=365493023:st=3:gtgl=4:s2a=on:i=124:sd=1:kws=inv_arity:ep=RST:fsd=on:qa=plain:gtg=position:ss=on_1 on problem for (1ds/124Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.001 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+1010_1_to=lpo:sil=32000:fde=none:sos=on:urr=on:random_seed=2815790233:st=2.5:cts=off:i=297:sd=4:ins=10:qa=plain:gsp=on:ss=on_2 on problem for (2ds/297Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.200 s
+% Peak memory usage: 14 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs-1002_1_sil=2000:random_seed=1010114574:i=641:sd=20:qa=plain:ss=on:sgt=8_4 on problem for (4ds/641Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.400 s
+% Peak memory usage: 46 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_1_sil=4000:plsq=on:sosts=on:sp=occurrence:sos=on:erd=off:plsqr=32,1:random_seed=752406262:st=5:i=160:qa=plain:sup=off:ss=on:ssat=axiom_1 on problem for (1ds/160Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_16:1_bsr=unit_only:sil=2000:sp=reverse_frequency:lcm=predicate:random_seed=3378746224:avsq=on:i=433:bs=unit_only:kws=inv_frequency:qa=plain:gtg=exists_sym_3 on problem for (3ds/433Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.300 s
+% Peak memory usage: 38 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_sfv=off:sil=128000:sosts=on:sos=on:newcnf=on:random_seed=1871866913:cond=fast:i=114:nm=2:fsr=off:qa=plain:gtg=all:ss=on_1 on problem for (1ds/114Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 18 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_64_sil=16000:sos=on:urr=on:br=off:random_seed=102118368:st=2.2:i=120:sd=1:nm=2:qa=plain:gtg=all:ss=on_1 on problem for (1ds/120Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 15 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+21_1_to=lpo:sil=4000:slsqr=16,1:fs=off:acc=on:alpa=true:slsq=on:random_seed=1207915946:i=126:sd=3:aac=none:doe=on:fsr=off:qa=plain:sup=off:ss=on:er=filter:ssat=axiom:sgt=10_1 on problem for (1ds/126Mi)
+% Refutation not found, incomplete strategy
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation not found, incomplete strategy
+% Time elapsed: 0.0000 s
+% Peak memory usage: 9 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% dis-1011_1_sil=64000:sp=occurrence:nwc=2:sac=on:random_seed=2491798062:gtgl=2:i=161:qa=plain:gtg=exists_sym_1 on problem for (1ds/161Mi)
+%  found proof, printing to "/tmp/vampire-proof-31504-31536"...
+% SZS answers Tuple [∀X0.[zero,pair(zero,zero),cons(pair(zero,suc(X0)),nil)]|_] for problem
+% ...printing done.
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for problem
+% SZS output start Proof for problem
+fof(f2,axiom,(
+  isLT(eq) = false),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','isLT_2')).
+fof(f5,axiom,(
+  isGT(eq) = false),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','isGT_2')).
+fof(f7,negated_conjecture,(
+  ! [X0, X1] : (fst(pair(X0,X1)) = X0)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','fst_1')).
+fof(f8,negated_conjecture,(
+  ! [X0, X1] : (snd(pair(X0,X1)) = X1)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','snd_1')).
+fof(f9,negated_conjecture,(
+  ! [X0, X1] : (uncurry(X0,X1) = app(app(X0,fst(X1)),snd(X1)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','uncurry_1')).
+fof(f10,negated_conjecture,(
+  ! [X0, X1] : (foldr(X0,X1,nil) = X1)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','foldr_1')).
+fof(f11,negated_conjecture,(
+  ! [X0, X1, X2, X3] : (foldr(X0,X1,cons(X2,X3)) = app(app(X0,X2),foldr(X0,X1,X3)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','foldr_2')).
+fof(f12,negated_conjecture,(
+  ! [X0] : (tree(X0) = foldr(uncurry_1(insertNat_0),nil_1,X0))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','tree_1')).
+fof(f13,axiom,(
+  ! [X0, X1, X2] : (prop_FindInsert_case1_case1(true,X0,X1,X2) = just(X2))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','prop_FindInsert_case1_case1_1')).
+fof(f15,negated_conjecture,(
+  ! [X0, X1, X2, X3] : (prop_FindInsert_case1(X0,X1,X2,X3) = prop_FindInsert_case1_case1(eqNat(X0,X1),X0,X2,X3))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','prop_FindInsert_case1_1')).
+fof(f16,negated_conjecture,(
+  ! [X0, X1, X2, X3] : (prop_FindInsert(X0,pair(X1,X2),X3) = eqMaybeNat(findNat(X0,insertNat(X1,X2,tree(X3))),prop_FindInsert_case1(X0,X1,X3,X2)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','prop_FindInsert_1')).
+fof(f17,negated_conjecture,(
+  nil_1 = leaf),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','nil_1_1')).
+fof(f18,axiom,(
+  ! [X0, X1] : (insertNat(X0,X1,leaf) = branch(leaf,X0,X1,leaf))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','insertNat_1')).
+fof(f19,axiom,(
+  ! [X0, X1, X2, X3, X4, X5] : (insertNat(X0,X1,branch(X2,X3,X4,X5)) = insertNat_case1(ltNat(X0,X3),X0,X3,X2,X5,X1,X4))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','insertNat_2')).
+fof(f21,axiom,(
+  ! [X0, X1, X2, X3, X4, X5] : (insertNat_case1(false,X0,X1,X2,X3,X4,X5) = branch(X2,X1,X5,insertNat(X0,X4,X3)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','insertNat_case1_2')).
+fof(f25,axiom,(
+  ! [X0, X1] : (eqMaybeNat(just(X0),just(X1)) = eqNat(X0,X1))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','eqMaybeNat_4')).
+fof(f27,axiom,(
+  ! [X0, X1, X2, X3, X4] : (findNat(X0,branch(X1,X2,X3,X4)) = findNat_case1(ltNat(X0,X2),X0,X2,X1,X4,X3))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','findNat_2')).
+fof(f29,negated_conjecture,(
+  ! [X0, X1, X2, X3, X4] : (findNat_case1(false,X0,X1,X2,X3,X4) = findNat_case1_case1(gtNat(X0,X1),X0,X3,X4))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','findNat_case1_2')).
+fof(f31,axiom,(
+  ! [X0, X1, X2] : (findNat_case1_case1(false,X0,X1,X2) = just(X2))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','findNat_case1_case1_2')).
+fof(f32,axiom,(
+  eqNat(zero,zero) = true),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','eqNat_1')).
+fof(f34,axiom,(
+  ! [X0] : (eqNat(suc(X0),zero) = false)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','eqNat_3')).
+fof(f36,axiom,(
+  ! [X0, X1] : (ltNat(X0,X1) = isLT(compareNat(X0,X1)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','ltNat_1')).
+fof(f37,negated_conjecture,(
+  ! [X0, X1] : (gtNat(X0,X1) = isGT(compareNat(X0,X1)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','gtNat_1')).
+fof(f38,axiom,(
+  compareNat(zero,zero) = eq),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','compareNat_1')).
+fof(f42,negated_conjecture,(
+  ! [X0] : (app(insertNat_0,X0) = insertNat_1(X0))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','app_insertNat_0_1')).
+fof(f43,negated_conjecture,(
+  ! [X0, X1] : (app(insertNat_1(X0),X1) = insertNat_2(X0,X1))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','app_insertNat_1_1')).
+fof(f44,negated_conjecture,(
+  ! [X0, X1, X2] : (app(insertNat_2(X0,X1),X2) = insertNat(X0,X1,X2))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','app_insertNat_2_1')).
+fof(f45,negated_conjecture,(
+  ! [X0, X1] : (app(uncurry_1(X0),X1) = uncurry(X0,X1))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','app_uncurry_1_1')).
+fof(f46,conjecture,(
+  ? [X0, X1, X2] : (prop_FindInsert(X0,X1,X2) = false)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec2/prop_FindInsert/problem.p','prop_FindInsert')).
+fof(f47,negated_conjecture,(
+  ~ ? [X0, X1, X2] : (prop_FindInsert(X0,X1,X2) = false)),
+  inference(conjecture_negation,[status(cth)],[f46])).
+fof(f48,plain,(
+  ~ ? [X0, X1, X2] : ((prop_FindInsert(X0,X1,X2) = false) & ans0(X0,X1,X2))),
+  inference(answer_literal_injection,[],[f47])).
+fof(f49,plain,(
+  ! [X0, X1, X2] : ((false != prop_FindInsert(X0,X1,X2)) | ~ans0(X0,X1,X2))),
+  inference(ennf_transformation,[],[f48])).
+fof(f51,plain,(
+  isLT(eq) = false),
+  inference(cnf_transformation,[],[f2])).
+fof(f54,plain,(
+  false = isGT(eq)),
+  inference(cnf_transformation,[],[f5])).
+fof(f56,plain,(
+  (! [X0,X1] : (fst(pair(X0,X1)) = X0))),
+  inference(cnf_transformation,[],[f7])).
+fof(f57,plain,(
+  (! [X0,X1] : (snd(pair(X0,X1)) = X1))),
+  inference(cnf_transformation,[],[f8])).
+fof(f58,plain,(
+  (! [X0,X1] : (uncurry(X0,X1) = app(app(X0,fst(X1)),snd(X1))))),
+  inference(cnf_transformation,[],[f9])).
+fof(f59,plain,(
+  (! [X0,X1] : (foldr(X0,X1,nil) = X1))),
+  inference(cnf_transformation,[],[f10])).
+fof(f60,plain,(
+  (! [X0,X1,X2,X3] : (foldr(X0,X1,cons(X2,X3)) = app(app(X0,X2),foldr(X0,X1,X3))))),
+  inference(cnf_transformation,[],[f11])).
+fof(f61,plain,(
+  (! [X0] : (tree(X0) = foldr(uncurry_1(insertNat_0),nil_1,X0)))),
+  inference(cnf_transformation,[],[f12])).
+fof(f62,plain,(
+  (! [X0,X1,X2] : (prop_FindInsert_case1_case1(true,X0,X1,X2) = just(X2)))),
+  inference(cnf_transformation,[],[f13])).
+fof(f64,plain,(
+  (! [X0,X1,X2,X3] : (prop_FindInsert_case1(X0,X1,X2,X3) = prop_FindInsert_case1_case1(eqNat(X0,X1),X0,X2,X3)))),
+  inference(cnf_transformation,[],[f15])).
+fof(f65,plain,(
+  (! [X0,X1,X2,X3] : (prop_FindInsert(X0,pair(X1,X2),X3) = eqMaybeNat(findNat(X0,insertNat(X1,X2,tree(X3))),prop_FindInsert_case1(X0,X1,X3,X2))))),
+  inference(cnf_transformation,[],[f16])).
+fof(f66,plain,(
+  nil_1 = leaf),
+  inference(cnf_transformation,[],[f17])).
+fof(f67,plain,(
+  (! [X0,X1] : (insertNat(X0,X1,leaf) = branch(leaf,X0,X1,leaf)))),
+  inference(cnf_transformation,[],[f18])).
+fof(f68,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (insertNat(X0,X1,branch(X2,X3,X4,X5)) = insertNat_case1(ltNat(X0,X3),X0,X3,X2,X5,X1,X4)))),
+  inference(cnf_transformation,[],[f19])).
+fof(f70,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (insertNat_case1(false,X0,X1,X2,X3,X4,X5) = branch(X2,X1,X5,insertNat(X0,X4,X3))))),
+  inference(cnf_transformation,[],[f21])).
+fof(f74,plain,(
+  (! [X0,X1] : (eqNat(X0,X1) = eqMaybeNat(just(X0),just(X1))))),
+  inference(cnf_transformation,[],[f25])).
+fof(f76,plain,(
+  (! [X0,X1,X2,X3,X4] : (findNat(X0,branch(X1,X2,X3,X4)) = findNat_case1(ltNat(X0,X2),X0,X2,X1,X4,X3)))),
+  inference(cnf_transformation,[],[f27])).
+fof(f78,plain,(
+  (! [X0,X1,X2,X3,X4] : (findNat_case1(false,X0,X1,X2,X3,X4) = findNat_case1_case1(gtNat(X0,X1),X0,X3,X4)))),
+  inference(cnf_transformation,[],[f29])).
+fof(f80,plain,(
+  (! [X0,X1,X2] : (just(X2) = findNat_case1_case1(false,X0,X1,X2)))),
+  inference(cnf_transformation,[],[f31])).
+fof(f81,plain,(
+  true = eqNat(zero,zero)),
+  inference(cnf_transformation,[],[f32])).
+fof(f83,plain,(
+  (! [X0] : (false = eqNat(suc(X0),zero)))),
+  inference(cnf_transformation,[],[f34])).
+fof(f85,plain,(
+  (! [X0,X1] : (ltNat(X0,X1) = isLT(compareNat(X0,X1))))),
+  inference(cnf_transformation,[],[f36])).
+fof(f86,plain,(
+  (! [X0,X1] : (gtNat(X0,X1) = isGT(compareNat(X0,X1))))),
+  inference(cnf_transformation,[],[f37])).
+fof(f87,plain,(
+  eq = compareNat(zero,zero)),
+  inference(cnf_transformation,[],[f38])).
+fof(f91,plain,(
+  (! [X0] : (app(insertNat_0,X0) = insertNat_1(X0)))),
+  inference(cnf_transformation,[],[f42])).
+fof(f92,plain,(
+  (! [X0,X1] : (app(insertNat_1(X0),X1) = insertNat_2(X0,X1)))),
+  inference(cnf_transformation,[],[f43])).
+fof(f93,plain,(
+  (! [X0,X1,X2] : (app(insertNat_2(X0,X1),X2) = insertNat(X0,X1,X2)))),
+  inference(cnf_transformation,[],[f44])).
+fof(f94,plain,(
+  (! [X0,X1] : (uncurry(X0,X1) = app(uncurry_1(X0),X1)))),
+  inference(cnf_transformation,[],[f45])).
+fof(f95,plain,(
+  (! [X0,X1,X2] : (false != prop_FindInsert(X0,X1,X2) | ~ans0(X0,X1,X2)))),
+  inference(cnf_transformation,[],[f49])).
+fof(f96,plain,(
+  (! [X0,X1] : (insertNat_2(X0,X1) = app(app(insertNat_0,X0),X1)))),
+  inference(definition_unfolding,[],[f92,f91])).
+fof(f97,plain,(
+  (! [X0] : (tree(X0) = foldr(uncurry_1(insertNat_0),leaf,X0)))),
+  inference(definition_unfolding,[],[f61,f66])).
+fof(f98,plain,(
+  (! [X0,X1,X2,X3] : (prop_FindInsert_case1(X0,X1,X2,X3) = prop_FindInsert_case1_case1(eqMaybeNat(just(X0),just(X1)),X0,X2,X3)))),
+  inference(definition_unfolding,[],[f64,f74])).
+fof(f99,plain,(
+  (! [X0,X1,X2] : (insertNat(X0,X1,X2) = app(app(app(insertNat_0,X0),X1),X2)))),
+  inference(definition_unfolding,[],[f93,f96])).
+fof(f101,plain,(
+  (! [X0,X1,X2,X3] : (prop_FindInsert(X0,pair(X1,X2),X3) = eqMaybeNat(findNat(X0,app(app(app(insertNat_0,X1),X2),foldr(uncurry_1(insertNat_0),leaf,X3))),prop_FindInsert_case1_case1(eqMaybeNat(just(X0),just(X1)),X0,X3,X2))))),
+  inference(definition_unfolding,[],[f65,f99,f97,f98])).
+fof(f102,plain,(
+  (! [X0,X1] : (branch(leaf,X0,X1,leaf) = app(app(app(insertNat_0,X0),X1),leaf)))),
+  inference(definition_unfolding,[],[f67,f99])).
+fof(f103,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (app(app(app(insertNat_0,X0),X1),branch(X2,X3,X4,X5)) = insertNat_case1(isLT(compareNat(X0,X3)),X0,X3,X2,X5,X1,X4)))),
+  inference(definition_unfolding,[],[f68,f99,f85])).
+fof(f105,plain,(
+  (! [X0,X1,X2,X3,X4,X5] : (insertNat_case1(false,X0,X1,X2,X3,X4,X5) = branch(X2,X1,X5,app(app(app(insertNat_0,X0),X4),X3))))),
+  inference(definition_unfolding,[],[f70,f99])).
+fof(f106,plain,(
+  (! [X0,X1,X2,X3,X4] : (findNat(X0,branch(X1,X2,X3,X4)) = findNat_case1(isLT(compareNat(X0,X2)),X0,X2,X1,X4,X3)))),
+  inference(definition_unfolding,[],[f76,f85])).
+fof(f107,plain,(
+  (! [X0,X1,X2,X3,X4] : (findNat_case1(false,X0,X1,X2,X3,X4) = findNat_case1_case1(isGT(compareNat(X0,X1)),X0,X3,X4)))),
+  inference(definition_unfolding,[],[f78,f86])).
+fof(f108,plain,(
+  true = eqMaybeNat(just(zero),just(zero))),
+  inference(definition_unfolding,[],[f81,f74])).
+fof(f110,plain,(
+  (! [X0] : (false = eqMaybeNat(just(suc(X0)),just(zero))))),
+  inference(definition_unfolding,[],[f83,f74])).
+fof(f112,plain,(
+  (! [X0,X1] : (app(app(X0,fst(X1)),snd(X1)) = app(uncurry_1(X0),X1)))),
+  inference(definition_unfolding,[],[f94,f58])).
+fof(f114,plain,(
+  (! [X0,X1,X2] : (app(uncurry_1(X1),pair(X2,X0)) = app(app(X1,fst(pair(X2,X0))),X0)))),
+  inference(superposition,[],[f112,f57])).
+fof(f115,plain,(
+  (! [X0,X1,X2] : (app(uncurry_1(X1),pair(X2,X0)) = app(app(X1,X2),X0)))),
+  inference(forward_demodulation,[],[f114,f56])).
+fof(f141,plain,(
+  (! [X0,X1,X2] : (app(app(X1,X2),X0) = foldr(X1,X0,cons(X2,nil))))),
+  inference(superposition,[],[f60,f59])).
+fof(f145,plain,(
+  (! [X0,X1,X2] : (findNat_case1(false,zero,zero,X0,X1,X2) = findNat_case1_case1(isGT(eq),zero,X1,X2)))),
+  inference(superposition,[],[f107,f87])).
+fof(f151,plain,(
+  (! [X0,X1,X2] : (findNat_case1(false,zero,zero,X0,X1,X2) = findNat_case1_case1(false,zero,X1,X2)))),
+  inference(forward_demodulation,[],[f145,f54])).
+fof(f235,plain,(
+  (! [X0,X1,X2,X3] : (app(app(app(insertNat_0,zero),X0),branch(X1,zero,X2,X3)) = insertNat_case1(isLT(eq),zero,zero,X1,X3,X0,X2)))),
+  inference(superposition,[],[f103,f87])).
+fof(f241,plain,(
+  (! [X0,X1,X2,X3] : (app(app(app(insertNat_0,zero),X0),branch(X1,zero,X2,X3)) = insertNat_case1(false,zero,zero,X1,X3,X0,X2)))),
+  inference(forward_demodulation,[],[f235,f51])).
+fof(f256,plain,(
+  (! [X0,X1] : (prop_FindInsert(zero,pair(zero,X0),X1) = eqMaybeNat(findNat(zero,app(app(app(insertNat_0,zero),X0),foldr(uncurry_1(insertNat_0),leaf,X1))),prop_FindInsert_case1_case1(true,zero,X1,X0))))),
+  inference(superposition,[],[f101,f108])).
+fof(f260,plain,(
+  (! [X0,X1] : (prop_FindInsert(zero,pair(zero,X0),X1) = eqMaybeNat(findNat(zero,app(app(app(insertNat_0,zero),X0),foldr(uncurry_1(insertNat_0),leaf,X1))),just(X0))))),
+  inference(forward_demodulation,[],[f256,f62])).
+fof(f286,plain,(
+  (! [X0,X1,X2] : (findNat(zero,branch(X0,zero,X1,X2)) = findNat_case1(isLT(eq),zero,zero,X0,X2,X1)))),
+  inference(superposition,[],[f106,f87])).
+fof(f292,plain,(
+  (! [X0,X1,X2] : (findNat(zero,branch(X0,zero,X1,X2)) = findNat_case1(false,zero,zero,X0,X2,X1)))),
+  inference(forward_demodulation,[],[f286,f51])).
+fof(f295,plain,(
+  (! [X0,X1,X2] : (findNat(zero,branch(X0,zero,X1,X2)) = findNat_case1_case1(false,zero,X2,X1)))),
+  inference(forward_demodulation,[],[f292,f151])).
+fof(f296,plain,(
+  (! [X0,X1,X2] : (just(X1) = findNat(zero,branch(X0,zero,X1,X2))))),
+  inference(forward_demodulation,[],[f295,f80])).
+fof(f297,plain,(
+  (! [X0,X1,X2,X3,X4] : (just(X4) = findNat(zero,insertNat_case1(false,X0,zero,X1,X2,X3,X4))))),
+  inference(superposition,[],[f296,f105])).
+fof(f452,plain,(
+  (! [X0,X1] : (prop_FindInsert(zero,pair(zero,X1),cons(X0,nil)) = eqMaybeNat(findNat(zero,app(app(app(insertNat_0,zero),X1),app(app(uncurry_1(insertNat_0),X0),leaf))),just(X1))))),
+  inference(superposition,[],[f260,f141])).
+fof(f576,plain,(
+  (! [X0,X1,X2] : (ans0(X0,X1,X2)))),
+  introduced(theory,[answer_literal_resolver],[])).
+fof(f1154,plain,(
+  (! [X0,X1,X2] : (prop_FindInsert(zero,pair(zero,X2),cons(pair(X0,X1),nil)) = eqMaybeNat(findNat(zero,app(app(app(insertNat_0,zero),X2),app(app(app(insertNat_0,X0),X1),leaf))),just(X2))))),
+  inference(superposition,[],[f452,f115])).
+fof(f1155,plain,(
+  (! [X0,X1,X2] : (prop_FindInsert(zero,pair(zero,X2),cons(pair(X0,X1),nil)) = eqMaybeNat(findNat(zero,app(app(app(insertNat_0,zero),X2),branch(leaf,X0,X1,leaf))),just(X2))))),
+  inference(forward_demodulation,[],[f1154,f102])).
+fof(f6478,plain,(
+  (! [X0,X1] : (prop_FindInsert(zero,pair(zero,X0),cons(pair(zero,X1),nil)) = eqMaybeNat(findNat(zero,insertNat_case1(false,zero,zero,leaf,leaf,X0,X1)),just(X0))))),
+  inference(superposition,[],[f1155,f241])).
+fof(f6483,plain,(
+  (! [X0,X1] : (eqMaybeNat(just(X1),just(X0)) = prop_FindInsert(zero,pair(zero,X0),cons(pair(zero,X1),nil))))),
+  inference(forward_demodulation,[],[f6478,f297])).
+fof(f6487,plain,(
+  (! [X0,X1] : (false != eqMaybeNat(just(X0),just(X1)) | ~ans0(zero,pair(zero,X1),cons(pair(zero,X0),nil))))),
+  inference(superposition,[],[f95,f6483])).
+fof(f6743,plain,(
+  (! [X0] : (false != false | ~ans0(zero,pair(zero,zero),cons(pair(zero,suc(X0)),nil))))),
+  inference(superposition,[],[f6487,f110])).
+fof(f6753,plain,(
+  (! [X0] : (~ans0(zero,pair(zero,zero),cons(pair(zero,suc(X0)),nil))))),
+  inference(trivial_inequality_removal,[],[f6743])).
+fof(f6754,plain,(
+  $false),
+  inference(unit_resulting_resolution,[],[f6753,f576])).
+% SZS output end Proof for problem
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation
+% Time elapsed: 0.075 s
+% Peak memory usage: 15 MB
+% Success in time 1.703 s

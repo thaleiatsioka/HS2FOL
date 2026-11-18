@@ -1,0 +1,339 @@
+% Running in auto input_syntax mode. Trying TPTP
+% Detected formulas, will run a generic FOF schedule.
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_tgt=full:sil=2000:alpa=true:random_seed=1597245969:st=5:i=107:sd=1:qa=plain:ss=on:er=filter:ssat=axiom_1 on problem for (1ds/107Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 11 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_2:3_to=lpo:sil=16000:sp=arity:random_seed=1844465639:i=114:bd=all:qa=plain:ss=on:sgt=4_1 on problem for (1ds/114Mi)
+%  found proof, printing to "/tmp/vampire-proof-21308-21314"...
+% SZS answers Tuple [∀X1,X0,X3,X2.[suc(X2),X3,cons(pair(zero,X0),X1),zero]|_] for problem
+% ...printing done.
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for problem
+% SZS output start Proof for problem
+fof(f1,axiom,(
+  isLT(lt) = true),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','isLT_1')).
+fof(f2,axiom,(
+  isLT(eq) = false),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','isLT_2')).
+fof(f5,axiom,(
+  isGT(eq) = false),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','isGT_2')).
+fof(f7,axiom,(
+  ! [X0, X1] : (fst(pair(X0,X1)) = X0)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','fst_1')).
+fof(f8,axiom,(
+  ! [X0, X1] : (snd(pair(X0,X1)) = X1)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','snd_1')).
+fof(f9,axiom,(
+  ! [X0, X1] : (uncurry(X0,X1) = app(app(X0,fst(X1)),snd(X1)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','uncurry_1')).
+fof(f11,axiom,(
+  ! [X0, X1, X2, X3] : (foldr(X0,X1,cons(X2,X3)) = app(app(X0,X2),foldr(X0,X1,X3)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','foldr_2')).
+fof(f12,axiom,(
+  ! [X0] : (tree(X0) = foldr(uncurry_1(insert_0),nil_1,X0))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','tree_1')).
+fof(f14,axiom,(
+  ! [X0, X1, X2] : (prop_InsertPost_case1_case1(false,X0,X1,X2) = findNat(X0,tree(X1)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','prop_InsertPost_case1_case1_2')).
+fof(f15,axiom,(
+  ! [X0, X1, X2, X3] : (prop_InsertPost_case1(X0,X1,X2,X3) = prop_InsertPost_case1_case1(eqNat(X0,X1),X1,X2,X3))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','prop_InsertPost_case1_1')).
+fof(f16,axiom,(
+  ! [X0, X1, X2, X3] : (prop_InsertPost(X0,X1,X2,X3) = eqMaybeNat(findNat(X3,insert(X0,X1,tree(X2))),prop_InsertPost_case1(X0,X3,X2,X1)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','prop_InsertPost_1')).
+fof(f17,axiom,(
+  nil_1 = leaf),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','nil_1_1')).
+fof(f18,axiom,(
+  ! [X0, X1, X2] : (insert(X0,X1,X2) = branch(leaf,X0,X1,leaf))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','insert_1')).
+fof(f20,axiom,(
+  ! [X0] : (eqMaybeNat(nothing,just(X0)) = false)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','eqMaybeNat_2')).
+fof(f22,axiom,(
+  ! [X0, X1] : (eqMaybeNat(just(X0),just(X1)) = eqNat(X0,X1))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','eqMaybeNat_4')).
+fof(f23,axiom,(
+  ! [X0] : (findNat(X0,leaf) = nothing)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','findNat_1')).
+fof(f24,axiom,(
+  ! [X0, X1, X2, X3, X4] : (findNat(X0,branch(X1,X2,X3,X4)) = findNat_case1(ltNat(X0,X2),X0,X2,X1,X4,X3))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','findNat_2')).
+fof(f25,axiom,(
+  ! [X0, X1, X2, X3, X4] : (findNat_case1(true,X0,X1,X2,X3,X4) = findNat(X0,X2))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','findNat_case1_1')).
+fof(f26,axiom,(
+  ! [X0, X1, X2, X3, X4] : (findNat_case1(false,X0,X1,X2,X3,X4) = findNat_case1_case1(gtNat(X0,X1),X0,X3,X4))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','findNat_case1_2')).
+fof(f28,axiom,(
+  ! [X0, X1, X2] : (findNat_case1_case1(false,X0,X1,X2) = just(X2))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','findNat_case1_case1_2')).
+fof(f31,axiom,(
+  ! [X0] : (eqNat(suc(X0),zero) = false)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','eqNat_3')).
+fof(f33,axiom,(
+  ! [X0, X1] : (ltNat(X0,X1) = isLT(compareNat(X0,X1)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','ltNat_1')).
+fof(f34,axiom,(
+  ! [X0, X1] : (gtNat(X0,X1) = isGT(compareNat(X0,X1)))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','gtNat_1')).
+fof(f35,axiom,(
+  compareNat(zero,zero) = eq),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','compareNat_1')).
+fof(f36,axiom,(
+  ! [X0] : (compareNat(zero,suc(X0)) = lt)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','compareNat_2')).
+fof(f39,axiom,(
+  ! [X0] : (app(insert_0,X0) = insert_1(X0))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','app_insert_0_1')).
+fof(f40,axiom,(
+  ! [X0, X1] : (app(insert_1(X0),X1) = insert_2(X0,X1))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','app_insert_1_1')).
+fof(f41,axiom,(
+  ! [X0, X1, X2] : (app(insert_2(X0,X1),X2) = insert(X0,X1,X2))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','app_insert_2_1')).
+fof(f42,axiom,(
+  ! [X0, X1] : (app(uncurry_1(X0),X1) = uncurry(X0,X1))),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','app_uncurry_1_1')).
+fof(f43,conjecture,(
+  ? [X0, X1, X2, X3] : (prop_InsertPost(X0,X1,X2,X3) = false)),
+  file('/home/claude/hs2fol/results-10s/hughes-bst/BSTSpec1/prop_InsertPost/problem.p','prop_InsertPost')).
+fof(f44,negated_conjecture,(
+  ~ ? [X0, X1, X2, X3] : (prop_InsertPost(X0,X1,X2,X3) = false)),
+  inference(conjecture_negation,[status(cth)],[f43])).
+fof(f45,plain,(
+  ~ ? [X0, X1, X2, X3] : ((prop_InsertPost(X0,X1,X2,X3) = false) & ans0(X0,X1,X2,X3))),
+  inference(answer_literal_injection,[],[f44])).
+fof(f46,plain,(
+  ! [X0, X1, X2, X3] : ((false != prop_InsertPost(X0,X1,X2,X3)) | ~ans0(X0,X1,X2,X3))),
+  inference(ennf_transformation,[],[f45])).
+fof(f47,plain,(
+  (! [X0,X1,X2,X3] : (false != prop_InsertPost(X0,X1,X2,X3) | ~ans0(X0,X1,X2,X3)))),
+  inference(cnf_transformation,[],[f46])).
+fof(f48,plain,(
+  (! [X0,X1,X2,X3] : (prop_InsertPost(X0,X1,X2,X3) = eqMaybeNat(findNat(X3,insert(X0,X1,tree(X2))),prop_InsertPost_case1(X0,X3,X2,X1))))),
+  inference(cnf_transformation,[],[f16])).
+fof(f49,plain,(
+  (! [X0,X1,X2] : (prop_InsertPost_case1_case1(false,X0,X1,X2) = findNat(X0,tree(X1))))),
+  inference(cnf_transformation,[],[f14])).
+fof(f50,plain,(
+  (! [X0] : (tree(X0) = foldr(uncurry_1(insert_0),nil_1,X0)))),
+  inference(cnf_transformation,[],[f12])).
+fof(f51,plain,(
+  (! [X0,X1,X2,X3] : (prop_InsertPost_case1(X0,X1,X2,X3) = prop_InsertPost_case1_case1(eqNat(X0,X1),X1,X2,X3)))),
+  inference(cnf_transformation,[],[f15])).
+fof(f52,plain,(
+  (! [X0,X1,X2] : (insert(X0,X1,X2) = app(insert_2(X0,X1),X2)))),
+  inference(cnf_transformation,[],[f41])).
+fof(f53,plain,(
+  (! [X0,X1,X2] : (insert(X0,X1,X2) = branch(leaf,X0,X1,leaf)))),
+  inference(cnf_transformation,[],[f18])).
+fof(f54,plain,(
+  (! [X0,X1] : (eqNat(X0,X1) = eqMaybeNat(just(X0),just(X1))))),
+  inference(cnf_transformation,[],[f22])).
+fof(f56,plain,(
+  (! [X0,X1,X2,X3] : (foldr(X0,X1,cons(X2,X3)) = app(app(X0,X2),foldr(X0,X1,X3))))),
+  inference(cnf_transformation,[],[f11])).
+fof(f58,plain,(
+  (! [X0] : (app(insert_0,X0) = insert_1(X0)))),
+  inference(cnf_transformation,[],[f39])).
+fof(f59,plain,(
+  (! [X0,X1] : (uncurry(X0,X1) = app(uncurry_1(X0),X1)))),
+  inference(cnf_transformation,[],[f42])).
+fof(f60,plain,(
+  nil_1 = leaf),
+  inference(cnf_transformation,[],[f17])).
+fof(f62,plain,(
+  (! [X0] : (false = eqNat(suc(X0),zero)))),
+  inference(cnf_transformation,[],[f31])).
+fof(f65,plain,(
+  (! [X0,X1] : (app(insert_1(X0),X1) = insert_2(X0,X1)))),
+  inference(cnf_transformation,[],[f40])).
+fof(f66,plain,(
+  (! [X0] : (nothing = findNat(X0,leaf)))),
+  inference(cnf_transformation,[],[f23])).
+fof(f67,plain,(
+  (! [X0,X1,X2,X3,X4] : (findNat(X0,branch(X1,X2,X3,X4)) = findNat_case1(ltNat(X0,X2),X0,X2,X1,X4,X3)))),
+  inference(cnf_transformation,[],[f24])).
+fof(f68,plain,(
+  (! [X0,X1] : (uncurry(X0,X1) = app(app(X0,fst(X1)),snd(X1))))),
+  inference(cnf_transformation,[],[f9])).
+fof(f71,plain,(
+  (! [X0] : (false = eqMaybeNat(nothing,just(X0))))),
+  inference(cnf_transformation,[],[f20])).
+fof(f73,plain,(
+  (! [X0,X1] : (ltNat(X0,X1) = isLT(compareNat(X0,X1))))),
+  inference(cnf_transformation,[],[f33])).
+fof(f74,plain,(
+  (! [X0,X1,X2,X3,X4] : (findNat_case1(false,X0,X1,X2,X3,X4) = findNat_case1_case1(gtNat(X0,X1),X0,X3,X4)))),
+  inference(cnf_transformation,[],[f26])).
+fof(f75,plain,(
+  (! [X0,X1,X2,X3,X4] : (findNat_case1(true,X0,X1,X2,X3,X4) = findNat(X0,X2)))),
+  inference(cnf_transformation,[],[f25])).
+fof(f76,plain,(
+  (! [X0,X1] : (fst(pair(X0,X1)) = X0))),
+  inference(cnf_transformation,[],[f7])).
+fof(f77,plain,(
+  (! [X0,X1] : (snd(pair(X0,X1)) = X1))),
+  inference(cnf_transformation,[],[f8])).
+fof(f79,plain,(
+  isLT(eq) = false),
+  inference(cnf_transformation,[],[f2])).
+fof(f80,plain,(
+  isLT(lt) = true),
+  inference(cnf_transformation,[],[f1])).
+fof(f81,plain,(
+  (! [X0,X1] : (gtNat(X0,X1) = isGT(compareNat(X0,X1))))),
+  inference(cnf_transformation,[],[f34])).
+fof(f82,plain,(
+  (! [X0,X1,X2] : (just(X2) = findNat_case1_case1(false,X0,X1,X2)))),
+  inference(cnf_transformation,[],[f28])).
+fof(f86,plain,(
+  eq = compareNat(zero,zero)),
+  inference(cnf_transformation,[],[f35])).
+fof(f87,plain,(
+  false = isGT(eq)),
+  inference(cnf_transformation,[],[f5])).
+fof(f88,plain,(
+  (! [X0] : (lt = compareNat(zero,suc(X0))))),
+  inference(cnf_transformation,[],[f36])).
+fof(f90,plain,(
+  (! [X0,X1] : (insert_2(X0,X1) = app(app(insert_0,X0),X1)))),
+  inference(definition_unfolding,[],[f65,f58])).
+fof(f91,plain,(
+  (! [X0] : (tree(X0) = foldr(uncurry_1(insert_0),leaf,X0)))),
+  inference(definition_unfolding,[],[f50,f60])).
+fof(f92,plain,(
+  (! [X0,X1,X2,X3] : (prop_InsertPost_case1(X0,X1,X2,X3) = prop_InsertPost_case1_case1(eqMaybeNat(just(X0),just(X1)),X1,X2,X3)))),
+  inference(definition_unfolding,[],[f51,f54])).
+fof(f93,plain,(
+  (! [X0,X1,X2] : (insert(X0,X1,X2) = app(app(app(insert_0,X0),X1),X2)))),
+  inference(definition_unfolding,[],[f52,f90])).
+fof(f94,plain,(
+  (! [X0,X1,X2,X3] : (prop_InsertPost(X0,X1,X2,X3) = eqMaybeNat(findNat(X3,app(app(app(insert_0,X0),X1),foldr(uncurry_1(insert_0),leaf,X2))),prop_InsertPost_case1_case1(eqMaybeNat(just(X0),just(X3)),X3,X2,X1))))),
+  inference(definition_unfolding,[],[f48,f93,f91,f92])).
+fof(f95,plain,(
+  (! [X0,X1,X2,X3] : (false != eqMaybeNat(findNat(X3,app(app(app(insert_0,X0),X1),foldr(uncurry_1(insert_0),leaf,X2))),prop_InsertPost_case1_case1(eqMaybeNat(just(X0),just(X3)),X3,X2,X1)) | ~ans0(X0,X1,X2,X3)))),
+  inference(definition_unfolding,[],[f47,f94])).
+fof(f96,plain,(
+  (! [X0,X1,X2] : (prop_InsertPost_case1_case1(false,X0,X1,X2) = findNat(X0,foldr(uncurry_1(insert_0),leaf,X1))))),
+  inference(definition_unfolding,[],[f49,f91])).
+fof(f97,plain,(
+  (! [X0,X1,X2] : (branch(leaf,X0,X1,leaf) = app(app(app(insert_0,X0),X1),X2)))),
+  inference(definition_unfolding,[],[f53,f93])).
+fof(f99,plain,(
+  (! [X0] : (false = eqMaybeNat(just(suc(X0)),just(zero))))),
+  inference(definition_unfolding,[],[f62,f54])).
+fof(f102,plain,(
+  (! [X0,X1,X2,X3,X4] : (findNat(X0,branch(X1,X2,X3,X4)) = findNat_case1(isLT(compareNat(X0,X2)),X0,X2,X1,X4,X3)))),
+  inference(definition_unfolding,[],[f67,f73])).
+fof(f103,plain,(
+  (! [X0,X1] : (app(app(X0,fst(X1)),snd(X1)) = app(uncurry_1(X0),X1)))),
+  inference(definition_unfolding,[],[f68,f59])).
+fof(f104,plain,(
+  (! [X0,X1,X2,X3,X4] : (findNat_case1(false,X0,X1,X2,X3,X4) = findNat_case1_case1(isGT(compareNat(X0,X1)),X0,X3,X4)))),
+  inference(definition_unfolding,[],[f74,f81])).
+fof(f128,plain,(
+  (! [X0,X1,X2] : (app(uncurry_1(X1),pair(X2,X0)) = app(app(X1,fst(pair(X2,X0))),X0)))),
+  inference(superposition,[],[f103,f77])).
+fof(f131,plain,(
+  (! [X0,X1,X2] : (app(uncurry_1(X1),pair(X2,X0)) = app(app(X1,X2),X0)))),
+  inference(forward_demodulation,[],[f128,f76])).
+fof(f134,plain,(
+  (! [X0,X1,X2,X3] : (foldr(X0,X1,cons(X2,X3)) = app(uncurry_1(X0),pair(X2,foldr(X0,X1,X3)))))),
+  inference(backward_demodulation,[],[f56,f131])).
+fof(f135,plain,(
+  (! [X0,X1,X2] : (branch(leaf,X0,X1,leaf) = app(uncurry_1(app(insert_0,X0)),pair(X1,X2))))),
+  inference(backward_demodulation,[],[f97,f131])).
+fof(f136,plain,(
+  (! [X0,X1,X2,X3] : (false != eqMaybeNat(findNat(X3,app(uncurry_1(app(insert_0,X0)),pair(X1,foldr(uncurry_1(insert_0),leaf,X2)))),prop_InsertPost_case1_case1(eqMaybeNat(just(X0),just(X3)),X3,X2,X1)) | ~ans0(X0,X1,X2,X3)))),
+  inference(backward_demodulation,[],[f95,f131])).
+fof(f173,plain,(
+  (! [X0,X1,X2,X3] : (false != eqMaybeNat(findNat(X2,branch(leaf,X0,X1,leaf)),prop_InsertPost_case1_case1(eqMaybeNat(just(X0),just(X2)),X2,X3,X1)) | ~ans0(X0,X1,X3,X2)))),
+  inference(superposition,[],[f136,f135])).
+fof(f188,plain,(
+  (! [X0,X1,X2] : (findNat(zero,branch(X0,zero,X1,X2)) = findNat_case1(isLT(eq),zero,zero,X0,X2,X1)))),
+  inference(superposition,[],[f102,f86])).
+fof(f190,plain,(
+  (! [X0,X1,X2,X3] : (findNat(zero,branch(X0,suc(X1),X2,X3)) = findNat_case1(isLT(lt),zero,suc(X1),X0,X3,X2)))),
+  inference(superposition,[],[f102,f88])).
+fof(f192,plain,(
+  (! [X0,X1,X2,X3] : (findNat(zero,branch(X0,suc(X1),X2,X3)) = findNat_case1(true,zero,suc(X1),X0,X3,X2)))),
+  inference(forward_demodulation,[],[f190,f80])).
+fof(f194,plain,(
+  (! [X0,X1,X2] : (findNat(zero,branch(X0,zero,X1,X2)) = findNat_case1(false,zero,zero,X0,X2,X1)))),
+  inference(forward_demodulation,[],[f188,f79])).
+fof(f195,plain,(
+  (! [X0,X1,X2,X3] : (findNat(zero,branch(X0,suc(X1),X2,X3)) = findNat(zero,X0)))),
+  inference(forward_demodulation,[],[f192,f75])).
+fof(f197,plain,(
+  (! [X0,X1,X2] : (findNat(zero,branch(X0,zero,X1,X2)) = findNat_case1_case1(isGT(compareNat(zero,zero)),zero,X2,X1)))),
+  inference(forward_demodulation,[],[f194,f104])).
+fof(f199,plain,(
+  (! [X0,X1,X2] : (findNat(zero,branch(X0,zero,X1,X2)) = findNat_case1_case1(isGT(eq),zero,X2,X1)))),
+  inference(forward_demodulation,[],[f197,f86])).
+fof(f201,plain,(
+  (! [X0,X1,X2] : (findNat(zero,branch(X0,zero,X1,X2)) = findNat_case1_case1(false,zero,X2,X1)))),
+  inference(forward_demodulation,[],[f199,f87])).
+fof(f203,plain,(
+  (! [X0,X1,X2] : (just(X1) = findNat(zero,branch(X0,zero,X1,X2))))),
+  inference(forward_demodulation,[],[f201,f82])).
+fof(f218,plain,(
+  (! [X0,X1,X2] : (false != eqMaybeNat(findNat(zero,branch(leaf,suc(X0),X1,leaf)),prop_InsertPost_case1_case1(false,zero,X2,X1)) | ~ans0(suc(X0),X1,X2,zero)))),
+  inference(superposition,[],[f173,f99])).
+fof(f222,plain,(
+  (! [X0,X1,X2] : (false != eqMaybeNat(findNat(zero,branch(leaf,suc(X0),X1,leaf)),findNat(zero,foldr(uncurry_1(insert_0),leaf,X2))) | ~ans0(suc(X0),X1,X2,zero)))),
+  inference(forward_demodulation,[],[f218,f96])).
+fof(f225,plain,(
+  (! [X0,X1,X2] : (false != eqMaybeNat(findNat(zero,leaf),findNat(zero,foldr(uncurry_1(insert_0),leaf,X2))) | ~ans0(suc(X0),X1,X2,zero)))),
+  inference(forward_demodulation,[],[f222,f195])).
+fof(f228,plain,(
+  (! [X0,X1,X2] : (false != eqMaybeNat(nothing,findNat(zero,foldr(uncurry_1(insert_0),leaf,X2))) | ~ans0(suc(X0),X1,X2,zero)))),
+  inference(forward_demodulation,[],[f225,f66])).
+fof(f270,plain,(
+  (! [X0,X1,X2,X3] : (false != eqMaybeNat(nothing,findNat(zero,app(uncurry_1(uncurry_1(insert_0)),pair(X0,foldr(uncurry_1(insert_0),leaf,X1))))) | ~ans0(suc(X2),X3,cons(X0,X1),zero)))),
+  inference(superposition,[],[f228,f134])).
+fof(f287,plain,(
+  (! [X0,X1] : (just(X0) = findNat(zero,app(uncurry_1(app(insert_0,zero)),pair(X0,X1)))))),
+  inference(superposition,[],[f203,f135])).
+fof(f303,plain,(
+  (! [X0,X1,X2,X3] : (app(uncurry_1(app(X0,X1)),pair(X2,X3)) = app(app(uncurry_1(X0),pair(X1,X2)),X3)))),
+  inference(superposition,[],[f131,f131])).
+fof(f304,plain,(
+  (! [X0,X1,X2,X3] : (app(uncurry_1(app(X0,X1)),pair(X2,X3)) = app(uncurry_1(uncurry_1(X0)),pair(pair(X1,X2),X3))))),
+  inference(forward_demodulation,[],[f303,f131])).
+fof(f306,plain,(
+  (! [X0,X1] : (just(X0) = findNat(zero,app(uncurry_1(uncurry_1(insert_0)),pair(pair(zero,X0),X1)))))),
+  inference(backward_demodulation,[],[f287,f304])).
+fof(f756,plain,(
+  (! [X0,X1,X2,X3] : (false != eqMaybeNat(nothing,just(X0)) | ~ans0(suc(X2),X3,cons(pair(zero,X0),X1),zero)))),
+  inference(superposition,[],[f270,f306])).
+fof(f777,plain,(
+  (! [X0,X1,X2,X3] : (~ans0(suc(X2),X3,cons(pair(zero,X0),X1),zero)))),
+  inference(forward_subsumption_resolution,[],[f756,f71])).
+fof(f778,plain,(
+  (! [X0,X1,X2,X3] : (ans0(X0,X1,X2,X3)))),
+  introduced(theory,[answer_literal_resolver],[])).
+fof(f779,plain,(
+  $false),
+  inference(unit_resulting_resolution,[],[f777,f778])).
+% SZS output end Proof for problem
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation
+% Time elapsed: 0.008 s
+% Peak memory usage: 10 MB
+% Success in time 0.111 s

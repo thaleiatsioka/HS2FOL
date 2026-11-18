@@ -1,0 +1,7 @@
+property:   prop_UnionDeleteInsert
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec2.hs
+prover:     vampire
+witness:    prop_UnionDeleteInsert [(Zero, Suc _X0)] [] (Zero, Zero)
+input:      prop_UnionDeleteInsert [(Zero, Suc undefined)] [] (Zero, Zero)
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

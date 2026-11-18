@@ -1,0 +1,7 @@
+property:   prop_DeleteInsertWeak
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec4.hs
+prover:     twee
+witness:    prop_DeleteInsertWeak Zero (Suc _X, _Y) []
+input:      prop_DeleteInsertWeak Zero (Suc undefined, undefined) []
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

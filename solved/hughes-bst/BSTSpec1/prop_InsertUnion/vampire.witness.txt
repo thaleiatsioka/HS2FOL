@@ -1,0 +1,7 @@
+property:   prop_InsertUnion
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec1.hs
+prover:     vampire
+witness:    prop_InsertUnion (Suc _X1, _X2) _X3 [(Zero, _X0)]
+input:      prop_InsertUnion (Suc undefined, undefined) undefined [(Zero, undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

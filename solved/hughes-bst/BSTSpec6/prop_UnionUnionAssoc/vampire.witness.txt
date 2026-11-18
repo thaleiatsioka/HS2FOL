@@ -1,0 +1,7 @@
+property:   prop_UnionUnionAssoc
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec6.hs
+prover:     vampire
+witness:    prop_UnionUnionAssoc [(Zero, Zero)] [(_X0, _X1)] [(fst _X2, snd _X2)]
+input:      prop_UnionUnionAssoc [(Zero, Zero)] [(undefined, undefined)] [(fst undefined, snd undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

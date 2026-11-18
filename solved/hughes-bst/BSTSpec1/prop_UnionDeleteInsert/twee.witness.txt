@@ -1,0 +1,8 @@
+property:   prop_UnionDeleteInsert
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec1.hs
+prover:     twee
+witness:    prop_UnionDeleteInsert (toList (insert (Suc _X) _Y _T)) _Z (Zero, Zero)
+evaluated:  prop_UnionDeleteInsert [(Suc _X, _Y)] _Z (Zero, Zero)
+input:      prop_UnionDeleteInsert [(Suc undefined, undefined)] undefined (Zero, Zero)
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

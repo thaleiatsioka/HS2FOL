@@ -1,0 +1,20 @@
+# prop_InsertDelete (hughes-bst/BSTSpec3)
+
+| prover | SZS status | seconds | witness |
+|---|---|---|---|
+| eprover | ResourceOut | 10.09 | - |
+| twee | Theorem | 13.89 | CONFIRMED |
+| vampire | Theorem | 3.11 | CONFIRMED |
+
+Counterexample (decoded from the twee witness, checked with GHC):
+
+```
+property:   prop_InsertDelete
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec3.hs
+prover:     twee
+witness:    prop_InsertDelete (Zero, Zero) Zero (toList (insert Zero (Suc _X) nil))
+evaluated:  prop_InsertDelete (Zero, Zero) Zero [(Zero, Suc _X)]
+input:      prop_InsertDelete (Zero, Zero) Zero [(Zero, Suc undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed
+```

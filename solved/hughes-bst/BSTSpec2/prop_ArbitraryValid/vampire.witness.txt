@@ -1,0 +1,7 @@
+property:   prop_ArbitraryValid
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec2.hs
+prover:     vampire
+witness:    prop_ArbitraryValid [(Zero, _X0), (Zero, _X1)]
+input:      prop_ArbitraryValid [(Zero, undefined), (Zero, undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

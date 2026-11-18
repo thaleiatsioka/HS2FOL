@@ -1,0 +1,7 @@
+property:   prop_UnionUnionIdem
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec6.hs
+prover:     vampire
+witness:    prop_UnionUnionIdem [(fst (fst (Zero, Zero), Zero), Zero)]
+evaluated:  prop_UnionUnionIdem [(Zero, Zero)]
+input:      prop_UnionUnionIdem [(Zero, Zero)]
+result:     False -- counterexample confirmed

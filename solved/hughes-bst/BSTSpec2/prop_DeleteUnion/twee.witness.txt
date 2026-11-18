@@ -1,0 +1,8 @@
+property:   prop_DeleteUnion
+file:       benchmarks/hughes-bst/BSTSpec2.hs
+prover:     twee
+witness:    prop_DeleteUnion Zero (toList (insert Zero _Z nil)) (toList (insert Zero _Y (insert Zero _X nil)))
+evaluated:  prop_DeleteUnion Zero [(Zero, _Z)] [(Zero, _X), (Zero, _Y)]
+input:      prop_DeleteUnion Zero [(Zero, undefined)] [(Zero, undefined), (Zero, undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

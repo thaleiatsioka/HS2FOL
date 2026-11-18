@@ -1,0 +1,468 @@
+% Preprocessing class: FSMSSMSMSSSNFFN.
+% Configuration: G-E--_207_C18_F1_SE_CS_SP_PI_PS_S2SI
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFMM32-MFFFFFNN
+% partial match(1): FUUSM-FFMM32-MFFFFFNN
+% Configuration: G-E--_208_C12_00_F1_SE_CS_PI_SP_PS_S5PRR_RG_S04AN
+% Initializing proof state
+% Scanning for AC axioms
+%
+%cnf(i_0_18, plain, (nil_1=leaf)).
+%
+%cnf(i_0_50, negated_conjecture, ($answer(esk1_1(X1))|prop_UnionUnionIdem(X1)!=false)).
+%
+%cnf(i_0_2, plain, (isLT(eq)=false)).
+%
+%cnf(i_0_3, plain, (isLT(gt)=false)).
+%
+%cnf(i_0_4, plain, (isGT(lt)=false)).
+%
+%cnf(i_0_1, plain, (isLT(lt)=true)).
+%
+%cnf(i_0_5, plain, (isGT(eq)=false)).
+%
+%cnf(i_0_6, plain, (isGT(gt)=true)).
+%
+%cnf(i_0_22, plain, (toList(leaf)=nil)).
+%
+%cnf(i_0_8, plain, (opAnd(true,X1)=X1)).
+%
+%cnf(i_0_12, plain, (opAppend(nil,X1)=X1)).
+%
+%cnf(i_0_7, plain, (opAnd(false,X1)=false)).
+%
+%cnf(i_0_30, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_35, plain, (eqListPairNatNat(nil,nil)=true)).
+%
+%cnf(i_0_42, plain, (compareNat(zero,zero)=eq)).
+%
+%cnf(i_0_19, plain, (union(leaf,X1)=X1)).
+%
+%cnf(i_0_31, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_32, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_9, plain, (fst(pair(X1,X2))=X1)).
+%
+%cnf(i_0_10, plain, (snd(pair(X1,X2))=X2)).
+%
+%cnf(i_0_14, plain, (foldr(X1,X2,nil)=X2)).
+%
+%cnf(i_0_43, plain, (compareNat(zero,suc(X1))=lt)).
+%
+%cnf(i_0_44, plain, (compareNat(suc(X1),zero)=gt)).
+%
+%cnf(i_0_36, plain, (eqListPairNatNat(nil,cons(X1,X2))=false)).
+%
+%cnf(i_0_37, plain, (eqListPairNatNat(cons(X1,X2),nil)=false)).
+%
+%cnf(i_0_33, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_45, plain, (compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%cnf(i_0_11, plain, (app(app(X1,fst(X2)),snd(X2))=app(uncurry_1(X1),X2))).
+%
+%cnf(i_0_13, plain, (opAppend(cons(X1,X2),X3)=cons(X1,opAppend(X2,X3)))).
+%
+%cnf(i_0_20, plain, (union(branch(X1,X2,X3,X4),leaf)=branch(X1,X2,X3,X4))).
+%
+%cnf(i_0_29, plain, (insertNat_case1_case1(false,X1,X2,X3,X4,X5,X6)=branch(X3,X2,X5,X4))).
+%
+%cnf(i_0_38, plain, (opAnd(eqPairNatNat(X1,X3),eqListPairNatNat(X2,X4))=eqListPairNatNat(cons(X1,X2),cons(X3,X4)))).
+%
+%cnf(i_0_41, plain, (eqPairNatNat(pair(X1,X2),pair(X3,X4))=opAnd(eqNat(X1,X3),eqNat(X2,X4)))).
+%
+%cnf(i_0_24, plain, (app(app(app(insertNat_0,X1),X2),leaf)=branch(leaf,X1,X2,leaf))).
+%
+%cnf(i_0_15, plain, (app(app(X1,X3),foldr(X1,X2,X4))=foldr(X1,X2,cons(X3,X4)))).
+%
+%cnf(i_0_23, plain, (opAppend(toList(X1),cons(pair(X2,X3),toList(X4)))=toList(branch(X1,X2,X3,X4)))).
+%
+%cnf(i_0_27, plain, (insertNat_case1_case1(isGT(compareNat(X1,X2)),X1,X2,X3,X4,X5,X6)=insertNat_case1(false,X1,X2,X3,X4,X5,X6))).
+%
+%cnf(i_0_28, plain, (branch(X3,X2,X6,app(app(app(insertNat_0,X1),X5),X4))=insertNat_case1_case1(true,X1,X2,X3,X4,X5,X6))).
+%
+%cnf(i_0_17, plain, (eqListPairNatNat(toList(union(foldr(uncurry_1(insertNat_0),leaf,X1),foldr(uncurry_1(insertNat_0),leaf,X1))),toList(foldr(uncurry_1(insertNat_0),leaf,X1)))=prop_UnionUnionIdem(X1))).
+%
+%cnf(i_0_26, plain, (branch(app(app(app(insertNat_0,X1),X5),X3),X2,X6,X4)=insertNat_case1(true,X1,X2,X3,X4,X5,X6))).
+%
+%cnf(i_0_21, plain, (union(branch(X1,X2,X3,X4),branch(X5,X6,X7,X8))=branch(X1,X2,X3,branch(union(X4,X5),X6,X7,X8)))).
+%
+%cnf(i_0_25, plain, (insertNat_case1(isLT(compareNat(X1,X4)),X1,X4,X3,X6,X2,X5)=app(app(app(insertNat_0,X1),X2),branch(X3,X4,X5,X6)))).
+% Presaturation interreduction done
+%
+%cnf(i_0_18, plain, (nil_1=leaf)).
+%
+%cnf(i_0_2, plain, (isLT(eq)=false)).
+%
+%cnf(i_0_3, plain, (isLT(gt)=false)).
+%
+%cnf(i_0_50, negated_conjecture, ($answer(esk1_1(X1))|prop_UnionUnionIdem(X1)!=false)).
+%
+%cnf(i_0_4, plain, (isGT(lt)=false)).
+%
+%cnf(i_0_5, plain, (isGT(eq)=false)).
+%
+%cnf(i_0_7, plain, (opAnd(false,X1)=false)).
+%
+%cnf(i_0_1, plain, (isLT(lt)=true)).
+%
+%cnf(i_0_6, plain, (isGT(gt)=true)).
+%
+%cnf(i_0_22, plain, (toList(leaf)=nil)).
+%
+%cnf(i_0_8, plain, (opAnd(true,X1)=X1)).
+%
+%cnf(i_0_12, plain, (opAppend(nil,X1)=X1)).
+%
+%cnf(i_0_19, plain, (union(leaf,X1)=X1)).
+%
+%cnf(i_0_30, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_35, plain, (eqListPairNatNat(nil,nil)=true)).
+%
+%cnf(i_0_42, plain, (compareNat(zero,zero)=eq)).
+%
+%cnf(i_0_31, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_32, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_9, plain, (fst(pair(X1,X2))=X1)).
+%
+%cnf(i_0_10, plain, (snd(pair(X1,X2))=X2)).
+%
+%cnf(i_0_14, plain, (foldr(X1,X2,nil)=X2)).
+%
+%cnf(i_0_43, plain, (compareNat(zero,suc(X1))=lt)).
+%
+%cnf(i_0_44, plain, (compareNat(suc(X1),zero)=gt)).
+%
+%cnf(i_0_36, plain, (eqListPairNatNat(nil,cons(X1,X2))=false)).
+%
+%cnf(i_0_37, plain, (eqListPairNatNat(cons(X1,X2),nil)=false)).
+%
+%cnf(i_0_33, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_45, plain, (compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%cnf(i_0_13, plain, (opAppend(cons(X1,X2),X3)=cons(X1,opAppend(X2,X3)))).
+%
+%cnf(i_0_11, plain, (app(app(X1,fst(X2)),snd(X2))=app(uncurry_1(X1),X2))).
+%
+%cnf(i_0_20, plain, (union(branch(X1,X2,X3,X4),leaf)=branch(X1,X2,X3,X4))).
+%
+%cnf(i_0_24, plain, (app(app(app(insertNat_0,X1),X2),leaf)=branch(leaf,X1,X2,leaf))).
+%
+%cnf(i_0_29, plain, (insertNat_case1_case1(false,X1,X2,X3,X4,X5,X6)=branch(X3,X2,X5,X4))).
+%
+%cnf(i_0_38, plain, (opAnd(eqPairNatNat(X1,X2),eqListPairNatNat(X3,X4))=eqListPairNatNat(cons(X1,X3),cons(X2,X4)))).
+%
+%cnf(i_0_41, plain, (eqPairNatNat(pair(X1,X2),pair(X3,X4))=opAnd(eqNat(X1,X3),eqNat(X2,X4)))).
+%
+%cnf(i_0_15, plain, (app(app(X1,X2),foldr(X1,X3,X4))=foldr(X1,X3,cons(X2,X4)))).
+%
+%cnf(i_0_27, plain, (insertNat_case1_case1(isGT(compareNat(X1,X2)),X1,X2,X3,X4,X5,X6)=insertNat_case1(false,X1,X2,X3,X4,X5,X6))).
+%
+%cnf(i_0_23, plain, (opAppend(toList(X1),cons(pair(X2,X3),toList(X4)))=toList(branch(X1,X2,X3,X4)))).
+%
+%cnf(i_0_28, plain, (branch(X1,X2,X3,app(app(app(insertNat_0,X4),X5),X6))=insertNat_case1_case1(true,X4,X2,X1,X6,X5,X3))).
+%
+%cnf(i_0_26, plain, (branch(app(app(app(insertNat_0,X1),X2),X3),X4,X5,X6)=insertNat_case1(true,X1,X4,X3,X6,X2,X5))).
+%
+%cnf(i_0_21, plain, (union(branch(X1,X2,X3,X4),branch(X5,X6,X7,X8))=branch(X1,X2,X3,branch(union(X4,X5),X6,X7,X8)))).
+%
+%cnf(i_0_17, plain, (eqListPairNatNat(toList(union(foldr(uncurry_1(insertNat_0),leaf,X1),foldr(uncurry_1(insertNat_0),leaf,X1))),toList(foldr(uncurry_1(insertNat_0),leaf,X1)))=prop_UnionUnionIdem(X1))).
+%
+%cnf(i_0_25, plain, (insertNat_case1(isLT(compareNat(X1,X2)),X1,X2,X3,X4,X5,X6)=app(app(app(insertNat_0,X1),X5),branch(X3,X2,X6,X4)))).
+%
+%cnf(i_0_87, plain, (prop_UnionUnionIdem(nil)=true)).
+%
+%cnf(i_0_92, negated_conjecture, ($answer(esk1_1(nil))|true!=false)).
+%
+%cnf(i_0_51, plain, (app(uncurry_1(X1),pair(X2,X3))=app(app(X1,X2),X3))).
+%%
+%cnf(i_0_60, plain, (foldr(X1,X3,cons(X2,nil))=app(app(X1,X2),X3))).
+%
+%cnf(i_0_68, plain, (toList(branch(leaf,X1,X2,X3))=cons(pair(X1,X2),toList(X3)))).
+%
+%cnf(i_0_56, plain, (eqListPairNatNat(cons(X1,nil),cons(X2,nil))=opAnd(eqPairNatNat(X1,X2),true))).
+%
+%cnf(i_0_66, plain, (insertNat_case1(false,zero,zero,X1,X2,X3,X4)=branch(X1,zero,X3,X2))).
+%
+%cnf(i_0_53, plain, (branch(leaf,fst(X1),snd(X1),leaf)=app(app(uncurry_1(insertNat_0),X1),leaf))).
+%
+%cnf(i_0_54, plain, (eqListPairNatNat(cons(X1,cons(X3,X4)),cons(X2,nil))=opAnd(eqPairNatNat(X1,X2),false))).
+%
+%cnf(i_0_55, plain, (eqListPairNatNat(cons(X1,nil),cons(X2,cons(X3,X4)))=opAnd(eqPairNatNat(X1,X2),false))).
+%
+%cnf(i_0_67, plain, (opAppend(toList(X1),cons(pair(X2,X3),nil))=toList(branch(X1,X2,X3,leaf)))).
+%
+%cnf(i_0_65, plain, (insertNat_case1(false,zero,suc(X1),X2,X3,X4,X5)=branch(X2,suc(X1),X4,X3))).
+%
+%cnf(i_0_59, plain, (branch(leaf,X1,foldr(insertNat_0,X2,X3),leaf)=app(foldr(insertNat_0,X2,cons(X1,X3)),leaf))).
+%
+%cnf(i_0_72, plain, (branch(X1,X2,X3,branch(leaf,X4,X5,leaf))=insertNat_case1_case1(true,X4,X2,X1,leaf,X5,X3))).
+%
+%cnf(i_0_100, plain, (union(app(app(uncurry_1(insertNat_0),X1),leaf),leaf)=app(app(uncurry_1(insertNat_0),X1),leaf))).
+%
+%cnf(i_0_103, plain, (toList(app(app(uncurry_1(insertNat_0),X1),leaf))=cons(pair(fst(X1),snd(X1)),nil))).
+%
+%cnf(i_0_125, plain, (eqListPairNatNat(nil,toList(app(app(uncurry_1(insertNat_0),X1),leaf)))=false)).
+%
+%cnf(i_0_126, plain, (eqListPairNatNat(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),nil)=false)).
+%
+%cnf(i_0_64, plain, (insertNat_case1(false,suc(X1),zero,X2,X3,X4,X5)=insertNat_case1_case1(true,suc(X1),zero,X2,X3,X4,X5))).
+%
+%cnf(i_0_57, plain, (opAnd(opAnd(eqNat(X1,X3),eqNat(X2,X4)),eqListPairNatNat(X5,X6))=eqListPairNatNat(cons(pair(X1,X2),X5),cons(pair(X3,X4),X6)))).
+%
+%cnf(i_0_160, plain, (eqListPairNatNat(cons(pair(suc(X1),X2),X4),cons(pair(zero,X3),X5))=false)).
+%
+%cnf(i_0_79, plain, (branch(branch(leaf,X1,X2,leaf),X3,X4,X5)=insertNat_case1(true,X1,X3,leaf,X5,X2,X4))).
+%
+%cnf(i_0_95, plain, (app(app(X1,X2),app(app(X1,X4),X3))=foldr(X1,X3,cons(X2,cons(X4,nil))))).
+%
+%cnf(i_0_161, plain, (eqListPairNatNat(cons(pair(zero,X2),X4),cons(pair(suc(X1),X3),X5))=false)).
+%
+%cnf(i_0_69, plain, (union(insertNat_case1_case1(true,X4,X2,X1,X6,X5,X3),leaf)=insertNat_case1_case1(true,X4,X2,X1,X6,X5,X3))).
+%
+%cnf(i_0_113, plain, (toList(app(foldr(insertNat_0,X2,cons(X1,X3)),leaf))=cons(pair(X1,foldr(insertNat_0,X2,X3)),nil))).
+%
+%cnf(i_0_116, plain, (toList(insertNat_case1_case1(true,X3,X1,leaf,leaf,X4,X2))=cons(pair(X1,X2),cons(pair(X3,X4),nil)))).
+%
+%cnf(i_0_75, plain, (union(insertNat_case1(true,X1,X4,X3,X6,X2,X5),leaf)=insertNat_case1(true,X1,X4,X3,X6,X2,X5))).
+%
+%cnf(i_0_110, plain, (union(app(foldr(insertNat_0,X2,cons(X1,X3)),leaf),leaf)=app(foldr(insertNat_0,X2,cons(X1,X3)),leaf))).
+%%
+%cnf(i_0_58, plain, (app(foldr(X1,X3,cons(X2,X4)),foldr(app(X1,X2),X5,X6))=foldr(app(X1,X2),X5,cons(foldr(X1,X3,X4),X6)))).
+%%
+%cnf(i_0_96, plain, (toList(branch(branch(leaf,X1,X2,X3),X4,X5,X6))=cons(pair(X1,X2),toList(branch(X3,X4,X5,X6))))).
+%
+%cnf(i_0_232, plain, (cons(pair(X1,X2),cons(pair(X3,X4),toList(X5)))=toList(insertNat_case1(true,X1,X3,leaf,X5,X2,X4)))).
+%
+%cnf(i_0_235, plain, (eqListPairNatNat(nil,toList(insertNat_case1(true,X1,X3,leaf,X5,X2,X4)))=false)).
+%
+%cnf(i_0_236, plain, (eqListPairNatNat(toList(insertNat_case1(true,X1,X3,leaf,X5,X2,X4)),nil)=false)).
+%
+%cnf(i_0_250, plain, (toList(insertNat_case1(true,X1,X3,leaf,leaf,X2,X4))=cons(pair(X1,X2),cons(pair(X3,X4),nil)))).
+%
+%cnf(i_0_162, plain, (eqListPairNatNat(cons(pair(zero,X1),X3),cons(pair(zero,X2),X4))=opAnd(eqNat(X1,X2),eqListPairNatNat(X3,X4)))).
+%
+%cnf(i_0_91, plain, (app(app(app(insertNat_0,zero),X3),branch(X1,zero,X4,X2))=branch(X1,zero,X3,X2))).
+%
+%cnf(i_0_124, plain, (eqListPairNatNat(cons(X1,nil),cons(X2,toList(app(app(uncurry_1(insertNat_0),X3),leaf))))=opAnd(eqPairNatNat(X1,X2),false))).
+%
+%cnf(i_0_128, plain, (eqListPairNatNat(cons(X1,toList(app(app(uncurry_1(insertNat_0),X2),leaf))),cons(X3,nil))=opAnd(eqPairNatNat(X1,X3),false))).
+%
+%cnf(i_0_61, plain, (app(branch(leaf,X1,X2,leaf),foldr(app(app(insertNat_0,X1),X2),X3,X4))=foldr(app(app(insertNat_0,X1),X2),X3,cons(leaf,X4)))).
+%
+%cnf(i_0_115, plain, (app(foldr(insertNat_0,X2,cons(X1,cons(X3,nil))),leaf)=branch(leaf,X1,app(app(insertNat_0,X3),X2),leaf))).
+%
+%cnf(i_0_71, plain, (insertNat_case1_case1(true,fst(X4),X2,X1,X5,snd(X4),X3)=branch(X1,X2,X3,app(app(uncurry_1(insertNat_0),X4),X5)))).
+%
+%cnf(i_0_74, plain, (insertNat_case1_case1(true,X4,X2,X1,snd(X5),fst(X5),X3)=branch(X1,X2,X3,app(uncurry_1(app(insertNat_0,X4)),X5)))).
+%
+%cnf(i_0_78, plain, (insertNat_case1(true,fst(X1),X3,X2,X5,snd(X1),X4)=branch(app(app(uncurry_1(insertNat_0),X1),X2),X3,X4,X5))).
+%
+%cnf(i_0_81, plain, (insertNat_case1(true,X1,X3,snd(X2),X5,fst(X2),X4)=branch(app(uncurry_1(app(insertNat_0,X1)),X2),X3,X4,X5))).
+%
+%cnf(i_0_326, plain, (eqListPairNatNat(nil,toList(branch(app(app(uncurry_1(insertNat_0),X1),leaf),X2,X4,X3)))=false)).
+%
+%cnf(i_0_327, plain, (eqListPairNatNat(toList(branch(app(app(uncurry_1(insertNat_0),X1),leaf),X2,X4,X3)),nil)=false)).
+%%%
+%cnf(i_0_127, plain, (opAppend(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),X2)=cons(pair(fst(X1),snd(X1)),X2))).
+%
+%cnf(i_0_62, plain, (app(app(uncurry_1(X1),X2),foldr(app(X1,fst(X2)),X3,X4))=foldr(app(X1,fst(X2)),X3,cons(snd(X2),X4)))).
+%
+%cnf(i_0_359, plain, (eqListPairNatNat(nil,opAppend(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),X2))=false)).
+%
+%cnf(i_0_360, plain, (eqListPairNatNat(opAppend(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),X2),nil)=false)).
+%
+%cnf(i_0_369, plain, (opAppend(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),nil)=toList(app(app(uncurry_1(insertNat_0),X1),leaf)))).
+%
+%cnf(i_0_189, plain, (foldr(X1,foldr(X1,X4,X5),cons(X2,cons(X3,nil)))=foldr(X1,X4,cons(X2,cons(X3,X5))))).
+%%%%
+%cnf(i_0_243, plain, (eqListPairNatNat(toList(insertNat_case1(true,suc(X1),X3,leaf,X5,X2,X4)),cons(pair(zero,X6),X7))=false)).
+%
+%cnf(i_0_244, plain, (eqListPairNatNat(cons(pair(zero,X1),X2),toList(insertNat_case1(true,suc(X3),X5,leaf,X7,X4,X6)))=false)).
+%
+%cnf(i_0_245, plain, (eqListPairNatNat(cons(pair(suc(X1),X2),X3),toList(insertNat_case1(true,zero,X5,leaf,X7,X4,X6)))=false)).
+%
+%cnf(i_0_63, plain, (insertNat_case1_case1(isGT(compareNat(X1,X2)),suc(X1),suc(X2),X3,X4,X5,X6)=insertNat_case1(false,suc(X1),suc(X2),X3,X4,X5,X6))).
+%
+%cnf(i_0_433, plain, (insertNat_case1(false,suc(zero),suc(zero),X1,X2,X3,X4)=branch(X1,suc(zero),X3,X2))).
+%
+%cnf(i_0_432, plain, (insertNat_case1(false,suc(zero),suc(suc(X1)),X2,X3,X4,X5)=branch(X2,suc(suc(X1)),X4,X3))).
+%
+%cnf(i_0_93, plain, (app(app(app(X1,X2),X3),foldr(uncurry_1(X1),X4,X5))=foldr(uncurry_1(X1),X4,cons(pair(X2,X3),X5)))).
+%
+%cnf(i_0_461, plain, (foldr(uncurry_1(X1),X3,cons(pair(fst(X2),snd(X2)),X4))=foldr(uncurry_1(X1),X3,cons(X2,X4)))).
+%
+%cnf(i_0_467, plain, (prop_UnionUnionIdem(cons(pair(fst(X1),snd(X1)),X2))=prop_UnionUnionIdem(cons(X1,X2)))).
+%
+%cnf(i_0_474, negated_conjecture, ($answer(esk1_1(cons(pair(fst(X1),snd(X1)),X2)))|prop_UnionUnionIdem(cons(X1,X2))!=false)).
+%%
+%cnf(i_0_478, plain, (prop_UnionUnionIdem(toList(app(app(uncurry_1(insertNat_0),X1),leaf)))=prop_UnionUnionIdem(cons(X1,nil)))).
+%
+%cnf(i_0_484, negated_conjecture, ($answer(esk1_1(toList(app(app(uncurry_1(insertNat_0),X1),leaf))))|prop_UnionUnionIdem(cons(X1,nil))!=false)).
+%%
+%cnf(i_0_70, plain, (branch(X1,X2,X3,app(foldr(insertNat_0,X5,cons(X4,X6)),X7))=insertNat_case1_case1(true,X4,X2,X1,X7,foldr(insertNat_0,X5,X6),X3))).
+%%%%
+%cnf(i_0_482, negated_conjecture, ($answer(esk1_1(cons(pair(fst(X1),snd(X1)),X2)))|prop_UnionUnionIdem(opAppend(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),X2))!=false)).
+%%%%%
+%cnf(i_0_479, plain, (prop_UnionUnionIdem(opAppend(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),X2))=prop_UnionUnionIdem(cons(X1,X2)))).
+%%
+%cnf(i_0_73, plain, (insertNat_case1_case1(true,X4,X2,X1,foldr(app(insertNat_0,X4),X6,X7),X5,X3)=branch(X1,X2,X3,foldr(app(insertNat_0,X4),X6,cons(X5,X7))))).
+%
+%cnf(i_0_514, negated_conjecture, ($answer(esk1_1(opAppend(toList(app(app(uncurry_1(insertNat_0),X1),leaf)),X2)))|prop_UnionUnionIdem(cons(X1,X2))!=false)).
+%%%%%
+%cnf(i_0_472, plain, (foldr(uncurry_1(X1),X2,toList(app(app(uncurry_1(insertNat_0),X3),leaf)))=app(app(uncurry_1(X1),X3),X2))).
+%%
+%cnf(i_0_518, plain, (prop_UnionUnionIdem(toList(branch(app(app(uncurry_1(insertNat_0),X1),leaf),X2,X3,leaf)))=prop_UnionUnionIdem(cons(X1,cons(pair(X2,X3),nil))))).
+%
+%cnf(i_0_536, negated_conjecture, ($answer(esk1_1(toList(branch(app(app(uncurry_1(insertNat_0),X1),leaf),X2,X3,leaf))))|prop_UnionUnionIdem(cons(X1,cons(pair(X2,X3),nil)))!=false)).
+%%
+%cnf(i_0_76, plain, (insertNat_case1(true,X1,X4,X3,app(app(app(insertNat_0,X6),X7),X8),X2,X5)=insertNat_case1_case1(true,X6,X4,app(app(app(insertNat_0,X1),X2),X3),X8,X7,X5))).
+%
+%cnf(i_0_547, plain, (eqListPairNatNat(nil,toList(insertNat_case1_case1(true,X3,X2,branch(leaf,X1,X6,leaf),X5,X4,X7)))=false)).
+%%%%
+%cnf(i_0_275, plain, (insertNat_case1(true,zero,X5,branch(X2,zero,X3,X4),X7,X1,X6)=branch(branch(X2,zero,X1,X4),X5,X6,X7))).
+%
+%cnf(i_0_548, plain, (eqListPairNatNat(toList(insertNat_case1_case1(true,X3,X2,branch(leaf,X1,X6,leaf),X5,X4,X7)),nil)=false)).
+%
+%cnf(i_0_538, negated_conjecture, ($answer(esk1_1(toList(branch(app(app(uncurry_1(insertNat_0),X1),leaf),fst(X2),snd(X2),leaf))))|prop_UnionUnionIdem(cons(X1,toList(app(app(uncurry_1(insertNat_0),X2),leaf))))!=false)).
+%%%%
+%cnf(i_0_77, plain, (branch(app(foldr(insertNat_0,X2,cons(X1,X3)),X4),X5,X6,X7)=insertNat_case1(true,X1,X5,X4,X7,foldr(insertNat_0,X2,X3),X6))).
+%
+%cnf(i_0_246, plain, (eqListPairNatNat(toList(insertNat_case1(true,zero,X2,leaf,X4,X1,X3)),cons(pair(suc(X5),X6),X7))=false)).
+%
+%cnf(i_0_276, plain, (insertNat_case1_case1(true,zero,X2,X1,branch(X5,zero,X6,X7),X4,X3)=branch(X1,X2,X3,branch(X5,zero,X4,X7)))).
+%
+%cnf(i_0_99, plain, (eqListPairNatNat(cons(X1,cons(X3,nil)),cons(X2,cons(X4,nil)))=opAnd(eqPairNatNat(X1,X2),opAnd(eqPairNatNat(X3,X4),true)))).
+%
+%cnf(i_0_158, plain, (eqListPairNatNat(cons(pair(X1,zero),X3),cons(pair(X2,zero),X4))=opAnd(opAnd(eqNat(X1,X2),true),eqListPairNatNat(X3,X4)))).
+%
+%cnf(i_0_282, plain, (app(foldr(insertNat_0,X1,cons(zero,X2)),branch(X3,zero,X4,X5))=branch(X3,zero,foldr(insertNat_0,X1,X2),X5))).
+%
+%cnf(i_0_337, plain, (eqListPairNatNat(nil,toList(insertNat_case1_case1(true,X4,X2,app(app(uncurry_1(insertNat_0),X1),leaf),X6,X5,X3)))=false)).
+%%%%
+%cnf(i_0_342, plain, (eqListPairNatNat(toList(insertNat_case1_case1(true,X4,X2,app(app(uncurry_1(insertNat_0),X1),leaf),X6,X5,X3)),nil)=false)).
+%
+%cnf(i_0_80, plain, (insertNat_case1(true,X1,X5,foldr(app(insertNat_0,X1),X3,X4),X7,X2,X6)=branch(foldr(app(insertNat_0,X1),X3,cons(X2,X4)),X5,X6,X7))).
+%%
+%cnf(i_0_89, plain, (app(app(app(insertNat_0,suc(X1)),X4),branch(X2,zero,X5,X3))=insertNat_case1_case1(true,suc(X1),zero,X2,X3,X4,X5))).
+%
+%cnf(i_0_90, plain, (app(app(app(insertNat_0,zero),X4),branch(X2,suc(X1),X5,X3))=insertNat_case1(true,zero,suc(X1),X2,X3,X4,X5))).
+%
+%cnf(i_0_98, plain, (cons(pair(X1,X2),toList(app(app(app(insertNat_0,X3),X4),X5)))=toList(insertNat_case1_case1(true,X3,X1,leaf,X5,X4,X2)))).
+%
+%cnf(i_0_715, plain, (eqListPairNatNat(nil,toList(insertNat_case1_case1(true,X3,X1,leaf,X5,X4,X2)))=false)).
+%
+%cnf(i_0_716, plain, (eqListPairNatNat(toList(insertNat_case1_case1(true,X3,X1,leaf,X5,X4,X2)),nil)=false)).
+%%%%%
+%cnf(i_0_82, plain, (branch(X1,X2,X3,branch(union(X4,app(app(app(insertNat_0,X5),X6),X7)),X8,X9,X10))=union(branch(X1,X2,X3,X4),insertNat_case1(true,X5,X8,X7,X10,X6,X9)))).
+%
+%cnf(i_0_725, plain, (eqListPairNatNat(toList(insertNat_case1_case1(true,X3,suc(X1),leaf,X5,X4,X2)),cons(pair(zero,X6),X7))=false)).
+%
+%cnf(i_0_740, plain, (opAppend(toList(X1),toList(insertNat_case1_case1(true,X4,X2,leaf,X6,X5,X3)))=toList(insertNat_case1_case1(true,X4,X2,X1,X6,X5,X3)))).
+%
+%cnf(i_0_241, plain, (eqListPairNatNat(cons(X1,nil),toList(insertNat_case1(true,X2,X4,leaf,X6,X3,X5)))=opAnd(eqPairNatNat(X1,pair(X2,X3)),false))).
+%
+%cnf(i_0_242, plain, (eqListPairNatNat(toList(insertNat_case1(true,X1,X3,leaf,X5,X2,X4)),cons(X6,nil))=opAnd(eqPairNatNat(pair(X1,X2),X6),false))).
+%
+%cnf(i_0_431, plain, (insertNat_case1(false,suc(suc(X1)),suc(zero),X2,X3,X4,X5)=insertNat_case1_case1(true,suc(suc(X1)),suc(zero),X2,X3,X4,X5))).
+%
+%cnf(i_0_727, plain, (eqListPairNatNat(cons(pair(zero,X1),X2),toList(insertNat_case1_case1(true,X5,suc(X3),leaf,X7,X6,X4)))=false)).
+%
+%cnf(i_0_729, plain, (eqListPairNatNat(cons(pair(suc(X1),X2),X3),toList(insertNat_case1_case1(true,X5,zero,leaf,X7,X6,X4)))=false)).
+%
+%cnf(i_0_731, plain, (eqListPairNatNat(toList(insertNat_case1_case1(true,X2,zero,leaf,X4,X3,X1)),cons(pair(suc(X5),X6),X7))=false)).
+%
+%cnf(i_0_477, plain, (prop_UnionUnionIdem(toList(branch(app(app(uncurry_1(insertNat_0),X1),leaf),X2,X3,X4)))=prop_UnionUnionIdem(cons(X1,cons(pair(X2,X3),toList(X4)))))).
+%
+%cnf(i_0_870, negated_conjecture, ($answer(esk1_1(toList(branch(app(app(uncurry_1(insertNat_0),X1),leaf),X2,X3,X4))))|prop_UnionUnionIdem(cons(X1,cons(pair(X2,X3),toList(X4))))!=false)).
+%
+%cnf(i_0_83, plain, (union(branch(X1,X2,X3,X4),insertNat_case1_case1(true,X8,X6,X5,X10,X9,X7))=branch(X1,X2,X3,insertNat_case1_case1(true,X8,X6,union(X4,X5),X10,X9,X7)))).
+%%%%%
+%cnf(i_0_817, plain, (opAppend(toList(X1),cons(pair(X3,X5),cons(pair(X2,X4),nil)))=toList(insertNat_case1_case1(true,X2,X3,X1,leaf,X4,X5)))).
+%%
+%cnf(i_0_883, negated_conjecture, ($answer(esk1_1(toList(branch(app(app(uncurry_1(insertNat_0),X1),leaf),fst(X2),snd(X2),X3))))|prop_UnionUnionIdem(cons(X1,opAppend(toList(app(app(uncurry_1(insertNat_0),X2),leaf)),toList(X3))))!=false)).
+%%%%
+%cnf(i_0_84, plain, (insertNat_case1(true,X1,X4,X3,branch(union(X6,X7),X8,X9,X10),X2,X5)=union(insertNat_case1(true,X1,X4,X3,X6,X2,X5),branch(X7,X8,X9,X10)))).
+%
+%cnf(i_0_274, plain, (foldr(app(insertNat_0,zero),branch(X3,zero,X4,X5),cons(X1,cons(X2,nil)))=branch(X3,zero,X1,X5))).
+%%
+%cnf(i_0_156, plain, (eqListPairNatNat(cons(pair(X1,suc(X3)),X4),cons(pair(X2,zero),X5))=opAnd(opAnd(eqNat(X1,X2),false),eqListPairNatNat(X4,X5)))).
+%
+%cnf(i_0_157, plain, (eqListPairNatNat(cons(pair(X1,zero),X4),cons(pair(X2,suc(X3)),X5))=opAnd(opAnd(eqNat(X1,X2),false),eqListPairNatNat(X4,X5)))).
+%
+%cnf(i_0_183, plain, (foldr(X1,app(app(X1,X4),X5),cons(X2,cons(X3,nil)))=foldr(X1,X5,cons(X2,cons(X3,cons(X4,nil)))))).
+%
+%cnf(i_0_278, plain, (app(app(app(insertNat_0,zero),X1),app(foldr(insertNat_0,X2,cons(zero,X3)),leaf))=branch(leaf,zero,X1,leaf))).
+%
+%cnf(i_0_884, negated_conjecture, ($answer(esk1_1(toList(insertNat_case1_case1(true,X4,X2,app(app(uncurry_1(insertNat_0),X1),leaf),X6,X5,X3))))|prop_UnionUnionIdem(cons(X1,toList(insertNat_case1_case1(true,X4,X2,leaf,X6,X5,X3))))!=false)).
+%%%
+%cnf(i_0_1067, negated_conjecture, ($answer(esk1_1(toList(insertNat_case1_case1(true,X1,X2,app(app(uncurry_1(insertNat_0),X3),leaf),leaf,X4,X5))))|prop_UnionUnionIdem(cons(X3,cons(pair(X2,X5),cons(pair(X1,X4),nil))))!=false)).
+%
+%cnf(i_0_85, plain, (branch(X1,X2,X3,branch(union(app(app(app(insertNat_0,X4),X5),X6),X7),X8,X9,X10))=union(insertNat_case1_case1(true,X4,X2,X1,X6,X5,X3),branch(X7,X8,X9,X10)))).
+%
+%cnf(i_0_935, plain, (eqListPairNatNat(nil,toList(union(insertNat_case1(true,X1,X2,leaf,X3,X8,X9),branch(X4,X5,X6,X7))))=false)).
+%
+%cnf(i_0_188, plain, (app(app(app(insertNat_0,X1),X2),branch(leaf,X1,X3,leaf))=foldr(app(insertNat_0,X1),leaf,cons(X2,cons(X3,nil))))).
+%
+%cnf(i_0_1145, plain, (foldr(app(insertNat_0,zero),leaf,cons(X1,cons(X2,nil)))=branch(leaf,zero,X1,leaf))).
+%
+%cnf(i_0_1152, plain, (foldr(app(insertNat_0,zero),leaf,cons(X1,cons(X2,cons(X3,nil))))=branch(leaf,zero,X1,leaf))).
+%%
+%cnf(i_0_936, plain, (eqListPairNatNat(toList(union(insertNat_case1(true,X1,X2,leaf,X3,X8,X9),branch(X4,X5,X6,X7))),nil)=false)).
+%%%
+%cnf(i_0_1153, plain, (foldr(app(insertNat_0,zero),leaf,cons(X3,cons(X4,cons(X1,cons(X2,nil)))))=branch(leaf,zero,X3,leaf))).
+%
+%cnf(i_0_1157, plain, (foldr(app(insertNat_0,zero),leaf,cons(X1,toList(app(app(uncurry_1(insertNat_0),X2),leaf))))=branch(leaf,zero,X1,leaf))).
+%
+%cnf(i_0_86, plain, (eqListPairNatNat(cons(X1,toList(union(foldr(uncurry_1(insertNat_0),leaf,X3),foldr(uncurry_1(insertNat_0),leaf,X3)))),cons(X2,toList(foldr(uncurry_1(insertNat_0),leaf,X3))))=opAnd(eqPairNatNat(X1,X2),prop_UnionUnionIdem(X3)))).
+%%%%
+%cnf(i_0_237, plain, (cons(pair(X1,X2),cons(pair(X3,X4),opAppend(toList(X5),X6)))=opAppend(toList(insertNat_case1(true,X1,X3,leaf,X5,X2,X4)),X6))).
+%
+%cnf(i_0_1221, plain, (eqListPairNatNat(nil,opAppend(toList(insertNat_case1(true,X1,X3,leaf,X5,X2,X4)),X6))=false)).
+%
+%cnf(i_0_1222, plain, (eqListPairNatNat(opAppend(toList(insertNat_case1(true,X1,X3,leaf,X5,X2,X4)),X6),nil)=false)).
+%%%
+%cnf(i_0_1272, plain, (eqListPairNatNat(nil,opAppend(toList(branch(app(app(uncurry_1(insertNat_0),X1),leaf),X2,X4,X3)),X5))=false)).
+%
+%cnf(i_0_1277, plain, (eqListPairNatNat(nil,toList(branch(insertNat_case1(true,X1,X2,leaf,X3,X4,X5),X6,X7,X8)))=false)).
+%
+%cnf(i_0_88, plain, (insertNat_case1(isLT(compareNat(X1,X2)),suc(X1),suc(X2),X3,X4,X5,X6)=app(app(app(insertNat_0,suc(X1)),X5),branch(X3,suc(X2),X6,X4)))).
+%%
+%cnf(i_0_1287, plain, (eqListPairNatNat(toList(branch(insertNat_case1(true,X1,X2,leaf,X3,X4,X5),X6,X7,X8)),nil)=false)).
+%%
+%cnf(i_0_1282, plain, (eqListPairNatNat(opAppend(toList(branch(app(app(uncurry_1(insertNat_0),X1),leaf),X2,X4,X3)),X5),nil)=false)).
+%
+%cnf(i_0_1315, plain, (app(app(app(insertNat_0,suc(zero)),X3),branch(X1,suc(zero),X4,X2))=branch(X1,suc(zero),X3,X2))).
+%
+%cnf(i_0_1353, plain, (foldr(app(insertNat_0,suc(zero)),leaf,cons(X1,cons(X2,nil)))=branch(leaf,suc(zero),X1,leaf))).
+%
+%cnf(i_0_1366, plain, (foldr(app(insertNat_0,suc(zero)),leaf,cons(X1,cons(X2,cons(X3,nil))))=branch(leaf,suc(zero),X1,leaf))).
+%
+%cnf(i_0_1273, plain, (eqListPairNatNat(nil,opAppend(toList(insertNat_case1_case1(true,X3,X2,branch(leaf,X1,X6,leaf),X5,X4,X7)),X8))=false)).
+%
+%cnf(i_0_1283, plain, (eqListPairNatNat(opAppend(toList(insertNat_case1_case1(true,X3,X2,branch(leaf,X1,X6,leaf),X5,X4,X7)),X8),nil)=false)).
+%
+%cnf(i_0_1299, plain, (eqListPairNatNat(nil,toList(branch(branch(app(app(uncurry_1(insertNat_0),X1),leaf),X2,X3,X4),X5,X6,X7)))=false)).
+%
+%cnf(i_0_94, plain, (eqListPairNatNat(toList(union(app(app(uncurry_1(insertNat_0),X1),leaf),app(app(uncurry_1(insertNat_0),X1),leaf))),toList(app(app(uncurry_1(insertNat_0),X1),leaf)))=prop_UnionUnionIdem(cons(X1,nil)))).
+%
+%cnf(i_0_1423, plain, (opAnd(opAnd(eqNat(X1,X1),eqNat(X2,X2)),false)=prop_UnionUnionIdem(cons(pair(X1,X2),nil)))).
+%
+%cnf(i_0_1425, plain, (prop_UnionUnionIdem(cons(pair(X1,suc(X2)),nil))=prop_UnionUnionIdem(cons(pair(X1,X2),nil)))).
+%
+%cnf(i_0_1429, negated_conjecture, ($answer(esk1_1(cons(pair(X1,suc(X2)),nil)))|prop_UnionUnionIdem(cons(pair(X1,X2),nil))!=false)).
+%%%
+%cnf(i_0_1428, plain, (opAnd(eqNat(X1,X1),false)=prop_UnionUnionIdem(cons(pair(zero,X1),nil)))).
+%
+%cnf(i_0_1437, negated_conjecture, ($answer(esk1_1(cons(pair(zero,X1),nil)))|opAnd(eqNat(X1,X1),false)!=false)).
+%% SZS status Theorem
+% SZS answers Tuple [[cons(pair(zero,zero),nil)]|_]
+
+% Proof found!

@@ -1,0 +1,7 @@
+property:   prop_UnionUnionIdem
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec6.hs
+prover:     twee
+witness:    prop_UnionUnionIdem (toList (insert Zero Zero nil))
+evaluated:  prop_UnionUnionIdem [(Zero, Zero)]
+input:      prop_UnionUnionIdem [(Zero, Zero)]
+result:     False -- counterexample confirmed

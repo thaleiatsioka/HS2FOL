@@ -1,0 +1,824 @@
+% Preprocessing class: FSMSSMSMSSSNFFN.
+% Configuration: G-E--_207_C18_F1_SE_CS_SP_PI_PS_S2SI
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFMM32-MFFFFFNN
+% partial match(1): FUUSM-FFMM32-MFFFFFNN
+% Configuration: G-E--_208_C12_00_F1_SE_CS_PI_SP_PS_S5PRR_RG_S04AN
+% Initializing proof state
+% Scanning for AC axioms
+%
+%cnf(i_0_18, plain, (nil_1=leaf)).
+%
+%cnf(i_0_2, plain, (isLT(eq)=false)).
+%
+%cnf(i_0_3, plain, (isLT(gt)=false)).
+%
+%cnf(i_0_4, plain, (isGT(lt)=false)).
+%
+%cnf(i_0_5, plain, (isGT(eq)=false)).
+%
+%cnf(i_0_1, plain, (isLT(lt)=true)).
+%
+%cnf(i_0_6, plain, (isGT(gt)=true)).
+%
+%cnf(i_0_8, plain, (opAnd(true,X1)=X1)).
+%
+%cnf(i_0_19, plain, (join(leaf,X1)=X1)).
+%
+%cnf(i_0_28, plain, (deleteNat(X1,leaf)=leaf)).
+%
+%cnf(i_0_34, plain, (findNat(X1,leaf)=nothing)).
+%
+%cnf(i_0_7, plain, (opAnd(false,X1)=false)).
+%
+%cnf(i_0_44, plain, (eqBSTNatNat(leaf,leaf)=true)).
+%
+%cnf(i_0_40, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_50, plain, (compareNat(zero,zero)=eq)).
+%
+%cnf(i_0_12, plain, (foldr(X1,X2,nil)=X2)).
+%
+%cnf(i_0_41, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_42, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_9, plain, (fst(pair(X1,X2))=X1)).
+%
+%cnf(i_0_10, plain, (snd(pair(X1,X2))=X2)).
+%
+%cnf(i_0_51, plain, (compareNat(zero,suc(X1))=lt)).
+%
+%cnf(i_0_52, plain, (compareNat(suc(X1),zero)=gt)).
+%
+%cnf(i_0_39, plain, (findNat_case1_case1(false,X1,X2,X3)=just(X3))).
+%
+%cnf(i_0_58, negated_conjecture, ($answer(esk1_2(X1,X2))|prop_InsertDeleteComplete_case1(findNat(X1,foldr(uncurry_1(insertNat_0),leaf,X2)),X1,X2)!=false)).
+%
+%cnf(i_0_33, plain, (deleteNat_case1_case1(false,X1,X2,X3)=join(X2,X3))).
+%
+%cnf(i_0_38, plain, (findNat_case1_case1(true,X1,X2,X3)=findNat(X1,X2))).
+%
+%cnf(i_0_43, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_53, plain, (compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%cnf(i_0_32, plain, (deleteNat_case1_case1(true,X1,X2,X3)=deleteNat(X1,X3))).
+%
+%cnf(i_0_30, plain, (deleteNat_case1(true,X1,X2,X3,X4)=deleteNat(X1,X3))).
+%
+%cnf(i_0_45, plain, (eqBSTNatNat(leaf,branch(X1,X2,X3,X4))=false)).
+%
+%cnf(i_0_46, plain, (eqBSTNatNat(branch(X1,X2,X3,X4),leaf)=false)).
+%
+%cnf(i_0_36, plain, (findNat_case1(true,X1,X2,X3,X4,X5)=findNat(X1,X3))).
+%
+%cnf(i_0_11, plain, (app(app(X1,fst(X2)),snd(X2))=app(uncurry_1(X1),X2))).
+%
+%cnf(i_0_15, plain, (eqBSTNatNat(foldr(uncurry_1(insertNat_0),leaf,X2),deleteNat(X1,foldr(uncurry_1(insertNat_0),leaf,X2)))=prop_InsertDeleteComplete_case1(nothing,X1,X2))).
+%
+%cnf(i_0_22, plain, (app(app(app(insertNat_0,X1),X2),leaf)=branch(leaf,X1,X2,leaf))).
+%
+%cnf(i_0_20, plain, (join(branch(X1,X2,X3,X4),leaf)=branch(X1,X2,X3,X4))).
+%
+%cnf(i_0_27, plain, (insertNat_case1_case1(false,X1,X2,X3,X4,X5,X6)=branch(X3,X2,X5,X4))).
+%
+%cnf(i_0_13, plain, (app(app(X1,X3),foldr(X1,X2,X4))=foldr(X1,X2,cons(X3,X4)))).
+%
+%cnf(i_0_31, plain, (deleteNat_case1_case1(isGT(compareNat(X1,X2)),X1,X3,X4)=deleteNat_case1(false,X1,X2,X3,X4))).
+%
+%cnf(i_0_35, plain, (findNat_case1(isLT(compareNat(X1,X3)),X1,X3,X2,X5,X4)=findNat(X1,branch(X2,X3,X4,X5)))).
+%
+%cnf(i_0_25, plain, (insertNat_case1_case1(isGT(compareNat(X1,X2)),X1,X2,X3,X4,X5,X6)=insertNat_case1(false,X1,X2,X3,X4,X5,X6))).
+%
+%cnf(i_0_37, plain, (findNat_case1(false,X1,X2,X3,X4,X5)=findNat_case1_case1(isGT(compareNat(X1,X2)),X1,X4,X5))).
+%
+%cnf(i_0_26, plain, (branch(X3,X2,X6,app(app(app(insertNat_0,X1),X5),X4))=insertNat_case1_case1(true,X1,X2,X3,X4,X5,X6))).
+%
+%cnf(i_0_16, plain, (eqBSTNatNat(foldr(uncurry_1(insertNat_0),leaf,X3),app(app(app(insertNat_0,X2),X1),foldr(uncurry_1(insertNat_0),leaf,X3)))=prop_InsertDeleteComplete_case1(just(X1),X2,X3))).
+%
+%cnf(i_0_24, plain, (branch(app(app(app(insertNat_0,X1),X5),X3),X2,X6,X4)=insertNat_case1(true,X1,X2,X3,X4,X5,X6))).
+%
+%cnf(i_0_29, plain, (deleteNat(X1,branch(X2,X3,X4,X5))=deleteNat_case1(isLT(compareNat(X1,X3)),X1,X3,X2,X5))).
+%
+%cnf(i_0_23, plain, (insertNat_case1(isLT(compareNat(X1,X4)),X1,X4,X3,X6,X2,X5)=app(app(app(insertNat_0,X1),X2),branch(X3,X4,X5,X6)))).
+%
+%cnf(i_0_21, plain, (join(branch(X1,X2,X3,X4),branch(X5,X6,X7,X8))=branch(X1,X2,X3,branch(join(X4,X5),X6,X7,X8)))).
+%
+%cnf(i_0_47, plain, (opAnd(eqBSTNatNat(X1,X5),opAnd(eqNat(X2,X6),opAnd(eqNat(X3,X7),eqBSTNatNat(X4,X8))))=eqBSTNatNat(branch(X1,X2,X3,X4),branch(X5,X6,X7,X8)))).
+% Presaturation interreduction done
+%
+%cnf(i_0_18, plain, (nil_1=leaf)).
+%
+%cnf(i_0_2, plain, (isLT(eq)=false)).
+%
+%cnf(i_0_3, plain, (isLT(gt)=false)).
+%
+%cnf(i_0_4, plain, (isGT(lt)=false)).
+%
+%cnf(i_0_5, plain, (isGT(eq)=false)).
+%
+%cnf(i_0_1, plain, (isLT(lt)=true)).
+%
+%cnf(i_0_7, plain, (opAnd(false,X1)=false)).
+%
+%cnf(i_0_6, plain, (isGT(gt)=true)).
+%
+%cnf(i_0_34, plain, (findNat(X1,leaf)=nothing)).
+%
+%cnf(i_0_8, plain, (opAnd(true,X1)=X1)).
+%
+%cnf(i_0_19, plain, (join(leaf,X1)=X1)).
+%
+%cnf(i_0_28, plain, (deleteNat(X1,leaf)=leaf)).
+%
+%cnf(i_0_44, plain, (eqBSTNatNat(leaf,leaf)=true)).
+%
+%cnf(i_0_40, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_50, plain, (compareNat(zero,zero)=eq)).
+%
+%cnf(i_0_12, plain, (foldr(X1,X2,nil)=X2)).
+%
+%cnf(i_0_41, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_42, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_9, plain, (fst(pair(X1,X2))=X1)).
+%
+%cnf(i_0_10, plain, (snd(pair(X1,X2))=X2)).
+%
+%cnf(i_0_51, plain, (compareNat(zero,suc(X1))=lt)).
+%
+%cnf(i_0_52, plain, (compareNat(suc(X1),zero)=gt)).
+%
+%cnf(i_0_39, plain, (findNat_case1_case1(false,X1,X2,X3)=just(X3))).
+%
+%cnf(i_0_33, plain, (deleteNat_case1_case1(false,X1,X2,X3)=join(X2,X3))).
+%
+%cnf(i_0_38, plain, (findNat_case1_case1(true,X1,X2,X3)=findNat(X1,X2))).
+%
+%cnf(i_0_32, plain, (deleteNat_case1_case1(true,X1,X2,X3)=deleteNat(X1,X3))).
+%
+%cnf(i_0_43, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_53, plain, (compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%cnf(i_0_58, negated_conjecture, ($answer(esk1_2(X1,X2))|prop_InsertDeleteComplete_case1(findNat(X1,foldr(uncurry_1(insertNat_0),leaf,X2)),X1,X2)!=false)).
+%
+%cnf(i_0_45, plain, (eqBSTNatNat(leaf,branch(X1,X2,X3,X4))=false)).
+%
+%cnf(i_0_46, plain, (eqBSTNatNat(branch(X1,X2,X3,X4),leaf)=false)).
+%
+%cnf(i_0_30, plain, (deleteNat_case1(true,X1,X2,X3,X4)=deleteNat(X1,X3))).
+%
+%cnf(i_0_36, plain, (findNat_case1(true,X1,X2,X3,X4,X5)=findNat(X1,X3))).
+%
+%cnf(i_0_11, plain, (app(app(X1,fst(X2)),snd(X2))=app(uncurry_1(X1),X2))).
+%
+%cnf(i_0_20, plain, (join(branch(X1,X2,X3,X4),leaf)=branch(X1,X2,X3,X4))).
+%
+%cnf(i_0_27, plain, (insertNat_case1_case1(false,X1,X2,X3,X4,X5,X6)=branch(X3,X2,X5,X4))).
+%
+%cnf(i_0_22, plain, (app(app(app(insertNat_0,X1),X2),leaf)=branch(leaf,X1,X2,leaf))).
+%
+%cnf(i_0_13, plain, (app(app(X1,X2),foldr(X1,X3,X4))=foldr(X1,X3,cons(X2,X4)))).
+%
+%cnf(i_0_31, plain, (deleteNat_case1_case1(isGT(compareNat(X1,X2)),X1,X3,X4)=deleteNat_case1(false,X1,X2,X3,X4))).
+%
+%cnf(i_0_15, plain, (eqBSTNatNat(foldr(uncurry_1(insertNat_0),leaf,X1),deleteNat(X2,foldr(uncurry_1(insertNat_0),leaf,X1)))=prop_InsertDeleteComplete_case1(nothing,X2,X1))).
+%
+%cnf(i_0_16, plain, (eqBSTNatNat(foldr(uncurry_1(insertNat_0),leaf,X1),app(app(app(insertNat_0,X2),X3),foldr(uncurry_1(insertNat_0),leaf,X1)))=prop_InsertDeleteComplete_case1(just(X3),X2,X1))).
+%
+%cnf(i_0_35, plain, (findNat_case1(isLT(compareNat(X1,X2)),X1,X2,X3,X4,X5)=findNat(X1,branch(X3,X2,X5,X4)))).
+%
+%cnf(i_0_37, plain, (findNat_case1(false,X1,X2,X3,X4,X5)=findNat_case1_case1(isGT(compareNat(X1,X2)),X1,X4,X5))).
+%
+%cnf(i_0_25, plain, (insertNat_case1_case1(isGT(compareNat(X1,X2)),X1,X2,X3,X4,X5,X6)=insertNat_case1(false,X1,X2,X3,X4,X5,X6))).
+%
+%cnf(i_0_26, plain, (branch(X1,X2,X3,app(app(app(insertNat_0,X4),X5),X6))=insertNat_case1_case1(true,X4,X2,X1,X6,X5,X3))).
+%
+%cnf(i_0_24, plain, (branch(app(app(app(insertNat_0,X1),X2),X3),X4,X5,X6)=insertNat_case1(true,X1,X4,X3,X6,X2,X5))).
+%
+%cnf(i_0_29, plain, (deleteNat(X1,branch(X2,X3,X4,X5))=deleteNat_case1(isLT(compareNat(X1,X3)),X1,X3,X2,X5))).
+%
+%cnf(i_0_21, plain, (join(branch(X1,X2,X3,X4),branch(X5,X6,X7,X8))=branch(X1,X2,X3,branch(join(X4,X5),X6,X7,X8)))).
+%
+%cnf(i_0_23, plain, (insertNat_case1(isLT(compareNat(X1,X2)),X1,X2,X3,X4,X5,X6)=app(app(app(insertNat_0,X1),X5),branch(X3,X2,X6,X4)))).
+%
+%cnf(i_0_47, plain, (opAnd(eqBSTNatNat(X1,X2),opAnd(eqNat(X3,X4),opAnd(eqNat(X5,X6),eqBSTNatNat(X7,X8))))=eqBSTNatNat(branch(X1,X3,X5,X7),branch(X2,X4,X6,X8)))).
+%
+%cnf(i_0_59, negated_conjecture, ($answer(esk1_2(X1,nil))|prop_InsertDeleteComplete_case1(nothing,X1,nil)!=false)).
+%
+%cnf(i_0_72, plain, (prop_InsertDeleteComplete_case1(nothing,X1,nil)=true)).
+%
+%cnf(i_0_59, negated_conjecture, ($answer(esk1_2(X1,nil))|true!=false)).
+%
+%cnf(i_0_73, plain, (prop_InsertDeleteComplete_case1(just(X2),X1,nil)=false)).
+%
+%cnf(i_0_60, plain, (app(uncurry_1(X1),pair(X2,X3))=app(app(X1,X2),X3))).
+%
+%cnf(i_0_71, plain, (deleteNat_case1(false,zero,zero,X1,X2)=join(X1,X2))).
+%
+%cnf(i_0_84, plain, (findNat_case1(false,zero,zero,X1,X2,X3)=just(X3))).
+%%
+%cnf(i_0_65, plain, (foldr(X1,X3,cons(X2,nil))=app(app(X1,X2),X3))).
+%
+%cnf(i_0_70, plain, (deleteNat_case1(false,zero,suc(X1),X2,X3)=join(X2,X3))).
+%
+%cnf(i_0_83, plain, (findNat_case1(false,zero,suc(X1),X2,X3,X4)=just(X4))).
+%
+%cnf(i_0_78, plain, (findNat(zero,branch(X2,suc(X1),X4,X3))=findNat(zero,X2))).
+%
+%cnf(i_0_69, plain, (deleteNat_case1(false,suc(X1),zero,X2,X3)=deleteNat(suc(X1),X3))).
+%
+%cnf(i_0_141, negated_conjecture, ($answer(esk1_2(X1,cons(X2,nil)))|prop_InsertDeleteComplete_case1(findNat(X1,app(app(uncurry_1(insertNat_0),X2),leaf)),X1,cons(X2,nil))!=false)).
+%
+%cnf(i_0_82, plain, (findNat_case1(false,suc(X1),zero,X2,X3,X4)=findNat(suc(X1),X3))).
+%
+%cnf(i_0_62, plain, (branch(leaf,fst(X1),snd(X1),leaf)=app(app(uncurry_1(insertNat_0),X1),leaf))).
+%
+%cnf(i_0_150, plain, (eqBSTNatNat(leaf,app(app(uncurry_1(insertNat_0),X1),leaf))=false)).
+%
+%cnf(i_0_109, plain, (deleteNat(zero,branch(X1,suc(X2),X3,X4))=deleteNat(zero,X1))).
+%
+%cnf(i_0_151, plain, (eqBSTNatNat(app(app(uncurry_1(insertNat_0),X1),leaf),leaf)=false)).
+%
+%cnf(i_0_89, plain, (eqBSTNatNat(leaf,insertNat_case1_case1(true,X4,X2,X1,X6,X5,X3))=false)).
+%
+%cnf(i_0_90, plain, (eqBSTNatNat(insertNat_case1_case1(true,X4,X2,X1,X6,X5,X3),leaf)=false)).
+%
+%cnf(i_0_97, plain, (eqBSTNatNat(leaf,insertNat_case1(true,X1,X4,X3,X6,X2,X5))=false)).
+%
+%cnf(i_0_152, plain, (join(app(app(uncurry_1(insertNat_0),X1),leaf),leaf)=app(app(uncurry_1(insertNat_0),X1),leaf))).
+%
+%cnf(i_0_98, plain, (eqBSTNatNat(insertNat_case1(true,X1,X4,X3,X6,X2,X5),leaf)=false)).
+%
+%cnf(i_0_79, plain, (findNat(zero,branch(X1,zero,X3,X2))=just(X3))).
+%
+%cnf(i_0_64, plain, (branch(leaf,X1,foldr(insertNat_0,X2,X3),leaf)=app(foldr(insertNat_0,X2,cons(X1,X3)),leaf))).
+%
+%cnf(i_0_63, plain, (app(foldr(X1,X3,cons(X2,X4)),foldr(app(X1,X2),X5,X6))=foldr(app(X1,X2),X5,cons(foldr(X1,X3,X4),X6)))).
+%
+%cnf(i_0_180, plain, (eqBSTNatNat(leaf,app(foldr(insertNat_0,X2,cons(X1,X3)),leaf))=false)).
+%
+%cnf(i_0_88, plain, (insertNat_case1(false,zero,zero,X1,X2,X3,X4)=branch(X1,zero,X3,X2))).
+%
+%cnf(i_0_110, plain, (deleteNat(zero,branch(X1,zero,X2,X3))=join(X1,X3))).
+%
+%cnf(i_0_175, plain, (findNat(zero,insertNat_case1(true,X1,zero,X3,X5,X2,X4))=just(X4))).
+%
+%cnf(i_0_176, plain, (findNat(zero,insertNat_case1_case1(true,X3,zero,X1,X5,X4,X2))=just(X2))).
+%
+%cnf(i_0_181, plain, (eqBSTNatNat(app(foldr(insertNat_0,X2,cons(X1,X3)),leaf),leaf)=false)).
+%
+%cnf(i_0_201, plain, (deleteNat(zero,app(foldr(insertNat_0,X1,cons(zero,X2)),leaf))=leaf)).
+%
+%cnf(i_0_177, plain, (findNat(zero,app(foldr(insertNat_0,X2,cons(suc(X1),X3)),leaf))=nothing)).
+%
+%cnf(i_0_179, plain, (findNat(zero,app(foldr(insertNat_0,X1,cons(zero,X2)),leaf))=just(foldr(insertNat_0,X1,X2)))).
+%
+%cnf(i_0_178, plain, (deleteNat(zero,app(foldr(insertNat_0,X2,cons(suc(X1),X3)),leaf))=leaf)).
+%
+%cnf(i_0_66, plain, (app(branch(leaf,X1,X2,leaf),foldr(app(app(insertNat_0,X1),X2),X3,X4))=foldr(app(app(insertNat_0,X1),X2),X3,cons(leaf,X4)))).
+%
+%cnf(i_0_147, plain, (findNat(zero,insertNat_case1_case1(true,X4,suc(X2),X1,X6,X5,X3))=findNat(zero,X1))).
+%
+%cnf(i_0_87, plain, (insertNat_case1(false,zero,suc(X1),X2,X3,X4,X5)=branch(X2,suc(X1),X4,X3))).
+%
+%cnf(i_0_108, plain, (deleteNat(suc(X1),branch(X2,zero,X3,X4))=deleteNat(suc(X1),X4))).
+%
+%cnf(i_0_77, plain, (findNat(suc(X1),branch(X2,zero,X4,X3))=findNat(suc(X1),X3))).
+%
+%cnf(i_0_162, plain, (deleteNat(zero,insertNat_case1_case1(true,X4,suc(X2),X1,X6,X5,X3))=deleteNat(zero,X1))).
+%
+%cnf(i_0_223, plain, (findNat(suc(X1),app(foldr(insertNat_0,X2,cons(zero,X3)),leaf))=nothing)).
+%
+%cnf(i_0_220, plain, (deleteNat(suc(X1),app(foldr(insertNat_0,X2,cons(zero,X3)),leaf))=leaf)).
+%
+%cnf(i_0_224, plain, (findNat(suc(X1),insertNat_case1(true,X2,zero,X4,X6,X3,X5))=findNat(suc(X1),X6))).
+%
+%cnf(i_0_80, plain, (findNat_case1(false,X1,X2,X3,X4,X5)=findNat_case1(false,X1,X2,X6,X4,X5))).
+%%
+%cnf(i_0_67, plain, (app(app(uncurry_1(X1),X2),foldr(app(X1,fst(X2)),X3,X4))=foldr(app(X1,fst(X2)),X3,cons(snd(X2),X4)))).
+%%
+%cnf(i_0_94, plain, (branch(X1,X2,X3,branch(leaf,X4,X5,leaf))=insertNat_case1_case1(true,X4,X2,X1,leaf,X5,X3))).
+%
+%cnf(i_0_103, plain, (branch(branch(leaf,X1,X2,leaf),X3,X4,X5)=insertNat_case1(true,X1,X3,leaf,X5,X2,X4))).
+%
+%cnf(i_0_68, plain, (deleteNat_case1_case1(isGT(compareNat(X1,X2)),suc(X1),X3,X4)=deleteNat_case1(false,suc(X1),suc(X2),X3,X4))).
+%
+%cnf(i_0_280, plain, (deleteNat_case1(false,suc(zero),suc(zero),X1,X2)=join(X1,X2))).
+%
+%cnf(i_0_279, plain, (deleteNat_case1(false,suc(zero),suc(suc(X1)),X2,X3)=join(X2,X3))).
+%
+%cnf(i_0_278, plain, (deleteNat_case1(false,suc(suc(X1)),suc(zero),X2,X3)=deleteNat(suc(suc(X1)),X3))).
+%%%
+%cnf(i_0_182, plain, (join(app(foldr(insertNat_0,X2,cons(X1,X3)),leaf),leaf)=app(foldr(insertNat_0,X2,cons(X1,X3)),leaf))).
+%
+%cnf(i_0_74, plain, (eqBSTNatNat(foldr(uncurry_1(insertNat_0),leaf,X1),app(foldr(insertNat_0,X3,cons(X2,X4)),foldr(uncurry_1(insertNat_0),leaf,X1)))=prop_InsertDeleteComplete_case1(just(foldr(insertNat_0,X3,X4)),X2,X1))).
+%
+%cnf(i_0_221, plain, (deleteNat(suc(X1),insertNat_case1(true,X2,zero,X4,X6,X3,X5))=deleteNat(suc(X1),X6))).
+%
+%cnf(i_0_106, plain, (deleteNat(X1,branch(X2,X3,X4,X5))=deleteNat(X1,branch(X2,X3,X6,X5)))).
+%
+%cnf(i_0_144, plain, (app(app(X1,X2),app(app(X1,X4),X3))=foldr(X1,X3,cons(X2,cons(X4,nil))))).
+%
+%cnf(i_0_148, negated_conjecture, ($answer(esk1_2(X1,cons(pair(X2,X3),nil)))|prop_InsertDeleteComplete_case1(findNat(X1,branch(leaf,X2,X3,leaf)),X1,cons(pair(X2,X3),nil))!=false)).
+%
+%cnf(i_0_345, negated_conjecture, ($answer(esk1_2(zero,cons(pair(zero,X1),nil)))|prop_InsertDeleteComplete_case1(just(X1),zero,cons(pair(zero,X1),nil))!=false)).
+%
+%cnf(i_0_300, plain, (deleteNat(X1,branch(leaf,fst(X2),X3,leaf))=deleteNat(X1,app(app(uncurry_1(insertNat_0),X2),leaf)))).
+%
+%cnf(i_0_343, negated_conjecture, ($answer(esk1_2(suc(X1),cons(pair(zero,X2),nil)))|prop_InsertDeleteComplete_case1(nothing,suc(X1),cons(pair(zero,X2),nil))!=false)).
+%
+%cnf(i_0_344, negated_conjecture, ($answer(esk1_2(zero,cons(pair(suc(X1),X2),nil)))|prop_InsertDeleteComplete_case1(nothing,zero,cons(pair(suc(X1),X2),nil))!=false)).
+%%
+%cnf(i_0_350, plain, (deleteNat(X1,app(foldr(insertNat_0,X3,cons(fst(X2),X4)),leaf))=deleteNat(X1,app(app(uncurry_1(insertNat_0),X2),leaf)))).
+%
+%cnf(i_0_75, plain, (eqBSTNatNat(foldr(uncurry_1(insertNat_0),leaf,X1),foldr(uncurry_1(insertNat_0),leaf,cons(X2,X1)))=prop_InsertDeleteComplete_case1(just(snd(X2)),fst(X2),X1))).
+%%%%%%%
+%cnf(i_0_356, plain, (eqBSTNatNat(foldr(uncurry_1(insertNat_0),leaf,X1),foldr(uncurry_1(insertNat_0),leaf,cons(pair(X2,X3),X1)))=prop_InsertDeleteComplete_case1(just(X3),X2,X1))).
+%%
+%cnf(i_0_187, plain, (app(foldr(insertNat_0,X2,cons(X1,cons(X3,nil))),leaf)=branch(leaf,X1,app(app(insertNat_0,X3),X2),leaf))).
+%%
+%cnf(i_0_76, plain, (findNat_case1(isLT(compareNat(X1,X2)),suc(X1),suc(X2),X3,X4,X5)=findNat(suc(X1),branch(X3,suc(X2),X5,X4)))).
+%
+%cnf(i_0_383, plain, (findNat(suc(zero),branch(X2,suc(suc(X1)),X4,X3))=findNat(suc(zero),X2))).
+%
+%cnf(i_0_86, plain, (insertNat_case1(false,suc(X1),zero,X2,X3,X4,X5)=insertNat_case1_case1(true,suc(X1),zero,X2,X3,X4,X5))).
+%
+%cnf(i_0_91, plain, (join(insertNat_case1_case1(true,X4,X2,X1,X6,X5,X3),leaf)=insertNat_case1_case1(true,X4,X2,X1,X6,X5,X3))).
+%
+%cnf(i_0_99, plain, (join(insertNat_case1(true,X1,X4,X3,X6,X2,X5),leaf)=insertNat_case1(true,X1,X4,X3,X6,X2,X5))).
+%%
+%cnf(i_0_387, plain, (findNat(suc(zero),app(foldr(insertNat_0,X2,cons(suc(suc(X1)),X3)),leaf))=nothing)).
+%
+%cnf(i_0_385, negated_conjecture, ($answer(esk1_2(suc(zero),cons(pair(suc(suc(X1)),X2),nil)))|prop_InsertDeleteComplete_case1(nothing,suc(zero),cons(pair(suc(suc(X1)),X2),nil))!=false)).
+%
+%cnf(i_0_384, plain, (findNat_case1(false,suc(zero),suc(zero),X1,X2,X3)=findNat(suc(zero),branch(X1,suc(zero),X3,X2)))).
+%
+%cnf(i_0_393, plain, (findNat(suc(zero),branch(X1,suc(zero),X3,X2))=just(X3))).
+%
+%cnf(i_0_384, plain, (findNat_case1(false,suc(zero),suc(zero),X1,X2,X3)=just(X3))).
+%
+%cnf(i_0_81, plain, (findNat_case1(false,suc(X1),suc(X2),X3,X4,X5)=findNat_case1_case1(isGT(compareNat(X1,X2)),suc(X1),X4,X5))).
+%
+%cnf(i_0_412, plain, (findNat_case1(false,suc(zero),suc(suc(X1)),X2,X3,X4)=just(X4))).
+%
+%cnf(i_0_411, plain, (findNat_case1(false,suc(suc(X1)),suc(zero),X2,X3,X4)=findNat(suc(suc(X1)),X3))).
+%
+%cnf(i_0_399, plain, (findNat(suc(zero),insertNat_case1(true,X1,suc(zero),X3,X5,X2,X4))=just(X4))).
+%
+%cnf(i_0_400, plain, (findNat(suc(zero),insertNat_case1_case1(true,X3,suc(zero),X1,X5,X4,X2))=just(X2))).
+%%%
+%cnf(i_0_398, plain, (findNat(suc(zero),app(foldr(insertNat_0,X1,cons(suc(zero),X2)),leaf))=just(foldr(insertNat_0,X1,X2)))).
+%
+%cnf(i_0_396, negated_conjecture, ($answer(esk1_2(suc(zero),cons(pair(suc(zero),X1),nil)))|prop_InsertDeleteComplete_case1(just(X1),suc(zero),cons(pair(suc(zero),X1),nil))!=false)).
+%%
+%cnf(i_0_332, plain, (foldr(X1,foldr(X1,X4,X5),cons(X2,cons(X3,nil)))=foldr(X1,X4,cons(X2,cons(X3,X5))))).
+%
+%cnf(i_0_85, plain, (insertNat_case1_case1(isGT(compareNat(X1,X2)),suc(X1),suc(X2),X3,X4,X5,X6)=insertNat_case1(false,suc(X1),suc(X2),X3,X4,X5,X6))).
+%
+%cnf(i_0_449, plain, (insertNat_case1(false,suc(zero),suc(zero),X1,X2,X3,X4)=branch(X1,suc(zero),X3,X2))).
+%%%
+%cnf(i_0_252, plain, (deleteNat(zero,insertNat_case1_case1(true,X3,zero,X1,leaf,X4,X2))=join(X1,branch(leaf,X3,X4,leaf)))).
+%
+%cnf(i_0_266, plain, (deleteNat(zero,insertNat_case1(true,X1,zero,leaf,X4,X2,X3))=join(branch(leaf,X1,X2,leaf),X4))).
+%
+%cnf(i_0_261, plain, (findNat(zero,insertNat_case1(true,X1,suc(X3),leaf,X5,X2,X4))=findNat(zero,branch(leaf,X1,X2,leaf)))).
+%
+%cnf(i_0_139, plain, (app(app(app(X1,X2),X3),foldr(uncurry_1(X1),X4,X5))=foldr(uncurry_1(X1),X4,cons(pair(X2,X3),X5)))).
+%
+%cnf(i_0_475, plain, (foldr(uncurry_1(X1),X3,cons(pair(fst(X2),snd(X2)),X4))=foldr(uncurry_1(X1),X3,cons(X2,X4)))).
+%
+%cnf(i_0_482, plain, (prop_InsertDeleteComplete_case1(nothing,X3,cons(pair(fst(X1),snd(X1)),X2))=prop_InsertDeleteComplete_case1(nothing,X3,cons(X1,X2)))).
+%%
+%cnf(i_0_92, plain, (branch(X1,X2,X3,app(foldr(insertNat_0,X5,cons(X4,X6)),X7))=insertNat_case1_case1(true,X4,X2,X1,X7,foldr(insertNat_0,X5,X6),X3))).
+%
+%cnf(i_0_389, plain, (findNat(suc(zero),insertNat_case1_case1(true,X4,suc(suc(X2)),X1,X6,X5,X3))=findNat(suc(zero),X1))).
+%
+%cnf(i_0_131, plain, (eqBSTNatNat(branch(X1,suc(X3),X4,X6),branch(X2,zero,X5,X7))=opAnd(eqBSTNatNat(X1,X2),false))).
+%
+%cnf(i_0_132, plain, (eqBSTNatNat(branch(X1,zero,X4,X6),branch(X2,suc(X3),X5,X7))=opAnd(eqBSTNatNat(X1,X2),false))).
+%
+%cnf(i_0_93, plain, (insertNat_case1_case1(true,fst(X4),X2,X1,X5,snd(X4),X3)=branch(X1,X2,X3,app(app(uncurry_1(insertNat_0),X4),X5)))).
+%
+%cnf(i_0_96, plain, (insertNat_case1_case1(true,X4,X2,X1,snd(X5),fst(X5),X3)=branch(X1,X2,X3,app(uncurry_1(app(insertNat_0,X4)),X5)))).
+%%%
+%cnf(i_0_157, plain, (eqBSTNatNat(branch(leaf,X2,X4,X6),branch(app(app(uncurry_1(insertNat_0),X1),leaf),X3,X5,X7))=false)).
+%
+%cnf(i_0_575, plain, (eqBSTNatNat(app(app(uncurry_1(insertNat_0),X1),leaf),branch(app(app(uncurry_1(insertNat_0),X2),leaf),X3,X4,X5))=false)).
+%
+%cnf(i_0_579, plain, (eqBSTNatNat(app(app(uncurry_1(insertNat_0),X1),leaf),insertNat_case1(true,X2,X4,leaf,X6,X3,X5))=false)).
+%
+%cnf(i_0_95, plain, (insertNat_case1_case1(true,X4,X2,X1,foldr(app(insertNat_0,X4),X6,X7),X5,X3)=branch(X1,X2,X3,foldr(app(insertNat_0,X4),X6,cons(X5,X7))))).
+%
+%cnf(i_0_568, plain, (eqBSTNatNat(branch(leaf,X1,X2,X3),insertNat_case1(true,X4,X6,leaf,X8,X5,X7))=false)).
+%
+%cnf(i_0_102, plain, (insertNat_case1(true,fst(X1),X3,X2,X5,snd(X1),X4)=branch(app(app(uncurry_1(insertNat_0),X1),X2),X3,X4,X5))).
+%
+%cnf(i_0_105, plain, (insertNat_case1(true,X1,X3,snd(X2),X5,fst(X2),X4)=branch(app(uncurry_1(app(insertNat_0,X1)),X2),X3,X4,X5))).
+%
+%cnf(i_0_134, plain, (eqBSTNatNat(branch(branch(X1,X2,X3,X4),X5,X7,X9),branch(leaf,X6,X8,X10))=false)).
+%
+%cnf(i_0_647, plain, (eqBSTNatNat(insertNat_case1(true,X1,X3,leaf,X5,X2,X4),branch(leaf,X6,X7,X8))=false)).
+%%
+%cnf(i_0_653, plain, (eqBSTNatNat(insertNat_case1(true,X1,X2,leaf,X3,X4,X5),app(app(uncurry_1(insertNat_0),X6),leaf))=false)).
+%
+%cnf(i_0_659, plain, (eqBSTNatNat(branch(app(app(uncurry_1(insertNat_0),X1),leaf),X2,X4,X3),app(app(uncurry_1(insertNat_0),X5),leaf))=false)).
+%
+%cnf(i_0_163, plain, (eqBSTNatNat(branch(app(app(uncurry_1(insertNat_0),X1),leaf),X2,X4,X6),branch(leaf,X3,X5,X7))=false)).
+%
+%cnf(i_0_635, plain, (eqBSTNatNat(branch(branch(X1,X2,X3,X4),X5,X6,X7),app(app(uncurry_1(insertNat_0),X8),leaf))=false)).
+%
+%cnf(i_0_100, plain, (insertNat_case1(true,X1,X4,X3,app(app(app(insertNat_0,X6),X7),X8),X2,X5)=insertNat_case1_case1(true,X6,X4,app(app(app(insertNat_0,X1),X2),X3),X8,X7,X5))).
+%
+%cnf(i_0_448, plain, (insertNat_case1(false,suc(zero),suc(suc(X1)),X2,X3,X4,X5)=branch(X2,suc(suc(X1)),X4,X3))).
+%
+%cnf(i_0_135, plain, (eqBSTNatNat(branch(leaf,X5,X7,X9),branch(branch(X1,X2,X3,X4),X6,X8,X10))=false)).
+%
+%cnf(i_0_202, plain, (deleteNat(zero,insertNat_case1(true,X1,zero,X3,X5,X2,X4))=join(app(app(app(insertNat_0,X1),X2),X3),X5))).
+%
+%cnf(i_0_203, plain, (deleteNat(zero,insertNat_case1_case1(true,X3,zero,X1,X5,X4,X2))=join(X1,app(app(app(insertNat_0,X3),X4),X5)))).
+%%%%%
+%cnf(i_0_735, plain, (eqBSTNatNat(app(app(uncurry_1(insertNat_0),X1),leaf),branch(branch(X2,X3,X4,X5),X6,X7,X8))=false)).
+%
+%cnf(i_0_341, negated_conjecture, ($answer(esk1_2(X1,cons(pair(fst(X2),snd(X2)),nil)))|prop_InsertDeleteComplete_case1(findNat(X1,app(app(uncurry_1(insertNat_0),X2),leaf)),X1,cons(pair(fst(X2),snd(X2)),nil))!=false)).
+%
+%cnf(i_0_101, plain, (branch(app(foldr(insertNat_0,X2,cons(X1,X3)),X4),X5,X6,X7)=insertNat_case1(true,X1,X5,X4,X7,foldr(insertNat_0,X2,X3),X6))).
+%
+%cnf(i_0_120, plain, (app(app(app(insertNat_0,zero),X3),branch(X1,zero,X4,X2))=branch(X1,zero,X3,X2))).
+%%%%%
+%cnf(i_0_249, plain, (findNat(suc(X1),insertNat_case1_case1(true,X4,zero,X2,leaf,X5,X3))=findNat(suc(X1),branch(leaf,X4,X5,leaf)))).
+%
+%cnf(i_0_808, plain, (app(foldr(insertNat_0,X1,cons(zero,X2)),branch(X3,zero,X4,X5))=branch(X3,zero,foldr(insertNat_0,X1,X2),X5))).
+%
+%cnf(i_0_481, negated_conjecture, ($answer(esk1_2(X1,cons(pair(fst(X2),snd(X2)),X3)))|prop_InsertDeleteComplete_case1(findNat(X1,foldr(uncurry_1(insertNat_0),leaf,cons(X2,X3))),X1,cons(pair(fst(X2),snd(X2)),X3))!=false)).
+%%%
+%cnf(i_0_104, plain, (insertNat_case1(true,X1,X5,foldr(app(insertNat_0,X1),X3,X4),X7,X2,X6)=branch(foldr(app(insertNat_0,X1),X3,cons(X2,X4)),X5,X6,X7))).
+%
+%cnf(i_0_262, plain, (deleteNat(zero,insertNat_case1(true,X1,suc(X3),leaf,X5,X2,X4))=deleteNat(zero,branch(leaf,X1,X2,leaf)))).
+%%%
+%cnf(i_0_277, plain, (deleteNat_case1_case1(isGT(compareNat(X1,X2)),suc(suc(X1)),X3,X4)=deleteNat_case1(false,suc(suc(X1)),suc(suc(X2)),X3,X4))).
+%
+%cnf(i_0_849, plain, (deleteNat_case1(false,suc(suc(zero)),suc(suc(zero)),X1,X2)=join(X1,X2))).
+%
+%cnf(i_0_848, plain, (deleteNat_case1(false,suc(suc(zero)),suc(suc(suc(X1))),X2,X3)=join(X2,X3))).
+%
+%cnf(i_0_847, plain, (deleteNat_case1(false,suc(suc(suc(X1))),suc(suc(zero)),X2,X3)=deleteNat(suc(suc(suc(X1))),X3))).
+%%%
+%cnf(i_0_802, plain, (app(app(app(insertNat_0,zero),X1),app(foldr(insertNat_0,X2,cons(zero,X3)),leaf))=branch(leaf,zero,X1,leaf))).
+%
+%cnf(i_0_107, plain, (deleteNat(suc(X1),branch(X2,suc(X3),X4,X5))=deleteNat_case1(isLT(compareNat(X1,X3)),suc(X1),suc(X3),X2,X5))).
+%
+%cnf(i_0_872, plain, (deleteNat(suc(zero),branch(X1,suc(zero),X2,X3))=join(X1,X3))).
+%
+%cnf(i_0_871, plain, (deleteNat(suc(zero),branch(X1,suc(suc(X2)),X3,X4))=deleteNat(suc(zero),X1))).
+%
+%cnf(i_0_870, plain, (deleteNat(suc(suc(X1)),branch(X2,suc(zero),X3,X4))=deleteNat(suc(suc(X1)),X4))).
+%
+%cnf(i_0_885, plain, (deleteNat(suc(zero),app(foldr(insertNat_0,X1,cons(suc(zero),X2)),leaf))=leaf)).
+%
+%cnf(i_0_896, plain, (deleteNat(suc(zero),app(foldr(insertNat_0,X2,cons(suc(suc(X1)),X3)),leaf))=leaf)).
+%
+%cnf(i_0_907, plain, (deleteNat(suc(suc(X1)),app(foldr(insertNat_0,X2,cons(suc(zero),X3)),leaf))=leaf)).
+%
+%cnf(i_0_342, negated_conjecture, ($answer(esk1_2(X1,cons(pair(X2,foldr(insertNat_0,X3,X4)),nil)))|prop_InsertDeleteComplete_case1(findNat(X1,app(foldr(insertNat_0,X3,cons(X2,X4)),leaf)),X1,cons(pair(X2,foldr(insertNat_0,X3,X4)),nil))!=false)).
+%%%%
+%cnf(i_0_111, plain, (deleteNat(X1,insertNat_case1(true,X2,X5,X4,X7,X3,X6))=deleteNat(X1,insertNat_case1(true,X2,X5,X4,X7,X3,false)))).
+%%%%
+%cnf(i_0_250, plain, (deleteNat(suc(X1),insertNat_case1_case1(true,X4,zero,X2,leaf,X5,X3))=deleteNat(suc(X1),branch(leaf,X4,X5,leaf)))).
+%
+%cnf(i_0_899, plain, (deleteNat(suc(zero),insertNat_case1_case1(true,X4,suc(suc(X2)),X1,X6,X5,X3))=deleteNat(suc(zero),X1))).
+%%%%
+%cnf(i_0_142, plain, (eqBSTNatNat(app(app(uncurry_1(insertNat_0),X1),leaf),deleteNat(X2,app(app(uncurry_1(insertNat_0),X1),leaf)))=prop_InsertDeleteComplete_case1(nothing,X2,cons(X1,nil)))).
+%
+%cnf(i_0_146, plain, (findNat(zero,insertNat_case1(true,X1,suc(X4),X3,X6,X2,X5))=findNat(zero,app(app(app(insertNat_0,X1),X2),X3)))).
+%
+%cnf(i_0_112, plain, (deleteNat(X1,insertNat_case1_case1(true,X5,X3,X2,X7,X6,X4))=deleteNat(X1,insertNat_case1_case1(true,X5,X3,X2,X7,X6,false)))).
+%
+%cnf(i_0_382, plain, (findNat(suc(suc(X1)),branch(X2,suc(zero),X4,X3))=findNat(suc(suc(X1)),X3))).
+%
+%cnf(i_0_978, negated_conjecture, ($answer(esk1_2(suc(suc(X1)),cons(pair(suc(zero),X2),nil)))|prop_InsertDeleteComplete_case1(nothing,suc(suc(X1)),cons(pair(suc(zero),X2),nil))!=false)).
+%
+%cnf(i_0_980, plain, (findNat(suc(suc(X1)),app(foldr(insertNat_0,X2,cons(suc(zero),X3)),leaf))=nothing)).
+%
+%cnf(i_0_161, plain, (deleteNat(zero,insertNat_case1(true,X1,suc(X4),X3,X6,X2,X5))=deleteNat(zero,app(app(app(insertNat_0,X1),X2),X3)))).
+%
+%cnf(i_0_798, plain, (insertNat_case1(true,zero,X5,branch(X2,zero,X3,X4),X7,X1,X6)=branch(branch(X2,zero,X1,X4),X5,X6,X7))).
+%
+%cnf(i_0_979, plain, (findNat(suc(suc(X1)),insertNat_case1(true,X2,suc(zero),leaf,X5,X3,X4))=findNat(suc(suc(X1)),X5))).
+%%
+%cnf(i_0_982, plain, (findNat(suc(suc(X1)),insertNat_case1(true,X2,suc(zero),X4,X6,X3,X5))=findNat(suc(suc(X1)),X6))).
+%
+%cnf(i_0_301, plain, (deleteNat(X1,branch(leaf,X2,X3,leaf))=deleteNat(X1,app(foldr(insertNat_0,X4,cons(X2,X5)),leaf)))).
+%%
+%cnf(i_0_113, plain, (branch(X1,X2,X3,branch(join(X4,app(app(app(insertNat_0,X5),X6),X7)),X8,X9,X10))=join(branch(X1,X2,X3,X4),insertNat_case1(true,X5,X8,X7,X10,X6,X9)))).
+%%%%%%%%%%%
+%cnf(i_0_114, plain, (join(branch(X1,X2,X3,X4),insertNat_case1_case1(true,X8,X6,X5,X10,X9,X7))=branch(X1,X2,X3,insertNat_case1_case1(true,X8,X6,join(X4,X5),X10,X9,X7)))).
+%%
+%cnf(i_0_799, plain, (insertNat_case1_case1(true,zero,X2,X1,branch(X5,zero,X6,X7),X4,X3)=branch(X1,X2,X3,branch(X5,zero,X4,X7)))).
+%
+%cnf(i_0_909, plain, (deleteNat(suc(suc(X1)),insertNat_case1(true,X2,suc(zero),X4,X6,X3,X5))=deleteNat(suc(suc(X1)),X6))).
+%
+%cnf(i_0_1079, plain, (eqBSTNatNat(leaf,join(branch(X1,X2,X3,X4),insertNat_case1(true,X5,X8,X7,X10,X6,X9)))=false)).
+%
+%cnf(i_0_1080, plain, (eqBSTNatNat(join(branch(X1,X2,X3,X4),insertNat_case1(true,X5,X8,X7,X10,X6,X9)),leaf)=false)).
+%%
+%cnf(i_0_605, plain, (eqBSTNatNat(app(foldr(insertNat_0,X2,cons(X1,X3)),leaf),insertNat_case1(true,X4,X5,leaf,X6,X7,X8))=false)).
+%
+%cnf(i_0_654, plain, (eqBSTNatNat(insertNat_case1(true,X1,X2,leaf,X3,X4,X5),app(foldr(insertNat_0,X7,cons(X6,X8)),leaf))=false)).
+%
+%cnf(i_0_1153, plain, (eqBSTNatNat(leaf,join(app(app(uncurry_1(insertNat_0),X1),leaf),insertNat_case1(true,X2,X3,X4,X5,X6,X7)))=false)).
+%
+%cnf(i_0_1169, plain, (eqBSTNatNat(join(app(app(uncurry_1(insertNat_0),X1),leaf),insertNat_case1(true,X2,X3,X4,X5,X6,X7)),leaf)=false)).
+%
+%cnf(i_0_115, plain, (insertNat_case1(true,X1,X4,X3,branch(join(X6,X7),X8,X9,X10),X2,X5)=join(insertNat_case1(true,X1,X4,X3,X6,X2,X5),branch(X7,X8,X9,X10)))).
+%
+%cnf(i_0_797, plain, (foldr(app(insertNat_0,zero),branch(X3,zero,X4,X5),cons(X1,cons(X2,nil)))=branch(X3,zero,X1,X5))).
+%
+%cnf(i_0_1209, plain, (eqBSTNatNat(leaf,join(insertNat_case1(true,X1,X2,X3,X4,X9,X10),branch(X5,X6,X7,X8)))=false)).
+%
+%cnf(i_0_1210, plain, (eqBSTNatNat(join(insertNat_case1(true,X1,X2,X3,X4,X9,X10),branch(X5,X6,X7,X8)),leaf)=false)).
+%
+%cnf(i_0_222, plain, (deleteNat(suc(X1),insertNat_case1_case1(true,X4,zero,X2,X6,X5,X3))=deleteNat(suc(X1),app(app(app(insertNat_0,X4),X5),X6)))).
+%
+%cnf(i_0_225, plain, (findNat(suc(X1),insertNat_case1_case1(true,X4,zero,X2,X6,X5,X3))=findNat(suc(X1),app(app(app(insertNat_0,X4),X5),X6)))).
+%%
+%cnf(i_0_1264, plain, (eqBSTNatNat(leaf,join(insertNat_case1(true,X1,X2,X3,X4,X5,X6),app(app(uncurry_1(insertNat_0),X7),leaf)))=false)).
+%
+%cnf(i_0_1281, plain, (eqBSTNatNat(join(insertNat_case1(true,X1,X2,X3,X4,X5,X6),app(app(uncurry_1(insertNat_0),X7),leaf)),leaf)=false)).
+%%
+%cnf(i_0_576, plain, (eqBSTNatNat(app(foldr(insertNat_0,X2,cons(X1,X3)),leaf),branch(app(app(uncurry_1(insertNat_0),X4),leaf),X5,X6,X7))=false)).
+%
+%cnf(i_0_116, plain, (branch(X1,X2,X3,branch(join(app(app(app(insertNat_0,X4),X5),X6),X7),X8,X9,X10))=join(insertNat_case1_case1(true,X4,X2,X1,X6,X5,X3),branch(X7,X8,X9,X10)))).
+%
+%cnf(i_0_1376, plain, (eqBSTNatNat(leaf,join(insertNat_case1_case1(true,X4,X2,X1,X6,X5,X3),branch(X7,X8,X9,X10)))=false)).
+%
+%cnf(i_0_1377, plain, (eqBSTNatNat(join(insertNat_case1_case1(true,X4,X2,X1,X6,X5,X3),branch(X7,X8,X9,X10)),leaf)=false)).
+%
+%cnf(i_0_127, plain, (eqBSTNatNat(branch(X1,X3,suc(X5),X6),branch(X2,X4,zero,X7))=opAnd(eqBSTNatNat(X1,X2),opAnd(eqNat(X3,X4),false)))).
+%
+%cnf(i_0_128, plain, (eqBSTNatNat(branch(X1,X3,zero,X6),branch(X2,X4,suc(X5),X7))=opAnd(eqBSTNatNat(X1,X2),opAnd(eqNat(X3,X4),false)))).
+%
+%cnf(i_0_129, plain, (opAnd(eqBSTNatNat(X1,X2),opAnd(eqNat(X3,X4),eqBSTNatNat(X5,X6)))=eqBSTNatNat(branch(X1,X3,zero,X5),branch(X2,X4,zero,X6)))).
+%
+%cnf(i_0_1536, plain, (eqBSTNatNat(branch(X1,zero,zero,X3),branch(X2,zero,zero,X4))=opAnd(eqBSTNatNat(X1,X2),eqBSTNatNat(X3,X4)))).
+%
+%cnf(i_0_1411, plain, (eqBSTNatNat(leaf,join(insertNat_case1_case1(true,X1,X2,X3,X4,X5,X6),app(app(uncurry_1(insertNat_0),X7),leaf)))=false)).
+%
+%cnf(i_0_1427, plain, (eqBSTNatNat(join(insertNat_case1_case1(true,X1,X2,X3,X4,X5,X6),app(app(uncurry_1(insertNat_0),X7),leaf)),leaf)=false)).
+%
+%cnf(i_0_675, plain, (eqBSTNatNat(branch(app(app(uncurry_1(insertNat_0),X1),leaf),X2,X3,X4),app(foldr(insertNat_0,X6,cons(X5,X7)),leaf))=false)).
+%%
+%cnf(i_0_117, plain, (insertNat_case1(isLT(compareNat(X1,X2)),suc(X1),suc(X2),X3,X4,X5,X6)=app(app(app(insertNat_0,suc(X1)),X5),branch(X3,suc(X2),X6,X4)))).
+%
+%cnf(i_0_1567, plain, (eqBSTNatNat(branch(leaf,X1,zero,X3),branch(leaf,X2,zero,X4))=opAnd(eqNat(X1,X2),eqBSTNatNat(X3,X4)))).
+%
+%cnf(i_0_133, plain, (eqBSTNatNat(branch(X1,X3,zero,X5),branch(X2,X4,zero,X6))=eqBSTNatNat(branch(X1,zero,X3,X5),branch(X2,zero,X4,X6)))).
+%
+%cnf(i_0_1674, plain, (eqBSTNatNat(branch(leaf,zero,X1,X2),branch(leaf,zero,X3,X4))=opAnd(eqNat(X1,X3),eqBSTNatNat(X2,X4)))).
+%
+%cnf(i_0_136, plain, (opAnd(eqNat(X1,X2),opAnd(eqNat(X3,X4),eqBSTNatNat(X5,X6)))=eqBSTNatNat(branch(leaf,X1,X3,X5),branch(leaf,X2,X4,X6)))).
+%
+%cnf(i_0_1518, plain, (eqBSTNatNat(branch(X1,X3,zero,leaf),branch(X2,X4,zero,leaf))=opAnd(eqBSTNatNat(X1,X2),opAnd(eqNat(X3,X4),true)))).
+%
+%cnf(i_0_330, plain, (app(app(app(insertNat_0,X1),X2),branch(leaf,X1,X3,leaf))=foldr(app(insertNat_0,X1),leaf,cons(X2,cons(X3,nil))))).
+%
+%cnf(i_0_1827, plain, (foldr(app(insertNat_0,zero),leaf,cons(X1,cons(X2,nil)))=branch(leaf,zero,X1,leaf))).
+%
+%cnf(i_0_1834, plain, (foldr(app(insertNat_0,zero),leaf,cons(X1,cons(X2,cons(X3,nil))))=branch(leaf,zero,X1,leaf))).
+%%%
+%cnf(i_0_47, plain, (opAnd(eqBSTNatNat(X1,X2),eqBSTNatNat(branch(leaf,X3,X5,X7),branch(leaf,X4,X6,X8)))=eqBSTNatNat(branch(X1,X3,X5,X7),branch(X2,X4,X6,X8)))).
+%
+%cnf(i_0_1835, plain, (foldr(app(insertNat_0,zero),leaf,cons(X3,cons(X4,cons(X1,cons(X2,nil)))))=branch(leaf,zero,X3,leaf))).
+%
+%cnf(i_0_1772, plain, (eqBSTNatNat(branch(leaf,X1,X3,leaf),branch(leaf,X2,X4,leaf))=opAnd(eqNat(X1,X2),opAnd(eqNat(X3,X4),true)))).
+%
+%cnf(i_0_1808, plain, (eqBSTNatNat(branch(X1,zero,X2,leaf),branch(X3,zero,X4,leaf))=opAnd(eqBSTNatNat(X1,X3),opAnd(eqNat(X2,X4),true)))).
+%
+%cnf(i_0_884, plain, (deleteNat(suc(zero),insertNat_case1(true,X1,suc(zero),leaf,X4,X2,X3))=join(branch(leaf,X1,X2,leaf),X4))).
+%
+%cnf(i_0_889, plain, (deleteNat(suc(zero),insertNat_case1_case1(true,X3,suc(zero),X1,leaf,X4,X2))=join(X1,branch(leaf,X3,X4,leaf)))).
+%%%
+%cnf(i_0_1194, plain, (eqBSTNatNat(leaf,join(app(app(uncurry_1(insertNat_0),X1),leaf),branch(app(app(uncurry_1(insertNat_0),X2),X4),X3,X6,X5)))=false)).
+%
+%cnf(i_0_1989, plain, (eqBSTNatNat(leaf,join(app(app(uncurry_1(insertNat_0),X1),leaf),branch(app(uncurry_1(uncurry_1(insertNat_0)),X2),X3,X4,X5)))=false)).
+%
+%cnf(i_0_1195, plain, (eqBSTNatNat(leaf,join(app(app(uncurry_1(insertNat_0),X1),leaf),branch(app(uncurry_1(app(insertNat_0,X2)),X4),X3,X6,X5)))=false)).
+%
+%cnf(i_0_118, plain, (app(app(app(insertNat_0,suc(X1)),X4),branch(X2,zero,X5,X3))=insertNat_case1_case1(true,suc(X1),zero,X2,X3,X4,X5))).
+%
+%cnf(i_0_1640, plain, (app(app(app(insertNat_0,suc(zero)),X3),branch(X1,suc(zero),X4,X2))=branch(X1,suc(zero),X3,X2))).
+%
+%cnf(i_0_2053, plain, (foldr(app(insertNat_0,suc(zero)),leaf,cons(X1,cons(X2,nil)))=branch(leaf,suc(zero),X1,leaf))).
+%
+%cnf(i_0_1074, plain, (findNat(zero,join(branch(X1,zero,X2,X3),insertNat_case1(true,X4,X7,X6,X9,X5,X8)))=just(X2))).
+%
+%cnf(i_0_1212, plain, (findNat(zero,join(insertNat_case1(true,X1,zero,X2,X3,X8,X9),branch(X4,X5,X6,X7)))=just(X9))).
+%
+%cnf(i_0_1369, plain, (findNat(zero,join(insertNat_case1_case1(true,X3,zero,X1,X5,X4,X2),branch(X6,X7,X8,X9)))=just(X2))).
+%
+%cnf(i_0_2066, plain, (foldr(app(insertNat_0,suc(zero)),leaf,cons(X1,cons(X2,cons(X3,nil))))=branch(leaf,suc(zero),X1,leaf))).
+%
+%cnf(i_0_1202, plain, (eqBSTNatNat(join(app(app(uncurry_1(insertNat_0),X1),leaf),branch(app(app(uncurry_1(insertNat_0),X2),X4),X3,X6,X5)),leaf)=false)).
+%
+%cnf(i_0_2130, plain, (eqBSTNatNat(join(app(app(uncurry_1(insertNat_0),X1),leaf),branch(app(uncurry_1(uncurry_1(insertNat_0)),X2),X3,X4,X5)),leaf)=false)).
+%
+%cnf(i_0_1203, plain, (eqBSTNatNat(join(app(app(uncurry_1(insertNat_0),X1),leaf),branch(app(uncurry_1(app(insertNat_0,X2)),X4),X3,X6,X5)),leaf)=false)).
+%
+%cnf(i_0_1309, plain, (eqBSTNatNat(leaf,join(branch(app(app(uncurry_1(insertNat_0),X1),X3),X2,X5,X4),app(app(uncurry_1(insertNat_0),X6),leaf)))=false)).
+%
+%cnf(i_0_119, plain, (app(app(app(insertNat_0,zero),X4),branch(X2,suc(X1),X5,X3))=insertNat_case1(true,zero,suc(X1),X2,X3,X4,X5))).
+%
+%cnf(i_0_2168, plain, (eqBSTNatNat(leaf,join(branch(app(uncurry_1(uncurry_1(insertNat_0)),X1),X2,X3,X4),app(app(uncurry_1(insertNat_0),X5),leaf)))=false)).
+%
+%cnf(i_0_447, plain, (insertNat_case1(false,suc(suc(X1)),suc(zero),X2,X3,X4,X5)=insertNat_case1_case1(true,suc(suc(X1)),suc(zero),X2,X3,X4,X5))).
+%
+%cnf(i_0_322, plain, (foldr(X1,app(app(X1,X4),X5),cons(X2,cons(X3,nil)))=foldr(X1,X5,cons(X2,cons(X3,cons(X4,nil)))))).
+%%
+%cnf(i_0_520, plain, (eqBSTNatNat(branch(X1,suc(X2),X3,X4),insertNat_case1_case1(true,X7,zero,X5,X9,X8,X6))=opAnd(eqBSTNatNat(X1,X5),false))).
+%
+%cnf(i_0_2087, plain, (findNat(zero,join(insertNat_case1(true,X1,zero,X2,X3,X4,X5),app(app(uncurry_1(insertNat_0),X6),leaf)))=just(X5))).
+%
+%cnf(i_0_1310, plain, (eqBSTNatNat(leaf,join(branch(app(uncurry_1(app(insertNat_0,X1)),X3),X2,X5,X4),app(app(uncurry_1(insertNat_0),X6),leaf)))=false)).
+%
+%cnf(i_0_1318, plain, (eqBSTNatNat(join(branch(app(app(uncurry_1(insertNat_0),X1),X3),X2,X5,X4),app(app(uncurry_1(insertNat_0),X6),leaf)),leaf)=false)).
+%
+%cnf(i_0_2314, plain, (eqBSTNatNat(join(branch(app(uncurry_1(uncurry_1(insertNat_0)),X1),X2,X3,X4),app(app(uncurry_1(insertNat_0),X5),leaf)),leaf)=false)).
+%
+%cnf(i_0_1319, plain, (eqBSTNatNat(join(branch(app(uncurry_1(app(insertNat_0,X1)),X3),X2,X5,X4),app(app(uncurry_1(insertNat_0),X6),leaf)),leaf)=false)).
+%
+%cnf(i_0_153, plain, (join(app(app(uncurry_1(insertNat_0),X1),leaf),branch(X2,X3,X4,X5))=branch(leaf,fst(X1),snd(X1),branch(X2,X3,X4,X5)))).
+%
+%cnf(i_0_2342, plain, (eqBSTNatNat(leaf,join(app(app(uncurry_1(insertNat_0),X1),leaf),branch(X2,X3,X4,X5)))=false)).
+%
+%cnf(i_0_2343, plain, (eqBSTNatNat(join(app(app(uncurry_1(insertNat_0),X1),leaf),branch(X2,X3,X4,X5)),leaf)=false)).
+%
+%cnf(i_0_526, plain, (eqBSTNatNat(insertNat_case1_case1(true,X4,suc(X2),X1,X6,X5,X3),branch(X7,zero,X8,X9))=opAnd(eqBSTNatNat(X1,X7),false))).
+%
+%cnf(i_0_534, plain, (eqBSTNatNat(branch(X1,zero,X2,X3),insertNat_case1_case1(true,X7,suc(X5),X4,X9,X8,X6))=opAnd(eqBSTNatNat(X1,X4),false))).
+%
+%cnf(i_0_540, plain, (eqBSTNatNat(insertNat_case1_case1(true,X3,zero,X1,X5,X4,X2),branch(X6,suc(X7),X8,X9))=opAnd(eqBSTNatNat(X1,X6),false))).
+%
+%cnf(i_0_2398, plain, (eqBSTNatNat(leaf,join(app(app(uncurry_1(insertNat_0),X1),leaf),app(app(uncurry_1(insertNat_0),X2),leaf)))=false)).
+%
+%cnf(i_0_2415, plain, (eqBSTNatNat(join(app(app(uncurry_1(insertNat_0),X1),leaf),app(app(uncurry_1(insertNat_0),X2),leaf)),leaf)=false)).
+%
+%cnf(i_0_2483, plain, (eqBSTNatNat(leaf,join(branch(leaf,X1,X2,leaf),app(app(uncurry_1(insertNat_0),X3),leaf)))=false)).
+%
+%cnf(i_0_2489, plain, (eqBSTNatNat(join(branch(leaf,X1,X2,leaf),app(app(uncurry_1(insertNat_0),X3),leaf)),leaf)=false)).
+%
+%cnf(i_0_2400, plain, (eqBSTNatNat(leaf,join(app(app(uncurry_1(insertNat_0),X1),leaf),app(foldr(insertNat_0,X3,cons(X2,X4)),leaf)))=false)).
+%
+%cnf(i_0_154, plain, (branch(X1,X2,X3,branch(join(X4,leaf),fst(X5),snd(X5),leaf))=join(branch(X1,X2,X3,X4),app(app(uncurry_1(insertNat_0),X5),leaf)))).
+%
+%cnf(i_0_2582, plain, (eqBSTNatNat(leaf,join(branch(X1,X2,X3,X4),app(app(uncurry_1(insertNat_0),X5),leaf)))=false)).
+%
+%cnf(i_0_2583, plain, (eqBSTNatNat(join(branch(X1,X2,X3,X4),app(app(uncurry_1(insertNat_0),X5),leaf)),leaf)=false)).
+%
+%cnf(i_0_2567, plain, (findNat(zero,join(branch(X1,zero,X2,X3),app(app(uncurry_1(insertNat_0),X4),leaf)))=just(X2))).
+%
+%cnf(i_0_601, plain, (eqBSTNatNat(insertNat_case1_case1(true,X3,X1,leaf,X5,X4,X2),insertNat_case1(true,X6,X7,leaf,X8,X9,X10))=false)).
+%
+%cnf(i_0_650, plain, (eqBSTNatNat(insertNat_case1(true,X1,X2,leaf,X3,X4,X5),insertNat_case1_case1(true,X8,X6,leaf,X10,X9,X7))=false)).
+%
+%cnf(i_0_2557, plain, (findNat(zero,join(branch(X1,suc(X2),X3,X4),app(app(uncurry_1(insertNat_0),X5),leaf)))=findNat(zero,X1))).
+%
+%cnf(i_0_2417, plain, (eqBSTNatNat(join(app(app(uncurry_1(insertNat_0),X1),leaf),app(foldr(insertNat_0,X3,cons(X2,X4)),leaf)),leaf)=false)).
+%
+%cnf(i_0_2629, plain, (eqBSTNatNat(leaf,join(app(foldr(insertNat_0,X2,cons(X1,X3)),leaf),app(app(uncurry_1(insertNat_0),X4),leaf)))=false)).
+%
+%cnf(i_0_2646, plain, (eqBSTNatNat(join(app(foldr(insertNat_0,X2,cons(X1,X3)),leaf),app(app(uncurry_1(insertNat_0),X4),leaf)),leaf)=false)).
+%
+%cnf(i_0_2690, plain, (findNat(zero,join(app(foldr(insertNat_0,X2,cons(suc(X1),X3)),leaf),app(app(uncurry_1(insertNat_0),X4),leaf)))=nothing)).
+%
+%cnf(i_0_183, plain, (join(app(foldr(insertNat_0,X2,cons(X1,X3)),leaf),branch(X4,X5,X6,X7))=branch(leaf,X1,foldr(insertNat_0,X2,X3),branch(X4,X5,X6,X7)))).
+%
+%cnf(i_0_2512, plain, (eqBSTNatNat(leaf,join(branch(leaf,X1,X2,leaf),app(foldr(insertNat_0,X3,cons(X4,X5)),leaf)))=false)).
+%
+%cnf(i_0_887, plain, (deleteNat(suc(zero),insertNat_case1(true,X1,suc(zero),X3,X5,X2,X4))=join(app(app(app(insertNat_0,X1),X2),X3),X5))).
+%
+%cnf(i_0_888, plain, (deleteNat(suc(zero),insertNat_case1_case1(true,X3,suc(zero),X1,X5,X4,X2))=join(X1,app(app(app(insertNat_0,X3),X4),X5)))).
+%%%
+%cnf(i_0_2707, plain, (eqBSTNatNat(join(branch(leaf,X1,X2,leaf),app(foldr(insertNat_0,X3,cons(X4,X5)),leaf)),leaf)=false)).
+%%%
+%cnf(i_0_2550, plain, (findNat(suc(zero),join(branch(X1,suc(zero),X2,X3),app(app(uncurry_1(insertNat_0),X4),leaf)))=just(X2))).
+%
+%cnf(i_0_2657, plain, (findNat(zero,join(app(foldr(insertNat_0,X1,cons(zero,X2)),leaf),app(app(uncurry_1(insertNat_0),X3),leaf)))=just(foldr(insertNat_0,X1,X2)))).
+%
+%cnf(i_0_184, plain, (join(branch(X1,X2,X3,X4),app(foldr(insertNat_0,X6,cons(X5,X7)),leaf))=branch(X1,X2,X3,branch(join(X4,leaf),X5,foldr(insertNat_0,X6,X7),leaf)))).
+%
+%cnf(i_0_2558, plain, (deleteNat(zero,join(branch(X1,suc(X2),X3,X4),app(app(uncurry_1(insertNat_0),X5),leaf)))=deleteNat(zero,X1))).
+%
+%cnf(i_0_473, plain, (foldr(uncurry_1(X1),X5,cons(pair(X2,foldr(X1,X3,X4)),X6))=app(foldr(X1,X3,cons(X2,X4)),foldr(uncurry_1(X1),X5,X6)))).
+%%%%%
+%cnf(i_0_2817, plain, (deleteNat(zero,join(app(foldr(insertNat_0,X2,cons(suc(X1),X3)),leaf),app(app(uncurry_1(insertNat_0),X4),leaf)))=leaf)).
+%
+%cnf(i_0_2403, plain, (eqBSTNatNat(leaf,join(app(app(uncurry_1(insertNat_0),X1),leaf),insertNat_case1_case1(true,X5,X3,X2,X7,X6,X4)))=false)).
+%%
+%cnf(i_0_2420, plain, (eqBSTNatNat(join(app(app(uncurry_1(insertNat_0),X1),leaf),insertNat_case1_case1(true,X5,X3,X2,X7,X6,X4)),leaf)=false)).
+%%%%%
+%cnf(i_0_632, plain, (eqBSTNatNat(branch(branch(X1,X2,X3,X4),X5,X6,X7),insertNat_case1_case1(true,X10,X8,leaf,X12,X11,X9))=false)).
+%
+%cnf(i_0_640, plain, (eqBSTNatNat(branch(insertNat_case1(true,X1,X4,X3,X6,X2,X5),X7,X8,X9),branch(leaf,X10,X11,X12))=false)).
+%
+%cnf(i_0_2103, plain, (findNat(zero,join(insertNat_case1_case1(true,X1,zero,X2,X3,X4,X5),app(app(uncurry_1(insertNat_0),X6),leaf)))=just(X5))).
+%%%%%
+%cnf(i_0_188, plain, (app(foldr(foldr(X1,X2,cons(X3,X4)),X5,cons(foldr(app(X1,X3),X6,X7),X8)),foldr(foldr(app(X1,X3),X6,cons(foldr(X1,X2,X4),X7)),X9,X10))=foldr(foldr(app(X1,X3),X6,cons(foldr(X1,X2,X4),X7)),X9,cons(foldr(foldr(X1,X2,cons(X3,X4)),X5,X8),X10)))).
+%%
+%cnf(i_0_641, plain, (eqBSTNatNat(branch(insertNat_case1_case1(true,X4,X2,X1,X6,X5,X3),X7,X8,X9),branch(leaf,X10,X11,X12))=false)).
+%
+%cnf(i_0_644, plain, (eqBSTNatNat(insertNat_case1_case1(true,X7,X5,branch(X1,X2,X3,X4),X9,X8,X6),branch(leaf,X10,X11,X12))=false)).
+%%
+%cnf(i_0_724, plain, (eqBSTNatNat(branch(leaf,X1,X2,X3),branch(insertNat_case1(true,X4,X7,X6,X9,X5,X8),X10,X11,X12))=false)).
+%%
+%cnf(i_0_819, plain, (app(foldr(insertNat_0,X1,cons(zero,X2)),app(foldr(insertNat_0,X3,cons(zero,X4)),leaf))=app(foldr(insertNat_0,X1,cons(zero,X2)),leaf))).
+%%%
+%cnf(i_0_2833, negated_conjecture, ($answer(esk1_2(X1,cons(pair(X2,foldr(insertNat_0,X3,X4)),X5)))|prop_InsertDeleteComplete_case1(findNat(X1,app(foldr(insertNat_0,X3,cons(X2,X4)),foldr(uncurry_1(insertNat_0),leaf,X5))),X1,cons(pair(X2,foldr(insertNat_0,X3,X4)),X5))!=false)).
+%
+%cnf(i_0_189, plain, (app(foldr(app(X1,X3),X5,cons(foldr(X1,X2,X4),X6)),foldr(foldr(X1,X2,cons(X3,X4)),X7,X8))=foldr(foldr(X1,X2,cons(X3,X4)),X7,cons(foldr(app(X1,X3),X5,X6),X8)))).
+%
+%cnf(i_0_333, plain, (app(app(X1,X2),app(uncurry_1(X1),X3))=foldr(X1,snd(X3),cons(X2,cons(fst(X3),nil))))).
+%%%
+%cnf(i_0_725, plain, (eqBSTNatNat(branch(leaf,X1,X2,X3),branch(insertNat_case1_case1(true,X7,X5,X4,X9,X8,X6),X10,X11,X12))=false)).
+%
+%cnf(i_0_728, plain, (eqBSTNatNat(branch(leaf,X1,X2,X3),insertNat_case1_case1(true,X10,X8,branch(X4,X5,X6,X7),X12,X11,X9))=false)).
+%%%%%%
+%cnf(i_0_190, plain, (app(foldr(uncurry_1(X1),X2,cons(pair(X3,X4),X5)),foldr(app(app(X1,X3),X4),X6,X7))=foldr(app(app(X1,X3),X4),X6,cons(foldr(uncurry_1(X1),X2,X5),X7)))).
+%%
+%cnf(i_0_732, plain, (eqBSTNatNat(insertNat_case1_case1(true,X3,X1,leaf,X5,X4,X2),branch(branch(X6,X7,X8,X9),X10,X11,X12))=false)).
+%%%%
+%cnf(i_0_518, plain, (eqBSTNatNat(branch(X1,suc(X2),X3,X4),app(foldr(insertNat_0,X5,cons(zero,X6)),leaf))=opAnd(eqBSTNatNat(X1,leaf),false))).
+%
+%cnf(i_0_3460, plain, (eqBSTNatNat(app(foldr(insertNat_0,X2,cons(suc(X1),X3)),leaf),app(foldr(insertNat_0,X4,cons(zero,X5)),leaf))=false)).
+%
+%cnf(i_0_3476, plain, (eqBSTNatNat(app(foldr(insertNat_0,X1,cons(suc(X2),X3)),leaf),branch(leaf,zero,X4,leaf))=false)).
+%%
+%cnf(i_0_2618, plain, (join(branch(X1,X2,X3,leaf),app(app(uncurry_1(insertNat_0),X4),leaf))=branch(X1,X2,X3,app(app(uncurry_1(insertNat_0),X4),leaf)))).
+%
+%cnf(i_0_191, plain, (app(foldr(app(app(insertNat_0,X1),X2),X3,cons(leaf,X4)),foldr(branch(leaf,X1,X2,leaf),X5,X6))=foldr(branch(leaf,X1,X2,leaf),X5,cons(foldr(app(app(insertNat_0,X1),X2),X3,X4),X6)))).
+%
+%cnf(i_0_524, plain, (eqBSTNatNat(app(foldr(insertNat_0,X2,cons(suc(X1),X3)),leaf),branch(X4,zero,X5,X6))=opAnd(eqBSTNatNat(leaf,X4),false))).
+%%
+%cnf(i_0_324, plain, (app(app(uncurry_1(X1),X2),app(app(app(X1,X3),X4),X5))=foldr(uncurry_1(X1),X5,cons(X2,cons(pair(X3,X4),nil))))).
+%
+%cnf(i_0_3607, plain, (foldr(uncurry_1(insertNat_0),leaf,cons(X1,cons(pair(X2,X3),nil)))=app(app(uncurry_1(insertNat_0),X1),branch(leaf,X2,X3,leaf)))).
+%
+%cnf(i_0_335, plain, (app(app(app(X1,X2),X3),app(app(uncurry_1(X1),X4),X5))=foldr(uncurry_1(X1),X5,cons(pair(X2,X3),cons(X4,nil))))).
+%
+%cnf(i_0_532, plain, (eqBSTNatNat(branch(X1,zero,X2,X3),app(foldr(insertNat_0,X5,cons(suc(X4),X6)),leaf))=opAnd(eqBSTNatNat(X1,leaf),false))).
+%
+%cnf(i_0_3716, plain, (eqBSTNatNat(app(foldr(insertNat_0,X1,cons(zero,X2)),leaf),app(foldr(insertNat_0,X3,cons(suc(X4),X5)),leaf))=false)).
+%
+%cnf(i_0_3732, plain, (eqBSTNatNat(app(foldr(insertNat_0,X1,cons(zero,X2)),leaf),branch(leaf,suc(X4),X3,leaf))=false)).
+%%
+%cnf(i_0_471, plain, (app(branch(leaf,X1,X2,leaf),foldr(uncurry_1(app(insertNat_0,X1)),X3,X4))=foldr(uncurry_1(app(insertNat_0,X1)),X3,cons(pair(X2,leaf),X4)))).
+%%
+%cnf(i_0_538, plain, (eqBSTNatNat(app(foldr(insertNat_0,X1,cons(zero,X2)),leaf),branch(X3,suc(X4),X5,X6))=opAnd(eqBSTNatNat(leaf,X3),false))).
+%%%
+%cnf(i_0_443, plain, (foldr(X1,foldr(X1,X3,X4),cons(X2,cons(X5,cons(X6,nil))))=foldr(X1,X3,cons(X2,cons(X5,cons(X6,X4)))))).
+%%
+%cnf(i_0_478, plain, (foldr(uncurry_1(X1),X3,cons(X2,cons(pair(fst(X4),snd(X4)),X5)))=foldr(uncurry_1(X1),X3,cons(X2,cons(X4,X5))))).
+%
+%cnf(i_0_3892, plain, (prop_InsertDeleteComplete_case1(just(X4),X3,cons(pair(fst(X1),snd(X1)),X2))=prop_InsertDeleteComplete_case1(just(X4),X3,cons(X1,X2)))).
+%%%
+%cnf(i_0_3887, plain, (prop_InsertDeleteComplete_case1(nothing,X4,cons(X1,cons(pair(fst(X2),snd(X2)),X3)))=prop_InsertDeleteComplete_case1(nothing,X4,cons(X1,cons(X2,X3))))).
+%
+%cnf(i_0_193, plain, (app(foldr(app(X1,fst(X2)),X3,cons(snd(X2),X4)),foldr(app(uncurry_1(X1),X2),X5,X6))=foldr(app(uncurry_1(X1),X2),X5,cons(foldr(app(X1,fst(X2)),X3,X4),X6)))).
+%
+%cnf(i_0_636, plain, (eqBSTNatNat(branch(branch(X1,X2,X3,X4),X5,X6,X7),app(foldr(insertNat_0,X9,cons(X8,X10)),leaf))=false)).
+%
+%cnf(i_0_846, plain, (deleteNat_case1_case1(isGT(compareNat(X1,X2)),suc(suc(suc(X1))),X3,X4)=deleteNat_case1(false,suc(suc(suc(X1))),suc(suc(suc(X2))),X3,X4))).
+%
+%cnf(i_0_3969, plain, (deleteNat_case1(false,suc(suc(suc(zero))),suc(suc(suc(zero))),X1,X2)=join(X1,X2))).
+%
+%cnf(i_0_3968, plain, (deleteNat_case1(false,suc(suc(suc(zero))),suc(suc(suc(suc(X1)))),X2,X3)=join(X2,X3))).
+%%
+%cnf(i_0_3967, plain, (deleteNat_case1(false,suc(suc(suc(suc(X1)))),suc(suc(suc(zero))),X2,X3)=deleteNat(suc(suc(suc(suc(X1)))),X3))).
+%%%%%
+%cnf(i_0_195, plain, (app(foldr(X1,X2,cons(X3,X4)),app(app(app(X1,X3),X6),X5))=foldr(app(X1,X3),X5,cons(foldr(X1,X2,X4),cons(X6,nil))))).
+%%%%%%%
+%cnf(i_0_736, plain, (eqBSTNatNat(app(foldr(insertNat_0,X2,cons(X1,X3)),leaf),branch(branch(X4,X5,X6,X7),X8,X9,X10))=false)).
+%%%%
+%cnf(i_0_211, plain, (app(foldr(branch(leaf,X1,X2,leaf),X3,cons(foldr(app(app(insertNat_0,X1),X2),X4,X5),X6)),foldr(foldr(app(app(insertNat_0,X1),X2),X4,cons(leaf,X5)),X7,X8))=foldr(foldr(app(app(insertNat_0,X1),X2),X4,cons(leaf,X5)),X7,cons(foldr(branch(leaf,X1,X2,leaf),X3,X6),X8)))).
+%%%%%%%%
+%cnf(i_0_1832, plain, (foldr(app(insertNat_0,fst(X1)),leaf,cons(snd(X1),cons(X2,nil)))=app(app(uncurry_1(insertNat_0),X1),branch(leaf,fst(X1),X2,leaf)))).
+%
+%cnf(i_0_2548, plain, (findNat(suc(zero),join(branch(X1,suc(suc(X2)),X3,X4),app(app(uncurry_1(insertNat_0),X5),leaf)))=findNat(suc(zero),X1))).
+%
+%cnf(i_0_4146, plain, (findNat(suc(zero),join(app(foldr(insertNat_0,X2,cons(suc(suc(X1)),X3)),leaf),app(app(uncurry_1(insertNat_0),X4),leaf)))=nothing)).
+%%
+%cnf(i_0_386, plain, (findNat(suc(zero),insertNat_case1(true,X1,suc(suc(X3)),leaf,X5,X2,X4))=findNat(suc(zero),branch(leaf,X1,X2,leaf)))).
+%%
+%cnf(i_0_956, plain, (eqBSTNatNat(branch(leaf,X1,X2,leaf),deleteNat(X3,branch(leaf,X1,X2,leaf)))=prop_InsertDeleteComplete_case1(nothing,X3,cons(pair(X1,X2),nil)))).
+%
+%cnf(i_0_4178, plain, (prop_InsertDeleteComplete_case1(nothing,zero,cons(pair(zero,X1),nil))=false)).
+%
+%cnf(i_0_4176, plain, (prop_InsertDeleteComplete_case1(nothing,suc(X2),cons(pair(zero,X1),nil))=false)).
+%% SZS status Theorem
+% SZS answers Tuple [[suc(X1), cons(pair(zero,X2),nil)]|_]
+
+% Proof found!

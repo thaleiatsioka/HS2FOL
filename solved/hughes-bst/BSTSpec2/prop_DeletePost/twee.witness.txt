@@ -1,0 +1,7 @@
+property:   prop_DeletePost
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec2.hs
+prover:     twee
+witness:    prop_DeletePost Zero [(Zero, _X), (Zero, _Y)] Zero
+input:      prop_DeletePost Zero [(Zero, undefined), (Zero, undefined)] Zero
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

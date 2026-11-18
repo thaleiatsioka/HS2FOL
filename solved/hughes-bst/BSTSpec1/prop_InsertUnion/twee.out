@@ -1,0 +1,1202 @@
+Here is the input problem:
+  Axiom 1 (nil_1_1): nil_1 = leaf.
+  Axiom 2 (isLT_1): isLT(lt) = true.
+  Axiom 3 (isLT_2): isLT(eq) = false.
+  Axiom 4 (isLT_3): isLT(gt) = false.
+  Axiom 5 (isGT_1): isGT(lt) = false.
+  Axiom 6 (isGT_2): isGT(eq) = false.
+  Axiom 7 (isGT_3): isGT(gt) = true.
+  Axiom 8 (not_2): not(true) = false.
+  Axiom 9 (not_1): not(false) = true.
+  Axiom 10 (toList_1): toList(leaf) = nil.
+  Axiom 11 (opAnd_2): opAnd(true, X) = X.
+  Axiom 12 (opAnd_1): opAnd(false, X) = false.
+  Axiom 13 (opAppend_1): opAppend(nil, X) = X.
+  Axiom 14 (belowNat_1): belowNat(X, leaf) = leaf.
+  Axiom 15 (aboveNat_1): aboveNat(X, leaf) = leaf.
+  Axiom 16 (eqListPairNatNat_1): eqListPairNatNat(nil, nil) = true.
+  Axiom 17 (unionNat_1): unionNat(leaf, X) = X.
+  Axiom 18 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 19 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 20 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 21 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 22 (compareNat_1): compareNat(zero, zero) = eq.
+  Axiom 23 (compareNat_2): compareNat(zero, suc(X)) = lt.
+  Axiom 24 (compareNat_3): compareNat(suc(X), zero) = gt.
+  Axiom 25 (compareNat_4): compareNat(suc(X), suc(Y)) = compareNat(X, Y).
+  Axiom 26 (app_insert_0_1): app(insert_0, X) = insert_1(X).
+  Axiom 27 (fst_1): fst(pair(X, Y)) = X.
+  Axiom 28 (snd_1): snd(pair(X, Y)) = Y.
+  Axiom 29 (foldr_1): foldr(X, Y, nil) = Y.
+  Axiom 30 (app_uncurry_1_1): app(uncurry_1(X), Y) = uncurry(X, Y).
+  Axiom 31 (app_insert_1_1): app(insert_1(X), Y) = insert_2(X, Y).
+  Axiom 32 (geNat_1): geNat(X, Y) = not(isLT(compareNat(X, Y))).
+  Axiom 33 (leNat_1): leNat(X, Y) = not(isGT(compareNat(X, Y))).
+  Axiom 34 (tree_1): tree(X) = foldr(uncurry_1(insert_0), nil_1, X).
+  Axiom 35 (eqListPairNatNat_2): eqListPairNatNat(nil, cons(X, Y)) = false.
+  Axiom 36 (opEqTildeEqNatNat_1): opEqTildeEqNatNat(X, Y) = eqListPairNatNat(toList(X), toList(Y)).
+  Axiom 37 (eqListPairNatNat_3): eqListPairNatNat(cons(X, Y), nil) = false.
+  Axiom 38 (app_insert_2_1): app(insert_2(X, Y), Z) = insert(X, Y, Z).
+  Axiom 39 (opAppend_2): opAppend(cons(X, Y), Z) = cons(X, opAppend(Y, Z)).
+  Axiom 40 (insert_1): insert(X, Y, Z) = branch(leaf, X, Y, leaf).
+  Axiom 41 (belowNat_case1_1): belowNat_case1(true, X, Y, Z, W, V) = belowNat(X, Z).
+  Axiom 42 (aboveNat_case1_1): aboveNat_case1(true, X, Y, Z, W, V) = aboveNat(X, W).
+  Axiom 43 (eqPairNatNat_1): eqPairNatNat(pair(X, Y), pair(Z, W)) = opAnd(eqNat(X, Z), eqNat(Y, W)).
+  Axiom 44 (eqListPairNatNat_4): eqListPairNatNat(cons(X, Y), cons(Z, W)) = opAnd(eqPairNatNat(X, Z), eqListPairNatNat(Y, W)).
+  Axiom 45 (unionNat_2): unionNat(branch(X, Y, Z, W), leaf) = branch(X, Y, Z, W).
+  Axiom 46 (uncurry_1): uncurry(X, Y) = app(app(X, fst(Y)), snd(Y)).
+  Axiom 47 (belowNat_case1_2): belowNat_case1(false, X, Y, Z, W, V) = branch(Z, Y, V, belowNat(X, W)).
+  Axiom 48 (aboveNat_case1_2): aboveNat_case1(false, X, Y, Z, W, V) = branch(aboveNat(X, Z), Y, V, W).
+  Axiom 49 (foldr_2): foldr(X, Y, cons(Z, W)) = app(app(X, Z), foldr(X, Y, W)).
+  Axiom 50 (belowNat_2): belowNat(X, branch(Y, Z, W, V)) = belowNat_case1(leNat(X, Z), X, Z, Y, V, W).
+  Axiom 51 (aboveNat_2): aboveNat(X, branch(Y, Z, W, V)) = aboveNat_case1(geNat(X, Z), X, Z, Y, V, W).
+  Axiom 52 (toList_2): toList(branch(X, Y, Z, W)) = opAppend(toList(X), opAppend(cons(pair(Y, Z), nil), toList(W))).
+  Axiom 53 (prop_InsertUnion_1): prop_InsertUnion(pair(X, Y), Z, W) = opEqTildeEqNatNat(insert(X, Y, unionNat(tree(Z), tree(W))), unionNat(insert(X, Y, tree(Z)), tree(W))).
+  Axiom 54 (unionNat_3): unionNat(branch(X, Y, Z, W), branch(V, U, T, S)) = branch(unionNat(X, belowNat(Y, branch(V, U, T, S))), Y, Z, unionNat(W, aboveNat(Y, branch(V, U, T, S)))).
+  Axiom 55 (reflexivity): equals(X, X) = true.
+  Axiom 56 (prop_InsertUnion): equals(prop_InsertUnion(X, Y, Z), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. leaf -> nil_1
+2. isLT(lt) -> true
+3. isLT(eq) -> false
+4. isLT(gt) -> false
+5. isGT(lt) -> false
+6. isGT(eq) -> false
+7. isGT(gt) -> true
+8. not(true) -> false
+9. not(false) -> true
+10. toList(nil_1) -> nil
+11. opAnd(true, X) -> X
+12. opAnd(false, X) -> false
+13. opAppend(nil, X) -> X
+14. belowNat(X, nil_1) -> nil_1
+15. aboveNat(X, nil_1) -> nil_1
+16. eqListPairNatNat(nil, nil) -> true
+17. unionNat(nil_1, X) -> X
+18. eqNat(zero, zero) -> true
+19. eqNat(zero, suc(X)) -> false
+20. eqNat(suc(X), zero) -> false
+21. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+22. compareNat(zero, zero) -> eq
+23. compareNat(zero, suc(X)) -> lt
+24. compareNat(suc(X), zero) -> gt
+25. compareNat(suc(X), suc(Y)) -> compareNat(X, Y)
+26. app(insert_0, X) -> insert_1(X)
+27. fst(pair(X, Y)) -> X
+28. snd(pair(X, Y)) -> Y
+29. foldr(X, Y, nil) -> Y
+30. app(uncurry_1(X), Y) -> uncurry(X, Y)
+31. app(insert_1(X), Y) -> insert_2(X, Y)
+32. not(isLT(compareNat(X, Y))) -> geNat(X, Y)
+33. not(isGT(compareNat(X, Y))) -> leNat(X, Y)
+34. foldr(uncurry_1(insert_0), nil_1, X) -> tree(X)
+35. eqListPairNatNat(nil, cons(X, Y)) -> false
+36. eqListPairNatNat(toList(X), toList(Y)) -> opEqTildeEqNatNat(X, Y)
+37. eqListPairNatNat(cons(X, Y), nil) -> false
+38. app(insert_2(X, Y), Z) -> insert(X, Y, Z)
+39. cons(X, opAppend(Y, Z)) -> opAppend(cons(X, Y), Z)
+40. branch(nil_1, X, Y, nil_1) -> insert(X, Y, ?)
+41. insert(X, Y, Z) ~> insert(X, Y, ?)
+42. belowNat_case1(true, X, Y, Z, W, V) -> belowNat(X, Z)
+43. aboveNat_case1(true, X, Y, Z, W, V) -> aboveNat(X, W)
+44. opAnd(eqNat(X, Y), eqNat(Z, W)) -> eqPairNatNat(pair(X, Z), pair(Y, W))
+45. eqListPairNatNat(cons(X, Y), cons(Z, W)) -> opAnd(eqPairNatNat(X, Z), eqListPairNatNat(Y, W))
+46. unionNat(branch(X, Y, Z, W), nil_1) -> branch(X, Y, Z, W)
+47. app(app(X, fst(Y)), snd(Y)) -> uncurry(X, Y)
+48. branch(X, Y, Z, belowNat(W, V)) -> belowNat_case1(false, W, Y, X, V, Z)
+49. branch(aboveNat(X, Y), Z, W, V) -> aboveNat_case1(false, X, Z, Y, V, W)
+50. app(app(X, Y), foldr(X, Z, W)) -> foldr(X, Z, cons(Y, W))
+51. belowNat_case1(leNat(X, Y), X, Y, Z, W, V) -> belowNat(X, branch(Z, Y, V, W))
+52. aboveNat_case1(geNat(X, Y), X, Y, Z, W, V) -> aboveNat(X, branch(Z, Y, V, W))
+53. opAppend(toList(X), opAppend(cons(pair(Y, Z), nil), toList(W))) -> toList(branch(X, Y, Z, W))
+54. opEqTildeEqNatNat(insert(X, Y, ?), unionNat(insert(X, Y, ?), tree(Z))) -> prop_InsertUnion(pair(X, Y), ?, Z)
+55. prop_InsertUnion(pair(X, Y), Z, W) ~> prop_InsertUnion(pair(X, Y), ?, W)
+56. branch(unionNat(X, belowNat(Y, branch(Z, W, V, U))), Y, T, unionNat(S, aboveNat(Y, branch(Z, W, V, U)))) -> unionNat(branch(X, Y, T, S), branch(Z, W, V, U))
+57. equals(X, X) -> true
+58. equals(prop_InsertUnion(X, Y, Z), false) -> false
+59. tree(nil) -> nil_1
+60. geNat(zero, zero) -> true
+61. leNat(zero, zero) -> true
+62. geNat(zero, suc(X)) -> false
+63. geNat(suc(X), zero) -> true
+64. leNat(zero, suc(X)) -> true
+65. leNat(suc(X), zero) -> false
+66. eqListPairNatNat(nil, toList(X)) -> opEqTildeEqNatNat(nil_1, X)
+67. opEqTildeEqNatNat(nil_1, nil_1) -> true
+68. eqListPairNatNat(toList(X), nil) -> opEqTildeEqNatNat(X, nil_1)
+69. geNat(suc(X), suc(Y)) -> geNat(X, Y)
+70. leNat(suc(X), suc(Y)) -> leNat(X, Y)
+71. opAppend(cons(X, nil), Y) -> cons(X, Y)
+72. insert_2(fst(X), snd(X)) -> uncurry(insert_0, X)
+73. insert(X, fst(Y), ?) -> uncurry(insert_1(X), Y)
+74. app(app(X, Y), Z) -> uncurry(X, pair(Y, Z))
+75. uncurry(insert_0, pair(X, Y)) -> insert_2(X, Y)
+76. unionNat(insert(X, Y, ?), nil_1) -> insert(X, Y, ?)
+77. uncurry(uncurry_1(insert_0), pair(X, tree(Y))) -> tree(cons(X, Y))
+78. foldr(X, Y, cons(Z, nil)) -> uncurry(X, pair(Z, Y))
+79. eqListPairNatNat(nil, opAppend(cons(X, Y), Z)) -> false
+80. eqListPairNatNat(opAppend(cons(X, Y), Z), nil) -> false
+81. foldr(insert_0, X, cons(Y, Z)) -> insert_2(Y, foldr(insert_0, X, Z))
+82. uncurry(insert_1(X), pair(Y, Z)) -> insert(X, Y, ?)
+83. unionNat(uncurry(insert_1(X), Y), nil_1) -> uncurry(insert_1(X), Y)
+84. uncurry(uncurry_1(X), pair(Y, Z)) -> app(uncurry(X, Y), Z)
+85. app(uncurry(insert_0, X), nil_1) -> tree(cons(X, nil))
+86. foldr(insert_1(X), Y, cons(Z, W)) -> insert(X, Z, ?)
+87. eqPairNatNat(pair(zero, X), pair(zero, Y)) -> eqNat(X, Y)
+88. insert(fst(X), snd(X), ?) -> app(uncurry(insert_0, X), ?)
+89. app(uncurry(insert_0, X), Y) ~> app(uncurry(insert_0, X), ?)
+90. app(uncurry(insert_0, X), ?) -> tree(cons(X, nil))
+91. app(uncurry(X, fst(Y)), snd(Y)) -> uncurry(uncurry_1(X), Y)
+92. tree(cons(fst(X), nil)) -> uncurry(uncurry_1(insert_0), X)
+93. belowNat_case1(false, X, Y, Z, nil_1, W) -> branch(Z, Y, W, nil_1)
+94. aboveNat_case1(false, X, Y, nil_1, Z, W) -> branch(nil_1, Y, W, Z)
+95. tree(cons(X, nil)) -> tree(cons(X, ?))
+96. tree(cons(X, Y)) ~> tree(cons(X, ?))
+97. tree(cons(fst(X), ?)) -> uncurry(uncurry_1(insert_0), X)
+98. tree(cons(pair(X, Y), ?)) -> insert(X, Y, ?)
+99. app(insert(X, Y, ?), snd(Z)) -> uncurry(insert_2(X, Y), Z)
+100. uncurry(X, pair(fst(Y), snd(Y))) -> uncurry(X, Y)
+101. aboveNat(zero, branch(X, zero, Y, Z)) -> aboveNat(zero, Z)
+102. aboveNat(zero, insert(zero, X, ?)) -> nil_1
+103. aboveNat(zero, uncurry(insert_1(zero), X)) -> nil_1
+104. belowNat(zero, branch(X, zero, Y, Z)) -> belowNat(zero, X)
+105. belowNat(zero, insert(zero, X, ?)) -> nil_1
+106. belowNat(zero, uncurry(insert_1(zero), X)) -> nil_1
+107. eqPairNatNat(pair(zero, X), pair(suc(Y), Z)) -> false
+108. eqPairNatNat(pair(suc(X), Y), pair(zero, Z)) -> false
+109. eqPairNatNat(pair(X, zero), pair(Y, zero)) -> opAnd(eqNat(X, Y), true)
+110. tree(opAppend(cons(X, Y), Z)) -> tree(cons(X, ?))
+111. opAppend(cons(X, cons(Y, nil)), Z) -> cons(X, cons(Y, Z))
+112. uncurry(insert_2(X, Y), pair(Z, W)) -> app(insert(X, Y, ?), W)
+113. app(uncurry(insert_1(X), Y), snd(Z)) -> uncurry(insert_2(X, fst(Y)), Z)
+114. app(uncurry(X, pair(Y, Z)), W) -> uncurry(app(X, Y), pair(Z, W))
+115. belowNat(zero, branch(X, suc(Y), Z, W)) -> belowNat(zero, X)
+116. belowNat(zero, insert(suc(X), Y, ?)) -> nil_1
+117. belowNat(zero, uncurry(insert_1(suc(X)), Y)) -> nil_1
+118. eqPairNatNat(pair(X, zero), pair(Y, suc(Z))) -> opAnd(eqNat(X, Y), false)
+119. eqPairNatNat(pair(X, suc(Y)), pair(Z, zero)) -> opAnd(eqNat(X, Z), false)
+120. uncurry(insert_2(X, fst(fst(Y))), Y) -> uncurry(uncurry_1(insert_1(X)), Y)
+121. aboveNat(suc(X), branch(Y, zero, Z, W)) -> aboveNat(suc(X), W)
+122. aboveNat(suc(X), insert(zero, Y, ?)) -> nil_1
+123. aboveNat(suc(X), uncurry(insert_1(zero), Y)) -> nil_1
+124. cons(pair(X, Y), toList(Z)) -> toList(branch(nil_1, X, Y, Z))
+125. cons(pair(X, Y), nil) -> toList(insert(X, Y, ?))
+126. opEqTildeEqNatNat(nil_1, insert(X, Y, ?)) -> false
+127. opEqTildeEqNatNat(insert(X, Y, ?), nil_1) -> false
+128. opEqTildeEqNatNat(nil_1, branch(nil_1, X, Y, Z)) -> false
+129. opEqTildeEqNatNat(branch(nil_1, X, Y, Z), nil_1) -> false
+130. opEqTildeEqNatNat(nil_1, uncurry(insert_1(X), Y)) -> false
+131. opEqTildeEqNatNat(uncurry(insert_1(X), Y), nil_1) -> false
+132. opEqTildeEqNatNat(nil_1, tree(cons(X, ?))) -> false
+133. opEqTildeEqNatNat(tree(cons(X, ?)), nil_1) -> false
+134. opEqTildeEqNatNat(nil_1, uncurry(uncurry_1(insert_0), X)) -> false
+135. opEqTildeEqNatNat(uncurry(uncurry_1(insert_0), X), nil_1) -> false
+136. tree(toList(insert(X, Y, ?))) -> insert(X, Y, ?)
+137. tree(toList(uncurry(insert_1(X), Y))) -> uncurry(insert_1(X), Y)
+138. opAppend(toList(insert(X, Y, ?)), Z) -> cons(pair(X, Y), Z)
+139. tree(toList(tree(cons(X, ?)))) -> tree(cons(X, ?))
+140. tree(toList(branch(nil_1, X, Y, Z))) -> insert(X, Y, ?)
+141. unionNat(tree(cons(X, ?)), nil_1) -> tree(cons(X, ?))
+142. unionNat(uncurry(uncurry_1(insert_0), X), nil_1) -> uncurry(uncurry_1(insert_0), X)
+143. uncurry(uncurry(insert_0, X), pair(nil_1, Y)) -> app(tree(cons(X, ?)), Y)
+144. uncurry(X, pair(Y, foldr(X, Z, W))) -> foldr(X, Z, cons(Y, W))
+145. eqListPairNatNat(nil, opAppend(opAppend(cons(X, Y), Z), W)) -> false
+146. eqListPairNatNat(opAppend(opAppend(cons(X, Y), Z), W), nil) -> false
+147. tree(toList(uncurry(uncurry_1(insert_0), X))) -> uncurry(uncurry_1(insert_0), X)
+148. uncurry(uncurry(insert_0, X), pair(Y, Z)) ~> uncurry(uncurry(insert_0, X), pair(?, Z))
+149. opAppend(toList(uncurry(insert_1(X), Y)), Z) -> cons(pair(X, fst(Y)), Z)
+150. opEqTildeEqNatNat(insert(X, Y, ?), insert(X, Y, ?)) -> prop_InsertUnion(pair(X, Y), ?, nil)
+151. opEqTildeEqNatNat(uncurry(insert_1(X), Y), uncurry(insert_1(X), Y)) -> prop_InsertUnion(pair(X, fst(Y)), ?, nil)
+152. uncurry(uncurry(insert_0, X), pair(?, Y)) -> app(tree(cons(X, ?)), Y)
+153. opEqTildeEqNatNat(nil_1, belowNat_case1(false, X, Y, nil_1, Z, W)) -> false
+154. opEqTildeEqNatNat(belowNat_case1(false, X, Y, nil_1, Z, W), nil_1) -> false
+155. foldr(insert_1(X), Y, opAppend(cons(Z, W), V)) -> insert(X, Z, ?)
+156. foldr(insert_0, X, toList(insert(Y, Z, ?))) -> insert_2(pair(Y, Z), X)
+157. aboveNat(zero, branch(X, suc(Y), Z, W)) -> aboveNat_case1(false, zero, suc(Y), X, W, Z)
+158. aboveNat(zero, insert(suc(X), Y, ?)) -> insert(suc(X), Y, ?)
+159. aboveNat(zero, uncurry(insert_1(suc(X)), Y)) -> uncurry(insert_1(suc(X)), Y)
+160. belowNat(suc(X), branch(Y, zero, Z, W)) -> belowNat_case1(false, suc(X), zero, Y, W, Z)
+161. belowNat(suc(X), insert(zero, Y, ?)) -> insert(zero, Y, ?)
+162. belowNat(suc(X), uncurry(insert_1(zero), Y)) -> uncurry(insert_1(zero), Y)
+163. foldr(insert_0, X, opAppend(cons(Y, Z), W)) -> insert_2(Y, foldr(insert_0, X, opAppend(Z, W)))
+164. unionNat(belowNat_case1(false, X, Y, Z, W, V), nil_1) -> belowNat_case1(false, X, Y, Z, W, V)
+165. unionNat(aboveNat_case1(false, X, Y, Z, W, V), nil_1) -> aboveNat_case1(false, X, Y, Z, W, V)
+166. cons(pair(fst(X), snd(X)), Y) -> opAppend(toList(tree(cons(X, ?))), Y)
+167. app(tree(cons(X, ?)), snd(Y)) -> uncurry(uncurry(insert_0, X), Y)
+168. app(uncurry(X, Y), foldr(uncurry_1(X), Z, W)) -> foldr(uncurry_1(X), Z, cons(Y, W))
+169. foldr(uncurry_1(insert_0), X, cons(Y, Z)) -> tree(cons(Y, ?))
+170. eqPairNatNat(pair(suc(X), Y), pair(suc(Z), W)) -> eqPairNatNat(pair(X, Y), pair(Z, W))
+171. eqPairNatNat(pair(X, suc(Y)), pair(Z, suc(W))) -> eqPairNatNat(pair(X, Y), pair(Z, W))
+172. foldr(X, Y, toList(insert(Z, W, ?))) -> uncurry(X, pair(pair(Z, W), Y))
+173. uncurry(app(X, fst(Y)), pair(snd(Y), Z)) -> app(uncurry(X, Y), Z)
+174. opAppend(toList(tree(cons(X, ?))), nil) -> toList(tree(cons(X, ?)))
+175. app(uncurry(uncurry_1(insert_0), X), snd(Y)) -> uncurry(uncurry(insert_0, fst(X)), Y)
+176. aboveNat(zero, aboveNat_case1(false, X, zero, Y, Z, W)) -> aboveNat(zero, Z)
+177. belowNat(zero, belowNat_case1(false, X, zero, Y, Z, W)) -> belowNat(zero, Y)
+178. eqListPairNatNat(nil, opAppend(toList(branch(nil_1, X, Y, Z)), W)) -> false
+179. aboveNat_case1(false, X, Y, Z, belowNat(W, V), U) -> belowNat_case1(false, W, Y, aboveNat(X, Z), V, U)
+180. eqListPairNatNat(opAppend(toList(branch(nil_1, X, Y, Z)), W), nil) -> false
+181. opEqTildeEqNatNat(tree(cons(X, ?)), tree(cons(X, ?))) -> prop_InsertUnion(pair(fst(X), snd(X)), ?, nil)
+182. opAppend(toList(X), toList(branch(nil_1, Y, Z, W))) -> toList(branch(X, Y, Z, W))
+183. opAppend(toList(X), toList(insert(Y, Z, ?))) -> toList(branch(X, Y, Z, nil_1))
+184. uncurry(uncurry(X, fst(Y)), pair(snd(Y), Z)) -> app(uncurry(uncurry_1(X), Y), Z)
+185. eqListPairNatNat(opAppend(cons(X, Y), Z), cons(W, V)) -> opAnd(eqPairNatNat(X, W), eqListPairNatNat(opAppend(Y, Z), V))
+186. eqListPairNatNat(cons(X, Y), opAppend(cons(Z, W), V)) -> opAnd(eqPairNatNat(X, Z), eqListPairNatNat(Y, opAppend(W, V)))
+187. tree(opAppend(opAppend(cons(X, Y), Z), W)) -> tree(cons(X, ?))
+188. foldr(uncurry(insert_0, X), Y, cons(Z, W)) ~> foldr(uncurry(insert_0, X), Y, cons(?, W))
+189. uncurry(uncurry(insert_0, fst(fst(X))), X) -> uncurry(uncurry_1(uncurry_1(insert_0)), X)
+190. foldr(insert_0, X, toList(uncurry(insert_1(Y), Z))) -> insert_2(pair(Y, fst(Z)), X)
+191. uncurry(insert(X, Y, ?), pair(snd(Z), W)) -> app(uncurry(insert_2(X, Y), Z), W)
+192. opAppend(toList(uncurry(uncurry_1(insert_0), X)), nil) -> toList(uncurry(uncurry_1(insert_0), X))
+193. aboveNat(zero, belowNat_case1(false, X, zero, Y, Z, W)) -> aboveNat(zero, belowNat(X, Z))
+194. belowNat(zero, aboveNat_case1(false, X, zero, Y, Z, W)) -> belowNat(zero, aboveNat(X, Y))
+195. uncurry(X, pair(Y, uncurry(X, pair(Z, W)))) -> foldr(X, W, cons(Y, cons(Z, nil)))
+196. tree(opAppend(toList(tree(cons(X, ?))), Y)) -> tree(cons(X, ?))
+197. opEqTildeEqNatNat(uncurry(insert_1(X), Y), unionNat(uncurry(insert_1(X), Y), tree(Z))) -> prop_InsertUnion(pair(X, fst(Y)), ?, Z)
+198. opAppend(toList(X), toList(uncurry(insert_1(Y), Z))) -> toList(branch(X, Y, fst(Z), nil_1))
+199. foldr(insert_2(X, Y), Z, cons(W, V)) ~> foldr(insert_2(X, Y), Z, cons(?, V))
+200. foldr(X, Y, toList(uncurry(insert_1(Z), W))) -> uncurry(X, pair(pair(Z, fst(W)), Y))
+201. insert_2(pair(fst(X), snd(X)), Y) = foldr(insert_0, Y, toList(tree(cons(X, ?))))
+202. foldr(uncurry_1(insert_0), X, opAppend(cons(Y, Z), W)) -> tree(cons(Y, ?))
+203. prop_InsertUnion(pair(X, Y), ?, cons(Z, W)) ~> prop_InsertUnion(pair(X, Y), ?, cons(Z, ?))
+204. app(tree(cons(X, ?)), foldr(uncurry(insert_0, X), Y, Z)) -> foldr(uncurry(insert_0, X), Y, cons(?, Z))
+205. eqListPairNatNat(nil, opAppend(toList(tree(cons(X, ?))), Y)) -> false
+206. eqListPairNatNat(opAppend(toList(tree(cons(X, ?))), Y), nil) -> false
+207. belowNat(zero, belowNat_case1(false, X, suc(Y), Z, W, V)) -> belowNat(zero, Z)
+208. app(uncurry(X, Y), app(uncurry(X, Z), W)) -> foldr(uncurry_1(X), W, cons(Y, cons(Z, nil)))
+209. opAppend(cons(X, cons(Y, cons(Z, nil))), W) -> cons(X, cons(Y, cons(Z, W)))
+210. foldr(insert_0, X, toList(branch(nil_1, Y, Z, W))) -> insert_2(pair(Y, Z), foldr(insert_0, X, toList(W)))
+211. opAppend(cons(X, toList(insert(Y, Z, ?))), W) -> cons(X, cons(pair(Y, Z), W))
+212. toList(branch(X, fst(Y), snd(Y), nil_1)) -> opAppend(toList(X), toList(tree(cons(Y, ?))))
+213. foldr(insert_1(X), Y, toList(branch(nil_1, Z, W, V))) -> insert(X, pair(Z, W), ?)
+214. tree(opAppend(toList(uncurry(uncurry_1(insert_0), X)), Y)) -> uncurry(uncurry_1(insert_0), X)
+215. uncurry(tree(cons(X, ?)), pair(snd(Y), Z)) -> app(uncurry(uncurry(insert_0, X), Y), Z)
+216. aboveNat(suc(X), aboveNat_case1(false, Y, zero, Z, W, V)) -> aboveNat(suc(X), W)
+217. uncurry(uncurry(insert_1(X), Y), pair(snd(Z), W)) -> app(uncurry(insert_2(X, fst(Y)), Z), W)
+218. tree(opAppend(toList(branch(nil_1, X, Y, Z)), W)) -> insert(X, Y, ?)
+219. tree(toList(belowNat_case1(false, X, Y, nil_1, Z, W))) -> insert(Y, W, ?)
+220. opEqTildeEqNatNat(nil_1, branch(branch(nil_1, X, Y, Z), W, V, U)) -> false
+221. opEqTildeEqNatNat(nil_1, branch(insert(X, Y, ?), Z, W, V)) -> false
+222. opEqTildeEqNatNat(branch(branch(nil_1, X, Y, Z), W, V, U), nil_1) -> false
+223. opEqTildeEqNatNat(branch(insert(X, Y, ?), Z, W, V), nil_1) -> false
+224. uncurry(app(X, Y), pair(foldr(X, Z, W), V)) -> app(foldr(X, Z, cons(Y, W)), V)
+225. belowNat(zero, aboveNat_case1(false, X, suc(Y), Z, W, V)) -> belowNat(zero, aboveNat(X, Z))
+226. eqListPairNatNat(nil, opAppend(toList(uncurry(uncurry_1(insert_0), X)), Y)) -> false
+227. eqListPairNatNat(opAppend(toList(uncurry(uncurry_1(insert_0), X)), Y), nil) -> false
+228. uncurry(uncurry_1(insert_2(X, fst(fst(fst(Y))))), Y) -> uncurry(uncurry_1(uncurry_1(insert_1(X))), Y)
+229. eqListPairNatNat(nil, opAppend(opAppend(opAppend(cons(X, Y), Z), W), V)) -> false
+230. eqListPairNatNat(opAppend(opAppend(opAppend(cons(X, Y), Z), W), V), nil) -> false
+231. opEqTildeEqNatNat(nil_1, branch(uncurry(insert_1(X), Y), Z, W, V)) -> false
+232. opEqTildeEqNatNat(branch(uncurry(insert_1(X), Y), Z, W, V), nil_1) -> false
+233. eqListPairNatNat(toList(insert(X, Y, ?)), cons(Z, W)) -> opAnd(eqPairNatNat(pair(X, Y), Z), eqListPairNatNat(nil, W))
+234. eqListPairNatNat(cons(X, Y), toList(insert(Z, W, ?))) -> opAnd(eqPairNatNat(X, pair(Z, W)), eqListPairNatNat(Y, nil))
+235. toList(branch(nil_1, fst(X), snd(X), Y)) -> opAppend(toList(tree(cons(X, ?))), toList(Y))
+236. insert_2(pair(fst(fst(X)), snd(fst(X))), Y) -> foldr(insert_0, Y, toList(uncurry(uncurry_1(insert_0), X)))
+237. opEqTildeEqNatNat(nil_1, branch(tree(cons(X, ?)), Y, Z, W)) -> false
+238. aboveNat(suc(X), belowNat_case1(false, Y, zero, Z, W, V)) -> aboveNat(suc(X), belowNat(Y, W))
+239. opEqTildeEqNatNat(branch(tree(cons(X, ?)), Y, Z, W), nil_1) -> false
+240. opAppend(cons(X, toList(uncurry(insert_1(Y), Z))), W) -> cons(X, cons(pair(Y, fst(Z)), W))
+241. uncurry(X, pair(pair(fst(Y), snd(Y)), Z)) -> foldr(X, Z, toList(tree(cons(Y, ?))))
+242. foldr(uncurry_1(X), Y, toList(tree(cons(Z, ?)))) -> app(uncurry(X, Z), Y)
+243. foldr(uncurry_1(insert_0), X, toList(branch(nil_1, Y, Z, W))) -> insert(Y, Z, ?)
+244. app(insert(X, Y, ?), foldr(insert_2(X, Y), Z, W)) -> foldr(insert_2(X, Y), Z, cons(?, W))
+245. app(insert(X, Y, ?), app(insert(X, Y, ?), Z)) -> foldr(insert_2(X, Y), Z, cons(?, cons(?, nil)))
+246. foldr(insert_2(X, Y), Z, cons(?, cons(W, nil))) ~> foldr(insert_2(X, Y), Z, cons(?, cons(?, nil)))
+247. toList(branch(insert(X, Y, ?), Z, W, nil_1)) -> toList(branch(nil_1, X, Y, insert(Z, W, ?)))
+248. foldr(X, snd(Y), cons(Z, cons(fst(Y), nil))) = uncurry(X, pair(Z, uncurry(X, Y)))
+249. opAnd(eqPairNatNat(pair(X, Y), pair(Z, W)), true) -> opEqTildeEqNatNat(insert(X, Y, ?), insert(Z, W, ?))
+250. opEqTildeEqNatNat(insert(zero, X, ?), insert(suc(Y), Z, ?)) -> false
+251. opEqTildeEqNatNat(insert(suc(X), Y, ?), insert(zero, Z, ?)) -> false
+252. opEqTildeEqNatNat(insert(zero, X, ?), insert(zero, Y, ?)) -> opAnd(eqNat(X, Y), true)
+253. prop_InsertUnion(pair(zero, X), ?, nil) = opAnd(eqNat(X, X), true)
+254. equals(opAnd(eqNat(X, X), true), false) -> false
+255. equals(true, false) -> false
+256. prop_InsertUnion(pair(zero, suc(X)), ?, nil) = opAnd(eqNat(X, X), true)
+257. prop_InsertUnion(pair(zero, suc(X)), ?, nil) -> prop_InsertUnion(pair(zero, X), ?, nil)
+258. aboveNat_case1(false, zero, X, insert(zero, Y, ?), Z, W) -> branch(nil_1, X, W, Z)
+259. belowNat_case1(false, zero, X, Y, insert(zero, Z, ?), W) -> branch(Y, X, W, nil_1)
+260. foldr(insert_1(X), Y, opAppend(opAppend(cons(Z, W), V), U)) -> insert(X, Z, ?)
+261. eqListPairNatNat(toList(branch(nil_1, X, Y, Z)), cons(W, V)) -> opAnd(eqPairNatNat(pair(X, Y), W), eqListPairNatNat(toList(Z), V))
+262. eqListPairNatNat(cons(X, Y), toList(branch(nil_1, Z, W, V))) -> opAnd(eqPairNatNat(X, pair(Z, W)), eqListPairNatNat(Y, toList(V)))
+263. opEqTildeEqNatNat(nil_1, branch(uncurry(uncurry_1(insert_0), X), Y, Z, W)) -> false
+264. opEqTildeEqNatNat(branch(uncurry(uncurry_1(insert_0), X), Y, Z, W), nil_1) -> false
+265. opEqTildeEqNatNat(uncurry(insert_1(zero), X), insert(suc(Y), Z, ?)) -> false
+266. opEqTildeEqNatNat(insert(zero, X, ?), uncurry(insert_1(suc(Y)), Z)) -> false
+267. opEqTildeEqNatNat(uncurry(insert_1(suc(X)), Y), insert(zero, Z, ?)) -> false
+268. opEqTildeEqNatNat(insert(suc(X), Y, ?), uncurry(insert_1(zero), Z)) -> false
+269. prop_InsertUnion(pair(fst(fst(X)), snd(fst(X))), ?, nil) -> opEqTildeEqNatNat(uncurry(uncurry_1(insert_0), X), uncurry(uncurry_1(insert_0), X))
+270. equals(opEqTildeEqNatNat(uncurry(uncurry_1(insert_0), X), uncurry(uncurry_1(insert_0), X)), false) -> false
+271. opEqTildeEqNatNat(insert(X, zero, ?), insert(Y, zero, ?)) -> opAnd(opAnd(eqNat(X, Y), true), true)
+272. opAnd(opAnd(eqNat(X, X), true), true) -> prop_InsertUnion(pair(X, zero), ?, nil)
+273. prop_InsertUnion(pair(suc(X), zero), ?, nil) -> prop_InsertUnion(pair(X, zero), ?, nil)
+274. opAnd(prop_InsertUnion(pair(zero, X), ?, nil), true) -> prop_InsertUnion(pair(X, zero), ?, nil)
+275. app(uncurry(X, Y), foldr(app(X, fst(Y)), Z, W)) -> foldr(app(X, fst(Y)), Z, cons(snd(Y), W))
+276. insert(X, pair(fst(Y), snd(Y)), ?) = foldr(insert_1(X), ?, toList(tree(cons(Y, ?))))
+277. foldr(insert_1(X), Y, toList(tree(cons(Z, ?)))) ~> foldr(insert_1(X), ?, toList(tree(cons(Z, ?))))
+278. uncurry(uncurry(uncurry_1(insert_0), X), pair(snd(Y), Z)) -> app(uncurry(uncurry(insert_0, fst(X)), Y), Z)
+279. foldr(uncurry_1(X), Y, toList(uncurry(uncurry_1(insert_0), Z))) -> app(uncurry(X, fst(Z)), Y)
+280. eqListPairNatNat(nil, opAppend(opAppend(toList(branch(nil_1, X, Y, Z)), W), V)) -> false
+281. eqListPairNatNat(opAppend(opAppend(toList(branch(nil_1, X, Y, Z)), W), V), nil) -> false
+282. eqListPairNatNat(nil, opAppend(toList(belowNat_case1(false, X, Y, nil_1, Z, W)), V)) -> false
+283. eqListPairNatNat(opAppend(toList(belowNat_case1(false, X, Y, nil_1, Z, W)), V), nil) -> false
+284. tree(opAppend(opAppend(toList(tree(cons(X, ?))), Y), Z)) -> tree(cons(X, ?))
+285. aboveNat_case1(geNat(X, Y), suc(X), suc(Y), Z, W, V) -> aboveNat(suc(X), branch(Z, suc(Y), V, W))
+286. aboveNat(suc(zero), branch(X, suc(zero), Y, Z)) -> aboveNat(suc(zero), Z)
+287. aboveNat(suc(zero), insert(suc(zero), X, ?)) -> nil_1
+288. aboveNat(suc(zero), uncurry(insert_1(suc(zero)), X)) -> nil_1
+289. aboveNat(suc(suc(X)), branch(Y, suc(zero), Z, W)) -> aboveNat(suc(suc(X)), W)
+290. aboveNat(suc(suc(X)), insert(suc(zero), Y, ?)) -> nil_1
+291. aboveNat(suc(suc(X)), uncurry(insert_1(suc(zero)), Y)) -> nil_1
+292. aboveNat(suc(zero), aboveNat_case1(false, X, suc(zero), Y, Z, W)) -> aboveNat(suc(zero), Z)
+293. aboveNat(suc(zero), belowNat_case1(false, X, suc(zero), Y, Z, W)) -> aboveNat(suc(zero), belowNat(X, Z))
+294. belowNat_case1(leNat(X, Y), suc(X), suc(Y), Z, W, V) -> belowNat(suc(X), branch(Z, suc(Y), V, W))
+295. belowNat(suc(zero), branch(X, suc(zero), Y, Z)) -> belowNat(suc(zero), X)
+296. belowNat(suc(zero), insert(suc(zero), X, ?)) -> nil_1
+297. belowNat(suc(zero), uncurry(insert_1(suc(zero)), X)) -> nil_1
+298. belowNat(suc(zero), branch(X, suc(suc(Y)), Z, W)) -> belowNat(suc(zero), X)
+299. belowNat(suc(zero), insert(suc(suc(X)), Y, ?)) -> nil_1
+300. belowNat(suc(zero), uncurry(insert_1(suc(suc(X))), Y)) -> nil_1
+301. belowNat(suc(zero), belowNat_case1(false, X, suc(zero), Y, Z, W)) -> belowNat(suc(zero), Y)
+302. belowNat(suc(zero), aboveNat_case1(false, X, suc(zero), Y, Z, W)) -> belowNat(suc(zero), aboveNat(X, Y))
+303. aboveNat_case1(false, zero, X, uncurry(insert_1(zero), Y), Z, W) -> branch(nil_1, X, W, Z)
+304. belowNat_case1(false, zero, X, Y, uncurry(insert_1(zero), Z), W) -> branch(Y, X, W, nil_1)
+305. opEqTildeEqNatNat(tree(cons(X, ?)), unionNat(tree(cons(X, ?)), tree(Y))) -> prop_InsertUnion(pair(fst(X), snd(X)), ?, Y)
+306. aboveNat(zero, belowNat_case1(false, X, suc(Y), Z, W, V)) -> belowNat_case1(false, X, suc(Y), aboveNat(zero, Z), W, V)
+307. aboveNat(zero, aboveNat_case1(false, X, suc(Y), Z, W, V)) -> aboveNat_case1(false, zero, suc(Y), aboveNat(X, Z), W, V)
+308. belowNat(suc(X), belowNat_case1(false, Y, zero, Z, W, V)) -> belowNat_case1(false, suc(X), zero, Z, belowNat(Y, W), V)
+309. belowNat(suc(X), aboveNat_case1(false, Y, zero, Z, W, V)) -> belowNat_case1(false, suc(X), zero, aboveNat(Y, Z), W, V)
+310. foldr(insert_0, X, opAppend(opAppend(cons(Y, Z), W), V)) -> insert_2(Y, foldr(insert_0, X, opAppend(opAppend(Z, W), V)))
+311. app(tree(cons(X, ?)), app(tree(cons(X, ?)), Y)) -> foldr(uncurry(insert_0, X), Y, cons(?, cons(?, nil)))
+312. opEqTildeEqNatNat(uncurry(insert_1(zero), X), insert(zero, Y, ?)) -> opAnd(eqNat(fst(X), Y), true)
+313. opEqTildeEqNatNat(uncurry(insert_1(zero), X), uncurry(insert_1(zero), Y)) -> opAnd(eqNat(fst(X), fst(Y)), true)
+314. opEqTildeEqNatNat(insert(zero, X, ?), uncurry(insert_1(zero), Y)) -> opAnd(eqNat(X, fst(Y)), true)
+315. opAppend(opAppend(toList(tree(cons(X, ?))), Y), Z) -> opAppend(toList(tree(cons(X, ?))), opAppend(Y, Z))
+316. uncurry(uncurry(X, Y), pair(foldr(uncurry_1(X), Z, W), V)) -> app(foldr(uncurry_1(X), Z, cons(Y, W)), V)
+317. aboveNat_case1(false, zero, X, branch(Y, zero, Z, W), V, U) -> aboveNat_case1(false, zero, X, W, V, U)
+318. belowNat_case1(false, zero, X, Y, branch(Z, zero, W, V), U) -> belowNat_case1(false, zero, X, Y, Z, U)
+319. tree(opAppend(opAppend(opAppend(cons(X, Y), Z), W), V)) -> tree(cons(X, ?))
+320. aboveNat(suc(zero), branch(X, suc(suc(Y)), Z, W)) -> aboveNat_case1(false, suc(zero), suc(suc(Y)), X, W, Z)
+321. aboveNat(suc(zero), insert(suc(suc(X)), Y, ?)) -> insert(suc(suc(X)), Y, ?)
+322. aboveNat(suc(zero), uncurry(insert_1(suc(suc(X))), Y)) -> uncurry(insert_1(suc(suc(X))), Y)
+323. belowNat(suc(suc(X)), branch(Y, suc(zero), Z, W)) -> belowNat_case1(false, suc(suc(X)), suc(zero), Y, W, Z)
+324. belowNat(suc(suc(X)), insert(suc(zero), Y, ?)) -> insert(suc(zero), Y, ?)
+325. belowNat(suc(suc(X)), uncurry(insert_1(suc(zero)), Y)) -> uncurry(insert_1(suc(zero)), Y)
+326. opAppend(cons(X, toList(Y)), toList(insert(Z, W, ?))) -> cons(X, toList(branch(Y, Z, W, nil_1)))
+327. foldr(insert_2(X, Y), Z, toList(tree(cons(W, ?)))) -> app(insert(X, Y, ?), Z)
+328. opEqTildeEqNatNat(uncurry(insert_1(zero), X), uncurry(insert_1(suc(Y)), Z)) -> false
+329. opEqTildeEqNatNat(uncurry(insert_1(suc(X)), Y), uncurry(insert_1(zero), Z)) -> false
+330. toList(branch(nil_1, X, Y, branch(nil_1, Z, W, V))) -> toList(branch(insert(X, Y, ?), Z, W, V))
+331. tree(toList(branch(insert(X, Y, ?), Z, W, V))) -> insert(X, Y, ?)
+332. tree(toList(branch(uncurry(insert_1(X), Y), Z, W, V))) -> uncurry(insert_1(X), Y)
+333. uncurry(uncurry(X, pair(Y, fst(Z))), pair(snd(Z), W)) -> app(uncurry(app(X, Y), Z), W)
+334. opAppend(cons(X, toList(tree(cons(Y, ?)))), nil) -> cons(X, toList(tree(cons(Y, ?))))
+335. tree(toList(branch(tree(cons(X, ?)), Y, Z, W))) -> tree(cons(X, ?))
+336. opEqTildeEqNatNat(uncurry(uncurry_1(insert_0), X), unionNat(uncurry(uncurry_1(insert_0), X), tree(Y))) -> prop_InsertUnion(pair(fst(fst(X)), snd(fst(X))), ?, Y)
+337. aboveNat_case1(false, suc(X), Y, insert(zero, Z, ?), W, V) -> branch(nil_1, Y, V, W)
+338. belowNat_case1(false, zero, X, Y, insert(suc(Z), W, ?), V) -> branch(Y, X, V, nil_1)
+339. foldr(X, foldr(X, Y, Z), cons(W, cons(V, nil))) -> foldr(X, Y, cons(W, cons(V, Z)))
+340. foldr(uncurry(insert_0, X), Y, cons(?, cons(Z, nil))) ~> foldr(uncurry(insert_0, X), Y, cons(?, cons(?, nil)))
+341. foldr(uncurry(insert_0, X), Y, toList(tree(cons(Z, ?)))) -> app(tree(cons(X, ?)), Y)
+342. foldr(uncurry_1(X), Y, opAppend(toList(tree(cons(Z, ?))), W)) -> foldr(uncurry_1(X), Y, cons(Z, W))
+343. opAnd(eqPairNatNat(pair(X, fst(Y)), Z), eqListPairNatNat(nil, W)) -> eqListPairNatNat(toList(uncurry(insert_1(X), Y)), cons(Z, W))
+344. eqListPairNatNat(toList(uncurry(insert_1(X), Y)), cons(Z, nil)) -> opAnd(eqPairNatNat(pair(X, fst(Y)), Z), true)
+345. tree(opAppend(opAppend(toList(uncurry(uncurry_1(insert_0), X)), Y), Z)) -> uncurry(uncurry_1(insert_0), X)
+346. opAnd(eqPairNatNat(X, pair(Y, fst(Z))), eqListPairNatNat(W, nil)) -> eqListPairNatNat(cons(X, W), toList(uncurry(insert_1(Y), Z)))
+347. eqListPairNatNat(cons(X, nil), toList(uncurry(insert_1(Y), Z))) -> opAnd(eqPairNatNat(X, pair(Y, fst(Z))), true)
+348. opAppend(cons(X, toList(Y)), toList(branch(nil_1, Z, W, V))) -> cons(X, toList(branch(Y, Z, W, V)))
+349. toList(branch(branch(nil_1, X, Y, Z), W, V, U)) -> toList(branch(nil_1, X, Y, branch(Z, W, V, U)))
+350. opAppend(toList(X), toList(belowNat_case1(false, Y, Z, nil_1, W, V))) -> toList(belowNat_case1(false, Y, Z, X, W, V))
+351. eqListPairNatNat(opAppend(opAppend(cons(X, Y), Z), W), cons(V, U)) -> opAnd(eqPairNatNat(X, V), eqListPairNatNat(opAppend(opAppend(Y, Z), W), U))
+352. eqListPairNatNat(opAppend(cons(X, Y), Z), opAppend(cons(W, V), U)) -> opAnd(eqPairNatNat(X, W), eqListPairNatNat(opAppend(Y, Z), opAppend(V, U)))
+353. eqListPairNatNat(cons(X, Y), opAppend(opAppend(cons(Z, W), V), U)) -> opAnd(eqPairNatNat(X, Z), eqListPairNatNat(Y, opAppend(opAppend(W, V), U)))
+354. prop_InsertUnion(pair(X, Y), ?, opAppend(cons(Z, W), V)) -> prop_InsertUnion(pair(X, Y), ?, cons(Z, ?))
+355. uncurry(uncurry_1(uncurry(insert_0, fst(fst(fst(X))))), X) -> uncurry(uncurry_1(uncurry_1(uncurry_1(insert_0))), X)
+356. uncurry(app(X, Y), pair(Z, foldr(uncurry_1(X), W, V))) -> foldr(uncurry_1(X), W, cons(pair(Y, Z), V))
+357. opAppend(opAppend(toList(uncurry(uncurry_1(insert_0), X)), Y), Z) -> opAppend(toList(uncurry(uncurry_1(insert_0), X)), opAppend(Y, Z))
+358. foldr(uncurry_1(insert_0), X, opAppend(opAppend(cons(Y, Z), W), V)) -> tree(cons(Y, ?))
+359. foldr(uncurry(insert_0, X), Y, opAppend(cons(Z, W), V)) ~> foldr(uncurry(insert_0, X), Y, opAppend(cons(?, W), V))
+360. opEqTildeEqNatNat(insert(X, zero, ?), insert(Y, suc(Z), ?)) -> opAnd(opAnd(eqNat(X, Y), false), true)
+361. opEqTildeEqNatNat(insert(X, suc(Y), ?), insert(Z, zero, ?)) -> opAnd(opAnd(eqNat(X, Z), false), true)
+362. foldr(insert_2(X, Y), Z, cons(?, cons(W, V))) ~> foldr(insert_2(X, Y), Z, cons(?, cons(?, V)))
+363. foldr(insert_2(X, Y), Z, toList(uncurry(uncurry_1(insert_0), W))) -> app(insert(X, Y, ?), Z)
+364. foldr(insert_1(X), Y, toList(uncurry(uncurry_1(insert_0), Z))) ~> foldr(insert_1(X), ?, toList(uncurry(uncurry_1(insert_0), Z)))
+365. opAppend(cons(X, toList(uncurry(uncurry_1(insert_0), Y))), nil) -> cons(X, toList(uncurry(uncurry_1(insert_0), Y)))
+366. tree(toList(branch(uncurry(uncurry_1(insert_0), X), Y, Z, W))) -> uncurry(uncurry_1(insert_0), X)
+367. opEqTildeEqNatNat(nil_1, belowNat_case1(false, X, Y, insert(Z, W, ?), V, U)) -> false
+368. opEqTildeEqNatNat(belowNat_case1(false, X, Y, insert(Z, W, ?), V, U), nil_1) -> false
+369. belowNat_case1(false, zero, X, Y, uncurry(insert_1(suc(Z)), W), V) -> branch(Y, X, V, nil_1)
+370. aboveNat_case1(false, suc(X), Y, uncurry(insert_1(zero), Z), W, V) -> branch(nil_1, Y, V, W)
+371. foldr(uncurry(insert_0, X), Y, cons(?, cons(Z, W))) ~> foldr(uncurry(insert_0, X), Y, cons(?, cons(?, W)))
+372. uncurry(app(X, Y), pair(uncurry(X, pair(Z, W)), V)) -> app(foldr(X, W, cons(Y, cons(Z, nil))), V)
+373. insert(pair(fst(X), snd(X)), Y, ?) = app(foldr(insert_0, Y, toList(tree(cons(X, ?)))), ?)
+374. app(foldr(insert_0, X, toList(tree(cons(Y, ?)))), Z) ~> app(foldr(insert_0, X, toList(tree(cons(Y, ?)))), ?)
+375. opEqTildeEqNatNat(nil_1, foldr(insert_1(X), ?, toList(tree(cons(Y, ?))))) -> false
+376. opEqTildeEqNatNat(foldr(insert_1(X), ?, toList(tree(cons(Y, ?)))), nil_1) -> false
+377. foldr(uncurry(insert_0, X), Y, toList(uncurry(uncurry_1(insert_0), Z))) -> app(tree(cons(X, ?)), Y)
+378. foldr(insert_1(X), Y, opAppend(toList(branch(nil_1, Z, W, V)), U)) -> insert(X, pair(Z, W), ?)
+379. foldr(insert_1(X), Y, toList(belowNat_case1(false, Z, W, nil_1, V, U))) -> insert(X, pair(W, U), ?)
+380. opAppend(cons(X, toList(Y)), toList(uncurry(insert_1(Z), W))) -> cons(X, toList(branch(Y, Z, fst(W), nil_1)))
+381. toList(branch(nil_1, X, fst(Y), insert(Z, W, ?))) -> toList(branch(uncurry(insert_1(X), Y), Z, W, nil_1))
+382. foldr(insert_2(X, Y), Z, opAppend(cons(W, V), U)) ~> foldr(insert_2(X, Y), Z, opAppend(cons(?, V), U))
+383. aboveNat_case1(false, suc(zero), X, insert(suc(zero), Y, ?), Z, W) -> branch(nil_1, X, W, Z)
+384. belowNat_case1(false, suc(zero), X, Y, insert(suc(zero), Z, ?), W) -> branch(Y, X, W, nil_1)
+385. belowNat_case1(false, zero, X, Y, branch(Z, suc(W), V, U), T) -> belowNat_case1(false, zero, X, Y, Z, T)
+386. app(insert(X, Y, ?), foldr(uncurry_1(insert_1(X)), Z, W)) -> foldr(uncurry_1(insert_1(X)), Z, cons(pair(Y, ?), W))
+387. foldr(uncurry_1(insert_1(X)), Y, cons(pair(Z, W), V)) ~> foldr(uncurry_1(insert_1(X)), Y, cons(pair(Z, ?), V))
+388. aboveNat(zero, foldr(insert_1(zero), ?, toList(tree(cons(X, ?))))) -> nil_1
+389. belowNat(zero, foldr(insert_1(zero), ?, toList(tree(cons(X, ?))))) -> nil_1
+390. opEqTildeEqNatNat(branch(insert(X, Y, ?), Z, W, nil_1), V) -> opEqTildeEqNatNat(branch(nil_1, X, Y, insert(Z, W, ?)), V)
+391. opEqTildeEqNatNat(X, branch(insert(Y, Z, ?), W, V, nil_1)) -> opEqTildeEqNatNat(X, branch(nil_1, Y, Z, insert(W, V, ?)))
+392. opAnd(eqPairNatNat(pair(X, Y), pair(Z, W)), opEqTildeEqNatNat(V, nil_1)) -> opEqTildeEqNatNat(branch(nil_1, X, Y, V), insert(Z, W, ?))
+393. opEqTildeEqNatNat(branch(nil_1, zero, X, Y), insert(suc(Z), W, ?)) -> false
+394. opEqTildeEqNatNat(branch(nil_1, suc(X), Y, Z), insert(zero, W, ?)) -> false
+395. opEqTildeEqNatNat(branch(nil_1, zero, X, Y), uncurry(insert_1(suc(Z)), W)) -> false
+396. opEqTildeEqNatNat(branch(nil_1, suc(X), Y, Z), uncurry(insert_1(zero), W)) -> false
+397. opEqTildeEqNatNat(branch(nil_1, zero, X, Y), insert(zero, Z, ?)) -> opAnd(eqNat(X, Z), opEqTildeEqNatNat(Y, nil_1))
+398. opEqTildeEqNatNat(branch(nil_1, X, zero, Y), insert(Z, zero, ?)) -> opAnd(opAnd(eqNat(X, Z), true), opEqTildeEqNatNat(Y, nil_1))
+399. opEqTildeEqNatNat(branch(nil_1, zero, X, Y), uncurry(insert_1(zero), Z)) -> opAnd(eqNat(X, fst(Z)), opEqTildeEqNatNat(Y, nil_1))
+400. opAnd(eqPairNatNat(pair(X, Y), pair(Z, W)), opEqTildeEqNatNat(nil_1, V)) -> opEqTildeEqNatNat(insert(X, Y, ?), branch(nil_1, Z, W, V))
+401. opEqTildeEqNatNat(insert(zero, X, ?), branch(nil_1, suc(Y), Z, W)) -> false
+402. opEqTildeEqNatNat(insert(suc(X), Y, ?), branch(nil_1, zero, Z, W)) -> false
+403. opEqTildeEqNatNat(uncurry(insert_1(zero), X), branch(nil_1, suc(Y), Z, W)) -> false
+404. opEqTildeEqNatNat(uncurry(insert_1(suc(X)), Y), branch(nil_1, zero, Z, W)) -> false
+405. opEqTildeEqNatNat(insert(zero, X, ?), branch(nil_1, zero, Y, Z)) -> opAnd(eqNat(X, Y), opEqTildeEqNatNat(nil_1, Z))
+406. opEqTildeEqNatNat(insert(X, zero, ?), branch(nil_1, Y, zero, Z)) -> opAnd(opAnd(eqNat(X, Y), true), opEqTildeEqNatNat(nil_1, Z))
+407. opEqTildeEqNatNat(uncurry(insert_1(zero), X), branch(nil_1, zero, Y, Z)) -> opAnd(eqNat(fst(X), Y), opEqTildeEqNatNat(nil_1, Z))
+408. belowNat_case1(false, suc(X), Y, Z, insert(zero, W, ?), V) -> branch(Z, Y, V, insert(zero, W, ?))
+409. opAnd(eqPairNatNat(pair(X, Y), pair(Z, W)), opEqTildeEqNatNat(V, U)) -> opEqTildeEqNatNat(branch(nil_1, X, Y, V), branch(nil_1, Z, W, U))
+410. opEqTildeEqNatNat(branch(nil_1, zero, X, Y), branch(nil_1, suc(Z), W, V)) -> false
+411. opEqTildeEqNatNat(branch(nil_1, suc(X), Y, Z), branch(nil_1, zero, W, V)) -> false
+412. opEqTildeEqNatNat(branch(nil_1, zero, X, Y), branch(nil_1, zero, Z, W)) -> opAnd(eqNat(X, Z), opEqTildeEqNatNat(Y, W))
+413. eqListPairNatNat(toList(uncurry(insert_1(zero), X)), cons(pair(suc(Y), Z), W)) -> false
+414. eqListPairNatNat(toList(uncurry(insert_1(suc(X)), Y)), cons(pair(zero, Z), W)) -> false
+415. eqListPairNatNat(cons(pair(zero, X), Y), toList(uncurry(insert_1(suc(Z)), W))) -> false
+416. eqListPairNatNat(cons(pair(suc(X), Y), Z), toList(uncurry(insert_1(zero), W))) -> false
+417. app(tree(cons(X, ?)), foldr(uncurry_1(uncurry_1(insert_0)), Y, Z)) -> foldr(uncurry_1(uncurry_1(insert_0)), Y, cons(pair(X, tree(?)), Z))
+418. foldr(uncurry_1(uncurry_1(insert_0)), X, cons(pair(Y, tree(Z)), W)) ~> foldr(uncurry_1(uncurry_1(insert_0)), X, cons(pair(Y, tree(?)), W))
+419. foldr(insert_2(X, fst(Y)), Z, cons(?, cons(?, nil))) = foldr(uncurry_1(insert_1(X)), Z, cons(Y, cons(Y, nil)))
+420. tree(opAppend(opAppend(toList(branch(nil_1, X, Y, Z)), W), V)) -> insert(X, Y, ?)
+421. tree(opAppend(toList(belowNat_case1(false, X, Y, nil_1, Z, W)), V)) -> insert(Y, W, ?)
+422. opEqTildeEqNatNat(nil_1, belowNat_case1(false, X, Y, branch(nil_1, Z, W, V), U, T)) -> false
+423. opEqTildeEqNatNat(nil_1, branch(belowNat_case1(false, X, Y, nil_1, Z, W), V, U, T)) -> false
+424. app(uncurry(insert_1(X), Y), foldr(insert_2(X, fst(Y)), Z, W)) -> foldr(insert_2(X, fst(Y)), Z, cons(?, W))
+425. opEqTildeEqNatNat(belowNat_case1(false, X, Y, branch(nil_1, Z, W, V), U, T), nil_1) -> false
+426. opEqTildeEqNatNat(branch(belowNat_case1(false, X, Y, nil_1, Z, W), V, U, T), nil_1) -> false
+427. belowNat(suc(zero), belowNat_case1(false, X, suc(suc(Y)), Z, W, V)) -> belowNat(suc(zero), Z)
+428. eqListPairNatNat(toList(uncurry(insert_1(X), Y)), cons(Z, toList(W))) -> opAnd(eqPairNatNat(pair(X, fst(Y)), Z), opEqTildeEqNatNat(nil_1, W))
+429. app(uncurry(X, Y), uncurry(uncurry_1(X), Z)) = foldr(uncurry_1(X), snd(Z), cons(Y, cons(fst(Z), nil)))
+430. foldr(uncurry_1(insert_1(X)), Y, cons(pair(fst(Z), ?), W)) -> foldr(uncurry_1(insert_1(X)), Y, cons(Z, W))
+431. toList(branch(uncurry(insert_1(X), Y), Z, fst(W), nil_1)) -> toList(branch(nil_1, X, fst(Y), uncurry(insert_1(Z), W)))
+432. prop_InsertUnion(pair(X, Y), ?, cons(pair(Z, W), ?)) -> prop_InsertUnion(pair(X, Y), ?, toList(insert(Z, W, ?)))
+433. eqListPairNatNat(cons(X, toList(Y)), toList(uncurry(insert_1(Z), W))) -> opAnd(eqPairNatNat(X, pair(Z, fst(W))), opEqTildeEqNatNat(Y, nil_1))
+434. aboveNat_case1(false, suc(X), Y, branch(Z, zero, W, V), U, T) -> aboveNat_case1(false, suc(X), Y, V, U, T)
+435. uncurry(uncurry(X, Y), pair(app(uncurry(X, Z), W), V)) = app(foldr(uncurry_1(X), W, cons(Y, cons(Z, nil))), V)
+436. uncurry(app(X, Y), pair(Z, app(uncurry(X, W), V))) = foldr(uncurry_1(X), V, cons(pair(Y, Z), cons(W, nil)))
+437. app(uncurry(X, Y), uncurry(app(X, Z), pair(W, V))) -> foldr(uncurry_1(X), V, cons(Y, toList(insert(Z, W, ?))))
+438. aboveNat_case1(false, zero, X, insert(suc(Y), Z, ?), W, V) -> branch(insert(suc(Y), Z, ?), X, V, W)
+439. foldr(insert_0, X, opAppend(toList(branch(nil_1, Y, Z, W)), V)) -> insert_2(pair(Y, Z), foldr(insert_0, X, opAppend(toList(W), V)))
+440. eqListPairNatNat(toList(insert(X, Y, ?)), opAppend(cons(Z, W), V)) -> opAnd(eqPairNatNat(pair(X, Y), Z), eqListPairNatNat(nil, opAppend(W, V)))
+441. foldr(insert_0, X, toList(belowNat_case1(false, Y, Z, nil_1, W, V))) -> insert_2(pair(Z, V), foldr(insert_0, X, toList(belowNat(Y, W))))
+442. opEqTildeEqNatNat(nil_1, branch(X, fst(Y), snd(Y), nil_1)) = eqListPairNatNat(nil, opAppend(toList(X), toList(tree(cons(Y, ?)))))
+443. opEqTildeEqNatNat(branch(X, fst(Y), snd(Y), nil_1), nil_1) = eqListPairNatNat(opAppend(toList(X), toList(tree(cons(Y, ?)))), nil)
+444. eqListPairNatNat(opAppend(cons(X, Y), Z), toList(insert(W, V, ?))) -> opAnd(eqPairNatNat(X, pair(W, V)), eqListPairNatNat(opAppend(Y, Z), nil))
+445. opAppend(cons(X, cons(Y, cons(Z, cons(W, nil)))), V) -> cons(X, cons(Y, cons(Z, cons(W, V))))
+446. opAppend(cons(X, cons(Y, toList(insert(Z, W, ?)))), V) -> cons(X, cons(Y, cons(pair(Z, W), V)))
+447. opAppend(toList(branch(nil_1, X, Y, insert(Z, W, ?))), V) -> cons(pair(X, Y), cons(pair(Z, W), V))
+448. eqListPairNatNat(nil, opAppend(opAppend(opAppend(opAppend(cons(X, Y), Z), W), V), U)) -> false
+449. eqListPairNatNat(opAppend(opAppend(opAppend(opAppend(cons(X, Y), Z), W), V), U), nil) -> false
+450. opEqTildeEqNatNat(nil_1, belowNat_case1(false, X, Y, uncurry(insert_1(Z), W), V, U)) -> false
+451. opEqTildeEqNatNat(belowNat_case1(false, X, Y, uncurry(insert_1(Z), W), V, U), nil_1) -> false
+452. foldr(insert_2(X, Y), snd(Z), cons(?, cons(?, nil))) = app(insert(X, Y, ?), uncurry(insert_2(X, Y), Z))
+453. foldr(uncurry(insert_0, X), Y, toList(branch(nil_1, Z, W, V))) -> foldr(uncurry(insert_0, X), Y, cons(?, toList(V)))
+454. insert_2(pair(fst(X), snd(X)), foldr(insert_0, Y, Z)) = foldr(insert_0, Y, opAppend(toList(tree(cons(X, ?))), Z))
+455. toList(aboveNat_case1(false, X, fst(Y), Z, nil_1, snd(Y))) -> opAppend(toList(aboveNat(X, Z)), toList(tree(cons(Y, ?))))
+456. app(uncurry(uncurry_1(X), Y), foldr(uncurry(X, fst(Y)), Z, W)) -> foldr(uncurry(X, fst(Y)), Z, cons(snd(Y), W))
+457. prop_InsertUnion(pair(X, Y), ?, toList(tree(cons(Z, ?)))) -> prop_InsertUnion(pair(X, Y), ?, cons(Z, ?))
+458. aboveNat(suc(suc(X)), aboveNat_case1(false, Y, suc(zero), Z, W, V)) -> aboveNat(suc(suc(X)), W)
+459. foldr(uncurry_1(uncurry_1(insert_0)), X, cons(pair(Y, tree(?)), Z)) -> foldr(uncurry_1(uncurry_1(insert_0)), X, cons(pair(Y, nil_1), Z))
+460. opEqTildeEqNatNat(nil_1, foldr(insert_1(X), ?, toList(uncurry(uncurry_1(insert_0), Y)))) -> false
+461. opEqTildeEqNatNat(foldr(insert_1(X), ?, toList(uncurry(uncurry_1(insert_0), Y))), nil_1) -> false
+462. app(uncurry(insert_1(X), Y), uncurry(insert_2(X, fst(Z)), W)) -> foldr(uncurry_1(insert_1(X)), snd(W), cons(Y, cons(Z, nil)))
+463. opEqTildeEqNatNat(nil_1, belowNat_case1(false, X, Y, tree(cons(Z, ?)), W, V)) -> false
+464. opEqTildeEqNatNat(belowNat_case1(false, X, Y, tree(cons(Z, ?)), W, V), nil_1) -> false
+465. opEqTildeEqNatNat(branch(nil_1, X, zero, Y), branch(nil_1, Z, zero, W)) -> opAnd(opAnd(eqNat(X, Z), true), opEqTildeEqNatNat(Y, W))
+466. foldr(uncurry_1(X), Y, cons(Z, toList(tree(cons(W, ?))))) -> foldr(uncurry_1(X), Y, cons(Z, cons(W, nil)))
+467. opAnd(eqPairNatNat(pair(fst(X), snd(X)), Y), eqListPairNatNat(nil, Z)) -> eqListPairNatNat(toList(tree(cons(X, ?))), cons(Y, Z))
+468. eqListPairNatNat(toList(tree(cons(X, ?))), cons(Y, nil)) = opAnd(eqPairNatNat(pair(fst(X), snd(X)), Y), true)
+469. opAnd(eqPairNatNat(X, pair(fst(Y), snd(Y))), eqListPairNatNat(Z, nil)) -> eqListPairNatNat(cons(X, Z), toList(tree(cons(Y, ?))))
+470. eqListPairNatNat(cons(X, nil), toList(tree(cons(Y, ?)))) = opAnd(eqPairNatNat(X, pair(fst(Y), snd(Y))), true)
+471. aboveNat_case1(false, suc(zero), X, uncurry(insert_1(suc(zero)), Y), Z, W) -> branch(nil_1, X, W, Z)
+472. belowNat_case1(false, suc(zero), X, Y, uncurry(insert_1(suc(zero)), Z), W) -> branch(Y, X, W, nil_1)
+473. opEqTildeEqNatNat(branch(nil_1, X, zero, Y), insert(Z, suc(W), ?)) -> opAnd(opAnd(eqNat(X, Z), false), opEqTildeEqNatNat(Y, nil_1))
+474. opEqTildeEqNatNat(branch(nil_1, X, suc(Y), Z), insert(W, zero, ?)) -> opAnd(opAnd(eqNat(X, W), false), opEqTildeEqNatNat(Z, nil_1))
+475. opEqTildeEqNatNat(insert(X, zero, ?), branch(nil_1, Y, suc(Z), W)) -> opAnd(opAnd(eqNat(X, Y), false), opEqTildeEqNatNat(nil_1, W))
+476. opEqTildeEqNatNat(insert(X, suc(Y), ?), branch(nil_1, Z, zero, W)) -> opAnd(opAnd(eqNat(X, Z), false), opEqTildeEqNatNat(nil_1, W))
+477. aboveNat(zero, foldr(insert_1(zero), ?, toList(uncurry(uncurry_1(insert_0), X)))) -> nil_1
+478. belowNat(zero, foldr(insert_1(zero), ?, toList(uncurry(uncurry_1(insert_0), X)))) -> nil_1
+479. belowNat_case1(false, suc(X), Y, Z, uncurry(insert_1(zero), W), V) -> branch(Z, Y, V, uncurry(insert_1(zero), W))
+480. eqListPairNatNat(toList(uncurry(insert_1(X), Y)), cons(Z, cons(W, V))) -> opAnd(eqPairNatNat(pair(X, fst(Y)), Z), false)
+481. eqListPairNatNat(cons(X, cons(Y, Z)), toList(uncurry(insert_1(W), V))) -> opAnd(eqPairNatNat(X, pair(W, fst(V))), false)
+482. opEqTildeEqNatNat(insert(X, Y, ?), unionNat(insert(X, Y, ?), uncurry(uncurry_1(insert_0), Z))) -> prop_InsertUnion(pair(X, Y), ?, cons(fst(Z), ?))
+483. foldr(uncurry_1(insert_0), X, opAppend(toList(branch(nil_1, Y, Z, W)), V)) -> insert(Y, Z, ?)
+484. foldr(uncurry_1(insert_0), X, toList(belowNat_case1(false, Y, Z, nil_1, W, V))) -> insert(Z, V, ?)
+485. belowNat(suc(zero), aboveNat_case1(false, X, suc(suc(Y)), Z, W, V)) -> belowNat(suc(zero), aboveNat(X, Z))
+486. foldr(insert_2(X, Y), Z, toList(branch(nil_1, W, V, U))) -> foldr(insert_2(X, Y), Z, cons(?, toList(U)))
+487. uncurry(uncurry_1(uncurry_1(insert_2(X, fst(fst(fst(fst(Y))))))), Y) -> uncurry(uncurry_1(uncurry_1(uncurry_1(insert_1(X)))), Y)
+488. insert(pair(fst(fst(X)), snd(fst(X))), Y, ?) = app(foldr(insert_0, Y, toList(uncurry(uncurry_1(insert_0), X))), ?)
+489. app(foldr(insert_0, X, toList(uncurry(uncurry_1(insert_0), Y))), Z) ~> app(foldr(insert_0, X, toList(uncurry(uncurry_1(insert_0), Y))), ?)
+490. opEqTildeEqNatNat(insert(X, Y, ?), unionNat(insert(X, Y, ?), insert(Z, W, ?))) -> prop_InsertUnion(pair(X, Y), ?, toList(insert(Z, W, ?)))
+491. foldr(uncurry_1(X), Y, opAppend(toList(uncurry(uncurry_1(insert_0), Z)), W)) -> foldr(uncurry_1(X), Y, cons(fst(Z), W))
+492. unionNat(unionNat(branch(X, Y, Z, W), branch(V, U, T, S)), nil_1) -> unionNat(branch(X, Y, Z, W), branch(V, U, T, S))
+493. unionNat(unionNat(insert(X, Y, ?), branch(Z, W, V, U)), nil_1) -> unionNat(insert(X, Y, ?), branch(Z, W, V, U))
+494. unionNat(unionNat(insert(X, Y, ?), insert(Z, W, ?)), nil_1) -> unionNat(insert(X, Y, ?), insert(Z, W, ?))
+495. unionNat(unionNat(branch(X, Y, Z, W), insert(V, U, ?)), nil_1) -> unionNat(branch(X, Y, Z, W), insert(V, U, ?))
+496. unionNat(unionNat(insert(X, Y, ?), uncurry(insert_1(Z), W)), nil_1) -> unionNat(insert(X, Y, ?), uncurry(insert_1(Z), W))
+497. unionNat(unionNat(uncurry(insert_1(X), Y), insert(Z, W, ?)), nil_1) -> unionNat(uncurry(insert_1(X), Y), insert(Z, W, ?))
+498. unionNat(unionNat(tree(cons(X, ?)), insert(Y, Z, ?)), nil_1) -> unionNat(tree(cons(X, ?)), insert(Y, Z, ?))
+499. unionNat(unionNat(insert(X, Y, ?), tree(cons(Z, ?))), nil_1) -> unionNat(insert(X, Y, ?), tree(cons(Z, ?)))
+500. insert(X, pair(fst(Y), snd(Y)), ?) = foldr(insert_1(X), ?, opAppend(toList(tree(cons(Y, ?))), ?))
+501. foldr(insert_1(X), Y, opAppend(toList(tree(cons(Z, ?))), W)) ~> foldr(insert_1(X), ?, opAppend(toList(tree(cons(Z, ?))), ?))
+502. app(foldr(X, Y, cons(Z, W)), foldr(app(X, Z), V, U)) -> foldr(app(X, Z), V, cons(foldr(X, Y, W), U))
+503. aboveNat_case1(false, zero, X, uncurry(insert_1(suc(Y)), Z), W, V) -> branch(uncurry(insert_1(suc(Y)), Z), X, V, W)
+504. eqListPairNatNat(nil, opAppend(toList(branch(insert(X, Y, ?), Z, W, V)), U)) -> false
+505. eqListPairNatNat(opAppend(toList(branch(insert(X, Y, ?), Z, W, V)), U), nil) -> false
+506. foldr(insert_1(X), Y, opAppend(opAppend(opAppend(cons(Z, W), V), U), T)) -> insert(X, Z, ?)
+507. aboveNat(suc(suc(X)), belowNat_case1(false, Y, suc(zero), Z, W, V)) -> aboveNat(suc(suc(X)), belowNat(Y, W))
+508. eqListPairNatNat(opAppend(toList(branch(nil_1, X, Y, Z)), W), cons(V, U)) -> opAnd(eqPairNatNat(pair(X, Y), V), eqListPairNatNat(opAppend(toList(Z), W), U))
+509. eqListPairNatNat(opAppend(cons(X, Y), Z), toList(branch(nil_1, W, V, U))) -> opAnd(eqPairNatNat(X, pair(W, V)), eqListPairNatNat(opAppend(Y, Z), toList(U)))
+510. eqListPairNatNat(toList(branch(nil_1, X, Y, Z)), opAppend(cons(W, V), U)) -> opAnd(eqPairNatNat(pair(X, Y), W), eqListPairNatNat(toList(Z), opAppend(V, U)))
+511. eqListPairNatNat(cons(X, Y), opAppend(toList(branch(nil_1, Z, W, V)), U)) -> opAnd(eqPairNatNat(X, pair(Z, W)), eqListPairNatNat(Y, opAppend(toList(V), U)))
+512. opEqTildeEqNatNat(branch(nil_1, X, Y, branch(nil_1, Z, W, V)), U) -> opEqTildeEqNatNat(branch(insert(X, Y, ?), Z, W, V), U)
+513. opEqTildeEqNatNat(X, branch(nil_1, Y, Z, branch(nil_1, W, V, U))) -> opEqTildeEqNatNat(X, branch(insert(Y, Z, ?), W, V, U))
+514. unionNat(unionNat(uncurry(insert_1(X), Y), branch(Z, W, V, U)), nil_1) -> unionNat(uncurry(insert_1(X), Y), branch(Z, W, V, U))
+515. unionNat(unionNat(branch(X, Y, Z, W), uncurry(insert_1(V), U)), nil_1) -> unionNat(branch(X, Y, Z, W), uncurry(insert_1(V), U))
+516. toList(belowNat_case1(false, X, fst(Y), nil_1, Z, snd(Y))) -> opAppend(toList(tree(cons(Y, ?))), toList(belowNat(X, Z)))
+517. uncurry(uncurry(X, Y), pair(Z, foldr(uncurry_1(uncurry_1(X)), W, V))) -> foldr(uncurry_1(uncurry_1(X)), W, cons(pair(Y, Z), V))
+518. foldr(uncurry_1(uncurry_1(insert_0)), X, cons(pair(Y, nil_1), Z)) -> foldr(uncurry_1(uncurry_1(insert_0)), X, cons(pair(Y, ?), Z))
+519. foldr(uncurry_1(uncurry_1(insert_0)), X, cons(pair(Y, Z), W)) ~> foldr(uncurry_1(uncurry_1(insert_0)), X, cons(pair(Y, ?), W))
+520. foldr(X, uncurry(X, pair(Y, Z)), cons(W, cons(V, nil))) -> foldr(X, Z, cons(W, cons(V, cons(Y, nil))))
+521. opEqTildeEqNatNat(uncurry(insert_1(X), Y), unionNat(uncurry(insert_1(X), Y), uncurry(uncurry_1(insert_0), Z))) -> prop_InsertUnion(pair(X, fst(Y)), ?, cons(fst(Z), ?))
+522. eqListPairNatNat(toList(uncurry(insert_1(zero), X)), cons(pair(zero, Y), Z)) -> opAnd(eqNat(fst(X), Y), eqListPairNatNat(nil, Z))
+523. eqListPairNatNat(cons(pair(zero, X), Y), toList(uncurry(insert_1(zero), Z))) -> opAnd(eqNat(X, fst(Z)), eqListPairNatNat(Y, nil))
+524. foldr(uncurry_1(uncurry_1(insert_0)), X, cons(pair(fst(Y), ?), Z)) -> foldr(uncurry_1(uncurry_1(insert_0)), X, cons(Y, Z))
+525. belowNat(zero, foldr(insert_1(suc(X)), ?, toList(tree(cons(Y, ?))))) -> nil_1
+526. aboveNat(suc(X), foldr(insert_1(zero), ?, toList(tree(cons(Y, ?))))) -> nil_1
+527. opEqTildeEqNatNat(nil_1, app(foldr(insert_0, X, toList(tree(cons(Y, ?)))), ?)) -> false
+528. opEqTildeEqNatNat(app(foldr(insert_0, X, toList(tree(cons(Y, ?)))), ?), nil_1) -> false
+529. aboveNat_case1(false, suc(zero), X, branch(Y, suc(zero), Z, W), V, U) -> aboveNat_case1(false, suc(zero), X, W, V, U)
+530. belowNat_case1(false, suc(zero), X, Y, branch(Z, suc(zero), W, V), U) -> belowNat_case1(false, suc(zero), X, Y, Z, U)
+531. opEqTildeEqNatNat(branch(branch(nil_1, X, Y, Z), W, V, U), T) -> opEqTildeEqNatNat(branch(nil_1, X, Y, branch(Z, W, V, U)), T)
+532. opEqTildeEqNatNat(X, branch(branch(nil_1, Y, Z, W), V, U, T)) -> opEqTildeEqNatNat(X, branch(nil_1, Y, Z, branch(W, V, U, T)))
+533. foldr(uncurry_1(uncurry(insert_0, X)), Y, cons(pair(Z, W), V)) ~> foldr(uncurry_1(uncurry(insert_0, X)), Y, cons(pair(?, W), V))
+534. foldr(uncurry_1(insert_1(X)), Y, toList(branch(nil_1, Z, W, V))) ~> foldr(uncurry_1(insert_1(X)), Y, toList(branch(nil_1, Z, ?, V)))
+535. opEqTildeEqNatNat(uncurry(insert_1(X), Y), unionNat(uncurry(insert_1(X), Y), insert(Z, W, ?))) -> prop_InsertUnion(pair(X, fst(Y)), ?, toList(insert(Z, W, ?)))
+536. opEqTildeEqNatNat(nil_1, belowNat_case1(false, X, Y, uncurry(uncurry_1(insert_0), Z), W, V)) -> false
+537. opEqTildeEqNatNat(belowNat_case1(false, X, Y, uncurry(uncurry_1(insert_0), Z), W, V), nil_1) -> false
+538. opEqTildeEqNatNat(belowNat_case1(false, X, zero, nil_1, Y, Z), insert(suc(W), V, ?)) -> false
+539. opEqTildeEqNatNat(insert(zero, X, ?), belowNat_case1(false, Y, suc(Z), nil_1, W, V)) -> false
+540. opEqTildeEqNatNat(insert(suc(X), Y, ?), belowNat_case1(false, Z, zero, nil_1, W, V)) -> false
+541. opEqTildeEqNatNat(insert(suc(X), Y, ?), insert(suc(Z), W, ?)) -> opEqTildeEqNatNat(insert(X, Y, ?), insert(Z, W, ?))
+542. prop_InsertUnion(pair(suc(X), Y), ?, nil) -> prop_InsertUnion(pair(X, Y), ?, nil)
+543. opEqTildeEqNatNat(insert(X, suc(Y), ?), insert(Z, suc(W), ?)) -> opEqTildeEqNatNat(insert(X, Y, ?), insert(Z, W, ?))
+544. prop_InsertUnion(pair(X, suc(Y)), ?, nil) -> prop_InsertUnion(pair(X, Y), ?, nil)
+545. opEqTildeEqNatNat(belowNat_case1(false, X, suc(Y), nil_1, Z, W), insert(zero, V, ?)) -> false
+546. unionNat(unionNat(uncurry(insert_1(X), Y), uncurry(insert_1(Z), W)), nil_1) -> unionNat(uncurry(insert_1(X), Y), uncurry(insert_1(Z), W))
+547. tree(opAppend(toList(branch(insert(X, Y, ?), Z, W, V)), U)) -> insert(X, Y, ?)
+548. foldr(app(X, fst(Y)), Z, cons(snd(Y), cons(W, nil))) -> foldr(uncurry_1(X), Z, cons(Y, toList(insert(fst(Y), W, ?))))
+549. tree(toList(belowNat_case1(false, X, Y, insert(Z, W, ?), V, U))) -> insert(Z, W, ?)
+550. eqListPairNatNat(toList(tree(cons(X, ?))), cons(Y, cons(?, ?))) = opAnd(eqPairNatNat(pair(fst(X), snd(X)), Y), false)
+551. eqListPairNatNat(toList(tree(cons(X, ?))), cons(Y, cons(Z, W))) ~> eqListPairNatNat(toList(tree(cons(X, ?))), cons(Y, cons(?, ?)))
+552. eqListPairNatNat(cons(X, cons(?, ?)), toList(tree(cons(Y, ?)))) = opAnd(eqPairNatNat(X, pair(fst(Y), snd(Y))), false)
+553. eqListPairNatNat(cons(X, cons(Y, Z)), toList(tree(cons(W, ?)))) ~> eqListPairNatNat(cons(X, cons(?, ?)), toList(tree(cons(W, ?))))
+554. opAppend(cons(X, cons(Y, toList(uncurry(insert_1(Z), W)))), V) -> cons(X, cons(Y, cons(pair(Z, fst(W)), V)))
+555. opAppend(toList(branch(nil_1, X, Y, uncurry(insert_1(Z), W))), V) -> cons(pair(X, Y), cons(pair(Z, fst(W)), V))
+556. unionNat(unionNat(tree(cons(X, ?)), branch(Y, Z, W, V)), nil_1) -> unionNat(tree(cons(X, ?)), branch(Y, Z, W, V))
+557. aboveNat(suc(zero), foldr(insert_1(suc(zero)), ?, toList(tree(cons(X, ?))))) -> nil_1
+558. belowNat(suc(zero), foldr(insert_1(suc(zero)), ?, toList(tree(cons(X, ?))))) -> nil_1
+559. foldr(uncurry(insert_0, X), snd(Y), cons(?, cons(?, nil))) = app(tree(cons(X, ?)), uncurry(uncurry(insert_0, X), Y))
+560. unionNat(unionNat(branch(X, Y, Z, W), tree(cons(V, ?))), nil_1) -> unionNat(branch(X, Y, Z, W), tree(cons(V, ?)))
+561. uncurry(app(X, pair(fst(Y), snd(Y))), pair(Z, W)) -> app(foldr(X, Z, toList(tree(cons(Y, ?)))), W)
+562. prop_InsertUnion(pair(X, Y), ?, toList(branch(nil_1, Z, W, V))) -> prop_InsertUnion(pair(X, Y), ?, toList(insert(Z, W, ?)))
+563. foldr(X, foldr(X, Y, Z), toList(tree(cons(W, ?)))) -> foldr(X, Y, opAppend(toList(tree(cons(W, ?))), Z))
+564. opEqTildeEqNatNat(nil_1, branch(X, fst(fst(Y)), snd(fst(Y)), nil_1)) -> eqListPairNatNat(nil, opAppend(toList(X), toList(uncurry(uncurry_1(insert_0), Y))))
+565. opEqTildeEqNatNat(branch(X, fst(fst(Y)), snd(fst(Y)), nil_1), nil_1) -> eqListPairNatNat(opAppend(toList(X), toList(uncurry(uncurry_1(insert_0), Y))), nil)
+566. foldr(insert_2(X, Y), Z, cons(?, toList(insert(W, V, ?)))) -> foldr(insert_2(X, Y), Z, cons(?, cons(?, nil)))
+567. opEqTildeEqNatNat(branch(X, fst(Y), snd(Y), nil_1), Z) = eqListPairNatNat(opAppend(toList(X), toList(tree(cons(Y, ?)))), toList(Z))
+568. opEqTildeEqNatNat(X, branch(Y, fst(Z), snd(Z), nil_1)) = eqListPairNatNat(toList(X), opAppend(toList(Y), toList(tree(cons(Z, ?)))))
+569. tree(opAppend(toList(branch(uncurry(insert_1(X), Y), Z, W, nil_1)), V)) -> uncurry(insert_1(X), Y)
+570. prop_InsertUnion(pair(X, Y), ?, toList(uncurry(uncurry_1(insert_0), Z))) -> prop_InsertUnion(pair(X, Y), ?, cons(fst(Z), ?))
+571. unionNat(unionNat(tree(cons(X, ?)), uncurry(insert_1(Y), Z)), nil_1) -> unionNat(tree(cons(X, ?)), uncurry(insert_1(Y), Z))
+572. unionNat(unionNat(uncurry(insert_1(X), Y), tree(cons(Z, ?))), nil_1) -> unionNat(uncurry(insert_1(X), Y), tree(cons(Z, ?)))
+573. unionNat(unionNat(uncurry(uncurry_1(insert_0), X), insert(Y, Z, ?)), nil_1) -> unionNat(uncurry(uncurry_1(insert_0), X), insert(Y, Z, ?))
+574. unionNat(unionNat(insert(X, Y, ?), uncurry(uncurry_1(insert_0), Z)), nil_1) -> unionNat(insert(X, Y, ?), uncurry(uncurry_1(insert_0), Z))
+575. branch(aboveNat_case1(false, zero, suc(X), Y, Z, W), V, U, T) -> aboveNat_case1(false, zero, V, branch(Y, suc(X), W, Z), T, U)
+576. branch(X, Y, Z, belowNat_case1(false, suc(W), zero, V, U, T)) -> belowNat_case1(false, suc(W), Y, X, branch(V, zero, T, U), Z)
+577. belowNat_case1(false, suc(X), Y, Z, branch(W, zero, V, nil_1), U) -> branch(Z, Y, U, branch(W, zero, V, nil_1))
+578. app(foldr(X, Y, cons(Z, W)), foldr(uncurry_1(X), V, U)) -> foldr(uncurry_1(X), V, cons(pair(Z, foldr(X, Y, W)), U))
+579. tree(opAppend(toList(branch(tree(cons(X, ?)), Y, Z, W)), V)) -> tree(cons(X, ?))
+580. tree(toList(belowNat_case1(false, X, Y, tree(cons(Z, ?)), W, V))) -> tree(cons(Z, ?))
+581. uncurry(insert(X, Y, ?), pair(app(insert(X, Y, ?), Z), W)) -> app(foldr(insert_2(X, Y), Z, cons(?, cons(?, nil))), W)
+582. opEqTildeEqNatNat(insert(X, Y, ?), unionNat(insert(X, Y, ?), uncurry(insert_1(Z), W))) -> prop_InsertUnion(pair(X, Y), ?, toList(uncurry(insert_1(Z), W)))
+583. foldr(uncurry_1(X), Y, cons(Z, toList(uncurry(uncurry_1(insert_0), W)))) -> foldr(uncurry_1(X), Y, cons(Z, cons(fst(W), nil)))
+584. uncurry(insert(X, Y, ?), pair(foldr(insert_2(X, Y), Z, W), V)) -> app(foldr(insert_2(X, Y), Z, cons(?, W)), V)
+585. app(uncurry(insert_2(X, Y), Z), foldr(insert(X, Y, ?), W, V)) -> foldr(insert(X, Y, ?), W, cons(snd(Z), V))
+586. foldr(uncurry_1(insert_2(X, Y)), Z, cons(pair(W, V), U)) ~> foldr(uncurry_1(insert_2(X, Y)), Z, cons(pair(?, V), U))
+587. opAnd(eqPairNatNat(pair(fst(X), snd(X)), Y), opEqTildeEqNatNat(nil_1, Z)) -> eqListPairNatNat(toList(tree(cons(X, ?))), cons(Y, toList(Z)))
+588. opAnd(eqPairNatNat(X, pair(fst(Y), snd(Y))), opEqTildeEqNatNat(Z, nil_1)) -> eqListPairNatNat(cons(X, toList(Z)), toList(tree(cons(Y, ?))))
+589. foldr(uncurry_1(insert_1(X)), Y, cons(Z, toList(insert(W, ?, ?)))) = app(uncurry(insert_1(X), Z), app(insert(X, W, ?), Y))
+590. foldr(uncurry_1(insert_1(X)), Y, cons(Z, toList(insert(W, V, ?)))) ~> foldr(uncurry_1(insert_1(X)), Y, cons(Z, toList(insert(W, ?, ?))))
+591. uncurry(app(X, Y), pair(uncurry(X, Z), W)) = app(foldr(X, snd(Z), cons(Y, cons(fst(Z), nil))), W)
+592. foldr(uncurry_1(X), snd(Y), cons(Z, toList(uncurry(insert_1(W), Y)))) = app(uncurry(X, Z), uncurry(app(X, W), Y))
+593. foldr(uncurry_1(insert_1(X)), Y, cons(pair(Z, ?), cons(W, nil))) = app(insert(X, Z, ?), app(uncurry(insert_1(X), W), Y))
+594. opEqTildeEqNatNat(tree(cons(X, ?)), unionNat(tree(cons(X, ?)), uncurry(uncurry_1(insert_0), Y))) -> prop_InsertUnion(pair(fst(X), snd(X)), ?, cons(fst(Y), ?))
+595. eqListPairNatNat(nil, opAppend(opAppend(opAppend(toList(branch(nil_1, X, Y, Z)), W), V), U)) -> false
+596. eqListPairNatNat(opAppend(opAppend(opAppend(toList(branch(nil_1, X, Y, Z)), W), V), U), nil) -> false
+597. eqListPairNatNat(nil, opAppend(opAppend(toList(belowNat_case1(false, X, Y, nil_1, Z, W)), V), U)) -> false
+598. eqListPairNatNat(opAppend(opAppend(toList(belowNat_case1(false, X, Y, nil_1, Z, W)), V), U), nil) -> false
+599. eqListPairNatNat(nil, opAppend(toList(branch(uncurry(insert_1(X), Y), Z, W, V)), U)) -> false
+600. eqListPairNatNat(opAppend(toList(branch(uncurry(insert_1(X), Y), Z, W, V)), U), nil) -> false
+601. opEqTildeEqNatNat(branch(nil_1, X, zero, Y), branch(nil_1, Z, suc(W), V)) -> opAnd(opAnd(eqNat(X, Z), false), opEqTildeEqNatNat(Y, V))
+602. opEqTildeEqNatNat(branch(nil_1, X, suc(Y), Z), branch(nil_1, W, zero, V)) -> opAnd(opAnd(eqNat(X, W), false), opEqTildeEqNatNat(Z, V))
+603. unionNat(unionNat(tree(cons(X, ?)), tree(cons(Y, ?))), nil_1) -> unionNat(tree(cons(X, ?)), tree(cons(Y, ?)))
+604. aboveNat_case1(false, zero, X, branch(nil_1, suc(Y), Z, W), V, U) -> branch(branch(nil_1, suc(Y), Z, W), X, U, V)
+605. eqListPairNatNat(toList(belowNat_case1(false, X, Y, nil_1, Z, W)), cons(V, U)) -> opAnd(eqPairNatNat(pair(Y, W), V), eqListPairNatNat(toList(belowNat(X, Z)), U))
+606. eqListPairNatNat(cons(X, Y), toList(belowNat_case1(false, Z, W, nil_1, V, U))) -> opAnd(eqPairNatNat(X, pair(W, U)), eqListPairNatNat(Y, toList(belowNat(Z, V))))
+607. toList(branch(X, fst(Y), snd(Y), Z)) = opAppend(toList(X), opAppend(toList(tree(cons(Y, ?))), toList(Z)))
+608. opEqTildeEqNatNat(nil_1, app(foldr(insert_0, X, toList(uncurry(uncurry_1(insert_0), Y))), ?)) -> false
+609. opEqTildeEqNatNat(app(foldr(insert_0, X, toList(uncurry(uncurry_1(insert_0), Y))), ?), nil_1) -> false
+610. belowNat(zero, foldr(insert_1(suc(X)), ?, toList(uncurry(uncurry_1(insert_0), Y)))) -> nil_1
+611. aboveNat(suc(X), foldr(insert_1(zero), ?, toList(uncurry(uncurry_1(insert_0), Y)))) -> nil_1
+612. opAnd(eqPairNatNat(pair(fst(X), snd(X)), Y), eqListPairNatNat(Z, W)) = eqListPairNatNat(opAppend(toList(tree(cons(X, ?))), Z), cons(Y, W))
+613. opAnd(eqPairNatNat(X, pair(fst(Y), snd(Y))), eqListPairNatNat(Z, W)) = eqListPairNatNat(cons(X, Z), opAppend(toList(tree(cons(Y, ?))), W))
+614. opEqTildeEqNatNat(belowNat_case1(false, X, zero, nil_1, Y, Z), uncurry(insert_1(suc(W)), V)) -> false
+615. opEqTildeEqNatNat(uncurry(insert_1(zero), X), belowNat_case1(false, Y, suc(Z), nil_1, W, V)) -> false
+616. opEqTildeEqNatNat(uncurry(insert_1(suc(X)), Y), belowNat_case1(false, Z, zero, nil_1, W, V)) -> false
+617. eqListPairNatNat(nil, opAppend(toList(branch(tree(cons(X, ?)), Y, Z, W)), V)) -> false
+618. eqListPairNatNat(opAppend(toList(branch(tree(cons(X, ?)), Y, Z, W)), V), nil) -> false
+619. opEqTildeEqNatNat(uncurry(insert_1(X), Y), unionNat(uncurry(insert_1(X), Y), uncurry(insert_1(Z), W))) -> prop_InsertUnion(pair(X, fst(Y)), ?, toList(uncurry(insert_1(Z), W)))
+620. opEqTildeEqNatNat(belowNat_case1(false, X, suc(Y), nil_1, Z, W), uncurry(insert_1(zero), V)) -> false
+621. opEqTildeEqNatNat(uncurry(insert_1(suc(X)), Y), insert(suc(Z), W, ?)) -> opEqTildeEqNatNat(uncurry(insert_1(X), Y), insert(Z, W, ?))
+622. opEqTildeEqNatNat(insert(suc(X), Y, ?), uncurry(insert_1(suc(Z)), W)) -> opEqTildeEqNatNat(insert(X, Y, ?), uncurry(insert_1(Z), W))
+623. foldr(uncurry_1(insert_0), X, toList(branch(insert(Y, Z, ?), W, V, U))) -> insert(Y, Z, ?)
+624. tree(toList(belowNat_case1(false, X, Y, uncurry(insert_1(Z), W), V, U))) -> uncurry(insert_1(Z), W)
+625. tree(opAppend(toList(branch(uncurry(insert_1(X), Y), Z, W, V)), U)) -> uncurry(insert_1(X), Y)
+626. app(uncurry(uncurry_1(X), Y), uncurry(uncurry(X, Z), pair(W, V))) -> foldr(uncurry_1(uncurry_1(X)), V, cons(Y, toList(insert(Z, W, ?))))
+627. foldr(app(X, fst(Y)), Z, cons(W, cons(snd(Y), nil))) = uncurry(app(X, fst(Y)), pair(W, app(uncurry(X, Y), Z)))
+628. foldr(uncurry_1(uncurry_1(X)), Y, cons(pair(Z, W), cons(V, nil))) = uncurry(uncurry(X, Z), pair(W, app(uncurry(uncurry_1(X), V), Y)))
+629. aboveNat_case1(false, zero, X, aboveNat_case1(false, Y, zero, Z, W, V), U, T) -> aboveNat_case1(false, zero, X, W, U, T)
+630. belowNat_case1(false, zero, X, Y, belowNat_case1(false, Z, zero, W, V, U), T) -> belowNat_case1(false, zero, X, Y, W, T)
+631. tree(opAppend(opAppend(opAppend(opAppend(cons(X, Y), Z), W), V), U)) -> tree(cons(X, ?))
+632. opEqTildeEqNatNat(branch(nil_1, suc(X), Y, Z), insert(suc(W), V, ?)) -> opEqTildeEqNatNat(branch(nil_1, X, Y, Z), insert(W, V, ?))
+633. opEqTildeEqNatNat(insert(suc(X), Y, ?), branch(nil_1, suc(Z), W, V)) -> opEqTildeEqNatNat(insert(X, Y, ?), branch(nil_1, Z, W, V))
+634. opEqTildeEqNatNat(insert(X, suc(Y), ?), branch(nil_1, Z, suc(W), V)) -> opEqTildeEqNatNat(insert(X, Y, ?), branch(nil_1, Z, W, V))
+635. foldr(uncurry(insert_0, fst(X)), Y, cons(?, cons(?, nil))) = foldr(uncurry_1(uncurry_1(insert_0)), Y, cons(X, cons(X, nil)))
+636. aboveNat(suc(zero), foldr(insert_1(suc(zero)), ?, toList(uncurry(uncurry_1(insert_0), X)))) -> nil_1
+637. belowNat(suc(zero), foldr(insert_1(suc(zero)), ?, toList(uncurry(uncurry_1(insert_0), X)))) -> nil_1
+638. foldr(X, snd(Y), cons(Z, cons(W, cons(fst(Y), nil)))) = foldr(X, uncurry(X, Y), cons(Z, cons(W, nil)))
+639. insert(X, pair(fst(Y), snd(Y)), ?) = unionNat(foldr(insert_1(X), ?, toList(tree(cons(Y, ?)))), nil_1)
+640. insert(X, pair(fst(Y), snd(Y)), ?) = tree(toList(foldr(insert_1(X), ?, toList(tree(cons(Y, ?))))))
+641. app(foldr(insert_0, fst(X), toList(tree(cons(Y, ?)))), ?) = uncurry(insert_1(pair(fst(Y), snd(Y))), X)
+642. opEqTildeEqNatNat(branch(nil_1, X, fst(Y), insert(Z, W, ?)), V) -> opEqTildeEqNatNat(branch(uncurry(insert_1(X), Y), Z, W, nil_1), V)
+643. opEqTildeEqNatNat(X, branch(nil_1, Y, fst(Z), insert(W, V, ?))) -> opEqTildeEqNatNat(X, branch(uncurry(insert_1(Y), Z), W, V, nil_1))
+644. opEqTildeEqNatNat(branch(nil_1, X, suc(Y), Z), insert(W, suc(V), ?)) -> opEqTildeEqNatNat(branch(nil_1, X, Y, Z), insert(W, V, ?))
+645. opAppend(toList(branch(uncurry(insert_1(X), Y), Z, W, nil_1)), V) -> cons(pair(X, fst(Y)), cons(pair(Z, W), V))
+646. foldr(insert_2(X, Y), Z, opAppend(toList(tree(cons(W, ?))), V)) -> foldr(insert_2(X, Y), Z, cons(?, V))
+647. foldr(X, foldr(X, Y, Z), toList(uncurry(uncurry_1(insert_0), W))) -> foldr(X, Y, opAppend(toList(uncurry(uncurry_1(insert_0), W)), Z))
+648. foldr(insert_2(X, Y), Z, cons(?, toList(uncurry(insert_1(W), V)))) -> foldr(insert_2(X, Y), Z, cons(?, cons(?, nil)))
+649. toList(branch(nil_1, X, Y, belowNat_case1(false, Z, W, nil_1, V, U))) -> toList(belowNat_case1(false, Z, W, insert(X, Y, ?), V, U))
+650. opEqTildeEqNatNat(branch(nil_1, fst(X), snd(X), Y), Z) = eqListPairNatNat(opAppend(toList(tree(cons(X, ?))), toList(Y)), toList(Z))
+651. opEqTildeEqNatNat(X, branch(nil_1, fst(Y), snd(Y), Z)) = eqListPairNatNat(toList(X), opAppend(toList(tree(cons(Y, ?))), toList(Z)))
+652. foldr(uncurry_1(uncurry_1(insert_0)), X, toList(branch(nil_1, Y, Z, W))) ~> foldr(uncurry_1(uncurry_1(insert_0)), X, toList(branch(nil_1, Y, ?, W)))
+653. unionNat(unionNat(uncurry(uncurry_1(insert_0), X), uncurry(insert_1(Y), Z)), nil_1) -> unionNat(uncurry(uncurry_1(insert_0), X), uncurry(insert_1(Y), Z))
+654. unionNat(unionNat(uncurry(insert_1(X), Y), uncurry(uncurry_1(insert_0), Z)), nil_1) -> unionNat(uncurry(insert_1(X), Y), uncurry(uncurry_1(insert_0), Z))
+655. tree(opAppend(toList(branch(uncurry(uncurry_1(insert_0), X), Y, Z, W)), V)) -> uncurry(uncurry_1(insert_0), X)
+656. tree(toList(belowNat_case1(false, X, Y, uncurry(uncurry_1(insert_0), Z), W, V))) -> uncurry(uncurry_1(insert_0), Z)
+657. uncurry(uncurry(X, Y), pair(foldr(app(X, fst(Y)), Z, W), V)) -> app(foldr(app(X, fst(Y)), Z, cons(snd(Y), W)), V)
+658. foldr(uncurry(insert_0, X), Y, opAppend(toList(tree(cons(Z, ?))), W)) -> foldr(uncurry(insert_0, X), Y, cons(?, W))
+659. foldr(uncurry(insert_0, X), Y, cons(?, toList(insert(Z, W, ?)))) -> foldr(uncurry(insert_0, X), Y, cons(?, cons(?, nil)))
+660. foldr(uncurry(insert_0, X), Y, cons(?, toList(uncurry(insert_1(Z), W)))) -> foldr(uncurry(insert_0, X), Y, cons(?, cons(?, nil)))
+661. opEqTildeEqNatNat(branch(uncurry(insert_1(X), Y), Z, fst(W), nil_1), V) -> opEqTildeEqNatNat(branch(nil_1, X, fst(Y), uncurry(insert_1(Z), W)), V)
+662. opEqTildeEqNatNat(X, branch(uncurry(insert_1(Y), Z), W, fst(V), nil_1)) -> opEqTildeEqNatNat(X, branch(nil_1, Y, fst(Z), uncurry(insert_1(W), V)))
+663. opEqTildeEqNatNat(belowNat_case1(false, X, zero, nil_1, Y, Z), branch(nil_1, suc(W), V, U)) -> false
+664. opEqTildeEqNatNat(branch(nil_1, zero, X, Y), belowNat_case1(false, Z, suc(W), nil_1, V, U)) -> false
+665. opEqTildeEqNatNat(branch(nil_1, suc(X), Y, Z), belowNat_case1(false, W, zero, nil_1, V, U)) -> false
+666. foldr(uncurry_1(uncurry_1(insert_0)), X, cons(pair(pair(Y, Z), ?), W)) -> app(insert(Y, Z, ?), foldr(uncurry_1(uncurry_1(insert_0)), X, W))
+667. foldr(insert_1(X), Y, toList(branch(insert(Z, W, ?), V, U, T))) -> insert(X, pair(Z, W), ?)
+668. opEqTildeEqNatNat(belowNat_case1(false, X, suc(Y), nil_1, Z, W), branch(nil_1, zero, V, U)) -> false
+669. foldr(insert_1(X), ?, opAppend(toList(uncurry(uncurry_1(insert_0), Y)), ?)) -> foldr(insert_1(X), ?, toList(uncurry(uncurry_1(insert_0), Y)))
+670. foldr(insert_1(X), ?, opAppend(toList(tree(cons(Y, ?))), ?)) -> foldr(insert_1(X), ?, toList(tree(cons(Y, ?))))
+671. unionNat(unionNat(uncurry(uncurry_1(insert_0), X), tree(cons(Y, ?))), nil_1) -> unionNat(uncurry(uncurry_1(insert_0), X), tree(cons(Y, ?)))
+672. unionNat(unionNat(uncurry(uncurry_1(insert_0), X), uncurry(uncurry_1(insert_0), Y)), nil_1) -> unionNat(uncurry(uncurry_1(insert_0), X), uncurry(uncurry_1(insert_0), Y))
+673. unionNat(unionNat(tree(cons(X, ?)), uncurry(uncurry_1(insert_0), Y)), nil_1) -> unionNat(tree(cons(X, ?)), uncurry(uncurry_1(insert_0), Y))
+674. tree(toList(belowNat_case1(false, X, Y, branch(nil_1, Z, W, V), U, T))) -> insert(Z, W, ?)
+675. aboveNat_case1(false, suc(suc(X)), Y, insert(suc(zero), Z, ?), W, V) -> branch(nil_1, Y, V, W)
+676. belowNat_case1(false, suc(zero), X, Y, insert(suc(suc(Z)), W, ?), V) -> branch(Y, X, V, nil_1)
+677. foldr(insert_0, X, opAppend(opAppend(opAppend(cons(Y, Z), W), V), U)) -> insert_2(Y, foldr(insert_0, X, opAppend(opAppend(opAppend(Z, W), V), U)))
+678. opAppend(toList(X), toList(branch(insert(Y, Z, ?), W, V, U))) -> toList(branch(X, Y, Z, branch(nil_1, W, V, U)))
+679. foldr(insert_2(X, Y), Z, cons(?, cons(?, cons(W, nil)))) ~> foldr(insert_2(X, Y), Z, cons(?, cons(?, cons(?, nil))))
+680. foldr(uncurry_1(X), Y, toList(branch(nil_1, Z, W, insert(Z, V, ?)))) -> foldr(app(X, Z), Y, cons(W, cons(V, nil)))
+681. opEqTildeEqNatNat(branch(X, fst(fst(Y)), snd(fst(Y)), nil_1), Z) = eqListPairNatNat(opAppend(toList(X), toList(uncurry(uncurry_1(insert_0), Y))), toList(Z))
+682. opEqTildeEqNatNat(X, branch(Y, fst(fst(Z)), snd(fst(Z)), nil_1)) = eqListPairNatNat(toList(X), opAppend(toList(Y), toList(uncurry(uncurry_1(insert_0), Z))))
+683. uncurry(tree(cons(X, ?)), pair(app(tree(cons(X, ?)), Y), Z)) -> app(foldr(uncurry(insert_0, X), Y, cons(?, cons(?, nil))), Z)
+684. prop_InsertUnion(pair(X, Y), ?, opAppend(opAppend(cons(Z, W), V), U)) -> prop_InsertUnion(pair(X, Y), ?, cons(Z, ?))
+685. opAppend(opAppend(cons(X, toList(tree(cons(Y, ?)))), Z), W) -> opAppend(cons(X, toList(tree(cons(Y, ?)))), opAppend(Z, W))
+686. opAppend(toList(branch(tree(cons(X, ?)), Y, Z, nil_1)), W) -> opAppend(toList(tree(cons(X, ?))), cons(pair(Y, Z), W))
+687. opEqTildeEqNatNat(belowNat_case1(false, X, zero, nil_1, Y, Z), insert(zero, W, ?)) -> opAnd(eqNat(Z, W), opEqTildeEqNatNat(belowNat(X, Y), nil_1))
+688. opEqTildeEqNatNat(insert(zero, X, ?), belowNat_case1(false, Y, zero, nil_1, Z, W)) -> opAnd(eqNat(X, W), opEqTildeEqNatNat(nil_1, belowNat(Y, Z)))
+689. foldr(uncurry_1(insert_1(X)), Y, toList(branch(nil_1, fst(Z), ?, W))) -> foldr(uncurry_1(insert_1(X)), Y, cons(Z, toList(W)))
+690. foldr(uncurry_1(uncurry(insert_0, X)), Y, cons(pair(?, snd(Z)), W)) -> foldr(uncurry_1(uncurry(insert_0, X)), Y, cons(Z, W))
+691. eqListPairNatNat(nil, opAppend(toList(branch(uncurry(uncurry_1(insert_0), X), Y, Z, W)), V)) -> false
+692. eqListPairNatNat(opAppend(toList(branch(uncurry(uncurry_1(insert_0), X), Y, Z, W)), V), nil) -> false
+693. opEqTildeEqNatNat(uncurry(insert_1(suc(X)), Y), uncurry(insert_1(suc(Z)), W)) -> opEqTildeEqNatNat(uncurry(insert_1(X), Y), uncurry(insert_1(Z), W))
+694. aboveNat(zero, unionNat(branch(X, zero, Y, Z), branch(W, V, U, T))) -> aboveNat(zero, unionNat(Z, aboveNat(zero, branch(W, V, U, T))))
+695. aboveNat(zero, unionNat(insert(zero, X, ?), branch(Y, Z, W, V))) -> aboveNat(zero, aboveNat(zero, branch(Y, Z, W, V)))
+696. aboveNat(zero, unionNat(insert(zero, X, ?), insert(Y, Z, ?))) -> aboveNat(zero, aboveNat(zero, insert(Y, Z, ?)))
+697. aboveNat(zero, unionNat(uncurry(insert_1(zero), X), insert(Y, Z, ?))) -> aboveNat(zero, aboveNat(zero, insert(Y, Z, ?)))
+698. aboveNat(zero, unionNat(insert(zero, X, ?), uncurry(insert_1(Y), Z))) -> aboveNat(zero, aboveNat(zero, uncurry(insert_1(Y), Z)))
+699. aboveNat(zero, unionNat(branch(X, zero, Y, Z), insert(W, V, ?))) -> aboveNat(zero, unionNat(Z, aboveNat(zero, insert(W, V, ?))))
+700. aboveNat(zero, unionNat(insert(zero, X, ?), tree(cons(Y, ?)))) -> aboveNat(zero, aboveNat(zero, tree(cons(Y, ?))))
+701. aboveNat(zero, unionNat(uncurry(insert_1(zero), X), branch(Y, Z, W, V))) -> aboveNat(zero, aboveNat(zero, branch(Y, Z, W, V)))
+702. aboveNat(zero, unionNat(uncurry(insert_1(zero), X), uncurry(insert_1(Y), Z))) -> aboveNat(zero, aboveNat(zero, uncurry(insert_1(Y), Z)))
+703. belowNat(zero, unionNat(branch(X, zero, Y, Z), branch(W, V, U, T))) -> belowNat(zero, unionNat(X, belowNat(zero, branch(W, V, U, T))))
+704. belowNat(zero, unionNat(insert(zero, X, ?), branch(Y, Z, W, V))) -> belowNat(zero, belowNat(zero, branch(Y, Z, W, V)))
+705. belowNat(zero, unionNat(insert(zero, X, ?), insert(Y, Z, ?))) -> belowNat(zero, belowNat(zero, insert(Y, Z, ?)))
+706. belowNat(zero, unionNat(uncurry(insert_1(zero), X), insert(Y, Z, ?))) -> belowNat(zero, belowNat(zero, insert(Y, Z, ?)))
+707. belowNat(zero, unionNat(insert(zero, X, ?), uncurry(insert_1(Y), Z))) -> belowNat(zero, belowNat(zero, uncurry(insert_1(Y), Z)))
+708. belowNat(zero, unionNat(branch(X, zero, Y, Z), insert(W, V, ?))) -> belowNat(zero, unionNat(X, belowNat(zero, insert(W, V, ?))))
+709. belowNat(zero, unionNat(insert(zero, X, ?), tree(cons(Y, ?)))) -> belowNat(zero, belowNat(zero, tree(cons(Y, ?))))
+710. belowNat(zero, unionNat(uncurry(insert_1(zero), X), branch(Y, Z, W, V))) -> belowNat(zero, belowNat(zero, branch(Y, Z, W, V)))
+711. belowNat(zero, unionNat(uncurry(insert_1(zero), X), uncurry(insert_1(Y), Z))) -> belowNat(zero, belowNat(zero, uncurry(insert_1(Y), Z)))
+712. aboveNat_case1(false, zero, X, belowNat_case1(false, Y, zero, Z, W, V), U, T) -> aboveNat_case1(false, zero, X, belowNat(Y, W), U, T)
+713. belowNat_case1(false, zero, X, Y, aboveNat_case1(false, Z, zero, W, V, U), T) -> belowNat_case1(false, zero, X, Y, aboveNat(Z, W), T)
+714. aboveNat_case1(geNat(X, Y), suc(suc(X)), suc(suc(Y)), Z, W, V) -> aboveNat(suc(suc(X)), branch(Z, suc(suc(Y)), V, W))
+715. aboveNat(suc(suc(zero)), branch(X, suc(suc(zero)), Y, Z)) -> aboveNat(suc(suc(zero)), Z)
+716. aboveNat(suc(suc(zero)), insert(suc(suc(zero)), X, ?)) -> nil_1
+717. aboveNat(suc(suc(zero)), uncurry(insert_1(suc(suc(zero))), X)) -> nil_1
+718. aboveNat(suc(suc(zero)), aboveNat_case1(false, X, suc(suc(zero)), Y, Z, W)) -> aboveNat(suc(suc(zero)), Z)
+719. aboveNat(suc(suc(zero)), belowNat_case1(false, X, suc(suc(zero)), Y, Z, W)) -> aboveNat(suc(suc(zero)), belowNat(X, Z))
+720. aboveNat(suc(suc(suc(X))), branch(Y, suc(suc(zero)), Z, W)) -> aboveNat(suc(suc(suc(X))), W)
+721. aboveNat(suc(suc(suc(X))), insert(suc(suc(zero)), Y, ?)) -> nil_1
+722. aboveNat(suc(suc(suc(X))), uncurry(insert_1(suc(suc(zero))), Y)) -> nil_1
+723. aboveNat_case1(false, suc(suc(zero)), X, insert(suc(suc(zero)), Y, ?), Z, W) -> branch(nil_1, X, W, Z)
+724. belowNat_case1(leNat(X, Y), suc(suc(X)), suc(suc(Y)), Z, W, V) -> belowNat(suc(suc(X)), branch(Z, suc(suc(Y)), V, W))
+725. belowNat(suc(suc(zero)), branch(X, suc(suc(zero)), Y, Z)) -> belowNat(suc(suc(zero)), X)
+726. belowNat(suc(suc(zero)), insert(suc(suc(zero)), X, ?)) -> nil_1
+727. belowNat(suc(suc(zero)), uncurry(insert_1(suc(suc(zero))), X)) -> nil_1
+728. belowNat(suc(suc(zero)), belowNat_case1(false, X, suc(suc(zero)), Y, Z, W)) -> belowNat(suc(suc(zero)), Y)
+729. belowNat(suc(suc(zero)), aboveNat_case1(false, X, suc(suc(zero)), Y, Z, W)) -> belowNat(suc(suc(zero)), aboveNat(X, Y))
+730. belowNat(suc(suc(zero)), branch(X, suc(suc(suc(Y))), Z, W)) -> belowNat(suc(suc(zero)), X)
+731. belowNat(suc(suc(zero)), insert(suc(suc(suc(X))), Y, ?)) -> nil_1
+732. belowNat(suc(suc(zero)), uncurry(insert_1(suc(suc(suc(X)))), Y)) -> nil_1
+733. belowNat_case1(false, suc(suc(zero)), X, Y, insert(suc(suc(zero)), Z, ?), W) -> branch(Y, X, W, nil_1)
+734. foldr(uncurry_1(insert_1(X)), Y, opAppend(cons(pair(Z, W), V), U)) ~> foldr(uncurry_1(insert_1(X)), Y, opAppend(cons(pair(Z, ?), V), U))
+735. foldr(uncurry_1(insert_1(X)), Y, cons(Z, cons(pair(W, V), U))) ~> foldr(uncurry_1(insert_1(X)), Y, cons(Z, cons(pair(W, ?), U)))
+736. foldr(uncurry_1(insert_0), X, toList(branch(uncurry(insert_1(Y), Z), W, V, U))) -> uncurry(insert_1(Y), Z)
+737. opEqTildeEqNatNat(tree(cons(X, ?)), unionNat(tree(cons(X, ?)), insert(Y, Z, ?))) -> prop_InsertUnion(pair(fst(X), snd(X)), ?, toList(insert(Y, Z, ?)))
+738. aboveNat_case1(false, suc(suc(zero)), X, uncurry(insert_1(suc(suc(zero))), Y), Z, W) -> branch(nil_1, X, W, Z)
+739. belowNat_case1(false, suc(suc(zero)), X, Y, uncurry(insert_1(suc(suc(zero))), Z), W) -> branch(Y, X, W, nil_1)
+740. opEqTildeEqNatNat(nil_1, belowNat_case1(false, X, Y, belowNat_case1(false, Z, W, nil_1, V, U), T, S)) -> false
+741. opEqTildeEqNatNat(nil_1, branch(branch(insert(X, Y, ?), Z, W, V), U, T, S)) -> false
+742. aboveNat(suc(zero), belowNat_case1(false, X, suc(suc(Y)), Z, W, V)) -> belowNat_case1(false, X, suc(suc(Y)), aboveNat(suc(zero), Z), W, V)
+743. aboveNat(suc(zero), aboveNat_case1(false, X, suc(suc(Y)), Z, W, V)) -> aboveNat_case1(false, suc(zero), suc(suc(Y)), aboveNat(X, Z), W, V)
+744. belowNat(suc(suc(X)), belowNat_case1(false, Y, suc(zero), Z, W, V)) -> belowNat_case1(false, suc(suc(X)), suc(zero), Z, belowNat(Y, W), V)
+745. belowNat(suc(suc(X)), aboveNat_case1(false, Y, suc(zero), Z, W, V)) -> belowNat_case1(false, suc(suc(X)), suc(zero), aboveNat(Y, Z), W, V)
+746. opAppend(cons(X, cons(Y, toList(Z))), toList(insert(W, V, ?))) -> cons(X, cons(Y, toList(branch(Z, W, V, nil_1))))
+747. opEqTildeEqNatNat(belowNat_case1(false, X, Y, belowNat_case1(false, Z, W, nil_1, V, U), T, S), nil_1) -> false
+748. foldr(uncurry_1(insert_0), X, opAppend(opAppend(opAppend(cons(Y, Z), W), V), U)) -> tree(cons(Y, ?))
+749. opEqTildeEqNatNat(branch(branch(insert(X, Y, ?), Z, W, V), U, T, S), nil_1) -> false
+750. unionNat(unionNat(uncurry(uncurry_1(insert_0), X), branch(Y, Z, W, V)), nil_1) -> unionNat(uncurry(uncurry_1(insert_0), X), branch(Y, Z, W, V))
+751. opEqTildeEqNatNat(branch(nil_1, suc(X), Y, Z), uncurry(insert_1(suc(W)), V)) -> opEqTildeEqNatNat(branch(nil_1, X, Y, Z), uncurry(insert_1(W), V))
+752. opEqTildeEqNatNat(uncurry(insert_1(suc(X)), Y), branch(nil_1, suc(Z), W, V)) -> opEqTildeEqNatNat(uncurry(insert_1(X), Y), branch(nil_1, Z, W, V))
+753. unionNat(unionNat(branch(X, Y, Z, W), uncurry(uncurry_1(insert_0), V)), nil_1) -> unionNat(branch(X, Y, Z, W), uncurry(uncurry_1(insert_0), V))
+754. foldr(app(X, fst(Y)), Z, cons(W, cons(snd(Y), nil))) -> foldr(uncurry_1(X), Z, cons(pair(fst(Y), W), cons(Y, nil)))
+755. foldr(insert_1(X), Y, opAppend(toList(uncurry(uncurry_1(insert_0), Z)), W)) -> foldr(insert_1(X), ?, toList(uncurry(uncurry_1(insert_0), Z)))
+756. aboveNat(suc(suc(zero)), foldr(insert_1(suc(suc(zero))), ?, toList(tree(cons(X, ?))))) -> nil_1
+757. belowNat(suc(suc(zero)), foldr(insert_1(suc(suc(zero))), ?, toList(tree(cons(X, ?))))) -> nil_1
+758. uncurry(tree(cons(X, ?)), pair(foldr(uncurry(insert_0, X), Y, Z), W)) -> app(foldr(uncurry(insert_0, X), Y, cons(?, Z)), W)
+759. app(uncurry(uncurry(insert_0, X), Y), foldr(tree(cons(X, ?)), Z, W)) -> foldr(tree(cons(X, ?)), Z, cons(snd(Y), W))
+760. opAnd(eqPairNatNat(pair(fst(fst(X)), snd(fst(X))), Y), false) = eqListPairNatNat(toList(uncurry(uncurry_1(insert_0), X)), cons(Y, cons(?, ?)))
+761. opAnd(eqPairNatNat(X, pair(fst(fst(Y)), snd(fst(Y)))), false) = eqListPairNatNat(cons(X, cons(?, ?)), toList(uncurry(uncurry_1(insert_0), Y)))
+762. foldr(insert_2(X, Y), Z, opAppend(toList(uncurry(uncurry_1(insert_0), W)), V)) -> foldr(insert_2(X, Y), Z, cons(?, V))
+763. aboveNat(zero, unionNat(uncurry(insert_1(zero), X), tree(cons(Y, ?)))) -> aboveNat(zero, aboveNat(zero, tree(cons(Y, ?))))
+764. aboveNat(zero, unionNat(branch(X, zero, Y, Z), uncurry(insert_1(W), V))) -> aboveNat(zero, unionNat(Z, aboveNat(zero, uncurry(insert_1(W), V))))
+765. aboveNat(zero, unionNat(insert(zero, X, ?), uncurry(uncurry_1(insert_0), Y))) -> aboveNat(zero, aboveNat(zero, uncurry(uncurry_1(insert_0), Y)))
+766. belowNat(zero, unionNat(uncurry(insert_1(zero), X), tree(cons(Y, ?)))) -> belowNat(zero, belowNat(zero, tree(cons(Y, ?))))
+767. belowNat(zero, unionNat(branch(X, zero, Y, Z), uncurry(insert_1(W), V))) -> belowNat(zero, unionNat(X, belowNat(zero, uncurry(insert_1(W), V))))
+768. belowNat(zero, unionNat(insert(zero, X, ?), uncurry(uncurry_1(insert_0), Y))) -> belowNat(zero, belowNat(zero, uncurry(uncurry_1(insert_0), Y)))
+769. app(uncurry(uncurry_1(insert_0), X), uncurry(uncurry(insert_0, fst(Y)), Z)) -> foldr(uncurry_1(uncurry_1(insert_0)), snd(Z), cons(X, cons(Y, nil)))
+770. foldr(uncurry_1(X), app(uncurry(X, Y), Z), cons(W, cons(V, nil))) -> foldr(uncurry_1(X), Z, cons(W, cons(V, cons(Y, nil))))
+771. opAppend(cons(X, cons(Y, toList(tree(cons(Z, ?))))), nil) -> cons(X, cons(Y, toList(tree(cons(Z, ?)))))
+772. opAppend(toList(branch(nil_1, X, Y, tree(cons(Z, ?)))), nil) -> toList(branch(nil_1, X, Y, tree(cons(Z, ?))))
+773. toList(branch(X, fst(fst(Y)), snd(fst(Y)), Z)) = opAppend(toList(X), opAppend(toList(uncurry(uncurry_1(insert_0), Y)), toList(Z)))
+774. uncurry(uncurry_1(insert_1(pair(fst(X), snd(X)))), Y) = uncurry(foldr(insert_0, fst(fst(Y)), toList(tree(cons(X, ?)))), Y)
+775. foldr(uncurry_1(uncurry_1(insert_0)), X, cons(Y, toList(insert(Z, nil_1, ?)))) -> app(uncurry(uncurry_1(insert_0), Y), app(tree(cons(Z, ?)), X))
+776. toList(branch(nil_1, X, Y, belowNat_case1(false, Z, W, V, U, T))) -> toList(belowNat_case1(false, Z, W, branch(nil_1, X, Y, V), U, T))
+777. toList(branch(belowNat_case1(false, X, Y, nil_1, Z, W), V, U, T)) -> toList(branch(nil_1, Y, W, branch(belowNat(X, Z), V, U, T)))
+778. foldr(uncurry(insert_0, X), Y, cons(?, cons(?, cons(Z, W)))) ~> foldr(uncurry(insert_0, X), Y, cons(?, cons(?, cons(?, W))))
+779. opEqTildeEqNatNat(branch(nil_1, X, Y, insert(Z, W, ?)), insert(V, U, ?)) -> opAnd(eqPairNatNat(pair(X, Y), pair(V, U)), false)
+780. opEqTildeEqNatNat(insert(X, Y, ?), branch(nil_1, Z, W, insert(V, U, ?))) -> opAnd(eqPairNatNat(pair(X, Y), pair(Z, W)), false)
+781. foldr(uncurry_1(insert_1(X)), Y, cons(Z, toList(insert(W, ?, ?)))) -> foldr(uncurry_1(insert_1(X)), Y, cons(Z, toList(uncurry(insert_1(W), ?))))
+782. foldr(uncurry_1(insert_1(X)), Y, cons(Z, toList(uncurry(insert_1(W), V)))) ~> foldr(uncurry_1(insert_1(X)), Y, cons(Z, toList(uncurry(insert_1(W), ?))))
+783. foldr(uncurry_1(insert_0), X, toList(branch(tree(cons(Y, ?)), Z, W, V))) -> tree(cons(Y, ?))
+784. foldr(uncurry_1(insert_0), X, toList(branch(uncurry(uncurry_1(insert_0), Y), Z, W, V))) -> uncurry(uncurry_1(insert_0), Y)
+785. app(insert(pair(fst(X), snd(X)), Y, ?), Z) = uncurry(foldr(insert_0, Y, toList(tree(cons(X, ?)))), pair(?, Z))
+786. uncurry(foldr(insert_0, X, toList(tree(cons(Y, ?)))), pair(Z, W)) ~> uncurry(foldr(insert_0, X, toList(tree(cons(Y, ?)))), pair(?, W))
+787. foldr(X, foldr(X, Y, Z), cons(W, cons(V, cons(U, nil)))) -> foldr(X, Y, cons(W, cons(V, cons(U, Z))))
+788. foldr(X, foldr(X, Y, Z), cons(W, toList(insert(V, U, ?)))) -> foldr(X, Y, cons(W, cons(pair(V, U), Z)))
+789. app(tree(cons(X, ?)), foldr(uncurry_1(insert_1(fst(X))), Y, Z)) -> foldr(uncurry_1(insert_1(fst(X))), Y, cons(pair(snd(X), ?), Z))
+790. aboveNat(suc(suc(zero)), branch(X, suc(suc(suc(Y))), Z, W)) -> aboveNat_case1(false, suc(suc(zero)), suc(suc(suc(Y))), X, W, Z)
+791. aboveNat(suc(suc(zero)), insert(suc(suc(suc(X))), Y, ?)) -> insert(suc(suc(suc(X))), Y, ?)
+792. aboveNat(suc(suc(zero)), uncurry(insert_1(suc(suc(suc(X)))), Y)) -> uncurry(insert_1(suc(suc(suc(X)))), Y)
+793. belowNat(suc(suc(suc(X))), branch(Y, suc(suc(zero)), Z, W)) -> belowNat_case1(false, suc(suc(suc(X))), suc(suc(zero)), Y, W, Z)
+794. belowNat(suc(suc(suc(X))), insert(suc(suc(zero)), Y, ?)) -> insert(suc(suc(zero)), Y, ?)
+795. belowNat(suc(suc(suc(X))), uncurry(insert_1(suc(suc(zero))), Y)) -> uncurry(insert_1(suc(suc(zero))), Y)
+796. branch(unionNat(X, belowNat(zero, Y)), zero, Z, unionNat(W, aboveNat(zero, V))) -> unionNat(branch(X, zero, Z, W), branch(Y, zero, ?, V))
+797. unionNat(branch(X, zero, Y, Z), branch(W, zero, V, U)) ~> unionNat(branch(X, zero, Y, Z), branch(W, zero, ?, U))
+798. unionNat(insert(zero, X, ?), branch(Y, zero, Z, W)) ~> unionNat(insert(zero, X, ?), branch(Y, zero, ?, W))
+799. unionNat(insert(zero, X, ?), insert(zero, Y, ?)) ~> unionNat(insert(zero, X, ?), insert(zero, ?, ?))
+800. unionNat(branch(X, zero, Y, Z), insert(zero, W, ?)) ~> unionNat(branch(X, zero, Y, Z), insert(zero, ?, ?))
+801. unionNat(uncurry(insert_1(zero), X), insert(zero, Y, ?)) ~> unionNat(uncurry(insert_1(zero), X), insert(zero, ?, ?))
+802. unionNat(insert(zero, X, ?), insert(zero, ?, ?)) -> unionNat(insert(zero, X, ?), uncurry(insert_1(zero), ?))
+803. unionNat(insert(zero, X, ?), uncurry(insert_1(zero), Y)) ~> unionNat(insert(zero, X, ?), uncurry(insert_1(zero), ?))
+804. unionNat(uncurry(insert_1(zero), X), uncurry(insert_1(zero), Y)) ~> unionNat(uncurry(insert_1(zero), X), uncurry(insert_1(zero), ?))
+805. unionNat(uncurry(insert_1(zero), X), insert(zero, ?, ?)) -> unionNat(uncurry(insert_1(zero), X), uncurry(insert_1(zero), ?))
+806. unionNat(uncurry(insert_1(zero), X), branch(Y, zero, Z, W)) ~> unionNat(uncurry(insert_1(zero), X), branch(Y, zero, ?, W))
+807. unionNat(branch(X, zero, Y, Z), insert(zero, ?, ?)) -> unionNat(branch(X, zero, Y, Z), uncurry(insert_1(zero), ?))
+808. unionNat(branch(X, zero, Y, Z), uncurry(insert_1(zero), W)) ~> unionNat(branch(X, zero, Y, Z), uncurry(insert_1(zero), ?))
+809. branch(unionNat(X, nil_1), zero, Y, unionNat(Z, aboveNat(zero, W))) -> unionNat(branch(X, zero, Y, Z), branch(nil_1, zero, ?, W))
+810. unionNat(branch(X, zero, Y, Z), uncurry(insert_1(zero), ?)) -> branch(unionNat(X, nil_1), zero, Y, unionNat(Z, nil_1))
+811. unionNat(insert(zero, X, ?), uncurry(insert_1(zero), ?)) -> insert(zero, X, ?)
+812. unionNat(uncurry(insert_1(zero), X), uncurry(insert_1(zero), ?)) -> uncurry(insert_1(zero), X)
+813. prop_InsertUnion(pair(zero, X), ?, toList(uncurry(insert_1(zero), ?))) = opAnd(eqNat(X, X), true)
+814. branch(belowNat(zero, X), zero, Y, unionNat(Z, aboveNat(zero, W))) -> unionNat(branch(nil_1, zero, Y, Z), branch(X, zero, ?, W))
+815. unionNat(insert(zero, X, ?), branch(Y, zero, ?, Z)) -> branch(belowNat(zero, Y), zero, X, aboveNat(zero, Z))
+816. branch(belowNat(zero, X), zero, fst(Y), aboveNat(zero, Z)) -> unionNat(uncurry(insert_1(zero), Y), branch(X, zero, ?, Z))
+817. branch(unionNat(X, belowNat(zero, Y)), zero, Z, aboveNat(zero, W)) -> unionNat(branch(X, zero, Z, nil_1), branch(Y, zero, ?, W))
+818. branch(unionNat(X, belowNat(zero, Y)), zero, Z, unionNat(W, nil_1)) -> unionNat(branch(X, zero, Z, W), branch(Y, zero, ?, nil_1))
+819. unionNat(uncurry(insert_1(zero), X), branch(nil_1, zero, ?, Y)) -> branch(nil_1, zero, fst(X), aboveNat(zero, Y))
+820. unionNat(uncurry(insert_1(zero), X), branch(Y, zero, ?, nil_1)) -> branch(belowNat(zero, Y), zero, fst(X), nil_1)
+821. unionNat(branch(nil_1, zero, X, Y), branch(nil_1, zero, ?, Z)) -> branch(nil_1, zero, X, unionNat(Y, aboveNat(zero, Z)))
+822. unionNat(branch(X, zero, Y, nil_1), branch(nil_1, zero, ?, Z)) -> branch(unionNat(X, nil_1), zero, Y, aboveNat(zero, Z))
+823. unionNat(branch(nil_1, zero, X, Y), branch(Z, zero, ?, nil_1)) -> branch(belowNat(zero, Z), zero, X, unionNat(Y, nil_1))
+824. unionNat(branch(X, zero, Y, nil_1), branch(Z, zero, ?, nil_1)) -> branch(unionNat(X, belowNat(zero, Z)), zero, Y, nil_1)
+825. prop_InsertUnion(pair(zero, X), ?, toList(insert(zero, Y, ?))) ~> prop_InsertUnion(pair(zero, X), ?, toList(insert(zero, ?, ?)))
+826. prop_InsertUnion(pair(zero, X), ?, toList(uncurry(insert_1(zero), ?))) -> prop_InsertUnion(pair(zero, X), ?, nil)
+827. prop_InsertUnion(pair(zero, X), ?, toList(uncurry(insert_1(zero), Y))) ~> prop_InsertUnion(pair(zero, X), ?, toList(uncurry(insert_1(zero), ?)))
+828. prop_InsertUnion(pair(zero, X), ?, toList(insert(zero, ?, ?))) -> prop_InsertUnion(pair(zero, X), ?, nil)
+829. prop_InsertUnion(pair(X, Y), ?, opAppend(toList(tree(cons(Z, ?))), W)) -> prop_InsertUnion(pair(X, Y), ?, cons(Z, ?))
+830. foldr(insert_2(X, Y), Z, cons(?, toList(tree(cons(W, ?))))) -> foldr(insert_2(X, Y), Z, cons(?, cons(?, nil)))
+831. eqListPairNatNat(toList(uncurry(uncurry_1(insert_0), X)), cons(Y, cons(Z, W))) ~> eqListPairNatNat(toList(uncurry(uncurry_1(insert_0), X)), cons(Y, cons(?, ?)))
+832. eqListPairNatNat(cons(X, cons(Y, Z)), toList(uncurry(uncurry_1(insert_0), W))) ~> eqListPairNatNat(cons(X, cons(?, ?)), toList(uncurry(uncurry_1(insert_0), W)))
+833. foldr(uncurry(insert_0, X), Y, opAppend(toList(uncurry(uncurry_1(insert_0), Z)), W)) -> foldr(uncurry(insert_0, X), Y, cons(?, W))
+834. foldr(uncurry_1(X), Y, opAppend(cons(Z, toList(tree(cons(W, ?)))), V)) -> foldr(uncurry_1(X), Y, cons(Z, cons(W, V)))
+835. foldr(uncurry_1(insert_2(X, Y)), Z, cons(pair(?, snd(W)), V)) -> foldr(uncurry_1(insert_2(X, Y)), Z, cons(W, V))
+836. aboveNat(zero, unionNat(branch(X, zero, Y, Z), tree(cons(W, ?)))) -> aboveNat(zero, unionNat(Z, aboveNat(zero, tree(cons(W, ?)))))
+837. belowNat(zero, unionNat(branch(X, zero, Y, Z), tree(cons(W, ?)))) -> belowNat(zero, unionNat(X, belowNat(zero, tree(cons(W, ?)))))
+838. foldr(insert_1(X), Y, opAppend(opAppend(toList(branch(nil_1, Z, W, V)), U), T)) -> insert(X, pair(Z, W), ?)
+839. foldr(insert_1(X), Y, opAppend(toList(belowNat_case1(false, Z, W, nil_1, V, U)), T)) -> insert(X, pair(W, U), ?)
+840. app(foldr(insert_0, fst(X), toList(uncurry(uncurry_1(insert_0), Y))), ?) = uncurry(insert_1(pair(fst(fst(Y)), snd(fst(Y)))), X)
+841. opEqTildeEqNatNat(branch(insert(zero, X, ?), Y, Z, W), insert(suc(V), U, ?)) -> false
+842. opEqTildeEqNatNat(branch(insert(suc(X), Y, ?), Z, W, V), insert(zero, U, ?)) -> false
+843. opEqTildeEqNatNat(branch(insert(zero, X, ?), Y, Z, W), uncurry(insert_1(suc(V)), U)) -> false
+844. opEqTildeEqNatNat(branch(insert(suc(X), Y, ?), Z, W, V), uncurry(insert_1(zero), U)) -> false
+845. opEqTildeEqNatNat(insert(zero, X, ?), branch(insert(suc(Y), Z, ?), W, V, U)) -> false
+846. opEqTildeEqNatNat(insert(suc(X), Y, ?), branch(insert(zero, Z, ?), W, V, U)) -> false
+847. opEqTildeEqNatNat(uncurry(insert_1(zero), X), branch(insert(suc(Y), Z, ?), W, V, U)) -> false
+848. opEqTildeEqNatNat(uncurry(insert_1(suc(X)), Y), branch(insert(zero, Z, ?), W, V, U)) -> false
+849. unionNat(foldr(insert_1(X), ?, toList(uncurry(uncurry_1(insert_0), Y))), nil_1) -> foldr(insert_1(X), ?, toList(uncurry(uncurry_1(insert_0), Y)))
+850. unionNat(foldr(insert_1(X), ?, toList(tree(cons(Y, ?)))), nil_1) -> foldr(insert_1(X), ?, toList(tree(cons(Y, ?))))
+851. tree(toList(foldr(insert_1(X), ?, toList(uncurry(uncurry_1(insert_0), Y))))) -> foldr(insert_1(X), ?, toList(uncurry(uncurry_1(insert_0), Y)))
+852. tree(toList(foldr(insert_1(X), ?, toList(tree(cons(Y, ?)))))) -> foldr(insert_1(X), ?, toList(tree(cons(Y, ?))))
+853. aboveNat_case1(false, suc(suc(X)), Y, uncurry(insert_1(suc(zero)), Z), W, V) -> branch(nil_1, Y, V, W)
+854. belowNat_case1(false, suc(zero), X, Y, uncurry(insert_1(suc(suc(Z))), W), V) -> branch(Y, X, V, nil_1)
+855. uncurry(insert(X, Y, ?), pair(foldr(uncurry_1(insert_1(X)), Z, W), V)) -> app(foldr(uncurry_1(insert_1(X)), Z, cons(pair(Y, ?), W)), V)
+856. opAppend(cons(X, cons(Y, toList(Z))), toList(branch(nil_1, W, V, U))) -> cons(X, cons(Y, toList(branch(Z, W, V, U))))
+857. opAppend(cons(X, toList(Y)), toList(belowNat_case1(false, Z, W, nil_1, V, U))) -> cons(X, toList(belowNat_case1(false, Z, W, Y, V, U)))
+858. uncurry(uncurry_1(uncurry_1(uncurry(insert_0, fst(fst(fst(fst(X))))))), X) -> uncurry(uncurry_1(uncurry_1(uncurry_1(uncurry_1(insert_0)))), X)
+859. foldr(uncurry_1(insert_1(X)), Y, cons(Z, toList(uncurry(insert_1(fst(Z)), ?)))) -> foldr(uncurry_1(insert_1(X)), Y, cons(Z, cons(Z, nil)))
+860. foldr(uncurry_1(uncurry_1(insert_0)), X, cons(Y, toList(insert(Z, W, ?)))) ~> foldr(uncurry_1(uncurry_1(insert_0)), X, cons(Y, toList(insert(Z, ?, ?))))
+861. foldr(uncurry_1(uncurry_1(X)), Y, cons(Z, toList(insert(fst(Z), W, ?)))) -> foldr(uncurry(X, fst(Z)), Y, cons(snd(Z), cons(W, nil)))
+862. foldr(uncurry(X, fst(Y)), Z, cons(snd(Y), cons(snd(Y), nil))) -> foldr(uncurry_1(uncurry_1(X)), Z, cons(Y, cons(Y, nil)))
+863. uncurry(uncurry(X, fst(Y)), pair(Z, app(uncurry(uncurry_1(X), Y), W))) -> foldr(uncurry(X, fst(Y)), W, cons(Z, cons(snd(Y), nil)))
+864. belowNat_case1(false, zero, X, Y, belowNat_case1(false, Z, suc(W), V, U, T), S) -> belowNat_case1(false, zero, X, Y, V, S)
+865. opEqTildeEqNatNat(insert(zero, X, ?), branch(insert(zero, Y, ?), Z, W, V)) -> opAnd(eqNat(X, Y), false)
+866. opEqTildeEqNatNat(branch(nil_1, fst(fst(X)), snd(fst(X)), Y), Z) = eqListPairNatNat(opAppend(toList(uncurry(uncurry_1(insert_0), X)), toList(Y)), toList(Z))
+867. opEqTildeEqNatNat(X, branch(nil_1, fst(fst(Y)), snd(fst(Y)), Z)) = eqListPairNatNat(toList(X), opAppend(toList(uncurry(uncurry_1(insert_0), Y)), toList(Z)))
+868. opEqTildeEqNatNat(branch(insert(zero, X, ?), Y, Z, W), insert(zero, V, ?)) -> opAnd(eqNat(X, V), false)
+869. eqListPairNatNat(cons(X, Y), opAppend(opAppend(opAppend(cons(Z, W), V), U), T)) -> opAnd(eqPairNatNat(X, Z), eqListPairNatNat(Y, opAppend(opAppend(opAppend(W, V), U), T)))
+870. eqListPairNatNat(opAppend(opAppend(opAppend(cons(X, Y), Z), W), V), cons(U, T)) -> opAnd(eqPairNatNat(X, U), eqListPairNatNat(opAppend(opAppend(opAppend(Y, Z), W), V), T))
+871. eqListPairNatNat(opAppend(opAppend(cons(X, Y), Z), W), opAppend(cons(V, U), T)) -> opAnd(eqPairNatNat(X, V), eqListPairNatNat(opAppend(opAppend(Y, Z), W), opAppend(U, T)))
+872. eqListPairNatNat(opAppend(cons(X, Y), Z), opAppend(opAppend(cons(W, V), U), T)) -> opAnd(eqPairNatNat(X, W), eqListPairNatNat(opAppend(Y, Z), opAppend(opAppend(V, U), T)))
+873. foldr(uncurry(insert_0, X), Y, cons(?, toList(tree(cons(Z, ?))))) -> foldr(uncurry(insert_0, X), Y, cons(?, cons(?, nil)))
+874. app(uncurry(insert_1(X), Y), app(insert(X, Z, ?), W)) = foldr(uncurry_1(insert_1(X)), W, cons(Y, toList(uncurry(insert_1(Z), ?))))
+875. eqListPairNatNat(toList(uncurry(insert_1(X), Y)), opAppend(cons(Z, cons(W, V)), U)) -> opAnd(eqPairNatNat(pair(X, fst(Y)), Z), false)
+876. eqListPairNatNat(opAppend(cons(X, cons(Y, Z)), W), toList(uncurry(insert_1(V), U))) -> opAnd(eqPairNatNat(X, pair(V, fst(U))), false)
+877. opAppend(opAppend(cons(X, toList(uncurry(uncurry_1(insert_0), Y))), Z), W) -> opAppend(cons(X, toList(uncurry(uncurry_1(insert_0), Y))), opAppend(Z, W))
+878. opAppend(toList(branch(uncurry(uncurry_1(insert_0), X), Y, Z, nil_1)), W) -> opAppend(toList(uncurry(uncurry_1(insert_0), X)), cons(pair(Y, Z), W))
+879. opEqTildeEqNatNat(belowNat_case1(false, X, Y, nil_1, Z, zero), insert(W, zero, ?)) -> opAnd(opAnd(eqNat(Y, W), true), opEqTildeEqNatNat(belowNat(X, Z), nil_1))
+880. opEqTildeEqNatNat(insert(X, zero, ?), belowNat_case1(false, Y, Z, nil_1, W, zero)) -> opAnd(opAnd(eqNat(X, Z), true), opEqTildeEqNatNat(nil_1, belowNat(Y, W)))
+881. eqListPairNatNat(toList(uncurry(insert_1(zero), X)), opAppend(cons(pair(suc(Y), Z), W), V)) -> false
+882. eqListPairNatNat(toList(uncurry(insert_1(suc(X)), Y)), opAppend(cons(pair(zero, Z), W), V)) -> false
+883. eqListPairNatNat(opAppend(cons(pair(zero, X), Y), Z), toList(uncurry(insert_1(suc(W)), V))) -> false
+884. eqListPairNatNat(opAppend(cons(pair(suc(X), Y), Z), W), toList(uncurry(insert_1(zero), V))) -> false
+885. uncurry(app(X, pair(fst(Y), snd(Y))), Z) = app(foldr(X, fst(Z), toList(tree(cons(Y, ?)))), snd(Z))
+886. tree(opAppend(opAppend(opAppend(toList(branch(nil_1, X, Y, Z)), W), V), U)) -> insert(X, Y, ?)
+887. foldr(uncurry(insert_0, X), Y, opAppend(opAppend(cons(Z, W), V), U)) ~> foldr(uncurry(insert_0, X), Y, opAppend(opAppend(cons(?, W), V), U))
+888. foldr(insert_2(X, Y), Z, opAppend(cons(?, cons(W, V)), U)) ~> foldr(insert_2(X, Y), Z, opAppend(cons(?, cons(?, V)), U))
+889. tree(opAppend(opAppend(toList(belowNat_case1(false, X, Y, nil_1, Z, W)), V), U)) -> insert(Y, W, ?)
+890. foldr(uncurry_1(uncurry_1(insert_0)), X, cons(Y, toList(insert(Z, ?, ?)))) -> app(uncurry(uncurry_1(insert_0), Y), app(tree(cons(Z, ?)), X))
+891. opEqTildeEqNatNat(tree(cons(X, ?)), unionNat(tree(cons(X, ?)), uncurry(insert_1(Y), Z))) -> prop_InsertUnion(pair(fst(X), snd(X)), ?, toList(uncurry(insert_1(Y), Z)))
+892. opEqTildeEqNatNat(nil_1, branch(branch(uncurry(insert_1(X), Y), Z, W, V), U, T, S)) -> false
+893. app(foldr(uncurry_1(X), Y, cons(Z, W)), foldr(uncurry(X, Z), V, U)) -> foldr(uncurry(X, Z), V, cons(foldr(uncurry_1(X), Y, W), U))
+894. opAppend(toList(X), toList(branch(uncurry(insert_1(Y), Z), W, V, nil_1))) -> toList(branch(X, Y, fst(Z), insert(W, V, ?)))
+895. foldr(insert_0, X, toList(branch(uncurry(insert_1(Y), Z), W, V, nil_1))) -> insert_2(pair(Y, fst(Z)), insert_2(pair(W, V), X))
+896. app(foldr(uncurry_1(X), snd(Y), cons(Z, cons(fst(Y), nil))), W) = uncurry(uncurry(X, Z), pair(uncurry(uncurry_1(X), Y), W))
+897. opEqTildeEqNatNat(branch(branch(uncurry(insert_1(X), Y), Z, W, V), U, T, S), nil_1) -> false
+898. insert(pair(fst(X), snd(X)), Y, ?) = unionNat(app(foldr(insert_0, Y, toList(tree(cons(X, ?)))), ?), nil_1)
+899. insert(pair(fst(X), snd(X)), Y, ?) = tree(toList(app(foldr(insert_0, Y, toList(tree(cons(X, ?)))), ?)))
+900. opEqTildeEqNatNat(branch(uncurry(insert_1(zero), X), Y, Z, nil_1), uncurry(insert_1(zero), W)) -> opAnd(eqNat(fst(X), fst(W)), false)
+901. opEqTildeEqNatNat(uncurry(insert_1(zero), X), branch(uncurry(insert_1(zero), Y), Z, W, nil_1)) -> opAnd(eqNat(fst(X), fst(Y)), false)
+902. aboveNat(suc(suc(zero)), foldr(insert_1(suc(suc(zero))), ?, toList(uncurry(uncurry_1(insert_0), X)))) -> nil_1
+903. belowNat(suc(suc(zero)), foldr(insert_1(suc(suc(zero))), ?, toList(uncurry(uncurry_1(insert_0), X)))) -> nil_1
+904. uncurry(uncurry(X, pair(Y, Z)), pair(foldr(app(X, Y), W, V), U)) -> app(foldr(app(X, Y), W, cons(Z, V)), U)
+905. foldr(insert_1(X), Y, toList(branch(uncurry(insert_1(Z), W), V, U, T))) -> insert(X, pair(Z, fst(W)), ?)
+906. insert(zero, pair(fst(X), snd(X)), ?) = belowNat(suc(?), foldr(insert_1(zero), ?, toList(tree(cons(X, ?)))))
+907. belowNat(suc(X), foldr(insert_1(zero), ?, toList(tree(cons(Y, ?))))) ~> belowNat(suc(?), foldr(insert_1(zero), ?, toList(tree(cons(Y, ?)))))
+908. opEqTildeEqNatNat(branch(nil_1, fst(X), snd(X), insert(Y, Z, ?)), W) -> opEqTildeEqNatNat(branch(tree(cons(X, ?)), Y, Z, nil_1), W)
+909. opEqTildeEqNatNat(X, branch(nil_1, fst(Y), snd(Y), insert(Z, W, ?))) -> opEqTildeEqNatNat(X, branch(tree(cons(Y, ?)), Z, W, nil_1))
+910. opEqTildeEqNatNat(uncurry(uncurry_1(insert_0), X), unionNat(uncurry(uncurry_1(insert_0), X), uncurry(uncurry_1(insert_0), Y))) -> prop_InsertUnion(pair(fst(fst(X)), snd(fst(X))), ?, cons(fst(Y), ?))
+911. aboveNat_case1(false, suc(X), Y, aboveNat_case1(false, Z, zero, W, V, U), T, S) -> aboveNat_case1(false, suc(X), Y, V, T, S)
+912. eqListPairNatNat(opAppend(opAppend(cons(X, Y), Z), W), toList(insert(V, U, ?))) -> opAnd(eqPairNatNat(X, pair(V, U)), eqListPairNatNat(opAppend(opAppend(Y, Z), W), nil))
+913. eqListPairNatNat(toList(insert(X, Y, ?)), opAppend(opAppend(cons(Z, W), V), U)) -> opAnd(eqPairNatNat(pair(X, Y), Z), eqListPairNatNat(nil, opAppend(opAppend(W, V), U)))
+914. opEqTildeEqNatNat(branch(nil_1, suc(X), Y, Z), branch(nil_1, suc(W), V, U)) -> opEqTildeEqNatNat(branch(nil_1, X, Y, Z), branch(nil_1, W, V, U))
+915. opEqTildeEqNatNat(branch(nil_1, X, suc(Y), Z), branch(nil_1, W, suc(V), U)) -> opEqTildeEqNatNat(branch(nil_1, X, Y, Z), branch(nil_1, W, V, U))
+916. opAppend(toList(X), toList(branch(uncurry(insert_1(Y), Z), W, V, U))) -> toList(branch(X, Y, fst(Z), branch(nil_1, W, V, U)))
+917. aboveNat(zero, unionNat(uncurry(insert_1(zero), X), uncurry(uncurry_1(insert_0), Y))) -> aboveNat(zero, aboveNat(zero, uncurry(uncurry_1(insert_0), Y)))
+918. belowNat(zero, unionNat(uncurry(insert_1(zero), X), uncurry(uncurry_1(insert_0), Y))) -> belowNat(zero, belowNat(zero, uncurry(uncurry_1(insert_0), Y)))
+919. uncurry(insert_2(X, pair(fst(Y), snd(Y))), Z) = app(foldr(insert_1(X), ?, toList(tree(cons(Y, ?)))), snd(Z))
+920. cons(pair(X, pair(fst(Y), snd(Y))), Z) = opAppend(toList(foldr(insert_1(X), ?, toList(tree(cons(Y, ?))))), Z)
+921. foldr(insert_0, X, opAppend(toList(tree(cons(Y, ?))), cons(Z, nil))) = insert_2(pair(fst(Y), snd(Y)), insert_2(Z, X))
+922. branch(belowNat(X, branch(Y, Z, W, V)), X, U, unionNat(T, aboveNat(X, branch(Y, Z, W, V)))) -> unionNat(branch(nil_1, X, U, T), branch(Y, Z, W, V))
+923. branch(belowNat(X, branch(Y, Z, W, V)), X, U, aboveNat(X, branch(Y, Z, W, V))) -> unionNat(insert(X, U, ?), branch(Y, Z, W, V))
+924. branch(belowNat(X, insert(Y, Z, ?)), X, W, aboveNat(X, insert(Y, Z, ?))) -> unionNat(insert(X, W, ?), insert(Y, Z, ?))
+925. unionNat(insert(suc(zero), X, ?), insert(suc(zero), Y, ?)) -> insert(suc(zero), X, ?)
+926. unionNat(insert(zero, X, ?), insert(suc(Y), Z, ?)) -> branch(nil_1, zero, X, insert(suc(Y), Z, ?))
+927. unionNat(insert(suc(X), Y, ?), insert(zero, Z, ?)) -> branch(insert(zero, Z, ?), suc(X), Y, nil_1)
+928. prop_InsertUnion(pair(suc(X), Y), ?, toList(insert(zero, Z, ?))) -> false
+929. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (nil_1_1): nil_1 = leaf.
+Axiom 2 (isLT_3): isLT(gt) = false.
+Axiom 3 (isGT_3): isGT(gt) = true.
+Axiom 4 (not_2): not(true) = false.
+Axiom 5 (not_1): not(false) = true.
+Axiom 6 (toList_1): toList(leaf) = nil.
+Axiom 7 (opAnd_1): opAnd(false, X) = false.
+Axiom 8 (opAppend_1): opAppend(nil, X) = X.
+Axiom 9 (belowNat_1): belowNat(X, leaf) = leaf.
+Axiom 10 (aboveNat_1): aboveNat(X, leaf) = leaf.
+Axiom 11 (unionNat_1): unionNat(leaf, X) = X.
+Axiom 12 (eqNat_3): eqNat(suc(X), zero) = false.
+Axiom 13 (compareNat_3): compareNat(suc(X), zero) = gt.
+Axiom 14 (app_insert_0_1): app(insert_0, X) = insert_1(X).
+Axiom 15 (fst_1): fst(pair(X, Y)) = X.
+Axiom 16 (snd_1): snd(pair(X, Y)) = Y.
+Axiom 17 (app_uncurry_1_1): app(uncurry_1(X), Y) = uncurry(X, Y).
+Axiom 18 (app_insert_1_1): app(insert_1(X), Y) = insert_2(X, Y).
+Axiom 19 (geNat_1): geNat(X, Y) = not(isLT(compareNat(X, Y))).
+Axiom 20 (leNat_1): leNat(X, Y) = not(isGT(compareNat(X, Y))).
+Axiom 21 (tree_1): tree(X) = foldr(uncurry_1(insert_0), nil_1, X).
+Axiom 22 (opEqTildeEqNatNat_1): opEqTildeEqNatNat(X, Y) = eqListPairNatNat(toList(X), toList(Y)).
+Axiom 23 (app_insert_2_1): app(insert_2(X, Y), Z) = insert(X, Y, Z).
+Axiom 24 (opAppend_2): opAppend(cons(X, Y), Z) = cons(X, opAppend(Y, Z)).
+Axiom 25 (insert_1): insert(X, Y, Z) = branch(leaf, X, Y, leaf).
+Axiom 26 (aboveNat_case1_1): aboveNat_case1(true, X, Y, Z, W, V) = aboveNat(X, W).
+Axiom 27 (eqPairNatNat_1): eqPairNatNat(pair(X, Y), pair(Z, W)) = opAnd(eqNat(X, Z), eqNat(Y, W)).
+Axiom 28 (eqListPairNatNat_4): eqListPairNatNat(cons(X, Y), cons(Z, W)) = opAnd(eqPairNatNat(X, Z), eqListPairNatNat(Y, W)).
+Axiom 29 (uncurry_1): uncurry(X, Y) = app(app(X, fst(Y)), snd(Y)).
+Axiom 30 (belowNat_case1_2): belowNat_case1(false, X, Y, Z, W, V) = branch(Z, Y, V, belowNat(X, W)).
+Axiom 31 (foldr_2): foldr(X, Y, cons(Z, W)) = app(app(X, Z), foldr(X, Y, W)).
+Axiom 32 (belowNat_2): belowNat(X, branch(Y, Z, W, V)) = belowNat_case1(leNat(X, Z), X, Z, Y, V, W).
+Axiom 33 (aboveNat_2): aboveNat(X, branch(Y, Z, W, V)) = aboveNat_case1(geNat(X, Z), X, Z, Y, V, W).
+Axiom 34 (toList_2): toList(branch(X, Y, Z, W)) = opAppend(toList(X), opAppend(cons(pair(Y, Z), nil), toList(W))).
+Axiom 35 (prop_InsertUnion_1): prop_InsertUnion(pair(X, Y), Z, W) = opEqTildeEqNatNat(insert(X, Y, unionNat(tree(Z), tree(W))), unionNat(insert(X, Y, tree(Z)), tree(W))).
+Axiom 36 (unionNat_3): unionNat(branch(X, Y, Z, W), branch(V, U, T, S)) = branch(unionNat(X, belowNat(Y, branch(V, U, T, S))), Y, Z, unionNat(W, aboveNat(Y, branch(V, U, T, S)))).
+
+Lemma 37: toList(nil_1) = nil.
+Proof:
+  toList(nil_1)
+= { by axiom 1 (nil_1_1) }
+  toList(leaf)
+= { by axiom 6 (toList_1) }
+  nil
+
+Lemma 38: unionNat(nil_1, X) = X.
+Proof:
+  unionNat(nil_1, X)
+= { by axiom 1 (nil_1_1) }
+  unionNat(leaf, X)
+= { by axiom 11 (unionNat_1) }
+  X
+
+Lemma 39: opAppend(cons(X, nil), Y) = cons(X, Y).
+Proof:
+  opAppend(cons(X, nil), Y)
+= { by axiom 24 (opAppend_2) }
+  cons(X, opAppend(nil, Y))
+= { by axiom 8 (opAppend_1) }
+  cons(X, Y)
+
+Lemma 40: cons(pair(X, Y), toList(Z)) = toList(branch(nil_1, X, Y, Z)).
+Proof:
+  cons(pair(X, Y), toList(Z))
+= { by lemma 39 R->L }
+  opAppend(cons(pair(X, Y), nil), toList(Z))
+= { by axiom 8 (opAppend_1) R->L }
+  opAppend(nil, opAppend(cons(pair(X, Y), nil), toList(Z)))
+= { by lemma 37 R->L }
+  opAppend(toList(nil_1), opAppend(cons(pair(X, Y), nil), toList(Z)))
+= { by axiom 34 (toList_2) R->L }
+  toList(branch(nil_1, X, Y, Z))
+
+Lemma 41: branch(nil_1, X, Y, nil_1) = insert(X, Y, Z).
+Proof:
+  branch(nil_1, X, Y, nil_1)
+= { by axiom 1 (nil_1_1) }
+  branch(leaf, X, Y, nil_1)
+= { by axiom 1 (nil_1_1) }
+  branch(leaf, X, Y, leaf)
+= { by axiom 25 (insert_1) R->L }
+  insert(X, Y, Z)
+
+Lemma 42: cons(pair(X, Y), nil) = toList(insert(X, Y, Z)).
+Proof:
+  cons(pair(X, Y), nil)
+= { by lemma 37 R->L }
+  cons(pair(X, Y), toList(nil_1))
+= { by lemma 40 }
+  toList(branch(nil_1, X, Y, nil_1))
+= { by lemma 41 }
+  toList(insert(X, Y, Z))
+
+Goal 1 (prop_InsertUnion): prop_InsertUnion(X, Y, Z) = false.
+The goal is true when:
+  X = pair(suc(X), Y)
+  Y = W
+  Z = toList(insert(zero, Z, T))
+
+Proof:
+  prop_InsertUnion(pair(suc(X), Y), W, toList(insert(zero, Z, T)))
+= { by lemma 42 R->L }
+  prop_InsertUnion(pair(suc(X), Y), W, cons(pair(zero, Z), nil))
+= { by axiom 35 (prop_InsertUnion_1) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), unionNat(insert(suc(X), Y, tree(W)), tree(cons(pair(zero, Z), nil))))
+= { by axiom 21 (tree_1) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), unionNat(insert(suc(X), Y, tree(W)), foldr(uncurry_1(insert_0), nil_1, cons(pair(zero, Z), nil))))
+= { by axiom 31 (foldr_2) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), unionNat(insert(suc(X), Y, tree(W)), app(app(uncurry_1(insert_0), pair(zero, Z)), foldr(uncurry_1(insert_0), nil_1, nil))))
+= { by axiom 21 (tree_1) R->L }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), unionNat(insert(suc(X), Y, tree(W)), app(app(uncurry_1(insert_0), pair(zero, Z)), tree(nil))))
+= { by axiom 17 (app_uncurry_1_1) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), unionNat(insert(suc(X), Y, tree(W)), app(uncurry(insert_0, pair(zero, Z)), tree(nil))))
+= { by axiom 29 (uncurry_1) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), unionNat(insert(suc(X), Y, tree(W)), app(app(app(insert_0, fst(pair(zero, Z))), snd(pair(zero, Z))), tree(nil))))
+= { by axiom 14 (app_insert_0_1) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), unionNat(insert(suc(X), Y, tree(W)), app(app(insert_1(fst(pair(zero, Z))), snd(pair(zero, Z))), tree(nil))))
+= { by axiom 18 (app_insert_1_1) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), unionNat(insert(suc(X), Y, tree(W)), app(insert_2(fst(pair(zero, Z)), snd(pair(zero, Z))), tree(nil))))
+= { by axiom 15 (fst_1) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), unionNat(insert(suc(X), Y, tree(W)), app(insert_2(zero, snd(pair(zero, Z))), tree(nil))))
+= { by axiom 16 (snd_1) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), unionNat(insert(suc(X), Y, tree(W)), app(insert_2(zero, Z), tree(nil))))
+= { by axiom 23 (app_insert_2_1) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), unionNat(insert(suc(X), Y, tree(W)), insert(zero, Z, tree(nil))))
+= { by lemma 41 R->L }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), unionNat(insert(suc(X), Y, tree(W)), branch(nil_1, zero, Z, nil_1)))
+= { by lemma 41 R->L }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), unionNat(branch(nil_1, suc(X), Y, nil_1), branch(nil_1, zero, Z, nil_1)))
+= { by axiom 36 (unionNat_3) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(unionNat(nil_1, belowNat(suc(X), branch(nil_1, zero, Z, nil_1))), suc(X), Y, unionNat(nil_1, aboveNat(suc(X), branch(nil_1, zero, Z, nil_1)))))
+= { by lemma 38 }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat(suc(X), branch(nil_1, zero, Z, nil_1)), suc(X), Y, unionNat(nil_1, aboveNat(suc(X), branch(nil_1, zero, Z, nil_1)))))
+= { by lemma 38 }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat(suc(X), branch(nil_1, zero, Z, nil_1)), suc(X), Y, aboveNat(suc(X), branch(nil_1, zero, Z, nil_1))))
+= { by lemma 41 }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat(suc(X), insert(zero, Z, U)), suc(X), Y, aboveNat(suc(X), branch(nil_1, zero, Z, nil_1))))
+= { by axiom 33 (aboveNat_2) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat(suc(X), insert(zero, Z, U)), suc(X), Y, aboveNat_case1(geNat(suc(X), zero), suc(X), zero, nil_1, nil_1, Z)))
+= { by axiom 19 (geNat_1) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat(suc(X), insert(zero, Z, U)), suc(X), Y, aboveNat_case1(not(isLT(compareNat(suc(X), zero))), suc(X), zero, nil_1, nil_1, Z)))
+= { by axiom 13 (compareNat_3) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat(suc(X), insert(zero, Z, U)), suc(X), Y, aboveNat_case1(not(isLT(gt)), suc(X), zero, nil_1, nil_1, Z)))
+= { by axiom 2 (isLT_3) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat(suc(X), insert(zero, Z, U)), suc(X), Y, aboveNat_case1(not(false), suc(X), zero, nil_1, nil_1, Z)))
+= { by axiom 5 (not_1) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat(suc(X), insert(zero, Z, U)), suc(X), Y, aboveNat_case1(true, suc(X), zero, nil_1, nil_1, Z)))
+= { by axiom 26 (aboveNat_case1_1) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat(suc(X), insert(zero, Z, U)), suc(X), Y, aboveNat(suc(X), nil_1)))
+= { by axiom 1 (nil_1_1) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat(suc(X), insert(zero, Z, U)), suc(X), Y, aboveNat(suc(X), leaf)))
+= { by axiom 10 (aboveNat_1) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat(suc(X), insert(zero, Z, U)), suc(X), Y, leaf))
+= { by axiom 1 (nil_1_1) R->L }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat(suc(X), insert(zero, Z, U)), suc(X), Y, nil_1))
+= { by lemma 41 R->L }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat(suc(X), branch(nil_1, zero, Z, nil_1)), suc(X), Y, nil_1))
+= { by axiom 32 (belowNat_2) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat_case1(leNat(suc(X), zero), suc(X), zero, nil_1, nil_1, Z), suc(X), Y, nil_1))
+= { by axiom 20 (leNat_1) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat_case1(not(isGT(compareNat(suc(X), zero))), suc(X), zero, nil_1, nil_1, Z), suc(X), Y, nil_1))
+= { by axiom 13 (compareNat_3) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat_case1(not(isGT(gt)), suc(X), zero, nil_1, nil_1, Z), suc(X), Y, nil_1))
+= { by axiom 3 (isGT_3) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat_case1(not(true), suc(X), zero, nil_1, nil_1, Z), suc(X), Y, nil_1))
+= { by axiom 4 (not_2) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(belowNat_case1(false, suc(X), zero, nil_1, nil_1, Z), suc(X), Y, nil_1))
+= { by axiom 30 (belowNat_case1_2) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(branch(nil_1, zero, Z, belowNat(suc(X), nil_1)), suc(X), Y, nil_1))
+= { by axiom 1 (nil_1_1) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(branch(nil_1, zero, Z, belowNat(suc(X), leaf)), suc(X), Y, nil_1))
+= { by axiom 9 (belowNat_1) }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(branch(nil_1, zero, Z, leaf), suc(X), Y, nil_1))
+= { by axiom 1 (nil_1_1) R->L }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(branch(nil_1, zero, Z, nil_1), suc(X), Y, nil_1))
+= { by lemma 41 }
+  opEqTildeEqNatNat(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil)))), branch(insert(zero, Z, V), suc(X), Y, nil_1))
+= { by axiom 22 (opEqTildeEqNatNat_1) }
+  eqListPairNatNat(toList(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil))))), toList(branch(insert(zero, Z, V), suc(X), Y, nil_1)))
+= { by axiom 34 (toList_2) }
+  eqListPairNatNat(toList(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil))))), opAppend(toList(insert(zero, Z, V)), opAppend(cons(pair(suc(X), Y), nil), toList(nil_1))))
+= { by lemma 42 R->L }
+  eqListPairNatNat(toList(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil))))), opAppend(cons(pair(zero, Z), nil), opAppend(cons(pair(suc(X), Y), nil), toList(nil_1))))
+= { by lemma 39 }
+  eqListPairNatNat(toList(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil))))), cons(pair(zero, Z), opAppend(cons(pair(suc(X), Y), nil), toList(nil_1))))
+= { by lemma 39 }
+  eqListPairNatNat(toList(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil))))), cons(pair(zero, Z), cons(pair(suc(X), Y), toList(nil_1))))
+= { by lemma 40 }
+  eqListPairNatNat(toList(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil))))), cons(pair(zero, Z), toList(branch(nil_1, suc(X), Y, nil_1))))
+= { by lemma 40 }
+  eqListPairNatNat(toList(insert(suc(X), Y, unionNat(tree(W), tree(cons(pair(zero, Z), nil))))), toList(branch(nil_1, zero, Z, branch(nil_1, suc(X), Y, nil_1))))
+= { by lemma 42 R->L }
+  eqListPairNatNat(cons(pair(suc(X), Y), nil), toList(branch(nil_1, zero, Z, branch(nil_1, suc(X), Y, nil_1))))
+= { by lemma 40 R->L }
+  eqListPairNatNat(cons(pair(suc(X), Y), nil), cons(pair(zero, Z), toList(branch(nil_1, suc(X), Y, nil_1))))
+= { by axiom 28 (eqListPairNatNat_4) }
+  opAnd(eqPairNatNat(pair(suc(X), Y), pair(zero, Z)), eqListPairNatNat(nil, toList(branch(nil_1, suc(X), Y, nil_1))))
+= { by lemma 37 R->L }
+  opAnd(eqPairNatNat(pair(suc(X), Y), pair(zero, Z)), eqListPairNatNat(toList(nil_1), toList(branch(nil_1, suc(X), Y, nil_1))))
+= { by axiom 22 (opEqTildeEqNatNat_1) R->L }
+  opAnd(eqPairNatNat(pair(suc(X), Y), pair(zero, Z)), opEqTildeEqNatNat(nil_1, branch(nil_1, suc(X), Y, nil_1)))
+= { by axiom 27 (eqPairNatNat_1) }
+  opAnd(opAnd(eqNat(suc(X), zero), eqNat(Y, Z)), opEqTildeEqNatNat(nil_1, branch(nil_1, suc(X), Y, nil_1)))
+= { by axiom 12 (eqNat_3) }
+  opAnd(opAnd(false, eqNat(Y, Z)), opEqTildeEqNatNat(nil_1, branch(nil_1, suc(X), Y, nil_1)))
+= { by axiom 7 (opAnd_1) }
+  opAnd(false, opEqTildeEqNatNat(nil_1, branch(nil_1, suc(X), Y, nil_1)))
+= { by axiom 7 (opAnd_1) }
+  false
+
+RESULT: Theorem (the conjecture is true).

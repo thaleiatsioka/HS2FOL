@@ -1,0 +1,1255 @@
+Here is the input problem:
+  Axiom 1 (nil_1_1): nil_1 = leaf.
+  Axiom 2 (isLT_1): isLT(lt) = true.
+  Axiom 3 (isLT_2): isLT(eq) = false.
+  Axiom 4 (isLT_3): isLT(gt) = false.
+  Axiom 5 (isGT_1): isGT(lt) = false.
+  Axiom 6 (isGT_2): isGT(eq) = false.
+  Axiom 7 (isGT_3): isGT(gt) = true.
+  Axiom 8 (eqMaybeNat_1): eqMaybeNat(nothing, nothing) = true.
+  Axiom 9 (deleteNat_1): deleteNat(X, leaf) = leaf.
+  Axiom 10 (join_1): join(leaf, X) = X.
+  Axiom 11 (findNat_1): findNat(X, leaf) = nothing.
+  Axiom 12 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 13 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 14 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 15 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 16 (compareNat_1): compareNat(zero, zero) = eq.
+  Axiom 17 (compareNat_2): compareNat(zero, suc(X)) = lt.
+  Axiom 18 (compareNat_3): compareNat(suc(X), zero) = gt.
+  Axiom 19 (compareNat_4): compareNat(suc(X), suc(Y)) = compareNat(X, Y).
+  Axiom 20 (app_insertNat_0_1): app(insertNat_0, X) = insertNat_1(X).
+  Axiom 21 (fst_1): fst(pair(X, Y)) = X.
+  Axiom 22 (snd_1): snd(pair(X, Y)) = Y.
+  Axiom 23 (prop_FindDelete_case1_case1_1): prop_FindDelete_case1_case1(true, X, Y) = nothing.
+  Axiom 24 (ltNat_1): ltNat(X, Y) = isLT(compareNat(X, Y)).
+  Axiom 25 (gtNat_1): gtNat(X, Y) = isGT(compareNat(X, Y)).
+  Axiom 26 (foldr_1): foldr(X, Y, nil) = Y.
+  Axiom 27 (eqMaybeNat_2): eqMaybeNat(nothing, just(X)) = false.
+  Axiom 28 (eqMaybeNat_3): eqMaybeNat(just(X), nothing) = false.
+  Axiom 29 (prop_FindDelete_case1_case1_2): prop_FindDelete_case1_case1(false, X, Y) = findNat(X, tree(Y)).
+  Axiom 30 (app_uncurry_1_1): app(uncurry_1(X), Y) = uncurry(X, Y).
+  Axiom 31 (app_insertNat_1_1): app(insertNat_1(X), Y) = insertNat_2(X, Y).
+  Axiom 32 (findNat_case1_case1_1): findNat_case1_case1(true, X, Y, Z) = findNat(X, Y).
+  Axiom 33 (findNat_case1_case1_2): findNat_case1_case1(false, X, Y, Z) = just(Z).
+  Axiom 34 (tree_1): tree(X) = foldr(uncurry_1(insertNat_0), nil_1, X).
+  Axiom 35 (eqMaybeNat_4): eqMaybeNat(just(X), just(Y)) = eqNat(X, Y).
+  Axiom 36 (app_insertNat_2_1): app(insertNat_2(X, Y), Z) = insertNat(X, Y, Z).
+  Axiom 37 (insertNat_1): insertNat(X, Y, leaf) = branch(leaf, X, Y, leaf).
+  Axiom 38 (prop_FindDelete_case1_1): prop_FindDelete_case1(X, Y, Z) = prop_FindDelete_case1_case1(eqNat(X, Y), X, Z).
+  Axiom 39 (deleteNat_case1_case1_2): deleteNat_case1_case1(false, X, Y, Z, W, V) = join(Z, W).
+  Axiom 40 (findNat_case1_1): findNat_case1(true, X, Y, Z, W, V) = findNat(X, Z).
+  Axiom 41 (findNat_case1_2): findNat_case1(false, X, Y, Z, W, V) = findNat_case1_case1(gtNat(X, Y), X, W, V).
+  Axiom 42 (join_2): join(branch(X, Y, Z, W), leaf) = branch(X, Y, Z, W).
+  Axiom 43 (uncurry_1): uncurry(X, Y) = app(app(X, fst(Y)), snd(Y)).
+  Axiom 44 (deleteNat_case1_case1_1): deleteNat_case1_case1(true, X, Y, Z, W, V) = branch(Z, Y, V, deleteNat(X, W)).
+  Axiom 45 (deleteNat_case1_1): deleteNat_case1(true, X, Y, Z, W, V) = branch(deleteNat(X, Z), Y, V, W).
+  Axiom 46 (insertNat_case1_case1_2): insertNat_case1_case1(false, X, Y, Z, W, V, U) = branch(Z, Y, V, W).
+  Axiom 47 (foldr_2): foldr(X, Y, cons(Z, W)) = app(app(X, Z), foldr(X, Y, W)).
+  Axiom 48 (insertNat_case1_case1_1): insertNat_case1_case1(true, X, Y, Z, W, V, U) = branch(Z, Y, U, insertNat(X, V, W)).
+  Axiom 49 (insertNat_case1_1): insertNat_case1(true, X, Y, Z, W, V, U) = branch(insertNat(X, V, Z), Y, U, W).
+  Axiom 50 (deleteNat_2): deleteNat(X, branch(Y, Z, W, V)) = deleteNat_case1(gtNat(X, Z), X, Z, Y, V, W).
+  Axiom 51 (deleteNat_case1_2): deleteNat_case1(false, X, Y, Z, W, V) = deleteNat_case1_case1(ltNat(X, Y), X, Y, Z, W, V).
+  Axiom 52 (findNat_2): findNat(X, branch(Y, Z, W, V)) = findNat_case1(ltNat(X, Z), X, Z, Y, V, W).
+  Axiom 53 (insertNat_2): insertNat(X, Y, branch(Z, W, V, U)) = insertNat_case1(ltNat(X, W), X, W, Z, U, Y, V).
+  Axiom 54 (insertNat_case1_2): insertNat_case1(false, X, Y, Z, W, V, U) = insertNat_case1_case1(gtNat(X, Y), X, Y, Z, W, V, U).
+  Axiom 55 (prop_FindDelete_1): prop_FindDelete(X, Y, Z) = eqMaybeNat(findNat(X, deleteNat(Y, tree(Z))), prop_FindDelete_case1(X, Y, Z)).
+  Axiom 56 (join_3): join(branch(X, Y, Z, W), branch(V, U, T, S)) = branch(X, Y, Z, branch(join(W, V), U, T, S)).
+  Axiom 57 (reflexivity): equals(X, X) = true.
+  Axiom 58 (prop_FindDelete): equals(prop_FindDelete(X, Y, Z), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. leaf -> nil_1
+2. isLT(lt) -> true
+3. isLT(eq) -> false
+4. isLT(gt) -> false
+5. isGT(lt) -> false
+6. isGT(eq) -> false
+7. isGT(gt) -> true
+8. eqMaybeNat(nothing, nothing) -> true
+9. deleteNat(X, nil_1) -> nil_1
+10. join(nil_1, X) -> X
+11. findNat(X, nil_1) -> nothing
+12. eqNat(zero, zero) -> true
+13. eqNat(zero, suc(X)) -> false
+14. eqNat(suc(X), zero) -> false
+15. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+16. compareNat(zero, zero) -> eq
+17. compareNat(zero, suc(X)) -> lt
+18. compareNat(suc(X), zero) -> gt
+19. compareNat(suc(X), suc(Y)) -> compareNat(X, Y)
+20. app(insertNat_0, X) -> insertNat_1(X)
+21. fst(pair(X, Y)) -> X
+22. snd(pair(X, Y)) -> Y
+23. prop_FindDelete_case1_case1(true, X, Y) -> nothing
+24. isLT(compareNat(X, Y)) -> ltNat(X, Y)
+25. isGT(compareNat(X, Y)) -> gtNat(X, Y)
+26. foldr(X, Y, nil) -> Y
+27. eqMaybeNat(nothing, just(X)) -> false
+28. eqMaybeNat(just(X), nothing) -> false
+29. findNat(X, tree(Y)) -> prop_FindDelete_case1_case1(false, X, Y)
+30. app(uncurry_1(X), Y) -> uncurry(X, Y)
+31. app(insertNat_1(X), Y) -> insertNat_2(X, Y)
+32. findNat_case1_case1(true, X, Y, Z) -> findNat(X, Y)
+33. findNat_case1_case1(false, X, Y, Z) -> just(Z)
+34. foldr(uncurry_1(insertNat_0), nil_1, X) -> tree(X)
+35. eqMaybeNat(just(X), just(Y)) -> eqNat(X, Y)
+36. app(insertNat_2(X, Y), Z) -> insertNat(X, Y, Z)
+37. branch(nil_1, X, Y, nil_1) -> insertNat(X, Y, nil_1)
+38. prop_FindDelete_case1_case1(eqNat(X, Y), X, Z) -> prop_FindDelete_case1(X, Y, Z)
+39. deleteNat_case1_case1(false, X, Y, Z, W, V) -> join(Z, W)
+40. findNat_case1(true, X, Y, Z, W, V) -> findNat(X, Z)
+41. findNat_case1_case1(gtNat(X, Y), X, Z, W) -> findNat_case1(false, X, Y, ?, Z, W)
+42. findNat_case1(false, X, Y, Z, W, V) ~> findNat_case1(false, X, Y, ?, W, V)
+43. join(branch(X, Y, Z, W), nil_1) -> branch(X, Y, Z, W)
+44. app(app(X, fst(Y)), snd(Y)) -> uncurry(X, Y)
+45. branch(X, Y, Z, deleteNat(W, V)) -> deleteNat_case1_case1(true, W, Y, X, V, Z)
+46. branch(deleteNat(X, Y), Z, W, V) -> deleteNat_case1(true, X, Z, Y, V, W)
+47. insertNat_case1_case1(false, X, Y, Z, W, V, U) -> branch(Z, Y, V, W)
+48. app(app(X, Y), foldr(X, Z, W)) -> foldr(X, Z, cons(Y, W))
+49. branch(X, Y, Z, insertNat(W, V, U)) -> insertNat_case1_case1(true, W, Y, X, U, V, Z)
+50. branch(insertNat(X, Y, Z), W, V, U) -> insertNat_case1(true, X, W, Z, U, Y, V)
+51. deleteNat_case1(gtNat(X, Y), X, Y, Z, W, V) -> deleteNat(X, branch(Z, Y, V, W))
+52. deleteNat_case1_case1(ltNat(X, Y), X, Y, Z, W, V) -> deleteNat_case1(false, X, Y, Z, W, V)
+53. findNat_case1(ltNat(X, Y), X, Y, Z, W, V) -> findNat(X, branch(Z, Y, V, W))
+54. insertNat_case1(ltNat(X, Y), X, Y, Z, W, V, U) -> insertNat(X, V, branch(Z, Y, U, W))
+55. insertNat_case1_case1(gtNat(X, Y), X, Y, Z, W, V, U) -> insertNat_case1(false, X, Y, Z, W, V, U)
+56. eqMaybeNat(findNat(X, deleteNat(Y, tree(Z))), prop_FindDelete_case1(X, Y, Z)) -> prop_FindDelete(X, Y, Z)
+57. branch(X, Y, Z, branch(join(W, V), U, T, S)) -> join(branch(X, Y, Z, W), branch(V, U, T, S))
+58. equals(X, X) -> true
+59. equals(prop_FindDelete(X, Y, Z), false) -> false
+60. tree(nil) -> nil_1
+61. ltNat(zero, zero) -> false
+62. gtNat(zero, zero) -> false
+63. ltNat(zero, suc(X)) -> true
+64. ltNat(suc(X), zero) -> false
+65. gtNat(zero, suc(X)) -> false
+66. gtNat(suc(X), zero) -> true
+67. prop_FindDelete_case1(zero, zero, X) -> nothing
+68. prop_FindDelete_case1_case1(false, X, nil) -> nothing
+69. ltNat(suc(X), suc(Y)) -> ltNat(X, Y)
+70. gtNat(suc(X), suc(Y)) -> gtNat(X, Y)
+71. insertNat_2(fst(X), snd(X)) -> uncurry(insertNat_0, X)
+72. prop_FindDelete_case1_case1(false, zero, X) -> prop_FindDelete_case1(zero, suc(?), X)
+73. prop_FindDelete_case1(zero, suc(X), Y) ~> prop_FindDelete_case1(zero, suc(?), Y)
+74. app(app(X, Y), Z) -> uncurry(X, pair(Y, Z))
+75. prop_FindDelete_case1_case1(false, suc(X), Y) -> prop_FindDelete_case1(suc(X), zero, Y)
+76. uncurry(insertNat_0, pair(X, Y)) -> insertNat_2(X, Y)
+77. prop_FindDelete_case1(suc(X), zero, nil) -> nothing
+78. prop_FindDelete_case1(zero, suc(?), nil) -> nothing
+79. insertNat(X, fst(Y), snd(Y)) -> uncurry(insertNat_1(X), Y)
+80. prop_FindDelete(suc(X), zero, nil) -> true
+81. equals(true, false) -> false
+82. join(insertNat(X, Y, nil_1), nil_1) -> insertNat(X, Y, nil_1)
+83. uncurry(uncurry_1(insertNat_0), pair(X, tree(Y))) -> tree(cons(X, Y))
+84. foldr(X, Y, cons(Z, nil)) -> uncurry(X, pair(Z, Y))
+85. prop_FindDelete(zero, suc(?), nil) -> true
+86. foldr(insertNat_0, X, cons(Y, Z)) -> insertNat_2(Y, foldr(insertNat_0, X, Z))
+87. uncurry(insertNat_1(X), pair(Y, Z)) -> insertNat(X, Y, Z)
+88. eqMaybeNat(nothing, prop_FindDelete_case1(X, Y, nil)) -> prop_FindDelete(X, Y, nil)
+89. prop_FindDelete(zero, zero, nil) -> true
+90. prop_FindDelete(zero, suc(X), nil) -> true
+91. uncurry(uncurry_1(X), pair(Y, Z)) -> app(uncurry(X, Y), Z)
+92. insertNat(fst(X), snd(X), Y) -> app(uncurry(insertNat_0, X), Y)
+93. app(uncurry(insertNat_0, X), nil_1) -> tree(cons(X, nil))
+94. app(uncurry(X, fst(Y)), snd(Y)) -> uncurry(uncurry_1(X), Y)
+95. deleteNat_case1_case1(true, X, Y, Z, nil_1, W) -> branch(Z, Y, W, nil_1)
+96. deleteNat_case1(true, X, Y, nil_1, Z, W) -> branch(nil_1, Y, W, Z)
+97. app(uncurry(insertNat_0, X), tree(Y)) -> tree(cons(X, Y))
+98. tree(cons(pair(X, Y), nil)) -> insertNat(X, Y, nil_1)
+99. findNat_case1(false, zero, zero, ?, X, Y) -> just(Y)
+100. deleteNat_case1(false, zero, zero, X, Y, Z) -> join(X, Y)
+101. uncurry(X, pair(fst(Y), snd(Y))) -> uncurry(X, Y)
+102. prop_FindDelete_case1_case1(eqNat(X, Y), suc(X), Z) -> prop_FindDelete_case1(suc(X), suc(Y), Z)
+103. prop_FindDelete_case1(suc(zero), suc(zero), X) -> nothing
+104. prop_FindDelete(suc(zero), suc(zero), nil) -> true
+105. tree(cons(pair(X, Y), Z)) -> insertNat(X, Y, tree(Z))
+106. uncurry(insertNat_2(X, Y), pair(Z, W)) -> app(insertNat(X, Y, Z), W)
+107. prop_FindDelete_case1(suc(zero), suc(suc(X)), Y) -> prop_FindDelete_case1(suc(zero), zero, Y)
+108. prop_FindDelete(suc(zero), suc(suc(X)), nil) -> true
+109. findNat_case1(false, zero, suc(X), ?, Y, Z) -> just(Z)
+110. app(uncurry(X, pair(Y, Z)), W) -> uncurry(app(X, Y), pair(Z, W))
+111. app(insertNat(X, Y, fst(Z)), snd(Z)) -> uncurry(insertNat_2(X, Y), Z)
+112. deleteNat_case1(false, suc(X), zero, Y, Z, W) -> join(Y, Z)
+113. prop_FindDelete_case1(suc(suc(X)), suc(zero), Y) -> prop_FindDelete_case1(suc(suc(X)), zero, Y)
+114. prop_FindDelete(suc(suc(X)), suc(zero), nil) -> true
+115. findNat(zero, branch(X, suc(Y), Z, W)) -> findNat(zero, X)
+116. findNat(zero, insertNat(suc(X), Y, nil_1)) -> nothing
+117. deleteNat(zero, branch(X, zero, Y, Z)) -> join(X, Z)
+118. deleteNat(zero, insertNat(zero, X, nil_1)) -> nil_1
+119. findNat(zero, branch(X, zero, Y, Z)) -> just(Y)
+120. findNat(zero, insertNat(zero, X, nil_1)) -> just(X)
+121. insertNat(X, Y, foldr(insertNat_1(X), Z, W)) -> foldr(insertNat_1(X), Z, cons(Y, W))
+122. findNat_case1(false, suc(X), zero, ?, Y, Z) -> findNat(suc(X), Y)
+123. insertNat_case1(false, zero, zero, X, Y, Z, W) -> branch(X, zero, Z, Y)
+124. join(tree(cons(X, nil)), nil_1) -> tree(cons(X, nil))
+125. uncurry(uncurry(insertNat_0, X), pair(nil_1, Y)) -> app(tree(cons(X, nil)), Y)
+126. uncurry(X, pair(Y, foldr(X, Z, W))) -> foldr(X, Z, cons(Y, W))
+127. eqMaybeNat(findNat(zero, deleteNat(zero, tree(X))), nothing) -> prop_FindDelete(zero, zero, X)
+128. insertNat(zero, X, branch(Y, zero, Z, W)) -> branch(Y, zero, X, W)
+129. insertNat(zero, X, insertNat(zero, Y, nil_1)) -> insertNat(zero, X, nil_1)
+130. deleteNat_case1_case1(true, zero, suc(X), Y, Z, W) -> deleteNat_case1(false, zero, suc(X), Y, Z, W)
+131. deleteNat(zero, branch(X, suc(Y), Z, W)) -> deleteNat_case1(false, zero, suc(Y), X, W, Z)
+132. deleteNat(suc(X), branch(Y, zero, Z, W)) -> deleteNat_case1(true, suc(X), zero, Y, W, Z)
+133. deleteNat(suc(X), insertNat(zero, Y, nil_1)) -> insertNat(zero, Y, nil_1)
+134. join(deleteNat_case1_case1(true, X, Y, Z, W, V), nil_1) -> deleteNat_case1_case1(true, X, Y, Z, W, V)
+135. join(deleteNat_case1(true, X, Y, Z, W, V), nil_1) -> deleteNat_case1(true, X, Y, Z, W, V)
+136. app(uncurry(X, Y), foldr(uncurry_1(X), Z, W)) -> foldr(uncurry_1(X), Z, cons(Y, W))
+137. findNat(zero, deleteNat_case1_case1(true, X, zero, Y, Z, W)) -> just(W)
+138. findNat(zero, deleteNat_case1(true, X, zero, Y, Z, W)) -> just(W)
+139. findNat(suc(X), branch(Y, zero, Z, W)) -> findNat(suc(X), W)
+140. findNat(suc(X), insertNat(zero, Y, nil_1)) -> nothing
+141. prop_FindDelete_case1_case1(eqNat(X, Y), suc(suc(X)), Z) -> prop_FindDelete_case1(suc(suc(X)), suc(suc(Y)), Z)
+142. prop_FindDelete_case1(suc(suc(zero)), suc(suc(zero)), X) -> nothing
+143. prop_FindDelete(suc(suc(zero)), suc(suc(zero)), nil) -> true
+144. uncurry(uncurry(insertNat_0, X), pair(tree(Y), Z)) -> app(tree(cons(X, Y)), Z)
+145. deleteNat_case1(false, zero, suc(X), Y, nil_1, Z) -> branch(Y, suc(X), Z, nil_1)
+146. uncurry(app(X, fst(Y)), pair(snd(Y), Z)) -> app(uncurry(X, Y), Z)
+147. insertNat_case1(false, zero, suc(X), Y, Z, W, V) -> branch(Y, suc(X), W, Z)
+148. deleteNat_case1_case1(true, X, Y, deleteNat(Z, W), V, U) -> deleteNat_case1(true, Z, Y, W, deleteNat(X, V), U)
+149. uncurry(uncurry(X, fst(Y)), pair(snd(Y), Z)) -> app(uncurry(uncurry_1(X), Y), Z)
+150. deleteNat(zero, insertNat(suc(X), Y, nil_1)) -> insertNat(suc(X), Y, nil_1)
+151. prop_FindDelete_case1_case1(false, X, cons(pair(Y, Z), nil)) -> findNat(X, insertNat(Y, Z, nil_1))
+152. foldr(insertNat_1(X), Y, cons(Z, cons(W, nil))) = insertNat(X, Z, insertNat(X, W, Y))
+153. deleteNat(zero, deleteNat_case1_case1(true, X, zero, Y, Z, W)) -> join(Y, deleteNat(X, Z))
+154. deleteNat(zero, deleteNat_case1(true, X, zero, Y, Z, W)) -> join(deleteNat(X, Y), Z)
+155. uncurry(X, pair(Y, uncurry(X, pair(Z, W)))) -> foldr(X, W, cons(Y, cons(Z, nil)))
+156. findNat_case1_case1(gtNat(X, Y), suc(X), Z, W) -> findNat_case1(false, suc(X), suc(Y), ?, Z, W)
+157. findNat_case1(false, suc(zero), suc(zero), ?, X, Y) -> just(Y)
+158. findNat(zero, insertNat_case1_case1(true, X, zero, Y, Z, W, V)) -> just(V)
+159. findNat(zero, insertNat_case1(true, X, zero, Y, Z, W, V)) -> just(V)
+160. insertNat(zero, X, branch(Y, suc(Z), W, V)) -> insertNat_case1(true, zero, suc(Z), Y, V, X, W)
+161. insertNat(suc(X), Y, branch(Z, zero, W, V)) -> insertNat_case1(false, suc(X), zero, Z, V, Y, W)
+162. insertNat_case1_case1(true, suc(X), zero, Y, Z, W, V) -> insertNat_case1(false, suc(X), zero, Y, Z, W, V)
+163. join(insertNat_case1_case1(true, X, Y, Z, W, V, U), nil_1) -> insertNat_case1_case1(true, X, Y, Z, W, V, U)
+164. join(insertNat_case1(true, X, Y, Z, W, V, U), nil_1) -> insertNat_case1(true, X, Y, Z, W, V, U)
+165. app(uncurry(insertNat_0, X), insertNat(Y, Z, nil_1)) -> tree(cons(X, cons(pair(Y, Z), nil)))
+166. findNat(zero, deleteNat_case1_case1(true, X, suc(Y), Z, W, V)) -> findNat(zero, Z)
+167. app(uncurry(X, Y), app(uncurry(X, Z), W)) -> foldr(uncurry_1(X), W, cons(Y, cons(Z, nil)))
+168. findNat_case1(false, suc(zero), suc(suc(X)), ?, Y, Z) -> just(Z)
+169. prop_FindDelete_case1_case1(false, X, cons(pair(Y, Z), W)) -> findNat(X, insertNat(Y, Z, tree(W)))
+170. eqMaybeNat(findNat(suc(zero), deleteNat(suc(zero), tree(X))), nothing) -> prop_FindDelete(suc(zero), suc(zero), X)
+171. prop_FindDelete_case1(suc(suc(zero)), suc(suc(suc(X))), Y) -> prop_FindDelete_case1(suc(suc(zero)), zero, Y)
+172. prop_FindDelete(suc(suc(zero)), suc(suc(suc(X))), nil) -> true
+173. findNat(suc(X), deleteNat_case1(true, Y, zero, Z, W, V)) -> findNat(suc(X), W)
+174. deleteNat_case1(true, X, Y, Z, insertNat(W, V, U), T) -> insertNat_case1_case1(true, W, Y, deleteNat(X, Z), U, V, T)
+175. deleteNat_case1_case1(true, X, Y, insertNat(Z, W, V), U, T) -> insertNat_case1(true, Z, Y, V, deleteNat(X, U), W, T)
+176. foldr(uncurry_1(insertNat_0), X, cons(pair(Y, Z), W)) -> insertNat(Y, Z, foldr(uncurry_1(insertNat_0), X, W))
+177. prop_FindDelete_case1(suc(suc(suc(X))), suc(suc(zero)), Y) -> prop_FindDelete_case1(suc(suc(suc(X))), zero, Y)
+178. prop_FindDelete(suc(suc(suc(X))), suc(suc(zero)), nil) -> true
+179. uncurry(insertNat(X, Y, fst(Z)), pair(snd(Z), W)) -> app(uncurry(insertNat_2(X, Y), Z), W)
+180. uncurry(app(X, Y), pair(foldr(X, Z, W), V)) -> app(foldr(X, Z, cons(Y, W)), V)
+181. insertNat_case1_case1(true, X, Y, Z, snd(W), fst(W), V) -> branch(Z, Y, V, uncurry(insertNat_1(X), W))
+182. insertNat_case1(true, X, Y, snd(Z), W, fst(Z), V) -> branch(uncurry(insertNat_1(X), Z), Y, V, W)
+183. insertNat_case1(true, zero, suc(X), nil_1, nil_1, Y, Z) -> insertNat(zero, Y, insertNat(suc(X), Z, nil_1))
+184. insertNat_case1(false, suc(X), zero, nil_1, nil_1, Y, Z) -> insertNat(suc(X), Y, insertNat(zero, Z, nil_1))
+185. findNat(zero, deleteNat_case1(true, X, suc(Y), Z, W, V)) -> findNat(zero, deleteNat(X, Z))
+186. findNat(zero, deleteNat_case1(false, zero, suc(X), Y, Z, W)) -> findNat(zero, Y)
+187. deleteNat(zero, insertNat_case1_case1(true, X, zero, Y, Z, W, V)) -> join(Y, insertNat(X, W, Z))
+188. deleteNat(zero, insertNat_case1(true, X, zero, Y, Z, W, V)) -> join(insertNat(X, W, Y), Z)
+189. findNat(suc(X), deleteNat_case1_case1(true, Y, zero, Z, W, V)) -> findNat(suc(X), deleteNat(Y, W))
+190. findNat_case1(false, suc(suc(X)), suc(zero), ?, Y, Z) -> findNat(suc(suc(X)), Y)
+191. app(insertNat(X, Y, Z), foldr(insertNat_2(X, Y), W, V)) -> foldr(insertNat_2(X, Y), W, cons(Z, V))
+192. findNat(zero, insertNat_case1_case1(true, X, suc(Y), Z, W, V, U)) -> findNat(zero, Z)
+193. insertNat(zero, X, deleteNat_case1_case1(true, Y, zero, Z, W, V)) -> deleteNat_case1_case1(true, Y, zero, Z, W, X)
+194. insertNat(zero, X, deleteNat_case1(true, Y, zero, Z, W, V)) -> deleteNat_case1(true, Y, zero, Z, W, X)
+195. foldr(uncurry_1(insertNat_0), tree(X), cons(Y, cons(Z, nil))) -> tree(cons(Y, cons(Z, X)))
+196. join(branch(X, Y, Z, nil_1), branch(W, V, U, T)) -> branch(X, Y, Z, branch(W, V, U, T))
+197. join(branch(X, Y, Z, nil_1), insertNat(W, V, nil_1)) -> insertNat_case1_case1(true, W, Y, X, nil_1, V, Z)
+198. join(insertNat(X, Y, nil_1), insertNat(Z, W, nil_1)) -> insertNat_case1_case1(true, Z, X, nil_1, nil_1, W, Y)
+199. join(insertNat(X, Y, nil_1), branch(Z, W, V, U)) -> branch(nil_1, X, Y, branch(Z, W, V, U))
+200. foldr(X, snd(Y), cons(Z, cons(fst(Y), nil))) = uncurry(X, pair(Z, uncurry(X, Y)))
+201. deleteNat_case1_case1(true, zero, X, Y, insertNat(zero, Z, nil_1), W) -> branch(Y, X, W, nil_1)
+202. deleteNat_case1(true, zero, X, insertNat(zero, Y, nil_1), Z, W) -> branch(nil_1, X, W, Z)
+203. findNat(suc(X), insertNat_case1(true, Y, zero, Z, W, V, U)) -> findNat(suc(X), W)
+204. prop_FindDelete_case1(zero, suc(?), cons(pair(X, Y), nil)) -> findNat(zero, insertNat(X, Y, nil_1))
+205. insertNat_case1_case1(true, fst(X), Y, Z, W, snd(X), V) -> branch(Z, Y, V, app(uncurry(insertNat_0, X), W))
+206. insertNat_case1(true, fst(X), Y, Z, W, snd(X), V) -> branch(app(uncurry(insertNat_0, X), Z), Y, V, W)
+207. prop_FindDelete_case1(suc(X), zero, cons(pair(Y, Z), nil)) -> findNat(suc(X), insertNat(Y, Z, nil_1))
+208. findNat(zero, insertNat_case1(false, suc(X), zero, Y, Z, W, V)) -> just(V)
+209. findNat(zero, insertNat(suc(X), Y, insertNat(zero, Z, nil_1))) -> just(Z)
+210. app(uncurry(insertNat_0, X), insertNat(Y, Z, tree(W))) -> tree(cons(X, cons(pair(Y, Z), W)))
+211. join(deleteNat_case1(false, zero, suc(X), Y, Z, W), nil_1) -> deleteNat_case1(false, zero, suc(X), Y, Z, W)
+212. insertNat_case1_case1(true, X, Y, insertNat(Z, W, V), U, T, S) -> insertNat_case1(true, Z, Y, V, insertNat(X, T, U), W, S)
+213. app(uncurry(X, Y), foldr(app(X, fst(Y)), Z, W)) -> foldr(app(X, fst(Y)), Z, cons(snd(Y), W))
+214. app(uncurry(insertNat_0, X), foldr(insertNat_1(fst(X)), Y, Z)) -> foldr(insertNat_1(fst(X)), Y, cons(snd(X), Z))
+215. findNat(zero, insertNat_case1(true, X, suc(Y), Z, W, V, U)) -> findNat(zero, insertNat(X, V, Z))
+216. findNat(zero, insertNat(zero, X, insertNat(suc(Y), Z, nil_1))) -> just(X)
+217. deleteNat_case1_case1(ltNat(X, Y), suc(X), suc(Y), Z, W, V) -> deleteNat_case1(false, suc(X), suc(Y), Z, W, V)
+218. deleteNat_case1(false, suc(zero), suc(zero), X, Y, Z) -> join(X, Y)
+219. deleteNat_case1(false, suc(suc(X)), suc(zero), Y, Z, W) -> join(Y, Z)
+220. findNat_case1(ltNat(X, Y), suc(X), suc(Y), Z, W, V) -> findNat(suc(X), branch(Z, suc(Y), V, W))
+221. findNat(suc(zero), branch(X, suc(zero), Y, Z)) -> just(Y)
+222. findNat(suc(zero), insertNat(suc(zero), X, nil_1)) -> just(X)
+223. findNat(suc(zero), branch(X, suc(suc(Y)), Z, W)) -> findNat(suc(zero), X)
+224. findNat(suc(zero), insertNat(suc(suc(X)), Y, nil_1)) -> nothing
+225. findNat(suc(zero), deleteNat_case1_case1(true, X, suc(zero), Y, Z, W)) -> just(W)
+226. findNat(suc(zero), deleteNat_case1(true, X, suc(zero), Y, Z, W)) -> just(W)
+227. findNat(suc(suc(X)), branch(Y, suc(zero), Z, W)) -> findNat(suc(suc(X)), W)
+228. findNat(suc(suc(X)), insertNat(suc(zero), Y, nil_1)) -> nothing
+229. findNat(suc(zero), deleteNat_case1(false, zero, suc(zero), X, Y, Z)) -> just(Z)
+230. findNat(suc(zero), insertNat_case1_case1(true, X, suc(zero), Y, Z, W, V)) -> just(V)
+231. findNat(suc(zero), insertNat_case1(true, X, suc(zero), Y, Z, W, V)) -> just(V)
+232. findNat(suc(zero), insertNat(zero, X, insertNat(suc(zero), Y, nil_1))) -> just(Y)
+233. deleteNat_case1(gtNat(X, Y), suc(X), suc(Y), Z, W, V) -> deleteNat(suc(X), branch(Z, suc(Y), V, W))
+234. deleteNat(suc(zero), branch(X, suc(zero), Y, Z)) -> join(X, Z)
+235. deleteNat(suc(zero), insertNat(suc(zero), X, nil_1)) -> nil_1
+236. deleteNat(suc(zero), deleteNat_case1_case1(true, X, suc(zero), Y, Z, W)) -> join(Y, deleteNat(X, Z))
+237. deleteNat(suc(zero), deleteNat_case1(true, X, suc(zero), Y, Z, W)) -> join(deleteNat(X, Y), Z)
+238. deleteNat(zero, deleteNat_case1_case1(true, X, suc(Y), Z, W, V)) -> deleteNat_case1(false, zero, suc(Y), Z, deleteNat(X, W), V)
+239. deleteNat(zero, deleteNat_case1(true, X, suc(Y), Z, W, V)) -> deleteNat_case1(false, zero, suc(Y), deleteNat(X, Z), W, V)
+240. deleteNat(suc(X), deleteNat_case1_case1(true, Y, zero, Z, W, V)) -> deleteNat_case1(true, suc(X), zero, Z, deleteNat(Y, W), V)
+241. deleteNat(suc(X), deleteNat_case1(true, Y, zero, Z, W, V)) -> deleteNat_case1(true, suc(X), zero, deleteNat(Y, Z), W, V)
+242. deleteNat_case1(false, zero, suc(X), deleteNat(Y, Z), W, V) -> deleteNat_case1(true, Y, suc(X), Z, deleteNat(zero, W), V)
+243. prop_FindDelete_case1_case1(eqNat(X, Y), suc(suc(suc(X))), Z) -> prop_FindDelete_case1(suc(suc(suc(X))), suc(suc(suc(Y))), Z)
+244. prop_FindDelete_case1(suc(suc(suc(zero))), suc(suc(suc(zero))), X) -> nothing
+245. prop_FindDelete(suc(suc(suc(zero))), suc(suc(suc(zero))), nil) -> true
+246. deleteNat_case1_case1(true, zero, X, Y, branch(Z, zero, W, V), U) -> branch(Y, X, U, join(Z, V))
+247. deleteNat_case1(true, zero, X, branch(Y, zero, Z, W), V, U) -> branch(join(Y, W), X, U, V)
+248. uncurry(uncurry(X, Y), pair(foldr(uncurry_1(X), Z, W), V)) -> app(foldr(uncurry_1(X), Z, cons(Y, W)), V)
+249. prop_FindDelete_case1(zero, suc(?), cons(pair(X, Y), Z)) -> findNat(zero, insertNat(X, Y, tree(Z)))
+250. findNat(suc(X), insertNat_case1_case1(true, Y, zero, Z, W, V, U)) -> findNat(suc(X), insertNat(Y, V, W))
+251. join(branch(X, Y, Z, nil_1), tree(cons(W, nil))) -> branch(X, Y, Z, tree(cons(W, nil)))
+252. join(insertNat(X, Y, nil_1), tree(cons(Z, nil))) -> branch(nil_1, X, Y, tree(cons(Z, nil)))
+253. deleteNat(suc(zero), deleteNat_case1(false, zero, suc(zero), X, Y, Z)) -> join(X, deleteNat(zero, Y))
+254. deleteNat_case1_case1(true, suc(zero), suc(suc(X)), Y, Z, W) -> deleteNat_case1(false, suc(zero), suc(suc(X)), Y, Z, W)
+255. deleteNat_case1(false, suc(zero), suc(suc(X)), Y, nil_1, Z) -> branch(Y, suc(suc(X)), Z, nil_1)
+256. deleteNat(suc(zero), branch(X, suc(suc(Y)), Z, W)) -> deleteNat_case1(false, suc(zero), suc(suc(Y)), X, W, Z)
+257. deleteNat(suc(zero), insertNat(suc(suc(X)), Y, nil_1)) -> insertNat(suc(suc(X)), Y, nil_1)
+258. deleteNat(suc(suc(X)), branch(Y, suc(zero), Z, W)) -> deleteNat_case1(true, suc(suc(X)), suc(zero), Y, W, Z)
+259. deleteNat(suc(suc(X)), insertNat(suc(zero), Y, nil_1)) -> insertNat(suc(zero), Y, nil_1)
+260. prop_FindDelete_case1(suc(X), zero, cons(pair(Y, Z), W)) -> findNat(suc(X), insertNat(Y, Z, tree(W)))
+261. app(insertNat(X, Y, Z), app(insertNat(X, Y, W), V)) -> foldr(insertNat_2(X, Y), V, cons(Z, cons(W, nil)))
+262. eqMaybeNat(findNat(suc(suc(zero)), deleteNat(suc(suc(zero)), tree(X))), nothing) -> prop_FindDelete(suc(suc(zero)), suc(suc(zero)), X)
+263. foldr(uncurry_1(X), Y, cons(pair(fst(Z), snd(Z)), W)) -> foldr(uncurry_1(X), Y, cons(Z, W))
+264. uncurry(uncurry(X, pair(Y, fst(Z))), pair(snd(Z), W)) -> app(uncurry(app(X, Y), Z), W)
+265. app(tree(cons(X, Y)), foldr(uncurry(insertNat_0, X), Z, W)) -> foldr(uncurry(insertNat_0, X), Z, cons(tree(Y), W))
+266. insertNat(zero, X, insertNat_case1_case1(true, Y, zero, Z, W, V, U)) -> insertNat_case1_case1(true, Y, zero, Z, W, V, X)
+267. insertNat(zero, X, insertNat_case1(true, Y, zero, Z, W, V, U)) -> insertNat_case1(true, Y, zero, Z, W, V, X)
+268. join(insertNat(zero, X, insertNat(suc(Y), Z, nil_1)), nil_1) -> insertNat(zero, X, insertNat(suc(Y), Z, nil_1))
+269. foldr(X, foldr(X, Y, Z), cons(W, cons(V, nil))) -> foldr(X, Y, cons(W, cons(V, Z)))
+270. tree(cons(X, cons(pair(fst(Y), snd(Y)), nil))) -> tree(cons(X, cons(Y, nil)))
+271. foldr(insertNat_1(X), snd(Y), cons(Z, cons(fst(Y), nil))) = insertNat(X, Z, uncurry(insertNat_1(X), Y))
+272. insertNat_case1_case1(true, X, fst(Y), nil_1, nil_1, Z, snd(Y)) -> join(tree(cons(Y, nil)), insertNat(X, Z, nil_1))
+273. eqMaybeNat(findNat(zero, deleteNat(zero, insertNat(X, Y, nil_1))), nothing) -> prop_FindDelete(zero, zero, cons(pair(X, Y), nil))
+274. prop_FindDelete(zero, zero, cons(pair(zero, X), nil)) -> true
+275. prop_FindDelete(zero, zero, cons(pair(suc(X), Y), nil)) -> true
+276. deleteNat(suc(zero), insertNat_case1_case1(true, X, suc(zero), Y, Z, W, V)) -> join(Y, insertNat(X, W, Z))
+277. deleteNat(suc(zero), insertNat_case1(true, X, suc(zero), Y, Z, W, V)) -> join(insertNat(X, W, Y), Z)
+278. deleteNat(suc(zero), insertNat(zero, X, insertNat(suc(zero), Y, nil_1))) -> insertNat(zero, X, nil_1)
+279. prop_FindDelete(zero, zero, cons(pair(fst(X), snd(X)), nil)) -> prop_FindDelete(zero, zero, cons(X, nil))
+280. uncurry(app(X, Y), pair(Z, foldr(uncurry_1(X), W, V))) -> foldr(uncurry_1(X), W, cons(pair(Y, Z), V))
+281. app(tree(cons(X, cons(pair(Y, Z), nil))), W) -> uncurry(uncurry(insertNat_0, X), pair(insertNat(Y, Z, nil_1), W))
+282. deleteNat(zero, deleteNat_case1(false, zero, suc(X), Y, Z, W)) -> deleteNat_case1(false, zero, suc(X), Y, deleteNat(zero, Z), W)
+283. foldr(uncurry_1(insertNat_0), X, cons(Y, cons(pair(Z, W), nil))) -> app(uncurry(insertNat_0, Y), insertNat(Z, W, X))
+284. tree(cons(X, cons(pair(fst(Y), snd(Y)), Z))) -> tree(cons(X, cons(Y, Z)))
+285. join(insertNat_case1(false, suc(X), zero, Y, Z, W, V), nil_1) -> insertNat_case1(false, suc(X), zero, Y, Z, W, V)
+286. join(insertNat(suc(X), Y, insertNat(zero, Z, nil_1)), nil_1) -> insertNat(suc(X), Y, insertNat(zero, Z, nil_1))
+287. insertNat_case1(false, suc(X), zero, Y, snd(Z), fst(Z), W) -> branch(Y, zero, W, uncurry(insertNat_1(suc(X)), Z))
+288. deleteNat(zero, insertNat_case1(false, suc(X), zero, Y, Z, W, V)) -> join(Y, insertNat(suc(X), W, Z))
+289. deleteNat(zero, insertNat(suc(X), Y, insertNat(zero, Z, nil_1))) -> insertNat(suc(X), Y, nil_1)
+290. findNat(zero, join(branch(X, zero, Y, Z), branch(W, V, U, T))) -> just(Y)
+291. findNat(zero, join(branch(X, zero, Y, Z), insertNat(W, V, nil_1))) -> just(Y)
+292. app(insertNat(X, Y, Z), foldr(uncurry_1(insertNat_1(X)), W, V)) -> foldr(uncurry_1(insertNat_1(X)), W, cons(pair(Y, Z), V))
+293. uncurry(app(X, Y), pair(uncurry(X, pair(Z, W)), V)) -> app(foldr(X, W, cons(Y, cons(Z, nil))), V)
+294. branch(nil_1, fst(X), snd(X), branch(Y, Z, W, V)) -> join(tree(cons(X, nil)), branch(Y, Z, W, V))
+295. findNat_case1_case1(gtNat(X, Y), suc(suc(X)), Z, W) -> findNat_case1(false, suc(suc(X)), suc(suc(Y)), ?, Z, W)
+296. findNat_case1(false, suc(suc(zero)), suc(suc(zero)), ?, X, Y) -> just(Y)
+297. app(tree(cons(X, Y)), foldr(uncurry_1(uncurry_1(insertNat_0)), Z, W)) -> foldr(uncurry_1(uncurry_1(insertNat_0)), Z, cons(pair(X, tree(Y)), W))
+298. findNat_case1(false, suc(suc(zero)), suc(suc(suc(X))), ?, Y, Z) -> just(Z)
+299. foldr(insertNat_1(X), Y, cons(Z, cons(W, cons(V, nil)))) = insertNat(X, Z, insertNat(X, W, insertNat(X, V, Y)))
+300. foldr(insertNat_1(fst(X)), Y, cons(snd(X), cons(Z, nil))) -> app(uncurry(insertNat_0, X), insertNat(fst(X), Z, Y))
+301. foldr(insertNat_1(fst(X)), Y, cons(Z, cons(snd(X), nil))) -> insertNat(fst(X), Z, app(uncurry(insertNat_0, X), Y))
+302. deleteNat_case1_case1(true, suc(zero), X, Y, insertNat(suc(zero), Z, nil_1), W) -> branch(Y, X, W, nil_1)
+303. deleteNat_case1(true, suc(zero), X, insertNat(suc(zero), Y, nil_1), Z, W) -> branch(nil_1, X, W, Z)
+304. findNat(zero, deleteNat_case1(false, suc(zero), suc(suc(X)), Y, Z, W)) -> findNat(zero, Y)
+305. insertNat_case1(ltNat(X, Y), suc(X), suc(Y), Z, W, V, U) -> insertNat(suc(X), V, branch(Z, suc(Y), U, W))
+306. insertNat(suc(zero), X, branch(Y, suc(zero), Z, W)) -> insertNat_case1(false, suc(zero), suc(zero), Y, W, X, Z)
+307. insertNat_case1(false, suc(zero), suc(zero), nil_1, nil_1, X, Y) -> insertNat(suc(zero), X, insertNat(suc(zero), Y, nil_1))
+308. insertNat_case1_case1(gtNat(X, Y), suc(X), suc(Y), Z, W, V, U) -> insertNat_case1(false, suc(X), suc(Y), Z, W, V, U)
+309. insertNat_case1(false, suc(zero), suc(zero), X, Y, Z, W) -> branch(X, suc(zero), Z, Y)
+310. insertNat(suc(zero), X, insertNat(suc(zero), Y, nil_1)) -> insertNat(suc(zero), X, nil_1)
+311. insertNat_case1(false, suc(zero), suc(suc(X)), Y, Z, W, V) -> branch(Y, suc(suc(X)), W, Z)
+312. insertNat_case1_case1(true, zero, X, Y, insertNat(zero, Z, nil_1), W, V) -> insertNat_case1_case1(true, zero, X, Y, nil_1, W, V)
+313. insertNat_case1(true, zero, X, insertNat(zero, Y, nil_1), Z, W, V) -> insertNat_case1(true, zero, X, nil_1, Z, W, V)
+314. deleteNat_case1(true, suc(X), Y, insertNat(zero, Z, nil_1), W, V) -> insertNat_case1(true, zero, Y, nil_1, W, Z, V)
+315. deleteNat_case1_case1(true, suc(X), Y, Z, insertNat(zero, W, nil_1), V) -> insertNat_case1_case1(true, zero, Y, Z, nil_1, W, V)
+316. deleteNat(zero, insertNat_case1_case1(true, X, suc(Y), Z, W, V, U)) -> deleteNat_case1(false, zero, suc(Y), Z, insertNat(X, V, W), U)
+317. deleteNat(zero, insertNat_case1(true, X, suc(Y), Z, W, V, U)) -> deleteNat_case1(false, zero, suc(Y), insertNat(X, V, Z), W, U)
+318. deleteNat(zero, insertNat(zero, X, insertNat(suc(Y), Z, nil_1))) -> insertNat(zero, X, insertNat(suc(Y), Z, nil_1))
+319. deleteNat(suc(X), insertNat_case1_case1(true, Y, zero, Z, W, V, U)) -> insertNat_case1_case1(true, Y, zero, deleteNat(suc(X), Z), W, V, U)
+320. deleteNat(suc(X), insertNat_case1(true, Y, zero, Z, W, V, U)) -> deleteNat_case1(true, suc(X), zero, insertNat(Y, V, Z), W, U)
+321. insertNat(zero, X, deleteNat_case1_case1(true, Y, suc(Z), W, V, U)) -> insertNat_case1(true, zero, suc(Z), W, deleteNat(Y, V), X, U)
+322. insertNat(zero, X, deleteNat_case1(true, Y, suc(Z), W, V, U)) -> insertNat_case1(true, zero, suc(Z), deleteNat(Y, W), V, X, U)
+323. insertNat(suc(X), Y, deleteNat_case1_case1(true, Z, zero, W, V, U)) -> insertNat_case1(false, suc(X), zero, W, deleteNat(Z, V), Y, U)
+324. insertNat(suc(X), Y, deleteNat_case1(true, Z, zero, W, V, U)) -> insertNat_case1(false, suc(X), zero, deleteNat(Z, W), V, Y, U)
+325. deleteNat_case1(false, zero, suc(X), insertNat(Y, Z, W), V, U) -> insertNat_case1(true, Y, suc(X), W, deleteNat(zero, V), Z, U)
+326. findNat(suc(zero), deleteNat_case1_case1(true, X, suc(suc(Y)), Z, W, V)) -> findNat(suc(zero), Z)
+327. branch(nil_1, fst(X), snd(X), tree(cons(Y, nil))) -> join(tree(cons(X, nil)), tree(cons(Y, nil)))
+328. app(uncurry(X, Y), uncurry(uncurry_1(X), Z)) = foldr(uncurry_1(X), snd(Z), cons(Y, cons(fst(Z), nil)))
+329. uncurry(uncurry(X, Y), pair(app(uncurry(X, Z), W), V)) = app(foldr(uncurry_1(X), W, cons(Y, cons(Z, nil))), V)
+330. uncurry(app(X, Y), pair(Z, app(uncurry(X, W), V))) = foldr(uncurry_1(X), V, cons(pair(Y, Z), cons(W, nil)))
+331. app(uncurry(X, Y), uncurry(app(X, Z), pair(W, V))) -> foldr(uncurry_1(X), V, cons(Y, cons(pair(Z, W), nil)))
+332. foldr(insertNat_2(zero, X), Y, cons(insertNat(zero, Z, nil_1), W)) -> foldr(insertNat_2(zero, X), Y, cons(nil_1, W))
+333. deleteNat_case1(false, zero, suc(X), Y, insertNat(zero, Z, nil_1), W) -> branch(Y, suc(X), W, nil_1)
+334. insertNat_case1_case1(true, X, Y, Z, foldr(insertNat_1(X), W, V), U, T) -> branch(Z, Y, T, foldr(insertNat_1(X), W, cons(U, V)))
+335. insertNat_case1(true, X, Y, foldr(insertNat_1(X), Z, W), V, U, T) -> branch(foldr(insertNat_1(X), Z, cons(U, W)), Y, T, V)
+336. deleteNat_case1(true, zero, X, insertNat(suc(Y), Z, nil_1), W, V) -> insertNat_case1(true, suc(Y), X, nil_1, W, Z, V)
+337. insertNat(suc(zero), X, branch(Y, suc(suc(Z)), W, V)) -> insertNat_case1(true, suc(zero), suc(suc(Z)), Y, V, X, W)
+338. insertNat(suc(suc(X)), Y, branch(Z, suc(zero), W, V)) -> insertNat_case1(false, suc(suc(X)), suc(zero), Z, V, Y, W)
+339. insertNat_case1_case1(true, suc(suc(X)), suc(zero), Y, Z, W, V) -> insertNat_case1(false, suc(suc(X)), suc(zero), Y, Z, W, V)
+340. deleteNat_case1_case1(true, zero, X, Y, insertNat(suc(Z), W, nil_1), V) -> insertNat_case1_case1(true, suc(Z), X, Y, nil_1, W, V)
+341. findNat(zero, join(branch(X, zero, Y, Z), tree(cons(W, nil)))) -> just(Y)
+342. prop_FindDelete_case1(suc(suc(suc(zero))), suc(suc(suc(suc(X)))), Y) -> prop_FindDelete_case1(suc(suc(suc(zero))), zero, Y)
+343. prop_FindDelete(suc(suc(suc(zero))), suc(suc(suc(suc(X)))), nil) -> true
+344. app(uncurry(uncurry_1(X), Y), foldr(uncurry(X, fst(Y)), Z, W)) -> foldr(uncurry(X, fst(Y)), Z, cons(snd(Y), W))
+345. app(uncurry(insertNat_1(X), Y), foldr(insertNat_2(X, fst(Y)), Z, W)) -> foldr(insertNat_2(X, fst(Y)), Z, cons(snd(Y), W))
+346. findNat(suc(suc(X)), deleteNat_case1(true, Y, suc(zero), Z, W, V)) -> findNat(suc(suc(X)), W)
+347. insertNat_case1_case1(true, zero, X, Y, branch(Z, zero, W, V), U, T) -> branch(Y, X, T, branch(Z, zero, U, V))
+348. insertNat_case1(true, zero, X, branch(Y, zero, Z, W), V, U, T) -> branch(branch(Y, zero, U, W), X, T, V)
+349. prop_FindDelete_case1(suc(suc(suc(suc(X)))), suc(suc(suc(zero))), Y) -> prop_FindDelete_case1(suc(suc(suc(suc(X)))), zero, Y)
+350. prop_FindDelete(suc(suc(suc(suc(X)))), suc(suc(suc(zero))), nil) -> true
+351. deleteNat_case1_case1(true, suc(zero), X, Y, branch(Z, suc(zero), W, V), U) -> branch(Y, X, U, join(Z, V))
+352. deleteNat_case1(true, suc(zero), X, branch(Y, suc(zero), Z, W), V, U) -> branch(join(Y, W), X, U, V)
+353. findNat(suc(zero), deleteNat_case1(true, X, suc(suc(Y)), Z, W, V)) -> findNat(suc(zero), deleteNat(X, Z))
+354. eqMaybeNat(findNat(zero, deleteNat(suc(X), tree(Y))), prop_FindDelete_case1(zero, suc(?), Y)) -> prop_FindDelete(zero, suc(X), Y)
+355. join(join(branch(X, Y, Z, W), branch(V, U, T, S)), nil_1) -> join(branch(X, Y, Z, W), branch(V, U, T, S))
+356. join(join(branch(X, Y, Z, W), insertNat(V, U, nil_1)), nil_1) -> join(branch(X, Y, Z, W), insertNat(V, U, nil_1))
+357. app(foldr(X, Y, cons(Z, W)), foldr(app(X, Z), V, U)) -> foldr(app(X, Z), V, cons(foldr(X, Y, W), U))
+358. insertNat(suc(zero), X, deleteNat_case1_case1(true, Y, suc(zero), Z, W, V)) -> deleteNat_case1_case1(true, Y, suc(zero), Z, W, X)
+359. insertNat(suc(zero), X, deleteNat_case1(false, zero, suc(zero), Y, Z, W)) -> deleteNat_case1(false, zero, suc(zero), Y, Z, X)
+360. insertNat(suc(zero), X, deleteNat_case1(true, Y, suc(zero), Z, W, V)) -> deleteNat_case1(true, Y, suc(zero), Z, W, X)
+361. insertNat(zero, X, deleteNat_case1(false, zero, suc(Y), Z, W, V)) -> insertNat_case1(true, zero, suc(Y), Z, deleteNat(zero, W), X, V)
+362. findNat(suc(zero), deleteNat_case1(false, zero, suc(suc(X)), Y, Z, W)) -> findNat(suc(zero), Y)
+363. findNat(suc(zero), deleteNat_case1(false, suc(zero), suc(suc(X)), Y, Z, W)) -> findNat(suc(zero), Y)
+364. eqMaybeNat(findNat(suc(zero), deleteNat(suc(zero), insertNat(X, Y, nil_1))), nothing) -> prop_FindDelete(suc(zero), suc(zero), cons(pair(X, Y), nil))
+365. prop_FindDelete(suc(zero), suc(zero), cons(pair(zero, X), nil)) -> true
+366. prop_FindDelete(suc(zero), suc(zero), cons(pair(suc(zero), X), nil)) -> true
+367. prop_FindDelete(suc(zero), suc(zero), cons(pair(suc(suc(X)), Y), nil)) -> true
+368. findNat(suc(suc(X)), deleteNat_case1_case1(true, Y, suc(zero), Z, W, V)) -> findNat(suc(suc(X)), deleteNat(Y, W))
+369. join(deleteNat_case1(true, X, Y, Z, nil_1, W), insertNat(V, U, nil_1)) -> insertNat_case1_case1(true, V, Y, deleteNat(X, Z), nil_1, U, W)
+370. prop_FindDelete(suc(zero), suc(zero), cons(pair(fst(X), snd(X)), nil)) -> prop_FindDelete(suc(zero), suc(zero), cons(X, nil))
+371. uncurry(uncurry(X, Y), pair(Z, foldr(uncurry_1(uncurry_1(X)), W, V))) -> foldr(uncurry_1(uncurry_1(X)), W, cons(pair(Y, Z), V))
+372. deleteNat_case1(false, zero, suc(X), Y, branch(Z, zero, W, V), U) -> branch(Y, suc(X), U, join(Z, V))
+373. eqMaybeNat(findNat(zero, deleteNat(zero, insertNat(X, Y, tree(Z)))), nothing) -> prop_FindDelete(zero, zero, cons(pair(X, Y), Z))
+374. prop_FindDelete(zero, zero, cons(pair(fst(X), snd(X)), Y)) -> prop_FindDelete(zero, zero, cons(X, Y))
+375. foldr(X, uncurry(X, pair(Y, Z)), cons(W, cons(V, nil))) -> foldr(X, Z, cons(W, cons(V, cons(Y, nil))))
+376. insertNat_case1(true, suc(zero), suc(suc(X)), nil_1, nil_1, Y, Z) -> insertNat(suc(zero), Y, insertNat(suc(suc(X)), Z, nil_1))
+377. findNat(zero, insertNat(suc(zero), X, insertNat(suc(suc(Y)), Z, nil_1))) -> nothing
+378. insertNat_case1(false, suc(suc(X)), suc(zero), nil_1, nil_1, Y, Z) -> insertNat(suc(suc(X)), Y, insertNat(suc(zero), Z, nil_1))
+379. join(insertNat(X, Y, nil_1), deleteNat_case1_case1(true, Z, W, V, U, T)) -> branch(nil_1, X, Y, deleteNat_case1_case1(true, Z, W, V, U, T))
+380. join(insertNat(X, Y, nil_1), deleteNat_case1(true, Z, W, V, U, T)) -> branch(nil_1, X, Y, deleteNat_case1(true, Z, W, V, U, T))
+381. findNat(suc(X), insertNat_case1(false, suc(Y), zero, Z, W, V, U)) -> findNat(suc(X), insertNat(suc(Y), V, W))
+382. findNat(suc(X), insertNat(suc(Y), Z, insertNat(zero, W, nil_1))) -> findNat(suc(X), insertNat(suc(Y), Z, nil_1))
+383. findNat(zero, insertNat_case1(false, suc(suc(X)), suc(zero), Y, Z, W, V)) -> findNat(zero, Y)
+384. findNat(zero, insertNat(suc(suc(X)), Y, insertNat(suc(zero), Z, nil_1))) -> nothing
+385. findNat_case1(false, suc(suc(suc(X))), suc(suc(zero)), ?, Y, Z) -> findNat(suc(suc(suc(X))), Y)
+386. findNat(zero, join(branch(X, suc(Y), Z, W), branch(V, U, T, S))) -> findNat(zero, X)
+387. findNat(zero, join(branch(X, suc(Y), Z, W), insertNat(V, U, nil_1))) -> findNat(zero, X)
+388. foldr(app(X, fst(Y)), Z, cons(snd(Y), cons(W, nil))) -> foldr(uncurry_1(X), Z, cons(Y, cons(pair(fst(Y), W), nil)))
+389. eqMaybeNat(findNat(suc(suc(suc(zero))), deleteNat(suc(suc(suc(zero))), tree(X))), nothing) -> prop_FindDelete(suc(suc(suc(zero))), suc(suc(suc(zero))), X)
+390. uncurry(uncurry(insertNat_0, X), pair(insertNat(Y, Z, tree(W)), V)) -> app(tree(cons(X, cons(pair(Y, Z), W))), V)
+391. findNat(suc(zero), insertNat_case1_case1(true, X, suc(suc(Y)), Z, W, V, U)) -> findNat(suc(zero), Z)
+392. join(join(branch(X, Y, Z, W), tree(cons(V, nil))), nil_1) -> join(branch(X, Y, Z, W), tree(cons(V, nil)))
+393. branch(X, Y, Z, deleteNat_case1_case1(true, W, V, join(U, T), S, X2)) -> join(branch(X, Y, Z, U), deleteNat_case1_case1(true, W, V, T, S, X2))
+394. join(deleteNat_case1(true, X, Y, Z, W, V), branch(U, T, S, X2)) -> deleteNat_case1(true, X, Y, Z, branch(join(W, U), T, S, X2), V)
+395. uncurry(insertNat(X, Y, Z), pair(foldr(insertNat_2(X, Y), W, V), U)) -> app(foldr(insertNat_2(X, Y), W, cons(Z, V)), U)
+396. findNat(suc(zero), insertNat_case1(true, zero, suc(suc(X)), nil_1, Y, Z, W)) -> nothing
+397. findNat(suc(zero), insertNat(zero, X, insertNat(suc(suc(Y)), Z, nil_1))) -> nothing
+398. findNat(suc(suc(X)), insertNat_case1_case1(true, zero, suc(zero), Y, nil_1, Z, W)) -> nothing
+399. insertNat(zero, X, insertNat_case1(false, suc(Y), zero, Z, W, V, U)) -> insertNat_case1(false, suc(Y), zero, Z, W, V, X)
+400. insertNat(zero, X, insertNat(suc(Y), Z, insertNat(zero, W, nil_1))) -> insertNat(suc(Y), Z, insertNat(zero, X, nil_1))
+401. foldr(insertNat_1(X), insertNat(X, Y, Z), cons(W, cons(V, nil))) -> foldr(insertNat_1(X), Z, cons(W, cons(V, cons(Y, nil))))
+402. join(join(tree(cons(X, nil)), insertNat(Y, Z, nil_1)), nil_1) -> join(tree(cons(X, nil)), insertNat(Y, Z, nil_1))
+403. branch(X, Y, Z, deleteNat_case1(false, zero, suc(W), V, U, T)) -> deleteNat_case1_case1(true, zero, Y, X, branch(V, suc(W), T, U), Z)
+404. branch(deleteNat_case1(false, zero, suc(X), Y, Z, W), V, U, T) -> deleteNat_case1(true, zero, V, branch(Y, suc(X), W, Z), T, U)
+405. branch(X, Y, Z, deleteNat_case1(true, suc(W), zero, V, U, T)) -> deleteNat_case1_case1(true, suc(W), Y, X, branch(V, zero, T, U), Z)
+406. deleteNat_case1_case1(true, suc(X), Y, Z, branch(nil_1, zero, W, V), U) -> branch(Z, Y, U, branch(nil_1, zero, W, V))
+407. branch(deleteNat_case1(true, suc(X), zero, Y, Z, W), V, U, T) -> deleteNat_case1(true, suc(X), V, branch(Y, zero, W, Z), T, U)
+408. deleteNat_case1(true, suc(X), Y, branch(nil_1, zero, Z, W), V, U) -> branch(branch(nil_1, zero, Z, W), Y, U, V)
+409. app(foldr(X, Y, cons(Z, W)), foldr(uncurry_1(X), V, U)) -> foldr(uncurry_1(X), V, cons(pair(Z, foldr(X, Y, W)), U))
+410. insertNat(zero, X, insertNat_case1_case1(true, Y, suc(Z), W, V, U, T)) -> insertNat_case1(true, zero, suc(Z), W, insertNat(Y, U, V), X, T)
+411. insertNat(zero, X, insertNat_case1(true, Y, suc(Z), W, V, U, T)) -> insertNat_case1(true, zero, suc(Z), insertNat(Y, U, W), V, X, T)
+412. insertNat(zero, X, insertNat(zero, Y, insertNat(suc(Z), W, nil_1))) -> insertNat(zero, X, insertNat(suc(Z), W, nil_1))
+413. insertNat(suc(X), Y, insertNat_case1_case1(true, Z, zero, W, V, U, T)) -> insertNat_case1(false, suc(X), zero, W, insertNat(Z, U, V), Y, T)
+414. insertNat(suc(X), Y, insertNat_case1(true, Z, zero, W, V, U, T)) -> insertNat_case1(false, suc(X), zero, insertNat(Z, U, W), V, Y, T)
+415. insertNat_case1(false, suc(X), zero, insertNat(Y, Z, W), V, U, T) -> insertNat_case1(true, Y, zero, W, insertNat(suc(X), U, V), Z, T)
+416. findNat(suc(zero), insertNat_case1(false, suc(suc(X)), suc(zero), Y, Z, W, V)) -> just(V)
+417. findNat(suc(zero), insertNat(suc(suc(X)), Y, insertNat(suc(zero), Z, nil_1))) -> just(Z)
+418. foldr(uncurry_1(insertNat_0), tree(X), cons(Y, cons(Z, cons(W, nil)))) -> tree(cons(Y, cons(Z, cons(W, X))))
+419. findNat(suc(suc(X)), insertNat_case1(true, Y, suc(zero), Z, W, V, U)) -> findNat(suc(suc(X)), W)
+420. findNat(suc(suc(X)), insertNat(zero, Y, insertNat(suc(zero), Z, nil_1))) -> nothing
+421. foldr(uncurry_1(insertNat_1(X)), Y, cons(Z, cons(pair(W, V), nil))) = app(uncurry(insertNat_1(X), Z), app(insertNat(X, W, V), Y))
+422. join(branch(X, Y, Z, nil_1), deleteNat_case1_case1(true, W, V, U, T, S)) -> branch(X, Y, Z, deleteNat_case1_case1(true, W, V, U, T, S))
+423. join(branch(X, Y, Z, nil_1), deleteNat_case1(true, W, V, U, T, S)) -> branch(X, Y, Z, deleteNat_case1(true, W, V, U, T, S))
+424. foldr(uncurry_1(insertNat_1(X)), Y, cons(pair(Z, W), cons(V, nil))) = app(insertNat(X, Z, W), app(uncurry(insertNat_1(X), V), Y))
+425. uncurry(app(X, Y), pair(uncurry(X, Z), W)) = app(foldr(X, snd(Z), cons(Y, cons(fst(Z), nil))), W)
+426. uncurry(uncurry(insertNat_0, X), pair(foldr(insertNat_1(fst(X)), Y, Z), W)) -> app(foldr(insertNat_1(fst(X)), Y, cons(snd(X), Z)), W)
+427. app(tree(cons(X, Y)), uncurry(uncurry(insertNat_0, X), pair(Z, W))) -> foldr(uncurry(insertNat_0, X), W, cons(tree(Y), cons(Z, nil)))
+428. app(tree(cons(X, Y)), app(tree(cons(X, nil)), Z)) -> foldr(uncurry(insertNat_0, X), Z, cons(tree(Y), cons(nil_1, nil)))
+429. app(branch(X, zero, Y, Z), foldr(insertNat_2(zero, Y), W, V)) -> foldr(insertNat_2(zero, Y), W, cons(branch(X, zero, ?, Z), V))
+430. foldr(insertNat_2(zero, X), Y, cons(branch(Z, zero, W, V), U)) ~> foldr(insertNat_2(zero, X), Y, cons(branch(Z, zero, ?, V), U))
+431. deleteNat_case1_case1(true, zero, X, Y, branch(Z, suc(W), V, nil_1), U) -> branch(Y, X, U, branch(Z, suc(W), V, nil_1))
+432. deleteNat_case1(true, zero, X, branch(Y, suc(Z), W, nil_1), V, U) -> branch(branch(Y, suc(Z), W, nil_1), X, U, V)
+433. findNat(suc(zero), join(branch(X, suc(zero), Y, Z), branch(W, V, U, T))) -> just(Y)
+434. findNat(suc(zero), join(branch(X, suc(zero), Y, Z), insertNat(W, V, nil_1))) -> just(Y)
+435. findNat(zero, join(branch(X, suc(Y), Z, W), tree(cons(V, nil)))) -> findNat(zero, X)
+436. deleteNat(zero, join(branch(X, zero, Y, Z), branch(W, V, U, T))) -> join(X, branch(join(Z, W), V, U, T))
+437. deleteNat(zero, join(branch(X, zero, Y, Z), insertNat(W, V, nil_1))) -> join(X, branch(join(Z, nil_1), W, V, nil_1))
+438. app(uncurry(uncurry_1(X), Y), uncurry(uncurry(X, Z), pair(W, V))) -> foldr(uncurry_1(uncurry_1(X)), V, cons(Y, cons(pair(Z, W), nil)))
+439. foldr(app(X, fst(Y)), Z, cons(W, cons(snd(Y), nil))) = uncurry(app(X, fst(Y)), pair(W, app(uncurry(X, Y), Z)))
+440. foldr(uncurry_1(uncurry_1(X)), Y, cons(pair(Z, W), cons(V, nil))) = uncurry(uncurry(X, Z), pair(W, app(uncurry(uncurry_1(X), V), Y)))
+441. app(insertNat(X, Y, Z), uncurry(insertNat_2(X, Y), W)) = foldr(insertNat_2(X, Y), snd(W), cons(Z, cons(fst(W), nil)))
+442. app(uncurry(insertNat_1(X), Y), app(insertNat(X, fst(Y), Z), W)) -> foldr(insertNat_2(X, fst(Y)), W, cons(snd(Y), cons(Z, nil)))
+443. app(insertNat(X, fst(Y), Z), app(uncurry(insertNat_1(X), Y), W)) -> foldr(insertNat_2(X, fst(Y)), W, cons(Z, cons(snd(Y), nil)))
+444. join(join(tree(cons(X, nil)), branch(Y, Z, W, V)), nil_1) -> join(tree(cons(X, nil)), branch(Y, Z, W, V))
+445. findNat(suc(suc(X)), deleteNat_case1(false, zero, suc(zero), Y, Z, W)) -> findNat(suc(suc(X)), deleteNat(zero, Z))
+446. foldr(X, snd(Y), cons(Z, cons(W, cons(fst(Y), nil)))) = foldr(X, uncurry(X, Y), cons(Z, cons(W, nil)))
+447. join(deleteNat_case1(true, X, Y, Z, nil_1, W), tree(cons(V, nil))) -> deleteNat_case1(true, X, Y, Z, tree(cons(V, nil)), W)
+448. deleteNat_case1(true, X, Y, Z, branch(join(W, nil_1), V, U, nil_1), T) -> join(deleteNat_case1(true, X, Y, Z, W, T), insertNat(V, U, nil_1))
+449. findNat(zero, join(deleteNat_case1(true, X, zero, Y, Z, W), insertNat(V, U, nil_1))) -> just(W)
+450. uncurry(uncurry(X, Y), pair(foldr(app(X, fst(Y)), Z, W), V)) -> app(foldr(app(X, fst(Y)), Z, cons(snd(Y), W)), V)
+451. findNat(suc(zero), insertNat_case1(true, X, suc(suc(Y)), Z, W, V, U)) -> findNat(suc(zero), insertNat(X, V, Z))
+452. findNat(suc(zero), insertNat(suc(zero), X, insertNat(suc(suc(Y)), Z, nil_1))) -> just(X)
+453. join(deleteNat_case1(false, suc(zero), suc(suc(X)), Y, Z, W), nil_1) -> deleteNat_case1(false, suc(zero), suc(suc(X)), Y, Z, W)
+454. foldr(uncurry_1(insertNat_0), insertNat(X, Y, nil_1), cons(Z, cons(W, nil))) -> tree(cons(Z, cons(W, cons(pair(X, Y), nil))))
+455. foldr(insertNat_2(X, fst(Y)), Z, cons(snd(Y), cons(snd(Y), nil))) -> foldr(uncurry_1(insertNat_1(X)), Z, cons(Y, cons(Y, nil)))
+456. findNat(zero, join(branch(X, zero, Y, Z), deleteNat_case1_case1(true, W, V, U, T, S))) -> just(Y)
+457. uncurry(uncurry(insertNat_0, X), pair(Y, app(tree(cons(X, nil)), Z))) -> foldr(uncurry(insertNat_0, X), Z, cons(Y, cons(nil_1, nil)))
+458. tree(cons(X, cons(Y, cons(pair(fst(Z), snd(Z)), nil)))) -> tree(cons(X, cons(Y, cons(Z, nil))))
+459. app(uncurry(insertNat_0, X), insertNat(Y, Z, foldr(uncurry_1(insertNat_0), W, V))) -> foldr(uncurry_1(insertNat_0), W, cons(X, cons(pair(Y, Z), V)))
+460. foldr(uncurry_1(uncurry_1(insertNat_0)), X, cons(pair(pair(Y, Z), W), V)) -> app(insertNat(Y, Z, W), foldr(uncurry_1(uncurry_1(insertNat_0)), X, V))
+461. uncurry(uncurry(insertNat_0, X), pair(Y, app(tree(cons(X, Z)), W))) -> foldr(uncurry(insertNat_0, X), W, cons(Y, cons(tree(Z), nil)))
+462. app(tree(cons(X, nil)), app(tree(cons(X, Y)), Z)) -> foldr(uncurry(insertNat_0, X), Z, cons(nil_1, cons(tree(Y), nil)))
+463. foldr(uncurry_1(X), Y, cons(Z, cons(pair(fst(W), snd(W)), nil))) -> foldr(uncurry_1(X), Y, cons(Z, cons(W, nil)))
+464. join(join(tree(cons(X, nil)), tree(cons(Y, nil))), nil_1) -> join(tree(cons(X, nil)), tree(cons(Y, nil)))
+465. findNat(suc(zero), join(branch(X, suc(zero), Y, Z), tree(cons(W, nil)))) -> just(Y)
+466. insertNat(suc(zero), X, insertNat_case1_case1(true, Y, suc(zero), Z, W, V, U)) -> insertNat_case1_case1(true, Y, suc(zero), Z, W, V, X)
+467. insertNat(suc(zero), X, insertNat_case1(true, Y, suc(zero), Z, W, V, U)) -> insertNat_case1(true, Y, suc(zero), Z, W, V, X)
+468. insertNat(suc(zero), X, insertNat(zero, Y, insertNat(suc(zero), Z, nil_1))) -> insertNat(zero, Y, insertNat(suc(zero), X, nil_1))
+469. deleteNat(suc(X), insertNat_case1(false, suc(Y), zero, Z, W, V, U)) -> insertNat_case1(false, suc(Y), zero, deleteNat(suc(X), Z), W, V, U)
+470. deleteNat(suc(X), insertNat(suc(Y), Z, insertNat(zero, W, nil_1))) -> insertNat(suc(Y), Z, insertNat(zero, W, nil_1))
+471. prop_FindDelete_case1_case1(eqNat(X, Y), suc(suc(suc(suc(X)))), Z) -> prop_FindDelete_case1(suc(suc(suc(suc(X)))), suc(suc(suc(suc(Y)))), Z)
+472. prop_FindDelete_case1(suc(suc(suc(suc(zero)))), suc(suc(suc(suc(zero)))), X) -> nothing
+473. prop_FindDelete(suc(suc(suc(suc(zero)))), suc(suc(suc(suc(zero)))), nil) -> true
+474. insertNat_case1(true, X, Y, insertNat(X, Z, W), V, U, T) = branch(foldr(insertNat_1(X), W, cons(U, cons(Z, nil))), Y, T, V)
+475. foldr(uncurry_1(X), Y, cons(pair(Z, W), cons(pair(Z, V), nil))) -> foldr(app(X, Z), Y, cons(W, cons(V, nil)))
+476. insertNat_case1_case1(true, X, Y, Z, insertNat(X, W, V), U, T) = branch(Z, Y, T, foldr(insertNat_1(X), V, cons(U, cons(W, nil))))
+477. app(tree(cons(X, nil)), uncurry(uncurry(insertNat_0, X), Y)) = foldr(uncurry(insertNat_0, X), snd(Y), cons(nil_1, cons(fst(Y), nil)))
+478. findNat(suc(suc(X)), insertNat_case1_case1(true, Y, suc(zero), Z, W, V, U)) -> findNat(suc(suc(X)), insertNat(Y, V, W))
+479. join(insertNat_case1(true, X, Y, Z, nil_1, W, V), insertNat(U, T, nil_1)) -> insertNat_case1(true, X, Y, Z, insertNat(U, T, nil_1), W, V)
+480. foldr(uncurry(insertNat_0, X), Y, cons(tree(Z), cons(tree(W), nil))) = app(tree(cons(X, Z)), app(tree(cons(X, W)), Y))
+481. deleteNat_case1_case1(true, zero, X, Y, deleteNat_case1_case1(true, Z, zero, W, V, U), T) -> branch(Y, X, T, join(W, deleteNat(Z, V)))
+482. deleteNat_case1(true, zero, X, deleteNat_case1_case1(true, Y, zero, Z, W, V), U, T) -> branch(join(Z, deleteNat(Y, W)), X, T, U)
+483. deleteNat_case1_case1(true, zero, X, Y, deleteNat_case1(true, Z, zero, W, V, U), T) -> branch(Y, X, T, join(deleteNat(Z, W), V))
+484. deleteNat_case1(true, zero, X, deleteNat_case1(true, Y, zero, Z, W, V), U, T) -> branch(join(deleteNat(Y, Z), W), X, T, U)
+485. join(insertNat(X, Y, nil_1), insertNat_case1_case1(true, Z, W, V, U, T, S)) -> branch(nil_1, X, Y, insertNat_case1_case1(true, Z, W, V, U, T, S))
+486. join(insertNat(X, Y, nil_1), insertNat_case1(true, Z, W, V, U, T, S)) -> branch(nil_1, X, Y, insertNat_case1(true, Z, W, V, U, T, S))
+487. deleteNat_case1_case1(ltNat(X, Y), suc(suc(X)), suc(suc(Y)), Z, W, V) -> deleteNat_case1(false, suc(suc(X)), suc(suc(Y)), Z, W, V)
+488. deleteNat_case1(false, suc(suc(zero)), suc(suc(zero)), X, Y, Z) -> join(X, Y)
+489. deleteNat_case1(false, suc(suc(suc(X))), suc(suc(zero)), Y, Z, W) -> join(Y, Z)
+490. findNat_case1(ltNat(X, Y), suc(suc(X)), suc(suc(Y)), Z, W, V) -> findNat(suc(suc(X)), branch(Z, suc(suc(Y)), V, W))
+491. findNat(suc(suc(zero)), branch(X, suc(suc(zero)), Y, Z)) -> just(Y)
+492. findNat(suc(suc(zero)), insertNat(suc(suc(zero)), X, nil_1)) -> just(X)
+493. findNat(suc(suc(zero)), deleteNat_case1_case1(true, X, suc(suc(zero)), Y, Z, W)) -> just(W)
+494. findNat(suc(suc(zero)), deleteNat_case1(true, X, suc(suc(zero)), Y, Z, W)) -> just(W)
+495. findNat(suc(suc(zero)), deleteNat_case1(false, zero, suc(suc(zero)), X, Y, Z)) -> just(Z)
+496. findNat(suc(suc(zero)), deleteNat_case1(false, suc(zero), suc(suc(zero)), X, Y, Z)) -> just(Z)
+497. findNat(suc(suc(zero)), insertNat_case1_case1(true, X, suc(suc(zero)), Y, Z, W, V)) -> just(V)
+498. findNat(suc(suc(zero)), insertNat_case1(true, X, suc(suc(zero)), Y, Z, W, V)) -> just(V)
+499. findNat(suc(suc(zero)), insertNat(zero, X, insertNat(suc(suc(zero)), Y, nil_1))) -> just(Y)
+500. findNat(suc(suc(zero)), insertNat(suc(zero), X, insertNat(suc(suc(zero)), Y, nil_1))) -> just(Y)
+501. findNat(suc(suc(zero)), branch(X, suc(suc(suc(Y))), Z, W)) -> findNat(suc(suc(zero)), X)
+502. findNat(suc(suc(zero)), insertNat(suc(suc(suc(X))), Y, nil_1)) -> nothing
+503. findNat(suc(suc(suc(X))), branch(Y, suc(suc(zero)), Z, W)) -> findNat(suc(suc(suc(X))), W)
+504. findNat(suc(suc(suc(X))), insertNat(suc(suc(zero)), Y, nil_1)) -> nothing
+505. deleteNat_case1(gtNat(X, Y), suc(suc(X)), suc(suc(Y)), Z, W, V) -> deleteNat(suc(suc(X)), branch(Z, suc(suc(Y)), V, W))
+506. deleteNat(suc(suc(zero)), branch(X, suc(suc(zero)), Y, Z)) -> join(X, Z)
+507. deleteNat(suc(suc(zero)), insertNat(suc(suc(zero)), X, nil_1)) -> nil_1
+508. deleteNat(suc(suc(zero)), deleteNat_case1_case1(true, X, suc(suc(zero)), Y, Z, W)) -> join(Y, deleteNat(X, Z))
+509. deleteNat(suc(suc(zero)), deleteNat_case1(true, X, suc(suc(zero)), Y, Z, W)) -> join(deleteNat(X, Y), Z)
+510. deleteNat(suc(suc(zero)), deleteNat_case1(false, zero, suc(suc(zero)), X, Y, Z)) -> join(X, deleteNat(zero, Y))
+511. deleteNat(suc(suc(zero)), deleteNat_case1(false, suc(zero), suc(suc(zero)), X, Y, Z)) -> join(X, deleteNat(suc(zero), Y))
+512. deleteNat(suc(suc(zero)), insertNat_case1_case1(true, X, suc(suc(zero)), Y, Z, W, V)) -> join(Y, insertNat(X, W, Z))
+513. deleteNat(suc(suc(zero)), insertNat_case1(true, X, suc(suc(zero)), Y, Z, W, V)) -> join(insertNat(X, W, Y), Z)
+514. deleteNat(suc(suc(zero)), insertNat(zero, X, insertNat(suc(suc(zero)), Y, nil_1))) -> insertNat(zero, X, nil_1)
+515. deleteNat(suc(suc(zero)), insertNat(suc(zero), X, insertNat(suc(suc(zero)), Y, nil_1))) -> insertNat(suc(zero), X, nil_1)
+516. deleteNat_case1_case1(true, suc(suc(zero)), X, Y, insertNat(suc(suc(zero)), Z, nil_1), W) -> branch(Y, X, W, nil_1)
+517. deleteNat_case1(true, suc(suc(zero)), X, insertNat(suc(suc(zero)), Y, nil_1), Z, W) -> branch(nil_1, X, W, Z)
+518. deleteNat_case1(false, suc(zero), suc(suc(X)), deleteNat(Y, Z), W, V) -> deleteNat_case1(true, Y, suc(suc(X)), Z, deleteNat(suc(zero), W), V)
+519. deleteNat(suc(zero), deleteNat_case1_case1(true, X, suc(suc(Y)), Z, W, V)) -> deleteNat_case1(false, suc(zero), suc(suc(Y)), Z, deleteNat(X, W), V)
+520. deleteNat(suc(zero), deleteNat_case1(true, X, suc(suc(Y)), Z, W, V)) -> deleteNat_case1(true, X, suc(suc(Y)), Z, deleteNat(suc(zero), W), V)
+521. deleteNat(suc(suc(X)), deleteNat_case1_case1(true, Y, suc(zero), Z, W, V)) -> deleteNat_case1(true, suc(suc(X)), suc(zero), Z, deleteNat(Y, W), V)
+522. deleteNat(suc(suc(X)), deleteNat_case1(true, Y, suc(zero), Z, W, V)) -> deleteNat_case1(true, suc(suc(X)), suc(zero), deleteNat(Y, Z), W, V)
+523. findNat(zero, join(deleteNat_case1_case1(true, X, zero, Y, Z, W), insertNat(V, U, nil_1))) -> just(W)
+524. deleteNat_case1(false, zero, suc(X), Y, insertNat(suc(Z), W, nil_1), V) -> insertNat_case1_case1(true, suc(Z), suc(X), Y, nil_1, W, V)
+525. foldr(app(X, fst(Y)), Z, cons(W, cons(snd(Y), nil))) -> foldr(uncurry_1(X), Z, cons(pair(fst(Y), W), cons(Y, nil)))
+526. uncurry(tree(cons(X, nil)), pair(foldr(uncurry(insertNat_0, X), Y, Z), W)) -> app(foldr(uncurry(insertNat_0, X), Y, cons(nil_1, Z)), W)
+527. uncurry(insertNat(X, Y, Z), pair(app(insertNat(X, Y, W), V), U)) -> app(foldr(insertNat_2(X, Y), V, cons(Z, cons(W, nil))), U)
+528. branch(X, Y, Z, insertNat_case1_case1(true, W, V, join(U, T), S, X2, Y2)) -> join(branch(X, Y, Z, U), insertNat_case1_case1(true, W, V, T, S, X2, Y2))
+529. join(insertNat_case1(true, X, Y, Z, W, V, U), branch(T, S, X2, Y2)) -> insertNat_case1(true, X, Y, Z, branch(join(W, T), S, X2, Y2), V, U)
+530. foldr(uncurry_1(X), Y, cons(Z, cons(pair(fst(W), snd(W)), V))) -> foldr(uncurry_1(X), Y, cons(Z, cons(W, V)))
+531. uncurry(tree(cons(X, Y)), pair(foldr(uncurry(insertNat_0, X), Z, W), V)) -> app(foldr(uncurry(insertNat_0, X), Z, cons(tree(Y), W)), V)
+532. deleteNat_case1_case1(true, suc(suc(zero)), X, Y, branch(Z, suc(suc(zero)), W, V), U) -> branch(Y, X, U, join(Z, V))
+533. deleteNat_case1(true, suc(suc(zero)), X, branch(Y, suc(suc(zero)), Z, W), V, U) -> branch(join(Y, W), X, U, V)
+534. foldr(uncurry_1(X), app(uncurry(X, Y), Z), cons(W, cons(V, nil))) -> foldr(uncurry_1(X), Z, cons(W, cons(V, cons(Y, nil))))
+535. eqMaybeNat(findNat(suc(zero), deleteNat(suc(zero), insertNat(X, Y, tree(Z)))), nothing) -> prop_FindDelete(suc(zero), suc(zero), cons(pair(X, Y), Z))
+536. prop_FindDelete(suc(zero), suc(zero), cons(pair(fst(X), snd(X)), Y)) -> prop_FindDelete(suc(zero), suc(zero), cons(X, Y))
+537. foldr(uncurry_1(uncurry_1(insertNat_0)), X, cons(Y, cons(pair(Z, nil_1), nil))) -> app(uncurry(uncurry_1(insertNat_0), Y), app(tree(cons(Z, nil)), X))
+538. findNat(zero, join(deleteNat_case1(true, X, zero, Y, Z, W), tree(cons(V, nil)))) -> just(W)
+539. uncurry(insertNat(X, Y, Z), pair(foldr(uncurry_1(insertNat_1(X)), W, V), U)) -> app(foldr(uncurry_1(insertNat_1(X)), W, cons(pair(Y, Z), V)), U)
+540. deleteNat(zero, deleteNat_case1(false, suc(zero), suc(suc(X)), Y, Z, W)) -> deleteNat_case1(false, zero, suc(suc(X)), Y, deleteNat(suc(zero), Z), W)
+541. foldr(X, foldr(X, Y, Z), cons(W, cons(V, cons(U, nil)))) -> foldr(X, Y, cons(W, cons(V, cons(U, Z))))
+542. deleteNat_case1_case1(true, suc(suc(zero)), suc(suc(suc(X))), Y, Z, W) -> deleteNat_case1(false, suc(suc(zero)), suc(suc(suc(X))), Y, Z, W)
+543. deleteNat_case1(false, suc(suc(zero)), suc(suc(suc(X))), Y, nil_1, Z) -> branch(Y, suc(suc(suc(X))), Z, nil_1)
+544. deleteNat(suc(suc(zero)), branch(X, suc(suc(suc(Y))), Z, W)) -> deleteNat_case1(false, suc(suc(zero)), suc(suc(suc(Y))), X, W, Z)
+545. deleteNat(suc(suc(zero)), insertNat(suc(suc(suc(X))), Y, nil_1)) -> insertNat(suc(suc(suc(X))), Y, nil_1)
+546. deleteNat(suc(suc(suc(X))), branch(Y, suc(suc(zero)), Z, W)) -> deleteNat_case1(true, suc(suc(suc(X))), suc(suc(zero)), Y, W, Z)
+547. deleteNat(suc(suc(suc(X))), insertNat(suc(suc(zero)), Y, nil_1)) -> insertNat(suc(suc(zero)), Y, nil_1)
+548. branch(X, Y, Z, insertNat_case1(true, zero, suc(W), V, U, T, S)) -> insertNat_case1_case1(true, zero, Y, X, branch(V, suc(W), S, U), T, Z)
+549. branch(insertNat_case1(true, zero, suc(X), Y, Z, W, V), U, T, S) -> insertNat_case1(true, zero, U, branch(Y, suc(X), V, Z), S, W, T)
+550. branch(X, Y, Z, insertNat_case1(false, suc(W), zero, V, U, T, S)) -> insertNat_case1_case1(true, suc(W), Y, X, branch(V, zero, S, U), T, Z)
+551. branch(insertNat_case1(false, suc(X), zero, Y, Z, W, V), U, T, S) -> insertNat_case1(true, suc(X), U, branch(Y, zero, V, Z), S, W, T)
+552. findNat(zero, join(deleteNat_case1_case1(true, X, zero, Y, Z, W), branch(V, U, T, S))) -> just(W)
+553. findNat(zero, join(branch(X, zero, Y, Z), deleteNat_case1(true, W, V, U, T, S))) -> just(Y)
+554. prop_FindDelete_case1_case1(false, X, cons(Y, cons(pair(fst(Z), snd(Z)), nil))) -> prop_FindDelete_case1_case1(false, X, cons(Y, cons(Z, nil)))
+555. foldr(uncurry_1(X), snd(Y), cons(Z, cons(pair(W, fst(Y)), nil))) = app(uncurry(X, Z), uncurry(app(X, W), Y))
+556. tree(cons(X, cons(pair(Y, Z), cons(pair(W, V), nil)))) -> app(uncurry(insertNat_0, X), insertNat(Y, Z, insertNat(W, V, nil_1)))
+557. app(uncurry(insertNat_2(X, Y), Z), foldr(insertNat(X, Y, fst(Z)), W, V)) -> foldr(insertNat(X, Y, fst(Z)), W, cons(snd(Z), V))
+558. join(branch(X, Y, Z, nil_1), insertNat_case1_case1(true, W, V, U, T, S, X2)) -> branch(X, Y, Z, insertNat_case1_case1(true, W, V, U, T, S, X2))
+559. join(branch(X, Y, Z, nil_1), insertNat_case1(true, W, V, U, T, S, X2)) -> branch(X, Y, Z, insertNat_case1(true, W, V, U, T, S, X2))
+560. insertNat_case1_case1(true, suc(zero), X, Y, insertNat(suc(zero), Z, nil_1), W, V) -> insertNat_case1_case1(true, suc(zero), X, Y, nil_1, W, V)
+561. insertNat_case1(true, suc(zero), X, insertNat(suc(zero), Y, nil_1), Z, W, V) -> insertNat_case1(true, suc(zero), X, nil_1, Z, W, V)
+562. insertNat_case1(false, suc(X), zero, Y, foldr(insertNat_1(suc(X)), Z, W), V, U) -> branch(Y, zero, U, foldr(insertNat_1(suc(X)), Z, cons(V, W)))
+563. foldr(uncurry_1(uncurry_1(X)), Y, cons(Z, cons(pair(fst(Z), W), nil))) -> foldr(uncurry(X, fst(Z)), Y, cons(snd(Z), cons(W, nil)))
+564. foldr(uncurry(X, fst(Y)), Z, cons(snd(Y), cons(snd(Y), nil))) -> foldr(uncurry_1(uncurry_1(X)), Z, cons(Y, cons(Y, nil)))
+565. uncurry(uncurry(X, fst(Y)), pair(Z, app(uncurry(uncurry_1(X), Y), W))) -> foldr(uncurry(X, fst(Y)), W, cons(Z, cons(snd(Y), nil)))
+566. join(insertNat(suc(zero), X, insertNat(suc(suc(Y)), Z, nil_1)), nil_1) -> insertNat(suc(zero), X, insertNat(suc(suc(Y)), Z, nil_1))
+567. deleteNat(zero, insertNat(suc(zero), X, insertNat(suc(suc(Y)), Z, nil_1))) -> insertNat(suc(zero), X, insertNat(suc(suc(Y)), Z, nil_1))
+568. app(tree(cons(fst(X), nil)), app(uncurry(uncurry_1(insertNat_0), X), Y)) -> foldr(uncurry(insertNat_0, fst(X)), Y, cons(nil_1, cons(snd(X), nil)))
+569. prop_FindDelete(zero, zero, cons(X, cons(pair(fst(Y), snd(Y)), nil))) -> prop_FindDelete(zero, zero, cons(X, cons(Y, nil)))
+570. foldr(uncurry_1(uncurry_1(insertNat_0)), X, cons(Y, cons(pair(Z, tree(W)), nil))) -> app(uncurry(uncurry_1(insertNat_0), Y), app(tree(cons(Z, W)), X))
+571. join(X, branch(join(Y, nil_1), fst(Z), snd(Z), nil_1)) = deleteNat(zero, join(branch(X, zero, ?, Y), tree(cons(Z, nil))))
+572. deleteNat(zero, join(branch(X, zero, Y, Z), tree(cons(W, nil)))) ~> deleteNat(zero, join(branch(X, zero, ?, Z), tree(cons(W, nil))))
+573. join(insertNat_case1_case1(true, X, Y, Z, nil_1, W, V), branch(nil_1, U, T, S)) -> branch(Z, Y, V, insertNat_case1(true, X, U, nil_1, S, W, T))
+574. join(insertNat_case1_case1(true, X, Y, Z, nil_1, W, V), insertNat(U, T, nil_1)) -> branch(Z, Y, V, insertNat_case1(true, X, U, nil_1, nil_1, W, T))
+575. foldr(insertNat_1(X), snd(Y), cons(Z, cons(W, cons(fst(Y), nil)))) = insertNat(X, Z, insertNat(X, W, uncurry(insertNat_1(X), Y)))
+576. foldr(insertNat_2(suc(zero), X), Y, cons(insertNat(suc(zero), Z, nil_1), W)) -> foldr(insertNat_2(suc(zero), X), Y, cons(nil_1, W))
+577. app(foldr(uncurry_1(X), Y, cons(Z, W)), foldr(uncurry(X, Z), V, U)) -> foldr(uncurry(X, Z), V, cons(foldr(uncurry_1(X), Y, W), U))
+578. app(foldr(insertNat_1(X), Y, cons(Z, W)), foldr(insertNat_2(X, Z), V, U)) -> foldr(insertNat_2(X, Z), V, cons(foldr(insertNat_1(X), Y, W), U))
+579. app(uncurry(insertNat_0, X), insertNat(fst(X), Y, insertNat(fst(X), Z, W))) -> foldr(insertNat_1(fst(X)), W, cons(snd(X), cons(Y, cons(Z, nil))))
+580. app(foldr(uncurry_1(X), snd(Y), cons(Z, cons(fst(Y), nil))), W) = uncurry(uncurry(X, Z), pair(uncurry(uncurry_1(X), Y), W))
+581. foldr(uncurry_1(insertNat_1(X)), Y, cons(Z, cons(pair(fst(Z), W), nil))) -> foldr(insertNat_2(X, fst(Z)), Y, cons(snd(Z), cons(W, nil)))
+582. uncurry(uncurry(X, pair(Y, Z)), pair(foldr(app(X, Y), W, V), U)) -> app(foldr(app(X, Y), W, cons(Z, V)), U)
+583. findNat(suc(X), join(branch(Y, zero, Z, W), branch(V, U, T, S))) -> findNat(suc(X), branch(join(W, V), U, T, S))
+584. findNat(suc(X), join(branch(Y, zero, Z, W), insertNat(V, U, nil_1))) -> findNat(suc(X), branch(join(W, nil_1), V, U, nil_1))
+585. eqMaybeNat(findNat(suc(suc(zero)), deleteNat(suc(suc(zero)), insertNat(X, Y, nil_1))), nothing) -> prop_FindDelete(suc(suc(zero)), suc(suc(zero)), cons(pair(X, Y), nil))
+586. prop_FindDelete(suc(suc(zero)), suc(suc(zero)), cons(pair(zero, X), nil)) -> true
+587. prop_FindDelete(suc(suc(zero)), suc(suc(zero)), cons(pair(suc(zero), X), nil)) -> true
+588. prop_FindDelete(suc(suc(zero)), suc(suc(zero)), cons(pair(suc(suc(zero)), X), nil)) -> true
+589. prop_FindDelete(suc(suc(zero)), suc(suc(zero)), cons(pair(suc(suc(suc(X))), Y), nil)) -> true
+590. prop_FindDelete_case1_case1(false, X, cons(Y, cons(pair(fst(Z), snd(Z)), W))) -> prop_FindDelete_case1_case1(false, X, cons(Y, cons(Z, W)))
+591. tree(cons(X, cons(Y, cons(pair(fst(Z), snd(Z)), W)))) -> tree(cons(X, cons(Y, cons(Z, W))))
+592. deleteNat(suc(zero), insertNat_case1(false, suc(suc(X)), suc(zero), Y, Z, W, V)) -> join(Y, insertNat(suc(suc(X)), W, Z))
+593. deleteNat(suc(zero), insertNat(suc(suc(X)), Y, insertNat(suc(zero), Z, nil_1))) -> insertNat(suc(suc(X)), Y, nil_1)
+594. findNat(zero, deleteNat_case1(false, suc(suc(zero)), suc(suc(suc(X))), Y, Z, W)) -> findNat(zero, Y)
+595. join(insertNat_case1(true, X, Y, Z, nil_1, W, V), tree(cons(U, nil))) -> insertNat_case1(true, X, Y, Z, tree(cons(U, nil)), W, V)
+596. findNat(zero, join(branch(X, zero, Y, Z), insertNat_case1_case1(true, W, V, U, T, S, X2))) -> just(Y)
+597. prop_FindDelete(suc(suc(zero)), suc(suc(zero)), cons(pair(fst(X), snd(X)), nil)) -> prop_FindDelete(suc(suc(zero)), suc(suc(zero)), cons(X, nil))
+598. eqMaybeNat(findNat(zero, deleteNat(suc(X), insertNat(Y, Z, nil_1))), findNat(zero, insertNat(Y, Z, nil_1))) -> prop_FindDelete(zero, suc(X), cons(pair(Y, Z), nil))
+599. prop_FindDelete(zero, suc(zero), cons(pair(suc(zero), X), nil)) -> true
+600. prop_FindDelete(zero, suc(?), cons(pair(zero, X), nil)) = eqNat(X, X)
+601. prop_FindDelete(zero, suc(X), cons(pair(zero, Y), nil)) ~> prop_FindDelete(zero, suc(?), cons(pair(zero, Y), nil))
+602. equals(eqNat(X, X), false) -> false
+603. prop_FindDelete(zero, suc(suc(zero)), cons(pair(suc(suc(zero)), X), nil)) -> true
+604. prop_FindDelete(zero, suc(zero), cons(pair(suc(suc(X)), Y), nil)) -> true
+605. prop_FindDelete(zero, suc(suc(X)), cons(pair(suc(zero), Y), nil)) -> true
+606. eqNat(X, X) = prop_FindDelete(zero, suc(?), cons(pair(zero, suc(X)), nil))
+607. prop_FindDelete(zero, suc(X), cons(pair(fst(Y), snd(Y)), nil)) -> prop_FindDelete(zero, suc(X), cons(Y, nil))
+608. prop_FindDelete(zero, suc(?), cons(pair(zero, suc(suc(X))), nil)) = eqNat(X, X)
+609. prop_FindDelete_case1_case1(prop_FindDelete(zero, suc(?), cons(pair(zero, X), nil)), X, Y) -> prop_FindDelete_case1(X, X, Y)
+610. prop_FindDelete(zero, suc(?), cons(pair(zero, suc(X)), nil)) -> prop_FindDelete(zero, suc(?), cons(pair(zero, X), nil))
+611. prop_FindDelete(zero, suc(suc(zero)), cons(pair(suc(suc(suc(X))), Y), nil)) -> true
+612. prop_FindDelete(zero, suc(suc(suc(X))), cons(pair(suc(suc(zero)), Y), nil)) -> true
+613. eqMaybeNat(findNat(zero, deleteNat(suc(X), insertNat(suc(Y), Z, nil_1))), nothing) -> prop_FindDelete(zero, suc(X), cons(pair(suc(Y), Z), nil))
+614. eqMaybeNat(findNat(suc(zero), deleteNat(suc(suc(X)), tree(Y))), prop_FindDelete_case1(suc(zero), zero, Y)) -> prop_FindDelete(suc(zero), suc(suc(X)), Y)
+615. eqMaybeNat(findNat(suc(suc(X)), deleteNat(suc(zero), tree(Y))), prop_FindDelete_case1(suc(suc(X)), zero, Y)) -> prop_FindDelete(suc(suc(X)), suc(zero), Y)
+616. findNat_case1_case1(gtNat(X, Y), suc(suc(suc(X))), Z, W) -> findNat_case1(false, suc(suc(suc(X))), suc(suc(suc(Y))), ?, Z, W)
+617. findNat_case1(false, suc(suc(suc(zero))), suc(suc(suc(zero))), ?, X, Y) -> just(Y)
+618. findNat_case1(false, suc(suc(suc(zero))), suc(suc(suc(suc(X)))), ?, Y, Z) -> just(Z)
+619. findNat(zero, join(deleteNat_case1_case1(true, X, zero, Y, Z, W), tree(cons(V, nil)))) -> just(W)
+620. prop_FindDelete_case1_case1(prop_FindDelete(zero, suc(?), cons(pair(zero, X), nil)), suc(X), Y) -> prop_FindDelete_case1(suc(X), suc(X), Y)
+621. branch(nil_1, fst(X), snd(X), deleteNat_case1_case1(true, Y, Z, W, V, U)) -> join(tree(cons(X, nil)), deleteNat_case1_case1(true, Y, Z, W, V, U))
+622. branch(nil_1, fst(X), snd(X), deleteNat_case1(true, Y, Z, W, V, U)) -> join(tree(cons(X, nil)), deleteNat_case1(true, Y, Z, W, V, U))
+623. join(branch(nil_1, fst(X), snd(X), Y), branch(Z, W, V, U)) -> join(tree(cons(X, nil)), branch(join(Y, Z), W, V, U))
+624. join(branch(nil_1, fst(X), snd(X), Y), insertNat(Z, W, nil_1)) -> join(tree(cons(X, nil)), branch(join(Y, nil_1), Z, W, nil_1))
+625. app(tree(cons(X, Y)), uncurry(uncurry(insertNat_0, X), Z)) = foldr(uncurry(insertNat_0, X), snd(Z), cons(tree(Y), cons(fst(Z), nil)))
+626. deleteNat(suc(zero), deleteNat_case1(false, zero, suc(suc(X)), Y, Z, W)) -> deleteNat_case1(false, suc(zero), suc(suc(X)), Y, deleteNat(zero, Z), W)
+627. deleteNat(suc(zero), deleteNat_case1(false, suc(zero), suc(suc(X)), Y, Z, W)) -> deleteNat_case1(false, suc(zero), suc(suc(X)), Y, deleteNat(suc(zero), Z), W)
+628. deleteNat(suc(suc(X)), deleteNat_case1(false, zero, suc(zero), Y, Z, W)) -> deleteNat_case1(true, suc(suc(X)), suc(zero), Y, deleteNat(zero, Z), W)
+629. insertNat_case1(true, X, Y, Z, branch(join(W, nil_1), V, U, nil_1), T, S) -> join(insertNat_case1(true, X, Y, Z, W, T, S), insertNat(V, U, nil_1))
+630. findNat(zero, join(insertNat_case1(true, X, zero, Y, Z, W, V), insertNat(U, T, nil_1))) -> just(V)
+631. foldr(insertNat_2(zero, X), Y, cons(Z, cons(insertNat(zero, W, nil_1), nil))) -> foldr(insertNat_2(zero, X), Y, cons(Z, cons(nil_1, nil)))
+632. prop_FindDelete(zero, zero, cons(X, cons(pair(fst(Y), snd(Y)), Z))) -> prop_FindDelete(zero, zero, cons(X, cons(Y, Z)))
+633. foldr(uncurry_1(insertNat_1(zero)), X, cons(pair(Y, insertNat(zero, Z, nil_1)), W)) -> foldr(uncurry_1(insertNat_1(zero)), X, cons(pair(Y, nil_1), W))
+634. eqMaybeNat(findNat(suc(suc(suc(suc(zero)))), deleteNat(suc(suc(suc(suc(zero)))), tree(X))), nothing) -> prop_FindDelete(suc(suc(suc(suc(zero)))), suc(suc(suc(suc(zero)))), X)
+635. insertNat(zero, X, join(branch(Y, zero, Z, W), branch(V, U, T, S))) -> join(branch(Y, zero, X, W), branch(V, U, T, S))
+636. insertNat(zero, X, join(branch(Y, zero, Z, W), insertNat(V, U, nil_1))) -> join(branch(Y, zero, X, W), insertNat(V, U, nil_1))
+637. app(foldr(uncurry_1(uncurry_1(insertNat_0)), X, cons(pair(Y, tree(Z)), W)), V) -> uncurry(tree(cons(Y, Z)), pair(foldr(uncurry_1(uncurry_1(insertNat_0)), X, W), V))
+638. join(insertNat_case1(false, suc(suc(X)), suc(zero), Y, Z, W, V), nil_1) -> insertNat_case1(false, suc(suc(X)), suc(zero), Y, Z, W, V)
+639. join(insertNat(suc(suc(X)), Y, insertNat(suc(zero), Z, nil_1)), nil_1) -> insertNat(suc(suc(X)), Y, insertNat(suc(zero), Z, nil_1))
+640. app(foldr(X, Y, cons(Z, W)), uncurry(app(X, Z), pair(V, U))) -> foldr(app(X, Z), U, cons(foldr(X, Y, W), cons(V, nil)))
+641. branch(join(X, nil_1), fst(Y), snd(Y), nil_1) = deleteNat(zero, join(branch(nil_1, zero, ?, X), tree(cons(Y, nil))))
+642. uncurry(insertNat(X, Y, Z), pair(W, foldr(uncurry_1(insertNat_2(X, Y)), V, U))) -> foldr(uncurry_1(insertNat_2(X, Y)), V, cons(pair(Z, W), U))
+643. deleteNat_case1_case1(true, suc(suc(X)), Y, Z, insertNat(suc(zero), W, nil_1), V) -> insertNat_case1_case1(true, suc(zero), Y, Z, nil_1, W, V)
+644. deleteNat_case1(true, suc(suc(X)), Y, insertNat(suc(zero), Z, nil_1), W, V) -> insertNat_case1(true, suc(zero), Y, nil_1, W, Z, V)
+645. insertNat_case1(false, suc(suc(X)), suc(zero), Y, snd(Z), fst(Z), W) -> branch(Y, suc(zero), W, uncurry(insertNat_1(suc(suc(X))), Z))
+646. findNat(suc(zero), deleteNat_case1(false, suc(suc(zero)), suc(suc(suc(X))), Y, Z, W)) -> findNat(suc(zero), Y)
+647. app(uncurry(insertNat_0, X), insertNat(Y, Z, insertNat(W, V, tree(U)))) -> tree(cons(X, cons(pair(Y, Z), cons(pair(W, V), U))))
+648. join(insertNat(X, Y, nil_1), deleteNat_case1(false, zero, suc(Z), W, V, U)) -> deleteNat_case1_case1(true, zero, X, nil_1, branch(W, suc(Z), U, V), Y)
+649. findNat(zero, join(branch(X, suc(Y), Z, W), deleteNat_case1_case1(true, V, U, T, S, X2))) -> findNat(zero, X)
+650. join(branch(X, Y, Z, tree(cons(W, nil))), insertNat(V, U, nil_1)) -> branch(X, Y, Z, branch(tree(cons(W, nil)), V, U, nil_1))
+651. findNat(zero, join(insertNat_case1_case1(true, X, zero, Y, Z, W, V), insertNat(U, T, nil_1))) -> just(V)
+652. findNat(suc(suc(zero)), join(branch(X, suc(suc(zero)), Y, Z), branch(W, V, U, T))) -> just(Y)
+653. findNat(suc(suc(zero)), join(branch(X, suc(suc(zero)), Y, Z), insertNat(W, V, nil_1))) -> just(Y)
+654. join(branch(X, Y, Z, branch(W, V, U, T)), branch(nil_1, S, X2, Y2)) -> branch(X, Y, Z, branch(branch(W, V, U, T), S, X2, Y2))
+655. join(branch(X, Y, Z, branch(W, V, U, T)), insertNat(S, X2, nil_1)) -> branch(X, Y, Z, branch(branch(W, V, U, T), S, X2, nil_1))
+656. app(uncurry(uncurry_1(insertNat_0), X), app(tree(cons(fst(X), nil)), Y)) -> foldr(uncurry(insertNat_0, fst(X)), Y, cons(snd(X), cons(nil_1, nil)))
+657. insertNat_case1_case1(true, suc(zero), X, Y, branch(Z, suc(zero), W, V), U, T) -> branch(Y, X, T, branch(Z, suc(zero), U, V))
+658. insertNat_case1(false, suc(zero), zero, X, branch(Y, suc(zero), Z, W), V, U) -> branch(X, zero, U, branch(Y, suc(zero), V, W))
+659. insertNat_case1(false, suc(zero), zero, X, insertNat(suc(zero), Y, nil_1), Z, W) -> insertNat_case1(false, suc(zero), zero, X, nil_1, Z, W)
+660. insertNat_case1(true, suc(zero), X, branch(Y, suc(zero), Z, W), V, U, T) -> branch(branch(Y, suc(zero), U, W), X, T, V)
+661. insertNat(suc(X), Y, insertNat_case1(false, suc(Z), zero, W, V, U, T)) -> insertNat_case1(false, suc(X), zero, W, insertNat(suc(Z), U, V), Y, T)
+662. findNat(suc(suc(zero)), deleteNat_case1_case1(true, X, suc(suc(suc(Y))), Z, W, V)) -> findNat(suc(suc(zero)), Z)
+663. deleteNat(suc(zero), join(branch(X, suc(zero), Y, Z), branch(W, V, U, T))) -> join(X, branch(join(Z, W), V, U, T))
+664. deleteNat(suc(zero), join(branch(X, suc(zero), Y, Z), insertNat(W, V, nil_1))) -> join(X, branch(join(Z, nil_1), W, V, nil_1))
+665. foldr(insertNat_1(fst(X)), Y, cons(snd(X), cons(Z, cons(snd(X), nil)))) -> app(uncurry(insertNat_0, X), insertNat(fst(X), Z, app(uncurry(insertNat_0, X), Y)))
+666. insertNat(X, Y, insertNat(X, Z, insertNat(X, W, insertNat(X, V, U)))) -> foldr(insertNat_1(X), U, cons(Y, cons(Z, cons(W, cons(V, nil)))))
+667. foldr(insertNat_1(zero), nil_1, cons(X, cons(Y, cons(Z, cons(W, nil))))) -> insertNat(zero, X, nil_1)
+668. deleteNat_case1(false, suc(zero), suc(suc(X)), Y, insertNat(suc(zero), Z, nil_1), W) -> branch(Y, suc(suc(X)), W, nil_1)
+669. deleteNat(suc(suc(X)), insertNat_case1(true, zero, suc(zero), nil_1, Y, Z, W)) -> insertNat_case1(true, zero, suc(zero), nil_1, Y, Z, W)
+670. deleteNat(suc(suc(X)), insertNat(zero, Y, insertNat(suc(zero), Z, nil_1))) -> insertNat(zero, Y, insertNat(suc(zero), Z, nil_1))
+671. deleteNat_case1_case1(true, zero, X, Y, insertNat_case1_case1(true, Z, zero, W, V, U, T), S) -> branch(Y, X, S, join(W, insertNat(Z, U, V)))
+672. deleteNat_case1(true, zero, X, insertNat_case1_case1(true, Y, zero, Z, W, V, U), T, S) -> branch(join(Z, insertNat(Y, V, W)), X, S, T)
+673. deleteNat_case1_case1(true, zero, X, Y, insertNat_case1(true, Z, zero, W, V, U, T), S) -> branch(Y, X, S, join(insertNat(Z, U, W), V))
+674. deleteNat_case1(true, zero, X, insertNat_case1(true, Y, zero, Z, W, V, U), T, S) -> branch(join(insertNat(Y, V, Z), W), X, S, T)
+675. foldr(uncurry_1(insertNat_0), insertNat(X, Y, tree(Z)), cons(W, cons(V, nil))) -> tree(cons(W, cons(V, cons(pair(X, Y), Z))))
+676. deleteNat_case1_case1(true, suc(zero), X, Y, insertNat(suc(suc(Z)), W, nil_1), V) -> insertNat_case1_case1(true, suc(suc(Z)), X, Y, nil_1, W, V)
+677. deleteNat_case1(true, suc(zero), X, insertNat(suc(suc(Y)), Z, nil_1), W, V) -> insertNat_case1(true, suc(suc(Y)), X, nil_1, W, Z, V)
+678. foldr(uncurry_1(insertNat_0), X, cons(Y, cons(Z, cons(pair(W, V), nil)))) -> foldr(uncurry_1(insertNat_0), insertNat(W, V, X), cons(Y, cons(Z, nil)))
+679. uncurry(uncurry(insertNat_0, X), pair(Y, foldr(uncurry_1(insertNat_1(fst(X))), Z, W))) -> foldr(uncurry_1(insertNat_1(fst(X))), Z, cons(pair(snd(X), Y), W))
+680. app(tree(cons(X, nil)), foldr(uncurry_1(insertNat_1(fst(X))), Y, Z)) -> foldr(uncurry_1(insertNat_1(fst(X))), Y, cons(pair(snd(X), nil_1), Z))
+681. insertNat(fst(X), Y, app(uncurry(insertNat_0, X), insertNat(fst(X), Z, W))) -> foldr(insertNat_1(fst(X)), W, cons(Y, cons(snd(X), cons(Z, nil))))
+682. foldr(uncurry_1(insertNat_0), X, cons(Y, cons(pair(Z, W), cons(V, nil)))) -> app(uncurry(insertNat_0, Y), insertNat(Z, W, app(uncurry(insertNat_0, V), X)))
+683. foldr(uncurry_1(insertNat_1(X)), Y, cons(pair(fst(Z), W), cons(Z, nil))) -> foldr(insertNat_2(X, fst(Z)), Y, cons(W, cons(snd(Z), nil)))
+684. findNat(suc(zero), join(deleteNat_case1(true, X, suc(zero), Y, Z, W), insertNat(V, U, nil_1))) -> just(W)
+685. join(insertNat(zero, X, insertNat(suc(Y), Z, nil_1)), insertNat(W, V, nil_1)) -> insertNat_case1(true, zero, suc(Y), nil_1, insertNat(W, V, nil_1), X, Z)
+686. join(insertNat(X, Y, nil_1), insertNat(zero, Z, insertNat(suc(W), V, nil_1))) -> insertNat_case1_case1(true, zero, X, nil_1, insertNat(suc(W), V, nil_1), Z, Y)
+687. foldr(uncurry_1(uncurry_1(X)), Y, cons(pair(fst(Z), W), cons(Z, nil))) -> foldr(uncurry(X, fst(Z)), Y, cons(W, cons(snd(Z), nil)))
+688. findNat(zero, join(insertNat_case1(true, X, zero, Y, Z, W, V), tree(cons(U, nil)))) -> just(V)
+689. insertNat(fst(X), Y, insertNat(fst(X), Z, app(uncurry(insertNat_0, X), W))) -> foldr(insertNat_1(fst(X)), W, cons(Y, cons(Z, cons(snd(X), nil))))
+690. uncurry(app(X, Y), pair(Z, uncurry(uncurry_1(X), W))) = foldr(uncurry_1(X), snd(W), cons(pair(Y, Z), cons(fst(W), nil)))
+691. insertNat_case1(ltNat(X, Y), suc(suc(X)), suc(suc(Y)), Z, W, V, U) -> insertNat(suc(suc(X)), V, branch(Z, suc(suc(Y)), U, W))
+692. insertNat(suc(suc(zero)), X, branch(Y, suc(suc(zero)), Z, W)) -> insertNat_case1(false, suc(suc(zero)), suc(suc(zero)), Y, W, X, Z)
+693. insertNat_case1(false, suc(suc(zero)), suc(suc(zero)), nil_1, nil_1, X, Y) -> insertNat(suc(suc(zero)), X, insertNat(suc(suc(zero)), Y, nil_1))
+694. insertNat(suc(suc(zero)), X, deleteNat_case1_case1(true, Y, suc(suc(zero)), Z, W, V)) -> insertNat_case1(false, suc(suc(zero)), suc(suc(zero)), Z, deleteNat(Y, W), X, V)
+695. insertNat(suc(suc(zero)), X, deleteNat_case1(true, Y, suc(suc(zero)), Z, W, V)) -> insertNat_case1(false, suc(suc(zero)), suc(suc(zero)), deleteNat(Y, Z), W, X, V)
+696. insertNat_case1_case1(gtNat(X, Y), suc(suc(X)), suc(suc(Y)), Z, W, V, U) -> insertNat_case1(false, suc(suc(X)), suc(suc(Y)), Z, W, V, U)
+697. insertNat_case1(false, suc(suc(zero)), suc(suc(zero)), X, Y, Z, W) -> branch(X, suc(suc(zero)), Z, Y)
+698. insertNat(suc(suc(zero)), X, insertNat(suc(suc(zero)), Y, nil_1)) -> insertNat(suc(suc(zero)), X, nil_1)
+699. insertNat_case1(false, suc(suc(zero)), suc(suc(suc(X))), Y, Z, W, V) -> branch(Y, suc(suc(suc(X))), W, Z)
+700. app(foldr(uncurry_1(X), Y, cons(Z, cons(pair(W, V), nil))), U) = uncurry(uncurry(X, Z), pair(uncurry(app(X, W), pair(V, Y)), U))
+701. foldr(uncurry_1(X), Y, cons(pair(Z, W), cons(pair(V, U), nil))) = uncurry(app(X, Z), pair(W, uncurry(app(X, V), pair(U, Y))))
+702. foldr(insertNat_2(zero, X), Y, cons(Z, cons(insertNat(zero, W, nil_1), V))) -> foldr(insertNat_2(zero, X), Y, cons(Z, cons(nil_1, V)))
+703. insertNat(zero, X, join(branch(Y, zero, Z, W), tree(cons(V, nil)))) -> join(branch(Y, zero, X, W), tree(cons(V, nil)))
+704. deleteNat_case1(false, suc(zero), suc(suc(X)), insertNat(Y, Z, W), V, U) -> insertNat_case1(true, Y, suc(suc(X)), W, deleteNat(suc(zero), V), Z, U)
+705. deleteNat(suc(zero), insertNat_case1_case1(true, X, suc(suc(Y)), Z, W, V, U)) -> deleteNat_case1(false, suc(zero), suc(suc(Y)), Z, insertNat(X, V, W), U)
+706. deleteNat(suc(zero), insertNat_case1(true, X, suc(suc(Y)), Z, W, V, U)) -> insertNat_case1(true, X, suc(suc(Y)), Z, deleteNat(suc(zero), W), V, U)
+707. deleteNat(suc(zero), insertNat(zero, X, insertNat(suc(suc(Y)), Z, nil_1))) -> insertNat(zero, X, insertNat(suc(suc(Y)), Z, nil_1))
+708. deleteNat(suc(zero), insertNat(suc(zero), X, insertNat(suc(suc(Y)), Z, nil_1))) -> insertNat(suc(zero), X, insertNat(suc(suc(Y)), Z, nil_1))
+709. deleteNat(suc(suc(X)), insertNat_case1_case1(true, Y, suc(zero), Z, W, V, U)) -> insertNat_case1_case1(true, Y, suc(zero), deleteNat(suc(suc(X)), Z), W, V, U)
+710. deleteNat(suc(suc(X)), insertNat_case1(true, Y, suc(zero), Z, W, V, U)) -> deleteNat_case1(true, suc(suc(X)), suc(zero), insertNat(Y, V, Z), W, U)
+711. findNat(zero, join(insertNat_case1_case1(true, X, zero, Y, Z, W, V), branch(U, T, S, X2))) -> just(V)
+712. findNat(zero, join(branch(X, zero, Y, Z), insertNat_case1(true, W, V, U, T, S, X2))) -> just(Y)
+713. insertNat(suc(zero), X, deleteNat_case1_case1(true, Y, suc(suc(Z)), W, V, U)) -> insertNat_case1(true, suc(zero), suc(suc(Z)), W, deleteNat(Y, V), X, U)
+714. insertNat(suc(zero), X, deleteNat_case1(true, Y, suc(suc(Z)), W, V, U)) -> insertNat_case1(true, suc(zero), suc(suc(Z)), deleteNat(Y, W), V, X, U)
+715. insertNat(suc(suc(X)), Y, deleteNat_case1_case1(true, Z, suc(zero), W, V, U)) -> insertNat_case1(false, suc(suc(X)), suc(zero), W, deleteNat(Z, V), Y, U)
+716. insertNat(suc(suc(X)), Y, deleteNat_case1(true, Z, suc(zero), W, V, U)) -> insertNat_case1(false, suc(suc(X)), suc(zero), deleteNat(Z, W), V, Y, U)
+717. deleteNat_case1(false, zero, suc(X), Y, branch(Z, suc(W), V, nil_1), U) -> branch(Y, suc(X), U, branch(Z, suc(W), V, nil_1))
+718. findNat(zero, join(deleteNat_case1(true, X, suc(Y), Z, W, V), insertNat(U, T, nil_1))) -> findNat(zero, deleteNat(X, Z))
+719. prop_FindDelete_case1(suc(suc(suc(suc(zero)))), suc(suc(suc(suc(suc(X))))), Y) -> prop_FindDelete_case1(suc(suc(suc(suc(zero)))), zero, Y)
+720. prop_FindDelete(suc(suc(suc(suc(zero)))), suc(suc(suc(suc(suc(X))))), nil) -> true
+721. findNat(zero, join(deleteNat_case1_case1(true, X, suc(Y), Z, W, V), insertNat(U, T, nil_1))) -> findNat(zero, Z)
+722. findNat(suc(suc(suc(X))), deleteNat_case1(true, Y, suc(suc(zero)), Z, W, V)) -> findNat(suc(suc(suc(X))), W)
+723. join(branch(X, Y, Z, nil_1), deleteNat_case1(false, zero, suc(W), V, U, T)) -> deleteNat_case1_case1(true, zero, Y, X, branch(V, suc(W), T, U), Z)
+724. foldr(uncurry_1(X), Y, cons(Z, cons(pair(W, foldr(X, V, U)), nil))) -> app(uncurry(X, Z), app(foldr(X, V, cons(W, U)), Y))
+725. join(join(deleteNat_case1_case1(true, X, Y, Z, W, V), insertNat(U, T, nil_1)), nil_1) -> join(deleteNat_case1_case1(true, X, Y, Z, W, V), insertNat(U, T, nil_1))
+726. join(join(deleteNat_case1(true, X, Y, Z, W, V), insertNat(U, T, nil_1)), nil_1) -> join(deleteNat_case1(true, X, Y, Z, W, V), insertNat(U, T, nil_1))
+727. uncurry(uncurry(uncurry_1(X), Y), pair(foldr(uncurry(X, fst(Y)), Z, W), V)) -> app(foldr(uncurry(X, fst(Y)), Z, cons(snd(Y), W)), V)
+728. uncurry(app(uncurry(X, Y), Z), pair(foldr(uncurry_1(uncurry_1(X)), W, V), U)) -> app(foldr(uncurry_1(uncurry_1(X)), W, cons(pair(Y, Z), V)), U)
+729. uncurry(uncurry(insertNat_1(X), Y), pair(foldr(insertNat_2(X, fst(Y)), Z, W), V)) -> app(foldr(insertNat_2(X, fst(Y)), Z, cons(snd(Y), W)), V)
+730. deleteNat_case1(false, suc(zero), suc(suc(X)), Y, insertNat(zero, Z, nil_1), W) -> insertNat_case1_case1(true, zero, suc(suc(X)), Y, nil_1, Z, W)
+731. foldr(uncurry(insertNat_0, fst(X)), Y, cons(tree(Z), cons(snd(X), nil))) -> app(tree(cons(fst(X), Z)), app(uncurry(uncurry_1(insertNat_0), X), Y))
+732. foldr(uncurry(insertNat_0, fst(X)), Y, cons(snd(X), cons(tree(Z), nil))) -> app(uncurry(uncurry_1(insertNat_0), X), app(tree(cons(fst(X), Z)), Y))
+733. uncurry(tree(cons(X, nil)), pair(foldr(uncurry_1(uncurry_1(insertNat_0)), Y, Z), W)) -> app(foldr(uncurry_1(uncurry_1(insertNat_0)), Y, cons(pair(X, nil_1), Z)), W)
+734. insertNat(suc(suc(zero)), X, deleteNat_case1(false, zero, suc(suc(zero)), Y, Z, W)) -> deleteNat_case1(false, zero, suc(suc(zero)), Y, Z, X)
+735. insertNat(suc(suc(zero)), X, deleteNat_case1(false, suc(zero), suc(suc(zero)), Y, Z, W)) -> deleteNat_case1(false, suc(zero), suc(suc(zero)), Y, Z, X)
+736. findNat(suc(zero), join(branch(X, suc(zero), Y, Z), deleteNat_case1_case1(true, W, V, U, T, S))) -> just(Y)
+737. insertNat_case1_case1(true, zero, X, Y, deleteNat_case1_case1(true, Z, zero, W, V, U), T, S) -> branch(Y, X, S, deleteNat_case1_case1(true, Z, zero, W, V, T))
+738. insertNat_case1(true, zero, X, deleteNat_case1_case1(true, Y, zero, Z, W, V), U, T, S) -> branch(deleteNat_case1_case1(true, Y, zero, Z, W, T), X, S, U)
+739. insertNat_case1_case1(true, zero, X, Y, deleteNat_case1(true, Z, zero, W, V, U), T, S) -> branch(Y, X, S, deleteNat_case1(true, Z, zero, W, V, T))
+740. insertNat_case1(true, zero, X, deleteNat_case1(true, Y, zero, Z, W, V), U, T, S) -> branch(deleteNat_case1(true, Y, zero, Z, W, T), X, S, U)
+741. uncurry(app(X, Y), pair(Z, app(foldr(X, W, cons(Y, V)), U))) -> foldr(app(X, Y), U, cons(Z, cons(foldr(X, W, V), nil)))
+742. insertNat(zero, X, deleteNat_case1(false, suc(zero), suc(suc(Y)), Z, W, V)) -> insertNat_case1(true, zero, suc(suc(Y)), Z, deleteNat(suc(zero), W), X, V)
+743. deleteNat(zero, insertNat_case1(false, suc(suc(X)), suc(zero), Y, Z, W, V)) -> deleteNat_case1(false, zero, suc(zero), Y, insertNat(suc(suc(X)), W, Z), V)
+744. deleteNat(zero, insertNat(suc(suc(X)), Y, insertNat(suc(zero), Z, nil_1))) -> insertNat(suc(suc(X)), Y, insertNat(suc(zero), Z, nil_1))
+745. insertNat(suc(suc(zero)), X, branch(Y, suc(suc(suc(Z))), W, V)) -> insertNat_case1(true, suc(suc(zero)), suc(suc(suc(Z))), Y, V, X, W)
+746. insertNat(suc(suc(suc(X))), Y, branch(Z, suc(suc(zero)), W, V)) -> insertNat_case1(false, suc(suc(suc(X))), suc(suc(zero)), Z, V, Y, W)
+747. insertNat_case1_case1(true, suc(suc(suc(X))), suc(suc(zero)), Y, Z, W, V) -> insertNat_case1(false, suc(suc(suc(X))), suc(suc(zero)), Y, Z, W, V)
+748. uncurry(insertNat(X, Y, Z), pair(W, app(uncurry(insertNat_2(X, Y), V), U))) -> foldr(uncurry_1(insertNat_2(X, Y)), U, cons(pair(Z, W), cons(V, nil)))
+749. app(uncurry(insertNat_2(X, Y), Z), uncurry(insertNat(X, Y, W), pair(V, U))) -> foldr(uncurry_1(insertNat_2(X, Y)), U, cons(Z, cons(pair(W, V), nil)))
+750. prop_FindDelete_case1(suc(suc(suc(suc(suc(X))))), suc(suc(suc(suc(zero)))), Y) -> prop_FindDelete_case1(suc(suc(suc(suc(suc(X))))), zero, Y)
+751. prop_FindDelete(suc(suc(suc(suc(suc(X))))), suc(suc(suc(suc(zero)))), nil) -> true
+752. findNat(suc(suc(zero)), join(branch(X, suc(suc(zero)), Y, Z), tree(cons(W, nil)))) -> just(Y)
+753. foldr(insertNat_1(suc(X)), branch(Y, zero, Z, W), cons(V, cons(U, nil))) = insertNat_case1(false, suc(X), zero, Y, insertNat(suc(X), U, W), V, Z)
+754. insertNat_case1(false, suc(X), zero, nil_1, insertNat(suc(X), Y, nil_1), Z, W) = foldr(insertNat_1(suc(X)), insertNat(zero, W, nil_1), cons(Z, cons(Y, nil)))
+755. insertNat_case1(false, suc(X), zero, nil_1, insertNat(suc(X), Y, nil_1), Z, W) -> insertNat(suc(X), Z, insertNat(suc(X), Y, insertNat(zero, W, nil_1)))
+756. findNat(zero, insertNat(suc(X), Y, insertNat(suc(X), Z, insertNat(zero, W, nil_1)))) -> just(W)
+757. insertNat(suc(zero), X, insertNat(suc(zero), Y, insertNat(zero, Z, nil_1))) -> insertNat(suc(zero), X, insertNat(zero, Z, nil_1))
+758. deleteNat(zero, insertNat(suc(X), Y, insertNat(suc(X), Z, insertNat(zero, W, nil_1)))) -> insertNat(suc(X), Y, insertNat(suc(X), Z, nil_1))
+759. findNat(zero, foldr(insertNat_1(suc(X)), insertNat(zero, Y, nil_1), cons(Z, cons(W, nil)))) -> just(Y)
+760. foldr(insertNat_2(zero, X), Y, cons(branch(Z, zero, ?, W), cons(V, nil))) = app(branch(Z, zero, X, W), app(insertNat(zero, X, V), Y))
+761. foldr(insertNat_2(zero, X), Y, cons(Z, cons(branch(W, zero, ?, V), nil))) = app(insertNat(zero, X, Z), app(branch(W, zero, X, V), Y))
+762. foldr(insertNat_2(zero, X), Y, cons(Z, cons(branch(W, zero, V, U), nil))) ~> foldr(insertNat_2(zero, X), Y, cons(Z, cons(branch(W, zero, ?, U), nil)))
+763. findNat(zero, join(deleteNat_case1_case1(true, X, suc(Y), Z, W, V), branch(U, T, S, X2))) -> findNat(zero, Z)
+764. findNat(zero, join(branch(X, suc(Y), Z, W), deleteNat_case1(true, V, U, T, S, X2))) -> findNat(zero, X)
+765. foldr(uncurry_1(uncurry_1(X)), Y, cons(pair(pair(fst(Z), snd(Z)), W), V)) -> foldr(uncurry_1(uncurry_1(X)), Y, cons(pair(Z, W), V))
+766. findNat(zero, join(branch(X, zero, Y, Z), deleteNat_case1(false, zero, suc(W), V, U, T))) -> just(Y)
+767. eqMaybeNat(findNat(suc(suc(zero)), deleteNat(suc(suc(zero)), insertNat(X, Y, tree(Z)))), nothing) -> prop_FindDelete(suc(suc(zero)), suc(suc(zero)), cons(pair(X, Y), Z))
+768. prop_FindDelete(suc(suc(zero)), suc(suc(zero)), cons(pair(fst(X), snd(X)), Y)) -> prop_FindDelete(suc(suc(zero)), suc(suc(zero)), cons(X, Y))
+769. findNat(suc(suc(zero)), deleteNat_case1(true, X, suc(suc(suc(Y))), Z, W, V)) -> findNat(suc(suc(zero)), deleteNat(X, Z))
+770. foldr(insertNat_1(fst(X)), Y, cons(snd(X), cons(snd(X), cons(Z, nil)))) -> foldr(uncurry_1(insertNat_0), insertNat(fst(X), Z, Y), cons(X, cons(X, nil)))
+771. findNat(zero, insertNat_case1(false, suc(suc(suc(X))), suc(suc(zero)), Y, Z, W, V)) -> findNat(zero, Y)
+772. uncurry(uncurry(X, Y), pair(Z, foldr(uncurry_1(app(X, fst(Y))), W, V))) -> foldr(uncurry_1(app(X, fst(Y))), W, cons(pair(snd(Y), Z), V))
+773. foldr(uncurry_1(insertNat_1(fst(X))), Y, cons(pair(snd(X), tree(Z)), W)) -> app(tree(cons(X, Z)), foldr(uncurry_1(insertNat_1(fst(X))), Y, W))
+774. deleteNat_case1_case1(true, suc(zero), X, Y, deleteNat_case1_case1(true, Z, suc(zero), W, V, U), T) -> branch(Y, X, T, join(W, deleteNat(Z, V)))
+775. deleteNat_case1(true, suc(zero), X, deleteNat_case1_case1(true, Y, suc(zero), Z, W, V), U, T) -> branch(join(Z, deleteNat(Y, W)), X, T, U)
+776. deleteNat_case1_case1(true, suc(zero), X, Y, deleteNat_case1(true, Z, suc(zero), W, V, U), T) -> branch(Y, X, T, join(deleteNat(Z, W), V))
+777. deleteNat_case1(true, suc(zero), X, deleteNat_case1(true, Y, suc(zero), Z, W, V), U, T) -> branch(join(deleteNat(Y, Z), W), X, T, U)
+778. foldr(insertNat_1(fst(X)), nil_1, cons(Y, cons(Z, cons(snd(X), nil)))) = insertNat(fst(X), Y, insertNat(fst(X), Z, tree(cons(X, nil))))
+779. deleteNat(zero, join(branch(X, suc(Y), Z, W), branch(V, U, T, S))) -> deleteNat_case1(false, zero, suc(Y), X, branch(join(W, V), U, T, S), Z)
+780. deleteNat(suc(X), join(branch(Y, zero, Z, W), branch(V, U, T, S))) -> deleteNat_case1(true, suc(X), zero, Y, branch(join(W, V), U, T, S), Z)
+781. join(deleteNat_case1(true, suc(X), zero, Y, Z, W), insertNat(V, U, nil_1)) -> deleteNat(suc(X), join(branch(Y, zero, W, Z), insertNat(V, U, nil_1)))
+782. findNat(zero, deleteNat(suc(X), join(branch(Y, zero, Z, W), insertNat(V, U, nil_1)))) -> just(Z)
+783. deleteNat(suc(X), join(branch(nil_1, zero, Y, Z), insertNat(W, V, nil_1))) -> join(branch(nil_1, zero, Y, Z), insertNat(W, V, nil_1))
+784. deleteNat_case1_case1(true, X, Y, deleteNat_case1(false, zero, suc(Z), W, V, U), T, S) -> deleteNat_case1(true, zero, Y, branch(W, suc(Z), U, V), deleteNat(X, T), S)
+785. deleteNat_case1_case1(true, X, Y, deleteNat_case1(true, suc(Z), zero, W, V, U), T, S) -> deleteNat_case1(true, suc(Z), Y, branch(W, zero, U, V), deleteNat(X, T), S)
+786. app(foldr(uncurry_1(X), Y, cons(pair(Z, foldr(X, W, V)), U)), T) -> uncurry(foldr(X, W, cons(Z, V)), pair(foldr(uncurry_1(X), Y, U), T))
+787. join(branch(X, Y, Z, W), deleteNat_case1(false, zero, suc(V), U, T, S)) -> deleteNat_case1_case1(true, zero, Y, X, branch(join(W, U), suc(V), S, T), Z)
+788. foldr(uncurry_1(insertNat_0), tree(X), cons(Y, cons(Z, cons(W, cons(V, nil))))) -> tree(cons(Y, cons(Z, cons(W, cons(V, X)))))
+789. findNat(zero, join(insertNat_case1_case1(true, X, zero, Y, Z, W, V), tree(cons(U, nil)))) -> just(V)
+790. foldr(uncurry_1(insertNat_1(X)), snd(Y), cons(Z, cons(pair(W, fst(Y)), nil))) = app(uncurry(insertNat_1(X), Z), uncurry(insertNat_2(X, W), Y))
+791. foldr(uncurry_1(insertNat_1(X)), snd(Y), cons(pair(Z, W), cons(fst(Y), nil))) = app(insertNat(X, Z, W), uncurry(uncurry_1(insertNat_1(X)), Y))
+792. findNat(suc(zero), join(deleteNat_case1_case1(true, X, suc(zero), Y, Z, W), insertNat(V, U, nil_1))) -> just(W)
+793. insertNat_case1(false, suc(X), zero, nil_1, insertNat(suc(Y), Z, nil_1), W, V) -> insertNat(suc(X), W, insertNat(suc(Y), Z, insertNat(zero, V, nil_1)))
+794. findNat(zero, insertNat(suc(X), Y, insertNat(suc(Z), W, insertNat(zero, V, nil_1)))) -> just(V)
+795. join(join(branch(X, Y, Z, W), deleteNat_case1_case1(true, V, U, T, S, X2)), nil_1) -> join(branch(X, Y, Z, W), deleteNat_case1_case1(true, V, U, T, S, X2))
+796. join(join(branch(X, Y, Z, W), deleteNat_case1(true, V, U, T, S, X2)), nil_1) -> join(branch(X, Y, Z, W), deleteNat_case1(true, V, U, T, S, X2))
+797. app(uncurry(app(X, Y), Z), foldr(uncurry(X, pair(Y, fst(Z))), W, V)) -> foldr(uncurry(X, pair(Y, fst(Z))), W, cons(snd(Z), V))
+798. join(join(deleteNat_case1_case1(true, X, Y, Z, W, V), branch(U, T, S, X2)), nil_1) -> join(deleteNat_case1_case1(true, X, Y, Z, W, V), branch(U, T, S, X2))
+799. foldr(uncurry_1(insertNat_1(X)), Y, cons(pair(Z, W), cons(pair(V, U), nil))) = app(insertNat(X, Z, W), app(insertNat(X, V, U), Y))
+800. findNat(suc(X), branch(join(Y, nil_1), fst(Z), snd(Z), nil_1)) = findNat(suc(X), join(branch(?, zero, ?, Y), tree(cons(Z, nil))))
+801. findNat(suc(X), join(branch(Y, zero, Z, W), tree(cons(V, nil)))) ~> findNat(suc(X), join(branch(?, zero, ?, W), tree(cons(V, nil))))
+802. findNat(suc(suc(zero)), deleteNat_case1(false, zero, suc(suc(suc(X))), Y, Z, W)) -> findNat(suc(suc(zero)), Y)
+803. findNat(suc(suc(zero)), deleteNat_case1(false, suc(zero), suc(suc(suc(X))), Y, Z, W)) -> findNat(suc(suc(zero)), Y)
+804. findNat(suc(suc(zero)), deleteNat_case1(false, suc(suc(zero)), suc(suc(suc(X))), Y, Z, W)) -> findNat(suc(suc(zero)), Y)
+805. foldr(insertNat_1(suc(zero)), nil_1, cons(X, cons(Y, cons(Z, cons(W, nil))))) -> insertNat(suc(zero), X, nil_1)
+806. uncurry(foldr(X, Y, cons(Z, W)), pair(foldr(app(X, Z), V, U), T)) -> app(foldr(app(X, Z), V, cons(foldr(X, Y, W), U)), T)
+807. foldr(uncurry_1(insertNat_2(X, Y)), Z, cons(W, cons(pair(fst(W), V), nil))) -> foldr(insertNat(X, Y, fst(W)), Z, cons(snd(W), cons(V, nil)))
+808. foldr(insertNat(X, Y, fst(Z)), W, cons(snd(Z), cons(snd(Z), nil))) -> foldr(uncurry_1(insertNat_2(X, Y)), W, cons(Z, cons(Z, nil)))
+809. findNat(suc(suc(suc(X))), deleteNat_case1_case1(true, Y, suc(suc(zero)), Z, W, V)) -> findNat(suc(suc(suc(X))), deleteNat(Y, W))
+810. insertNat(suc(suc(zero)), X, insertNat_case1_case1(true, Y, suc(suc(zero)), Z, W, V, U)) -> insertNat_case1_case1(true, Y, suc(suc(zero)), Z, W, V, X)
+811. insertNat(suc(suc(zero)), X, insertNat_case1(true, Y, suc(suc(zero)), Z, W, V, U)) -> insertNat_case1(true, Y, suc(suc(zero)), Z, W, V, X)
+812. insertNat(suc(suc(zero)), X, insertNat(zero, Y, insertNat(suc(suc(zero)), Z, nil_1))) -> insertNat(zero, Y, insertNat(suc(suc(zero)), X, nil_1))
+813. insertNat(suc(suc(zero)), X, insertNat(suc(zero), Y, insertNat(suc(suc(zero)), Z, nil_1))) -> insertNat(suc(zero), Y, insertNat(suc(suc(zero)), X, nil_1))
+814. findNat(suc(suc(zero)), insertNat_case1(true, zero, suc(suc(suc(X))), nil_1, Y, Z, W)) -> nothing
+815. findNat(suc(suc(zero)), insertNat(zero, X, insertNat(suc(suc(suc(Y))), Z, nil_1))) -> nothing
+816. findNat(suc(suc(zero)), insertNat_case1(true, suc(zero), suc(suc(suc(X))), nil_1, Y, Z, W)) -> nothing
+817. findNat(suc(suc(zero)), insertNat(suc(zero), X, insertNat(suc(suc(suc(Y))), Z, nil_1))) -> nothing
+818. findNat(suc(suc(suc(X))), insertNat_case1_case1(true, zero, suc(suc(zero)), Y, nil_1, Z, W)) -> nothing
+819. findNat(suc(suc(suc(X))), insertNat_case1_case1(true, suc(zero), suc(suc(zero)), Y, nil_1, Z, W)) -> nothing
+820. app(foldr(insertNat_1(X), Y, cons(Z, W)), app(insertNat(X, Z, V), U)) -> foldr(insertNat_2(X, Z), U, cons(foldr(insertNat_1(X), Y, W), cons(V, nil)))
+821. app(insertNat(X, Y, Z), app(foldr(insertNat_1(X), W, cons(Y, V)), U)) -> foldr(insertNat_2(X, Y), U, cons(Z, cons(foldr(insertNat_1(X), W, V), nil)))
+822. deleteNat_case1(false, suc(zero), suc(suc(X)), Y, branch(Z, suc(zero), W, V), U) -> branch(Y, suc(suc(X)), U, join(Z, V))
+823. deleteNat(zero, join(deleteNat_case1(true, X, zero, Y, Z, W), insertNat(V, U, nil_1))) -> join(deleteNat(X, Y), branch(join(Z, nil_1), V, U, nil_1))
+824. eqMaybeNat(findNat(suc(X), deleteNat(zero, insertNat(Y, Z, nil_1))), findNat(suc(X), insertNat(Y, Z, nil_1))) -> prop_FindDelete(suc(X), zero, cons(pair(Y, Z), nil))
+825. prop_FindDelete(suc(X), zero, cons(pair(zero, Y), nil)) -> true
+826. prop_FindDelete(suc(zero), zero, cons(pair(suc(zero), X), nil)) = eqNat(X, X)
+827. prop_FindDelete(suc(suc(zero)), zero, cons(pair(suc(suc(zero)), X), nil)) = eqNat(X, X)
+828. prop_FindDelete(suc(zero), zero, cons(pair(suc(suc(X)), Y), nil)) -> true
+829. prop_FindDelete(suc(suc(X)), zero, cons(pair(suc(zero), Y), nil)) -> true
+830. eqNat(X, X) = prop_FindDelete(suc(zero), zero, cons(pair(suc(zero), suc(X)), nil))
+831. prop_FindDelete(suc(zero), zero, cons(pair(suc(zero), X), nil)) -> prop_FindDelete(zero, suc(?), cons(pair(zero, X), nil))
+832. eqMaybeNat(findNat(suc(X), insertNat(suc(Y), Z, nil_1)), findNat(suc(X), insertNat(suc(Y), Z, nil_1))) -> prop_FindDelete(suc(X), zero, cons(pair(suc(Y), Z), nil))
+833. eqNat(X, X) = prop_FindDelete(suc(suc(zero)), zero, cons(pair(suc(suc(zero)), suc(X)), nil))
+834. prop_FindDelete(suc(X), zero, cons(pair(fst(Y), snd(Y)), nil)) -> prop_FindDelete(suc(X), zero, cons(Y, nil))
+835. prop_FindDelete(suc(suc(zero)), zero, cons(pair(suc(suc(zero)), X), nil)) -> prop_FindDelete(zero, suc(?), cons(pair(zero, X), nil))
+836. prop_FindDelete(suc(suc(zero)), zero, cons(pair(suc(suc(suc(X))), Y), nil)) -> true
+837. prop_FindDelete(suc(suc(suc(X))), zero, cons(pair(suc(suc(zero)), Y), nil)) -> true
+838. app(foldr(insertNat_2(zero, X), Y, cons(branch(Z, zero, ?, W), V)), U) = uncurry(branch(Z, zero, X, W), pair(foldr(insertNat_2(zero, X), Y, V), U))
+839. join(branch(X, Y, Z, tree(cons(W, nil))), branch(nil_1, V, U, T)) -> branch(X, Y, Z, branch(tree(cons(W, nil)), V, U, T))
+840. foldr(uncurry_1(X), Y, cons(pair(Z, foldr(X, W, V)), cons(U, nil))) -> app(foldr(X, W, cons(Z, V)), app(uncurry(X, U), Y))
+841. prop_FindDelete(suc(zero), suc(zero), cons(X, cons(pair(fst(Y), snd(Y)), nil))) -> prop_FindDelete(suc(zero), suc(zero), cons(X, cons(Y, nil)))
+842. findNat_case1(false, suc(suc(suc(suc(X)))), suc(suc(suc(zero))), ?, Y, Z) -> findNat(suc(suc(suc(suc(X)))), Y)
+843. findNat(suc(zero), join(deleteNat_case1(true, X, suc(zero), Y, Z, W), tree(cons(V, nil)))) -> just(W)
+844. findNat(suc(zero), insertNat_case1(false, suc(suc(suc(X))), suc(suc(zero)), Y, Z, W, V)) -> findNat(suc(zero), Y)
+845. findNat(suc(suc(zero)), insertNat_case1(false, suc(suc(suc(X))), suc(suc(zero)), Y, Z, W, V)) -> just(V)
+846. findNat(zero, deleteNat(suc(X), join(branch(Y, zero, Z, W), tree(cons(V, nil))))) -> just(Z)
+847. deleteNat_case1(false, zero, suc(X), Y, deleteNat_case1_case1(true, Z, zero, W, V, U), T) -> branch(Y, suc(X), T, join(W, deleteNat(Z, V)))
+848. deleteNat_case1(false, zero, suc(X), Y, deleteNat_case1(true, Z, zero, W, V, U), T) -> branch(Y, suc(X), T, join(deleteNat(Z, W), V))
+849. foldr(X, uncurry(X, pair(Y, Z)), cons(W, cons(V, cons(U, nil)))) -> foldr(X, Z, cons(W, cons(V, cons(U, cons(Y, nil)))))
+850. findNat(zero, join(branch(X, suc(Y), Z, W), insertNat_case1_case1(true, V, U, T, S, X2, Y2))) -> findNat(zero, X)
+851. join(insertNat(zero, X, insertNat(suc(Y), Z, nil_1)), tree(cons(W, nil))) -> insertNat_case1(true, zero, suc(Y), nil_1, tree(cons(W, nil)), X, Z)
+852. insertNat(fst(X), Y, tree(cons(X, cons(pair(fst(X), Z), nil)))) -> foldr(insertNat_1(fst(X)), nil_1, cons(Y, cons(snd(X), cons(Z, nil))))
+853. findNat(suc(zero), join(branch(X, suc(suc(Y)), Z, W), branch(V, U, T, S))) -> findNat(suc(zero), X)
+854. findNat(suc(zero), join(branch(X, suc(suc(Y)), Z, W), insertNat(V, U, nil_1))) -> findNat(suc(zero), X)
+855. findNat(suc(zero), join(deleteNat_case1_case1(true, X, suc(zero), Y, Z, W), branch(V, U, T, S))) -> just(W)
+856. findNat(suc(zero), join(branch(X, suc(zero), Y, Z), deleteNat_case1(true, W, V, U, T, S))) -> just(Y)
+857. findNat(zero, join(deleteNat_case1(true, X, suc(Y), Z, W, V), tree(cons(U, nil)))) -> findNat(zero, deleteNat(X, Z))
+858. deleteNat(suc(X), join(branch(nil_1, zero, Y, Z), tree(cons(W, nil)))) -> join(branch(nil_1, zero, Y, Z), tree(cons(W, nil)))
+859. branch(nil_1, fst(X), snd(X), insertNat_case1_case1(true, Y, Z, W, V, U, T)) -> join(tree(cons(X, nil)), insertNat_case1_case1(true, Y, Z, W, V, U, T))
+860. branch(nil_1, fst(X), snd(X), insertNat_case1(true, Y, Z, W, V, U, T)) -> join(tree(cons(X, nil)), insertNat_case1(true, Y, Z, W, V, U, T))
+861. deleteNat(zero, join(branch(X, zero, Y, Z), deleteNat_case1_case1(true, W, V, U, T, S))) -> join(X, deleteNat_case1_case1(true, W, V, join(Z, U), T, S))
+862. app(uncurry(uncurry_1(X), Y), uncurry(uncurry(X, fst(Y)), Z)) = foldr(uncurry(X, fst(Y)), snd(Z), cons(snd(Y), cons(fst(Z), nil)))
+863. foldr(uncurry_1(insertNat_0), foldr(insertNat_1(fst(X)), Y, Z), cons(W, cons(X, nil))) -> app(uncurry(insertNat_0, W), foldr(insertNat_1(fst(X)), Y, cons(snd(X), Z)))
+864. findNat(zero, join(deleteNat_case1_case1(true, X, suc(Y), Z, W, V), tree(cons(U, nil)))) -> findNat(zero, Z)
+865. foldr(uncurry_1(uncurry_1(insertNat_0)), X, cons(Y, cons(pair(pair(Z, W), V), nil))) -> app(uncurry(uncurry_1(insertNat_0), Y), app(insertNat(Z, W, V), X))
+866. foldr(uncurry_1(uncurry_1(X)), snd(Y), cons(pair(Z, W), cons(fst(Y), nil))) = uncurry(uncurry(X, Z), pair(W, uncurry(uncurry_1(uncurry_1(X)), Y)))
+867. foldr(insertNat_2(X, fst(Y)), snd(Z), cons(snd(Y), cons(fst(Z), nil))) = app(uncurry(insertNat_1(X), Y), uncurry(insertNat_2(X, fst(Y)), Z))
+868. findNat(suc(suc(zero)), insertNat_case1_case1(true, X, suc(suc(suc(Y))), Z, W, V, U)) -> findNat(suc(suc(zero)), Z)
+869. insertNat(suc(zero), X, deleteNat_case1(false, zero, suc(suc(Y)), Z, W, V)) -> insertNat_case1(true, suc(zero), suc(suc(Y)), Z, deleteNat(zero, W), X, V)
+870. insertNat(suc(zero), X, deleteNat_case1(false, suc(zero), suc(suc(Y)), Z, W, V)) -> insertNat_case1(true, suc(zero), suc(suc(Y)), Z, deleteNat(suc(zero), W), X, V)
+871. insertNat(suc(suc(X)), Y, deleteNat_case1(false, zero, suc(zero), Z, W, V)) -> insertNat_case1(false, suc(suc(X)), suc(zero), Z, deleteNat(zero, W), Y, V)
+872. findNat(zero, join(deleteNat_case1(false, zero, suc(X), Y, Z, W), insertNat(V, U, nil_1))) -> findNat(zero, Y)
+873. join(deleteNat_case1(true, suc(X), zero, Y, Z, W), tree(cons(V, nil))) -> deleteNat(suc(X), join(branch(Y, zero, W, Z), tree(cons(V, nil))))
+874. uncurry(tree(cons(X, nil)), pair(Y, foldr(uncurry_1(uncurry(insertNat_0, X)), Z, W))) -> foldr(uncurry_1(uncurry(insertNat_0, X)), Z, cons(pair(nil_1, Y), W))
+875. foldr(uncurry_1(insertNat_2(zero, X)), Y, cons(pair(insertNat(zero, Z, nil_1), W), V)) -> foldr(uncurry_1(insertNat_2(zero, X)), Y, cons(pair(nil_1, W), V))
+876. app(uncurry(app(X, Y), Z), foldr(uncurry_1(uncurry_1(X)), W, V)) = foldr(uncurry_1(uncurry_1(X)), W, cons(pair(pair(Y, fst(Z)), snd(Z)), V))
+877. foldr(X, uncurry(X, Y), cons(Z, cons(W, cons(V, nil)))) = foldr(X, snd(Y), cons(Z, cons(W, cons(V, cons(fst(Y), nil)))))
+878. foldr(uncurry(X, pair(Y, fst(Z))), W, cons(snd(Z), cons(V, nil))) -> foldr(uncurry_1(app(X, Y)), W, cons(Z, cons(pair(fst(Z), V), nil)))
+879. join(join(deleteNat_case1_case1(true, X, Y, Z, W, V), tree(cons(U, nil))), nil_1) -> join(deleteNat_case1_case1(true, X, Y, Z, W, V), tree(cons(U, nil)))
+880. join(join(deleteNat_case1(true, X, Y, Z, W, V), tree(cons(U, nil))), nil_1) -> join(deleteNat_case1(true, X, Y, Z, W, V), tree(cons(U, nil)))
+881. branch(X, zero, Y, foldr(insertNat_1(suc(Z)), W, cons(V, cons(U, nil)))) = insertNat_case1(false, suc(Z), zero, X, insertNat(suc(Z), U, W), V, Y)
+882. join(branch(X, Y, Z, nil_1), insertNat(zero, W, insertNat(suc(V), U, nil_1))) -> insertNat_case1_case1(true, zero, Y, X, insertNat(suc(V), U, nil_1), W, Z)
+883. foldr(insertNat_1(fst(X)), nil_1, cons(Y, cons(snd(X), cons(snd(X), nil)))) -> insertNat(fst(X), Y, tree(cons(X, cons(X, nil))))
+884. uncurry(tree(cons(X, Y)), pair(Z, foldr(uncurry_1(uncurry(insertNat_0, X)), W, V))) -> foldr(uncurry_1(uncurry(insertNat_0, X)), W, cons(pair(tree(Y), Z), V))
+885. foldr(uncurry_1(insertNat_1(zero)), X, cons(pair(Y, branch(Z, zero, W, V)), U)) -> app(branch(Z, zero, Y, V), foldr(uncurry_1(insertNat_1(zero)), X, U))
+886. join(deleteNat_case1(true, X, Y, Z, W, V), deleteNat_case1_case1(true, U, T, S, X2, Y2)) -> deleteNat_case1(true, X, Y, Z, deleteNat_case1_case1(true, U, T, join(W, S), X2, Y2), V)
+887. join(deleteNat_case1(true, X, Y, Z, W, V), deleteNat_case1(true, U, T, S, X2, Y2)) -> deleteNat_case1(true, X, Y, Z, branch(join(W, deleteNat(U, S)), T, Y2, X2), V)
+888. findNat(suc(zero), join(insertNat_case1(true, X, suc(zero), Y, Z, W, V), insertNat(U, T, nil_1))) -> just(V)
+889. insertNat_case1(true, suc(suc(zero)), suc(suc(suc(X))), nil_1, nil_1, Y, Z) -> insertNat(suc(suc(zero)), Y, insertNat(suc(suc(suc(X))), Z, nil_1))
+890. findNat(zero, insertNat(suc(suc(zero)), X, insertNat(suc(suc(suc(Y))), Z, nil_1))) -> nothing
+891. findNat(suc(zero), insertNat(suc(suc(zero)), X, insertNat(suc(suc(suc(Y))), Z, nil_1))) -> nothing
+892. insertNat_case1(false, suc(suc(suc(X))), suc(suc(zero)), nil_1, nil_1, Y, Z) -> insertNat(suc(suc(suc(X))), Y, insertNat(suc(suc(zero)), Z, nil_1))
+893. findNat(zero, insertNat(suc(suc(suc(X))), Y, insertNat(suc(suc(zero)), Z, nil_1))) -> nothing
+894. findNat(suc(zero), insertNat(suc(suc(suc(X))), Y, insertNat(suc(suc(zero)), Z, nil_1))) -> nothing
+895. findNat(suc(suc(zero)), insertNat(suc(suc(suc(X))), Y, insertNat(suc(suc(zero)), Z, nil_1))) -> just(Z)
+896. join(insertNat(X, Y, nil_1), insertNat_case1(false, suc(Z), zero, W, V, U, T)) -> insertNat_case1_case1(true, suc(Z), X, nil_1, branch(W, zero, T, V), U, Y)
+897. join(insertNat(X, Y, nil_1), insertNat(suc(Z), W, insertNat(zero, V, nil_1))) -> insertNat_case1_case1(true, suc(Z), X, nil_1, insertNat(zero, V, nil_1), W, Y)
+898. join(insertNat(zero, X, insertNat(suc(Y), Z, nil_1)), branch(W, V, U, T)) -> insertNat_case1(true, zero, suc(Y), nil_1, branch(W, V, U, T), X, Z)
+899. foldr(app(X, Y), foldr(uncurry_1(X), Z, W), cons(V, cons(U, nil))) = foldr(uncurry_1(X), Z, cons(pair(Y, V), cons(pair(Y, U), W)))
+900. uncurry(tree(cons(X, Y)), pair(app(tree(cons(X, nil)), Z), W)) = app(foldr(uncurry(insertNat_0, X), Z, cons(tree(Y), cons(nil_1, nil))), W)
+901. uncurry(tree(cons(X, nil)), pair(app(tree(cons(X, nil)), Y), Z)) -> app(foldr(uncurry(insertNat_0, X), Y, cons(nil_1, cons(nil_1, nil))), Z)
+902. prop_FindDelete_case1_case1(prop_FindDelete(zero, suc(?), cons(pair(zero, X), nil)), suc(suc(X)), Y) -> prop_FindDelete_case1(suc(suc(X)), suc(suc(X)), Y)
+903. foldr(insertNat_1(fst(X)), Y, cons(Z, cons(snd(X), cons(snd(X), nil)))) -> insertNat(fst(X), Z, foldr(uncurry_1(insertNat_0), Y, cons(X, cons(X, nil))))
+904. deleteNat_case1(true, suc(X), Y, deleteNat_case1_case1(true, Z, zero, nil_1, W, V), U, T) -> branch(deleteNat_case1_case1(true, Z, zero, nil_1, W, V), Y, T, U)
+905. foldr(insertNat_1(X), insertNat(X, Y, Z), cons(W, cons(V, cons(U, nil)))) -> foldr(insertNat_1(X), Z, cons(W, cons(V, cons(U, cons(Y, nil)))))
+906. eqMaybeNat(findNat(zero, deleteNat(suc(X), insertNat(Y, Z, tree(W)))), findNat(zero, insertNat(Y, Z, tree(W)))) -> prop_FindDelete(zero, suc(X), cons(pair(Y, Z), W))
+907. prop_FindDelete(zero, suc(X), cons(pair(fst(Y), snd(Y)), Z)) -> prop_FindDelete(zero, suc(X), cons(Y, Z))
+908. uncurry(insertNat(X, Y, Z), pair(W, foldr(uncurry_1(uncurry_1(insertNat_1(X))), V, U))) -> foldr(uncurry_1(uncurry_1(insertNat_1(X))), V, cons(pair(pair(Y, Z), W), U))
+909. deleteNat_case1_case1(true, suc(X), Y, Z, deleteNat_case1_case1(true, W, zero, nil_1, V, U), T) -> branch(Z, Y, T, deleteNat_case1_case1(true, W, zero, nil_1, V, U))
+910. branch(X, Y, Z, insertNat_case1(true, W, fst(V), nil_1, nil_1, U, snd(V))) -> join(insertNat_case1_case1(true, W, Y, X, nil_1, U, Z), tree(cons(V, nil)))
+911. join(X, branch(join(Y, nil_1), fst(Z), snd(Z), nil_1)) = deleteNat(suc(zero), join(branch(X, suc(zero), ?, Y), tree(cons(Z, nil))))
+912. deleteNat(suc(zero), join(branch(X, suc(zero), Y, Z), tree(cons(W, nil)))) ~> deleteNat(suc(zero), join(branch(X, suc(zero), ?, Z), tree(cons(W, nil))))
+913. join(insertNat(suc(X), Y, insertNat(suc(X), Z, insertNat(zero, W, nil_1))), nil_1) -> insertNat(suc(X), Y, insertNat(suc(X), Z, insertNat(zero, W, nil_1)))
+914. findNat(zero, join(insertNat_case1_case1(true, X, suc(Y), Z, W, V, U), insertNat(T, S, nil_1))) -> findNat(zero, Z)
+915. foldr(app(X, fst(Y)), Z, cons(snd(Y), cons(snd(Y), cons(W, nil)))) -> foldr(uncurry_1(X), Z, cons(Y, cons(Y, cons(pair(fst(Y), W), nil))))
+916. branch(X, Y, Z, deleteNat_case1(true, W, suc(V), U, deleteNat(zero, T), S)) -> deleteNat_case1_case1(true, zero, Y, X, deleteNat_case1(true, W, suc(V), U, T, S), Z)
+917. branch(deleteNat_case1(true, X, suc(Y), Z, deleteNat(zero, W), V), U, T, S) -> deleteNat_case1(true, zero, U, deleteNat_case1(true, X, suc(Y), Z, W, V), S, T)
+918. findNat(suc(suc(suc(X))), insertNat_case1(true, Y, suc(suc(zero)), Z, W, V, U)) -> findNat(suc(suc(suc(X))), W)
+919. findNat(suc(suc(suc(X))), insertNat(zero, Y, insertNat(suc(suc(zero)), Z, nil_1))) -> nothing
+920. findNat(suc(suc(suc(X))), insertNat(suc(zero), Y, insertNat(suc(suc(zero)), Z, nil_1))) -> nothing
+921. findNat(zero, join(deleteNat_case1(false, zero, suc(X), Y, Z, W), branch(V, U, T, S))) -> findNat(zero, Y)
+922. prop_FindDelete(suc(zero), suc(zero), cons(X, cons(pair(fst(Y), snd(Y)), Z))) -> prop_FindDelete(suc(zero), suc(zero), cons(X, cons(Y, Z)))
+923. prop_FindDelete_case1(suc(X), zero, cons(Y, cons(pair(fst(Z), snd(Z)), nil))) -> prop_FindDelete_case1(suc(X), zero, cons(Y, cons(Z, nil)))
+924. foldr(uncurry_1(uncurry_1(X)), snd(Y), cons(Z, cons(pair(W, fst(Y)), nil))) = app(uncurry(uncurry_1(X), Z), uncurry(uncurry(X, W), Y))
+925. findNat(zero, join(branch(X, zero, Y, Z), insertNat(zero, W, insertNat(suc(V), U, nil_1)))) -> just(Y)
+926. findNat(zero, join(insertNat_case1(true, zero, suc(X), nil_1, Y, Z, W), insertNat(V, U, nil_1))) -> just(Z)
+927. findNat(zero, foldr(insertNat_1(suc(X)), branch(Y, zero, Z, W), cons(V, cons(U, nil)))) -> just(Z)
+928. uncurry(uncurry(insertNat_1(X), Y), pair(app(insertNat(X, Z, W), V), U)) = app(foldr(uncurry_1(insertNat_1(X)), V, cons(Y, cons(pair(Z, W), nil))), U)
+929. uncurry(insertNat(X, Y, Z), pair(app(uncurry(insertNat_1(X), W), V), U)) = app(foldr(uncurry_1(insertNat_1(X)), V, cons(pair(Y, Z), cons(W, nil))), U)
+930. foldr(insertNat_2(X, Y), app(insertNat(X, Y, Z), W), cons(V, cons(U, nil))) -> foldr(insertNat_2(X, Y), W, cons(V, cons(U, cons(Z, nil))))
+931. deleteNat_case1_case1(true, suc(zero), X, Y, insertNat(zero, Z, insertNat(suc(zero), W, nil_1)), V) -> insertNat_case1_case1(true, zero, X, Y, nil_1, Z, V)
+932. deleteNat_case1(true, suc(zero), X, insertNat(zero, Y, insertNat(suc(zero), Z, nil_1)), W, V) -> insertNat_case1(true, zero, X, nil_1, W, Y, V)
+933. uncurry(tree(cons(X, nil)), pair(uncurry(uncurry(insertNat_0, X), pair(Y, Z)), W)) -> app(foldr(uncurry(insertNat_0, X), Z, cons(nil_1, cons(Y, nil))), W)
+934. app(foldr(uncurry(insertNat_0, X), Y, cons(nil_1, cons(tree(Z), nil))), W) = uncurry(tree(cons(X, nil)), pair(app(tree(cons(X, Z)), Y), W))
+935. uncurry(app(uncurry(insertNat_0, X), Y), pair(app(tree(cons(X, nil)), Z), W)) -> app(foldr(uncurry(insertNat_0, X), Z, cons(Y, cons(nil_1, nil))), W)
+936. foldr(uncurry_1(uncurry_1(X)), Y, cons(pair(Z, W), cons(pair(V, U), nil))) = uncurry(uncurry(X, Z), pair(W, uncurry(uncurry(X, V), pair(U, Y))))
+937. insertNat_case1_case1(true, suc(suc(zero)), X, Y, insertNat(suc(suc(zero)), Z, nil_1), W, V) -> insertNat_case1_case1(true, suc(suc(zero)), X, Y, nil_1, W, V)
+938. insertNat_case1(true, suc(suc(zero)), X, insertNat(suc(suc(zero)), Y, nil_1), Z, W, V) -> insertNat_case1(true, suc(suc(zero)), X, nil_1, Z, W, V)
+939. uncurry(uncurry(insertNat_0, X), pair(insertNat(Y, Z, foldr(uncurry_1(insertNat_0), W, V)), U)) -> app(foldr(uncurry_1(insertNat_0), W, cons(X, cons(pair(Y, Z), V))), U)
+940. findNat(zero, join(deleteNat_case1_case1(true, X, zero, Y, Z, W), deleteNat_case1_case1(true, V, U, T, S, X2))) -> just(W)
+941. findNat(suc(zero), join(branch(X, suc(zero), Y, Z), insertNat_case1_case1(true, W, V, U, T, S, X2))) -> just(Y)
+942. join(insertNat_case1(false, suc(X), zero, Y, nil_1, Z, W), insertNat(V, U, nil_1)) -> branch(Y, zero, W, insertNat_case1(true, suc(X), V, nil_1, nil_1, Z, U))
+943. branch(nil_1, zero, X, insertNat_case1(true, suc(Y), Z, nil_1, nil_1, W, V)) -> join(insertNat(suc(Y), W, insertNat(zero, X, nil_1)), insertNat(Z, V, nil_1))
+944. findNat(zero, join(insertNat(suc(X), Y, insertNat(zero, Z, nil_1)), insertNat(W, V, nil_1))) -> just(Z)
+945. deleteNat_case1(false, zero, suc(X), Y, branch(join(Z, nil_1), W, V, nil_1), U) -> deleteNat(zero, join(branch(Y, suc(X), U, Z), insertNat(W, V, nil_1)))
+946. deleteNat(zero, join(branch(X, suc(Y), Z, W), insertNat(zero, V, nil_1))) -> branch(X, suc(Y), Z, join(join(W, nil_1), nil_1))
+947. findNat(zero, deleteNat(zero, join(branch(X, suc(Y), Z, W), insertNat(V, U, nil_1)))) -> findNat(zero, X)
+948. findNat(suc(zero), deleteNat(zero, join(branch(X, suc(zero), Y, Z), insertNat(W, V, nil_1)))) -> just(Y)
+949. findNat(zero, deleteNat(zero, join(branch(X, suc(Y), Z, W), tree(cons(V, nil))))) -> findNat(zero, X)
+950. deleteNat_case1_case1(true, suc(zero), X, Y, deleteNat_case1(false, zero, suc(zero), Z, W, V), U) -> branch(Y, X, U, join(Z, deleteNat(zero, W)))
+951. deleteNat_case1(true, suc(zero), X, deleteNat_case1(false, zero, suc(zero), Y, Z, W), V, U) -> branch(join(Y, deleteNat(zero, Z)), X, U, V)
+952. deleteNat_case1(true, zero, X, insertNat(suc(Y), Z, insertNat(zero, W, nil_1)), V, U) -> insertNat_case1(true, suc(Y), X, nil_1, V, Z, U)
+953. uncurry(tree(cons(X, Y)), pair(uncurry(uncurry(insertNat_0, X), pair(Z, W)), V)) -> app(foldr(uncurry(insertNat_0, X), W, cons(tree(Y), cons(Z, nil))), V)
+954. uncurry(app(uncurry(insertNat_0, X), Y), pair(app(tree(cons(X, Z)), W), V)) -> app(foldr(uncurry(insertNat_0, X), W, cons(Y, cons(tree(Z), nil))), V)
+955. deleteNat(zero, join(deleteNat_case1_case1(true, X, zero, Y, Z, W), insertNat(V, U, nil_1))) -> join(Y, branch(join(deleteNat(X, Z), nil_1), V, U, nil_1))
+956. insertNat(suc(zero), X, insertNat_case1(false, suc(suc(Y)), suc(zero), Z, W, V, U)) -> insertNat_case1(false, suc(suc(Y)), suc(zero), Z, W, V, X)
+957. insertNat(suc(zero), X, insertNat(suc(suc(Y)), Z, insertNat(suc(zero), W, nil_1))) -> insertNat(suc(suc(Y)), Z, insertNat(suc(zero), X, nil_1))
+958. deleteNat_case1_case1(true, zero, X, Y, insertNat(suc(Z), W, insertNat(zero, V, nil_1)), U) -> insertNat_case1_case1(true, suc(Z), X, Y, nil_1, W, U)
+959. branch(X, Y, Z, deleteNat_case1(false, suc(zero), suc(suc(W)), V, U, T)) -> deleteNat_case1_case1(true, suc(zero), Y, X, branch(V, suc(suc(W)), T, U), Z)
+960. deleteNat_case1_case1(true, suc(zero), X, Y, branch(Z, suc(suc(W)), V, nil_1), U) -> branch(Y, X, U, branch(Z, suc(suc(W)), V, nil_1))
+961. branch(deleteNat_case1(false, suc(zero), suc(suc(X)), Y, Z, W), V, U, T) -> deleteNat_case1(true, suc(zero), V, branch(Y, suc(suc(X)), W, Z), T, U)
+962. deleteNat_case1(true, suc(zero), X, branch(Y, suc(suc(Z)), W, nil_1), V, U) -> branch(branch(Y, suc(suc(Z)), W, nil_1), X, U, V)
+963. branch(deleteNat_case1(true, suc(suc(X)), suc(zero), Y, Z, W), V, U, T) -> deleteNat_case1(true, suc(suc(X)), V, branch(Y, suc(zero), W, Z), T, U)
+964. deleteNat_case1(true, suc(suc(X)), Y, branch(nil_1, suc(zero), Z, W), V, U) -> branch(branch(nil_1, suc(zero), Z, W), Y, U, V)
+965. insertNat(suc(zero), X, insertNat_case1_case1(true, Y, suc(suc(Z)), W, V, U, T)) -> insertNat_case1(true, suc(zero), suc(suc(Z)), W, insertNat(Y, U, V), X, T)
+966. insertNat(suc(zero), X, insertNat_case1(true, Y, suc(suc(Z)), W, V, U, T)) -> insertNat_case1(true, suc(zero), suc(suc(Z)), insertNat(Y, U, W), V, X, T)
+967. insertNat(suc(zero), X, insertNat(suc(zero), Y, insertNat(suc(suc(Z)), W, nil_1))) -> insertNat(suc(zero), X, insertNat(suc(suc(Z)), W, nil_1))
+968. insertNat(suc(suc(X)), Y, insertNat_case1_case1(true, Z, suc(zero), W, V, U, T)) -> insertNat_case1(false, suc(suc(X)), suc(zero), W, insertNat(Z, U, V), Y, T)
+969. insertNat(suc(suc(X)), Y, insertNat_case1(true, Z, suc(zero), W, V, U, T)) -> insertNat_case1(false, suc(suc(X)), suc(zero), insertNat(Z, U, W), V, Y, T)
+970. insertNat_case1(false, suc(suc(X)), suc(zero), insertNat(Y, Z, W), V, U, T) -> insertNat_case1(true, Y, suc(zero), W, insertNat(suc(suc(X)), U, V), Z, T)
+971. deleteNat_case1_case1(true, zero, X, Y, deleteNat_case1(true, Z, suc(W), V, nil_1, U), T) -> branch(Y, X, T, deleteNat_case1(true, Z, suc(W), V, nil_1, U))
+972. deleteNat_case1(true, zero, X, deleteNat_case1(true, Y, suc(Z), W, nil_1, V), U, T) -> branch(deleteNat_case1(true, Y, suc(Z), W, nil_1, V), X, T, U)
+973. app(deleteNat_case1_case1(true, X, zero, Y, Z, W), foldr(insertNat_2(zero, W), V, U)) -> foldr(insertNat_2(zero, W), V, cons(deleteNat_case1_case1(true, X, zero, Y, Z, ?), U))
+974. foldr(insertNat_2(zero, X), Y, cons(deleteNat_case1_case1(true, Z, zero, W, V, U), T)) ~> foldr(insertNat_2(zero, X), Y, cons(deleteNat_case1_case1(true, Z, zero, W, V, ?), T))
+975. app(deleteNat_case1(true, X, zero, Y, Z, W), foldr(insertNat_2(zero, W), V, U)) -> foldr(insertNat_2(zero, W), V, cons(deleteNat_case1(true, X, zero, Y, Z, ?), U))
+976. foldr(insertNat_2(zero, X), Y, cons(deleteNat_case1(true, Z, zero, W, V, U), T)) ~> foldr(insertNat_2(zero, X), Y, cons(deleteNat_case1(true, Z, zero, W, V, ?), T))
+977. findNat(zero, join(insertNat_case1(true, X, suc(Y), Z, W, V, U), insertNat(T, S, nil_1))) -> findNat(zero, insertNat(X, V, Z))
+978. foldr(app(X, Y), snd(Z), cons(foldr(X, W, V), cons(fst(Z), nil))) = app(foldr(X, W, cons(Y, V)), uncurry(app(X, Y), Z))
+979. findNat(suc(zero), join(deleteNat_case1(false, zero, suc(zero), X, Y, Z), insertNat(W, V, nil_1))) -> just(Z)
+980. branch(X, Y, Z, deleteNat_case1(true, suc(suc(W)), suc(zero), V, U, T)) -> deleteNat_case1_case1(true, suc(suc(W)), Y, X, branch(V, suc(zero), T, U), Z)
+981. deleteNat_case1_case1(true, suc(suc(X)), Y, Z, branch(nil_1, suc(zero), W, V), U) -> branch(Z, Y, U, branch(nil_1, suc(zero), W, V))
+982. foldr(insertNat_2(X, fst(fst(Y))), snd(Y), cons(Z, cons(snd(fst(Y)), nil))) = app(insertNat(X, fst(fst(Y)), Z), uncurry(uncurry_1(insertNat_1(X)), Y))
+983. findNat(suc(zero), join(deleteNat_case1_case1(true, X, suc(zero), Y, Z, W), tree(cons(V, nil)))) -> just(W)
+984. prop_FindDelete_case1(zero, suc(?), cons(X, cons(pair(fst(Y), snd(Y)), nil))) -> prop_FindDelete_case1(zero, suc(?), cons(X, cons(Y, nil)))
+985. foldr(insertNat_1(zero), nil_1, cons(X, cons(Y, cons(Z, cons(W, cons(V, nil)))))) -> insertNat(zero, X, nil_1)
+986. findNat(suc(zero), join(branch(X, suc(suc(Y)), Z, W), tree(cons(V, nil)))) -> findNat(suc(zero), X)
+987. findNat(suc(zero), join(insertNat_case1_case1(true, X, suc(zero), Y, nil_1, Z, W), tree(cons(V, nil)))) -> just(W)
+988. findNat(zero, join(insertNat_case1_case1(true, X, suc(Y), Z, W, V, U), branch(T, S, X2, Y2))) -> findNat(zero, Z)
+989. insertNat_case1_case1(true, X, Y, deleteNat(Z, W), insertNat(X, V, U), T, S) = deleteNat_case1(true, Z, Y, W, foldr(insertNat_1(X), U, cons(T, cons(V, nil))), S)
+990. insertNat_case1(true, X, Y, insertNat(X, Z, W), deleteNat(V, U), T, S) = deleteNat_case1_case1(true, V, Y, foldr(insertNat_1(X), W, cons(T, cons(Z, nil))), U, S)
+991. eqMaybeNat(findNat(zero, deleteNat(zero, insertNat(X, Y, insertNat(Z, W, nil_1)))), nothing) -> prop_FindDelete(zero, zero, cons(pair(X, Y), cons(pair(Z, W), nil)))
+992. prop_FindDelete(zero, zero, cons(pair(zero, X), cons(pair(zero, Y), nil))) -> true
+993. prop_FindDelete(zero, zero, cons(pair(suc(X), Y), cons(pair(zero, Z), nil))) -> true
+994. prop_FindDelete(zero, zero, cons(pair(zero, X), cons(pair(suc(Y), Z), nil))) -> false
+995. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (nil_1_1): nil_1 = leaf.
+Axiom 2 (isLT_1): isLT(lt) = true.
+Axiom 3 (isLT_2): isLT(eq) = false.
+Axiom 4 (isGT_1): isGT(lt) = false.
+Axiom 5 (isGT_2): isGT(eq) = false.
+Axiom 6 (deleteNat_1): deleteNat(X, leaf) = leaf.
+Axiom 7 (eqNat_1): eqNat(zero, zero) = true.
+Axiom 8 (compareNat_1): compareNat(zero, zero) = eq.
+Axiom 9 (compareNat_2): compareNat(zero, suc(X)) = lt.
+Axiom 10 (app_insertNat_0_1): app(insertNat_0, X) = insertNat_1(X).
+Axiom 11 (fst_1): fst(pair(X, Y)) = X.
+Axiom 12 (snd_1): snd(pair(X, Y)) = Y.
+Axiom 13 (prop_FindDelete_case1_case1_1): prop_FindDelete_case1_case1(true, X, Y) = nothing.
+Axiom 14 (ltNat_1): ltNat(X, Y) = isLT(compareNat(X, Y)).
+Axiom 15 (gtNat_1): gtNat(X, Y) = isGT(compareNat(X, Y)).
+Axiom 16 (foldr_1): foldr(X, Y, nil) = Y.
+Axiom 17 (eqMaybeNat_3): eqMaybeNat(just(X), nothing) = false.
+Axiom 18 (app_uncurry_1_1): app(uncurry_1(X), Y) = uncurry(X, Y).
+Axiom 19 (app_insertNat_1_1): app(insertNat_1(X), Y) = insertNat_2(X, Y).
+Axiom 20 (findNat_case1_case1_2): findNat_case1_case1(false, X, Y, Z) = just(Z).
+Axiom 21 (tree_1): tree(X) = foldr(uncurry_1(insertNat_0), nil_1, X).
+Axiom 22 (app_insertNat_2_1): app(insertNat_2(X, Y), Z) = insertNat(X, Y, Z).
+Axiom 23 (insertNat_1): insertNat(X, Y, leaf) = branch(leaf, X, Y, leaf).
+Axiom 24 (prop_FindDelete_case1_1): prop_FindDelete_case1(X, Y, Z) = prop_FindDelete_case1_case1(eqNat(X, Y), X, Z).
+Axiom 25 (findNat_case1_1): findNat_case1(true, X, Y, Z, W, V) = findNat(X, Z).
+Axiom 26 (findNat_case1_2): findNat_case1(false, X, Y, Z, W, V) = findNat_case1_case1(gtNat(X, Y), X, W, V).
+Axiom 27 (uncurry_1): uncurry(X, Y) = app(app(X, fst(Y)), snd(Y)).
+Axiom 28 (deleteNat_case1_case1_1): deleteNat_case1_case1(true, X, Y, Z, W, V) = branch(Z, Y, V, deleteNat(X, W)).
+Axiom 29 (foldr_2): foldr(X, Y, cons(Z, W)) = app(app(X, Z), foldr(X, Y, W)).
+Axiom 30 (insertNat_case1_1): insertNat_case1(true, X, Y, Z, W, V, U) = branch(insertNat(X, V, Z), Y, U, W).
+Axiom 31 (deleteNat_2): deleteNat(X, branch(Y, Z, W, V)) = deleteNat_case1(gtNat(X, Z), X, Z, Y, V, W).
+Axiom 32 (deleteNat_case1_2): deleteNat_case1(false, X, Y, Z, W, V) = deleteNat_case1_case1(ltNat(X, Y), X, Y, Z, W, V).
+Axiom 33 (findNat_2): findNat(X, branch(Y, Z, W, V)) = findNat_case1(ltNat(X, Z), X, Z, Y, V, W).
+Axiom 34 (insertNat_2): insertNat(X, Y, branch(Z, W, V, U)) = insertNat_case1(ltNat(X, W), X, W, Z, U, Y, V).
+Axiom 35 (prop_FindDelete_1): prop_FindDelete(X, Y, Z) = eqMaybeNat(findNat(X, deleteNat(Y, tree(Z))), prop_FindDelete_case1(X, Y, Z)).
+
+Lemma 36: ltNat(zero, suc(X)) = true.
+Proof:
+  ltNat(zero, suc(X))
+= { by axiom 14 (ltNat_1) }
+  isLT(compareNat(zero, suc(X)))
+= { by axiom 9 (compareNat_2) }
+  isLT(lt)
+= { by axiom 2 (isLT_1) }
+  true
+
+Lemma 37: uncurry(insertNat_0, pair(X, Y)) = insertNat_2(X, Y).
+Proof:
+  uncurry(insertNat_0, pair(X, Y))
+= { by axiom 27 (uncurry_1) }
+  app(app(insertNat_0, fst(pair(X, Y))), snd(pair(X, Y)))
+= { by axiom 10 (app_insertNat_0_1) }
+  app(insertNat_1(fst(pair(X, Y))), snd(pair(X, Y)))
+= { by axiom 19 (app_insertNat_1_1) }
+  insertNat_2(fst(pair(X, Y)), snd(pair(X, Y)))
+= { by axiom 11 (fst_1) }
+  insertNat_2(X, snd(pair(X, Y)))
+= { by axiom 12 (snd_1) }
+  insertNat_2(X, Y)
+
+Lemma 38: app(app(X, Y), Z) = uncurry(X, pair(Y, Z)).
+Proof:
+  app(app(X, Y), Z)
+= { by axiom 12 (snd_1) R->L }
+  app(app(X, Y), snd(pair(Y, Z)))
+= { by axiom 11 (fst_1) R->L }
+  app(app(X, fst(pair(Y, Z))), snd(pair(Y, Z)))
+= { by axiom 27 (uncurry_1) R->L }
+  uncurry(X, pair(Y, Z))
+
+Lemma 39: branch(nil_1, X, Y, nil_1) = insertNat(X, Y, nil_1).
+Proof:
+  branch(nil_1, X, Y, nil_1)
+= { by axiom 1 (nil_1_1) }
+  branch(leaf, X, Y, nil_1)
+= { by axiom 1 (nil_1_1) }
+  branch(leaf, X, Y, leaf)
+= { by axiom 23 (insertNat_1) R->L }
+  insertNat(X, Y, leaf)
+= { by axiom 1 (nil_1_1) R->L }
+  insertNat(X, Y, nil_1)
+
+Lemma 40: uncurry(uncurry_1(X), pair(Y, Z)) = app(uncurry(X, Y), Z).
+Proof:
+  uncurry(uncurry_1(X), pair(Y, Z))
+= { by lemma 38 R->L }
+  app(app(uncurry_1(X), Y), Z)
+= { by axiom 18 (app_uncurry_1_1) }
+  app(uncurry(X, Y), Z)
+
+Lemma 41: uncurry(uncurry_1(insertNat_0), pair(X, tree(Y))) = tree(cons(X, Y)).
+Proof:
+  uncurry(uncurry_1(insertNat_0), pair(X, tree(Y)))
+= { by lemma 38 R->L }
+  app(app(uncurry_1(insertNat_0), X), tree(Y))
+= { by axiom 21 (tree_1) }
+  app(app(uncurry_1(insertNat_0), X), foldr(uncurry_1(insertNat_0), nil_1, Y))
+= { by axiom 29 (foldr_2) R->L }
+  foldr(uncurry_1(insertNat_0), nil_1, cons(X, Y))
+= { by axiom 21 (tree_1) R->L }
+  tree(cons(X, Y))
+
+Goal 1 (prop_FindDelete): prop_FindDelete(X, Y, Z) = false.
+The goal is true when:
+  X = zero
+  Y = zero
+  Z = cons(pair(zero, X), cons(pair(suc(Y), Z), nil))
+
+Proof:
+  prop_FindDelete(zero, zero, cons(pair(zero, X), cons(pair(suc(Y), Z), nil)))
+= { by axiom 35 (prop_FindDelete_1) }
+  eqMaybeNat(findNat(zero, deleteNat(zero, tree(cons(pair(zero, X), cons(pair(suc(Y), Z), nil))))), prop_FindDelete_case1(zero, zero, cons(pair(zero, X), cons(pair(suc(Y), Z), nil))))
+= { by axiom 24 (prop_FindDelete_case1_1) }
+  eqMaybeNat(findNat(zero, deleteNat(zero, tree(cons(pair(zero, X), cons(pair(suc(Y), Z), nil))))), prop_FindDelete_case1_case1(eqNat(zero, zero), zero, cons(pair(zero, X), cons(pair(suc(Y), Z), nil))))
+= { by axiom 7 (eqNat_1) }
+  eqMaybeNat(findNat(zero, deleteNat(zero, tree(cons(pair(zero, X), cons(pair(suc(Y), Z), nil))))), prop_FindDelete_case1_case1(true, zero, cons(pair(zero, X), cons(pair(suc(Y), Z), nil))))
+= { by axiom 13 (prop_FindDelete_case1_case1_1) }
+  eqMaybeNat(findNat(zero, deleteNat(zero, tree(cons(pair(zero, X), cons(pair(suc(Y), Z), nil))))), nothing)
+= { by lemma 41 R->L }
+  eqMaybeNat(findNat(zero, deleteNat(zero, uncurry(uncurry_1(insertNat_0), pair(pair(zero, X), tree(cons(pair(suc(Y), Z), nil)))))), nothing)
+= { by lemma 40 }
+  eqMaybeNat(findNat(zero, deleteNat(zero, app(uncurry(insertNat_0, pair(zero, X)), tree(cons(pair(suc(Y), Z), nil))))), nothing)
+= { by lemma 37 }
+  eqMaybeNat(findNat(zero, deleteNat(zero, app(insertNat_2(zero, X), tree(cons(pair(suc(Y), Z), nil))))), nothing)
+= { by axiom 22 (app_insertNat_2_1) }
+  eqMaybeNat(findNat(zero, deleteNat(zero, insertNat(zero, X, tree(cons(pair(suc(Y), Z), nil))))), nothing)
+= { by lemma 41 R->L }
+  eqMaybeNat(findNat(zero, deleteNat(zero, insertNat(zero, X, uncurry(uncurry_1(insertNat_0), pair(pair(suc(Y), Z), tree(nil)))))), nothing)
+= { by axiom 21 (tree_1) }
+  eqMaybeNat(findNat(zero, deleteNat(zero, insertNat(zero, X, uncurry(uncurry_1(insertNat_0), pair(pair(suc(Y), Z), foldr(uncurry_1(insertNat_0), nil_1, nil)))))), nothing)
+= { by axiom 16 (foldr_1) }
+  eqMaybeNat(findNat(zero, deleteNat(zero, insertNat(zero, X, uncurry(uncurry_1(insertNat_0), pair(pair(suc(Y), Z), nil_1))))), nothing)
+= { by lemma 40 }
+  eqMaybeNat(findNat(zero, deleteNat(zero, insertNat(zero, X, app(uncurry(insertNat_0, pair(suc(Y), Z)), nil_1)))), nothing)
+= { by lemma 37 }
+  eqMaybeNat(findNat(zero, deleteNat(zero, insertNat(zero, X, app(insertNat_2(suc(Y), Z), nil_1)))), nothing)
+= { by axiom 22 (app_insertNat_2_1) }
+  eqMaybeNat(findNat(zero, deleteNat(zero, insertNat(zero, X, insertNat(suc(Y), Z, nil_1)))), nothing)
+= { by lemma 39 R->L }
+  eqMaybeNat(findNat(zero, deleteNat(zero, insertNat(zero, X, branch(nil_1, suc(Y), Z, nil_1)))), nothing)
+= { by axiom 34 (insertNat_2) }
+  eqMaybeNat(findNat(zero, deleteNat(zero, insertNat_case1(ltNat(zero, suc(Y)), zero, suc(Y), nil_1, nil_1, X, Z))), nothing)
+= { by lemma 36 }
+  eqMaybeNat(findNat(zero, deleteNat(zero, insertNat_case1(true, zero, suc(Y), nil_1, nil_1, X, Z))), nothing)
+= { by axiom 30 (insertNat_case1_1) }
+  eqMaybeNat(findNat(zero, deleteNat(zero, branch(insertNat(zero, X, nil_1), suc(Y), Z, nil_1))), nothing)
+= { by axiom 31 (deleteNat_2) }
+  eqMaybeNat(findNat(zero, deleteNat_case1(gtNat(zero, suc(Y)), zero, suc(Y), insertNat(zero, X, nil_1), nil_1, Z)), nothing)
+= { by axiom 15 (gtNat_1) }
+  eqMaybeNat(findNat(zero, deleteNat_case1(isGT(compareNat(zero, suc(Y))), zero, suc(Y), insertNat(zero, X, nil_1), nil_1, Z)), nothing)
+= { by axiom 9 (compareNat_2) }
+  eqMaybeNat(findNat(zero, deleteNat_case1(isGT(lt), zero, suc(Y), insertNat(zero, X, nil_1), nil_1, Z)), nothing)
+= { by axiom 4 (isGT_1) }
+  eqMaybeNat(findNat(zero, deleteNat_case1(false, zero, suc(Y), insertNat(zero, X, nil_1), nil_1, Z)), nothing)
+= { by axiom 32 (deleteNat_case1_2) }
+  eqMaybeNat(findNat(zero, deleteNat_case1_case1(ltNat(zero, suc(Y)), zero, suc(Y), insertNat(zero, X, nil_1), nil_1, Z)), nothing)
+= { by lemma 36 }
+  eqMaybeNat(findNat(zero, deleteNat_case1_case1(true, zero, suc(Y), insertNat(zero, X, nil_1), nil_1, Z)), nothing)
+= { by axiom 28 (deleteNat_case1_case1_1) }
+  eqMaybeNat(findNat(zero, branch(insertNat(zero, X, nil_1), suc(Y), Z, deleteNat(zero, nil_1))), nothing)
+= { by axiom 1 (nil_1_1) }
+  eqMaybeNat(findNat(zero, branch(insertNat(zero, X, nil_1), suc(Y), Z, deleteNat(zero, leaf))), nothing)
+= { by axiom 6 (deleteNat_1) }
+  eqMaybeNat(findNat(zero, branch(insertNat(zero, X, nil_1), suc(Y), Z, leaf)), nothing)
+= { by axiom 1 (nil_1_1) R->L }
+  eqMaybeNat(findNat(zero, branch(insertNat(zero, X, nil_1), suc(Y), Z, nil_1)), nothing)
+= { by axiom 33 (findNat_2) }
+  eqMaybeNat(findNat_case1(ltNat(zero, suc(Y)), zero, suc(Y), insertNat(zero, X, nil_1), nil_1, Z), nothing)
+= { by lemma 36 }
+  eqMaybeNat(findNat_case1(true, zero, suc(Y), insertNat(zero, X, nil_1), nil_1, Z), nothing)
+= { by axiom 25 (findNat_case1_1) }
+  eqMaybeNat(findNat(zero, insertNat(zero, X, nil_1)), nothing)
+= { by lemma 39 R->L }
+  eqMaybeNat(findNat(zero, branch(nil_1, zero, X, nil_1)), nothing)
+= { by axiom 33 (findNat_2) }
+  eqMaybeNat(findNat_case1(ltNat(zero, zero), zero, zero, nil_1, nil_1, X), nothing)
+= { by axiom 14 (ltNat_1) }
+  eqMaybeNat(findNat_case1(isLT(compareNat(zero, zero)), zero, zero, nil_1, nil_1, X), nothing)
+= { by axiom 8 (compareNat_1) }
+  eqMaybeNat(findNat_case1(isLT(eq), zero, zero, nil_1, nil_1, X), nothing)
+= { by axiom 3 (isLT_2) }
+  eqMaybeNat(findNat_case1(false, zero, zero, nil_1, nil_1, X), nothing)
+= { by axiom 26 (findNat_case1_2) }
+  eqMaybeNat(findNat_case1_case1(gtNat(zero, zero), zero, nil_1, X), nothing)
+= { by axiom 15 (gtNat_1) }
+  eqMaybeNat(findNat_case1_case1(isGT(compareNat(zero, zero)), zero, nil_1, X), nothing)
+= { by axiom 8 (compareNat_1) }
+  eqMaybeNat(findNat_case1_case1(isGT(eq), zero, nil_1, X), nothing)
+= { by axiom 5 (isGT_2) }
+  eqMaybeNat(findNat_case1_case1(false, zero, nil_1, X), nothing)
+= { by axiom 20 (findNat_case1_case1_2) }
+  eqMaybeNat(just(X), nothing)
+= { by axiom 17 (eqMaybeNat_3) }
+  false
+
+RESULT: Theorem (the conjecture is true).

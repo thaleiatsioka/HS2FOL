@@ -1,0 +1,368 @@
+Here is the input problem:
+  Axiom 1 (nil_1_1): nil_1 = leaf.
+  Axiom 2 (isLT_1): isLT(lt) = true.
+  Axiom 3 (isLT_2): isLT(eq) = false.
+  Axiom 4 (isLT_3): isLT(gt) = false.
+  Axiom 5 (isGT_1): isGT(lt) = false.
+  Axiom 6 (isGT_2): isGT(eq) = false.
+  Axiom 7 (isGT_3): isGT(gt) = true.
+  Axiom 8 (eqMaybeNat_1): eqMaybeNat(nothing, nothing) = true.
+  Axiom 9 (findNat_1): findNat(X, leaf) = nothing.
+  Axiom 10 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 11 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 12 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 13 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 14 (compareNat_1): compareNat(zero, zero) = eq.
+  Axiom 15 (compareNat_2): compareNat(zero, suc(X)) = lt.
+  Axiom 16 (compareNat_3): compareNat(suc(X), zero) = gt.
+  Axiom 17 (compareNat_4): compareNat(suc(X), suc(Y)) = compareNat(X, Y).
+  Axiom 18 (app_insertNat_0_1): app(insertNat_0, X) = insertNat_1(X).
+  Axiom 19 (fst_1): fst(pair(X, Y)) = X.
+  Axiom 20 (snd_1): snd(pair(X, Y)) = Y.
+  Axiom 21 (ltNat_1): ltNat(X, Y) = isLT(compareNat(X, Y)).
+  Axiom 22 (gtNat_1): gtNat(X, Y) = isGT(compareNat(X, Y)).
+  Axiom 23 (foldr_1): foldr(X, Y, nil) = Y.
+  Axiom 24 (eqMaybeNat_2): eqMaybeNat(nothing, just(X)) = false.
+  Axiom 25 (eqMaybeNat_3): eqMaybeNat(just(X), nothing) = false.
+  Axiom 26 (app_uncurry_1_1): app(uncurry_1(X), Y) = uncurry(X, Y).
+  Axiom 27 (app_insertNat_1_1): app(insertNat_1(X), Y) = insertNat_2(X, Y).
+  Axiom 28 (findNat_case1_case1_1): findNat_case1_case1(true, X, Y, Z) = findNat(X, Y).
+  Axiom 29 (findNat_case1_case1_2): findNat_case1_case1(false, X, Y, Z) = just(Z).
+  Axiom 30 (tree_1): tree(X) = foldr(uncurry_1(insertNat_0), nil_1, X).
+  Axiom 31 (eqMaybeNat_4): eqMaybeNat(just(X), just(Y)) = eqNat(X, Y).
+  Axiom 32 (insertNat_1): insertNat(X, Y, leaf) = branch(leaf, X, Y, leaf).
+  Axiom 33 (app_insertNat_2_1): app(insertNat_2(X, Y), Z) = insertNat(X, Y, Z).
+  Axiom 34 (findNat_case1_1): findNat_case1(true, X, Y, Z, W, V) = findNat(X, Z).
+  Axiom 35 (findNat_case1_2): findNat_case1(false, X, Y, Z, W, V) = findNat_case1_case1(gtNat(X, Y), X, W, V).
+  Axiom 36 (uncurry_1): uncurry(X, Y) = app(app(X, fst(Y)), snd(Y)).
+  Axiom 37 (insertNat_case1_2): insertNat_case1(false, X, Y, Z, W, V, U) = branch(Z, Y, U, insertNat(X, V, W)).
+  Axiom 38 (insertNat_case1_1): insertNat_case1(true, X, Y, Z, W, V, U) = branch(insertNat(X, V, Z), Y, U, W).
+  Axiom 39 (foldr_2): foldr(X, Y, cons(Z, W)) = app(app(X, Z), foldr(X, Y, W)).
+  Axiom 40 (findNat_2): findNat(X, branch(Y, Z, W, V)) = findNat_case1(ltNat(X, Z), X, Z, Y, V, W).
+  Axiom 41 (insertNat_2): insertNat(X, Y, branch(Z, W, V, U)) = insertNat_case1(ltNat(X, W), X, W, Z, U, Y, V).
+  Axiom 42 (prop_FindPostPresent_1): prop_FindPostPresent(X, Y, Z) = eqMaybeNat(findNat(X, insertNat(X, Y, tree(Z))), just(Y)).
+  Axiom 43 (reflexivity): equals(X, X) = true.
+  Axiom 44 (prop_FindPostPresent): equals(prop_FindPostPresent(X, Y, Z), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. leaf -> nil_1
+2. isLT(lt) -> true
+3. isLT(eq) -> false
+4. isLT(gt) -> false
+5. isGT(lt) -> false
+6. isGT(eq) -> false
+7. isGT(gt) -> true
+8. eqMaybeNat(nothing, nothing) -> true
+9. findNat(X, nil_1) -> nothing
+10. eqNat(zero, zero) -> true
+11. eqNat(zero, suc(X)) -> false
+12. eqNat(suc(X), zero) -> false
+13. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+14. compareNat(zero, zero) -> eq
+15. compareNat(zero, suc(X)) -> lt
+16. compareNat(suc(X), zero) -> gt
+17. compareNat(suc(X), suc(Y)) -> compareNat(X, Y)
+18. app(insertNat_0, X) -> insertNat_1(X)
+19. fst(pair(X, Y)) -> X
+20. snd(pair(X, Y)) -> Y
+21. isLT(compareNat(X, Y)) -> ltNat(X, Y)
+22. isGT(compareNat(X, Y)) -> gtNat(X, Y)
+23. foldr(X, Y, nil) -> Y
+24. eqMaybeNat(nothing, just(X)) -> false
+25. eqMaybeNat(just(X), nothing) -> false
+26. app(uncurry_1(X), Y) -> uncurry(X, Y)
+27. app(insertNat_1(X), Y) -> insertNat_2(X, Y)
+28. findNat_case1_case1(true, X, Y, Z) -> findNat(X, Y)
+29. findNat_case1_case1(false, X, Y, Z) -> just(Z)
+30. foldr(uncurry_1(insertNat_0), nil_1, X) -> tree(X)
+31. eqMaybeNat(just(X), just(Y)) -> eqNat(X, Y)
+32. branch(nil_1, X, Y, nil_1) -> insertNat(X, Y, nil_1)
+33. app(insertNat_2(X, Y), Z) -> insertNat(X, Y, Z)
+34. findNat_case1(true, X, Y, Z, W, V) -> findNat(X, Z)
+35. findNat_case1_case1(gtNat(X, Y), X, Z, W) -> findNat_case1(false, X, Y, ?, Z, W)
+36. findNat_case1(false, X, Y, Z, W, V) ~> findNat_case1(false, X, Y, ?, W, V)
+37. app(app(X, fst(Y)), snd(Y)) -> uncurry(X, Y)
+38. branch(X, Y, Z, insertNat(W, V, U)) -> insertNat_case1(false, W, Y, X, U, V, Z)
+39. branch(insertNat(X, Y, Z), W, V, U) -> insertNat_case1(true, X, W, Z, U, Y, V)
+40. app(app(X, Y), foldr(X, Z, W)) -> foldr(X, Z, cons(Y, W))
+41. findNat_case1(ltNat(X, Y), X, Y, Z, W, V) -> findNat(X, branch(Z, Y, V, W))
+42. insertNat_case1(ltNat(X, Y), X, Y, Z, W, V, U) -> insertNat(X, V, branch(Z, Y, U, W))
+43. eqMaybeNat(findNat(X, insertNat(X, Y, tree(Z))), just(Y)) -> prop_FindPostPresent(X, Y, Z)
+44. equals(X, X) -> true
+45. equals(prop_FindPostPresent(X, Y, Z), false) -> false
+46. tree(nil) -> nil_1
+47. ltNat(zero, zero) -> false
+48. gtNat(zero, zero) -> false
+49. ltNat(zero, suc(X)) -> true
+50. ltNat(suc(X), zero) -> false
+51. gtNat(zero, suc(X)) -> false
+52. gtNat(suc(X), zero) -> true
+53. ltNat(suc(X), suc(Y)) -> ltNat(X, Y)
+54. gtNat(suc(X), suc(Y)) -> gtNat(X, Y)
+55. insertNat_2(fst(X), snd(X)) -> uncurry(insertNat_0, X)
+56. app(app(X, Y), Z) -> uncurry(X, pair(Y, Z))
+57. uncurry(insertNat_0, pair(X, Y)) -> insertNat_2(X, Y)
+58. insertNat(X, fst(Y), snd(Y)) -> uncurry(insertNat_1(X), Y)
+59. uncurry(uncurry_1(insertNat_0), pair(X, tree(Y))) -> tree(cons(X, Y))
+60. foldr(X, Y, cons(Z, nil)) -> uncurry(X, pair(Z, Y))
+61. foldr(insertNat_0, X, cons(Y, Z)) -> insertNat_2(Y, foldr(insertNat_0, X, Z))
+62. uncurry(insertNat_1(X), pair(Y, Z)) -> insertNat(X, Y, Z)
+63. uncurry(uncurry_1(X), pair(Y, Z)) -> app(uncurry(X, Y), Z)
+64. insertNat(fst(X), snd(X), Y) -> app(uncurry(insertNat_0, X), Y)
+65. app(uncurry(insertNat_0, X), nil_1) -> tree(cons(X, nil))
+66. app(uncurry(X, fst(Y)), snd(Y)) -> uncurry(uncurry_1(X), Y)
+67. app(uncurry(insertNat_0, X), tree(Y)) -> tree(cons(X, Y))
+68. tree(cons(pair(X, Y), nil)) -> insertNat(X, Y, nil_1)
+69. findNat_case1(false, zero, zero, ?, X, Y) -> just(Y)
+70. uncurry(X, pair(fst(Y), snd(Y))) -> uncurry(X, Y)
+71. tree(cons(pair(X, Y), Z)) -> insertNat(X, Y, tree(Z))
+72. uncurry(insertNat_2(X, Y), pair(Z, W)) -> app(insertNat(X, Y, Z), W)
+73. findNat_case1(false, zero, suc(X), ?, Y, Z) -> just(Z)
+74. app(uncurry(X, pair(Y, Z)), W) -> uncurry(app(X, Y), pair(Z, W))
+75. app(insertNat(X, Y, fst(Z)), snd(Z)) -> uncurry(insertNat_2(X, Y), Z)
+76. findNat(zero, branch(X, suc(Y), Z, W)) -> findNat(zero, X)
+77. findNat(zero, insertNat(suc(X), Y, nil_1)) -> nothing
+78. findNat(zero, branch(X, zero, Y, Z)) -> just(Y)
+79. findNat(zero, insertNat(zero, X, nil_1)) -> just(X)
+80. insertNat(X, Y, foldr(insertNat_1(X), Z, W)) -> foldr(insertNat_1(X), Z, cons(Y, W))
+81. findNat_case1(false, suc(X), zero, ?, Y, Z) -> findNat(suc(X), Y)
+82. uncurry(uncurry(insertNat_0, X), pair(nil_1, Y)) -> app(tree(cons(X, nil)), Y)
+83. uncurry(X, pair(Y, foldr(X, Z, W))) -> foldr(X, Z, cons(Y, W))
+84. insertNat(zero, X, branch(Y, zero, Z, W)) -> insertNat_case1(false, zero, zero, Y, W, X, Z)
+85. eqMaybeNat(findNat(X, insertNat(X, Y, nil_1)), just(Y)) -> prop_FindPostPresent(X, Y, nil)
+86. eqMaybeNat(just(X), just(X)) -> prop_FindPostPresent(zero, X, nil)
+87. eqNat(X, X) = prop_FindPostPresent(zero, X, nil)
+88. equals(eqNat(X, X), false) -> false
+89. equals(true, false) -> false
+90. eqNat(X, X) = prop_FindPostPresent(zero, suc(X), nil)
+91. prop_FindPostPresent(zero, suc(X), nil) -> prop_FindPostPresent(zero, X, nil)
+92. app(uncurry(X, Y), foldr(uncurry_1(X), Z, W)) -> foldr(uncurry_1(X), Z, cons(Y, W))
+93. findNat(suc(X), branch(Y, zero, Z, W)) -> findNat(suc(X), W)
+94. findNat(suc(X), insertNat(zero, Y, nil_1)) -> nothing
+95. uncurry(uncurry(insertNat_0, X), pair(tree(Y), Z)) -> app(tree(cons(X, Y)), Z)
+96. uncurry(app(X, fst(Y)), pair(snd(Y), Z)) -> app(uncurry(X, Y), Z)
+97. uncurry(uncurry(X, fst(Y)), pair(snd(Y), Z)) -> app(uncurry(uncurry_1(X), Y), Z)
+98. insertNat_case1(false, zero, zero, nil_1, nil_1, X, Y) -> insertNat(zero, X, insertNat(zero, Y, nil_1))
+99. foldr(insertNat_1(X), Y, cons(Z, cons(W, nil))) = insertNat(X, Z, insertNat(X, W, Y))
+100. uncurry(X, pair(Y, uncurry(X, pair(Z, W)))) -> foldr(X, W, cons(Y, cons(Z, nil)))
+101. findNat_case1_case1(gtNat(X, Y), suc(X), Z, W) -> findNat_case1(false, suc(X), suc(Y), ?, Z, W)
+102. findNat_case1(false, suc(zero), suc(zero), ?, X, Y) -> just(Y)
+103. findNat(zero, insertNat_case1(false, X, zero, Y, Z, W, V)) -> just(V)
+104. findNat(zero, insertNat(zero, X, insertNat(zero, Y, nil_1))) -> just(Y)
+105. findNat(zero, insertNat_case1(true, X, zero, Y, Z, W, V)) -> just(V)
+106. insertNat(zero, X, branch(Y, suc(Z), W, V)) -> insertNat_case1(true, zero, suc(Z), Y, V, X, W)
+107. insertNat(suc(X), Y, branch(Z, zero, W, V)) -> insertNat_case1(false, suc(X), zero, Z, V, Y, W)
+108. app(uncurry(insertNat_0, X), insertNat(Y, Z, nil_1)) -> tree(cons(X, cons(pair(Y, Z), nil)))
+109. app(uncurry(X, Y), app(uncurry(X, Z), W)) -> foldr(uncurry_1(X), W, cons(Y, cons(Z, nil)))
+110. findNat_case1(false, suc(zero), suc(suc(X)), ?, Y, Z) -> just(Z)
+111. foldr(uncurry_1(insertNat_0), X, cons(pair(Y, Z), W)) -> insertNat(Y, Z, foldr(uncurry_1(insertNat_0), X, W))
+112. uncurry(insertNat(X, Y, fst(Z)), pair(snd(Z), W)) -> app(uncurry(insertNat_2(X, Y), Z), W)
+113. uncurry(app(X, Y), pair(foldr(X, Z, W), V)) -> app(foldr(X, Z, cons(Y, W)), V)
+114. insertNat_case1(false, X, Y, Z, snd(W), fst(W), V) -> branch(Z, Y, V, uncurry(insertNat_1(X), W))
+115. insertNat_case1(true, X, Y, snd(Z), W, fst(Z), V) -> branch(uncurry(insertNat_1(X), Z), Y, V, W)
+116. insertNat_case1(true, zero, suc(X), nil_1, nil_1, Y, Z) -> insertNat(zero, Y, insertNat(suc(X), Z, nil_1))
+117. insertNat_case1(false, suc(X), zero, nil_1, nil_1, Y, Z) -> insertNat(suc(X), Y, insertNat(zero, Z, nil_1))
+118. findNat(zero, insertNat(suc(X), Y, insertNat(zero, Z, nil_1))) -> just(Z)
+119. findNat_case1(false, suc(suc(X)), suc(zero), ?, Y, Z) -> findNat(suc(suc(X)), Y)
+120. app(insertNat(X, Y, Z), foldr(insertNat_2(X, Y), W, V)) -> foldr(insertNat_2(X, Y), W, cons(Z, V))
+121. findNat(zero, insertNat_case1(false, X, suc(Y), Z, W, V, U)) -> findNat(zero, Z)
+122. foldr(uncurry_1(insertNat_0), tree(X), cons(Y, cons(Z, nil))) -> tree(cons(Y, cons(Z, X)))
+123. foldr(X, snd(Y), cons(Z, cons(fst(Y), nil))) = uncurry(X, pair(Z, uncurry(X, Y)))
+124. findNat(suc(X), insertNat_case1(true, Y, zero, Z, W, V, U)) -> findNat(suc(X), W)
+125. insertNat_case1(false, fst(X), Y, Z, W, snd(X), V) -> branch(Z, Y, V, app(uncurry(insertNat_0, X), W))
+126. insertNat_case1(true, fst(X), Y, Z, W, snd(X), V) -> branch(app(uncurry(insertNat_0, X), Z), Y, V, W)
+127. app(uncurry(insertNat_0, X), insertNat(Y, Z, tree(W))) -> tree(cons(X, cons(pair(Y, Z), W)))
+128. insertNat_case1(false, X, Y, insertNat(Z, W, V), U, T, S) -> insertNat_case1(true, Z, Y, V, insertNat(X, T, U), W, S)
+129. app(uncurry(X, Y), foldr(app(X, fst(Y)), Z, W)) -> foldr(app(X, fst(Y)), Z, cons(snd(Y), W))
+130. app(uncurry(insertNat_0, X), foldr(insertNat_1(fst(X)), Y, Z)) -> foldr(insertNat_1(fst(X)), Y, cons(snd(X), Z))
+131. findNat(zero, insertNat_case1(true, X, suc(Y), Z, W, V, U)) -> findNat(zero, insertNat(X, V, Z))
+132. findNat(zero, insertNat(zero, X, insertNat(suc(Y), Z, nil_1))) -> just(X)
+133. findNat_case1(ltNat(X, Y), suc(X), suc(Y), Z, W, V) -> findNat(suc(X), branch(Z, suc(Y), V, W))
+134. findNat(suc(zero), branch(X, suc(zero), Y, Z)) -> just(Y)
+135. findNat(suc(zero), insertNat(suc(zero), X, nil_1)) -> just(X)
+136. prop_FindPostPresent(suc(zero), X, nil) = eqNat(X, X)
+137. prop_FindPostPresent(suc(zero), X, nil) -> prop_FindPostPresent(zero, X, nil)
+138. findNat(suc(zero), branch(X, suc(suc(Y)), Z, W)) -> findNat(suc(zero), X)
+139. findNat(suc(zero), insertNat(suc(suc(X)), Y, nil_1)) -> nothing
+140. findNat(suc(suc(X)), branch(Y, suc(zero), Z, W)) -> findNat(suc(suc(X)), W)
+141. findNat(suc(suc(X)), insertNat(suc(zero), Y, nil_1)) -> nothing
+142. findNat(suc(zero), insertNat_case1(false, X, suc(zero), Y, Z, W, V)) -> just(V)
+143. findNat(suc(zero), insertNat_case1(true, X, suc(zero), Y, Z, W, V)) -> just(V)
+144. findNat(suc(zero), insertNat(zero, X, insertNat(suc(zero), Y, nil_1))) -> just(Y)
+145. uncurry(uncurry(X, Y), pair(foldr(uncurry_1(X), Z, W), V)) -> app(foldr(uncurry_1(X), Z, cons(Y, W)), V)
+146. findNat(suc(X), insertNat_case1(false, Y, zero, Z, W, V, U)) -> findNat(suc(X), insertNat(Y, V, W))
+147. findNat(suc(X), insertNat(zero, Y, insertNat(zero, Z, nil_1))) -> nothing
+148. app(insertNat(X, Y, Z), app(insertNat(X, Y, W), V)) -> foldr(insertNat_2(X, Y), V, cons(Z, cons(W, nil)))
+149. foldr(uncurry_1(X), Y, cons(pair(fst(Z), snd(Z)), W)) -> foldr(uncurry_1(X), Y, cons(Z, W))
+150. uncurry(uncurry(X, pair(Y, fst(Z))), pair(snd(Z), W)) -> app(uncurry(app(X, Y), Z), W)
+151. app(tree(cons(X, Y)), foldr(uncurry(insertNat_0, X), Z, W)) -> foldr(uncurry(insertNat_0, X), Z, cons(tree(Y), W))
+152. foldr(X, foldr(X, Y, Z), cons(W, cons(V, nil))) -> foldr(X, Y, cons(W, cons(V, Z)))
+153. eqMaybeNat(findNat(fst(X), tree(cons(X, nil))), just(snd(X))) -> prop_FindPostPresent(fst(X), snd(X), nil)
+154. tree(cons(X, cons(pair(fst(Y), snd(Y)), nil))) -> tree(cons(X, cons(Y, nil)))
+155. foldr(insertNat_1(X), snd(Y), cons(Z, cons(fst(Y), nil))) = insertNat(X, Z, uncurry(insertNat_1(X), Y))
+156. uncurry(app(X, Y), pair(Z, foldr(uncurry_1(X), W, V))) -> foldr(uncurry_1(X), W, cons(pair(Y, Z), V))
+157. app(tree(cons(X, cons(pair(Y, Z), nil))), W) -> uncurry(uncurry(insertNat_0, X), pair(insertNat(Y, Z, nil_1), W))
+158. foldr(uncurry_1(insertNat_0), X, cons(Y, cons(pair(Z, W), nil))) -> app(uncurry(insertNat_0, Y), insertNat(Z, W, X))
+159. tree(cons(X, cons(pair(fst(Y), snd(Y)), Z))) -> tree(cons(X, cons(Y, Z)))
+160. app(insertNat(X, Y, Z), foldr(uncurry_1(insertNat_1(X)), W, V)) -> foldr(uncurry_1(insertNat_1(X)), W, cons(pair(Y, Z), V))
+161. uncurry(app(X, Y), pair(uncurry(X, pair(Z, W)), V)) -> app(foldr(X, W, cons(Y, cons(Z, nil))), V)
+162. findNat_case1_case1(gtNat(X, Y), suc(suc(X)), Z, W) -> findNat_case1(false, suc(suc(X)), suc(suc(Y)), ?, Z, W)
+163. findNat_case1(false, suc(suc(zero)), suc(suc(zero)), ?, X, Y) -> just(Y)
+164. app(tree(cons(X, Y)), foldr(uncurry_1(uncurry_1(insertNat_0)), Z, W)) -> foldr(uncurry_1(uncurry_1(insertNat_0)), Z, cons(pair(X, tree(Y)), W))
+165. findNat_case1(false, suc(suc(zero)), suc(suc(suc(X))), ?, Y, Z) -> just(Z)
+166. foldr(insertNat_1(X), Y, cons(Z, cons(W, cons(V, nil)))) = insertNat(X, Z, insertNat(X, W, insertNat(X, V, Y)))
+167. foldr(insertNat_1(fst(X)), Y, cons(snd(X), cons(Z, nil))) -> app(uncurry(insertNat_0, X), insertNat(fst(X), Z, Y))
+168. foldr(insertNat_1(fst(X)), Y, cons(Z, cons(snd(X), nil))) -> insertNat(fst(X), Z, app(uncurry(insertNat_0, X), Y))
+169. insertNat_case1(ltNat(X, Y), suc(X), suc(Y), Z, W, V, U) -> insertNat(suc(X), V, branch(Z, suc(Y), U, W))
+170. insertNat(suc(zero), X, branch(Y, suc(zero), Z, W)) -> insertNat_case1(false, suc(zero), suc(zero), Y, W, X, Z)
+171. insertNat_case1(false, suc(zero), suc(zero), nil_1, nil_1, X, Y) -> insertNat(suc(zero), X, insertNat(suc(zero), Y, nil_1))
+172. findNat(zero, insertNat(suc(zero), X, insertNat(suc(zero), Y, nil_1))) -> nothing
+173. findNat(suc(zero), insertNat(suc(zero), X, insertNat(suc(zero), Y, nil_1))) -> just(Y)
+174. insertNat(zero, X, insertNat_case1(false, Y, zero, Z, W, V, U)) -> insertNat_case1(false, zero, zero, Z, insertNat(Y, V, W), X, U)
+175. insertNat(zero, X, insertNat_case1(true, Y, zero, Z, W, V, U)) -> insertNat_case1(true, Y, zero, Z, insertNat(zero, X, W), V, U)
+176. app(uncurry(X, Y), uncurry(uncurry_1(X), Z)) = foldr(uncurry_1(X), snd(Z), cons(Y, cons(fst(Z), nil)))
+177. uncurry(uncurry(X, Y), pair(app(uncurry(X, Z), W), V)) = app(foldr(uncurry_1(X), W, cons(Y, cons(Z, nil))), V)
+178. uncurry(app(X, Y), pair(Z, app(uncurry(X, W), V))) = foldr(uncurry_1(X), V, cons(pair(Y, Z), cons(W, nil)))
+179. app(uncurry(X, Y), uncurry(app(X, Z), pair(W, V))) -> foldr(uncurry_1(X), V, cons(Y, cons(pair(Z, W), nil)))
+180. findNat(suc(X), insertNat(suc(Y), Z, insertNat(zero, W, nil_1))) -> findNat(suc(X), insertNat(suc(Y), Z, nil_1))
+181. insertNat_case1(false, X, Y, Z, foldr(insertNat_1(X), W, V), U, T) -> branch(Z, Y, T, foldr(insertNat_1(X), W, cons(U, V)))
+182. insertNat_case1(true, X, Y, foldr(insertNat_1(X), Z, W), V, U, T) -> branch(foldr(insertNat_1(X), Z, cons(U, W)), Y, T, V)
+183. insertNat(suc(zero), X, branch(Y, suc(suc(Z)), W, V)) -> insertNat_case1(true, suc(zero), suc(suc(Z)), Y, V, X, W)
+184. insertNat(suc(suc(X)), Y, branch(Z, suc(zero), W, V)) -> insertNat_case1(false, suc(suc(X)), suc(zero), Z, V, Y, W)
+185. app(uncurry(uncurry_1(X), Y), foldr(uncurry(X, fst(Y)), Z, W)) -> foldr(uncurry(X, fst(Y)), Z, cons(snd(Y), W))
+186. app(uncurry(insertNat_1(X), Y), foldr(insertNat_2(X, fst(Y)), Z, W)) -> foldr(insertNat_2(X, fst(Y)), Z, cons(snd(Y), W))
+187. app(foldr(X, Y, cons(Z, W)), foldr(app(X, Z), V, U)) -> foldr(app(X, Z), V, cons(foldr(X, Y, W), U))
+188. uncurry(uncurry(X, Y), pair(Z, foldr(uncurry_1(uncurry_1(X)), W, V))) -> foldr(uncurry_1(uncurry_1(X)), W, cons(pair(Y, Z), V))
+189. foldr(X, uncurry(X, pair(Y, Z)), cons(W, cons(V, nil))) -> foldr(X, Z, cons(W, cons(V, cons(Y, nil))))
+190. insertNat_case1(false, zero, zero, nil_1, insertNat(zero, X, nil_1), Y, Z) -> insertNat(zero, Y, insertNat(zero, X, insertNat(zero, Z, nil_1)))
+191. findNat(zero, insertNat(zero, X, insertNat(zero, Y, insertNat(zero, Z, nil_1)))) -> just(Z)
+192. insertNat_case1(true, suc(zero), suc(suc(X)), nil_1, nil_1, Y, Z) -> insertNat(suc(zero), Y, insertNat(suc(suc(X)), Z, nil_1))
+193. findNat(zero, insertNat(suc(zero), X, insertNat(suc(suc(Y)), Z, nil_1))) -> nothing
+194. insertNat_case1(false, suc(suc(X)), suc(zero), nil_1, nil_1, Y, Z) -> insertNat(suc(suc(X)), Y, insertNat(suc(zero), Z, nil_1))
+195. findNat(zero, insertNat(suc(suc(X)), Y, insertNat(suc(zero), Z, nil_1))) -> nothing
+196. findNat(suc(zero), insertNat(suc(suc(X)), Y, insertNat(suc(zero), Z, nil_1))) -> just(Z)
+197. eqMaybeNat(findNat(X, insertNat(X, Y, insertNat(Z, W, nil_1))), just(Y)) -> prop_FindPostPresent(X, Y, cons(pair(Z, W), nil))
+198. prop_FindPostPresent(zero, X, cons(pair(zero, Y), nil)) -> eqNat(Y, X)
+199. equals(eqNat(X, Y), false) -> false
+200. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (nil_1_1): nil_1 = leaf.
+Axiom 2 (isLT_2): isLT(eq) = false.
+Axiom 3 (isGT_2): isGT(eq) = false.
+Axiom 4 (eqNat_2): eqNat(zero, suc(X)) = false.
+Axiom 5 (compareNat_1): compareNat(zero, zero) = eq.
+Axiom 6 (app_insertNat_0_1): app(insertNat_0, X) = insertNat_1(X).
+Axiom 7 (fst_1): fst(pair(X, Y)) = X.
+Axiom 8 (snd_1): snd(pair(X, Y)) = Y.
+Axiom 9 (ltNat_1): ltNat(X, Y) = isLT(compareNat(X, Y)).
+Axiom 10 (gtNat_1): gtNat(X, Y) = isGT(compareNat(X, Y)).
+Axiom 11 (foldr_1): foldr(X, Y, nil) = Y.
+Axiom 12 (app_uncurry_1_1): app(uncurry_1(X), Y) = uncurry(X, Y).
+Axiom 13 (app_insertNat_1_1): app(insertNat_1(X), Y) = insertNat_2(X, Y).
+Axiom 14 (findNat_case1_case1_2): findNat_case1_case1(false, X, Y, Z) = just(Z).
+Axiom 15 (tree_1): tree(X) = foldr(uncurry_1(insertNat_0), nil_1, X).
+Axiom 16 (eqMaybeNat_4): eqMaybeNat(just(X), just(Y)) = eqNat(X, Y).
+Axiom 17 (insertNat_1): insertNat(X, Y, leaf) = branch(leaf, X, Y, leaf).
+Axiom 18 (app_insertNat_2_1): app(insertNat_2(X, Y), Z) = insertNat(X, Y, Z).
+Axiom 19 (findNat_case1_2): findNat_case1(false, X, Y, Z, W, V) = findNat_case1_case1(gtNat(X, Y), X, W, V).
+Axiom 20 (uncurry_1): uncurry(X, Y) = app(app(X, fst(Y)), snd(Y)).
+Axiom 21 (insertNat_case1_2): insertNat_case1(false, X, Y, Z, W, V, U) = branch(Z, Y, U, insertNat(X, V, W)).
+Axiom 22 (foldr_2): foldr(X, Y, cons(Z, W)) = app(app(X, Z), foldr(X, Y, W)).
+Axiom 23 (findNat_2): findNat(X, branch(Y, Z, W, V)) = findNat_case1(ltNat(X, Z), X, Z, Y, V, W).
+Axiom 24 (insertNat_2): insertNat(X, Y, branch(Z, W, V, U)) = insertNat_case1(ltNat(X, W), X, W, Z, U, Y, V).
+Axiom 25 (prop_FindPostPresent_1): prop_FindPostPresent(X, Y, Z) = eqMaybeNat(findNat(X, insertNat(X, Y, tree(Z))), just(Y)).
+
+Lemma 26: ltNat(zero, zero) = false.
+Proof:
+  ltNat(zero, zero)
+= { by axiom 9 (ltNat_1) }
+  isLT(compareNat(zero, zero))
+= { by axiom 5 (compareNat_1) }
+  isLT(eq)
+= { by axiom 2 (isLT_2) }
+  false
+
+Lemma 27: app(app(X, Y), Z) = uncurry(X, pair(Y, Z)).
+Proof:
+  app(app(X, Y), Z)
+= { by axiom 8 (snd_1) R->L }
+  app(app(X, Y), snd(pair(Y, Z)))
+= { by axiom 7 (fst_1) R->L }
+  app(app(X, fst(pair(Y, Z))), snd(pair(Y, Z)))
+= { by axiom 20 (uncurry_1) R->L }
+  uncurry(X, pair(Y, Z))
+
+Goal 1 (prop_FindPostPresent): prop_FindPostPresent(X, Y, Z) = false.
+The goal is true when:
+  X = zero
+  Y = suc(X)
+  Z = cons(pair(zero, zero), nil)
+
+Proof:
+  prop_FindPostPresent(zero, suc(X), cons(pair(zero, zero), nil))
+= { by axiom 25 (prop_FindPostPresent_1) }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), tree(cons(pair(zero, zero), nil)))), just(suc(X)))
+= { by axiom 15 (tree_1) }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), foldr(uncurry_1(insertNat_0), nil_1, cons(pair(zero, zero), nil)))), just(suc(X)))
+= { by axiom 22 (foldr_2) }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), app(app(uncurry_1(insertNat_0), pair(zero, zero)), foldr(uncurry_1(insertNat_0), nil_1, nil)))), just(suc(X)))
+= { by axiom 15 (tree_1) R->L }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), app(app(uncurry_1(insertNat_0), pair(zero, zero)), tree(nil)))), just(suc(X)))
+= { by lemma 27 }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), uncurry(uncurry_1(insertNat_0), pair(pair(zero, zero), tree(nil))))), just(suc(X)))
+= { by axiom 15 (tree_1) }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), uncurry(uncurry_1(insertNat_0), pair(pair(zero, zero), foldr(uncurry_1(insertNat_0), nil_1, nil))))), just(suc(X)))
+= { by axiom 11 (foldr_1) }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), uncurry(uncurry_1(insertNat_0), pair(pair(zero, zero), nil_1)))), just(suc(X)))
+= { by lemma 27 R->L }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), app(app(uncurry_1(insertNat_0), pair(zero, zero)), nil_1))), just(suc(X)))
+= { by axiom 12 (app_uncurry_1_1) }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), app(uncurry(insertNat_0, pair(zero, zero)), nil_1))), just(suc(X)))
+= { by axiom 20 (uncurry_1) }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), app(app(app(insertNat_0, fst(pair(zero, zero))), snd(pair(zero, zero))), nil_1))), just(suc(X)))
+= { by axiom 6 (app_insertNat_0_1) }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), app(app(insertNat_1(fst(pair(zero, zero))), snd(pair(zero, zero))), nil_1))), just(suc(X)))
+= { by axiom 13 (app_insertNat_1_1) }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), app(insertNat_2(fst(pair(zero, zero)), snd(pair(zero, zero))), nil_1))), just(suc(X)))
+= { by axiom 7 (fst_1) }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), app(insertNat_2(zero, snd(pair(zero, zero))), nil_1))), just(suc(X)))
+= { by axiom 8 (snd_1) }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), app(insertNat_2(zero, zero), nil_1))), just(suc(X)))
+= { by axiom 18 (app_insertNat_2_1) }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), insertNat(zero, zero, nil_1))), just(suc(X)))
+= { by axiom 1 (nil_1_1) }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), insertNat(zero, zero, leaf))), just(suc(X)))
+= { by axiom 17 (insertNat_1) }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), branch(leaf, zero, zero, leaf))), just(suc(X)))
+= { by axiom 1 (nil_1_1) R->L }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), branch(leaf, zero, zero, nil_1))), just(suc(X)))
+= { by axiom 1 (nil_1_1) R->L }
+  eqMaybeNat(findNat(zero, insertNat(zero, suc(X), branch(nil_1, zero, zero, nil_1))), just(suc(X)))
+= { by axiom 24 (insertNat_2) }
+  eqMaybeNat(findNat(zero, insertNat_case1(ltNat(zero, zero), zero, zero, nil_1, nil_1, suc(X), zero)), just(suc(X)))
+= { by lemma 26 }
+  eqMaybeNat(findNat(zero, insertNat_case1(false, zero, zero, nil_1, nil_1, suc(X), zero)), just(suc(X)))
+= { by axiom 21 (insertNat_case1_2) }
+  eqMaybeNat(findNat(zero, branch(nil_1, zero, zero, insertNat(zero, suc(X), nil_1))), just(suc(X)))
+= { by axiom 23 (findNat_2) }
+  eqMaybeNat(findNat_case1(ltNat(zero, zero), zero, zero, nil_1, insertNat(zero, suc(X), nil_1), zero), just(suc(X)))
+= { by lemma 26 }
+  eqMaybeNat(findNat_case1(false, zero, zero, nil_1, insertNat(zero, suc(X), nil_1), zero), just(suc(X)))
+= { by axiom 19 (findNat_case1_2) }
+  eqMaybeNat(findNat_case1_case1(gtNat(zero, zero), zero, insertNat(zero, suc(X), nil_1), zero), just(suc(X)))
+= { by axiom 10 (gtNat_1) }
+  eqMaybeNat(findNat_case1_case1(isGT(compareNat(zero, zero)), zero, insertNat(zero, suc(X), nil_1), zero), just(suc(X)))
+= { by axiom 5 (compareNat_1) }
+  eqMaybeNat(findNat_case1_case1(isGT(eq), zero, insertNat(zero, suc(X), nil_1), zero), just(suc(X)))
+= { by axiom 3 (isGT_2) }
+  eqMaybeNat(findNat_case1_case1(false, zero, insertNat(zero, suc(X), nil_1), zero), just(suc(X)))
+= { by axiom 14 (findNat_case1_case1_2) }
+  eqMaybeNat(just(zero), just(suc(X)))
+= { by axiom 16 (eqMaybeNat_4) }
+  eqNat(zero, suc(X))
+= { by axiom 4 (eqNat_2) }
+  false
+
+RESULT: Theorem (the conjecture is true).

@@ -1,0 +1,7 @@
+property:   prop_FindUnion
+file:       /home/claude/hs2fol/benchmarks/hughes-bst/BSTSpec6.hs
+prover:     twee
+witness:    prop_FindUnion Zero [(Suc _Y, _Z)] [(Zero, _X)]
+input:      prop_FindUnion Zero [(Suc undefined, undefined)] [(Zero, undefined)]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed
