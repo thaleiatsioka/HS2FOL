@@ -279,6 +279,7 @@ atype :: P Type
 atype = choice
   [ (\c -> TCon c []) <$> conId
   , TVar <$> varId
+  , TVar "_" <$ reserved "_" -- partial type signature wildcard
   , between (special "[") (special "]") (tList <$> pType)
   , parenType
   ]
@@ -408,7 +409,7 @@ qop = (do s <- varSym; return (Op s False))
   <|> backticks ((\v -> Op v False) <$> varId <|> (\c -> Op c True) <$> conId)
 
 exp10 :: P Expr
-exp10 = choice [pLambda, pLet, pIf, pCase, fexp]
+exp10 = choice [pLambda, pLet, pIf, pCase, pDo, fexp]
   where
     pLambda = do
       resOp "\\"
@@ -437,6 +438,17 @@ exp10 = choice [pLambda, pLet, pIf, pCase, fexp]
     pAlt = do
       p <- pat
       Alt p <$> pRhs (resOp "->")
+    pDo = do
+      reserved "do"
+      EDo <$> block pStmt
+    pStmt = try (do p <- pat
+                    resOp "<-"
+                    SGen p <$> pExp)
+      <|> try (do reserved "let"
+                  ds <- block pLocalDecl
+                  notFollowedBy (reserved "in")
+                  return (SLet (concat ds)))
+      <|> (SGuard <$> pExp)
     fexp = foldl1 EApp <$> many1 aexp
 
 aexp :: P Expr

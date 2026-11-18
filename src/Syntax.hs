@@ -141,6 +141,7 @@ data Expr
   | ELeftSection Expr Op
   | ERightSection Op Expr
   | ETyped Expr Type
+  | EDo [Stmt] -- ^ parsed so that QuickCheck files load; not translated
   deriving (Show)
 
 data Alt = Alt Pat Rhs

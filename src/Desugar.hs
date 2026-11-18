@@ -408,6 +408,7 @@ dsExpr env expr = case expr of
     e' <- dsExpr env e
     return (CLam x (cApps o' [lvar x, e']))
   ETyped e t -> CTyped <$> dsExpr env e <*> liftE (convType env t)
+  EDo _ -> dsErr "do-notation is not supported"
 
 dsComp :: DEnv -> Expr -> [Stmt] -> DM CExpr
 dsComp env h [] = do

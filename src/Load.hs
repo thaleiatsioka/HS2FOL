@@ -59,4 +59,4 @@ loadModules incs root = do
       return (case found of
                 (p : _) -> Just p
                 [] -> Nothing)
-    ignorable m = m == "Prelude" || any (`isPrefixOf` m) ["Test.QuickCheck", "Data.", "Control.", "System."]
+    ignorable m = m == "Prelude" || any (`isPrefixOf` m) ["Test.QuickCheck", "Data.", "Control.", "System.", "GHC."]
