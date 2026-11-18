@@ -98,6 +98,7 @@ done < "$SOLVED_LIST"
 } > "$WT/solved/UNCONFIRMED.md"
 
 cp "$SUMMARY" "$WT/solved/all-results.csv"
+[ -f "$RESULTS/provers.txt" ] && cp "$RESULTS/provers.txt" "$WT/solved/provers.txt"
 NSOLVED=$(grep -c . "$SOLVED_LIST" || true)
 rm -f "$SOLVED_LIST"
 

@@ -21,7 +21,8 @@
 # Every prover additionally runs under a wall-clock limit of SECS+5 seconds.
 #
 # Results: DIR/<benchmark>/<property>/{problem.p, <prover>.out,
-# <prover>.witness.txt, <prover>.result} and DIR/summary.csv, DIR/summary.md.
+# <prover>.witness.txt, <prover>.result}, DIR/summary.csv, DIR/summary.md and
+# DIR/provers.txt (prover versions and command lines).
 # Use scripts/record-solved.sh to commit the solved ones to the solved branch.
 set -u
 
@@ -60,6 +61,21 @@ mkdir -p "$OUT"
 OUT=$(cd "$OUT" && pwd)
 
 export HS2FOL WITNESS2INPUT TIME PROVERS OUT HERE
+
+# record the prover versions and settings of this run
+{
+  echo "date: $(date -u '+%Y-%m-%d %H:%M UTC')"
+  echo "host: $(uname -srm)"
+  echo "time limit: ${TIME}s"
+  for p in ${PROVERS//,/ }; do
+    echo "== $p"
+    case $p in
+      vampire) echo "command: ${VAMPIRE_CMD:-vampire FILE --mode casc --question_answering plain --proof tptp -t $TIME}"; vampire --version ;;
+      eprover) echo "command: ${EPROVER_CMD:-eprover --auto --conjectures-are-questions --answers=1 --cpu-limit=$TIME FILE}"; eprover --version ;;
+      twee) echo "command: ${TWEE_CMD:-twee FILE}"; twee --version ;;
+    esac 2>&1 | head -n 4
+  done
+} > "$OUT/provers.txt"
 
 run_with_timeout() { # secs cmd...
   local secs=$1; shift
