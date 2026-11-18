@@ -10,8 +10,8 @@
 #   -o DIR      results directory (default results)
 #   -p REGEX    only properties whose name matches REGEX (grep -E)
 #
-# Without FILE arguments, all benchmarks under benchmarks/ are run (files in
-# directories called "template" are skipped).
+# Without FILE arguments, all files under benchmarks/ that define properties
+# (lines starting with "prop") are run; directories called "template" are skipped.
 #
 # Prover command lines can be overridden with environment variables; the
 # problem file and the time limit are passed as $1 and $2:
@@ -54,7 +54,7 @@ if [ $# -gt 0 ]; then
   FILES=("$@")
 else
   FILES=()
-  while IFS= read -r f; do FILES+=("$f"); done < <(find "$HERE/benchmarks" -name '*.hs' -not -path '*/template/*' | sort)
+  while IFS= read -r f; do FILES+=("$f"); done < <(find "$HERE/benchmarks" -name '*.hs' -not -path '*/template/*' -exec grep -l '^prop' {} + | sort)
 fi
 mkdir -p "$OUT"
 OUT=$(cd "$OUT" && pwd)
