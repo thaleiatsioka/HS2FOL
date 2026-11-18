@@ -44,7 +44,7 @@ specialise prog tc = evalStateT run (SpState M.empty [] [])
     run = do
       forM_ (progBinds prog) $ \b ->
         when (bindKind b /= BInstance && null (relOf (bindKey b))) $ do
-          body' <- traverse (specExpr M.empty) (bindBody b)
+          body' <- traverse (specExpr M.empty) (bindBody b >> M.lookup (bindKey b) (tcBodies tc))
           markNew (bindKey b) >> return ()
           emit SBind
             { sbKey = bindKey b

@@ -8,7 +8,7 @@ preludeSource = unlines
   , "infixr 9 ."
   , "infixl 7 *"
   , "infixl 6 +, -"
-  , "infixr 5 ++"
+  , "infixr 5 ++, :"
   , "infix 4 ==, /=, <, <=, >, >=, `elem`, `notElem`, ==="
   , "infixr 3 &&"
   , "infixr 2 ||"
