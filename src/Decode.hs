@@ -1,7 +1,13 @@
 -- | Read a prover's answer (TPTP terms) and print it as Haskell.
-module Decode (decodeAnswer) where
+module Decode
+  ( decodeAnswer
+  , extractWitnesses
+  , decodeArgs
+  , VarMode (..)
+  , PT (..)
+  ) where
 
-import Data.Char (isAlphaNum, isDigit, isLower, isUpper)
+import Data.Char (isAlphaNum, isDigit, isLower, isSpace, isUpper, toLower)
 import Data.List (intercalate, isInfixOf, tails)
 import qualified Data.Map as M
 import FOL
@@ -14,22 +20,58 @@ import Translate
 
 data PT = PV String | PF String [PT]
 
--- | Decode the prover output for a property. Returns lines to print.
-decodeAnswer :: Translation -> Maybe PropSpec -> String -> Either String [String]
-decodeAnswer tr mprop input = do
-  tuples <- case [ l | l <- lines input, "SZS answers Tuple" `isInfixOf` l ] of
+-- | How to print variables of an answer: as named holes (_X), or as
+-- 'undefined' (any value works, so this is a valid concrete input).
+data VarMode = VarsAsHoles | VarsAsUndefined
+  deriving (Eq)
+
+-- | Find the witnesses (argument tuples) in prover output:
+--
+-- * Vampire and E: a line @SZS answers Tuple [[t1,...,tn],...|_]@;
+-- * Twee: the block after a line containing "goal is true when", with
+--   lines @Xi = t@ (variables of the conjecture are X1..Xn);
+-- * otherwise the whole input is read as comma-separated TPTP terms.
+extractWitnesses :: Int -> String -> Either String [[PT]]
+extractWitnesses arity input =
+  case [ l | l <- lines input, "SZS answers Tuple" `isInfixOf` l ] of
     (l : _) -> parseAnswers (afterTuple l)
-    [] -> fmap (: []) (parseTerms input)
-  case tuples of
-    [] -> Left "no answer found"
-    _ -> mapM decodeTuple tuples
+    [] -> case dropWhile (not . isGoalTrue) (lines input) of
+      (_ : rest) -> do
+        let block = takeWhile (not . all isSpace) (dropWhile (all isSpace) rest)
+        binds <- mapM parseBinding block
+        return [[ maybe (PV ("X" ++ show i)) id (lookup ("X" ++ show i) binds) | i <- [1 .. arity] ]]
+      [] | arity == 0 -> Right [[]]
+         | otherwise -> fmap (: []) (parseTerms input)
   where
     afterTuple l = case [ rest | rest <- tails l, take 5 rest == "Tuple" ] of
       (r : _) -> drop 5 r
       [] -> l
+    isGoalTrue l = "goal is true when" `isInfixOf` map toLower l
+    parseBinding l = either (Left . show) Right (parse binding "twee answer" l)
+    binding = do
+      spaces
+      v <- many1 (satisfy (\c -> isAlphaNum c || c == '_'))
+      spaces
+      _ <- char '='
+      spaces
+      t <- term
+      return (v, t)
+
+-- | Decode one witness into Haskell expressions (one per argument, each
+-- parenthesised if needed).
+decodeArgs :: VarMode -> Translation -> [PT] -> Either String [String]
+decodeArgs mode tr ts = map atomS <$> mapM (decodeTerm mode tr 0) ts
+
+-- | Decode the prover output for a property. Returns lines to print.
+decodeAnswer :: Translation -> Maybe PropSpec -> String -> Either String [String]
+decodeAnswer tr mprop input = do
+  tuples <- extractWitnesses (maybe 0 psArity mprop) input
+  case tuples of
+    [] -> Left "no answer found"
+    _ -> mapM decodeTuple tuples
+  where
     decodeTuple ts = do
-      hs <- mapM (decodeTerm tr 0) ts
-      let args = unwords (map atomS hs)
+      args <- unwords <$> decodeArgs VarsAsHoles tr ts
       return $ case mprop of
         Just p -> psName p ++ (if null args then "" else " " ++ args) ++ "   -- evaluates to False"
         Nothing -> args
@@ -74,15 +116,17 @@ applyHS :: String -> [HS] -> HS
 applyHS f [] = HS f True
 applyHS f as = HS (unwords (f : map atomS as)) False
 
-decodeTerm :: Translation -> Int -> PT -> Either String HS
-decodeTerm tr depth t = case t of
-  PV v -> Right (HS ("_" ++ v) True)
+decodeTerm :: VarMode -> Translation -> Int -> PT -> Either String HS
+decodeTerm mode tr depth t = case t of
+  PV v
+    | mode == VarsAsUndefined -> Right (HS "undefined" True)
+    | otherwise -> Right (HS ("_" ++ v) True)
   PF n args -> case M.lookup n inverse of
     Nothing
       | all isDigit n -> Right (HS n True)
       | otherwise -> Left ("unknown symbol " ++ n ++ " in answer")
     Just s -> do
-      as <- mapM (decodeTerm tr (depth + 1)) args
+      as <- mapM (decodeTerm mode tr (depth + 1)) args
       sym s as args
   where
     inverse = M.fromList [ (v, k) | (k, v) <- M.toList (trNames tr) ]
@@ -118,7 +162,7 @@ decodeTerm tr depth t = case t of
       in HS ("\\" ++ x ++ " -> case " ++ x ++ " of { " ++ intercalate "; " (map alt (zip ordered as)) ++ " }") False
     con c as args
       | c == ":" , [h, tl] <- as, Just rest <- listElems (args !! 1) =
-          case mapM (decodeTerm tr (depth + 1)) rest of
+          case mapM (decodeTerm mode tr (depth + 1)) rest of
             Right rs -> HS ("[" ++ intercalate ", " (map plain (h : rs)) ++ "]") True
             Left _ -> HS (atomS h ++ " : " ++ atomS tl) False
       | c == ":", [h, tl] <- as = HS (atomS h ++ " : " ++ atomS tl) False

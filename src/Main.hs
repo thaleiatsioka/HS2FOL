@@ -3,10 +3,8 @@ module Main (main) where
 
 import Control.Monad
 import Data.List (isPrefixOf)
-import qualified Data.Set as S
 import Decode
-import Parser
-import PreludeSrc
+import Load
 import Syntax
 import System.Directory
 import System.Environment
@@ -69,8 +67,7 @@ main = do
   args <- getArgs
   opts <- either die' return (parseOpts args defaultOpts)
   file <- maybe (die' usage) return (oFile opts)
-  usr <- loadModules (oIncludes opts) file
-  (_, pre) <- either (\e -> die' ("internal error in the Prelude: " ++ e)) return (parseModule "<Prelude>" preludeSource)
+  (pre, usr) <- loadProgram (oIncludes opts) file
   tr <- either (\e -> die' ("hs2fol: " ++ e)) return (translateProgram pre usr)
   forM_ (trWarnings tr) $ \w -> hPutStrLn stderr ("warning: " ++ w)
   let props = trProps tr
@@ -104,37 +101,3 @@ main = do
             let path = dir </> (psName p ++ ".p")
             writeFile path (renderProblem file tr p)
             putStrLn ("wrote " ++ path)
-
--- | Load a module and (transitively) the local modules it imports.
-loadModules :: [FilePath] -> FilePath -> IO [Decl]
-loadModules incs root = do
-  (_, ds) <- visit (S.empty, []) root
-  return ds
-  where
-    visit (seen, acc) path = do
-      exists <- doesFileExist path
-      unless exists $ die' ("hs2fol: file not found: " ++ path)
-      canon <- canonicalizePath path
-      if S.member canon seen
-        then return (seen, acc)
-        else do
-          src <- readFile path
-          (imps, ds) <- either die' return (parseModule path src)
-          let dirs = takeDirectory path : incs
-          foldM (\st m -> do
-                   mp <- findModule dirs m
-                   case mp of
-                     Just p -> visit st p
-                     Nothing -> do
-                       unless (ignorable m) $
-                         hPutStrLn stderr ("warning: ignoring import " ++ m ++ " (no local file " ++ modFile m ++ ")")
-                       return st)
-                (S.insert canon seen, acc ++ ds) imps
-    modFile m = map (\c -> if c == '.' then pathSeparator else c) m ++ ".hs"
-    findModule dirs m = do
-      let cands = [ d </> modFile m | d <- dirs ]
-      found <- filterM doesFileExist cands
-      return (case found of
-                (p : _) -> Just p
-                [] -> Nothing)
-    ignorable m = m == "Prelude" || any (`isPrefixOf` m) ["Test.QuickCheck", "Data.", "Control.", "System."]

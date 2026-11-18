@@ -4,3 +4,5 @@ dist-newstyle/
 examples/*-fol/
 *.hi
 *.o
+/witness2input
+/results/

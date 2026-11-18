@@ -14,6 +14,7 @@ executable hs2fol
                     FOL
                     Lexer
                     Lift
+                    Load
                     Names
                     Parser
                     PreludeSrc
@@ -27,5 +28,31 @@ executable hs2fol
                     parsec >=3.1.12,
                     directory,
                     filepath
+  default-language: Haskell2010
+  ghc-options:      -Wall -Wno-name-shadowing -Wno-unused-matches -Wno-incomplete-uni-patterns -Wno-unused-do-bind
+
+executable witness2input
+  main-is:          Witness2Input.hs
+  hs-source-dirs:   src
+  other-modules:    Decode
+                    Desugar
+                    FOL
+                    Lexer
+                    Lift
+                    Load
+                    Names
+                    Parser
+                    PreludeSrc
+                    Specialise
+                    Syntax
+                    Translate
+                    TypeCheck
+  build-depends:    base >=4.11 && <5,
+                    containers,
+                    mtl,
+                    parsec >=3.1.12,
+                    directory,
+                    filepath,
+                    process
   default-language: Haskell2010
   ghc-options:      -Wall -Wno-name-shadowing -Wno-unused-matches -Wno-incomplete-uni-patterns -Wno-unused-do-bind
