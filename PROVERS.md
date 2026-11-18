@@ -45,13 +45,29 @@ The versions and command lines of a run are recorded in `results/provers.txt`.
    counterexample: witness2input only reads the `SZS answers` line. Keep it if
    you want the proofs in the `solved` branch, which is what you asked for.
 
-5. **Twee and answers.** All hs2fol problems are pure unit equality, which
-   Twee handles. Twee has no SZS answer output, so witness2input looks for a
-   block starting with a line containing "goal is true when" followed by
-   `X1 = term` lines. This format is unverified. If your Twee version proves a
-   goal but prints the instantiation differently, `<prover>.witness.err` will
-   say so; send me an example output and I'll adapt the parser. Also check
-   that your Twee version accepts the existentially quantified conjecture at all.
+5. **Twee and answers.** Twee (2.6.2) handles the existential conjecture and
+   prints the instantiation after "The goal is true when:". It renames the
+   conjecture's variables (`X1` becomes `X`), so witness2input takes their
+   order from Twee's restated goal line. Twee has no internal time limit, so
+   only the external one applies. In the BST runs, one proof came in at
+   63.6 s.
+
+7. **Vampire's answers with free variables** look like `[∀X0.[zero,suc(X0)]|_]`
+   (UTF-8). witness2input reads them; make sure tools in your pipeline don't
+   choke on the `∀` (they need a UTF-8 locale).
+
+## Building the provers (what was used for the BST results)
+
+* **E 3.5.10:** built from github.com/eprover/eprover (`./configure && make`).
+  Ubuntu's `eprover` package (3.0.03) is a debug build that aborts on an
+  internal assertion for these problems.
+* **Vampire 5.1.1:** built from github.com/vprover/vampire. The `cadical`
+  and `viras` submodules are needed: `git submodule update --init cadical viras`,
+  then `cmake -DCMAKE_BUILD_TYPE=Release`, then `make`.
+* **Twee 2.6.2:** built from github.com/nick8325/twee with jukebox 0.5.9
+  (Twee's `stack.yaml` pins it; newer jukebox changed an interface Twee
+  uses). Twee 2.6.2 requires `random >= 1.3`; with random 1.2 it builds if
+  `Random.splitGen` is replaced by `Random.split` in `src/Twee.hs`.
 
 6. **Fairness of the comparison.** Count a property as *solved* only when
    witness2input confirms the witness, which is what record-solved.sh does.

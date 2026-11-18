@@ -221,6 +221,23 @@ Caveats: soundness assumes the input is a well-typed Haskell program that
 GHC accepts, with the meaning of the hs2fol Prelude. `Int` is abstract, so no
 counterexample can depend on arithmetic facts.
 
+**Ill-typed witnesses.** The argument above shows that `prop(t1..tn)` is
+`False` in the untyped model. It does not show that the `ti` are well-typed.
+The logic has no types, so a prover may answer with, for example, `True`
+where a `Nat` is expected. That is fine in the model but is not a Haskell
+input. This happens in practice: in the BST benchmarks, 4 of 158 witnesses
+were ill-typed, both for higher-order properties (built functions applied to
+values of the wrong type) and for first-order ones (a tree in an unused
+`Nat` position). witness2input reports these separately (`ILL_TYPED`). The
+principled fix is a typed encoding (TPTP TFF, with polymorphic functions
+monomorphised per use), so that the provers themselves respect the types.
+
+**Evaluating witnesses.** A witness may mention auxiliary functions that
+hs2fol generated (e.g. `insertBad_case1(...)`), which have no Haskell name.
+witness2input first rewrites each witness term with the generated equations.
+They do not overlap, so this is deterministic, and it does not change the
+denoted value. The normal form is usually a constructor term.
+
 ## 6. Command line
 
 ```

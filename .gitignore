@@ -6,3 +6,4 @@ examples/*-fol/
 *.o
 /witness2input
 /results/
+/results-*/
