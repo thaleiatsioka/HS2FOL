@@ -1,5 +1,6 @@
 module HigherOrder where
 
+import Test.QuickCheck
 import Nat
 
 -- Properties with function arguments: the prover has to construct a

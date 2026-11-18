@@ -67,10 +67,10 @@ main = do
   args <- getArgs
   opts <- either die' return (parseOpts args defaultOpts)
   file <- maybe (die' usage) return (oFile opts)
-  (pre, usr) <- loadProgram (oIncludes opts) file
+  (pre, usr, own) <- loadProgram (oIncludes opts) file
   tr <- either (\e -> die' ("hs2fol: " ++ e)) return (translateProgram pre usr)
   forM_ (trWarnings tr) $ \w -> hPutStrLn stderr ("warning: " ++ w)
-  let props = trProps tr
+  let props = [ p | p <- trProps tr, psName p `elem` own ]
   selected <- case oProps opts of
     [] -> return props
     names -> forM names $ \n -> case [ p | p <- props, psName p == n ] of
@@ -80,6 +80,7 @@ main = do
     then forM_ props $ \p -> putStrLn (psName p ++ " :: " ++ prettyType (psType p))
     else if oDecode opts
       then do
+        hSetEncoding stdin utf8
         input <- getContents
         let mprop = case selected of
               [p] | not (null (oProps opts)) -> Just p

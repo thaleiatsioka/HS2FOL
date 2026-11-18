@@ -1,6 +1,6 @@
 -- | Loading a program: the main file, the local modules it imports, and the
 -- built-in Prelude. Shared by hs2fol and witness2input.
-module Load (loadProgram, loadModules, preludeDecls) where
+module Load (loadProgram, loadModules, preludeDecls, readFileUtf8) where
 
 import Control.Monad
 import Data.List (isPrefixOf)
@@ -21,12 +21,22 @@ preludeDecls = case parseModule "<Prelude>" preludeSource of
   Left e -> die' ("internal error in the Prelude: " ++ e)
   Right (_, ds) -> return ds
 
--- | Prelude declarations and user declarations.
-loadProgram :: [FilePath] -> FilePath -> IO ([Decl], [Decl])
+-- | Prelude declarations, user declarations (main file and imported local
+-- modules), and the names defined at the top of the main file itself.
+loadProgram :: [FilePath] -> FilePath -> IO ([Decl], [Decl], [Ident])
 loadProgram incs file = do
   usr <- loadModules incs file
   pre <- preludeDecls
-  return (pre, usr)
+  src <- readFileUtf8 file
+  own <- either die' return (parseModule file src)
+  return (pre, usr, [ n | DEqn n _ _ <- snd own ])
+
+-- | Read a file as UTF-8, whatever the locale.
+readFileUtf8 :: FilePath -> IO String
+readFileUtf8 path = do
+  h <- openFile path ReadMode
+  hSetEncoding h utf8
+  hGetContents h
 
 -- | Load a module and (transitively) the local modules it imports.
 loadModules :: [FilePath] -> FilePath -> IO [Decl]
@@ -41,7 +51,7 @@ loadModules incs root = do
       if S.member canon seen
         then return (seen, acc)
         else do
-          src <- readFile path
+          src <- readFileUtf8 path
           (imps, ds) <- either die' return (parseModule path src)
           let dirs = takeDirectory path : incs
           foldM (\st m -> do

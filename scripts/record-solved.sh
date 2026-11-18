@@ -94,7 +94,7 @@ done < "$SOLVED_LIST"
   echo
   echo "| benchmark | property | prover | status | check |"
   echo "|---|---|---|---|---|"
-  grep -E ',(NOT_A_COUNTEREXAMPLE|CHECK_ERROR)$' "$SUMMARY" | awk -F, '{printf "| %s | %s | %s | %s | %s |\n", $1, $2, $3, $4, $6}' || true
+  grep -E ',(NOT_A_COUNTEREXAMPLE|ILL_TYPED|CHECK_ERROR)$' "$SUMMARY" | awk -F, '{printf "| %s | %s | %s | %s | %s |\n", $1, $2, $3, $4, $6}' || true
 } > "$WT/solved/UNCONFIRMED.md"
 
 cp "$SUMMARY" "$WT/solved/all-results.csv"
