@@ -3,7 +3,7 @@
 -- property really returns False on it.
 module Main (main) where
 
-import Control.Exception (IOException, try)
+import Control.Exception (IOException, SomeException, catch, fromException, throwIO, try)
 import Control.Monad
 import Data.Char (isSpace)
 import Data.List (isInfixOf, isPrefixOf)
@@ -51,7 +51,7 @@ usage = unlines
   , ""
   , "Exit status: 0 counterexample confirmed (property returned False);"
   , "1 not confirmed (True, or precondition false); 2 error (no witness,"
-  , "exception, timeout, compile error)."
+  , "exception, timeout, compile error); 3 the witness is ill-typed in Haskell."
   , ""
   , "Variables left in the witness mean that any value works; they are"
   , "replaced by 'undefined', which is a legitimate value for such positions."
@@ -76,19 +76,26 @@ parseOpts args o = case args of
         (_, _, Nothing) -> parseOpts r o { oWitness = Just a }
         _ -> Left ("too many arguments\n\n" ++ usage)
 
-data Verdict = Confirmed | NotConfirmed String | Problem String
+data Verdict = Confirmed | NotConfirmed String | Problem String | IllTyped String
 
 main :: IO ()
-main = do
+main = mainBody `catch` \e -> case fromException e of
+  Just code -> throwIO (code :: ExitCode)
+  Nothing -> do
+    hPutStrLn stderr ("witness2input: " ++ show (e :: SomeException))
+    exitWith (ExitFailure 2)
+
+mainBody :: IO ()
+mainBody = do
   args <- getArgs
   opts <- either (\e -> hPutStrLn stderr e >> exitWith (ExitFailure 2)) return (parseOpts args defaultOpts)
   (file, propName) <- case (oFile opts, oProp opts) of
     (Just f, Just p) -> return (f, p)
     _ -> hPutStrLn stderr usage >> exitWith (ExitFailure 2)
   input <- case oWitness opts of
-    Just w | w /= "-" -> readFile w
-    _ -> getContents
-  (pre, usr) <- loadProgram (oIncludes opts) file
+    Just w | w /= "-" -> readFileUtf8 w
+    _ -> hSetEncoding stdin utf8 >> getContents
+  (pre, usr, _) <- loadProgram (oIncludes opts) file
   tr <- either (fatal . ("hs2fol: " ++)) return (translateProgram pre usr)
   prop <- case [ p | p <- trProps tr, psName p == propName ] of
     (p : _) -> return p
@@ -96,16 +103,20 @@ main = do
   witnesses <- either (fatal . ("could not find a witness in the prover output: " ++)) return
                  (extractWitnesses (psArity prop) input)
   w <- case witnesses of
-    (w : _) -> return w
+    (w : _) | length w == psArity prop -> return w
+            | otherwise -> fatal ("the witness has " ++ show (length w) ++ " values, but " ++ propName ++ " takes " ++ show (psArity prop) ++ " arguments")
     [] -> fatal "the prover output contains no witness"
-  holes <- either (fatal . ("could not decode the witness: " ++)) return (decodeArgs VarsAsHoles tr w)
-  concrete <- either (fatal . ("could not decode the witness: " ++)) return (decodeArgs VarsAsUndefined tr w)
+  raw <- either (fatal . ("could not decode the witness: " ++)) return (decodeArgs VarsAsHoles tr w)
+  let w' = normaliseWitness tr w
+  holes <- either (fatal . ("could not decode the witness: " ++)) return (decodeArgs VarsAsHoles tr w')
+  concrete <- either (fatal . ("could not decode the witness: " ++)) return (decodeArgs VarsAsUndefined tr w')
   let expr = unwords (propName : concrete)
       header =
         [ "property:   " ++ propName
         , "file:       " ++ file ]
         ++ [ "prover:     " ++ oProver opts | not (null (oProver opts)) ]
-        ++ [ "witness:    " ++ unwords (propName : holes) ]
+        ++ [ "witness:    " ++ unwords (propName : raw) ]
+        ++ [ "evaluated:  " ++ unwords (propName : holes) | holes /= raw ]
         ++ [ "input:      " ++ expr ]
         ++ [ "            (variables in the witness can be any value; undefined is used)" | holes /= concrete ]
   verdict <- if oNoRun opts then return Nothing else Just <$> runCheck opts file propName concrete
@@ -114,6 +125,7 @@ main = do
         Just Confirmed -> (["result:     False -- counterexample confirmed"], ExitSuccess)
         Just (NotConfirmed why) -> (["result:     NOT a counterexample: " ++ why], ExitFailure 1)
         Just (Problem why) -> (["result:     ERROR: " ++ why], ExitFailure 2)
+        Just (IllTyped why) -> (["result:     ILL-TYPED witness (the untyped logic allows it, Haskell does not):", why], ExitFailure 3)
       report = unlines (header ++ verdictLines)
   putStr report
   forM_ (oOut opts) $ \f -> writeFile f report
@@ -132,7 +144,7 @@ runCheck opts file propName argExprs = do
       target = dir </> "W2ITarget.hs"
       check = dir </> "W2ICheck.hs"
   writeFile target (renameModule "W2ITarget" src)
-  writeFile check (checkProgram usesQC (oTimeout opts) propName argExprs)
+  writeFile check (checkProgram usesQC (importsOf src) (oTimeout opts) propName argExprs)
   let incs = takeDirectory file : oIncludes opts ++ [dir]
       (cmd : cmdArgs) = words (oRunghc opts)
       ghcArgs = cmdArgs ++ [ "--ghc-arg=-i" ++ d | d <- incs ] ++ [check]
@@ -147,9 +159,12 @@ runCheck opts file propName argExprs = do
         ("TRUE" : _) -> NotConfirmed "the property returned True"
         ("DISCARDED" : _) -> NotConfirmed "the precondition (==>) is False, so the test is discarded"
         (other : _) -> Problem (trim other)
-        [] -> Problem ("the check program did not run:\n" ++ indent (out ++ err))
+        []
+          | any (`isInfixOf` err) typeErrors && "W2ICheck.hs" `isInfixOf` err -> IllTyped (indent err)
+          | otherwise -> Problem ("the check program did not run:\n" ++ indent (out ++ err))
   where
     marker = "W2I-RESULT: "
+    typeErrors = ["Couldn't match", "No instance for", "Occurs check", "cannot construct the infinite type"]
     trim = dropWhile isSpace
     indent = unlines . map ("    " ++) . lines
 
@@ -192,12 +207,26 @@ renameModule newName src =
       (c : _) -> not (isIdChar c)
     isIdChar c = c `elem` ('_' : '\'' : ['a' .. 'z'] ++ ['A' .. 'Z'] ++ ['0' .. '9'])
 
-checkProgram :: Bool -> Int -> String -> [String] -> String
-checkProgram usesQC secs propName argExprs = unlines $
+-- | The import declarations of a module (so that the check program sees the
+-- same names, e.g. constructors from imported modules).
+importsOf :: String -> [String]
+importsOf src = go (lines src)
+  where
+    go [] = []
+    go (l : rest)
+      | "import " `isPrefixOf` l =
+          let (cont, rest') = span (\x -> not (null x) && isSpace (head x)) rest
+          in unwords (l : map (dropWhile isSpace) cont) : go rest'
+      | otherwise = go rest
+
+checkProgram :: Bool -> [String] -> Int -> String -> [String] -> String
+checkProgram usesQC imports secs propName argExprs = unlines $
   [ "module Main (main) where"
   , ""
   , "import W2ITarget hiding (main)"
-  , "import qualified Control.Exception as W2I_E"
+  ]
+    ++ imports ++
+  [ "import qualified Control.Exception as W2I_E"
   , "import qualified System.Timeout as W2I_T"
   ]
     ++ [ "import qualified Test.QuickCheck as W2I_QC" | usesQC ]

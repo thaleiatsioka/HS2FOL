@@ -136,6 +136,7 @@ run_job() { # file prop
       case $? in
         0) verdict=CONFIRMED ;;
         1) verdict=NOT_A_COUNTEREXAMPLE ;;
+        3) verdict=ILL_TYPED ;;
         *) verdict=CHECK_ERROR ;;
       esac
     fi
@@ -176,6 +177,7 @@ rm -f "$JOBLIST"
   echo
   echo "Confirmed counterexamples: $(grep -c ',CONFIRMED$' "$OUT/summary.csv")"
   echo "Witnesses that are NOT counterexamples (would indicate a translation bug): $(grep -c ',NOT_A_COUNTEREXAMPLE$' "$OUT/summary.csv")"
+  echo "Ill-typed witnesses (allowed by the untyped encoding): $(grep -c ',ILL_TYPED$' "$OUT/summary.csv")"
   echo "Witnesses that could not be checked: $(grep -c ',CHECK_ERROR$' "$OUT/summary.csv")"
 } > "$OUT/summary.md"
 

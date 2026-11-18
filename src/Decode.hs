@@ -5,14 +5,16 @@ module Decode
   , decodeArgs
   , VarMode (..)
   , PT (..)
+  , normaliseWitness
   ) where
 
 import Data.Char (isAlphaNum, isDigit, isLower, isSpace, isUpper, toLower)
-import Data.List (intercalate, isInfixOf, tails)
+import Data.List (intercalate, isInfixOf, isPrefixOf, tails)
 import qualified Data.Map as M
 import FOL
 import Lift (FunInfo (..), FunKind (..))
 import Names
+import Rewrite (normalise)
 import Syntax
 import Text.Parsec
 import Text.Parsec.String (Parser)
@@ -35,18 +37,33 @@ extractWitnesses :: Int -> String -> Either String [[PT]]
 extractWitnesses arity input =
   case [ l | l <- lines input, "SZS answers Tuple" `isInfixOf` l ] of
     (l : _) -> parseAnswers (afterTuple l)
-    [] -> case dropWhile (not . isGoalTrue) (lines input) of
-      (_ : rest) -> do
+    [] -> case break isGoalTrue (lines input) of
+      (before, _ : rest) -> do
         let block = takeWhile (not . all isSpace) (dropWhile (all isSpace) rest)
         binds <- mapM parseBinding block
-        return [[ maybe (PV ("X" ++ show i)) id (lookup ("X" ++ show i) binds) | i <- [1 .. arity] ]]
-      [] | arity == 0 -> Right [[]]
-         | otherwise -> fmap (: []) (parseTerms input)
+        -- Twee renames the conjecture's variables; their order is given by
+        -- the restated goal "Goal 1 (name): prop(X, Y) = false."
+        let names = case [ vs | l <- reverse before, Just vs <- [goalVars l] ] of
+              (vs : _) | length vs == arity -> vs
+              _ -> [ "X" ++ show i | i <- [1 .. arity] ]
+        return [[ maybe (PV v) id (lookup v binds) | v <- names ]]
+      (_, []) | arity == 0 -> Right [[]]
+              | otherwise -> fmap (: []) (parseTerms input)
   where
     afterTuple l = case [ rest | rest <- tails l, take 5 rest == "Tuple" ] of
       (r : _) -> drop 5 r
       [] -> l
     isGoalTrue l = "goal is true when" `isInfixOf` map toLower l
+    goalVars l
+      | "Goal " `isPrefixOf` dropWhile isSpace l =
+          case [ drop 3 r | r <- tails l, take 3 r == "): " ] of
+            (t : _) -> case parse (spaces *> term) "twee goal" t of
+              Right (PF _ args) | all isVar args -> Just [ v | PV v <- args ]
+              _ -> Nothing
+            [] -> Nothing
+      | otherwise = Nothing
+    isVar (PV _) = True
+    isVar _ = False
     parseBinding l = either (Left . show) Right (parse binding "twee answer" l)
     binding = do
       spaces
@@ -56,6 +73,21 @@ extractWitnesses arity input =
       spaces
       t <- term
       return (v, t)
+
+-- | Evaluate each witness term with the program's equations, so that it no
+-- longer mentions auxiliary functions (normal forms are usually constructor
+-- terms). Terms with symbols that are not in the translation are kept.
+normaliseWitness :: Translation -> [PT] -> [PT]
+normaliseWitness tr = map norm
+  where
+    inverse = M.fromList [ (v, k) | (k, v) <- M.toList (trNames tr) ]
+    norm pt = maybe pt (fromTerm . normalise 100000 (trEqns tr)) (toTerm pt)
+    toTerm (PV v) = Just (TV (Name v (-2)))
+    toTerm (PF n args) = do
+      s <- M.lookup n inverse
+      TF s <$> mapM toTerm args
+    fromTerm (TV v) = PV (nameBase v)
+    fromTerm (TF s args) = PF (M.findWithDefault "unknown" s (trNames tr)) (map fromTerm args)
 
 -- | Decode one witness into Haskell expressions (one per argument, each
 -- parenthesised if needed).
@@ -84,7 +116,12 @@ parseAnswers s = either (Left . show) Right (parse answers "answer" s)
       _ <- char '['
       ts <- tuple `sepBy` symbol ","
       return ts
-    tuple = between (symbol "[") (symbol "]") (term `sepBy` symbol ",")
+    -- Vampire writes tuples with free variables as  ∀X0,X1.[t1,...,tn]
+    tuple = do
+      optional (do _ <- (char '\8704' <|> char '!') <* spaces
+                   _ <- many1 (satisfy (\c -> isAlphaNum c || c == '_')) `sepBy1` symbol ","
+                   symbol ".")
+      between (symbol "[") (symbol "]") (term `sepBy` symbol ",")
 
 parseTerms :: String -> Either String [PT]
 parseTerms s = either (Left . show) Right (parse (spaces *> (term `sepBy` symbol ",") <* eof) "answer" s)

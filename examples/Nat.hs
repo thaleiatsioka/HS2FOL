@@ -1,5 +1,7 @@
 module Nat where
 
+import Test.QuickCheck
+
 -- Peano numbers. Some properties are true, some are false; the prover
 -- should find counterexamples for the false ones only.
 
