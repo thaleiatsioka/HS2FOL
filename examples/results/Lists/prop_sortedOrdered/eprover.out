@@ -1,0 +1,203 @@
+% Preprocessing class: FSMSSMSMSSSNFFN.
+% Configuration: G-E--_207_C18_F1_SE_CS_SP_PI_PS_S2SI
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSM31-MFFFFFNN
+% partial match(2): FHUSM-FFSF21-MFFFFFNN
+% Configuration: G-E--_208_C12_11_nc_F1_SE_CS_SP_PS_S5PRR_RG_S04AN
+% Initializing proof state
+% Scanning for AC axioms
+%
+%cnf(i_0_10, plain, (ordered(nil)=true)).
+%
+%cnf(i_0_4, plain, (not(false)=true)).
+%
+%cnf(i_0_26, negated_conjecture, ($answer(esk1_1(X1))|ordered(foldr(insertBad_0,nil,X1))!=false)).
+%
+%cnf(i_0_1, plain, (isGT(lt)=false)).
+%
+%cnf(i_0_2, plain, (isGT(eq)=false)).
+%
+%cnf(i_0_3, plain, (isGT(gt)=true)).
+%
+%cnf(i_0_5, plain, (not(true)=false)).
+%
+%cnf(i_0_7, plain, (opAnd(true,X1)=X1)).
+%
+%cnf(i_0_6, plain, (opAnd(false,X1)=false)).
+%
+%cnf(i_0_20, plain, (compareNat(zero,zero)=eq)).
+%
+%cnf(i_0_8, plain, (foldr(X1,X2,nil)=X2)).
+%
+%cnf(i_0_11, plain, (ordered(cons(X1,nil))=true)).
+%
+%cnf(i_0_13, plain, (app(app(insertBad_0,X1),nil)=cons(X1,nil))).
+%
+%cnf(i_0_21, plain, (compareNat(zero,suc(X1))=lt)).
+%
+%cnf(i_0_22, plain, (compareNat(suc(X1),zero)=gt)).
+%
+%cnf(i_0_23, plain, (compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%cnf(i_0_9, plain, (app(app(X1,X3),foldr(X1,X2,X4))=foldr(X1,X2,cons(X3,X4)))).
+%
+%cnf(i_0_15, plain, (insertBad_case1(true,X1,X2,X3)=cons(X1,X3))).
+%
+%cnf(i_0_16, plain, (cons(X2,app(app(insertBad_0,X1),X3))=insertBad_case1(false,X1,X2,X3))).
+%
+%cnf(i_0_14, plain, (insertBad_case1(not(isGT(compareNat(X1,X2))),X1,X2,X3)=app(app(insertBad_0,X1),cons(X2,X3)))).
+%
+%cnf(i_0_12, plain, (opAnd(not(isGT(compareNat(X1,X2))),ordered(cons(X2,X3)))=ordered(cons(X1,cons(X2,X3))))).
+% Presaturation interreduction done
+%
+%cnf(i_0_10, plain, (ordered(nil)=true)).
+%
+%cnf(i_0_4, plain, (not(false)=true)).
+%
+%cnf(i_0_26, negated_conjecture, ($answer(esk1_1(X1))|ordered(foldr(insertBad_0,nil,X1))!=false)).
+%
+%cnf(i_0_1, plain, (isGT(lt)=false)).
+%
+%cnf(i_0_2, plain, (isGT(eq)=false)).
+%
+%cnf(i_0_5, plain, (not(true)=false)).
+%
+%cnf(i_0_3, plain, (isGT(gt)=true)).
+%
+%cnf(i_0_6, plain, (opAnd(false,X1)=false)).
+%
+%cnf(i_0_7, plain, (opAnd(true,X1)=X1)).
+%
+%cnf(i_0_20, plain, (compareNat(zero,zero)=eq)).
+%
+%cnf(i_0_8, plain, (foldr(X1,X2,nil)=X2)).
+%
+%cnf(i_0_11, plain, (ordered(cons(X1,nil))=true)).
+%
+%cnf(i_0_21, plain, (compareNat(zero,suc(X1))=lt)).
+%
+%cnf(i_0_27, negated_conjecture, ($answer(esk1_1(nil))|true!=false)).
+%
+%cnf(i_0_13, plain, (app(app(insertBad_0,X1),nil)=cons(X1,nil))).
+%
+%cnf(i_0_22, plain, (compareNat(suc(X1),zero)=gt)).
+%
+%cnf(i_0_23, plain, (compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%cnf(i_0_9, plain, (app(app(X1,X2),foldr(X1,X3,X4))=foldr(X1,X3,cons(X2,X4)))).
+%
+%cnf(i_0_15, plain, (insertBad_case1(true,X1,X2,X3)=cons(X1,X3))).
+%
+%cnf(i_0_16, plain, (cons(X1,app(app(insertBad_0,X2),X3))=insertBad_case1(false,X2,X1,X3))).
+%
+%cnf(i_0_14, plain, (insertBad_case1(not(isGT(compareNat(X1,X2))),X1,X2,X3)=app(app(insertBad_0,X1),cons(X2,X3)))).
+%
+%cnf(i_0_12, plain, (opAnd(not(isGT(compareNat(X1,X2))),ordered(cons(X2,X3)))=ordered(cons(X1,cons(X2,X3))))).
+%
+%cnf(i_0_32, plain, (cons(X1,cons(X2,nil))=insertBad_case1(false,X2,X1,nil))).
+%
+%cnf(i_0_40, plain, (ordered(cons(suc(X1),cons(zero,X2)))=false)).
+
+[... hs2fol: 30723 lines of search output omitted to keep the repository small; rerun to regenerate ...]
+
+%
+%cnf(i_0_961908, negated_conjecture, ($answer(esk1_1(cons(suc(suc(X1)),cons(zero,cons(zero,cons(suc(zero),cons(suc(suc(zero)),cons(suc(suc(zero)),insertBad_case1(false,zero,zero,nil)))))))))|true!=false)).
+%%%
+%cnf(i_0_6493, plain, (app(foldr(foldr(cons(zero,X2),X4,cons(foldr(app(insertBad_0,zero),X1,X3),X5)),X6,cons(foldr(foldr(app(insertBad_0,zero),X1,cons(cons(zero,X2),X3)),X7,X8),X9)),app(app(foldr(foldr(app(insertBad_0,zero),X1,cons(cons(zero,X2),X3)),X7,cons(foldr(cons(zero,X2),X4,X5),X8)),X10),X11))=foldr(foldr(foldr(app(insertBad_0,zero),X1,cons(cons(zero,X2),X3)),X7,cons(foldr(cons(zero,X2),X4,X5),X8)),X11,insertBad_case1(false,X10,foldr(foldr(cons(zero,X2),X4,cons(foldr(app(insertBad_0,zero),X1,X3),X5)),X6,X9),nil)))).
+%%
+%cnf(i_0_961900, negated_conjecture, ($answer(esk1_1(cons(X1,cons(zero,cons(zero,cons(suc(suc(zero)),cons(suc(suc(zero)),cons(suc(suc(zero)),insertBad_case1(false,zero,zero,nil)))))))))|ordered(app(app(insertBad_0,X1),insertBad_case1(false,suc(suc(zero)),zero,nil)))!=false)).
+%%
+%cnf(i_0_962791, negated_conjecture, ($answer(esk1_1(cons(suc(X1),cons(zero,cons(zero,cons(suc(suc(zero)),cons(suc(suc(zero)),cons(suc(suc(zero)),insertBad_case1(false,zero,zero,nil)))))))))|ordered(insertBad_case1(false,suc(X1),zero,cons(suc(suc(zero)),nil)))!=false)).
+%
+%cnf(i_0_962796, negated_conjecture, ($answer(esk1_1(cons(suc(zero),cons(zero,cons(zero,cons(suc(suc(zero)),cons(suc(suc(zero)),cons(suc(suc(zero)),insertBad_case1(false,zero,zero,nil)))))))))|true!=false)).
+%
+%cnf(i_0_962794, negated_conjecture, ($answer(esk1_1(cons(suc(suc(zero)),cons(zero,cons(zero,cons(suc(suc(zero)),cons(suc(suc(zero)),cons(suc(suc(zero)),insertBad_case1(false,zero,zero,nil)))))))))|true!=false)).
+%
+%cnf(i_0_962795, negated_conjecture, ($answer(esk1_1(cons(suc(suc(suc(X1))),cons(zero,cons(zero,cons(suc(suc(zero)),cons(suc(suc(zero)),cons(suc(suc(zero)),insertBad_case1(false,zero,zero,nil)))))))))|true!=false)).
+%%%%
+%cnf(i_0_6494, plain, (app(foldr(foldr(cons(suc(zero),X2),X4,cons(foldr(app(insertBad_0,suc(zero)),X1,X3),X5)),X6,cons(foldr(foldr(app(insertBad_0,suc(zero)),X1,cons(cons(suc(zero),X2),X3)),X7,X8),X9)),app(app(foldr(foldr(app(insertBad_0,suc(zero)),X1,cons(cons(suc(zero),X2),X3)),X7,cons(foldr(cons(suc(zero),X2),X4,X5),X8)),X10),X11))=foldr(foldr(foldr(app(insertBad_0,suc(zero)),X1,cons(cons(suc(zero),X2),X3)),X7,cons(foldr(cons(suc(zero),X2),X4,X5),X8)),X11,insertBad_case1(false,X10,foldr(foldr(cons(suc(zero),X2),X4,cons(foldr(app(insertBad_0,suc(zero)),X1,X3),X5)),X6,X9),nil)))).
+%%
+%cnf(i_0_961898, negated_conjecture, ($answer(esk1_1(cons(suc(suc(X1)),cons(zero,cons(zero,cons(suc(suc(X2)),cons(suc(zero),cons(suc(suc(X3)),insertBad_case1(false,zero,zero,nil)))))))))|ordered(insertBad_case1(false,suc(suc(X1)),suc(zero),cons(suc(suc(X2)),nil)))!=false)).
+%%%%%%
+%cnf(i_0_963649, negated_conjecture, ($answer(esk1_1(cons(suc(suc(suc(suc(X1)))),cons(zero,cons(zero,cons(suc(suc(suc(zero))),cons(suc(zero),cons(suc(suc(X2)),insertBad_case1(false,zero,zero,nil)))))))))|true!=false)).
+%%%%
+%cnf(i_0_963652, negated_conjecture, ($answer(esk1_1(cons(suc(suc(suc(suc(suc(X1))))),cons(zero,cons(zero,cons(suc(suc(suc(suc(zero)))),cons(suc(zero),cons(suc(suc(X2)),insertBad_case1(false,zero,zero,nil)))))))))|true!=false)).
+%
+%cnf(i_0_822369, negated_conjecture, ($answer(esk1_1(cons(suc(X1),cons(suc(X2),cons(suc(suc(X3)),cons(zero,cons(zero,insertBad_case1(false,zero,suc(zero),nil))))))))|ordered(insertBad_case1(false,suc(X1),zero,insertBad_case1(false,suc(X2),zero,insertBad_case1(false,suc(suc(X3)),suc(zero),nil))))!=false)).
+%%%%%%
+%cnf(i_0_238341, plain, (foldr(insertBad_0,insertBad_case1(false,X1,suc(suc(zero)),nil),cons(X2,cons(X3,insertBad_case1(false,suc(suc(zero)),X4,nil))))=foldr(insertBad_0,insertBad_case1(false,X1,suc(suc(zero)),nil),cons(X2,insertBad_case1(false,X4,X3,nil))))).
+%%%
+%cnf(i_0_6496, plain, (app(foldr(foldr(foldr(X1,X5,insertBad_case1(false,X4,X2,nil)),X7,cons(foldr(app(X1,X2),X3,X6),X8)),X9,cons(foldr(foldr(app(X1,X2),X3,cons(app(app(X1,X4),X5),X6)),X10,X11),X12)),app(app(foldr(foldr(app(X1,X2),X3,cons(app(app(X1,X4),X5),X6)),X10,cons(foldr(foldr(X1,X5,insertBad_case1(false,X4,X2,nil)),X7,X8),X11)),X13),X14))=foldr(foldr(foldr(app(X1,X2),X3,cons(app(app(X1,X4),X5),X6)),X10,cons(foldr(foldr(X1,X5,insertBad_case1(false,X4,X2,nil)),X7,X8),X11)),X14,insertBad_case1(false,X13,foldr(foldr(foldr(X1,X5,insertBad_case1(false,X4,X2,nil)),X7,cons(foldr(app(X1,X2),X3,X6),X8)),X9,X12),nil)))).
+%%
+%cnf(i_0_828451, negated_conjecture, ($answer(esk1_1(cons(suc(X1),cons(suc(X2),cons(zero,cons(suc(suc(X3)),cons(suc(zero),insertBad_case1(false,zero,zero,nil))))))))|ordered(insertBad_case1(false,suc(X1),zero,insertBad_case1(false,suc(X2),zero,insertBad_case1(false,suc(suc(X3)),suc(zero),nil))))!=false)).
+%%%%%%%%
+%cnf(i_0_85998, plain, (foldr(insertBad_0,nil,cons(X4,cons(X3,insertBad_case1(false,suc(suc(X1)),X2,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil))))))=foldr(insertBad_0,nil,cons(X4,cons(X3,insertBad_case1(false,zero,X2,nil)))))).
+%
+%cnf(i_0_6497, plain, (app(foldr(foldr(foldr(app(insertBad_0,X1),X3,cons(nil,X4)),X6,cons(foldr(cons(X1,nil),X2,X5),X7)),X8,cons(foldr(foldr(cons(X1,nil),X2,cons(foldr(app(insertBad_0,X1),X3,X4),X5)),X9,X10),X11)),app(app(foldr(foldr(cons(X1,nil),X2,cons(foldr(app(insertBad_0,X1),X3,X4),X5)),X9,cons(foldr(foldr(app(insertBad_0,X1),X3,cons(nil,X4)),X6,X7),X10)),X12),X13))=foldr(foldr(foldr(cons(X1,nil),X2,cons(foldr(app(insertBad_0,X1),X3,X4),X5)),X9,cons(foldr(foldr(app(insertBad_0,X1),X3,cons(nil,X4)),X6,X7),X10)),X13,insertBad_case1(false,X12,foldr(foldr(foldr(app(insertBad_0,X1),X3,cons(nil,X4)),X6,cons(foldr(cons(X1,nil),X2,X5),X7)),X8,X11),nil)))).
+%
+%cnf(i_0_967621, negated_conjecture, ($answer(esk1_1(cons(X1,cons(X2,insertBad_case1(false,suc(suc(X3)),X4,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|ordered(foldr(insertBad_0,nil,cons(X1,cons(X2,insertBad_case1(false,zero,X4,nil)))))!=false)).
+%
+%cnf(i_0_968765, negated_conjecture, ($answer(esk1_1(cons(X1,cons(X2,insertBad_case1(false,suc(suc(X3)),zero,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|ordered(foldr(insertBad_0,nil,cons(X1,insertBad_case1(false,zero,X2,nil))))!=false)).
+%
+%cnf(i_0_968767, negated_conjecture, ($answer(esk1_1(cons(X1,cons(zero,insertBad_case1(false,suc(suc(X2)),zero,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|ordered(app(app(insertBad_0,X1),cons(zero,nil)))!=false)).
+%
+%cnf(i_0_968770, negated_conjecture, ($answer(esk1_1(cons(zero,cons(zero,insertBad_case1(false,suc(suc(X1)),zero,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_968769, negated_conjecture, ($answer(esk1_1(cons(suc(X1),cons(zero,insertBad_case1(false,suc(suc(X2)),zero,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_968768, negated_conjecture, ($answer(esk1_1(cons(X1,cons(suc(X2),insertBad_case1(false,suc(suc(X3)),zero,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|ordered(app(app(insertBad_0,X1),insertBad_case1(false,suc(X2),zero,nil)))!=false)).
+%
+%cnf(i_0_968772, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(X1),insertBad_case1(false,suc(suc(X2)),zero,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_968766, negated_conjecture, ($answer(esk1_1(cons(X1,cons(X2,insertBad_case1(false,suc(suc(X3)),suc(X4),insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|ordered(foldr(insertBad_0,insertBad_case1(false,suc(X4),zero,nil),insertBad_case1(false,X2,X1,nil)))!=false)).
+%
+%cnf(i_0_968774, negated_conjecture, ($answer(esk1_1(cons(X1,cons(zero,insertBad_case1(false,suc(suc(X2)),suc(X3),insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|ordered(app(app(insertBad_0,X1),insertBad_case1(false,suc(X3),zero,nil)))!=false)).
+%
+%cnf(i_0_968778, negated_conjecture, ($answer(esk1_1(cons(zero,cons(zero,insertBad_case1(false,suc(suc(X1)),suc(X2),insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_6498, plain, (app(foldr(foldr(foldr(app(X1,X3),X6,cons(foldr(X1,X2,X4),X7)),X9,cons(foldr(foldr(X1,X2,cons(X3,X4)),X5,X8),X10)),X11,cons(foldr(foldr(foldr(X1,X2,cons(X3,X4)),X5,cons(foldr(app(X1,X3),X6,X7),X8)),X12,X13),X14)),app(app(foldr(foldr(foldr(X1,X2,cons(X3,X4)),X5,cons(foldr(app(X1,X3),X6,X7),X8)),X12,cons(foldr(foldr(app(X1,X3),X6,cons(foldr(X1,X2,X4),X7)),X9,X10),X13)),X15),X16))=foldr(foldr(foldr(foldr(X1,X2,cons(X3,X4)),X5,cons(foldr(app(X1,X3),X6,X7),X8)),X12,cons(foldr(foldr(app(X1,X3),X6,cons(foldr(X1,X2,X4),X7)),X9,X10),X13)),X16,insertBad_case1(false,X15,foldr(foldr(foldr(app(X1,X3),X6,cons(foldr(X1,X2,X4),X7)),X9,cons(foldr(foldr(X1,X2,cons(X3,X4)),X5,X8),X10)),X11,X14),nil)))).
+%
+%cnf(i_0_968771, negated_conjecture, ($answer(esk1_1(cons(suc(X1),cons(suc(X2),insertBad_case1(false,suc(suc(X3)),zero,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|ordered(insertBad_case1(false,suc(X1),zero,cons(suc(X2),nil)))!=false)).
+%
+%cnf(i_0_971785, negated_conjecture, ($answer(esk1_1(cons(suc(zero),cons(suc(zero),insertBad_case1(false,suc(suc(X1)),zero,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_971775, negated_conjecture, ($answer(esk1_1(cons(suc(suc(X1)),cons(suc(zero),insertBad_case1(false,suc(suc(X2)),zero,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_971786, negated_conjecture, ($answer(esk1_1(cons(suc(zero),cons(suc(suc(X1)),insertBad_case1(false,suc(suc(X2)),zero,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_971776, negated_conjecture, ($answer(esk1_1(cons(suc(suc(zero)),cons(suc(suc(zero)),insertBad_case1(false,suc(suc(X1)),zero,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_971777, negated_conjecture, ($answer(esk1_1(cons(suc(suc(zero)),cons(suc(suc(suc(X1))),insertBad_case1(false,suc(suc(X2)),zero,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_971778, negated_conjecture, ($answer(esk1_1(cons(suc(suc(suc(X1))),cons(suc(suc(zero)),insertBad_case1(false,suc(suc(X2)),zero,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_971779, negated_conjecture, ($answer(esk1_1(cons(suc(suc(suc(zero))),cons(suc(suc(suc(zero))),insertBad_case1(false,suc(suc(X1)),zero,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_971780, negated_conjecture, ($answer(esk1_1(cons(suc(suc(suc(zero))),cons(suc(suc(suc(suc(X1)))),inser
+% Failure: Resource limit exceeded (time)
+% SZS status ResourceOut
+eprover: CPU time limit exceeded, terminating
+tBad_case1(false,suc(suc(X2)),zero,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_971781, negated_conjecture, ($answer(esk1_1(cons(suc(suc(suc(suc(X1)))),cons(suc(suc(suc(zero))),insertBad_case1(false,suc(suc(X2)),zero,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%%
+%cnf(i_0_971782, negated_conjecture, ($answer(esk1_1(cons(suc(suc(suc(suc(zero)))),cons(suc(suc(suc(suc(zero)))),insertBad_case1(false,suc(suc(X1)),zero,insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%%
+%cnf(i_0_968776, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(X1),insertBad_case1(false,suc(suc(X2)),suc(X3),insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|ordered(insertBad_case1(false,suc(X1),zero,cons(suc(X3),nil)))!=false)).
+%
+%cnf(i_0_971797, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(zero),insertBad_case1(false,suc(suc(X1)),suc(zero),insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_971787, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(suc(X1)),insertBad_case1(false,suc(suc(X2)),suc(zero),insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_971798, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(zero),insertBad_case1(false,suc(suc(X1)),suc(suc(X2)),insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_971788, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(suc(zero)),insertBad_case1(false,suc(suc(X1)),suc(suc(zero)),insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_971789, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(suc(zero)),insertBad_case1(false,suc(suc(X1)),suc(suc(suc(X2))),insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_971790, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(suc(suc(X1))),insertBad_case1(false,suc(suc(X2)),suc(suc(zero)),insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_971791, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(suc(suc(zero))),insertBad_case1(false,suc(suc(X1)),suc(suc(suc(zero))),insertBad_case1(false,suc(zero),zero,insertBad_case1(false,zero,zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_6500, plain, (app(foldr(foldr(app(X1,X4),X6,cons(foldr(X1,X2,app(app(insertBad_0,X3),X5)),X7)),X8,cons(foldr(foldr(X1,X2,insertBad_case1(false,X3,X4,X5)),X9,X10),X11)),app(app(foldr(foldr(X1,X2,insertBad_case1(false,X3,X4,X5)),X9,cons(foldr(app(X1,X4),X6,X7),X10)),X12),X13))=foldr(foldr(foldr(X1,X2,insertBad_case1(false,X3,X4,X5)),X9,cons(foldr(app(X1,X4),X6,X7),X10)),X13,insertBad_case1(false,X12,foldr(foldr(app(X1,X4),X6,cons(foldr(X1,X2,app(app(insertBad_0,X3),X5)),X7)),X8,X11),nil)))).

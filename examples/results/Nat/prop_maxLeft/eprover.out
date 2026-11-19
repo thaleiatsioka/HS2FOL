@@ -1,0 +1,98 @@
+% Preprocessing class: FSMSSMSSSSSNFFN.
+% Configuration: G-E--_208_C18_F1_SE_CS_SOS_SP_PS_S5PRR_RG_S04AN
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSM31-MFFFFFNN
+% partial match(2): FHUSM-FFSF21-MFFFFFNN
+% Configuration: G-E--_208_C12_11_nc_F1_SE_CS_SP_PS_S5PRR_RG_S04AN
+% Initializing proof state
+% Scanning for AC axioms
+%
+%cnf(i_0_4, plain, (not(false)=true)).
+%
+%cnf(i_0_1, plain, (isGT(lt)=false)).
+%
+%cnf(i_0_2, plain, (isGT(eq)=false)).
+%
+%cnf(i_0_5, plain, (not(true)=false)).
+%
+%cnf(i_0_3, plain, (isGT(gt)=true)).
+%
+%cnf(i_0_9, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_17, plain, (compareNat(zero,zero)=eq)).
+%
+%cnf(i_0_15, plain, (maxNat_case1(false,X1,X2)=X1)).
+%
+%cnf(i_0_14, plain, (maxNat_case1(true,X1,X2)=X2)).
+%
+%cnf(i_0_10, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_18, plain, (compareNat(zero,suc(X1))=lt)).
+%
+%cnf(i_0_19, plain, (compareNat(suc(X1),zero)=gt)).
+%
+%cnf(i_0_11, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_21, negated_conjecture, ($answer(esk1_2(X1,X2))|prop_maxLeft_case1(not(isGT(compareNat(X1,X2))),X2,X1)!=false)).
+%
+%cnf(i_0_20, plain, (compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%cnf(i_0_12, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_7, plain, (eqNat(maxNat_case1(not(isGT(compareNat(X2,X1))),X2,X1),X1)=prop_maxLeft_case1(false,X1,X2))).
+%
+%cnf(i_0_6, plain, (prop_maxLeft_case1(true,X1,X2)=prop_maxLeft_case1(false,X1,X2))).
+% Presaturation interreduction done
+%
+%cnf(i_0_4, plain, (not(false)=true)).
+%
+%cnf(i_0_1, plain, (isGT(lt)=false)).
+%
+%cnf(i_0_2, plain, (isGT(eq)=false)).
+%
+%cnf(i_0_5, plain, (not(true)=false)).
+%
+%cnf(i_0_3, plain, (isGT(gt)=true)).
+%
+%cnf(i_0_17, plain, (compareNat(zero,zero)=eq)).
+%
+%cnf(i_0_9, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_15, plain, (maxNat_case1(false,X1,X2)=X1)).
+%
+%cnf(i_0_18, plain, (compareNat(zero,suc(X1))=lt)).
+%
+%cnf(i_0_14, plain, (maxNat_case1(true,X1,X2)=X2)).
+%
+%cnf(i_0_19, plain, (compareNat(suc(X1),zero)=gt)).
+%
+%cnf(i_0_10, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_11, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_20, plain, (compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%cnf(i_0_12, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_21, negated_conjecture, ($answer(esk1_2(X1,X2))|prop_maxLeft_case1(not(isGT(compareNat(X1,X2))),X2,X1)!=false)).
+%
+%cnf(i_0_25, negated_conjecture, ($answer(esk1_2(zero,zero))|prop_maxLeft_case1(true,zero,zero)!=false)).
+%
+%cnf(i_0_23, negated_conjecture, ($answer(esk1_2(suc(X1),zero))|prop_maxLeft_case1(false,zero,suc(X1))!=false)).
+%
+%cnf(i_0_6, plain, (prop_maxLeft_case1(true,X1,X2)=prop_maxLeft_case1(false,X1,X2))).
+%
+%cnf(i_0_25, negated_conjecture, ($answer(esk1_2(zero,zero))|prop_maxLeft_case1(false,zero,zero)!=false)).
+%
+%cnf(i_0_7, plain, (eqNat(maxNat_case1(not(isGT(compareNat(X1,X2))),X1,X2),X2)=prop_maxLeft_case1(false,X2,X1))).
+%
+%cnf(i_0_29, plain, (prop_maxLeft_case1(false,zero,zero)=true)).
+%
+%cnf(i_0_25, negated_conjecture, ($answer(esk1_2(zero,zero))|true!=false)).
+%
+%cnf(i_0_27, plain, (prop_maxLeft_case1(false,zero,suc(X1))=false)).
+%% SZS status Theorem
+% SZS answers Tuple [[suc(X1), zero]|_]
+
+% Proof found!

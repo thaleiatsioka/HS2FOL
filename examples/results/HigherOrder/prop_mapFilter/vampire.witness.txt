@@ -1,0 +1,37 @@
+property:   prop_mapFilter
+file:       examples/HigherOrder.hs
+prover:     vampire
+witness:    prop_mapFilter (\_ -> True) (\x -> x) [False]
+input:      prop_mapFilter (\_ -> True) (\x -> x) [False]
+result:     ILL-TYPED witness (the untyped logic allows it, Haskell does not):
+    
+    /tmp/witness2input-0/W2ICheck.hs:24:65: error:
+        * Couldn't match expected type `Nat' with actual type `Bool'
+        * In the expression: True
+          In the first argument of `prop_mapFilter', namely `(\ _ -> True)'
+          In the first argument of `property', namely
+            `(prop_mapFilter (\ _ -> True) (\ x -> x) [False])'
+       |
+    24 |            (W2I_QC.once (W2I_QC.property (prop_mapFilter (\_ -> True) (\x -> x) [False])))
+       |                                                                 ^^^^
+    
+    /tmp/witness2input-0/W2ICheck.hs:24:78: error:
+        * Couldn't match expected type `Bool' with actual type `Nat'
+        * In the expression: x
+          In the second argument of `prop_mapFilter', namely `(\ x -> x)'
+          In the first argument of `property', namely
+            `(prop_mapFilter (\ _ -> True) (\ x -> x) [False])'
+       |
+    24 |            (W2I_QC.once (W2I_QC.property (prop_mapFilter (\_ -> True) (\x -> x) [False])))
+       |                                                                              ^
+    
+    /tmp/witness2input-0/W2ICheck.hs:24:82: error:
+        * Couldn't match expected type `Nat' with actual type `Bool'
+        * In the expression: False
+          In the third argument of `prop_mapFilter', namely `[False]'
+          In the first argument of `property', namely
+            `(prop_mapFilter (\ _ -> True) (\ x -> x) [False])'
+       |
+    24 |            (W2I_QC.once (W2I_QC.property (prop_mapFilter (\_ -> True) (\x -> x) [False])))
+       |                                                                                  ^^^^^
+

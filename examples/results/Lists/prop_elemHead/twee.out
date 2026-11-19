@@ -1,0 +1,91 @@
+Here is the input problem:
+  Axiom 1 (opOr_2): opOr(true, X) = true.
+  Axiom 2 (opOr_1): opOr(false, X) = X.
+  Axiom 3 (implies_2): implies(true, X) = X.
+  Axiom 4 (implies_1): implies(false, X) = true.
+  Axiom 5 (elemNat_1): elemNat(X, nil) = false.
+  Axiom 6 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 7 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 8 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 9 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 10 (head_1): head(cons(X, Y)) = X.
+  Axiom 11 (elemNat_2): elemNat(X, cons(Y, Z)) = opOr(eqNat(X, Y), elemNat(X, Z)).
+  Axiom 12 (prop_elemHead_1): prop_elemHead(X, Y) = implies(elemNat(X, Y), eqNat(head(Y), X)).
+  Axiom 13 (reflexivity): equals(X, X) = true.
+  Axiom 14 (prop_elemHead): equals(prop_elemHead(X, Y), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. opOr(true, X) -> true
+2. opOr(false, X) -> X
+3. implies(true, X) -> X
+4. implies(false, X) -> true
+5. elemNat(X, nil) -> false
+6. eqNat(zero, zero) -> true
+7. eqNat(zero, suc(X)) -> false
+8. eqNat(suc(X), zero) -> false
+9. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+10. head(cons(X, Y)) -> X
+11. opOr(eqNat(X, Y), elemNat(X, Z)) -> elemNat(X, cons(Y, Z))
+12. implies(elemNat(X, Y), eqNat(head(Y), X)) -> prop_elemHead(X, Y)
+13. equals(X, X) -> true
+14. equals(prop_elemHead(X, Y), false) -> false
+15. prop_elemHead(X, nil) -> true
+16. equals(true, false) -> false
+17. elemNat(zero, cons(zero, X)) -> true
+18. prop_elemHead(zero, cons(zero, X)) -> true
+19. elemNat(X, cons(Y, nil)) -> opOr(eqNat(X, Y), false)
+20. elemNat(zero, cons(suc(X), Y)) -> elemNat(zero, Y)
+21. elemNat(suc(X), cons(zero, Y)) -> elemNat(suc(X), Y)
+22. implies(elemNat(zero, X), false) -> prop_elemHead(zero, cons(suc(?), X))
+23. prop_elemHead(zero, cons(suc(X), Y)) ~> prop_elemHead(zero, cons(suc(?), Y))
+24. prop_elemHead(zero, cons(suc(?), nil)) -> true
+25. implies(elemNat(suc(X), Y), false) -> prop_elemHead(suc(X), cons(zero, Y))
+26. prop_elemHead(suc(X), cons(zero, nil)) -> true
+27. elemNat(zero, cons(X, cons(zero, Y))) -> opOr(eqNat(zero, X), true)
+28. opOr(eqNat(X, Y), elemNat(suc(X), Z)) -> elemNat(suc(X), cons(suc(Y), Z))
+29. elemNat(suc(zero), cons(suc(zero), X)) -> true
+30. prop_elemHead(suc(zero), cons(suc(zero), X)) -> true
+31. prop_elemHead(zero, cons(suc(?), cons(zero, X))) -> false
+32. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (opOr_2): opOr(true, X) = true.
+Axiom 2 (opOr_1): opOr(false, X) = X.
+Axiom 3 (implies_2): implies(true, X) = X.
+Axiom 4 (eqNat_1): eqNat(zero, zero) = true.
+Axiom 5 (eqNat_2): eqNat(zero, suc(X)) = false.
+Axiom 6 (eqNat_3): eqNat(suc(X), zero) = false.
+Axiom 7 (head_1): head(cons(X, Y)) = X.
+Axiom 8 (elemNat_2): elemNat(X, cons(Y, Z)) = opOr(eqNat(X, Y), elemNat(X, Z)).
+Axiom 9 (prop_elemHead_1): prop_elemHead(X, Y) = implies(elemNat(X, Y), eqNat(head(Y), X)).
+
+Goal 1 (prop_elemHead): prop_elemHead(X, Y) = false.
+The goal is true when:
+  X = zero
+  Y = cons(suc(Y), cons(zero, X))
+
+Proof:
+  prop_elemHead(zero, cons(suc(Y), cons(zero, X)))
+= { by axiom 9 (prop_elemHead_1) }
+  implies(elemNat(zero, cons(suc(Y), cons(zero, X))), eqNat(head(cons(suc(Y), cons(zero, X))), zero))
+= { by axiom 8 (elemNat_2) }
+  implies(opOr(eqNat(zero, suc(Y)), elemNat(zero, cons(zero, X))), eqNat(head(cons(suc(Y), cons(zero, X))), zero))
+= { by axiom 5 (eqNat_2) }
+  implies(opOr(false, elemNat(zero, cons(zero, X))), eqNat(head(cons(suc(Y), cons(zero, X))), zero))
+= { by axiom 2 (opOr_1) }
+  implies(elemNat(zero, cons(zero, X)), eqNat(head(cons(suc(Y), cons(zero, X))), zero))
+= { by axiom 7 (head_1) }
+  implies(elemNat(zero, cons(zero, X)), eqNat(suc(Y), zero))
+= { by axiom 6 (eqNat_3) }
+  implies(elemNat(zero, cons(zero, X)), false)
+= { by axiom 8 (elemNat_2) }
+  implies(opOr(eqNat(zero, zero), elemNat(zero, X)), false)
+= { by axiom 4 (eqNat_1) }
+  implies(opOr(true, elemNat(zero, X)), false)
+= { by axiom 1 (opOr_2) }
+  implies(true, false)
+= { by axiom 3 (implies_2) }
+  false
+
+RESULT: Theorem (the conjecture is true).

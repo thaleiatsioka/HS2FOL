@@ -1,0 +1,30 @@
+% Preprocessing class: FSSSSMSSSSSNFFN.
+% Configuration: G-E--_302_C18_F1_URBAN_RG_S04BN
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSF21-SFFFFFNN
+% Configuration: G-E--_208_C18_F1_AE_CS_SP_PI_S0a
+% Initializing proof state
+% Scanning for AC axioms
+%
+%cnf(i_0_4, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_1, plain, (plus(zero,X1)=X1)).
+%
+%cnf(i_0_8, negated_conjecture, ($answer(esk1_1(X1))|eqNat(plus(X1,X1),X1)!=false)).
+%
+%cnf(i_0_5, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_6, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_7, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_2, plain, (plus(suc(X1),X2)=suc(plus(X1,X2)))).
+%
+%cnf(i_0_9, negated_conjecture, ($answer(esk1_1(zero))|true!=false)).
+%
+%cnf(i_0_10, negated_conjecture, ($answer(esk1_1(suc(X1)))|eqNat(plus(X1,suc(X1)),X1)!=false)).
+%% SZS status Theorem
+% SZS answers Tuple [[suc(zero)]|_]
+
+% Proof found!

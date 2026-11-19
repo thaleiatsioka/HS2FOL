@@ -1,0 +1,7 @@
+property:   prop_pairsEmpty
+file:       examples/Lists.hs
+prover:     twee
+witness:    prop_pairsEmpty (Zero : ((Suc _X) : _Y))
+input:      prop_pairsEmpty (Zero : ((Suc undefined) : undefined))
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

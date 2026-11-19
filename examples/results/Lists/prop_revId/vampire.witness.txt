@@ -1,0 +1,7 @@
+property:   prop_revId
+file:       examples/Lists.hs
+prover:     vampire
+witness:    prop_revId [Zero, Suc _X0]
+input:      prop_revId [Zero, Suc undefined]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

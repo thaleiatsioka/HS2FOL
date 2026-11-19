@@ -1,0 +1,7 @@
+property:   prop_revApp
+file:       examples/Lists.hs
+prover:     eprover
+witness:    prop_revApp [Zero] [Suc _X1]
+input:      prop_revApp [Zero] [Suc undefined]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

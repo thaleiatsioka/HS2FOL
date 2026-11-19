@@ -1,0 +1,203 @@
+% Preprocessing class: FSSSSMSSSSSNFFN.
+% Configuration: G-E--_302_C18_F1_URBAN_RG_S04BN
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSS-FFSS11-MFFFFFNN
+% partial match(2): FHUSS-FFSS21-SFFFFFNN
+% Configuration: SAT001_MinMin_p005000_rr_RG
+% Initializing proof state
+% Scanning for AC axioms
+%
+%cnf(i_0_1, plain, (not(false)=true)).
+%
+%cnf(i_0_8, negated_conjecture, ($answer(esk1_1(X1))|isEven(double(X1))!=false)).
+%
+%cnf(i_0_3, plain, (double(zero)=zero)).
+%
+%cnf(i_0_5, plain, (isEven(zero)=true)).
+%
+%cnf(i_0_2, plain, (not(true)=false)).
+%
+%cnf(i_0_6, plain, (not(isEven(X1))=isEven(suc(X1)))).
+%
+%cnf(i_0_4, plain, (suc(suc(double(X1)))=double(suc(X1)))).
+% Presaturation interreduction done
+%
+%cnf(i_0_1, plain, (not(false)=true)).
+%
+%cnf(i_0_3, plain, (double(zero)=zero)).
+%
+%cnf(i_0_5, plain, (isEven(zero)=true)).
+%
+%cnf(i_0_2, plain, (not(true)=false)).
+%
+%cnf(i_0_8, negated_conjecture, ($answer(esk1_1(X1))|isEven(double(X1))!=false)).
+%
+%cnf(i_0_9, negated_conjecture, ($answer(esk1_1(zero))|false!=true)).
+%
+%cnf(i_0_6, plain, (not(isEven(X1))=isEven(suc(X1)))).
+%
+%cnf(i_0_10, plain, (isEven(suc(zero))=false)).
+%
+%cnf(i_0_11, plain, (isEven(suc(suc(zero)))=true)).
+%
+%cnf(i_0_4, plain, (suc(suc(double(X1)))=double(suc(X1)))).
+%
+%cnf(i_0_13, plain, (suc(suc(zero))=double(suc(zero)))).
+%
+%cnf(i_0_11, plain, (isEven(double(suc(zero)))=true)).
+%
+%cnf(i_0_15, negated_conjecture, ($answer(esk1_1(suc(zero)))|false!=true)).
+%
+%cnf(i_0_14, plain, (isEven(suc(double(suc(zero))))=false)).
+%
+%cnf(i_0_16, plain, (isEven(double(double(suc(zero))))=true)).
+%
+%cnf(i_0_18, negated_conjecture, ($answer(esk1_1(double(suc(zero))))|false!=true)).
+%
+%cnf(i_0_17, plain, (isEven(suc(double(double(suc(zero)))))=false)).
+%
+%cnf(i_0_19, plain, (isEven(double(suc(double(suc(zero)))))=true)).
+%
+%cnf(i_0_21, negated_conjecture, ($answer(esk1_1(suc(double(suc(zero)))))|false!=true)).
+%
+%cnf(i_0_20, plain, (isEven(suc(double(suc(double(suc(zero))))))=false)).
+%
+%cnf(i_0_22, plain, (isEven(double(double(double(suc(zero)))))=true)).
+%
+%cnf(i_0_24, negated_conjecture, ($answer(esk1_1(double(double(suc(zero)))))|false!=true)).
+%
+%cnf(i_0_23, plain, (isEven(suc(double(double(double(suc(zero))))))=false)).
+%
+%cnf(i_0_25, plain, (isEven(double(suc(double(double(suc(zero))))))=true)).
+%
+%cnf(i_0_27, negated_conjecture, ($answer(esk1_1(suc(double(double(suc(zero))))))|false!=true)).
+%
+%cnf(i_0_26, plain, (isEven(suc(double(suc(double(double(suc(zero)))))))=false)).
+%
+%cnf(i_0_28, plain, (isEven(double(double(suc(double(suc(zero))))))=true)).
+%
+%cnf(i_0_30, negated_conjecture, ($answer(esk1_1(double(suc(double(suc(zero))))))|false!=true)).
+%
+%cnf(i_0_29, plain, (isEven(suc(double(double(suc(double(suc(zero)))))))=false)).
+%
+%cnf(i_0_31, plain, (isEven(double(suc(double(suc(double(suc(zero)))))))=true)).
+%
+%cnf(i_0_33, negated_conjecture, ($answer(esk1_1(suc(double(suc(double(suc(zero)))))))|false!=true)).
+%
+%cnf(i_0_32, plain, (isEven(suc(double(suc(double(suc(double(suc(zero))))))))=false)).
+%
+%cnf(i_0_34, plain, (isEven(double(double(double(double(suc(zero))))))=true)).
+%
+%cnf(i_0_36, negated_conjecture, ($answer(esk1_1(double(double(double(suc(zero))))))|false!=true)).
+%
+%cnf(i_0_35, plain, (isEven(suc(double(double(double(double(suc(zero)))))))=false)).
+%
+%cnf(i_0_37, plain, (isEven(double(suc(double(double(double(suc(zero)))))))=true)).
+%
+%cnf(i_0_39, negated_conjecture, ($answer(esk1_1(suc(double(double(double(suc(zero)))))))|false!=true)).
+%
+%cnf(i_0_38, plain, (isEven(suc(double(suc(double(double(double(suc(zero))))))))=false)).
+
+[... hs2fol: 63732 lines of search output omitted to keep the repository small; rerun to regenerate ...]
+
+%
+%cnf(i_0_31906, plain, (isEven(double(double(double(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))=true)).
+%
+%cnf(i_0_31908, negated_conjecture, ($answer(esk1_1(double(double(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))|false!=true)).
+%
+%cnf(i_0_31907, plain, (isEven(suc(double(double(double(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))=false)).
+%
+%cnf(i_0_31909, plain, (isEven(double(suc(double(double(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))=true)).
+%
+%cnf(i_0_31911, negated_conjecture, ($answer(esk1_1(suc(double(double(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))|false!=true)).
+%
+%cnf(i_0_31910, plain, (isEven(suc(double(suc(double(double(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))=false)).
+%
+%cnf(i_0_31912, plain, (isEven(double(double(suc(double(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))=true)).
+%
+%cnf(i_0_31914, negated_conjecture, ($answer(esk1_1(double(suc(double(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))|false!=true)).
+%
+%cnf(i_0_31913, plain, (isEven(suc(double(double(suc(double(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))=false)).
+%
+%cnf(i_0_31915, plain, (isEven(double(suc(double(suc(double(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))=true)).
+%
+%cnf(i_0_31917, negated_conjecture, ($answer(esk1_1(suc(double(suc(double(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))|false!=true)).
+%
+%cnf(i_0_31916, plain, (isEven(suc(double(suc(double(suc(double(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))))=false)).
+%
+%cnf(i_0_31918, plain, (isEven(double(double(double(suc(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))=true)).
+%
+%cnf(i_0_31920, negated_conjecture, ($answer(esk1_1(double(double(suc(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))|false!=true)).
+%
+%cnf(i_0_31919, plain, (isEven(suc(double(double(double(suc(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))=false)).
+%
+%cnf(i_0_31921, plain, (isEven(double(suc(double(double(suc(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))=true)).
+%
+%cnf(i_0_31922, plain, (isEven(suc(double(suc(double(double(suc(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))))=false)).
+%
+%cnf(i_0_31923, negated_conjecture, ($answer(esk1_1(suc(double(double(suc(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))|false!=true)).
+%
+%cnf(i_0_31924, plain, (isEven(double(double(suc(double(suc(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))=true)).
+%
+%cnf(i_0_31926, negated_conjecture, ($answer(esk1_1(double(suc(double(suc(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))|false!=true)).
+%
+%cnf(i_0_31925, plain, (isEven(suc(double(double(suc(double(suc(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))))=false)).
+%
+%cnf(i_0_31927, plain, (isEven(double(suc(double(suc(double(suc(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))))=true)).
+%
+%cnf(i_0_31929, negated_conjecture, ($answer(esk1_1(suc(double(suc(double(suc(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))))|false!=true)).
+%
+%cnf(i_0_31928, plain, (isEven(suc(double(suc(double(suc(double(suc(double(suc(double(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))))=false)).
+%
+%cnf(i_0_31930, plain, (isEven(double(double(double(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))=true)).
+%
+%cnf(i_0_31932, negated_conjecture, ($answer(esk1_1(double(double(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))|false!=true)).
+%
+%cnf(i_0_31931, plain, (isEven(suc(double(double(double(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))=false)).
+%
+%cnf(i_0_31933, plain, (isEven(double(suc(double(double(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))=true)).
+%
+%cnf(i_0_31935, negated_conjecture, ($answer(esk1_1(suc(double(double(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))|false!=true)).
+%
+%cnf(i_0_31934, plain, (isEven(suc(double(suc(double(double(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))=false)).
+%
+%cnf(i_0_31936, plain, (isEven(double(double(suc(double(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))=true)).
+%
+%cnf(i_0_31938, negated_conjecture, ($answer(esk1_1(double(suc(double(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))|false!=true)).
+%
+%cnf(i_0_31937, plain, (isEven(suc(double(double(suc(double(double(double(suc(double
+% Failure: Resource limit exceeded (time)
+% SZS status ResourceOut
+eprover: CPU time limit exceeded, terminating
+(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))=false)).
+%
+%cnf(i_0_31939, plain, (isEven(double(suc(double(suc(double(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))=true)).
+%
+%cnf(i_0_31941, negated_conjecture, ($answer(esk1_1(suc(double(suc(double(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))|false!=true)).
+%
+%cnf(i_0_31940, plain, (isEven(suc(double(suc(double(suc(double(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))))=false)).
+%
+%cnf(i_0_31942, plain, (isEven(double(double(double(suc(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))=true)).
+%
+%cnf(i_0_31944, negated_conjecture, ($answer(esk1_1(double(double(suc(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))|false!=true)).
+%
+%cnf(i_0_31943, plain, (isEven(suc(double(double(double(suc(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))=false)).
+%
+%cnf(i_0_31945, plain, (isEven(double(suc(double(double(suc(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))=true)).
+%
+%cnf(i_0_31947, negated_conjecture, ($answer(esk1_1(suc(double(double(suc(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))|false!=true)).
+%
+%cnf(i_0_31946, plain, (isEven(suc(double(suc(double(double(suc(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))))=false)).
+%
+%cnf(i_0_31948, plain, (isEven(double(double(suc(double(suc(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))=true)).
+%
+%cnf(i_0_31950, negated_conjecture, ($answer(esk1_1(double(suc(double(suc(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))|false!=true)).
+%
+%cnf(i_0_31949, plain, (isEven(suc(double(double(suc(double(suc(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))))=false)).
+%
+%cnf(i_0_31951, plain, (isEven(double(suc(double(suc(double(suc(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))))=true)).
+%
+%cnf(i_0_31953, negated_conjecture, ($answer(esk1_1(suc(double(suc(double(suc(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero)))))))))))))))))))))))|false!=true)).
+%
+%cnf(i_0_31952, plain, (isEven(suc(double(suc(double(suc(double(suc(double(double(suc(double(double(double(suc(double(suc(double(double(double(suc(double(double(suc(zero))))))))))))))))))))))))=false)).

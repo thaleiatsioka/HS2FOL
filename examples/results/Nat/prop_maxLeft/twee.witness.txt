@@ -1,0 +1,7 @@
+property:   prop_maxLeft
+file:       examples/Nat.hs
+prover:     twee
+witness:    prop_maxLeft (Suc _X) Zero
+input:      prop_maxLeft (Suc undefined) Zero
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

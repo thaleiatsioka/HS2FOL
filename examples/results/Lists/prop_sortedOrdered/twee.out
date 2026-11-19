@@ -1,0 +1,203 @@
+Here is the input problem:
+  Axiom 1 (ordered_1): ordered(nil) = true.
+  Axiom 2 (not_2): not(true) = false.
+  Axiom 3 (not_1): not(false) = true.
+  Axiom 4 (isGT_1): isGT(lt) = false.
+  Axiom 5 (isGT_2): isGT(eq) = false.
+  Axiom 6 (isGT_3): isGT(gt) = true.
+  Axiom 7 (prop_sortedOrdered_1): prop_sortedOrdered(X) = ordered(isortBad(X)).
+  Axiom 8 (opAnd_2): opAnd(true, X) = X.
+  Axiom 9 (opAnd_1): opAnd(false, X) = false.
+  Axiom 10 (app_insertBad_0_1): app(insertBad_0, X) = insertBad_1(X).
+  Axiom 11 (compareNat_1): compareNat(zero, zero) = eq.
+  Axiom 12 (insertBad_1): insertBad(X, nil) = cons(X, nil).
+  Axiom 13 (ordered_2): ordered(cons(X, nil)) = true.
+  Axiom 14 (foldr_1): foldr(X, Y, nil) = Y.
+  Axiom 15 (isortBad_1): isortBad(X) = foldr(insertBad_0, nil, X).
+  Axiom 16 (app_insertBad_1_1): app(insertBad_1(X), Y) = insertBad(X, Y).
+  Axiom 17 (compareNat_2): compareNat(zero, suc(X)) = lt.
+  Axiom 18 (compareNat_3): compareNat(suc(X), zero) = gt.
+  Axiom 19 (leNat_1): leNat(X, Y) = not(isGT(compareNat(X, Y))).
+  Axiom 20 (insertBad_case1_1): insertBad_case1(true, X, Y, Z) = cons(X, Z).
+  Axiom 21 (compareNat_4): compareNat(suc(X), suc(Y)) = compareNat(X, Y).
+  Axiom 22 (insertBad_case1_2): insertBad_case1(false, X, Y, Z) = cons(Y, insertBad(X, Z)).
+  Axiom 23 (ordered_3): ordered(cons(X, cons(Y, Z))) = opAnd(leNat(X, Y), ordered(cons(Y, Z))).
+  Axiom 24 (insertBad_2): insertBad(X, cons(Y, Z)) = insertBad_case1(leNat(X, Y), X, Y, Z).
+  Axiom 25 (foldr_2): foldr(X, Y, cons(Z, W)) = app(app(X, Z), foldr(X, Y, W)).
+  Axiom 26 (reflexivity): equals(X, X) = true.
+  Axiom 27 (prop_sortedOrdered): equals(prop_sortedOrdered(X), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. ordered(nil) -> true
+2. not(true) -> false
+3. not(false) -> true
+4. isGT(lt) -> false
+5. isGT(eq) -> false
+6. isGT(gt) -> true
+7. ordered(isortBad(X)) -> prop_sortedOrdered(X)
+8. opAnd(true, X) -> X
+9. opAnd(false, X) -> false
+10. app(insertBad_0, X) -> insertBad_1(X)
+11. compareNat(zero, zero) -> eq
+12. cons(X, nil) -> insertBad(X, nil)
+13. ordered(insertBad(X, nil)) -> true
+14. foldr(X, Y, nil) -> Y
+15. foldr(insertBad_0, nil, X) -> isortBad(X)
+16. app(insertBad_1(X), Y) -> insertBad(X, Y)
+17. compareNat(zero, suc(X)) -> lt
+18. compareNat(suc(X), zero) -> gt
+19. not(isGT(compareNat(X, Y))) -> leNat(X, Y)
+20. insertBad_case1(true, X, Y, Z) -> cons(X, Z)
+21. compareNat(suc(X), suc(Y)) -> compareNat(X, Y)
+22. cons(X, insertBad(Y, Z)) -> insertBad_case1(false, Y, X, Z)
+23. opAnd(leNat(X, Y), ordered(cons(Y, Z))) -> ordered(cons(X, cons(Y, Z)))
+24. insertBad_case1(leNat(X, Y), X, Y, Z) -> insertBad(X, cons(Y, Z))
+25. app(app(X, Y), foldr(X, Z, W)) -> foldr(X, Z, cons(Y, W))
+26. equals(X, X) -> true
+27. equals(prop_sortedOrdered(X), false) -> false
+28. isortBad(nil) -> nil
+29. prop_sortedOrdered(nil) -> true
+30. leNat(zero, zero) -> true
+31. leNat(zero, suc(X)) -> true
+32. leNat(suc(X), zero) -> false
+33. equals(true, false) -> false
+34. insertBad(X, isortBad(Y)) -> isortBad(cons(X, Y))
+35. isortBad(insertBad(X, nil)) -> insertBad(X, nil)
+36. prop_sortedOrdered(insertBad(X, nil)) -> true
+37. leNat(suc(X), suc(Y)) -> leNat(X, Y)
+38. insertBad(zero, cons(zero, X)) -> cons(zero, X)
+39. foldr(X, Y, insertBad(Z, nil)) -> app(app(X, Z), Y)
+40. insertBad(zero, insertBad(zero, nil)) -> insertBad(zero, nil)
+41. ordered(insertBad_case1(false, X, Y, nil)) -> opAnd(leNat(Y, X), true)
+42. insertBad(zero, cons(suc(X), Y)) -> cons(zero, Y)
+43. insertBad(X, foldr(insertBad_0, Y, Z)) -> foldr(insertBad_0, Y, cons(X, Z))
+44. ordered(cons(zero, cons(zero, X))) -> ordered(cons(zero, X))
+45. ordered(cons(suc(X), cons(zero, Y))) -> false
+46. cons(X, isortBad(cons(Y, Z))) -> insertBad_case1(false, Y, X, isortBad(Z))
+47. insertBad(zero, insertBad(suc(X), nil)) -> insertBad(zero, nil)
+48. insertBad(suc(X), cons(zero, Y)) -> insertBad_case1(false, suc(X), zero, Y)
+49. isortBad(insertBad_case1(false, X, Y, nil)) -> insertBad(Y, insertBad(X, nil))
+50. insertBad(suc(X), insertBad(zero, nil)) -> insertBad_case1(false, suc(X), zero, nil)
+51. ordered(cons(zero, cons(suc(X), Y))) -> ordered(cons(suc(X), Y))
+52. prop_sortedOrdered(insertBad_case1(false, X, Y, nil)) -> ordered(insertBad(Y, insertBad(X, nil)))
+53. insertBad(zero, insertBad_case1(false, X, zero, Y)) -> insertBad_case1(false, X, zero, Y)
+54. insertBad_case1(false, zero, X, cons(zero, Y)) -> cons(X, cons(zero, Y))
+55. foldr(insertBad_0, X, insertBad_case1(false, Y, Z, nil)) -> insertBad(Z, insertBad(Y, X))
+56. insertBad_case1(false, zero, X, insertBad(zero, nil)) -> insertBad_case1(false, zero, X, nil)
+57. insertBad_case1(false, zero, X, cons(suc(Y), Z)) -> cons(X, cons(zero, Z))
+58. insertBad(zero, insertBad_case1(false, X, suc(Y), Z)) -> insertBad_case1(false, X, zero, Z)
+59. cons(X, foldr(insertBad_0, Y, cons(Z, W))) -> insertBad_case1(false, Z, X, foldr(insertBad_0, Y, W))
+60. ordered(cons(suc(X), insertBad_case1(false, Y, zero, Z))) -> false
+61. app(insertBad(X, Y), foldr(insertBad_1(X), Z, W)) -> foldr(insertBad_1(X), Z, cons(Y, W))
+62. equals(ordered(insertBad(X, insertBad(Y, nil))), false) -> false
+63. ordered(cons(zero, insertBad_case1(false, X, zero, Y))) -> ordered(insertBad_case1(false, X, zero, Y))
+64. ordered(cons(X, cons(zero, cons(zero, Y)))) -> ordered(cons(X, cons(zero, Y)))
+65. cons(X, isortBad(insertBad_case1(false, Y, Z, W))) -> insertBad_case1(false, Z, X, isortBad(insertBad(Y, W)))
+66. insertBad_case1(leNat(X, Y), suc(X), suc(Y), Z) -> insertBad(suc(X), cons(suc(Y), Z))
+67. insertBad(suc(zero), cons(suc(zero), X)) -> cons(suc(zero), X)
+68. insertBad(suc(zero), insertBad(suc(zero), nil)) -> insertBad(suc(zero), nil)
+69. insertBad(suc(zero), cons(suc(suc(X)), Y)) -> cons(suc(zero), Y)
+70. insertBad(suc(zero), insertBad(suc(suc(X)), nil)) -> insertBad(suc(zero), nil)
+
+[... hs2fol: 8306 lines of search output omitted to keep the repository small; rerun to regenerate ...]
+
+7557. foldr(insertBad_1(zero), X, cons(Y, cons(Z, cons(W, cons(V, cons(U, cons(T, cons(insertBad(suc(S), nil), X2)))))))) -> foldr(insertBad_1(zero), X, cons(Y, cons(Z, cons(W, cons(V, cons(U, cons(T, cons(nil, X2))))))))
+7558. app(foldr(insertBad_0, X, insertBad_case1(false, Y, suc(zero), Z)), app(cons(zero, cons(suc(zero), W)), app(insertBad(suc(zero), V), U))) -> foldr(insertBad_1(suc(zero)), U, cons(foldr(insertBad_0, X, insertBad(Y, Z)), insertBad_case1(false, V, cons(zero, cons(suc(zero), W)), nil)))
+7559. foldr(app(X, Y), app(foldr(X, Z, insertBad_case1(false, W, Y, nil)), V), insertBad_case1(false, suc(U), T, insertBad(zero, nil))) -> foldr(app(X, Y), V, cons(T, cons(zero, insertBad_case1(false, app(app(X, W), Z), suc(U), nil))))
+7560. foldr(insertBad_1(suc(suc(zero))), X, cons(insertBad_case1(false, Y, suc(suc(zero)), Z), insertBad_case1(false, W, insertBad_case1(false, V, suc(suc(zero)), U), nil))) -> app(insertBad_case1(false, Y, suc(suc(zero)), Z), app(insertBad_case1(false, V, suc(suc(zero)), U), app(insertBad(suc(suc(zero)), W), X)))
+7561. foldr(insertBad_1(suc(suc(zero))), X, cons(insertBad_case1(false, Y, suc(suc(zero)), Z), insertBad_case1(false, insertBad_case1(false, W, suc(suc(zero)), V), U, nil))) -> app(insertBad_case1(false, Y, suc(suc(zero)), Z), app(insertBad(suc(suc(zero)), U), app(insertBad_case1(false, W, suc(suc(zero)), V), X)))
+7562. foldr(X, foldr(X, Y, Z), cons(W, cons(V, cons(U, insertBad_case1(false, suc(suc(T)), S, insertBad(suc(zero), nil)))))) -> foldr(X, Y, cons(W, cons(V, cons(U, cons(S, cons(suc(zero), cons(suc(suc(T)), Z)))))))
+7563. app(foldr(insertBad_0, X, cons(suc(zero), Y)), app(cons(suc(zero), Z), app(cons(suc(zero), W), app(insertBad(suc(zero), V), U)))) -> foldr(insertBad_1(suc(zero)), U, cons(foldr(insertBad_0, X, Y), cons(cons(suc(zero), Z), insertBad_case1(false, V, cons(suc(zero), W), nil))))
+7564. app(isortBad(insertBad_case1(false, X, suc(zero), Y)), app(cons(suc(zero), Z), app(cons(suc(zero), W), app(insertBad(suc(zero), V), U)))) -> foldr(insertBad_1(suc(zero)), U, cons(isortBad(insertBad(X, Y)), cons(cons(suc(zero), Z), insertBad_case1(false, V, cons(suc(zero), W), nil))))
+7565. foldr(insertBad_1(zero), X, cons(Y, cons(Z, cons(W, cons(V, cons(U, insertBad_case1(false, T, insertBad(suc(S), nil), X2))))))) -> foldr(insertBad_1(zero), X, cons(Y, cons(Z, cons(W, cons(V, cons(U, insertBad_case1(false, T, nil, X2)))))))
+7566. app(insertBad(suc(zero), X), app(cons(suc(zero), Y), app(cons(suc(zero), Z), app(foldr(insertBad_0, W, cons(suc(zero), V)), U)))) -> foldr(insertBad_1(suc(zero)), U, cons(X, cons(cons(suc(zero), Y), insertBad_case1(false, foldr(insertBad_0, W, V), cons(suc(zero), Z), nil))))
+7567. foldr(insertBad_1(suc(zero)), app(insertBad_case1(false, X, suc(zero), Y), Z), cons(W, insertBad_case1(false, suc(V), U, insertBad(zero, nil)))) -> foldr(insertBad_1(suc(zero)), Z, cons(W, cons(U, cons(zero, insertBad_case1(false, insertBad_case1(false, X, suc(zero), Y), suc(V), nil)))))
+7568. foldr(insertBad_1(suc(suc(zero))), X, cons(Y, insertBad_case1(false, insertBad_case1(false, Z, suc(suc(zero)), W), insertBad_case1(false, V, suc(suc(zero)), U), nil))) -> app(insertBad(suc(suc(zero)), Y), app(insertBad_case1(false, V, suc(suc(zero)), U), app(insertBad_case1(false, Z, suc(suc(zero)), W), X)))
+7569. ordered(cons(suc(X), cons(suc(Y), cons(suc(Z), cons(W, cons(zero, insertBad_case1(false, zero, suc(?), nil))))))) = opAnd(leNat(X, Y), opAnd(leNat(Y, Z), opAnd(leNat(suc(Z), W), opAnd(leNat(W, zero), false))))
+7570. app(insertBad(zero, X), app(cons(zero, Y), app(cons(zero, Z), app(cons(zero, W), app(insertBad(zero, V), U))))) -> foldr(insertBad_1(zero), U, cons(X, cons(cons(zero, Y), cons(cons(zero, Z), insertBad_case1(false, V, cons(zero, W), nil)))))
+7571. app(foldr(insertBad_0, X, insertBad_case1(false, Y, suc(zero), Z)), app(cons(suc(zero), W), app(insertBad_case1(false, suc(zero), zero, V), U))) -> foldr(insertBad_1(suc(zero)), U, cons(foldr(insertBad_0, X, insertBad(Y, Z)), insertBad_case1(false, cons(zero, V), cons(suc(zero), W), nil)))
+7572. foldr(insertBad_1(suc(suc(zero))), X, cons(Y, cons(Z, cons(W, cons(V, insertBad_case1(false, U, insertBad(suc(suc(zero)), nil), nil)))))) -> foldr(insertBad_1(suc(suc(zero))), X, cons(Y, cons(Z, cons(W, cons(V, insertBad_case1(false, U, nil, nil))))))
+7573. foldr(insertBad_1(suc(suc(zero))), app(cons(zero, cons(suc(suc(zero)), X)), Y), cons(Z, cons(W, insertBad_case1(false, V, U, nil)))) -> foldr(insertBad_1(suc(suc(zero))), Y, cons(Z, cons(W, cons(U, insertBad_case1(false, cons(zero, cons(suc(suc(zero)), X)), V, nil)))))
+7574. isortBad(insertBad_case1(false, suc(suc(suc(suc(suc(suc(X)))))), Y, insertBad_case1(false, zero, suc(suc(suc(suc(suc(zero))))), nil))) -> insertBad(Y, insertBad_case1(false, suc(suc(suc(suc(suc(zero))))), zero, nil))
+7575. isortBad(insertBad_case1(false, suc(suc(suc(suc(suc(suc(X)))))), Y, insertBad_case1(false, suc(zero), suc(suc(suc(suc(suc(zero))))), nil))) -> insertBad(Y, insertBad_case1(false, suc(suc(suc(suc(suc(zero))))), suc(zero), nil))
+7576. isortBad(insertBad_case1(false, suc(suc(suc(suc(suc(suc(X)))))), Y, insertBad_case1(false, suc(suc(zero)), suc(suc(suc(suc(suc(zero))))), nil))) -> insertBad(Y, insertBad_case1(false, suc(suc(suc(suc(suc(zero))))), suc(suc(zero)), nil))
+7577. isortBad(insertBad_case1(false, suc(suc(suc(suc(suc(suc(X)))))), Y, insertBad_case1(false, suc(suc(suc(zero))), suc(suc(suc(suc(suc(zero))))), nil))) -> insertBad(Y, insertBad_case1(false, suc(suc(suc(suc(suc(zero))))), suc(suc(suc(zero))), nil))
+7578. isortBad(insertBad_case1(false, suc(suc(suc(suc(suc(suc(X)))))), Y, insertBad_case1(false, suc(suc(suc(suc(zero)))), suc(suc(suc(suc(suc(zero))))), nil))) -> insertBad(Y, insertBad_case1(false, suc(suc(suc(suc(suc(zero))))), suc(suc(suc(suc(zero)))), nil))
+7579. foldr(insertBad_1(suc(zero)), app(cons(suc(zero), X), Y), cons(Z, cons(W, insertBad_case1(false, suc(V), U, insertBad(zero, nil))))) -> foldr(insertBad_1(suc(zero)), Y, cons(Z, cons(W, cons(U, cons(zero, insertBad_case1(false, cons(suc(zero), X), suc(V), nil))))))
+7580. app(foldr(insertBad_0, X, cons(zero, Y)), app(cons(zero, Z), app(cons(zero, W), app(isortBad(cons(zero, V)), U)))) -> foldr(insertBad_1(zero), U, cons(foldr(insertBad_0, X, Y), cons(cons(zero, Z), insertBad_case1(false, isortBad(V), cons(zero, W), nil))))
+7581. app(isortBad(insertBad_case1(false, X, zero, Y)), app(cons(zero, Z), app(cons(zero, W), app(isortBad(cons(zero, V)), U)))) -> foldr(insertBad_1(zero), U, cons(isortBad(insertBad(X, Y)), cons(cons(zero, Z), insertBad_case1(false, isortBad(V), cons(zero, W), nil))))
+7582. ordered(cons(X, cons(Y, cons(Z, cons(suc(suc(zero)), cons(suc(suc(suc(suc(suc(zero))))), insertBad_case1(false, W, suc(suc(suc(zero))), V))))))) -> ordered(cons(X, cons(Y, cons(Z, insertBad_case1(false, zero, suc(suc(zero)), nil)))))
+7583. isortBad(insertBad_case1(false, suc(suc(suc(suc(suc(X))))), Y, insertBad_case1(false, suc(suc(suc(suc(zero)))), suc(zero), insertBad(zero, nil)))) -> insertBad(Y, insertBad_case1(false, suc(zero), zero, nil))
+7584. isortBad(insertBad_case1(false, suc(suc(suc(suc(suc(X))))), Y, insertBad_case1(false, suc(suc(suc(suc(zero)))), suc(suc(suc(zero))), insertBad(suc(suc(zero)), nil)))) -> insertBad(Y, insertBad_case1(false, suc(suc(suc(zero))), suc(suc(zero)), nil))
+7585. prop_sortedOrdered(insertBad_case1(false, suc(suc(suc(suc(suc(X))))), Y, cons(suc(suc(zero)), insertBad_case1(false, zero, suc(suc(suc(suc(zero)))), nil)))) -> ordered(insertBad(Y, insertBad_case1(false, suc(suc(zero)), zero, nil)))
+7586. prop_sortedOrdered(insertBad_case1(false, suc(suc(suc(suc(suc(X))))), Y, cons(suc(suc(zero)), insertBad_case1(false, suc(zero), suc(suc(suc(suc(zero)))), nil)))) -> ordered(insertBad(Y, insertBad_case1(false, suc(suc(zero)), suc(zero), nil)))
+7587. prop_sortedOrdered(insertBad_case1(false, suc(suc(suc(suc(suc(X))))), Y, insertBad_case1(false, suc(suc(suc(suc(zero)))), suc(suc(zero)), insertBad(zero, nil)))) -> ordered(insertBad(Y, insertBad_case1(false, suc(suc(zero)), zero, nil)))
+7588. prop_sortedOrdered(insertBad_case1(false, suc(suc(suc(suc(suc(X))))), Y, insertBad_case1(false, suc(suc(suc(suc(zero)))), suc(suc(zero)), insertBad(suc(zero), nil)))) -> ordered(insertBad(Y, insertBad_case1(false, suc(suc(zero)), suc(zero), nil)))
+7589. isortBad(insertBad_case1(false, suc(suc(suc(suc(suc(suc(X)))))), Y, insertBad_case1(false, suc(suc(suc(suc(suc(zero))))), suc(suc(suc(suc(suc(zero))))), nil))) -> insertBad(Y, insertBad(suc(suc(suc(suc(suc(zero))))), nil))
+7590. prop_sortedOrdered(insertBad_case1(false, suc(suc(suc(suc(suc(suc(X)))))), Y, insertBad_case1(false, suc(suc(suc(suc(suc(zero))))), suc(suc(zero)), nil))) -> ordered(insertBad(Y, insertBad(suc(suc(zero)), nil)))
+7591. prop_sortedOrdered(insertBad_case1(false, suc(suc(suc(suc(suc(X))))), Y, cons(suc(suc(suc(suc(zero)))), insertBad_case1(false, suc(suc(suc(suc(zero)))), suc(suc(suc(suc(zero)))), nil)))) -> ordered(insertBad(Y, insertBad(suc(suc(suc(suc(zero)))), nil)))
+7592. app(app(insertBad_case1(false, suc(X), zero, nil), Y), app(foldr(insertBad_1(suc(X)), Z, insertBad_case1(false, W, insertBad(zero, nil), V)), U)) -> foldr(insertBad_case1(false, suc(X), zero, nil), U, insertBad_case1(false, foldr(insertBad_1(suc(X)), Z, insertBad(W, V)), Y, nil))
+7593. app(foldr(insertBad_1(suc(X)), Y, insertBad_case1(false, Z, insertBad(zero, nil), W)), app(app(insertBad_case1(false, suc(X), zero, nil), V), U)) -> foldr(insertBad_case1(false, suc(X), zero, nil), U, insertBad_case1(false, V, foldr(insertBad_1(suc(X)), Y, insertBad(Z, W)), nil))
+7594. app(foldr(insertBad_0, X, cons(suc(suc(Y)), Z)), foldr(insertBad_1(suc(zero)), W, cons(insertBad_case1(false, suc(suc(Y)), suc(zero), V), U))) -> foldr(insertBad_1(suc(suc(Y))), foldr(insertBad_1(suc(zero)), W, U), insertBad_case1(false, cons(suc(zero), V), foldr(insertBad_0, X, Z), nil))
+7595. app(isortBad(insertBad_case1(false, X, suc(suc(Y)), Z)), foldr(insertBad_1(suc(zero)), W, cons(insertBad_case1(false, suc(suc(Y)), suc(zero), V), U))) -> foldr(insertBad_1(suc(suc(Y))), foldr(insertBad_1(suc(zero)), W, U), insertBad_case1(false, cons(suc(zero), V), isortBad(insertBad(X, Z)), nil))
+7596. app(insertBad(suc(zero), X), app(cons(suc(zero), Y), app(cons(suc(zero), Z), app(isortBad(insertBad_case1(false, W, suc(zero), V)), U)))) -> foldr(insertBad_1(suc(zero)), U, cons(X, cons(cons(suc(zero), Y), insertBad_case1(false, isortBad(insertBad(W, V)), cons(suc(zero), Z), nil))))
+7597. app(insertBad(suc(zero), X), app(cons(zero, cons(suc(zero), Y)), app(foldr(insertBad_0, Z, insertBad_case1(false, W, suc(zero), V)), U))) -> foldr(insertBad_1(suc(zero)), U, cons(X, insertBad_case1(false, foldr(insertBad_0, Z, insertBad(W, V)), cons(zero, cons(suc(zero), Y)), nil)))
+7598. app(isortBad(cons(zero, X)), app(cons(zero, Y), app(cons(zero, Z), app(foldr(insertBad_0, W, cons(zero, V)), U)))) -> foldr(insertBad_1(zero), U, cons(isortBad(X), cons(cons(zero, Y), insertBad_case1(false, foldr(insertBad_0, W, V), cons(zero, Z), nil))))
+7599. equals(ordered(insertBad(X, insertBad(Y, insertBad_case1(false, suc(Z), zero, insertBad_case1(false, suc(suc(suc(W))), suc(suc(zero)), nil))))), false) -> false
+7600. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), insertBad_case1(false, ?, suc(suc(suc(zero))), ?))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7601. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), insertBad_case1(false, W, suc(suc(suc(zero))), V))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), insertBad_case1(false, ?, suc(suc(suc(zero))), ?)))))))))
+7602. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(suc(suc(zero))), ?)))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7603. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(suc(suc(zero))), W)))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(suc(suc(zero))), ?))))))))))
+7604. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(suc(suc(zero))), ?)))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7605. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(suc(suc(zero))), W)))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(suc(suc(zero))), ?))))))))))
+7606. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), cons(suc(suc(suc(zero))), ?)))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7607. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), cons(suc(suc(suc(zero))), W)))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), cons(suc(suc(suc(zero))), ?))))))))))
+7608. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(suc(zero))), ?)))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7609. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(suc(zero))), W)))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(suc(zero))), ?))))))))))
+7610. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), ?)))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7611. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), W)))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), ?))))))))))
+7612. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(zero, cons(suc(suc(suc(suc(zero)))), ?)))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7613. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(zero, cons(suc(suc(suc(suc(zero)))), W)))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(zero, cons(suc(suc(suc(suc(zero)))), ?))))))))))
+7614. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(suc(zero), cons(suc(suc(suc(suc(zero)))), ?)))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7615. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(suc(zero), cons(suc(suc(suc(suc(zero)))), W)))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(suc(zero), cons(suc(suc(suc(suc(zero)))), ?))))))))))
+7616. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(suc(suc(zero)), cons(suc(suc(suc(suc(zero)))), ?)))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7617. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(suc(suc(zero)), cons(suc(suc(suc(suc(zero)))), W)))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(suc(suc(zero)), cons(suc(suc(suc(suc(zero)))), ?))))))))))
+7618. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(suc(zero)))), ?)))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7619. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(suc(zero)))), W)))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(suc(zero)))), ?))))))))))
+7620. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), insertBad_case1(false, ?, suc(suc(suc(zero))), ?)))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7621. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), insertBad_case1(false, W, suc(suc(suc(zero))), V)))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), insertBad_case1(false, ?, suc(suc(suc(zero))), ?))))))))))
+7622. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(zero, cons(suc(suc(suc(zero))), ?))))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7623. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(zero, cons(suc(suc(suc(zero))), W))))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(zero, cons(suc(suc(suc(zero))), ?)))))))))))
+7624. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(suc(zero))), ?))))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7625. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(suc(zero))), W))))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(suc(zero))), ?)))))))))))
+7626. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), ?))))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7627. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), W))))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), ?)))))))))))
+7628. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(zero), cons(suc(suc(suc(zero))), ?))))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7629. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(zero), cons(suc(suc(suc(zero))), W))))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(zero), cons(suc(suc(suc(zero))), ?)))))))))))
+7630. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), cons(suc(suc(suc(zero))), ?))))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7631. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), cons(suc(suc(suc(zero))), W))))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), cons(suc(suc(suc(zero))), ?)))))))))))
+7632. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(suc(suc(suc(?))))), ?))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7633. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(suc(suc(suc(W))))), V))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(suc(suc(suc(?))))), ?)))))))))
+7634. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), insertBad_case1(false, ?, suc(suc(suc(suc(?)))), ?))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7635. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), insertBad_case1(false, W, suc(suc(suc(suc(V)))), U))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), insertBad_case1(false, ?, suc(suc(suc(suc(?)))), ?)))))))))
+7636. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(zero, cons(suc(zero), cons(suc(suc(suc(suc(zero)))), ?))))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7637. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(zero, cons(suc(zero), cons(suc(suc(suc(suc(zero)))), W))))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(zero, cons(suc(zero), cons(suc(suc(suc(suc(zero)))), ?)))))))))))
+7638. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(zero, cons(suc(suc(zero)), cons(suc(suc(suc(suc(zero)))), ?))))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7639. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(zero, cons(suc(suc(zero)), cons(suc(suc(suc(suc(zero)))), W))))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(zero, cons(suc(suc(zero)), cons(suc(suc(suc(suc(zero)))), ?)))))))))))
+7640. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(suc(zero)))), ?))))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7641. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(suc(zero)))), W))))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(suc(zero)))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(zero))), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(suc(zero)))), ?)))))))))))
+7642. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(suc(?)))), ?)))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7643. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(suc(W)))), V)))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(suc(suc(?)))), ?))))))))))
+7644. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(suc(suc(suc(?)))), ?)))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7645. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(suc(suc(suc(W)))), V)))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(suc(suc(suc(?)))), ?))))))))))
+7646. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(suc(suc(suc(?)))), ?)))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7647. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(suc(suc(suc(W)))), V)))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(suc(suc(suc(?)))), ?))))))))))
+7648. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), cons(suc(suc(suc(suc(?)))), ?)))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7649. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), cons(suc(suc(suc(suc(W)))), V)))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), cons(suc(suc(suc(suc(?)))), ?))))))))))
+7650. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(suc(suc(?)))), ?)))))))))) = opAnd(leNat(X, Y), opAnd(leNat(suc(suc(Y)), Z), opAnd(leNat(Z, zero), false)))
+7651. ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(suc(suc(W)))), V)))))))))) ~> ordered(cons(suc(suc(X)), cons(suc(suc(Y)), insertBad_case1(false, suc(suc(suc(zero))), Z, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(suc(suc(?)))), ?))))))))))
+7652. app(foldr(isortBad(cons(X, Y)), Z, cons(foldr(insertBad_1(X), W, V), U)), foldr(foldr(insertBad_1(X), W, cons(isortBad(Y), V)), T, S)) -> foldr(foldr(insertBad_1(X), W, cons(isortBad(Y), V)), T, cons(foldr(isortBad(cons(X, Y)), Z, U), S))
+7653. foldr(insertBad_1(zero), X, cons(Y, cons(Z, cons(W, cons(V, cons(U, insertBad_case1(false, cons(suc(T), S), X2, nil))))))) -> foldr(insertBad_1(zero), X, cons(Y, cons(Z, cons(W, cons(V, cons(U, insertBad_case1(false, cons(zero, S), X2, nil)))))))
+7654. foldr(insertBad_1(zero), X, cons(Y, cons(Z, cons(W, cons(V, insertBad_case1(false, insertBad_case1(false, U, suc(T), S), X2, nil)))))) -> foldr(insertBad_1(zero), X, cons(Y, cons(Z, cons(W, cons(V, insertBad_case1(false, insertBad_case1(false, U, zero, S), X2, nil))))))
+7655. opAnd(leNat(X, suc(suc(suc(Y)))), opAnd(leNat(Y, Z), opAnd(leNat(suc(Z), W), ordered(cons(suc(suc(W)), V))))) -> ordered(cons(X, cons(suc(suc(suc(Y))), cons(suc(suc(suc(Z))), cons(suc(suc(W)), V)))))
+7656. app(foldr(app(X, Y), Z, insertBad_case1(false, W, foldr(X, V, U), nil)), app(foldr(app(X, Y), T, cons(foldr(X, V, U), S)), X2)) = foldr(foldr(X, V, cons(Y, U)), X2, insertBad_case1(false, foldr(app(X, Y), T, S), app(app(app(X, Y), W), Z), nil))

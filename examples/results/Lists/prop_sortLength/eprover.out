@@ -1,0 +1,256 @@
+% Preprocessing class: FSMSSMSMSSSNFFN.
+% Configuration: G-E--_207_C18_F1_SE_CS_SP_PI_PS_S2SI
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSM31-MFFFFFNN
+% partial match(2): FHUSM-FFSF21-MFFFFFNN
+% Configuration: G-E--_208_C12_11_nc_F1_SE_CS_SP_PS_S5PRR_RG_S04AN
+% Initializing proof state
+% Scanning for AC axioms
+%
+%cnf(i_0_8, plain, (len(nil)=zero)).
+%
+%cnf(i_0_4, plain, (not(false)=true)).
+%
+%cnf(i_0_1, plain, (isGT(lt)=false)).
+%
+%cnf(i_0_2, plain, (isGT(eq)=false)).
+%
+%cnf(i_0_5, plain, (not(true)=false)).
+%
+%cnf(i_0_3, plain, (isGT(gt)=true)).
+%
+%cnf(i_0_17, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_21, plain, (compareNat(zero,zero)=eq)).
+%
+%cnf(i_0_6, plain, (foldr(X1,X2,nil)=X2)).
+%
+%cnf(i_0_18, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_22, plain, (compareNat(zero,suc(X1))=lt)).
+%
+%cnf(i_0_19, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_27, negated_conjecture, ($answer(esk1_1(X1))|eqNat(len(foldr(insertBad_0,nil,X1)),len(X1))!=false)).
+%
+%cnf(i_0_10, plain, (app(app(insertBad_0,X1),nil)=cons(X1,nil))).
+%
+%cnf(i_0_23, plain, (compareNat(suc(X1),zero)=gt)).
+%
+%cnf(i_0_9, plain, (len(cons(X1,X2))=suc(len(X2)))).
+%
+%cnf(i_0_20, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_24, plain, (compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%cnf(i_0_12, plain, (insertBad_case1(true,X1,X2,X3)=cons(X1,X3))).
+%
+%cnf(i_0_13, plain, (cons(X2,app(app(insertBad_0,X1),X3))=insertBad_case1(false,X1,X2,X3))).
+%
+%cnf(i_0_7, plain, (app(app(X1,X3),foldr(X1,X2,X4))=foldr(X1,X2,cons(X3,X4)))).
+%
+%cnf(i_0_11, plain, (insertBad_case1(not(isGT(compareNat(X1,X2))),X1,X2,X3)=app(app(insertBad_0,X1),cons(X2,X3)))).
+% Presaturation interreduction done
+%
+%cnf(i_0_8, plain, (len(nil)=zero)).
+%
+%cnf(i_0_4, plain, (not(false)=true)).
+%
+%cnf(i_0_1, plain, (isGT(lt)=false)).
+%
+%cnf(i_0_2, plain, (isGT(eq)=false)).
+%
+%cnf(i_0_5, plain, (not(true)=false)).
+%
+%cnf(i_0_3, plain, (isGT(gt)=true)).
+%
+%cnf(i_0_17, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_21, plain, (compareNat(zero,zero)=eq)).
+%
+%cnf(i_0_6, plain, (foldr(X1,X2,nil)=X2)).
+%
+%cnf(i_0_18, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_22, plain, (compareNat(zero,suc(X1))=lt)).
+%
+%cnf(i_0_19, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_27, negated_conjecture, ($answer(esk1_1(X1))|eqNat(len(foldr(insertBad_0,nil,X1)),len(X1))!=false)).
+%
+%cnf(i_0_28, negated_conjecture, ($answer(esk1_1(nil))|true!=false)).
+%%
+%cnf(i_0_10, plain, (app(app(insertBad_0,X1),nil)=cons(X1,nil))).
+%
+%cnf(i_0_23, plain, (compareNat(suc(X1),zero)=gt)).
+%
+%cnf(i_0_9, plain, (len(cons(X1,X2))=suc(len(X2)))).
+%
+%cnf(i_0_12, plain, (insertBad_case1(true,X1,X2,X3)=cons(X1,X3))).
+%
+%cnf(i_0_20, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_24, plain, (compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%cnf(i_0_13, plain, (cons(X1,app(app(insertBad_0,X2),X3))=insertBad_case1(false,X2,X1,X3))).
+%
+%cnf(i_0_7, plain, (app(app(X1,X2),foldr(X1,X3,X4))=foldr(X1,X3,cons(X2,X4)))).
+%
+%cnf(i_0_37, plain, (len(cons(X1,nil))=suc(zero))).
+%
+%cnf(i_0_48, plain, (eqNat(zero,len(cons(X1,nil)))=false)).
+%
+%cnf(i_0_50, plain, (eqNat(len(cons(X1,nil)),zero)=false)).
+%
+%cnf(i_0_30, plain, (eqNat(zero,len(cons(X2,X1)))=false)).
+%
+%cnf(i_0_11, plain, (insertBad_case1(not(isGT(compareNat(X1,X2))),X1,X2,X3)=app(app(insertBad_0,X1),cons(X2,X3)))).
+%
+%cnf(i_0_32, plain, (eqNat(len(cons(X2,X1)),zero)=false)).
+%
+%cnf(i_0_31, plain, (compareNat(zero,len(cons(X2,X1)))=lt)).
+%
+%cnf(i_0_33, plain, (compareNat(len(cons(X2,X1)),zero)=gt)).
+%%%
+%cnf(i_0_56, plain, (len(cons(X1,nil))=len(cons(X2,nil)))).
+%%%%%
+%cnf(i_0_34, plain, (len(cons(X1,X2))=len(cons(X3,X2)))).
+%%
+%cnf(i_0_43, plain, (cons(X1,cons(X2,nil))=insertBad_case1(false,X2,X1,nil))).
+%%%%%
+%cnf(i_0_125, plain, (eqNat(zero,len(insertBad_case1(false,X2,X1,nil)))=false)).
+%
+%cnf(i_0_127, plain, (eqNat(len(insertBad_case1(false,X2,X1,nil)),zero)=false)).
+%
+%cnf(i_0_58, negated_conjecture, ($answer(esk1_1(cons(X1,nil)))|eqNat(len(foldr(insertBad_0,nil,cons(X1,nil))),len(cons(zero,nil)))!=false)).
+%
+%cnf(i_0_131, negated_conjecture, ($answer(esk1_1(cons(X1,nil)))|eqNat(len(foldr(insertBad_0,nil,cons(X1,nil))),len(cons(X2,nil)))!=false)).
+%
+%cnf(i_0_35, plain, (len(cons(X1,cons(X2,X3)))=len(cons(zero,cons(zero,X3))))).
+%
+%cnf(i_0_64, plain, (eqNat(zero,len(insertBad_case1(false,X2,X1,X3)))=false)).
+%%
+%cnf(i_0_46, plain, (foldr(X1,X3,cons(X2,nil))=app(app(X1,X2),X3))).
+%%%
+%cnf(i_0_71, plain, (eqNat(len(insertBad_case1(false,X2,X1,X3)),zero)=false)).
+%
+%cnf(i_0_131, negated_conjecture, ($answer(esk1_1(cons(X1,nil)))|eqNat(len(cons(X1,nil)),len(cons(X2,nil)))!=false)).
+%%%%
+%cnf(i_0_36, negated_conjecture, ($answer(esk1_1(cons(X1,X2)))|eqNat(len(foldr(insertBad_0,nil,cons(X1,X2))),len(cons(zero,X2)))!=false)).
+%
+%cnf(i_0_52, plain, (eqNat(len(cons(X2,nil)),suc(X1))=eqNat(zero,X1))).
+%%
+%cnf(i_0_170, negated_conjecture, ($answer(esk1_1(cons(X1,nil)))|eqNat(len(cons(X3,nil)),len(cons(X2,nil)))!=false)).
+%%%
+%cnf(i_0_54, plain, (eqNat(suc(X1),len(cons(X2,nil)))=eqNat(X1,zero))).
+%%%%%
+%cnf(i_0_38, plain, (eqNat(suc(X1),len(cons(X3,X2)))=eqNat(X1,len(X2)))).
+%
+%cnf(i_0_126, plain, (compareNat(zero,len(insertBad_case1(false,X2,X1,nil)))=lt)).
+%%%%
+%cnf(i_0_75, plain, (compareNat(zero,len(insertBad_case1(false,X2,X1,X3)))=lt)).
+%
+%cnf(i_0_128, plain, (compareNat(len(insertBad_case1(false,X2,X1,nil)),zero)=gt)).
+%
+%cnf(i_0_182, plain, (eqNat(len(cons(X1,nil)),len(cons(X2,nil)))=true)).
+%
+%cnf(i_0_170, negated_conjecture, ($answer(esk1_1(cons(X1,nil)))|true!=false)).
+%
+%cnf(i_0_124, plain, (len(insertBad_case1(false,X2,X1,nil))=len(insertBad_case1(false,X2,zero,nil)))).
+%
+%cnf(i_0_129, plain, (len(insertBad_case1(false,X2,X1,nil))=len(insertBad_case1(false,X2,X3,nil)))).
+%
+%cnf(i_0_39, plain, (eqNat(len(cons(X3,X1)),suc(X2))=eqNat(len(X1),X2))).
+%
+%cnf(i_0_79, plain, (compareNat(len(insertBad_case1(false,X2,X1,X3)),zero)=gt)).
+%
+%cnf(i_0_40, plain, (compareNat(suc(X1),len(cons(X3,X2)))=compareNat(X1,len(X2)))).
+%
+%cnf(i_0_41, plain, (compareNat(len(cons(X3,X1)),suc(X2))=compareNat(len(X1),X2))).
+%%%
+%cnf(i_0_70, plain, (app(app(insertBad_0,zero),cons(zero,X1))=cons(zero,X1))).
+%%
+%cnf(i_0_159, plain, (len(insertBad_case1(false,X2,X1,nil))=len(insertBad_case1(false,zero,zero,nil)))).
+%%%
+%cnf(i_0_42, plain, (len(insertBad_case1(false,X2,X1,X3))=len(insertBad_case1(false,X2,zero,X3)))).
+%
+%cnf(i_0_210, plain, (eqNat(len(cons(X3,nil)),len(cons(X1,X2)))=eqNat(zero,len(X2)))).
+%
+%cnf(i_0_103, negated_conjecture, ($answer(esk1_1(cons(X1,X2)))|eqNat(len(foldr(insertBad_0,nil,cons(X1,X2))),len(cons(X3,X2)))!=false)).
+%%%%
+%cnf(i_0_336, plain, (eqNat(len(cons(X1,nil)),len(insertBad_case1(false,X3,X2,nil)))=false)).
+%%%%
+%cnf(i_0_295, plain, (len(insertBad_case1(false,X2,X3,nil))=len(insertBad_case1(false,zero,X1,nil)))).
+%
+%cnf(i_0_44, plain, (app(foldr(X1,X3,cons(X2,X4)),foldr(app(X1,X2),X5,X6))=foldr(app(X1,X2),X5,cons(foldr(X1,X3,X4),X6)))).
+%
+%cnf(i_0_254, plain, (eqNat(len(cons(X1,X2)),len(cons(X3,nil)))=eqNat(len(X2),zero))).
+%%%%
+%cnf(i_0_290, plain, (insertBad_case1(false,zero,X1,cons(zero,X2))=cons(X1,cons(zero,X2)))).
+%
+%cnf(i_0_410, plain, (eqNat(len(insertBad_case1(false,X2,X1,nil)),len(cons(X3,nil)))=false)).
+%%%%%
+%cnf(i_0_45, plain, (cons(X1,foldr(insertBad_0,X3,cons(X2,X4)))=insertBad_case1(false,X2,X1,foldr(insertBad_0,X3,X4)))).
+%%
+%cnf(i_0_69, plain, (app(app(insertBad_0,zero),cons(suc(X1),X2))=cons(zero,X2))).
+%
+%cnf(i_0_461, plain, (insertBad_case1(false,zero,X1,cons(suc(X2),X3))=cons(X1,cons(zero,X3)))).
+%
+%cnf(i_0_211, plain, (eqNat(len(cons(X4,X1)),len(cons(X2,X3)))=eqNat(len(X1),len(X3)))).
+%%%%%%
+%cnf(i_0_380, plain, (len(insertBad_case1(false,X1,X2,nil))=len(insertBad_case1(false,X4,X5,nil)))).
+%
+%cnf(i_0_47, plain, (app(cons(X1,nil),foldr(app(insertBad_0,X1),X2,X3))=foldr(app(insertBad_0,X1),X2,cons(nil,X3)))).
+%%
+%cnf(i_0_276, plain, (compareNat(len(cons(X3,nil)),len(cons(X1,X2)))=compareNat(zero,len(X2)))).
+%
+%cnf(i_0_277, plain, (compareNat(len(cons(X4,X1)),len(cons(X2,X3)))=compareNat(len(X1),len(X3)))).
+%%%%%%%%%%
+%cnf(i_0_68, plain, (app(app(insertBad_0,suc(X1)),cons(zero,X2))=insertBad_case1(false,suc(X1),zero,X2))).
+%
+%cnf(i_0_122, plain, (len(insertBad_case1(false,X2,X1,X3))=len(insertBad_case1(false,X2,X4,X3)))).
+%%
+%cnf(i_0_146, plain, (len(cons(X1,cons(X2,X3)))=len(cons(X4,cons(X5,X3))))).
+%%%%%%
+%cnf(i_0_67, plain, (insertBad_case1(not(isGT(compareNat(X1,X2))),suc(X1),suc(X2),X3)=app(app(insertBad_0,suc(X1)),cons(suc(X2),X3)))).
+%%%%%%
+%cnf(i_0_203, plain, (eqNat(suc(X1),len(insertBad_case1(false,X3,X2,nil)))=eqNat(X1,len(cons(X3,nil))))).
+%%%
+%cnf(i_0_348, negated_conjecture, ($answer(esk1_1(insertBad_case1(false,X2,X1,nil)))|eqNat(len(foldr(insertBad_0,nil,insertBad_case1(false,X2,X1,nil))),len(insertBad_case1(false,X2,X3,nil)))!=false)).
+%%
+%cnf(i_0_74, plain, (app(app(insertBad_0,zero),cons(len(cons(X1,X2)),X3))=cons(zero,X3))).
+%
+%cnf(i_0_257, plain, (eqNat(len(insertBad_case1(false,X2,X1,nil)),suc(X3))=eqNat(len(cons(X2,nil)),X3))).
+%%%%%%%
+%cnf(i_0_497, negated_conjecture, ($answer(esk1_1(insertBad_case1(false,X1,X2,nil)))|eqNat(len(foldr(insertBad_0,nil,insertBad_case1(false,X1,X2,nil))),len(insertBad_case1(false,X3,X4,nil)))!=false)).
+%%%
+%cnf(i_0_78, plain, (app(app(insertBad_0,len(cons(X1,X2))),cons(zero,X3))=insertBad_case1(false,len(cons(X1,X2)),zero,X3))).
+%%%%%%%%%%%%
+%cnf(i_0_292, plain, (app(app(insertBad_0,zero),insertBad_case1(false,X1,zero,nil))=insertBad_case1(false,X1,zero,nil))).
+%%%%%%%%%%%
+%cnf(i_0_269, plain, (compareNat(suc(X1),len(insertBad_case1(false,X3,X2,nil)))=compareNat(X1,len(cons(X3,nil))))).
+%%%%%
+%cnf(i_0_715, plain, (compareNat(len(cons(X3,nil)),len(insertBad_case1(false,X1,X2,nil)))=lt)).
+%%%
+%cnf(i_0_479, plain, (eqNat(len(cons(X1,X2)),len(insertBad_case1(false,X4,X3,nil)))=eqNat(len(X2),len(cons(X4,nil))))).
+%%
+%cnf(i_0_164, plain, (app(app(X1,X2),app(app(X1,X4),X3))=foldr(X1,X3,insertBad_case1(false,X4,X2,nil)))).
+%
+%cnf(i_0_763, plain, (foldr(insertBad_0,nil,insertBad_case1(false,X2,X1,nil))=app(app(insertBad_0,X1),cons(X2,nil)))).
+%
+%cnf(i_0_291, plain, (app(app(insertBad_0,zero),insertBad_case1(false,X1,zero,X2))=insertBad_case1(false,X1,zero,X2))).
+%
+%cnf(i_0_559, plain, (insertBad_case1(false,suc(X2),X1,cons(zero,X3))=cons(X1,insertBad_case1(false,suc(X2),zero,X3)))).
+%
+%cnf(i_0_282, plain, (compareNat(len(insertBad_case1(false,X2,X1,nil)),suc(X3))=compareNat(len(cons(X2,nil)),X3))).
+%
+%cnf(i_0_798, plain, (compareNat(len(insertBad_case1(false,X1,X2,nil)),len(cons(X3,nil)))=gt)).
+%%
+%cnf(i_0_732, plain, (eqNat(len(insertBad_case1(false,X2,X1,nil)),len(insertBad_case1(false,X3,X4,nil)))=true)).
+%
+%cnf(i_0_497, negated_conjecture, ($answer(esk1_1(insertBad_case1(false,X1,X2,nil)))|eqNat(len(app(app(insertBad_0,X2),cons(X1,nil))),len(insertBad_case1(false,X3,X4,nil)))!=false)).
+%% SZS status Theorem
+% SZS answers Tuple [[insertBad_case1(false,zero,zero,nil)]|_]
+
+% Proof found!

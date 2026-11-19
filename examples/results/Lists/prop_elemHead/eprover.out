@@ -1,0 +1,87 @@
+% Preprocessing class: FSSSSMSSSSSNFFN.
+% Configuration: G-E--_302_C18_F1_URBAN_RG_S04BN
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSF21-MFFFFFNN
+% Configuration: G-E--_208_C12_11_nc_F1_SE_CS_SP_PS_S5PRR_RG_S04AN
+% Initializing proof state
+% Scanning for AC axioms
+%
+%cnf(i_0_3, plain, (implies(false,X1)=true)).
+%
+%cnf(i_0_11, plain, (elemNat(X1,nil)=false)).
+%
+%cnf(i_0_7, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_1, plain, (opOr(false,X1)=X1)).
+%
+%cnf(i_0_4, plain, (implies(true,X1)=X1)).
+%
+%cnf(i_0_2, plain, (opOr(true,X1)=true)).
+%
+%cnf(i_0_8, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_5, plain, (head(cons(X1,X2))=X1)).
+%
+%cnf(i_0_9, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_10, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_13, negated_conjecture, ($answer(esk1_2(X1,X2))|implies(elemNat(X1,X2),eqNat(head(X2),X1))!=false)).
+%
+%cnf(i_0_12, plain, (opOr(eqNat(X1,X2),elemNat(X1,X3))=elemNat(X1,cons(X2,X3)))).
+% Presaturation interreduction done
+%
+%cnf(i_0_3, plain, (implies(false,X1)=true)).
+%
+%cnf(i_0_11, plain, (elemNat(X1,nil)=false)).
+%
+%cnf(i_0_7, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_1, plain, (opOr(false,X1)=X1)).
+%
+%cnf(i_0_4, plain, (implies(true,X1)=X1)).
+%
+%cnf(i_0_2, plain, (opOr(true,X1)=true)).
+%
+%cnf(i_0_5, plain, (head(cons(X1,X2))=X1)).
+%
+%cnf(i_0_8, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_9, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_10, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_13, negated_conjecture, ($answer(esk1_2(X1,X2))|implies(elemNat(X1,X2),eqNat(head(X2),X1))!=false)).
+%
+%cnf(i_0_15, negated_conjecture, ($answer(esk1_2(X1,nil))|true!=false)).
+%
+%cnf(i_0_14, negated_conjecture, ($answer(esk1_2(X1,cons(X2,X3)))|implies(elemNat(X1,cons(X2,X3)),eqNat(X2,X1))!=false)).
+%
+%cnf(i_0_19, negated_conjecture, ($answer(esk1_2(zero,cons(zero,X1)))|implies(elemNat(zero,cons(zero,X1)),true)!=false)).
+%
+%cnf(i_0_17, negated_conjecture, ($answer(esk1_2(zero,cons(suc(X1),X2)))|implies(elemNat(zero,cons(suc(X1),X2)),false)!=false)).
+%
+%cnf(i_0_12, plain, (opOr(eqNat(X1,X2),elemNat(X1,X3))=elemNat(X1,cons(X2,X3)))).
+%
+%cnf(i_0_24, plain, (elemNat(zero,cons(zero,X1))=true)).
+%
+%cnf(i_0_19, negated_conjecture, ($answer(esk1_2(zero,cons(zero,X1)))|true!=false)).
+%%%
+%cnf(i_0_20, plain, (elemNat(X1,cons(X2,nil))=opOr(eqNat(X1,X2),false))).
+%
+%cnf(i_0_28, negated_conjecture, ($answer(esk1_2(zero,cons(suc(X1),nil)))|true!=false)).
+%
+%cnf(i_0_30, negated_conjecture, ($answer(esk1_2(X1,cons(X2,nil)))|implies(opOr(eqNat(X1,X2),false),eqNat(X2,X1))!=false)).
+%%%%
+%cnf(i_0_16, negated_conjecture, ($answer(esk1_2(suc(X1),cons(suc(X2),X3)))|implies(elemNat(suc(X1),cons(suc(X2),X3)),eqNat(X2,X1))!=false)).
+%
+%cnf(i_0_35, negated_conjecture, ($answer(esk1_2(suc(X1),cons(zero,nil)))|true!=false)).
+%%%
+%cnf(i_0_23, plain, (elemNat(zero,cons(suc(X1),X2))=elemNat(zero,X2))).
+%
+%cnf(i_0_17, negated_conjecture, ($answer(esk1_2(zero,cons(suc(X1),X2)))|implies(elemNat(zero,X2),false)!=false)).
+%% SZS status Theorem
+% SZS answers Tuple [[zero, cons(suc(X1),cons(zero,X2))]|_]
+
+% Proof found!

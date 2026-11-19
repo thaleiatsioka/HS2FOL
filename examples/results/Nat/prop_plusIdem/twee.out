@@ -1,0 +1,53 @@
+Here is the input problem:
+  Axiom 1 (plus_1): plus(zero, X) = X.
+  Axiom 2 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 3 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 4 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 5 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 6 (plus_2): plus(suc(X), Y) = suc(plus(X, Y)).
+  Axiom 7 (prop_plusIdem_1): prop_plusIdem(X) = eqNat(plus(X, X), X).
+  Axiom 8 (reflexivity): equals(X, X) = true.
+  Axiom 9 (prop_plusIdem): equals(prop_plusIdem(X), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. plus(zero, X) -> X
+2. eqNat(zero, zero) -> true
+3. eqNat(zero, suc(X)) -> false
+4. eqNat(suc(X), zero) -> false
+5. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+6. suc(plus(X, Y)) -> plus(suc(X), Y)
+7. eqNat(plus(X, X), X) -> prop_plusIdem(X)
+8. equals(X, X) -> true
+9. equals(prop_plusIdem(X), false) -> false
+10. prop_plusIdem(zero) -> true
+11. equals(true, false) -> false
+12. plus(suc(zero), X) -> suc(X)
+13. prop_plusIdem(suc(zero)) -> false
+14. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (plus_1): plus(zero, X) = X.
+Axiom 2 (eqNat_3): eqNat(suc(X), zero) = false.
+Axiom 3 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+Axiom 4 (plus_2): plus(suc(X), Y) = suc(plus(X, Y)).
+Axiom 5 (prop_plusIdem_1): prop_plusIdem(X) = eqNat(plus(X, X), X).
+
+Goal 1 (prop_plusIdem): prop_plusIdem(X) = false.
+The goal is true when:
+  X = suc(zero)
+
+Proof:
+  prop_plusIdem(suc(zero))
+= { by axiom 5 (prop_plusIdem_1) }
+  eqNat(plus(suc(zero), suc(zero)), suc(zero))
+= { by axiom 4 (plus_2) }
+  eqNat(suc(plus(zero, suc(zero))), suc(zero))
+= { by axiom 1 (plus_1) }
+  eqNat(suc(suc(zero)), suc(zero))
+= { by axiom 3 (eqNat_4) }
+  eqNat(suc(zero), zero)
+= { by axiom 2 (eqNat_3) }
+  false
+
+RESULT: Theorem (the conjecture is true).

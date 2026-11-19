@@ -1,0 +1,108 @@
+% Running in auto input_syntax mode. Trying TPTP
+% Detected formulas, will run a generic FOF schedule.
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_tgt=full:sil=2000:alpa=true:random_seed=1140331558:st=5:i=107:sd=1:qa=plain:ss=on:er=filter:ssat=axiom_1 on problem for (1ds/107Mi)
+%  found proof, printing to "/tmp/vampire-proof-205-209"...
+% SZS answers Tuple [[suc(zero)]|_] for problem
+% ...printing done.
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for problem
+% SZS output start Proof for problem
+fof(f1,axiom,(
+  ! [X0] : (plus(zero,X0) = X0)),
+  file('/home/claude/hs2fol/examples/results/Nat/prop_plusIdem/problem.p','plus_1')).
+fof(f2,axiom,(
+  ! [X0, X1] : (plus(suc(X0),X1) = suc(plus(X0,X1)))),
+  file('/home/claude/hs2fol/examples/results/Nat/prop_plusIdem/problem.p','plus_2')).
+fof(f3,axiom,(
+  ! [X0] : (prop_plusIdem(X0) = eqNat(plus(X0,X0),X0))),
+  file('/home/claude/hs2fol/examples/results/Nat/prop_plusIdem/problem.p','prop_plusIdem_1')).
+fof(f6,axiom,(
+  ! [X0] : (eqNat(suc(X0),zero) = false)),
+  file('/home/claude/hs2fol/examples/results/Nat/prop_plusIdem/problem.p','eqNat_3')).
+fof(f7,axiom,(
+  ! [X0, X1] : (eqNat(suc(X0),suc(X1)) = eqNat(X0,X1))),
+  file('/home/claude/hs2fol/examples/results/Nat/prop_plusIdem/problem.p','eqNat_4')).
+fof(f8,conjecture,(
+  ? [X0] : (prop_plusIdem(X0) = false)),
+  file('/home/claude/hs2fol/examples/results/Nat/prop_plusIdem/problem.p','prop_plusIdem')).
+fof(f9,negated_conjecture,(
+  ~ ? [X0] : (prop_plusIdem(X0) = false)),
+  inference(conjecture_negation,[status(cth)],[f8])).
+fof(f10,plain,(
+  ~ ? [X0] : ((prop_plusIdem(X0) = false) & ans0(X0))),
+  inference(answer_literal_injection,[],[f9])).
+fof(f11,plain,(
+  ! [X0] : ((prop_plusIdem(X0) != false) | ~ans0(X0))),
+  inference(ennf_transformation,[],[f10])).
+fof(f12,plain,(
+  (! [X0] : (plus(zero,X0) = X0))),
+  inference(cnf_transformation,[],[f1])).
+fof(f13,plain,(
+  (! [X0,X1] : (plus(suc(X0),X1) = suc(plus(X0,X1))))),
+  inference(cnf_transformation,[],[f2])).
+fof(f14,plain,(
+  (! [X0] : (prop_plusIdem(X0) = eqNat(plus(X0,X0),X0)))),
+  inference(cnf_transformation,[],[f3])).
+fof(f17,plain,(
+  (! [X0] : (false = eqNat(suc(X0),zero)))),
+  inference(cnf_transformation,[],[f6])).
+fof(f18,plain,(
+  (! [X0,X1] : (eqNat(suc(X0),suc(X1)) = eqNat(X0,X1)))),
+  inference(cnf_transformation,[],[f7])).
+fof(f19,plain,(
+  (! [X0] : (prop_plusIdem(X0) != false | ~ans0(X0)))),
+  inference(cnf_transformation,[],[f11])).
+fof(f20,plain,(
+  (! [X0] : (eqNat(plus(X0,X0),X0) != false | ~ans0(X0)))),
+  inference(definition_unfolding,[],[f19,f14])).
+fof(f21,definition,(
+  (! [X0] : (sF1(X0) = plus(X0,X0)))),
+  introduced(definition,[new_symbols(definition,[sF1])],[function_definition])).
+fof(f22,plain,(
+  (! [X0] : (plus(X0,X0) = sF1(X0)))),
+  inference(reorient_equations,[],[f21])).
+fof(f23,definition,(
+  (! [X0] : (sF2(X0) = eqNat(sF1(X0),X0)))),
+  introduced(definition,[new_symbols(definition,[sF2])],[function_definition])).
+fof(f24,plain,(
+  (! [X0] : (eqNat(sF1(X0),X0) = sF2(X0)))),
+  inference(reorient_equations,[],[f23])).
+fof(f25,plain,(
+  (! [X0] : (false != sF2(X0) | ~ans0(X0)))),
+  inference(definition_folding,[],[f20,f24,f22])).
+fof(f40,plain,(
+  (! [X0] : (ans0(X0)))),
+  introduced(theory,[answer_literal_resolver],[])).
+fof(f44,plain,(
+  (! [X0] : (sF1(suc(X0)) = suc(plus(X0,suc(X0)))))),
+  inference(superposition,[],[f22,f13])).
+fof(f46,plain,(
+  sF1(suc(zero)) = suc(suc(zero))),
+  inference(superposition,[],[f44,f12])).
+fof(f54,plain,(
+  sF2(suc(zero)) = eqNat(suc(suc(zero)),suc(zero))),
+  inference(superposition,[],[f24,f46])).
+fof(f55,plain,(
+  sF2(suc(zero)) = eqNat(suc(zero),zero)),
+  inference(forward_demodulation,[],[f54,f18])).
+fof(f56,plain,(
+  false = sF2(suc(zero))),
+  inference(forward_demodulation,[],[f55,f17])).
+fof(f57,plain,(
+  false != false | ~ans0(suc(zero))),
+  inference(superposition,[],[f25,f56])).
+fof(f58,plain,(
+  ~ans0(suc(zero))),
+  inference(trivial_inequality_removal,[],[f57])).
+fof(f59,plain,(
+  $false),
+  inference(unit_resulting_resolution,[],[f58,f40])).
+% SZS output end Proof for problem
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation
+% Time elapsed: 0.008 s
+% Peak memory usage: 8 MB
+% Success in time 0.012 s
