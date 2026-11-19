@@ -1,0 +1,149 @@
+Here is the input problem:
+  Axiom 1 (not_2): not(true) = false.
+  Axiom 2 (not_1): not(false) = true.
+  Axiom 3 (isGT_2): isGT(eq) = false.
+  Axiom 4 (isGT_3): isGT(gt) = true.
+  Axiom 5 (isGT_1): isGT(lt) = false.
+  Axiom 6 (types18): suc(X) = suc(X).
+  Axiom 7 (types19): zero = zero.
+  Axiom 8 (types17): suc(X) = suc(X).
+  Axiom 9 (compareNat_1): compareNat(zero, zero) = eq.
+  Axiom 10 (compareNat_2): compareNat(zero, suc(X)) = lt.
+  Axiom 11 (compareNat_3): compareNat(suc(X), zero) = gt.
+  Axiom 12 (compareNat_4): compareNat(suc(X), suc(Y)) = compareNat(X, Y).
+  Axiom 13 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 14 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 15 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 16 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 17 (types20): X = X.
+  Axiom 18 (types14): prop_maxLeft(X, Y) = prop_maxLeft(X, Y).
+  Axiom 19 (types13): prop_maxLeft(X, Y) = prop_maxLeft(X, Y).
+  Axiom 20 (types4): leNat(X, Y) = leNat(X, Y).
+  Axiom 21 (types3): leNat(X, Y) = leNat(X, Y).
+  Axiom 22 (types9): maxNat(X, Y) = maxNat(X, Y).
+  Axiom 23 (types8): maxNat(X, Y) = maxNat(X, Y).
+  Axiom 24 (maxNat_case1_1): maxNat_case1(true, X, Y) = Y.
+  Axiom 25 (maxNat_case1_2): maxNat_case1(false, X, Y) = X.
+  Axiom 26 (types6): compareNat(X, Y) = compareNat(X, Y).
+  Axiom 27 (types5): compareNat(X, Y) = compareNat(X, Y).
+  Axiom 28 (types2): eqNat(X, Y) = eqNat(X, Y).
+  Axiom 29 (types1): eqNat(X, Y) = eqNat(X, Y).
+  Axiom 30 (types7): maxNat(X, Y) = maxNat(X, Y).
+  Axiom 31 (leNat_1): leNat(X, Y) = not(isGT(compareNat(X, Y))).
+  Axiom 32 (types16): prop_maxLeft_case1(X, Y, Z) = prop_maxLeft_case1(X, Y, Z).
+  Axiom 33 (types15): prop_maxLeft_case1(X, Y, Z) = prop_maxLeft_case1(X, Y, Z).
+  Axiom 34 (types12): maxNat_case1(X, Y, Z) = maxNat_case1(X, Y, Z).
+  Axiom 35 (types11): maxNat_case1(X, Y, Z) = maxNat_case1(X, Y, Z).
+  Axiom 36 (prop_maxLeft_case1_1): prop_maxLeft_case1(true, X, Y) = eqNat(maxNat(Y, X), X).
+  Axiom 37 (prop_maxLeft_case1_2): prop_maxLeft_case1(false, X, Y) = eqNat(maxNat(Y, X), X).
+  Axiom 38 (types10): maxNat_case1(X, Y, Z) = maxNat_case1(X, Y, Z).
+  Axiom 39 (prop_maxLeft_1): prop_maxLeft(X, Y) = prop_maxLeft_case1(leNat(X, Y), Y, X).
+  Axiom 40 (maxNat_1): maxNat(X, Y) = maxNat_case1(leNat(X, Y), X, Y).
+  Axiom 41 (reflexivity): equals(X, X) = true.
+  Axiom 42 (prop_maxLeft): equals(prop_maxLeft(X, Y), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. not(true) -> false
+2. not(false) -> true
+3. isGT(eq) -> false
+4. isGT(gt) -> true
+5. isGT(lt) -> false
+6. suc(X) -> suc(X)
+7. zero -> zero
+8. suc(X) -> suc(X)
+9. compareNat(zero, zero) -> eq
+10. compareNat(zero, suc(X)) -> lt
+11. compareNat(suc(X), zero) -> gt
+12. compareNat(suc(X), suc(Y)) -> compareNat(X, Y)
+13. eqNat(zero, zero) -> true
+14. eqNat(zero, suc(X)) -> false
+15. eqNat(suc(X), zero) -> false
+16. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+17. X -> X
+18. prop_maxLeft(X, Y) -> prop_maxLeft(X, Y)
+19. prop_maxLeft(X, Y) -> prop_maxLeft(X, Y)
+20. leNat(X, Y) -> leNat(X, Y)
+21. leNat(X, Y) -> leNat(X, Y)
+22. maxNat(X, Y) -> maxNat(X, Y)
+23. maxNat(X, Y) -> maxNat(X, Y)
+24. maxNat_case1(true, X, Y) -> Y
+25. maxNat_case1(false, X, Y) -> X
+26. compareNat(X, Y) -> compareNat(X, Y)
+27. compareNat(X, Y) -> compareNat(X, Y)
+28. eqNat(X, Y) -> eqNat(X, Y)
+29. eqNat(X, Y) -> eqNat(X, Y)
+30. maxNat(X, Y) -> maxNat(X, Y)
+31. not(isGT(compareNat(X, Y))) -> leNat(X, Y)
+32. prop_maxLeft_case1(X, Y, Z) -> prop_maxLeft_case1(X, Y, Z)
+33. prop_maxLeft_case1(X, Y, Z) -> prop_maxLeft_case1(X, Y, Z)
+34. maxNat_case1(X, Y, Z) -> maxNat_case1(X, Y, Z)
+35. maxNat_case1(X, Y, Z) -> maxNat_case1(X, Y, Z)
+36. eqNat(maxNat(X, Y), Y) -> prop_maxLeft_case1(true, Y, X)
+37. prop_maxLeft_case1(false, X, Y) -> prop_maxLeft_case1(true, X, Y)
+38. maxNat_case1(X, Y, Z) -> maxNat_case1(X, Y, Z)
+39. prop_maxLeft_case1(leNat(X, Y), Y, X) -> prop_maxLeft(X, Y)
+40. maxNat_case1(leNat(X, Y), X, Y) -> maxNat(X, Y)
+41. equals(X, X) -> true
+42. equals(prop_maxLeft(X, Y), false) -> false
+43. leNat(zero, zero) -> true
+44. maxNat(zero, zero) -> zero
+45. leNat(zero, suc(X)) -> true
+46. leNat(suc(X), zero) -> false
+47. maxNat(zero, suc(X)) -> suc(X)
+48. maxNat(suc(X), zero) -> suc(X)
+49. prop_maxLeft_case1(true, zero, zero) -> prop_maxLeft(zero, zero)
+50. prop_maxLeft(zero, zero) -> true
+51. equals(true, false) -> false
+52. leNat(suc(X), suc(Y)) -> leNat(X, Y)
+53. prop_maxLeft_case1(true, zero, suc(X)) -> false
+54. prop_maxLeft_case1(true, suc(X), zero) -> prop_maxLeft(zero, suc(X))
+55. prop_maxLeft(suc(X), zero) -> false
+56. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (not_2): not(true) = false.
+Axiom 2 (isGT_3): isGT(gt) = true.
+Axiom 4 (compareNat_3): compareNat(suc(X), zero) = gt.
+Axiom 5 (eqNat_3): eqNat(suc(X), zero) = false.
+Axiom 6 (maxNat_case1_2): maxNat_case1(false, X, Y) = X.
+Axiom 7 (leNat_1): leNat(X, Y) = not(isGT(compareNat(X, Y))).
+Axiom 8 (prop_maxLeft_case1_2): prop_maxLeft_case1(false, X, Y) = eqNat(maxNat(Y, X), X).
+Axiom 9 (prop_maxLeft_1): prop_maxLeft(X, Y) = prop_maxLeft_case1(leNat(X, Y), Y, X).
+Axiom 10 (maxNat_1): maxNat(X, Y) = maxNat_case1(leNat(X, Y), X, Y).
+
+Lemma 11: leNat(suc(X), zero) = false.
+Proof:
+  leNat(suc(X), zero)
+= { by axiom 7 (leNat_1) }
+  not(isGT(compareNat(suc(X), zero)))
+= { by axiom 4 (compareNat_3) }
+  not(isGT(gt))
+= { by axiom 2 (isGT_3) }
+  not(true)
+= { by axiom 1 (not_2) }
+  false
+
+Goal 1 (prop_maxLeft): prop_maxLeft(X, Y) = false.
+The goal is true when:
+  X = suc(X)
+  Y = zero
+
+Proof:
+  prop_maxLeft(suc(X), zero)
+= { by axiom 9 (prop_maxLeft_1) }
+  prop_maxLeft_case1(leNat(suc(X), zero), zero, suc(X))
+= { by lemma 11 }
+  prop_maxLeft_case1(false, zero, suc(X))
+= { by axiom 8 (prop_maxLeft_case1_2) }
+  eqNat(maxNat(suc(X), zero), zero)
+= { by axiom 10 (maxNat_1) }
+  eqNat(maxNat_case1(leNat(suc(X), zero), suc(X), zero), zero)
+= { by lemma 11 }
+  eqNat(maxNat_case1(false, suc(X), zero), zero)
+= { by axiom 6 (maxNat_case1_2) }
+  eqNat(suc(X), zero)
+= { by axiom 5 (eqNat_3) }
+  false
+
+RESULT: Theorem (the conjecture is true).

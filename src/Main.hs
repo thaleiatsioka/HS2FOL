@@ -21,10 +21,11 @@ data Opts = Opts
   , oList :: Bool
   , oIncludes :: [FilePath]
   , oDecode :: Bool
+  , oUntyped :: Bool
   }
 
 defaultOpts :: Opts
-defaultOpts = Opts Nothing Nothing [] False False [] False
+defaultOpts = Opts Nothing Nothing [] False False [] False False
 
 usage :: String
 usage = unlines
@@ -38,6 +39,7 @@ usage = unlines
   , "  --stdout        print the problems instead of writing files"
   , "  --list          list the properties"
   , "  -I DIR          extra directory to search for imported modules"
+  , "  --untyped       write untyped FOF instead of typed TFF problems"
   , "  --decode        read prover output on stdin and print the counterexample"
   , "                  (use with -p PROP)"
   ]
@@ -52,6 +54,7 @@ parseOpts args o = case args of
   ("--list" : r) -> parseOpts r o { oList = True }
   ("-I" : d : r) -> parseOpts r o { oIncludes = oIncludes o ++ [d] }
   ("--decode" : r) -> parseOpts r o { oDecode = True }
+  ("--untyped" : r) -> parseOpts r o { oUntyped = True }
   (f : r)
     | f `elem` ["-h", "--help"] -> Left usage
     | "-" `isPrefixOf` f -> Left ("unknown option " ++ f ++ "\n\n" ++ usage)
@@ -68,7 +71,7 @@ main = do
   opts <- either die' return (parseOpts args defaultOpts)
   file <- maybe (die' usage) return (oFile opts)
   (pre, usr, own) <- loadProgram (oIncludes opts) file
-  tr <- either (\e -> die' ("hs2fol: " ++ e)) return (translateProgram pre usr)
+  tr <- either (\e -> die' ("hs2fol: " ++ e)) return (translateProgram (not (oUntyped opts)) pre usr)
   forM_ (trWarnings tr) $ \w -> hPutStrLn stderr ("warning: " ++ w)
   let props = [ p | p <- trProps tr, psName p `elem` own ]
   selected <- case oProps opts of

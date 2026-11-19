@@ -1,0 +1,76 @@
+Here is the input problem:
+  Axiom 1 (types8): true = true.
+  Axiom 2 (types7): false = false.
+  Axiom 3 (leq_1): leq(zero, X) = true.
+  Axiom 4 (leq_2): leq(suc(X), zero) = false.
+  Axiom 5 (leq_3): leq(suc(X), suc(Y)) = leq(X, Y).
+  Axiom 6 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 7 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 8 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 9 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 10 (implies_2): implies(true, X) = X.
+  Axiom 11 (implies_1): implies(false, X) = true.
+  Axiom 12 (types9): X = X.
+  Axiom 13 (types3): implies(X, Y) = implies(X, Y).
+  Axiom 14 (types2): implies(X, Y) = implies(X, Y).
+  Axiom 15 (types6): prop_leqAntisym(X, Y) = prop_leqAntisym(X, Y).
+  Axiom 16 (types5): leq(X, Y) = leq(X, Y).
+  Axiom 17 (types4): eqNat(X, Y) = eqNat(X, Y).
+  Axiom 18 (types1): implies(X, Y) = implies(X, Y).
+  Axiom 19 (prop_leqAntisym_1): prop_leqAntisym(X, Y) = implies(leq(X, Y), eqNat(X, Y)).
+  Axiom 20 (reflexivity): equals(X, X) = true.
+  Axiom 21 (prop_leqAntisym): equals(prop_leqAntisym(X, Y), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. true -> true
+2. false -> false
+3. leq(zero, X) -> true
+4. leq(suc(X), zero) -> false
+5. leq(suc(X), suc(Y)) -> leq(X, Y)
+6. eqNat(zero, zero) -> true
+7. eqNat(zero, suc(X)) -> false
+8. eqNat(suc(X), zero) -> false
+9. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+10. implies(true, X) -> X
+11. implies(false, X) -> true
+12. X -> X
+13. implies(X, Y) -> implies(X, Y)
+14. implies(X, Y) -> implies(X, Y)
+15. prop_leqAntisym(X, Y) -> prop_leqAntisym(X, Y)
+16. leq(X, Y) -> leq(X, Y)
+17. eqNat(X, Y) -> eqNat(X, Y)
+18. implies(X, Y) -> implies(X, Y)
+19. implies(leq(X, Y), eqNat(X, Y)) -> prop_leqAntisym(X, Y)
+20. equals(X, X) -> true
+21. equals(prop_leqAntisym(X, Y), false) -> false
+22. prop_leqAntisym(zero, zero) -> true
+23. eqNat(zero, X) -> prop_leqAntisym(zero, X)
+24. equals(true, false) -> false
+25. prop_leqAntisym(suc(X), zero) -> true
+26. prop_leqAntisym(zero, suc(X)) -> false
+27. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 2 (leq_1): leq(zero, X) = true.
+Axiom 3 (eqNat_2): eqNat(zero, suc(X)) = false.
+Axiom 4 (implies_2): implies(true, X) = X.
+Axiom 5 (prop_leqAntisym_1): prop_leqAntisym(X, Y) = implies(leq(X, Y), eqNat(X, Y)).
+
+Goal 1 (prop_leqAntisym): prop_leqAntisym(X, Y) = false.
+The goal is true when:
+  X = zero
+  Y = suc(X)
+
+Proof:
+  prop_leqAntisym(zero, suc(X))
+= { by axiom 5 (prop_leqAntisym_1) }
+  implies(leq(zero, suc(X)), eqNat(zero, suc(X)))
+= { by axiom 3 (eqNat_2) }
+  implies(leq(zero, suc(X)), false)
+= { by axiom 2 (leq_1) }
+  implies(true, false)
+= { by axiom 4 (implies_2) }
+  false
+
+RESULT: Theorem (the conjecture is true).

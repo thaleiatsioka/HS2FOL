@@ -1,0 +1,7 @@
+property:   prop_mapFilter
+file:       examples/HigherOrder.hs
+prover:     vampire
+witness:    prop_mapFilter (\_ -> (Suc _X0)) (\x0 -> case x0 of { Zero -> True; Suc y0_1 -> (\_ -> False) y0_1 }) [Zero]
+input:      prop_mapFilter (\_ -> (Suc undefined)) (\x0 -> case x0 of { Zero -> True; Suc y0_1 -> (\_ -> False) y0_1 }) [Zero]
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

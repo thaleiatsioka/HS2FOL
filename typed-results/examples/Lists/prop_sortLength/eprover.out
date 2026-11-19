@@ -1,0 +1,238 @@
+% Preprocessing class: FSMSSMSMSSSNFFN.
+% Configuration: G-E--_207_C18_F1_SE_CS_SP_PI_PS_S2SI
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSM31-MFFFFFNN
+% partial match(2): FHUSM-FFSF21-MFFFFFNN
+% Configuration: G-E--_208_C12_11_nc_F1_SE_CS_SP_PS_S5PRR_RG_S04AN
+% Initializing proof state
+% Scanning for AC axioms
+%
+%tcf(i_0_49, plain, lenNat(nil_nat)=zero).
+%
+%tcf(i_0_34, plain, not(false)=true).
+%
+%tcf(i_0_32, plain, isGT(eq)=false).
+%
+%tcf(i_0_31, plain, isGT(lt)=false).
+%
+%tcf(i_0_35, plain, not(true)=false).
+%
+%tcf(i_0_33, plain, isGT(gt)=true).
+%
+%tcf(i_0_45, plain, eqNat(zero,zero)=true).
+%
+%tcf(i_0_51, plain, compareNat(zero,zero)=eq).
+%
+%tcf(i_0_43, plain, ![X6:fun_nat_fun_list_nat_list_nat, X3:list_nat]:(foldrNatListNat(X6,X3,nil_nat)=X3)).
+%
+%tcf(i_0_46, plain, ![X1:nat]:(eqNat(zero,suc(X1))=false)).
+%
+%tcf(i_0_52, plain, ![X1:nat]:(compareNat(zero,suc(X1))=lt)).
+%
+%tcf(i_0_47, plain, ![X1:nat]:(eqNat(suc(X1),zero)=false)).
+%
+%tcf(i_0_57, negated_conjecture, ![X3:list_nat]:(($answer(esk1_1(X3))|eqNat(lenNat(foldrNatListNat(insertBad_0,nil_nat,X3)),lenNat(X3))!=false))).
+%
+%tcf(i_0_36, plain, ![X1:nat]:(app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(insertBad_0,X1),nil_nat)=cons_nat(X1,nil_nat))).
+%
+%tcf(i_0_53, plain, ![X1:nat]:(compareNat(suc(X1),zero)=gt)).
+%
+%tcf(i_0_50, plain, ![X1:nat, X3:list_nat]:(lenNat(cons_nat(X1,X3))=suc(lenNat(X3)))).
+%
+%tcf(i_0_48, plain, ![X1:nat, X2:nat]:(eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%tcf(i_0_54, plain, ![X1:nat, X2:nat]:(compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%tcf(i_0_38, plain, ![X1:nat, X2:nat, X3:list_nat]:(insertBad_case1(true,X1,X2,X3)=cons_nat(X1,X3))).
+%
+%tcf(i_0_39, plain, ![X2:nat, X1:nat, X3:list_nat]:(cons_nat(X2,app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(insertBad_0,X1),X3))=insertBad_case1(false,X1,X2,X3))).
+%
+%tcf(i_0_44, plain, ![X6:fun_nat_fun_list_nat_list_nat, X1:nat, X3:list_nat, X4:list_nat]:(app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(X6,X1),foldrNatListNat(X6,X3,X4))=foldrNatListNat(X6,X3,cons_nat(X1,X4)))).
+%
+%tcf(i_0_37, plain, ![X1:nat, X2:nat, X3:list_nat]:(insertBad_case1(not(isGT(compareNat(X1,X2))),X1,X2,X3)=app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(insertBad_0,X1),cons_nat(X2,X3)))).
+% Presaturation interreduction done
+%
+%tcf(i_0_49, plain, lenNat(nil_nat)=zero).
+%
+%tcf(i_0_34, plain, not(false)=true).
+%
+%tcf(i_0_32, plain, isGT(eq)=false).
+%
+%tcf(i_0_31, plain, isGT(lt)=false).
+%
+%tcf(i_0_35, plain, not(true)=false).
+%
+%tcf(i_0_33, plain, isGT(gt)=true).
+%
+%tcf(i_0_45, plain, eqNat(zero,zero)=true).
+%
+%tcf(i_0_51, plain, compareNat(zero,zero)=eq).
+%
+%tcf(i_0_43, plain, ![X6:fun_nat_fun_list_nat_list_nat, X3:list_nat]:(foldrNatListNat(X6,X3,nil_nat)=X3)).
+%
+%tcf(i_0_46, plain, ![X1:nat]:(eqNat(zero,suc(X1))=false)).
+%
+%tcf(i_0_52, plain, ![X1:nat]:(compareNat(zero,suc(X1))=lt)).
+%
+%tcf(i_0_47, plain, ![X1:nat]:(eqNat(suc(X1),zero)=false)).
+%
+%tcf(i_0_57, negated_conjecture, ![X3:list_nat]:(($answer(esk1_1(X3))|eqNat(lenNat(foldrNatListNat(insertBad_0,nil_nat,X3)),lenNat(X3))!=false))).
+%
+%tcf(i_0_58, negated_conjecture, ($answer(esk1_1(nil_nat))|true!=false)).
+%%
+%tcf(i_0_36, plain, ![X1:nat]:(app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(insertBad_0,X1),nil_nat)=cons_nat(X1,nil_nat))).
+%
+%tcf(i_0_53, plain, ![X1:nat]:(compareNat(suc(X1),zero)=gt)).
+%
+%tcf(i_0_50, plain, ![X1:nat, X3:list_nat]:(lenNat(cons_nat(X1,X3))=suc(lenNat(X3)))).
+%
+%tcf(i_0_38, plain, ![X1:nat, X2:nat, X3:list_nat]:(insertBad_case1(true,X1,X2,X3)=cons_nat(X1,X3))).
+%
+%tcf(i_0_48, plain, ![X1:nat, X2:nat]:(eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%tcf(i_0_54, plain, ![X1:nat, X2:nat]:(compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%tcf(i_0_39, plain, ![X1:nat, X2:nat, X3:list_nat]:(cons_nat(X1,app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(insertBad_0,X2),X3))=insertBad_case1(false,X2,X1,X3))).
+%
+%tcf(i_0_44, plain, ![X6:fun_nat_fun_list_nat_list_nat, X1:nat, X3:list_nat, X4:list_nat]:(app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(X6,X1),foldrNatListNat(X6,X3,X4))=foldrNatListNat(X6,X3,cons_nat(X1,X4)))).
+%
+%tcf(i_0_67, plain, ![X1:nat]:(lenNat(cons_nat(X1,nil_nat))=suc(zero))).
+%
+%tcf(i_0_76, plain, ![X1:nat]:(eqNat(zero,lenNat(cons_nat(X1,nil_nat)))=false)).
+%
+%tcf(i_0_78, plain, ![X1:nat]:(eqNat(lenNat(cons_nat(X1,nil_nat)),zero)=false)).
+%
+%tcf(i_0_60, plain, ![X1:nat, X3:list_nat]:(eqNat(zero,lenNat(cons_nat(X1,X3)))=false)).
+%
+%tcf(i_0_37, plain, ![X1:nat, X2:nat, X3:list_nat]:(insertBad_case1(not(isGT(compareNat(X1,X2))),X1,X2,X3)=app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(insertBad_0,X1),cons_nat(X2,X3)))).
+%
+%tcf(i_0_62, plain, ![X1:nat, X3:list_nat]:(eqNat(lenNat(cons_nat(X1,X3)),zero)=false)).
+%
+%tcf(i_0_61, plain, ![X1:nat, X3:list_nat]:(compareNat(zero,lenNat(cons_nat(X1,X3)))=lt)).
+%
+%tcf(i_0_63, plain, ![X1:nat, X3:list_nat]:(compareNat(lenNat(cons_nat(X1,X3)),zero)=gt)).
+%%%
+%tcf(i_0_84, plain, ![X1:nat, X2:nat]:(lenNat(cons_nat(X1,nil_nat))=lenNat(cons_nat(X2,nil_nat)))).
+%%%%%
+%tcf(i_0_64, plain, ![X1:nat, X3:list_nat, X2:nat]:(lenNat(cons_nat(X1,X3))=lenNat(cons_nat(X2,X3)))).
+%%
+%tcf(i_0_73, plain, ![X1:nat, X2:nat]:(cons_nat(X1,cons_nat(X2,nil_nat))=insertBad_case1(false,X2,X1,nil_nat))).
+%%%%%
+%tcf(i_0_154, plain, ![X2:nat, X1:nat]:(eqNat(zero,lenNat(insertBad_case1(false,X2,X1,nil_nat)))=false)).
+%
+%tcf(i_0_156, plain, ![X2:nat, X1:nat]:(eqNat(lenNat(insertBad_case1(false,X2,X1,nil_nat)),zero)=false)).
+%
+%tcf(i_0_86, negated_conjecture, ![X1:nat]:(($answer(esk1_1(cons_nat(X1,nil_nat)))|eqNat(lenNat(foldrNatListNat(insertBad_0,nil_nat,cons_nat(X1,nil_nat))),lenNat(cons_nat(zero,nil_nat)))!=false))).
+%
+%tcf(i_0_159, negated_conjecture, ![X1:nat, X2:nat]:(($answer(esk1_1(cons_nat(X1,nil_nat)))|eqNat(lenNat(foldrNatListNat(insertBad_0,nil_nat,cons_nat(X1,nil_nat))),lenNat(cons_nat(X2,nil_nat)))!=false))).
+%
+%tcf(i_0_65, plain, ![X1:nat, X2:nat, X3:list_nat]:(lenNat(cons_nat(X1,cons_nat(X2,X3)))=lenNat(cons_nat(zero,cons_nat(zero,X3))))).
+%
+%tcf(i_0_92, plain, ![X2:nat, X1:nat, X3:list_nat]:(eqNat(zero,lenNat(insertBad_case1(false,X2,X1,X3)))=false)).
+%%
+%tcf(i_0_75, plain, ![X6:fun_nat_fun_list_nat_list_nat, X3:list_nat, X1:nat]:(foldrNatListNat(X6,X3,cons_nat(X1,nil_nat))=app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(X6,X1),X3))).
+%%%
+%tcf(i_0_99, plain, ![X2:nat, X1:nat, X3:list_nat]:(eqNat(lenNat(insertBad_case1(false,X2,X1,X3)),zero)=false)).
+%
+%tcf(i_0_159, negated_conjecture, ![X1:nat, X2:nat]:(($answer(esk1_1(cons_nat(X1,nil_nat)))|eqNat(lenNat(cons_nat(X1,nil_nat)),lenNat(cons_nat(X2,nil_nat)))!=false))).
+%%%%
+%tcf(i_0_66, negated_conjecture, ![X1:nat, X3:list_nat]:(($answer(esk1_1(cons_nat(X1,X3)))|eqNat(lenNat(foldrNatListNat(insertBad_0,nil_nat,cons_nat(X1,X3))),lenNat(cons_nat(zero,X3)))!=false))).
+%
+%tcf(i_0_80, plain, ![X2:nat, X1:nat]:(eqNat(lenNat(cons_nat(X2,nil_nat)),suc(X1))=eqNat(zero,X1))).
+%%
+%tcf(i_0_198, negated_conjecture, ![X1:nat, X8:nat, X2:nat]:(($answer(esk1_1(cons_nat(X1,nil_nat)))|eqNat(lenNat(cons_nat(X8,nil_nat)),lenNat(cons_nat(X2,nil_nat)))!=false))).
+%%%
+%tcf(i_0_82, plain, ![X1:nat, X2:nat]:(eqNat(suc(X1),lenNat(cons_nat(X2,nil_nat)))=eqNat(X1,zero))).
+%%%%%
+%tcf(i_0_68, plain, ![X1:nat, X2:nat, X3:list_nat]:(eqNat(suc(X1),lenNat(cons_nat(X2,X3)))=eqNat(X1,lenNat(X3)))).
+%
+%tcf(i_0_155, plain, ![X2:nat, X1:nat]:(compareNat(zero,lenNat(insertBad_case1(false,X2,X1,nil_nat)))=lt)).
+%%%%
+%tcf(i_0_103, plain, ![X2:nat, X1:nat, X3:list_nat]:(compareNat(zero,lenNat(insertBad_case1(false,X2,X1,X3)))=lt)).
+%
+%tcf(i_0_157, plain, ![X2:nat, X1:nat]:(compareNat(lenNat(insertBad_case1(false,X2,X1,nil_nat)),zero)=gt)).
+%
+%tcf(i_0_210, plain, ![X1:nat, X2:nat]:(eqNat(lenNat(cons_nat(X1,nil_nat)),lenNat(cons_nat(X2,nil_nat)))=true)).
+%
+%tcf(i_0_198, negated_conjecture, ![X1:nat]:(($answer(esk1_1(cons_nat(X1,nil_nat)))|true!=false))).
+%
+%tcf(i_0_152, plain, ![X2:nat, X1:nat, X8:nat]:(lenNat(insertBad_case1(false,X2,X1,nil_nat))=lenNat(insertBad_case1(false,X2,X8,nil_nat)))).
+%%
+%tcf(i_0_69, plain, ![X2:nat, X3:list_nat, X1:nat]:(eqNat(lenNat(cons_nat(X2,X3)),suc(X1))=eqNat(lenNat(X3),X1))).
+%
+%tcf(i_0_107, plain, ![X2:nat, X1:nat, X3:list_nat]:(compareNat(lenNat(insertBad_case1(false,X2,X1,X3)),zero)=gt)).
+%
+%tcf(i_0_70, plain, ![X1:nat, X2:nat, X3:list_nat]:(compareNat(suc(X1),lenNat(cons_nat(X2,X3)))=compareNat(X1,lenNat(X3)))).
+%
+%tcf(i_0_71, plain, ![X2:nat, X3:list_nat, X1:nat]:(compareNat(lenNat(cons_nat(X2,X3)),suc(X1))=compareNat(lenNat(X3),X1))).
+%%%
+%tcf(i_0_95, plain, ![X3:list_nat]:(app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(insertBad_0,zero),cons_nat(zero,X3))=cons_nat(zero,X3))).
+%%
+%tcf(i_0_187, plain, ![X2:nat, X1:nat]:(lenNat(insertBad_case1(false,X2,X1,nil_nat))=lenNat(insertBad_case1(false,zero,zero,nil_nat)))).
+%%%
+%tcf(i_0_72, plain, ![X2:nat, X1:nat, X3:list_nat]:(lenNat(insertBad_case1(false,X2,X1,X3))=lenNat(insertBad_case1(false,X2,zero,X3)))).
+%
+%tcf(i_0_238, plain, ![X2:nat, X1:nat, X3:list_nat]:(eqNat(lenNat(cons_nat(X2,nil_nat)),lenNat(cons_nat(X1,X3)))=eqNat(zero,lenNat(X3)))).
+%
+%tcf(i_0_131, negated_conjecture, ![X1:nat, X3:list_nat, X2:nat]:(($answer(esk1_1(cons_nat(X1,X3)))|eqNat(lenNat(foldrNatListNat(insertBad_0,nil_nat,cons_nat(X1,X3))),lenNat(cons_nat(X2,X3)))!=false))).
+%%%%
+%tcf(i_0_348, plain, ![X1:nat, X8:nat, X2:nat]:(eqNat(lenNat(cons_nat(X1,nil_nat)),lenNat(insertBad_case1(false,X8,X2,nil_nat)))=false)).
+%%%%
+%tcf(i_0_307, plain, ![X2:nat, X8:nat, X1:nat]:(lenNat(insertBad_case1(false,X2,X8,nil_nat))=lenNat(insertBad_case1(false,zero,X1,nil_nat)))).
+%
+%tcf(i_0_74, plain, ![X1:nat, X3:list_nat, X2:nat, X4:list_nat]:(cons_nat(X1,foldrNatListNat(insertBad_0,X3,cons_nat(X2,X4)))=insertBad_case1(false,X2,X1,foldrNatListNat(insertBad_0,X3,X4)))).
+%
+%tcf(i_0_267, plain, ![X1:nat, X3:list_nat, X2:nat]:(eqNat(lenNat(cons_nat(X1,X3)),lenNat(cons_nat(X2,nil_nat)))=eqNat(lenNat(X3),zero))).
+%%%%
+%tcf(i_0_302, plain, ![X1:nat, X3:list_nat]:(insertBad_case1(false,zero,X1,cons_nat(zero,X3))=cons_nat(X1,cons_nat(zero,X3)))).
+%
+%tcf(i_0_433, plain, ![X2:nat, X1:nat, X8:nat]:(eqNat(lenNat(insertBad_case1(false,X2,X1,nil_nat)),lenNat(cons_nat(X8,nil_nat)))=false)).
+%%%%%%%
+%tcf(i_0_96, plain, ![X1:nat, X3:list_nat]:(app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(insertBad_0,zero),cons_nat(suc(X1),X3))=cons_nat(zero,X3))).
+%
+%tcf(i_0_460, plain, ![X1:nat, X2:nat, X3:list_nat]:(insertBad_case1(false,zero,X1,cons_nat(suc(X2),X3))=cons_nat(X1,cons_nat(zero,X3)))).
+%
+%tcf(i_0_239, plain, ![X2:nat, X3:list_nat, X1:nat, X4:list_nat]:(eqNat(lenNat(cons_nat(X2,X3)),lenNat(cons_nat(X1,X4)))=eqNat(lenNat(X3),lenNat(X4)))).
+%%%%%%
+%tcf(i_0_392, plain, ![X1:nat, X2:nat, X9:nat, X10:nat]:(lenNat(insertBad_case1(false,X1,X2,nil_nat))=lenNat(insertBad_case1(false,X9,X10,nil_nat)))).
+%
+%tcf(i_0_97, plain, ![X1:nat, X3:list_nat]:(app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(insertBad_0,suc(X1)),cons_nat(zero,X3))=insertBad_case1(false,suc(X1),zero,X3))).
+%%
+%tcf(i_0_289, plain, ![X2:nat, X1:nat, X3:list_nat]:(compareNat(lenNat(cons_nat(X2,nil_nat)),lenNat(cons_nat(X1,X3)))=compareNat(zero,lenNat(X3)))).
+%
+%tcf(i_0_290, plain, ![X2:nat, X3:list_nat, X1:nat, X4:list_nat]:(compareNat(lenNat(cons_nat(X2,X3)),lenNat(cons_nat(X1,X4)))=compareNat(lenNat(X3),lenNat(X4)))).
+%%%%%%%%
+%tcf(i_0_98, plain, ![X1:nat, X2:nat, X3:list_nat]:(insertBad_case1(not(isGT(compareNat(X1,X2))),suc(X1),suc(X2),X3)=app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(insertBad_0,suc(X1)),cons_nat(suc(X2),X3)))).
+%%
+%tcf(i_0_150, plain, ![X2:nat, X1:nat, X3:list_nat, X8:nat]:(lenNat(insertBad_case1(false,X2,X1,X3))=lenNat(insertBad_case1(false,X2,X8,X3)))).
+%%
+%tcf(i_0_174, plain, ![X1:nat, X2:nat, X3:list_nat, X8:nat, X9:nat]:(lenNat(cons_nat(X1,cons_nat(X2,X3)))=lenNat(cons_nat(X8,cons_nat(X9,X3))))).
+%%%%%%%
+%tcf(i_0_102, plain, ![X1:nat, X3:list_nat, X4:list_nat]:(app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(insertBad_0,zero),cons_nat(lenNat(cons_nat(X1,X3)),X4))=cons_nat(zero,X4))).
+%%%%%%
+%tcf(i_0_231, plain, ![X1:nat, X8:nat, X2:nat]:(eqNat(suc(X1),lenNat(insertBad_case1(false,X8,X2,nil_nat)))=eqNat(X1,lenNat(cons_nat(X8,nil_nat))))).
+%%%
+%tcf(i_0_360, negated_conjecture, ![X2:nat, X1:nat, X8:nat]:(($answer(esk1_1(insertBad_case1(false,X2,X1,nil_nat)))|eqNat(lenNat(foldrNatListNat(insertBad_0,nil_nat,insertBad_case1(false,X2,X1,nil_nat))),lenNat(insertBad_case1(false,X2,X8,nil_nat)))!=false))).
+%%
+%tcf(i_0_106, plain, ![X1:nat, X3:list_nat, X4:list_nat]:(app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(insertBad_0,lenNat(cons_nat(X1,X3))),cons_nat(zero,X4))=insertBad_case1(false,lenNat(cons_nat(X1,X3)),zero,X4))).
+%
+%tcf(i_0_270, plain, ![X2:nat, X1:nat, X8:nat]:(eqNat(lenNat(insertBad_case1(false,X2,X1,nil_nat)),suc(X8))=eqNat(lenNat(cons_nat(X2,nil_nat)),X8))).
+%%%%%%%
+%tcf(i_0_496, negated_conjecture, ![X1:nat, X2:nat, X8:nat, X9:nat]:(($answer(esk1_1(insertBad_case1(false,X1,X2,nil_nat)))|eqNat(lenNat(foldrNatListNat(insertBad_0,nil_nat,insertBad_case1(false,X1,X2,nil_nat))),lenNat(insertBad_case1(false,X8,X9,nil_nat)))!=false))).
+%%%%%%%%%%%%%
+%tcf(i_0_304, plain, ![X1:nat]:(app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(insertBad_0,zero),insertBad_case1(false,X1,zero,nil_nat))=insertBad_case1(false,X1,zero,nil_nat))).
+%%%%%%%
+%tcf(i_0_282, plain, ![X1:nat, X8:nat, X2:nat]:(compareNat(suc(X1),lenNat(insertBad_case1(false,X8,X2,nil_nat)))=compareNat(X1,lenNat(cons_nat(X8,nil_nat))))).
+%
+%tcf(i_0_702, plain, ![X8:nat, X1:nat, X2:nat]:(compareNat(lenNat(cons_nat(X8,nil_nat)),lenNat(insertBad_case1(false,X1,X2,nil_nat)))=lt)).
+%%%%
+%tcf(i_0_192, plain, ![X6:fun_nat_fun_list_nat_list_nat, X1:nat, X2:nat, X3:list_nat]:(app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(X6,X1),app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(X6,X2),X3))=foldrNatListNat(X6,X3,insertBad_case1(false,X2,X1,nil_nat)))).
+%
+%tcf(i_0_716, plain, ![X1:nat, X2:nat]:(app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(insertBad_0,X1),cons_nat(X2,nil_nat))=foldrNatListNat(insertBad_0,nil_nat,insertBad_case1(false,X2,X1,nil_nat)))).
+%
+%tcf(i_0_726, plain, foldrNatListNat(insertBad_0,nil_nat,insertBad_case1(false,zero,zero,nil_nat))=cons_nat(zero,nil_nat)).
+%% SZS status Theorem
+% SZS answers Tuple [[insertBad_case1(false,zero,zero,nil_nat)]|_]
+
+% Proof found!

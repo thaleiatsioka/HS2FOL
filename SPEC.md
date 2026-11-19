@@ -279,6 +279,38 @@ operations.
 | `Names` | FOL naming conventions |
 | `Main` | command line, module loading |
 
+## 9a. Typed output (TFF), branch `typed`
+
+On this branch hs2fol writes TPTP TFF0 (monomorphic many-sorted logic) by
+default; `--untyped` writes the FOF of sections 1–8.
+
+* **Full monomorphisation.** Every polymorphic function is specialised to each
+  type it is used at, not only the overloaded ones (`map` at `Nat -> Nat`
+  becomes `mapNatNat`). Type variables of a property that stay free
+  become abstract sorts without constructors; ambiguous ones default to `()`.
+* **Sorts.** Every Haskell type becomes a sort: `nat`, `bool`,
+  `list_nat`, `bst_nat_nat`, `pair_nat_nat`. Function types become
+  uninterpreted sorts such as `fun_nat_bool`.
+* **Sort inference.** Program functions have monomorphic types. Constructors, constructor
+  closures, `app` and `undefined` are polymorphic in the untyped equations;
+  each occurrence gets its instance by unification over the equations, and
+  every (symbol, instance) pair becomes its own TFF symbol (`cons_nat`,
+  `nil_pair_nat_nat`, `app_nat_bool : (fun_nat_bool * nat) > bool`). The
+  sorts of functions created by lambda lifting are inferred too.
+* **Builders per sort.** `fn_const_A_B : B > fun_A_B` for every needed
+  function sort, `fn_id_A : fun_A_A` only when domain and codomain agree, and
+  `fn_case_T_B`. The needed sorts are collected from the property's argument
+  types and the sorts the builders' own arguments need.
+* **Output.** `tff(s_type, type, s: $tType).` for every sort,
+  `tff(f_decl, type, f: (s1 * s2) > s).` for every symbol, axioms
+  `tff(l, axiom, ![X: s, ...]: lhs = rhs).`, and the conjecture
+  `tff(prop, conjecture, ?[X1: s1, ...]: prop(X1, ...) = false).`
+
+With sorts, every witness a prover returns is well-sorted. Sorts are
+Haskell types and every symbol is declared at its Haskell type, so the
+witness is a well-typed Haskell input. The soundness argument of section 5
+then applies to the witness itself, not only to the untyped model.
+
 ## 9. Issues found in the original description, and how they are resolved
 
 1. **Monomorphised names must include element types.** `eqList` cannot serve

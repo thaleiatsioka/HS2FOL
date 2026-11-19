@@ -1,0 +1,235 @@
+Here is the input problem:
+  Axiom 1 (not_2): not(true) = false.
+  Axiom 2 (not_1): not(false) = true.
+  Axiom 3 (isGT_2): isGT(eq) = false.
+  Axiom 4 (isGT_3): isGT(gt) = true.
+  Axiom 5 (isGT_1): isGT(lt) = false.
+  Axiom 6 (lenNat_1): lenNat(nil_nat) = zero.
+  Axiom 7 (types14): nil_nat = nil_nat.
+  Axiom 8 (app_insertBad_0_1): app_nat_fun_list_nat_list_nat(insertBad_0, X) = insertBad_1(X).
+  Axiom 9 (types11): prop_sortLength(X) = prop_sortLength(X).
+  Axiom 10 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 11 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 12 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 13 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 14 (compareNat_1): compareNat(zero, zero) = eq.
+  Axiom 15 (compareNat_2): compareNat(zero, suc(X)) = lt.
+  Axiom 16 (compareNat_3): compareNat(suc(X), zero) = gt.
+  Axiom 17 (compareNat_4): compareNat(suc(X), suc(Y)) = compareNat(X, Y).
+  Axiom 18 (types9): isortBad(X) = isortBad(X).
+  Axiom 19 (types10): lenNat(X) = lenNat(X).
+  Axiom 20 (insertBad_1): insertBad(X, nil_nat) = cons_nat(X, nil_nat).
+  Axiom 21 (types8): isortBad(X) = isortBad(X).
+  Axiom 22 (types17): X = X.
+  Axiom 23 (types16): app_list_nat_list_nat(X, Y) = app_list_nat_list_nat(X, Y).
+  Axiom 24 (app_insertBad_1_1): app_list_nat_list_nat(insertBad_1(X), Y) = insertBad(X, Y).
+  Axiom 25 (lenNat_2): lenNat(cons_nat(X, Y)) = suc(lenNat(Y)).
+  Axiom 26 (types5): insertBad(X, Y) = insertBad(X, Y).
+  Axiom 27 (foldrNatListNat_1): foldrNatListNat(X, Y, nil_nat) = Y.
+  Axiom 28 (isortBad_1): isortBad(X) = foldrNatListNat(insertBad_0, nil_nat, X).
+  Axiom 29 (types13): cons_nat(X, Y) = cons_nat(X, Y).
+  Axiom 30 (types15): app_list_nat_list_nat(X, Y) = app_list_nat_list_nat(X, Y).
+  Axiom 31 (types4): insertBad(X, Y) = insertBad(X, Y).
+  Axiom 32 (types12): cons_nat(X, Y) = cons_nat(X, Y).
+  Axiom 33 (leNat_1): leNat(X, Y) = not(isGT(compareNat(X, Y))).
+  Axiom 34 (insertBad_case1_1): insertBad_case1(true, X, Y, Z) = cons_nat(X, Z).
+  Axiom 35 (types3): foldrNatListNat(X, Y, Z) = foldrNatListNat(X, Y, Z).
+  Axiom 36 (types2): foldrNatListNat(X, Y, Z) = foldrNatListNat(X, Y, Z).
+  Axiom 37 (insertBad_case1_2): insertBad_case1(false, X, Y, Z) = cons_nat(Y, insertBad(X, Z)).
+  Axiom 38 (types1): foldrNatListNat(X, Y, Z) = foldrNatListNat(X, Y, Z).
+  Axiom 39 (prop_sortLength_1): prop_sortLength(X) = eqNat(lenNat(isortBad(X)), lenNat(X)).
+  Axiom 40 (types7): insertBad_case1(X, Y, Z, W) = insertBad_case1(X, Y, Z, W).
+  Axiom 41 (types6): insertBad_case1(X, Y, Z, W) = insertBad_case1(X, Y, Z, W).
+  Axiom 42 (insertBad_2): insertBad(X, cons_nat(Y, Z)) = insertBad_case1(leNat(X, Y), X, Y, Z).
+  Axiom 43 (foldrNatListNat_2): foldrNatListNat(X, Y, cons_nat(Z, W)) = app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(X, Z), foldrNatListNat(X, Y, W)).
+  Axiom 44 (reflexivity): equals(X, X) = true.
+  Axiom 45 (prop_sortLength): equals(prop_sortLength(X), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. not(true) -> false
+2. not(false) -> true
+3. isGT(eq) -> false
+4. isGT(gt) -> true
+5. isGT(lt) -> false
+6. lenNat(nil_nat) -> zero
+7. nil_nat -> nil_nat
+8. app_nat_fun_list_nat_list_nat(insertBad_0, X) -> insertBad_1(X)
+9. prop_sortLength(X) -> prop_sortLength(X)
+10. eqNat(zero, zero) -> true
+11. eqNat(zero, suc(X)) -> false
+12. eqNat(suc(X), zero) -> false
+13. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+14. compareNat(zero, zero) -> eq
+15. compareNat(zero, suc(X)) -> lt
+16. compareNat(suc(X), zero) -> gt
+17. compareNat(suc(X), suc(Y)) -> compareNat(X, Y)
+18. isortBad(X) -> isortBad(X)
+19. lenNat(X) -> lenNat(X)
+20. cons_nat(X, nil_nat) -> insertBad(X, nil_nat)
+21. isortBad(X) -> isortBad(X)
+22. X -> X
+23. app_list_nat_list_nat(X, Y) -> app_list_nat_list_nat(X, Y)
+24. app_list_nat_list_nat(insertBad_1(X), Y) -> insertBad(X, Y)
+25. lenNat(cons_nat(X, Y)) -> suc(lenNat(Y))
+26. insertBad(X, Y) -> insertBad(X, Y)
+27. foldrNatListNat(X, Y, nil_nat) -> Y
+28. foldrNatListNat(insertBad_0, nil_nat, X) -> isortBad(X)
+29. cons_nat(X, Y) -> cons_nat(X, Y)
+30. app_list_nat_list_nat(X, Y) -> app_list_nat_list_nat(X, Y)
+31. insertBad(X, Y) -> insertBad(X, Y)
+32. cons_nat(X, Y) -> cons_nat(X, Y)
+33. not(isGT(compareNat(X, Y))) -> leNat(X, Y)
+34. insertBad_case1(true, X, Y, Z) -> cons_nat(X, Z)
+35. foldrNatListNat(X, Y, Z) -> foldrNatListNat(X, Y, Z)
+36. foldrNatListNat(X, Y, Z) -> foldrNatListNat(X, Y, Z)
+37. cons_nat(X, insertBad(Y, Z)) -> insertBad_case1(false, Y, X, Z)
+38. foldrNatListNat(X, Y, Z) -> foldrNatListNat(X, Y, Z)
+39. eqNat(lenNat(isortBad(X)), lenNat(X)) -> prop_sortLength(X)
+40. insertBad_case1(X, Y, Z, W) -> insertBad_case1(X, Y, Z, W)
+41. insertBad_case1(X, Y, Z, W) -> insertBad_case1(X, Y, Z, W)
+42. insertBad_case1(leNat(X, Y), X, Y, Z) -> insertBad(X, cons_nat(Y, Z))
+43. app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(X, Y), foldrNatListNat(X, Z, W)) -> foldrNatListNat(X, Z, cons_nat(Y, W))
+44. equals(X, X) -> true
+45. equals(prop_sortLength(X), false) -> false
+46. isortBad(nil_nat) -> nil_nat
+47. prop_sortLength(nil_nat) -> true
+48. leNat(zero, zero) -> true
+49. leNat(zero, suc(X)) -> true
+50. leNat(suc(X), zero) -> false
+51. equals(true, false) -> false
+52. lenNat(insertBad(X, nil_nat)) -> suc(zero)
+53. insertBad(X, isortBad(Y)) -> isortBad(cons_nat(X, Y))
+54. isortBad(insertBad(X, nil_nat)) -> insertBad(X, nil_nat)
+55. prop_sortLength(insertBad(X, nil_nat)) -> true
+56. leNat(suc(X), suc(Y)) -> leNat(X, Y)
+57. insertBad(zero, cons_nat(zero, X)) -> cons_nat(zero, X)
+58. foldrNatListNat(X, Y, insertBad(Z, nil_nat)) -> app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(X, Z), Y)
+59. insertBad(zero, insertBad(zero, nil_nat)) -> insertBad(zero, nil_nat)
+60. lenNat(insertBad_case1(false, X, Y, Z)) -> suc(lenNat(insertBad(X, Z)))
+61. insertBad(zero, cons_nat(suc(X), Y)) -> cons_nat(zero, Y)
+62. foldrNatListNat(insertBad_0, X, cons_nat(Y, Z)) -> insertBad(Y, foldrNatListNat(insertBad_0, X, Z))
+63. cons_nat(X, isortBad(cons_nat(Y, Z))) -> insertBad_case1(false, Y, X, isortBad(Z))
+64. insertBad(zero, insertBad(suc(X), nil_nat)) -> insertBad(zero, nil_nat)
+65. insertBad(suc(X), cons_nat(zero, Y)) -> insertBad_case1(false, suc(X), zero, Y)
+66. isortBad(insertBad_case1(false, X, Y, nil_nat)) -> insertBad(Y, insertBad(X, nil_nat))
+67. insertBad(suc(X), insertBad(zero, nil_nat)) -> insertBad_case1(false, suc(X), zero, nil_nat)
+68. insertBad(zero, insertBad_case1(false, X, zero, Y)) -> insertBad_case1(false, X, zero, Y)
+69. insertBad_case1(false, zero, X, cons_nat(zero, Y)) -> cons_nat(X, cons_nat(zero, Y))
+70. eqNat(lenNat(isortBad(cons_nat(X, Y))), suc(lenNat(Y))) -> prop_sortLength(cons_nat(X, Y))
+71. insertBad_case1(false, zero, X, insertBad(zero, nil_nat)) -> insertBad_case1(false, zero, X, nil_nat)
+72. insertBad(zero, insertBad_case1(false, X, suc(Y), Z)) -> insertBad_case1(false, X, zero, Z)
+73. insertBad_case1(false, zero, X, cons_nat(suc(Y), Z)) -> cons_nat(X, cons_nat(zero, Z))
+74. foldrNatListNat(insertBad_0, X, insertBad_case1(false, Y, Z, W)) -> insertBad(Z, foldrNatListNat(insertBad_0, X, insertBad(Y, W)))
+75. cons_nat(X, isortBad(insertBad_case1(false, Y, Z, W))) -> insertBad_case1(false, Z, X, isortBad(insertBad(Y, W)))
+76. insertBad_case1(leNat(X, Y), suc(X), suc(Y), Z) -> insertBad(suc(X), cons_nat(suc(Y), Z))
+77. insertBad(suc(zero), cons_nat(suc(zero), X)) -> cons_nat(suc(zero), X)
+78. insertBad(suc(zero), insertBad(suc(zero), nil_nat)) -> insertBad(suc(zero), nil_nat)
+79. insertBad(suc(zero), cons_nat(suc(suc(X)), Y)) -> cons_nat(suc(zero), Y)
+80. insertBad(suc(zero), insertBad(suc(suc(X)), nil_nat)) -> insertBad(suc(zero), nil_nat)
+81. insertBad_case1(false, zero, X, insertBad(suc(Y), nil_nat)) -> insertBad_case1(false, zero, X, nil_nat)
+82. cons_nat(X, insertBad_case1(false, suc(Y), zero, Z)) -> insertBad_case1(false, suc(Y), X, cons_nat(zero, Z))
+83. insertBad(suc(X), insertBad_case1(false, Y, zero, Z)) -> insertBad_case1(false, suc(X), zero, insertBad(Y, Z))
+84. insertBad(suc(suc(X)), cons_nat(suc(zero), Y)) -> insertBad_case1(false, suc(suc(X)), suc(zero), Y)
+85. insertBad_case1(false, suc(zero), X, cons_nat(suc(zero), Y)) -> cons_nat(X, cons_nat(suc(zero), Y))
+86. insertBad(suc(zero), insertBad_case1(false, X, suc(zero), Y)) -> insertBad_case1(false, X, suc(zero), Y)
+87. app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(X, Y), app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(X, Z), W)) -> foldrNatListNat(X, W, insertBad_case1(false, Z, Y, nil_nat))
+88. isortBad(cons_nat(X, insertBad_case1(false, Y, Z, nil_nat))) -> insertBad(X, insertBad(Z, insertBad(Y, nil_nat)))
+89. insertBad_case1(false, suc(zero), X, insertBad(suc(zero), nil_nat)) -> insertBad_case1(false, suc(zero), X, nil_nat)
+90. insertBad(suc(suc(X)), insertBad(suc(zero), nil_nat)) -> insertBad_case1(false, suc(suc(X)), suc(zero), nil_nat)
+91. eqNat(lenNat(insertBad(X, insertBad(Y, nil_nat))), suc(suc(zero))) -> prop_sortLength(insertBad_case1(false, Y, X, nil_nat))
+92. prop_sortLength(insertBad_case1(false, zero, zero, nil_nat)) -> false
+93. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (not_1): not(false) = true.
+Axiom 2 (isGT_2): isGT(eq) = false.
+Axiom 3 (lenNat_1): lenNat(nil_nat) = zero.
+Axiom 5 (app_insertBad_0_1): app_nat_fun_list_nat_list_nat(insertBad_0, X) = insertBad_1(X).
+Axiom 6 (eqNat_2): eqNat(zero, suc(X)) = false.
+Axiom 7 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+Axiom 8 (compareNat_1): compareNat(zero, zero) = eq.
+Axiom 9 (insertBad_1): insertBad(X, nil_nat) = cons_nat(X, nil_nat).
+Axiom 10 (app_insertBad_1_1): app_list_nat_list_nat(insertBad_1(X), Y) = insertBad(X, Y).
+Axiom 11 (lenNat_2): lenNat(cons_nat(X, Y)) = suc(lenNat(Y)).
+Axiom 12 (foldrNatListNat_1): foldrNatListNat(X, Y, nil_nat) = Y.
+Axiom 13 (isortBad_1): isortBad(X) = foldrNatListNat(insertBad_0, nil_nat, X).
+Axiom 14 (leNat_1): leNat(X, Y) = not(isGT(compareNat(X, Y))).
+Axiom 15 (insertBad_case1_1): insertBad_case1(true, X, Y, Z) = cons_nat(X, Z).
+Axiom 16 (insertBad_case1_2): insertBad_case1(false, X, Y, Z) = cons_nat(Y, insertBad(X, Z)).
+Axiom 17 (prop_sortLength_1): prop_sortLength(X) = eqNat(lenNat(isortBad(X)), lenNat(X)).
+Axiom 18 (insertBad_2): insertBad(X, cons_nat(Y, Z)) = insertBad_case1(leNat(X, Y), X, Y, Z).
+Axiom 19 (foldrNatListNat_2): foldrNatListNat(X, Y, cons_nat(Z, W)) = app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(X, Z), foldrNatListNat(X, Y, W)).
+
+Lemma 20: insertBad(X, isortBad(Y)) = isortBad(cons_nat(X, Y)).
+Proof:
+  insertBad(X, isortBad(Y))
+= { by axiom 10 (app_insertBad_1_1) R->L }
+  app_list_nat_list_nat(insertBad_1(X), isortBad(Y))
+= { by axiom 5 (app_insertBad_0_1) R->L }
+  app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(insertBad_0, X), isortBad(Y))
+= { by axiom 13 (isortBad_1) }
+  app_list_nat_list_nat(app_nat_fun_list_nat_list_nat(insertBad_0, X), foldrNatListNat(insertBad_0, nil_nat, Y))
+= { by axiom 19 (foldrNatListNat_2) R->L }
+  foldrNatListNat(insertBad_0, nil_nat, cons_nat(X, Y))
+= { by axiom 13 (isortBad_1) R->L }
+  isortBad(cons_nat(X, Y))
+
+Lemma 21: lenNat(insertBad(X, nil_nat)) = suc(zero).
+Proof:
+  lenNat(insertBad(X, nil_nat))
+= { by axiom 9 (insertBad_1) }
+  lenNat(cons_nat(X, nil_nat))
+= { by axiom 11 (lenNat_2) }
+  suc(lenNat(nil_nat))
+= { by axiom 3 (lenNat_1) }
+  suc(zero)
+
+Goal 1 (prop_sortLength): prop_sortLength(X) = false.
+The goal is true when:
+  X = insertBad_case1(false, zero, zero, nil_nat)
+
+Proof:
+  prop_sortLength(insertBad_case1(false, zero, zero, nil_nat))
+= { by axiom 16 (insertBad_case1_2) }
+  prop_sortLength(cons_nat(zero, insertBad(zero, nil_nat)))
+= { by axiom 17 (prop_sortLength_1) }
+  eqNat(lenNat(isortBad(cons_nat(zero, insertBad(zero, nil_nat)))), lenNat(cons_nat(zero, insertBad(zero, nil_nat))))
+= { by axiom 11 (lenNat_2) }
+  eqNat(lenNat(isortBad(cons_nat(zero, insertBad(zero, nil_nat)))), suc(lenNat(insertBad(zero, nil_nat))))
+= { by lemma 21 }
+  eqNat(lenNat(isortBad(cons_nat(zero, insertBad(zero, nil_nat)))), suc(suc(zero)))
+= { by lemma 20 R->L }
+  eqNat(lenNat(insertBad(zero, isortBad(insertBad(zero, nil_nat)))), suc(suc(zero)))
+= { by axiom 9 (insertBad_1) }
+  eqNat(lenNat(insertBad(zero, isortBad(cons_nat(zero, nil_nat)))), suc(suc(zero)))
+= { by lemma 20 R->L }
+  eqNat(lenNat(insertBad(zero, insertBad(zero, isortBad(nil_nat)))), suc(suc(zero)))
+= { by axiom 13 (isortBad_1) }
+  eqNat(lenNat(insertBad(zero, insertBad(zero, foldrNatListNat(insertBad_0, nil_nat, nil_nat)))), suc(suc(zero)))
+= { by axiom 12 (foldrNatListNat_1) }
+  eqNat(lenNat(insertBad(zero, insertBad(zero, nil_nat))), suc(suc(zero)))
+= { by axiom 9 (insertBad_1) }
+  eqNat(lenNat(insertBad(zero, cons_nat(zero, nil_nat))), suc(suc(zero)))
+= { by axiom 18 (insertBad_2) }
+  eqNat(lenNat(insertBad_case1(leNat(zero, zero), zero, zero, nil_nat)), suc(suc(zero)))
+= { by axiom 14 (leNat_1) }
+  eqNat(lenNat(insertBad_case1(not(isGT(compareNat(zero, zero))), zero, zero, nil_nat)), suc(suc(zero)))
+= { by axiom 8 (compareNat_1) }
+  eqNat(lenNat(insertBad_case1(not(isGT(eq)), zero, zero, nil_nat)), suc(suc(zero)))
+= { by axiom 2 (isGT_2) }
+  eqNat(lenNat(insertBad_case1(not(false), zero, zero, nil_nat)), suc(suc(zero)))
+= { by axiom 1 (not_1) }
+  eqNat(lenNat(insertBad_case1(true, zero, zero, nil_nat)), suc(suc(zero)))
+= { by axiom 15 (insertBad_case1_1) }
+  eqNat(lenNat(cons_nat(zero, nil_nat)), suc(suc(zero)))
+= { by axiom 9 (insertBad_1) R->L }
+  eqNat(lenNat(insertBad(zero, nil_nat)), suc(suc(zero)))
+= { by lemma 21 }
+  eqNat(suc(zero), suc(suc(zero)))
+= { by axiom 7 (eqNat_4) }
+  eqNat(zero, suc(zero))
+= { by axiom 6 (eqNat_2) }
+  false
+
+RESULT: Theorem (the conjecture is true).

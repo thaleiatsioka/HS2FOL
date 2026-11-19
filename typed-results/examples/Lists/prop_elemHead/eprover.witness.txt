@@ -1,0 +1,7 @@
+property:   prop_elemHead
+file:       examples/Lists.hs
+prover:     eprover
+witness:    prop_elemHead Zero ((Suc _X2) : (Zero : _X3))
+input:      prop_elemHead Zero ((Suc undefined) : (Zero : undefined))
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

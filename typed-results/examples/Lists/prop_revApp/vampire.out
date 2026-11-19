@@ -1,0 +1,199 @@
+% Running in auto input_syntax mode. Trying TPTP
+% Detected formulas, will run a generic FOF schedule.
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_tgt=full:sil=2000:alpa=true:random_seed=2614555133:st=5:i=107:sd=1:qa=plain:ss=on:er=filter:ssat=axiom_1 on problem for (1ds/107Mi)
+%  found proof, printing to "/tmp/vampire-proof-10291-10293"...
+% SZS answers Tuple [∀X0.[cons_nat(zero,nil_nat),cons_nat(suc(X0),nil_nat)]|_] for problem
+% ...printing done.
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for problem
+% SZS output start Proof for problem
+tff(type_def_5,type,bool: $tType).
+tff(type_def_6,type,nat: $tType).
+tff(type_def_7,type,list_nat: $tType).
+tff(func_def_0,type,opAnd: (bool * bool) > bool).
+tff(func_def_1,type,opAppendNat: (list_nat * list_nat) > list_nat).
+tff(func_def_2,type,eqNat: (nat * nat) > bool).
+tff(func_def_3,type,eqListNat: (list_nat * list_nat) > bool).
+tff(func_def_4,type,prop_revApp: (list_nat * list_nat) > bool).
+tff(func_def_5,type,reverseNat: list_nat > list_nat).
+tff(func_def_6,type,cons_nat: (nat * list_nat) > list_nat).
+tff(func_def_7,type,false: bool).
+tff(func_def_8,type,suc: nat > nat).
+tff(func_def_9,type,true: bool).
+tff(func_def_10,type,zero: nat).
+tff(func_def_11,type,nil_nat: list_nat).
+tff(func_def_12,type,sF1: (list_nat * list_nat) > list_nat).
+tff(func_def_13,type,sF2: (list_nat * list_nat) > list_nat).
+tff(func_def_14,type,sF3: (list_nat * list_nat) > bool).
+tff(pred_def_1,type,ans0: (list_nat * list_nat) > $o).
+tff(f1,axiom,(
+  ! [X0 : bool] : (opAnd(false,X0) = false)),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_revApp/problem.p','opAnd_1')).
+tff(f3,axiom,(
+  ! [X0 : list_nat, X1 : list_nat] : (prop_revApp(X0,X1) = eqListNat(reverseNat(opAppendNat(X0,X1)),opAppendNat(reverseNat(X0),reverseNat(X1))))),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_revApp/problem.p','prop_revApp_1')).
+tff(f6,axiom,(
+  ! [X0 : nat] : (eqNat(suc(X0),zero) = false)),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_revApp/problem.p','eqNat_3')).
+tff(f8,axiom,(
+  eqListNat(nil_nat,nil_nat) = true),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_revApp/problem.p','eqListNat_1')).
+tff(f11,axiom,(
+  ! [X0 : nat, X1 : list_nat, X2 : nat, X3 : list_nat] : (eqListNat(cons_nat(X0,X1),cons_nat(X2,X3)) = opAnd(eqNat(X0,X2),eqListNat(X1,X3)))),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_revApp/problem.p','eqListNat_4')).
+tff(f12,axiom,(
+  reverseNat(nil_nat) = nil_nat),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_revApp/problem.p','reverseNat_1')).
+tff(f13,axiom,(
+  ! [X0 : nat, X1 : list_nat] : (reverseNat(cons_nat(X0,X1)) = opAppendNat(reverseNat(X1),cons_nat(X0,nil_nat)))),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_revApp/problem.p','reverseNat_2')).
+tff(f14,axiom,(
+  ! [X0 : list_nat] : (opAppendNat(nil_nat,X0) = X0)),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_revApp/problem.p','opAppendNat_1')).
+tff(f15,axiom,(
+  ! [X0 : nat, X1 : list_nat, X2 : list_nat] : (opAppendNat(cons_nat(X0,X1),X2) = cons_nat(X0,opAppendNat(X1,X2)))),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_revApp/problem.p','opAppendNat_2')).
+tff(f16,conjecture,(
+  ? [X0 : list_nat, X1 : list_nat] : (prop_revApp(X0,X1) = false)),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_revApp/problem.p','prop_revApp')).
+tff(f17,negated_conjecture,(
+  ~ ? [X0 : list_nat, X1 : list_nat] : (prop_revApp(X0,X1) = false)),
+  inference(conjecture_negation,[status(cth)],[f16])).
+tff(f18,plain,(
+  ~ ? [X0 : list_nat, X1 : list_nat] : ((prop_revApp(X0,X1) = false) & ans0(X0,X1))),
+  inference(answer_literal_injection,[],[f17])).
+tff(f19,plain,(
+  ! [X0 : list_nat, X1 : list_nat] : ((false != prop_revApp(X0,X1)) | ~ans0(X0,X1))),
+  inference(ennf_transformation,[],[f18])).
+tff(f20,plain,(
+  (! [X0 : bool] : (false = opAnd(false,X0)))),
+  inference(cnf_transformation,[],[f1])).
+tff(f22,plain,(
+  (! [X0 : list_nat,X1 : list_nat] : (prop_revApp(X0,X1) = eqListNat(reverseNat(opAppendNat(X0,X1)),opAppendNat(reverseNat(X0),reverseNat(X1)))))),
+  inference(cnf_transformation,[],[f3])).
+tff(f25,plain,(
+  (! [X0 : nat] : (false = eqNat(suc(X0),zero)))),
+  inference(cnf_transformation,[],[f6])).
+tff(f27,plain,(
+  true = eqListNat(nil_nat,nil_nat)),
+  inference(cnf_transformation,[],[f8])).
+tff(f30,plain,(
+  (! [X0 : nat,X1 : list_nat,X2 : nat,X3 : list_nat] : (eqListNat(cons_nat(X0,X1),cons_nat(X2,X3)) = opAnd(eqNat(X0,X2),eqListNat(X1,X3))))),
+  inference(cnf_transformation,[],[f11])).
+tff(f31,plain,(
+  nil_nat = reverseNat(nil_nat)),
+  inference(cnf_transformation,[],[f12])).
+tff(f32,plain,(
+  (! [X0 : nat,X1 : list_nat] : (reverseNat(cons_nat(X0,X1)) = opAppendNat(reverseNat(X1),cons_nat(X0,nil_nat))))),
+  inference(cnf_transformation,[],[f13])).
+tff(f33,plain,(
+  (! [X0 : list_nat] : (opAppendNat(nil_nat,X0) = X0))),
+  inference(cnf_transformation,[],[f14])).
+tff(f34,plain,(
+  (! [X0 : nat,X1 : list_nat,X2 : list_nat] : (opAppendNat(cons_nat(X0,X1),X2) = cons_nat(X0,opAppendNat(X1,X2))))),
+  inference(cnf_transformation,[],[f15])).
+tff(f35,plain,(
+  (! [X0 : list_nat,X1 : list_nat] : (false != prop_revApp(X0,X1) | ~ans0(X0,X1)))),
+  inference(cnf_transformation,[],[f19])).
+tff(f36,plain,(
+  (! [X0 : list_nat,X1 : list_nat] : (false != eqListNat(reverseNat(opAppendNat(X0,X1)),opAppendNat(reverseNat(X0),reverseNat(X1))) | ~ans0(X0,X1)))),
+  inference(definition_unfolding,[],[f35,f22])).
+tff(f37,definition,(
+  (! [X0 : list_nat,X1 : list_nat] : (sF1(X0,X1) = reverseNat(opAppendNat(X0,X1))))),
+  introduced(definition,[new_symbols(definition,[sF1])],[function_definition])).
+tff(f38,plain,(
+  (! [X0 : list_nat,X1 : list_nat] : (reverseNat(opAppendNat(X0,X1)) = sF1(X0,X1)))),
+  inference(reorient_equations,[],[f37])).
+tff(f39,definition,(
+  (! [X0 : list_nat,X1 : list_nat] : (sF2(X0,X1) = opAppendNat(reverseNat(X0),reverseNat(X1))))),
+  introduced(definition,[new_symbols(definition,[sF2])],[function_definition])).
+tff(f40,plain,(
+  (! [X0 : list_nat,X1 : list_nat] : (opAppendNat(reverseNat(X0),reverseNat(X1)) = sF2(X0,X1)))),
+  inference(reorient_equations,[],[f39])).
+tff(f41,definition,(
+  (! [X0 : list_nat,X1 : list_nat] : (sF3(X0,X1) = eqListNat(sF1(X0,X1),sF2(X0,X1))))),
+  introduced(definition,[new_symbols(definition,[sF3])],[function_definition])).
+tff(f42,plain,(
+  (! [X0 : list_nat,X1 : list_nat] : (eqListNat(sF1(X0,X1),sF2(X0,X1)) = sF3(X0,X1)))),
+  inference(reorient_equations,[],[f41])).
+tff(f43,plain,(
+  (! [X0 : list_nat,X1 : list_nat] : (false != sF3(X0,X1) | ~ans0(X0,X1)))),
+  inference(definition_folding,[],[f36,f42,f40,f38])).
+tff(f67,plain,(
+  (! [X0 : nat] : (reverseNat(cons_nat(X0,nil_nat)) = opAppendNat(nil_nat,cons_nat(X0,nil_nat))))),
+  inference(superposition,[],[f32,f31])).
+tff(f69,plain,(
+  (! [X0 : nat,X1 : list_nat] : (sF1(reverseNat(X1),cons_nat(X0,nil_nat)) = reverseNat(reverseNat(cons_nat(X0,X1)))))),
+  inference(superposition,[],[f38,f32])).
+tff(f70,plain,(
+  (! [X0 : nat] : (cons_nat(X0,nil_nat) = reverseNat(cons_nat(X0,nil_nat))))),
+  inference(forward_demodulation,[],[f67,f33])).
+tff(f71,plain,(
+  (! [X0 : nat,X1 : nat] : (reverseNat(cons_nat(X1,cons_nat(X0,nil_nat))) = opAppendNat(cons_nat(X0,nil_nat),cons_nat(X1,nil_nat))))),
+  inference(superposition,[],[f32,f70])).
+tff(f73,plain,(
+  (! [X0 : nat,X1 : list_nat] : (opAppendNat(reverseNat(X1),cons_nat(X0,nil_nat)) = sF2(X1,cons_nat(X0,nil_nat))))),
+  inference(superposition,[],[f40,f70])).
+tff(f80,plain,(
+  (! [X0 : nat,X1 : list_nat] : (reverseNat(cons_nat(X0,X1)) = sF2(X1,cons_nat(X0,nil_nat))))),
+  inference(forward_demodulation,[],[f73,f32])).
+tff(f82,plain,(
+  (! [X0 : nat,X1 : nat] : (reverseNat(cons_nat(X1,cons_nat(X0,nil_nat))) = cons_nat(X0,opAppendNat(nil_nat,cons_nat(X1,nil_nat)))))),
+  inference(forward_demodulation,[],[f71,f34])).
+tff(f85,plain,(
+  (! [X0 : nat,X1 : nat] : (reverseNat(cons_nat(X1,cons_nat(X0,nil_nat))) = cons_nat(X0,cons_nat(X1,nil_nat))))),
+  inference(forward_demodulation,[],[f82,f33])).
+tff(f116,plain,(
+  (! [X0 : list_nat,X1 : list_nat] : (ans0(X0,X1)))),
+  introduced(theory,[answer_literal_resolver],[])).
+tff(f161,plain,(
+  (! [X0 : nat,X1 : nat] : (reverseNat(reverseNat(cons_nat(X1,cons_nat(X0,nil_nat)))) = sF1(cons_nat(X0,nil_nat),cons_nat(X1,nil_nat))))),
+  inference(superposition,[],[f69,f70])).
+tff(f168,plain,(
+  (! [X0 : nat,X1 : nat] : (reverseNat(cons_nat(X0,cons_nat(X1,nil_nat))) = sF1(cons_nat(X0,nil_nat),cons_nat(X1,nil_nat))))),
+  inference(forward_demodulation,[],[f161,f85])).
+tff(f171,plain,(
+  (! [X0 : nat,X1 : nat] : (cons_nat(X1,cons_nat(X0,nil_nat)) = sF1(cons_nat(X0,nil_nat),cons_nat(X1,nil_nat))))),
+  inference(forward_demodulation,[],[f168,f85])).
+tff(f179,plain,(
+  (! [X0 : nat,X1 : nat] : (eqListNat(cons_nat(X0,nil_nat),cons_nat(X1,nil_nat)) = opAnd(eqNat(X0,X1),true)))),
+  inference(superposition,[],[f30,f27])).
+tff(f323,plain,(
+  (! [X0 : nat,X1 : nat,X2 : nat,X3 : nat] : (eqListNat(cons_nat(X2,cons_nat(X0,nil_nat)),cons_nat(X3,cons_nat(X1,nil_nat))) = opAnd(eqNat(X2,X3),opAnd(eqNat(X0,X1),true))))),
+  inference(superposition,[],[f30,f179])).
+tff(f459,plain,(
+  (! [X0 : nat,X1 : nat] : (sF3(cons_nat(X1,nil_nat),cons_nat(X0,nil_nat)) = eqListNat(cons_nat(X0,cons_nat(X1,nil_nat)),sF2(cons_nat(X1,nil_nat),cons_nat(X0,nil_nat)))))),
+  inference(superposition,[],[f42,f171])).
+tff(f460,plain,(
+  (! [X0 : nat,X1 : nat] : (sF3(cons_nat(X1,nil_nat),cons_nat(X0,nil_nat)) = eqListNat(cons_nat(X0,cons_nat(X1,nil_nat)),reverseNat(cons_nat(X0,cons_nat(X1,nil_nat))))))),
+  inference(forward_demodulation,[],[f459,f80])).
+tff(f465,plain,(
+  (! [X0 : nat,X1 : nat] : (sF3(cons_nat(X1,nil_nat),cons_nat(X0,nil_nat)) = eqListNat(cons_nat(X0,cons_nat(X1,nil_nat)),cons_nat(X1,cons_nat(X0,nil_nat)))))),
+  inference(forward_demodulation,[],[f460,f85])).
+tff(f470,plain,(
+  (! [X0 : nat,X1 : nat] : (sF3(cons_nat(X1,nil_nat),cons_nat(X0,nil_nat)) = opAnd(eqNat(X0,X1),opAnd(eqNat(X1,X0),true))))),
+  inference(forward_demodulation,[],[f465,f323])).
+tff(f4936,plain,(
+  (! [X0 : nat] : (sF3(cons_nat(zero,nil_nat),cons_nat(suc(X0),nil_nat)) = opAnd(false,opAnd(eqNat(zero,suc(X0)),true))))),
+  inference(superposition,[],[f470,f25])).
+tff(f4950,plain,(
+  (! [X0 : nat] : (false = sF3(cons_nat(zero,nil_nat),cons_nat(suc(X0),nil_nat))))),
+  inference(forward_demodulation,[],[f4936,f20])).
+tff(f4962,plain,(
+  (! [X0 : nat] : (false != false | ~ans0(cons_nat(zero,nil_nat),cons_nat(suc(X0),nil_nat))))),
+  inference(superposition,[],[f43,f4950])).
+tff(f4963,plain,(
+  (! [X0 : nat] : (~ans0(cons_nat(zero,nil_nat),cons_nat(suc(X0),nil_nat))))),
+  inference(trivial_inequality_removal,[],[f4962])).
+tff(f4964,plain,(
+  $false),
+  inference(unit_resulting_resolution,[],[f4963,f116])).
+% SZS output end Proof for problem
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation
+% Time elapsed: 0.045 s
+% Peak memory usage: 11 MB
+% Success in time 0.046 s

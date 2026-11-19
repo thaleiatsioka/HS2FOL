@@ -1,0 +1,230 @@
+Here is the input problem:
+  Axiom 1 (nullPairNatNat_1): nullPairNatNat(nil_pair_nat_nat) = true.
+  Axiom 2 (isLT_2): isLT(eq) = false.
+  Axiom 3 (isLT_3): isLT(gt) = false.
+  Axiom 4 (isLT_1): isLT(lt) = true.
+  Axiom 5 (prop_pairsEmpty_1): prop_pairsEmpty(X) = nullPairNatNat(pairs(X)).
+  Axiom 6 (types6): nullPairNatNat(X) = nullPairNatNat(X).
+  Axiom 7 (types10): nil_pair_nat_nat = nil_pair_nat_nat.
+  Axiom 8 (compareNat_1): compareNat(zero, zero) = eq.
+  Axiom 9 (concatMapNatPairNatNat_1): concatMapNatPairNatNat(X, nil_nat) = nil_pair_nat_nat.
+  Axiom 10 (opAppendPairNatNat_1): opAppendPairNatNat(nil_pair_nat_nat, X) = X.
+  Axiom 11 (nullPairNatNat_2): nullPairNatNat(cons_pair_nat_nat(X, Y)) = false.
+  Axiom 12 (types7): pairs(X) = pairs(X).
+  Axiom 13 (types12): X = X.
+  Axiom 14 (ltNat_1): ltNat(X, Y) = isLT(compareNat(X, Y)).
+  Axiom 15 (lam2_body_case1_2): lam2_body_case1(false, X, Y) = nil_pair_nat_nat.
+  Axiom 16 (compareNat_2): compareNat(zero, suc(X)) = lt.
+  Axiom 17 (compareNat_3): compareNat(suc(X), zero) = gt.
+  Axiom 18 (pairs_1): pairs(X) = concatMapNatPairNatNat(lam1(X), X).
+  Axiom 19 (app_lam1_1): app_nat_list_pair_nat_nat(lam1(X), Y) = concatMapNatPairNatNat(lam2(Y), X).
+  Axiom 20 (types9): cons_pair_nat_nat(X, Y) = cons_pair_nat_nat(X, Y).
+  Axiom 21 (types3): opAppendPairNatNat(X, Y) = opAppendPairNatNat(X, Y).
+  Axiom 22 (types2): opAppendPairNatNat(X, Y) = opAppendPairNatNat(X, Y).
+  Axiom 23 (types11): app_nat_list_pair_nat_nat(X, Y) = app_nat_list_pair_nat_nat(X, Y).
+  Axiom 24 (types4): concatMapNatPairNatNat(X, Y) = concatMapNatPairNatNat(X, Y).
+  Axiom 25 (types8): cons_pair_nat_nat(X, Y) = cons_pair_nat_nat(X, Y).
+  Axiom 26 (types1): opAppendPairNatNat(X, Y) = opAppendPairNatNat(X, Y).
+  Axiom 27 (compareNat_4): compareNat(suc(X), suc(Y)) = compareNat(X, Y).
+  Axiom 28 (lam2_body_case1_1): lam2_body_case1(true, X, Y) = cons_pair_nat_nat(pair_nat_nat_1(X, Y), nil_pair_nat_nat).
+  Axiom 29 (opAppendPairNatNat_2): opAppendPairNatNat(cons_pair_nat_nat(X, Y), Z) = cons_pair_nat_nat(X, opAppendPairNatNat(Y, Z)).
+  Axiom 30 (types5): lam2_body_case1(X, Y, Z) = lam2_body_case1(X, Y, Z).
+  Axiom 31 (app_lam2_1): app_nat_list_pair_nat_nat(lam2(X), Y) = lam2_body_case1(ltNat(X, Y), X, Y).
+  Axiom 32 (concatMapNatPairNatNat_2): concatMapNatPairNatNat(X, cons_nat(Y, Z)) = opAppendPairNatNat(app_nat_list_pair_nat_nat(X, Y), concatMapNatPairNatNat(X, Z)).
+  Axiom 33 (reflexivity): equals(X, X) = true.
+  Axiom 34 (prop_pairsEmpty): equals(prop_pairsEmpty(X), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. nullPairNatNat(nil_pair_nat_nat) -> true
+2. isLT(eq) -> false
+3. isLT(gt) -> false
+4. isLT(lt) -> true
+5. nullPairNatNat(pairs(X)) -> prop_pairsEmpty(X)
+6. nullPairNatNat(X) -> nullPairNatNat(X)
+7. nil_pair_nat_nat -> nil_pair_nat_nat
+8. compareNat(zero, zero) -> eq
+9. concatMapNatPairNatNat(X, nil_nat) -> nil_pair_nat_nat
+10. opAppendPairNatNat(nil_pair_nat_nat, X) -> X
+11. nullPairNatNat(cons_pair_nat_nat(X, Y)) -> false
+12. pairs(X) -> pairs(X)
+13. X -> X
+14. isLT(compareNat(X, Y)) -> ltNat(X, Y)
+15. lam2_body_case1(false, X, Y) -> nil_pair_nat_nat
+16. compareNat(zero, suc(X)) -> lt
+17. compareNat(suc(X), zero) -> gt
+18. concatMapNatPairNatNat(lam1(X), X) -> pairs(X)
+19. concatMapNatPairNatNat(lam2(X), Y) -> app_nat_list_pair_nat_nat(lam1(Y), X)
+20. cons_pair_nat_nat(X, Y) -> cons_pair_nat_nat(X, Y)
+21. opAppendPairNatNat(X, Y) -> opAppendPairNatNat(X, Y)
+22. opAppendPairNatNat(X, Y) -> opAppendPairNatNat(X, Y)
+23. app_nat_list_pair_nat_nat(X, Y) -> app_nat_list_pair_nat_nat(X, Y)
+24. concatMapNatPairNatNat(X, Y) -> concatMapNatPairNatNat(X, Y)
+25. cons_pair_nat_nat(X, Y) -> cons_pair_nat_nat(X, Y)
+26. opAppendPairNatNat(X, Y) -> opAppendPairNatNat(X, Y)
+27. compareNat(suc(X), suc(Y)) -> compareNat(X, Y)
+28. cons_pair_nat_nat(pair_nat_nat_1(X, Y), nil_pair_nat_nat) -> lam2_body_case1(true, X, Y)
+29. opAppendPairNatNat(cons_pair_nat_nat(X, Y), Z) -> cons_pair_nat_nat(X, opAppendPairNatNat(Y, Z))
+30. lam2_body_case1(X, Y, Z) -> lam2_body_case1(X, Y, Z)
+31. lam2_body_case1(ltNat(X, Y), X, Y) -> app_nat_list_pair_nat_nat(lam2(X), Y)
+32. opAppendPairNatNat(app_nat_list_pair_nat_nat(X, Y), concatMapNatPairNatNat(X, Z)) -> concatMapNatPairNatNat(X, cons_nat(Y, Z))
+33. equals(X, X) -> true
+34. equals(prop_pairsEmpty(X), false) -> false
+35. pairs(nil_nat) -> nil_pair_nat_nat
+36. prop_pairsEmpty(nil_nat) -> true
+37. ltNat(zero, zero) -> false
+38. ltNat(zero, suc(X)) -> true
+39. ltNat(suc(X), zero) -> false
+40. app_nat_list_pair_nat_nat(lam1(nil_nat), X) -> nil_pair_nat_nat
+41. equals(true, false) -> false
+42. app_nat_list_pair_nat_nat(lam2(zero), zero) -> nil_pair_nat_nat
+43. nullPairNatNat(lam2_body_case1(true, X, Y)) -> false
+44. ltNat(suc(X), suc(Y)) -> ltNat(X, Y)
+45. app_nat_list_pair_nat_nat(lam2(suc(X)), zero) -> nil_pair_nat_nat
+46. opAppendPairNatNat(app_nat_list_pair_nat_nat(X, Y), nil_pair_nat_nat) -> concatMapNatPairNatNat(X, cons_nat(Y, nil_nat))
+47. app_nat_list_pair_nat_nat(lam2(zero), suc(X)) -> lam2_body_case1(true, zero, suc(X))
+48. concatMapNatPairNatNat(lam1(nil_nat), cons_nat(X, nil_nat)) -> nil_pair_nat_nat
+49. opAppendPairNatNat(lam2_body_case1(true, X, Y), Z) -> cons_pair_nat_nat(pair_nat_nat_1(X, Y), Z)
+50. concatMapNatPairNatNat(lam1(nil_nat), cons_nat(X, Y)) -> concatMapNatPairNatNat(lam1(nil_nat), Y)
+51. app_nat_list_pair_nat_nat(lam1(cons_nat(zero, nil_nat)), zero) -> nil_pair_nat_nat
+52. pairs(cons_nat(zero, nil_nat)) -> nil_pair_nat_nat
+53. prop_pairsEmpty(cons_nat(zero, nil_nat)) -> true
+54. app_nat_list_pair_nat_nat(lam1(cons_nat(zero, X)), zero) -> app_nat_list_pair_nat_nat(lam1(X), zero)
+55. opAppendPairNatNat(app_nat_list_pair_nat_nat(lam1(X), Y), pairs(X)) -> concatMapNatPairNatNat(lam1(X), cons_nat(Y, X))
+56. app_nat_list_pair_nat_nat(lam1(cons_nat(zero, nil_nat)), suc(X)) -> nil_pair_nat_nat
+57. app_nat_list_pair_nat_nat(lam1(cons_nat(zero, X)), suc(Y)) -> app_nat_list_pair_nat_nat(lam1(X), suc(Y))
+58. lam2_body_case1(ltNat(X, Y), suc(X), suc(Y)) -> app_nat_list_pair_nat_nat(lam2(suc(X)), suc(Y))
+59. app_nat_list_pair_nat_nat(lam2(suc(zero)), suc(zero)) -> nil_pair_nat_nat
+60. app_nat_list_pair_nat_nat(lam2(suc(suc(X))), suc(zero)) -> nil_pair_nat_nat
+61. app_nat_list_pair_nat_nat(lam1(cons_nat(suc(zero), nil_nat)), suc(zero)) -> nil_pair_nat_nat
+62. pairs(cons_nat(suc(zero), nil_nat)) -> nil_pair_nat_nat
+63. prop_pairsEmpty(cons_nat(suc(zero), nil_nat)) -> true
+64. app_nat_list_pair_nat_nat(lam1(cons_nat(suc(X), nil_nat)), zero) -> lam2_body_case1(true, zero, suc(X))
+65. app_nat_list_pair_nat_nat(lam2(suc(zero)), suc(suc(X))) -> lam2_body_case1(true, suc(zero), suc(suc(X)))
+66. app_nat_list_pair_nat_nat(lam1(cons_nat(suc(zero), X)), suc(zero)) -> app_nat_list_pair_nat_nat(lam1(X), suc(zero))
+67. concatMapNatPairNatNat(lam1(cons_nat(zero, nil_nat)), cons_nat(zero, cons_nat(zero, nil_nat))) -> nil_pair_nat_nat
+68. opAppendPairNatNat(app_nat_list_pair_nat_nat(lam2(X), Y), app_nat_list_pair_nat_nat(lam1(Z), X)) -> app_nat_list_pair_nat_nat(lam1(cons_nat(Y, Z)), X)
+69. app_nat_list_pair_nat_nat(lam1(cons_nat(suc(zero), nil_nat)), suc(suc(X))) -> nil_pair_nat_nat
+70. concatMapNatPairNatNat(lam1(cons_nat(zero, nil_nat)), cons_nat(suc(X), nil_nat)) -> nil_pair_nat_nat
+71. concatMapNatPairNatNat(lam1(cons_nat(zero, nil_nat)), cons_nat(suc(X), cons_nat(zero, nil_nat))) -> nil_pair_nat_nat
+72. app_nat_list_pair_nat_nat(lam1(cons_nat(X, cons_nat(zero, Y))), zero) -> app_nat_list_pair_nat_nat(lam1(cons_nat(X, Y)), zero)
+73. concatMapNatPairNatNat(lam1(cons_nat(zero, nil_nat)), cons_nat(zero, X)) -> concatMapNatPairNatNat(lam1(cons_nat(zero, nil_nat)), X)
+74. concatMapNatPairNatNat(lam1(cons_nat(zero, X)), cons_nat(zero, nil_nat)) -> concatMapNatPairNatNat(lam1(X), cons_nat(zero, nil_nat))
+75. cons_pair_nat_nat(pair_nat_nat_1(zero, suc(X)), app_nat_list_pair_nat_nat(lam1(Y), zero)) -> app_nat_list_pair_nat_nat(lam1(cons_nat(suc(X), Y)), zero)
+76. nullPairNatNat(app_nat_list_pair_nat_nat(lam1(cons_nat(suc(X), Y)), zero)) -> false
+77. concatMapNatPairNatNat(lam1(cons_nat(suc(X), nil_nat)), cons_nat(zero, nil_nat)) -> lam2_body_case1(true, zero, suc(X))
+78. app_nat_list_pair_nat_nat(lam1(cons_nat(suc(zero), X)), suc(suc(Y))) -> app_nat_list_pair_nat_nat(lam1(X), suc(suc(Y)))
+79. concatMapNatPairNatNat(lam1(cons_nat(zero, nil_nat)), cons_nat(suc(X), Y)) -> concatMapNatPairNatNat(lam1(cons_nat(zero, nil_nat)), Y)
+80. app_nat_list_pair_nat_nat(lam1(cons_nat(X, cons_nat(zero, Y))), suc(Z)) -> app_nat_list_pair_nat_nat(lam1(cons_nat(X, Y)), suc(Z))
+81. concatMapNatPairNatNat(lam1(cons_nat(zero, nil_nat)), cons_nat(X, cons_nat(zero, nil_nat))) -> concatMapNatPairNatNat(lam1(cons_nat(zero, nil_nat)), cons_nat(X, nil_nat))
+82. concatMapNatPairNatNat(lam1(cons_nat(zero, X)), cons_nat(suc(Y), nil_nat)) -> concatMapNatPairNatNat(lam1(X), cons_nat(suc(Y), nil_nat))
+83. app_nat_list_pair_nat_nat(lam1(cons_nat(suc(suc(X)), nil_nat)), suc(zero)) -> lam2_body_case1(true, suc(zero), suc(suc(X)))
+84. concatMapNatPairNatNat(lam1(cons_nat(zero, X)), cons_nat(zero, cons_nat(zero, X))) -> opAppendPairNatNat(app_nat_list_pair_nat_nat(lam1(X), zero), pairs(cons_nat(zero, X)))
+85. concatMapNatPairNatNat(lam1(cons_nat(suc(zero), nil_nat)), cons_nat(suc(zero), cons_nat(suc(zero), nil_nat))) -> nil_pair_nat_nat
+86. lam2_body_case1(ltNat(X, Y), suc(suc(X)), suc(suc(Y))) -> app_nat_list_pair_nat_nat(lam2(suc(suc(X))), suc(suc(Y)))
+87. app_nat_list_pair_nat_nat(lam2(suc(suc(zero))), suc(suc(zero))) -> nil_pair_nat_nat
+88. app_nat_list_pair_nat_nat(lam1(cons_nat(suc(suc(zero)), nil_nat)), suc(suc(zero))) -> nil_pair_nat_nat
+89. pairs(cons_nat(suc(suc(zero)), nil_nat)) -> nil_pair_nat_nat
+90. prop_pairsEmpty(cons_nat(suc(suc(zero)), nil_nat)) -> true
+91. app_nat_list_pair_nat_nat(lam2(suc(suc(suc(X)))), suc(suc(zero))) -> nil_pair_nat_nat
+92. app_nat_list_pair_nat_nat(lam1(cons_nat(suc(suc(zero)), X)), suc(suc(zero))) -> app_nat_list_pair_nat_nat(lam1(X), suc(suc(zero)))
+93. app_nat_list_pair_nat_nat(lam1(cons_nat(X, cons_nat(suc(zero), Y))), suc(zero)) -> app_nat_list_pair_nat_nat(lam1(cons_nat(X, Y)), suc(zero))
+94. concatMapNatPairNatNat(lam1(cons_nat(suc(zero), nil_nat)), cons_nat(suc(zero), X)) -> concatMapNatPairNatNat(lam1(cons_nat(suc(zero), nil_nat)), X)
+95. app_nat_list_pair_nat_nat(lam2(suc(suc(zero))), suc(suc(suc(X)))) -> lam2_body_case1(true, suc(suc(zero)), suc(suc(suc(X))))
+96. concatMapNatPairNatNat(lam1(cons_nat(suc(X), nil_nat)), cons_nat(zero, cons_nat(suc(X), nil_nat))) -> cons_pair_nat_nat(pair_nat_nat_1(zero, suc(X)), pairs(cons_nat(suc(X), nil_nat)))
+97. concatMapNatPairNatNat(lam1(cons_nat(suc(zero), X)), cons_nat(suc(zero), nil_nat)) -> concatMapNatPairNatNat(lam1(X), cons_nat(suc(zero), nil_nat))
+98. concatMapNatPairNatNat(lam1(cons_nat(suc(zero), nil_nat)), cons_nat(suc(suc(X)), nil_nat)) -> nil_pair_nat_nat
+99. app_nat_list_pair_nat_nat(lam1(cons_nat(suc(suc(zero)), nil_nat)), suc(suc(suc(X)))) -> nil_pair_nat_nat
+100. concatMapNatPairNatNat(lam1(cons_nat(suc(zero), nil_nat)), cons_nat(suc(suc(X)), cons_nat(suc(zero), nil_nat))) -> nil_pair_nat_nat
+101. concatMapNatPairNatNat(lam1(cons_nat(zero, X)), cons_nat(suc(Y), cons_nat(zero, X))) -> opAppendPairNatNat(app_nat_list_pair_nat_nat(lam1(X), suc(Y)), pairs(cons_nat(zero, X)))
+102. opAppendPairNatNat(app_nat_list_pair_nat_nat(lam2(zero), X), lam2_body_case1(true, zero, suc(Y))) -> app_nat_list_pair_nat_nat(lam1(cons_nat(X, cons_nat(suc(Y), nil_nat))), zero)
+103. app_nat_list_pair_nat_nat(lam1(cons_nat(X, cons_nat(Y, cons_nat(zero, Z)))), zero) -> app_nat_list_pair_nat_nat(lam1(cons_nat(X, cons_nat(Y, Z))), zero)
+104. concatMapNatPairNatNat(lam1(cons_nat(suc(zero), nil_nat)), cons_nat(X, cons_nat(suc(zero), nil_nat))) -> concatMapNatPairNatNat(lam1(cons_nat(suc(zero), nil_nat)), cons_nat(X, nil_nat))
+105. concatMapNatPairNatNat(lam1(cons_nat(X, cons_nat(zero, Y))), cons_nat(zero, nil_nat)) -> concatMapNatPairNatNat(lam1(cons_nat(X, Y)), cons_nat(zero, nil_nat))
+106. concatMapNatPairNatNat(lam1(cons_nat(zero, nil_nat)), cons_nat(X, cons_nat(zero, Y))) -> concatMapNatPairNatNat(lam1(cons_nat(zero, nil_nat)), cons_nat(X, Y))
+107. cons_pair_nat_nat(pair_nat_nat_1(zero, suc(X)), lam2_body_case1(true, zero, suc(Y))) -> app_nat_list_pair_nat_nat(lam1(cons_nat(suc(X), cons_nat(suc(Y), nil_nat))), zero)
+108. concatMapNatPairNatNat(lam1(cons_nat(suc(zero), X)), cons_nat(suc(zero), cons_nat(suc(zero), X))) -> opAppendPairNatNat(app_nat_list_pair_nat_nat(lam1(X), suc(zero)), pairs(cons_nat(suc(zero), X)))
+109. opAppendPairNatNat(app_nat_list_pair_nat_nat(lam1(X), zero), concatMapNatPairNatNat(lam1(cons_nat(zero, X)), Y)) -> concatMapNatPairNatNat(lam1(cons_nat(zero, X)), cons_nat(zero, Y))
+110. concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(zero, nil_nat))), cons_nat(zero, X)) -> concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(zero, nil_nat))), X)
+111. pairs(cons_nat(zero, cons_nat(zero, nil_nat))) -> nil_pair_nat_nat
+112. prop_pairsEmpty(cons_nat(zero, cons_nat(zero, nil_nat))) -> true
+113. concatMapNatPairNatNat(lam1(cons_nat(zero, X)), cons_nat(zero, cons_nat(zero, nil_nat))) -> concatMapNatPairNatNat(lam1(X), cons_nat(zero, cons_nat(zero, nil_nat)))
+114. concatMapNatPairNatNat(lam1(cons_nat(suc(suc(zero)), nil_nat)), cons_nat(suc(suc(zero)), cons_nat(suc(suc(zero)), nil_nat))) -> nil_pair_nat_nat
+115. app_nat_list_pair_nat_nat(lam1(cons_nat(X, cons_nat(suc(suc(zero)), Y))), suc(suc(zero))) -> app_nat_list_pair_nat_nat(lam1(cons_nat(X, Y)), suc(suc(zero)))
+116. cons_pair_nat_nat(pair_nat_nat_1(zero, suc(X)), opAppendPairNatNat(app_nat_list_pair_nat_nat(lam1(Y), zero), Z)) -> opAppendPairNatNat(app_nat_list_pair_nat_nat(lam1(cons_nat(suc(X), Y)), zero), Z)
+117. nullPairNatNat(opAppendPairNatNat(app_nat_list_pair_nat_nat(lam1(cons_nat(suc(X), Y)), zero), Z)) -> false
+118. nullPairNatNat(concatMapNatPairNatNat(lam1(cons_nat(suc(X), Y)), cons_nat(zero, Z))) -> false
+119. concatMapNatPairNatNat(lam1(cons_nat(suc(suc(zero)), nil_nat)), cons_nat(suc(suc(zero)), X)) -> concatMapNatPairNatNat(lam1(cons_nat(suc(suc(zero)), nil_nat)), X)
+120. nullPairNatNat(concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(zero, Z))) -> false
+121. prop_pairsEmpty(cons_nat(zero, cons_nat(suc(X), Y))) -> false
+122. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (isLT_2): isLT(eq) = false.
+Axiom 2 (isLT_1): isLT(lt) = true.
+Axiom 3 (prop_pairsEmpty_1): prop_pairsEmpty(X) = nullPairNatNat(pairs(X)).
+Axiom 4 (compareNat_1): compareNat(zero, zero) = eq.
+Axiom 5 (opAppendPairNatNat_1): opAppendPairNatNat(nil_pair_nat_nat, X) = X.
+Axiom 6 (nullPairNatNat_2): nullPairNatNat(cons_pair_nat_nat(X, Y)) = false.
+Axiom 7 (ltNat_1): ltNat(X, Y) = isLT(compareNat(X, Y)).
+Axiom 8 (lam2_body_case1_2): lam2_body_case1(false, X, Y) = nil_pair_nat_nat.
+Axiom 9 (compareNat_2): compareNat(zero, suc(X)) = lt.
+Axiom 10 (pairs_1): pairs(X) = concatMapNatPairNatNat(lam1(X), X).
+Axiom 11 (app_lam1_1): app_nat_list_pair_nat_nat(lam1(X), Y) = concatMapNatPairNatNat(lam2(Y), X).
+Axiom 14 (lam2_body_case1_1): lam2_body_case1(true, X, Y) = cons_pair_nat_nat(pair_nat_nat_1(X, Y), nil_pair_nat_nat).
+Axiom 15 (opAppendPairNatNat_2): opAppendPairNatNat(cons_pair_nat_nat(X, Y), Z) = cons_pair_nat_nat(X, opAppendPairNatNat(Y, Z)).
+Axiom 16 (app_lam2_1): app_nat_list_pair_nat_nat(lam2(X), Y) = lam2_body_case1(ltNat(X, Y), X, Y).
+Axiom 17 (concatMapNatPairNatNat_2): concatMapNatPairNatNat(X, cons_nat(Y, Z)) = opAppendPairNatNat(app_nat_list_pair_nat_nat(X, Y), concatMapNatPairNatNat(X, Z)).
+
+Goal 1 (prop_pairsEmpty): prop_pairsEmpty(X) = false.
+The goal is true when:
+  X = cons_nat(zero, cons_nat(suc(X), Y))
+
+Proof:
+  prop_pairsEmpty(cons_nat(zero, cons_nat(suc(X), Y)))
+= { by axiom 3 (prop_pairsEmpty_1) }
+  nullPairNatNat(pairs(cons_nat(zero, cons_nat(suc(X), Y))))
+= { by axiom 10 (pairs_1) }
+  nullPairNatNat(concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(zero, cons_nat(suc(X), Y))))
+= { by axiom 17 (concatMapNatPairNatNat_2) }
+  nullPairNatNat(opAppendPairNatNat(app_nat_list_pair_nat_nat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), zero), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 11 (app_lam1_1) }
+  nullPairNatNat(opAppendPairNatNat(concatMapNatPairNatNat(lam2(zero), cons_nat(zero, cons_nat(suc(X), Y))), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 17 (concatMapNatPairNatNat_2) }
+  nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(app_nat_list_pair_nat_nat(lam2(zero), zero), concatMapNatPairNatNat(lam2(zero), cons_nat(suc(X), Y))), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 16 (app_lam2_1) }
+  nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(lam2_body_case1(ltNat(zero, zero), zero, zero), concatMapNatPairNatNat(lam2(zero), cons_nat(suc(X), Y))), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 7 (ltNat_1) }
+  nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(lam2_body_case1(isLT(compareNat(zero, zero)), zero, zero), concatMapNatPairNatNat(lam2(zero), cons_nat(suc(X), Y))), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 4 (compareNat_1) }
+  nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(lam2_body_case1(isLT(eq), zero, zero), concatMapNatPairNatNat(lam2(zero), cons_nat(suc(X), Y))), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 1 (isLT_2) }
+  nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(lam2_body_case1(false, zero, zero), concatMapNatPairNatNat(lam2(zero), cons_nat(suc(X), Y))), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 8 (lam2_body_case1_2) }
+  nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(nil_pair_nat_nat, concatMapNatPairNatNat(lam2(zero), cons_nat(suc(X), Y))), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 5 (opAppendPairNatNat_1) }
+  nullPairNatNat(opAppendPairNatNat(concatMapNatPairNatNat(lam2(zero), cons_nat(suc(X), Y)), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 17 (concatMapNatPairNatNat_2) }
+  nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(app_nat_list_pair_nat_nat(lam2(zero), suc(X)), concatMapNatPairNatNat(lam2(zero), Y)), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 11 (app_lam1_1) R->L }
+  nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(app_nat_list_pair_nat_nat(lam2(zero), suc(X)), app_nat_list_pair_nat_nat(lam1(Y), zero)), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 16 (app_lam2_1) }
+  nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(lam2_body_case1(ltNat(zero, suc(X)), zero, suc(X)), app_nat_list_pair_nat_nat(lam1(Y), zero)), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 7 (ltNat_1) }
+  nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(lam2_body_case1(isLT(compareNat(zero, suc(X))), zero, suc(X)), app_nat_list_pair_nat_nat(lam1(Y), zero)), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 9 (compareNat_2) }
+  nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(lam2_body_case1(isLT(lt), zero, suc(X)), app_nat_list_pair_nat_nat(lam1(Y), zero)), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 2 (isLT_1) }
+  nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(lam2_body_case1(true, zero, suc(X)), app_nat_list_pair_nat_nat(lam1(Y), zero)), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 14 (lam2_body_case1_1) }
+  nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(cons_pair_nat_nat(pair_nat_nat_1(zero, suc(X)), nil_pair_nat_nat), app_nat_list_pair_nat_nat(lam1(Y), zero)), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 15 (opAppendPairNatNat_2) }
+  nullPairNatNat(opAppendPairNatNat(cons_pair_nat_nat(pair_nat_nat_1(zero, suc(X)), opAppendPairNatNat(nil_pair_nat_nat, app_nat_list_pair_nat_nat(lam1(Y), zero))), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 5 (opAppendPairNatNat_1) }
+  nullPairNatNat(opAppendPairNatNat(cons_pair_nat_nat(pair_nat_nat_1(zero, suc(X)), app_nat_list_pair_nat_nat(lam1(Y), zero)), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y))))
+= { by axiom 15 (opAppendPairNatNat_2) }
+  nullPairNatNat(cons_pair_nat_nat(pair_nat_nat_1(zero, suc(X)), opAppendPairNatNat(app_nat_list_pair_nat_nat(lam1(Y), zero), concatMapNatPairNatNat(lam1(cons_nat(zero, cons_nat(suc(X), Y))), cons_nat(suc(X), Y)))))
+= { by axiom 6 (nullPairNatNat_2) }
+  false
+
+RESULT: Theorem (the conjecture is true).

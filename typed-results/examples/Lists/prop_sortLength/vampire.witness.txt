@@ -1,0 +1,6 @@
+property:   prop_sortLength
+file:       examples/Lists.hs
+prover:     vampire
+witness:    prop_sortLength [Zero, Zero]
+input:      prop_sortLength [Zero, Zero]
+result:     False -- counterexample confirmed

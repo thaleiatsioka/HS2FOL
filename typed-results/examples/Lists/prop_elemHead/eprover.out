@@ -1,0 +1,89 @@
+% Preprocessing class: FSMSSMSSSSSNFFN.
+% Configuration: G-E--_208_C18_F1_SE_CS_SOS_SP_PS_S5PRR_RG_S04AN
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSF21-MFFFFFNN
+% Configuration: G-E--_208_C12_11_nc_F1_SE_CS_SP_PS_S5PRR_RG_S04AN
+% Initializing proof state
+% Scanning for AC axioms
+%
+%tcf(i_0_18, plain, ![X1:bool]:(implies(false,X1)=true)).
+%
+%tcf(i_0_25, plain, ![X2:nat]:(elemNat(X2,nil_nat)=false)).
+%
+%tcf(i_0_21, plain, eqNat(zero,zero)=true).
+%
+%tcf(i_0_19, plain, ![X1:bool]:(implies(true,X1)=X1)).
+%
+%tcf(i_0_16, plain, ![X1:bool]:(opOr(false,X1)=X1)).
+%
+%tcf(i_0_17, plain, ![X1:bool]:(opOr(true,X1)=true)).
+%
+%tcf(i_0_22, plain, ![X2:nat]:(eqNat(zero,suc(X2))=false)).
+%
+%tcf(i_0_27, plain, ![X2:nat, X3:list_nat]:(headNat(cons_nat(X2,X3))=X2)).
+%
+%tcf(i_0_23, plain, ![X2:nat]:(eqNat(suc(X2),zero)=false)).
+%
+%tcf(i_0_24, plain, ![X2:nat, X4:nat]:(eqNat(suc(X2),suc(X4))=eqNat(X2,X4))).
+%
+%tcf(i_0_28, negated_conjecture, ![X2:nat, X3:list_nat]:(($answer(esk1_2(X2,X3))|implies(elemNat(X2,X3),eqNat(headNat(X3),X2))!=false))).
+%
+%tcf(i_0_26, plain, ![X2:nat, X4:nat, X3:list_nat]:(opOr(eqNat(X2,X4),elemNat(X2,X3))=elemNat(X2,cons_nat(X4,X3)))).
+% Presaturation interreduction done
+%
+%tcf(i_0_18, plain, ![X1:bool]:(implies(false,X1)=true)).
+%
+%tcf(i_0_25, plain, ![X2:nat]:(elemNat(X2,nil_nat)=false)).
+%
+%tcf(i_0_21, plain, eqNat(zero,zero)=true).
+%
+%tcf(i_0_19, plain, ![X1:bool]:(implies(true,X1)=X1)).
+%
+%tcf(i_0_16, plain, ![X1:bool]:(opOr(false,X1)=X1)).
+%
+%tcf(i_0_17, plain, ![X1:bool]:(opOr(true,X1)=true)).
+%
+%tcf(i_0_27, plain, ![X2:nat, X3:list_nat]:(headNat(cons_nat(X2,X3))=X2)).
+%
+%tcf(i_0_22, plain, ![X2:nat]:(eqNat(zero,suc(X2))=false)).
+%
+%tcf(i_0_23, plain, ![X2:nat]:(eqNat(suc(X2),zero)=false)).
+%
+%tcf(i_0_24, plain, ![X2:nat, X4:nat]:(eqNat(suc(X2),suc(X4))=eqNat(X2,X4))).
+%
+%tcf(i_0_28, negated_conjecture, ![X2:nat, X3:list_nat]:(($answer(esk1_2(X2,X3))|implies(elemNat(X2,X3),eqNat(headNat(X3),X2))!=false))).
+%
+%tcf(i_0_30, negated_conjecture, ![X2:nat]:(($answer(esk1_2(X2,nil_nat))|true!=false))).
+%
+%tcf(i_0_29, negated_conjecture, ![X2:nat, X4:nat, X3:list_nat]:(($answer(esk1_2(X2,cons_nat(X4,X3)))|implies(elemNat(X2,cons_nat(X4,X3)),eqNat(X4,X2))!=false))).
+%
+%tcf(i_0_31, negated_conjecture, ![X3:list_nat]:(($answer(esk1_2(zero,cons_nat(zero,X3)))|implies(elemNat(zero,cons_nat(zero,X3)),true)!=false))).
+%
+%tcf(i_0_32, negated_conjecture, ![X2:nat, X3:list_nat]:(($answer(esk1_2(suc(X2),cons_nat(zero,X3)))|implies(elemNat(suc(X2),cons_nat(zero,X3)),false)!=false))).
+%
+%tcf(i_0_26, plain, ![X2:nat, X4:nat, X3:list_nat]:(opOr(eqNat(X2,X4),elemNat(X2,X3))=elemNat(X2,cons_nat(X4,X3)))).
+%
+%tcf(i_0_36, plain, ![X3:list_nat]:(elemNat(zero,cons_nat(zero,X3))=true)).
+%
+%tcf(i_0_31, negated_conjecture, ![X3:list_nat]:(($answer(esk1_2(zero,cons_nat(zero,X3)))|true!=false))).
+%%%
+%tcf(i_0_35, plain, ![X2:nat, X4:nat]:(elemNat(X2,cons_nat(X4,nil_nat))=opOr(eqNat(X2,X4),false))).
+%
+%tcf(i_0_44, negated_conjecture, ![X2:nat]:(($answer(esk1_2(suc(X2),cons_nat(zero,nil_nat)))|true!=false))).
+%
+%tcf(i_0_46, negated_conjecture, ![X2:nat, X4:nat]:(($answer(esk1_2(X2,cons_nat(X4,nil_nat)))|implies(opOr(eqNat(X2,X4),false),eqNat(X4,X2))!=false))).
+%%%%
+%tcf(i_0_33, negated_conjecture, ![X2:nat, X3:list_nat]:(($answer(esk1_2(zero,cons_nat(suc(X2),X3)))|implies(elemNat(zero,cons_nat(suc(X2),X3)),false)!=false))).
+%
+%tcf(i_0_50, negated_conjecture, ![X2:nat]:(($answer(esk1_2(zero,cons_nat(suc(X2),nil_nat)))|true!=false))).
+%%%%
+%tcf(i_0_37, plain, ![X2:nat, X3:list_nat]:(elemNat(zero,cons_nat(suc(X2),X3))=elemNat(zero,X3))).
+%
+%tcf(i_0_38, plain, ![X2:nat, X3:list_nat]:(elemNat(suc(X2),cons_nat(zero,X3))=elemNat(suc(X2),X3))).
+%
+%tcf(i_0_33, negated_conjecture, ![X2:nat, X3:list_nat]:(($answer(esk1_2(zero,cons_nat(suc(X2),X3)))|implies(elemNat(zero,X3),false)!=false))).
+%% SZS status Theorem
+% SZS answers Tuple [[zero, cons_nat(suc(X2),cons_nat(zero,X3))]|_]
+
+% Proof found!

@@ -28,10 +28,11 @@ data Opts = Opts
   , oOut :: Maybe FilePath
   , oProver :: String
   , oTimeout :: Int
+  , oUntyped :: Bool
   }
 
 defaultOpts :: Opts
-defaultOpts = Opts Nothing Nothing Nothing [] "runghc" False False Nothing "" 10
+defaultOpts = Opts Nothing Nothing Nothing [] "runghc" False False Nothing "" 10 False
 
 usage :: String
 usage = unlines
@@ -46,6 +47,7 @@ usage = unlines
   , "  --timeout SEC   time limit for evaluating the property (default: 10)"
   , "  --no-run        only print the Haskell input, do not run it"
   , "  --keep          keep the generated check program"
+  , "  --untyped       the problem was made with hs2fol --untyped (FOF)"
   , "  --prover NAME   name of the prover (only used in the report)"
   , "  -o FILE         also write the report to FILE"
   , ""
@@ -65,6 +67,7 @@ parseOpts args o = case args of
   ("--timeout" : t : r) | all (`elem` "0123456789") t, not (null t) -> parseOpts r o { oTimeout = read t }
   ("--no-run" : r) -> parseOpts r o { oNoRun = True }
   ("--keep" : r) -> parseOpts r o { oKeep = True }
+  ("--untyped" : r) -> parseOpts r o { oUntyped = True }
   ("--prover" : p : r) -> parseOpts r o { oProver = p }
   ("-o" : f : r) -> parseOpts r o { oOut = Just f }
   (a : r)
@@ -96,7 +99,7 @@ mainBody = do
     Just w | w /= "-" -> readFileUtf8 w
     _ -> hSetEncoding stdin utf8 >> getContents
   (pre, usr, _) <- loadProgram (oIncludes opts) file
-  tr <- either (fatal . ("hs2fol: " ++)) return (translateProgram pre usr)
+  tr <- either (fatal . ("hs2fol: " ++)) return (translateProgram (not (oUntyped opts)) pre usr)
   prop <- case [ p | p <- trProps tr, psName p == propName ] of
     (p : _) -> return p
     [] -> fatal ("no (translatable) property " ++ propName)

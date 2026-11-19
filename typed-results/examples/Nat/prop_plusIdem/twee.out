@@ -1,0 +1,73 @@
+Here is the input problem:
+  Axiom 1 (types8): suc(X) = suc(X).
+  Axiom 2 (types9): zero = zero.
+  Axiom 3 (types7): suc(X) = suc(X).
+  Axiom 4 (types6): prop_plusIdem(X) = prop_plusIdem(X).
+  Axiom 5 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 6 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 7 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 8 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 9 (plus_1): plus(zero, X) = X.
+  Axiom 10 (plus_2): plus(suc(X), Y) = suc(plus(X, Y)).
+  Axiom 11 (types10): X = X.
+  Axiom 12 (types2): eqNat(X, Y) = eqNat(X, Y).
+  Axiom 13 (types1): eqNat(X, Y) = eqNat(X, Y).
+  Axiom 14 (types5): plus(X, Y) = plus(X, Y).
+  Axiom 15 (types4): plus(X, Y) = plus(X, Y).
+  Axiom 16 (types3): plus(X, Y) = plus(X, Y).
+  Axiom 17 (prop_plusIdem_1): prop_plusIdem(X) = eqNat(plus(X, X), X).
+  Axiom 18 (reflexivity): equals(X, X) = true.
+  Axiom 19 (prop_plusIdem): equals(prop_plusIdem(X), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. suc(X) -> suc(X)
+2. zero -> zero
+3. suc(X) -> suc(X)
+4. prop_plusIdem(X) -> prop_plusIdem(X)
+5. eqNat(zero, zero) -> true
+6. eqNat(zero, suc(X)) -> false
+7. eqNat(suc(X), zero) -> false
+8. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+9. plus(zero, X) -> X
+10. suc(plus(X, Y)) -> plus(suc(X), Y)
+11. X -> X
+12. eqNat(X, Y) -> eqNat(X, Y)
+13. eqNat(X, Y) -> eqNat(X, Y)
+14. plus(X, Y) -> plus(X, Y)
+15. plus(X, Y) -> plus(X, Y)
+16. plus(X, Y) -> plus(X, Y)
+17. eqNat(plus(X, X), X) -> prop_plusIdem(X)
+18. equals(X, X) -> true
+19. equals(prop_plusIdem(X), false) -> false
+20. prop_plusIdem(zero) -> true
+21. equals(true, false) -> false
+22. plus(suc(zero), X) -> suc(X)
+23. prop_plusIdem(suc(zero)) -> false
+24. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 2 (eqNat_3): eqNat(suc(X), zero) = false.
+Axiom 3 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+Axiom 4 (plus_1): plus(zero, X) = X.
+Axiom 5 (plus_2): plus(suc(X), Y) = suc(plus(X, Y)).
+Axiom 6 (prop_plusIdem_1): prop_plusIdem(X) = eqNat(plus(X, X), X).
+
+Goal 1 (prop_plusIdem): prop_plusIdem(X) = false.
+The goal is true when:
+  X = suc(zero)
+
+Proof:
+  prop_plusIdem(suc(zero))
+= { by axiom 6 (prop_plusIdem_1) }
+  eqNat(plus(suc(zero), suc(zero)), suc(zero))
+= { by axiom 5 (plus_2) }
+  eqNat(suc(plus(zero, suc(zero))), suc(zero))
+= { by axiom 4 (plus_1) }
+  eqNat(suc(suc(zero)), suc(zero))
+= { by axiom 3 (eqNat_4) }
+  eqNat(suc(zero), zero)
+= { by axiom 2 (eqNat_3) }
+  false
+
+RESULT: Theorem (the conjecture is true).

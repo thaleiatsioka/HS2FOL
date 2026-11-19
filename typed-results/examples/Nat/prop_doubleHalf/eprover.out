@@ -1,0 +1,68 @@
+% Preprocessing class: FSMSSMSSSSSNFFN.
+% Configuration: G-E--_208_C18_F1_SE_CS_SOS_SP_PS_S5PRR_RG_S04AN
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSS21-MFFFFFNN
+% partial match(1): FHUSM-FFSF21-MFFFFFNN
+% Configuration: G-E--_208_C12_11_nc_F1_SE_CS_SP_PS_S5PRR_RG_S04AN
+% Initializing proof state
+% Scanning for AC axioms
+%
+%tcf(i_0_11, plain, double(zero)=zero).
+%
+%tcf(i_0_13, plain, half(zero)=zero).
+%
+%tcf(i_0_21, negated_conjecture, ![X1:nat]:(($answer(esk1_1(X1))|eqNat(double(half(X1)),X1)!=false))).
+%
+%tcf(i_0_14, plain, half(suc(zero))=zero).
+%
+%tcf(i_0_17, plain, eqNat(zero,zero)=true).
+%
+%tcf(i_0_18, plain, ![X1:nat]:(eqNat(zero,suc(X1))=false)).
+%
+%tcf(i_0_19, plain, ![X1:nat]:(eqNat(suc(X1),zero)=false)).
+%
+%tcf(i_0_12, plain, ![X1:nat]:(suc(suc(double(X1)))=double(suc(X1)))).
+%
+%tcf(i_0_15, plain, ![X1:nat]:(half(suc(suc(X1)))=suc(half(X1)))).
+%
+%tcf(i_0_20, plain, ![X1:nat, X2:nat]:(eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+% Presaturation interreduction done
+%
+%tcf(i_0_11, plain, double(zero)=zero).
+%
+%tcf(i_0_13, plain, half(zero)=zero).
+%
+%tcf(i_0_21, negated_conjecture, ![X1:nat]:(($answer(esk1_1(X1))|eqNat(double(half(X1)),X1)!=false))).
+%
+%tcf(i_0_22, negated_conjecture, ($answer(esk1_1(zero))|eqNat(zero,zero)!=false)).
+%
+%tcf(i_0_14, plain, half(suc(zero))=zero).
+%
+%tcf(i_0_17, plain, eqNat(zero,zero)=true).
+%
+%tcf(i_0_18, plain, ![X1:nat]:(eqNat(zero,suc(X1))=false)).
+%
+%tcf(i_0_22, negated_conjecture, ($answer(esk1_1(zero))|true!=false)).
+%
+%tcf(i_0_19, plain, ![X1:nat]:(eqNat(suc(X1),zero)=false)).
+%
+%tcf(i_0_12, plain, ![X1:nat]:(suc(suc(double(X1)))=double(suc(X1)))).
+%
+%tcf(i_0_15, plain, ![X1:nat]:(half(suc(suc(X1)))=suc(half(X1)))).
+%
+%tcf(i_0_20, plain, ![X1:nat, X2:nat]:(eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%tcf(i_0_24, plain, ![X1:nat]:(eqNat(zero,double(suc(X1)))=false)).
+%
+%tcf(i_0_25, plain, ![X1:nat]:(eqNat(double(suc(X1)),zero)=false)).
+%
+%tcf(i_0_32, plain, ![X1:nat]:(eqNat(zero,double(double(suc(X1))))=false)).
+%
+%tcf(i_0_33, plain, ![X1:nat]:(eqNat(double(double(suc(X1))),zero)=false)).
+%
+%tcf(i_0_34, plain, ![X1:nat]:(eqNat(zero,double(double(double(suc(X1)))))=false)).
+%% SZS status Theorem
+% SZS answers Tuple [[suc(zero)]|_]
+
+% Proof found!

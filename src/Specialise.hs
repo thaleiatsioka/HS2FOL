@@ -5,7 +5,9 @@ module Specialise (specialise, SBind (..), SKind (..)) where
 import Control.Monad
 import Control.Monad.Except
 import Control.Monad.State
-import Data.List (intercalate)
+import Data.Char (isAlphaNum)
+import Data.List (intercalate, isPrefixOf)
+import Data.Maybe (isJust)
 import qualified Data.Map as M
 import Names
 import Syntax
@@ -33,24 +35,36 @@ data SpState = SpState
 
 type SM a = StateT SpState (Either String) a
 
-specialise :: Program -> TcResult -> Either String [SBind]
-specialise prog tc = evalStateT run (SpState M.empty [] [])
+-- | With @full = False@, only overloading is specialised (type variables
+-- that decide an instance). With @full = True@ every polymorphic function is
+-- specialised to each type it is used at, so that every function symbol
+-- gets a monomorphic type (needed for typed TPTP). Type variables of a
+-- property that remain free are turned into abstract sorts, and ambiguous
+-- type variables default to ().
+specialise :: Bool -> Program -> TcResult -> Either String [SBind]
+specialise full prog tc = evalStateT run (SpState M.empty [] [])
   where
     bindMap = M.fromList [ (bindKey b, b) | b <- progBinds prog ]
-    relOf k = M.findWithDefault [] k (tcRel tc)
+    relOf k
+      | full, Just b <- M.lookup k bindMap, isJust (bindBody b) = case schemeOf k of Forall vs _ -> vs
+      | otherwise = M.findWithDefault [] k (tcRel tc)
+    isProp b = bindKind b == BUser && "prop" `isPrefixOf` bindHask b && isJust (bindBody b)
+    abstractSorts b = M.fromList [ (v, TCon ("A_" ++ filter isAlphaNum v) []) | v <- case schemeOf (bindKey b) of Forall vs _ -> vs ]
     schemeOf k = M.findWithDefault (Forall [] (TVar "?")) k (tcSchemes tc)
     haskOf k = maybe k bindHask (M.lookup k bindMap)
 
     run = do
-      forM_ (progBinds prog) $ \b ->
-        when (bindKind b /= BInstance && null (relOf (bindKey b))) $ do
-          body' <- traverse (specExpr M.empty) (bindBody b >> M.lookup (bindKey b) (tcBodies tc))
+      forM_ (progBinds prog) $ \b -> do
+        let root = bindKind b /= BInstance && (null (relOf (bindKey b)) || (full && isProp b))
+            sub0 = if full && isProp b then abstractSorts b else M.empty
+        when root $ do
+          body' <- traverse (specExpr sub0) (bindBody b >> M.lookup (bindKey b) (tcBodies tc))
           markNew (bindKey b) >> return ()
           emit SBind
             { sbKey = bindKey b
             , sbHask = bindHask b
             , sbFol = funFolBase (bindHask b)
-            , sbType = schemeType (schemeOf (bindKey b))
+            , sbType = substType sub0 (schemeType (schemeOf (bindKey b)))
             , sbBody = body'
             , sbKind = if bindKind b == BPrelude then SKPrelude else SKUser
             }
@@ -116,11 +130,17 @@ specialise prog tc = evalStateT run (SpState M.empty [] [])
     request bk t base hask = do
       s <- maybe (throwError ("internal: cannot match the type of " ++ hask)) return
              (matchType (schemeType (schemeOf bk)) t)
-      let args = [ M.findWithDefault (TVar r) r s | r <- relOf bk ]
+      let args0 = [ M.findWithDefault (TVar r) r s | r <- relOf bk ]
+          args = if full then map defaultVars args0 else args0
       unless (all (null . ftv) args) $
         throwError ("ambiguous overloading in a use of " ++ hask ++ " at type(s) "
                     ++ intercalate ", " (map prettyType args) ++ "; add a type signature")
       let k = bk ++ "{" ++ intercalate "," (map prettyType args) ++ "}"
       new <- markNew k
-      when new $ modify (\st -> st { ssQueue = ssQueue st ++ [(k, bk, s, base ++ concatMap mangleType args, hask)] })
+      let s' = if full then M.union (M.fromList (zip (relOf bk) args)) s else s
+      when new $ modify (\st -> st { ssQueue = ssQueue st ++ [(k, bk, s', base ++ concatMap mangleType args, hask)] })
       return k
+
+    defaultVars t = case t of
+      TVar _ -> TCon "()" []
+      TCon c ts -> TCon c (map defaultVars ts)

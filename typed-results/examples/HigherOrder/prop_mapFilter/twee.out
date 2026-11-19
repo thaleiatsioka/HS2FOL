@@ -1,0 +1,457 @@
+Here is the input problem:
+  Axiom 1 (types14): suc(X) = suc(X).
+  Axiom 2 (types15): true = true.
+  Axiom 3 (types12): false = false.
+  Axiom 4 (types16): zero = zero.
+  Axiom 5 (types13): suc(X) = suc(X).
+  Axiom 6 (types21): fn_const_nat_bool(X) = fn_const_nat_bool(X).
+  Axiom 7 (types22): fn_const_nat_nat(X) = fn_const_nat_nat(X).
+  Axiom 8 (mapNatNat_1): mapNatNat(X, nil_nat) = nil_nat.
+  Axiom 9 (filterNat_1): filterNat(X, nil_nat) = nil_nat.
+  Axiom 10 (eqListNat_1): eqListNat(nil_nat, nil_nat) = true.
+  Axiom 11 (opAnd_2): opAnd(true, X) = X.
+  Axiom 12 (opAnd_1): opAnd(false, X) = false.
+  Axiom 13 (app_fn_id_nat_1): app_nat_nat(fn_id_nat, X) = X.
+  Axiom 14 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 15 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 16 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 17 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 18 (types25): X = X.
+  Axiom 19 (types26): X = X.
+  Axiom 20 (types23): fn_case_Nat_bool(X, Y) = fn_case_Nat_bool(X, Y).
+  Axiom 21 (types24): fn_case_Nat_nat(X, Y) = fn_case_Nat_nat(X, Y).
+  Axiom 22 (types3): opAnd(X, Y) = opAnd(X, Y).
+  Axiom 23 (types2): opAnd(X, Y) = opAnd(X, Y).
+  Axiom 24 (types18): app_nat_bool(X, Y) = app_nat_bool(X, Y).
+  Axiom 25 (app_fn_const_nat_bool_1): app_nat_bool(fn_const_nat_bool(X), Y) = X.
+  Axiom 26 (types11): cons_nat(X, Y) = cons_nat(X, Y).
+  Axiom 27 (types20): app_nat_nat(X, Y) = app_nat_nat(X, Y).
+  Axiom 28 (app_fn_const_nat_nat_1): app_nat_nat(fn_const_nat_nat(X), Y) = X.
+  Axiom 29 (types8): eqNat(X, Y) = eqNat(X, Y).
+  Axiom 30 (types7): eqNat(X, Y) = eqNat(X, Y).
+  Axiom 31 (types9): eqListNat(X, Y) = eqListNat(X, Y).
+  Axiom 32 (types1): opAnd(X, Y) = opAnd(X, Y).
+  Axiom 33 (types17): app_nat_bool(X, Y) = app_nat_bool(X, Y).
+  Axiom 34 (types6): eqNat(X, Y) = eqNat(X, Y).
+  Axiom 35 (types19): app_nat_nat(X, Y) = app_nat_nat(X, Y).
+  Axiom 36 (filterNat_case1_2): filterNat_case1(false, X, Y, Z) = filterNat(X, Z).
+  Axiom 37 (eqListNat_2): eqListNat(nil_nat, cons_nat(X, Y)) = false.
+  Axiom 38 (eqListNat_3): eqListNat(cons_nat(X, Y), nil_nat) = false.
+  Axiom 39 (app_fn_case_Nat_bool_1): app_nat_bool(fn_case_Nat_bool(X, Y), zero) = X.
+  Axiom 40 (app_fn_case_Nat_bool_2): app_nat_bool(fn_case_Nat_bool(X, Y), suc(Z)) = app_nat_bool(Y, Z).
+  Axiom 41 (filterNat_case1_1): filterNat_case1(true, X, Y, Z) = cons_nat(Y, filterNat(X, Z)).
+  Axiom 42 (app_fn_case_Nat_nat_1): app_nat_nat(fn_case_Nat_nat(X, Y), zero) = X.
+  Axiom 43 (app_fn_case_Nat_nat_2): app_nat_nat(fn_case_Nat_nat(X, Y), suc(Z)) = app_nat_nat(Y, Z).
+  Axiom 44 (types10): prop_mapFilter(X, Y, Z) = prop_mapFilter(X, Y, Z).
+  Axiom 45 (types5): filterNat_case1(X, Y, Z, W) = filterNat_case1(X, Y, Z, W).
+  Axiom 46 (types4): filterNat_case1(X, Y, Z, W) = filterNat_case1(X, Y, Z, W).
+  Axiom 47 (filterNat_2): filterNat(X, cons_nat(Y, Z)) = filterNat_case1(app_nat_bool(X, Y), X, Y, Z).
+  Axiom 48 (eqListNat_4): eqListNat(cons_nat(X, Y), cons_nat(Z, W)) = opAnd(eqNat(X, Z), eqListNat(Y, W)).
+  Axiom 49 (mapNatNat_2): mapNatNat(X, cons_nat(Y, Z)) = cons_nat(app_nat_nat(X, Y), mapNatNat(X, Z)).
+  Axiom 50 (prop_mapFilter_1): prop_mapFilter(X, Y, Z) = eqListNat(mapNatNat(X, filterNat(Y, Z)), filterNat(Y, mapNatNat(X, Z))).
+  Axiom 51 (reflexivity): equals(X, X) = true.
+  Axiom 52 (prop_mapFilter): equals(prop_mapFilter(X, Y, Z), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. suc(X) -> suc(X)
+2. true -> true
+3. false -> false
+4. zero -> zero
+5. suc(X) -> suc(X)
+6. fn_const_nat_bool(X) -> fn_const_nat_bool(X)
+7. fn_const_nat_nat(X) -> fn_const_nat_nat(X)
+8. mapNatNat(X, nil_nat) -> nil_nat
+9. filterNat(X, nil_nat) -> nil_nat
+10. eqListNat(nil_nat, nil_nat) -> true
+11. opAnd(true, X) -> X
+12. opAnd(false, X) -> false
+13. app_nat_nat(fn_id_nat, X) -> X
+14. eqNat(zero, zero) -> true
+15. eqNat(zero, suc(X)) -> false
+16. eqNat(suc(X), zero) -> false
+17. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+18. X -> X
+19. X -> X
+20. fn_case_Nat_bool(X, Y) -> fn_case_Nat_bool(X, Y)
+21. fn_case_Nat_nat(X, Y) -> fn_case_Nat_nat(X, Y)
+22. opAnd(X, Y) -> opAnd(X, Y)
+23. opAnd(X, Y) -> opAnd(X, Y)
+24. app_nat_bool(X, Y) -> app_nat_bool(X, Y)
+25. app_nat_bool(fn_const_nat_bool(X), Y) -> X
+26. cons_nat(X, Y) -> cons_nat(X, Y)
+27. app_nat_nat(X, Y) -> app_nat_nat(X, Y)
+28. app_nat_nat(fn_const_nat_nat(X), Y) -> X
+29. eqNat(X, Y) -> eqNat(X, Y)
+30. eqNat(X, Y) -> eqNat(X, Y)
+31. eqListNat(X, Y) -> eqListNat(X, Y)
+32. opAnd(X, Y) -> opAnd(X, Y)
+33. app_nat_bool(X, Y) -> app_nat_bool(X, Y)
+34. eqNat(X, Y) -> eqNat(X, Y)
+35. app_nat_nat(X, Y) -> app_nat_nat(X, Y)
+36. filterNat_case1(false, X, Y, Z) -> filterNat(X, Z)
+37. eqListNat(nil_nat, cons_nat(X, Y)) -> false
+38. eqListNat(cons_nat(X, Y), nil_nat) -> false
+39. app_nat_bool(fn_case_Nat_bool(X, Y), zero) -> X
+40. app_nat_bool(fn_case_Nat_bool(X, Y), suc(Z)) -> app_nat_bool(Y, Z)
+41. cons_nat(X, filterNat(Y, Z)) -> filterNat_case1(true, Y, X, Z)
+42. app_nat_nat(fn_case_Nat_nat(X, Y), zero) -> X
+43. app_nat_nat(fn_case_Nat_nat(X, Y), suc(Z)) -> app_nat_nat(Y, Z)
+44. prop_mapFilter(X, Y, Z) -> prop_mapFilter(X, Y, Z)
+45. filterNat_case1(X, Y, Z, W) -> filterNat_case1(X, Y, Z, W)
+46. filterNat_case1(X, Y, Z, W) -> filterNat_case1(X, Y, Z, W)
+47. filterNat_case1(app_nat_bool(X, Y), X, Y, Z) -> filterNat(X, cons_nat(Y, Z))
+48. opAnd(eqNat(X, Y), eqListNat(Z, W)) -> eqListNat(cons_nat(X, Z), cons_nat(Y, W))
+49. cons_nat(app_nat_nat(X, Y), mapNatNat(X, Z)) -> mapNatNat(X, cons_nat(Y, Z))
+50. eqListNat(mapNatNat(X, filterNat(Y, Z)), filterNat(Y, mapNatNat(X, Z))) -> prop_mapFilter(X, Y, Z)
+51. equals(X, X) -> true
+52. equals(prop_mapFilter(X, Y, Z), false) -> false
+53. prop_mapFilter(X, Y, nil_nat) -> true
+54. equals(true, false) -> false
+55. filterNat_case1(true, X, Y, nil_nat) -> cons_nat(Y, nil_nat)
+56. cons_nat(app_nat_nat(X, Y), nil_nat) -> mapNatNat(X, cons_nat(Y, nil_nat))
+57. cons_nat(X, mapNatNat(fn_id_nat, Y)) -> mapNatNat(fn_id_nat, cons_nat(X, Y))
+58. mapNatNat(fn_id_nat, cons_nat(X, nil_nat)) -> cons_nat(X, nil_nat)
+59. eqListNat(nil_nat, filterNat_case1(true, X, Y, Z)) -> false
+60. eqListNat(filterNat_case1(true, X, Y, Z), nil_nat) -> false
+61. eqListNat(nil_nat, mapNatNat(X, cons_nat(Y, Z))) -> false
+62. eqListNat(mapNatNat(X, cons_nat(Y, Z)), nil_nat) -> false
+63. mapNatNat(fn_const_nat_nat(X), cons_nat(Y, nil_nat)) -> cons_nat(X, nil_nat)
+64. filterNat_case1(X, fn_const_nat_bool(X), Y, Z) -> filterNat(fn_const_nat_bool(X), cons_nat(Y, Z))
+65. cons_nat(X, mapNatNat(fn_const_nat_nat(X), Y)) -> mapNatNat(fn_const_nat_nat(X), cons_nat(?, Y))
+66. mapNatNat(fn_const_nat_nat(X), cons_nat(Y, Z)) ~> mapNatNat(fn_const_nat_nat(X), cons_nat(?, Z))
+67. filterNat(fn_const_nat_bool(true), cons_nat(X, nil_nat)) -> cons_nat(X, nil_nat)
+68. filterNat(fn_const_nat_bool(false), cons_nat(X, Y)) -> filterNat(fn_const_nat_bool(false), Y)
+69. eqListNat(cons_nat(zero, X), cons_nat(zero, Y)) -> eqListNat(X, Y)
+70. eqListNat(cons_nat(zero, X), cons_nat(suc(Y), Z)) -> false
+71. eqListNat(cons_nat(suc(X), Y), cons_nat(zero, Z)) -> false
+72. eqListNat(cons_nat(X, nil_nat), cons_nat(Y, nil_nat)) -> opAnd(eqNat(X, Y), true)
+73. mapNatNat(fn_case_Nat_nat(X, Y), cons_nat(zero, nil_nat)) -> cons_nat(X, nil_nat)
+74. filterNat_case1(X, fn_case_Nat_bool(X, Y), zero, Z) -> filterNat(fn_case_Nat_bool(X, Y), cons_nat(zero, Z))
+75. filterNat(fn_case_Nat_bool(true, X), cons_nat(zero, nil_nat)) -> cons_nat(zero, nil_nat)
+76. cons_nat(X, mapNatNat(fn_case_Nat_nat(X, Y), Z)) -> mapNatNat(fn_case_Nat_nat(X, Y), cons_nat(zero, Z))
+77. filterNat(fn_case_Nat_bool(false, X), cons_nat(zero, Y)) -> filterNat(fn_case_Nat_bool(false, X), Y)
+78. eqListNat(nil_nat, filterNat(fn_const_nat_bool(true), cons_nat(X, Y))) -> false
+79. eqListNat(filterNat(fn_const_nat_bool(true), cons_nat(X, Y)), nil_nat) -> false
+80. mapNatNat(fn_const_nat_nat(X), mapNatNat(Y, cons_nat(Z, nil_nat))) -> cons_nat(X, nil_nat)
+81. mapNatNat(fn_id_nat, cons_nat(X, cons_nat(Y, nil_nat))) -> cons_nat(X, cons_nat(Y, nil_nat))
+82. mapNatNat(fn_id_nat, mapNatNat(X, cons_nat(Y, nil_nat))) -> mapNatNat(X, cons_nat(Y, nil_nat))
+83. filterNat(fn_const_nat_bool(false), mapNatNat(X, cons_nat(Y, nil_nat))) -> nil_nat
+84. prop_mapFilter(X, fn_const_nat_bool(false), cons_nat(Y, nil_nat)) -> true
+85. eqListNat(nil_nat, mapNatNat(X, filterNat_case1(true, Y, Z, W))) -> false
+86. eqListNat(nil_nat, mapNatNat(X, mapNatNat(Y, cons_nat(Z, W)))) -> false
+87. eqListNat(mapNatNat(X, filterNat_case1(true, Y, Z, W)), nil_nat) -> false
+88. eqListNat(mapNatNat(X, mapNatNat(Y, cons_nat(Z, W))), nil_nat) -> false
+89. mapNatNat(fn_case_Nat_nat(X, Y), cons_nat(suc(Z), nil_nat)) -> mapNatNat(Y, cons_nat(Z, nil_nat))
+90. eqListNat(nil_nat, filterNat(fn_case_Nat_bool(true, X), cons_nat(zero, Y))) -> false
+91. eqListNat(filterNat(fn_case_Nat_bool(true, X), cons_nat(zero, Y)), nil_nat) -> false
+92. eqListNat(cons_nat(X, nil_nat), cons_nat(Y, cons_nat(Z, W))) -> opAnd(eqNat(X, Y), false)
+93. eqListNat(cons_nat(X, cons_nat(Y, Z)), cons_nat(W, nil_nat)) -> opAnd(eqNat(X, W), false)
+94. mapNatNat(fn_const_nat_nat(X), cons_nat(?, cons_nat(?, nil_nat))) = cons_nat(X, cons_nat(X, nil_nat))
+95. mapNatNat(fn_const_nat_nat(X), cons_nat(?, cons_nat(Y, nil_nat))) ~> mapNatNat(fn_const_nat_nat(X), cons_nat(?, cons_nat(?, nil_nat)))
+96. filterNat(fn_const_nat_bool(true), cons_nat(X, cons_nat(Y, nil_nat))) -> cons_nat(X, cons_nat(Y, nil_nat))
+97. filterNat(fn_const_nat_bool(true), mapNatNat(X, cons_nat(Y, nil_nat))) -> mapNatNat(X, cons_nat(Y, nil_nat))
+98. eqListNat(mapNatNat(X, cons_nat(Y, nil_nat)), mapNatNat(X, cons_nat(Y, nil_nat))) -> prop_mapFilter(X, fn_const_nat_bool(true), cons_nat(Y, nil_nat))
+99. mapNatNat(fn_const_nat_nat(X), filterNat_case1(true, Y, Z, W)) ~> mapNatNat(fn_const_nat_nat(X), filterNat_case1(true, Y, ?, W))
+100. mapNatNat(fn_const_nat_nat(X), cons_nat(?, mapNatNat(Y, Z))) -> mapNatNat(fn_const_nat_nat(X), mapNatNat(Y, cons_nat(?, Z)))
+101. mapNatNat(fn_const_nat_nat(X), mapNatNat(Y, cons_nat(Z, W))) ~> mapNatNat(fn_const_nat_nat(X), mapNatNat(Y, cons_nat(?, W)))
+102. filterNat_case1(true, fn_const_nat_bool(false), X, cons_nat(Y, Z)) -> filterNat_case1(true, fn_const_nat_bool(false), X, Z)
+103. filterNat(fn_const_nat_bool(false), filterNat_case1(true, X, Y, Z)) -> filterNat(fn_const_nat_bool(false), filterNat(X, Z))
+104. filterNat(fn_const_nat_bool(false), mapNatNat(X, cons_nat(Y, Z))) -> filterNat(fn_const_nat_bool(false), mapNatNat(X, Z))
+105. prop_mapFilter(X, fn_const_nat_bool(false), cons_nat(Y, Z)) -> prop_mapFilter(X, fn_const_nat_bool(false), Z)
+106. prop_mapFilter(fn_id_nat, fn_const_nat_bool(true), cons_nat(X, nil_nat)) = opAnd(eqNat(X, X), true)
+107. equals(opAnd(eqNat(X, X), true), false) -> false
+108. eqListNat(cons_nat(suc(X), Y), cons_nat(suc(Z), W)) -> eqListNat(cons_nat(X, Y), cons_nat(Z, W))
+109. mapNatNat(fn_const_nat_nat(X), cons_nat(?, cons_nat(Y, Z))) ~> mapNatNat(fn_const_nat_nat(X), cons_nat(?, cons_nat(?, Z)))
+110. cons_nat(app_nat_nat(X, Y), mapNatNat(fn_case_Nat_nat(Z, X), W)) -> mapNatNat(fn_case_Nat_nat(Z, X), cons_nat(suc(Y), W))
+111. cons_nat(X, mapNatNat(fn_case_Nat_nat(Y, fn_id_nat), Z)) -> mapNatNat(fn_case_Nat_nat(Y, fn_id_nat), cons_nat(suc(X), Z))
+112. eqListNat(filterNat_case1(true, X, zero, Y), cons_nat(suc(Z), W)) -> false
+113. eqListNat(cons_nat(zero, X), filterNat_case1(true, Y, suc(Z), W)) -> false
+114. eqListNat(filterNat_case1(true, X, suc(Y), Z), cons_nat(zero, W)) -> false
+115. eqListNat(cons_nat(suc(X), Y), filterNat_case1(true, Z, zero, W)) -> false
+116. eqListNat(filterNat_case1(true, X, zero, Y), cons_nat(zero, Z)) -> eqListNat(filterNat(X, Y), Z)
+117. eqListNat(cons_nat(zero, X), filterNat_case1(true, Y, zero, Z)) -> eqListNat(X, filterNat(Y, Z))
+118. mapNatNat(fn_case_Nat_nat(X, fn_id_nat), cons_nat(suc(X), Y)) -> mapNatNat(fn_case_Nat_nat(X, fn_id_nat), cons_nat(zero, Y))
+119. eqListNat(mapNatNat(fn_id_nat, cons_nat(zero, X)), cons_nat(suc(Y), Z)) -> false
+120. eqListNat(cons_nat(zero, X), mapNatNat(fn_id_nat, cons_nat(suc(Y), Z))) -> false
+121. eqListNat(mapNatNat(fn_id_nat, cons_nat(suc(X), Y)), cons_nat(zero, Z)) -> false
+122. eqListNat(cons_nat(suc(X), Y), mapNatNat(fn_id_nat, cons_nat(zero, Z))) -> false
+123. eqListNat(mapNatNat(fn_id_nat, cons_nat(zero, X)), cons_nat(zero, Y)) -> eqListNat(mapNatNat(fn_id_nat, X), Y)
+124. eqListNat(cons_nat(zero, X), mapNatNat(fn_id_nat, cons_nat(zero, Y))) -> eqListNat(X, mapNatNat(fn_id_nat, Y))
+125. eqListNat(mapNatNat(X, cons_nat(Y, nil_nat)), cons_nat(Z, nil_nat)) -> opAnd(eqNat(app_nat_nat(X, Y), Z), true)
+126. eqListNat(cons_nat(X, nil_nat), mapNatNat(Y, cons_nat(Z, nil_nat))) -> opAnd(eqNat(X, app_nat_nat(Y, Z)), true)
+127. cons_nat(X, mapNatNat(fn_case_Nat_nat(Y, fn_const_nat_nat(X)), Z)) -> mapNatNat(fn_case_Nat_nat(Y, fn_const_nat_nat(X)), cons_nat(suc(?), Z))
+128. mapNatNat(fn_case_Nat_nat(X, fn_const_nat_nat(Y)), cons_nat(suc(Z), W)) ~> mapNatNat(fn_case_Nat_nat(X, fn_const_nat_nat(Y)), cons_nat(suc(?), W))
+129. eqListNat(nil_nat, filterNat(fn_const_nat_bool(true), filterNat_case1(true, X, Y, Z))) -> false
+130. eqListNat(nil_nat, filterNat(fn_const_nat_bool(true), mapNatNat(X, cons_nat(Y, Z)))) -> false
+131. eqListNat(filterNat(fn_const_nat_bool(true), filterNat_case1(true, X, Y, Z)), nil_nat) -> false
+132. eqListNat(filterNat(fn_const_nat_bool(true), mapNatNat(X, cons_nat(Y, Z))), nil_nat) -> false
+133. prop_mapFilter(X, fn_const_nat_bool(false), mapNatNat(Y, cons_nat(Z, nil_nat))) -> true
+134. eqListNat(nil_nat, mapNatNat(X, filterNat(fn_const_nat_bool(true), cons_nat(Y, Z)))) -> false
+135. eqListNat(mapNatNat(X, filterNat(fn_const_nat_bool(true), cons_nat(Y, Z))), nil_nat) -> false
+136. mapNatNat(fn_case_Nat_nat(X, ?), cons_nat(zero, cons_nat(zero, nil_nat))) = cons_nat(X, cons_nat(X, nil_nat))
+137. mapNatNat(fn_case_Nat_nat(X, Y), cons_nat(zero, cons_nat(zero, nil_nat))) ~> mapNatNat(fn_case_Nat_nat(X, ?), cons_nat(zero, cons_nat(zero, nil_nat)))
+138. prop_mapFilter(fn_const_nat_nat(X), fn_const_nat_bool(true), cons_nat(?, nil_nat)) = opAnd(eqNat(X, X), true)
+139. prop_mapFilter(fn_const_nat_nat(X), fn_const_nat_bool(true), cons_nat(Y, nil_nat)) ~> prop_mapFilter(fn_const_nat_nat(X), fn_const_nat_bool(true), cons_nat(?, nil_nat))
+140. filterNat_case1(true, fn_case_Nat_bool(true, X), Y, cons_nat(zero, nil_nat)) -> cons_nat(Y, cons_nat(zero, nil_nat))
+141. filterNat_case1(app_nat_bool(X, Y), fn_case_Nat_bool(Z, X), suc(Y), W) -> filterNat(fn_case_Nat_bool(Z, X), cons_nat(suc(Y), W))
+142. filterNat_case1(X, fn_case_Nat_bool(Y, fn_const_nat_bool(X)), suc(Z), W) -> filterNat(fn_case_Nat_bool(Y, fn_const_nat_bool(X)), cons_nat(suc(Z), W))
+143. filterNat(fn_case_Nat_bool(X, fn_const_nat_bool(true)), cons_nat(suc(Y), nil_nat)) -> cons_nat(suc(Y), nil_nat)
+144. filterNat(fn_case_Nat_bool(X, fn_const_nat_bool(false)), cons_nat(suc(Y), Z)) -> filterNat(fn_case_Nat_bool(X, fn_const_nat_bool(false)), Z)
+145. eqListNat(mapNatNat(fn_id_nat, filterNat(X, cons_nat(Y, nil_nat))), filterNat(X, cons_nat(Y, nil_nat))) -> prop_mapFilter(fn_id_nat, X, cons_nat(Y, nil_nat))
+146. prop_mapFilter(fn_id_nat, fn_case_Nat_bool(true, X), cons_nat(zero, nil_nat)) -> true
+147. prop_mapFilter(fn_id_nat, fn_case_Nat_bool(false, X), cons_nat(zero, nil_nat)) -> true
+148. mapNatNat(fn_const_nat_nat(X), mapNatNat(Y, mapNatNat(Z, cons_nat(W, nil_nat)))) -> cons_nat(X, nil_nat)
+149. filterNat_case1(true, fn_case_Nat_bool(false, X), Y, cons_nat(zero, Z)) -> filterNat_case1(true, fn_case_Nat_bool(false, X), Y, Z)
+150. filterNat(fn_case_Nat_bool(false, X), filterNat_case1(true, Y, zero, Z)) -> filterNat(fn_case_Nat_bool(false, X), filterNat(Y, Z))
+151. eqListNat(mapNatNat(fn_const_nat_nat(zero), cons_nat(?, X)), cons_nat(suc(Y), Z)) -> false
+152. eqListNat(cons_nat(zero, X), mapNatNat(fn_const_nat_nat(suc(Y)), cons_nat(?, Z))) -> false
+153. eqListNat(mapNatNat(fn_const_nat_nat(suc(X)), cons_nat(?, Y)), cons_nat(zero, Z)) -> false
+154. eqListNat(cons_nat(suc(X), Y), mapNatNat(fn_const_nat_nat(zero), cons_nat(?, Z))) -> false
+155. filterNat(fn_const_nat_bool(false), mapNatNat(X, mapNatNat(Y, cons_nat(Z, nil_nat)))) -> nil_nat
+156. filterNat(fn_case_Nat_bool(false, X), mapNatNat(fn_id_nat, cons_nat(zero, Y))) -> filterNat(fn_case_Nat_bool(false, X), mapNatNat(fn_id_nat, Y))
+157. prop_mapFilter(fn_id_nat, fn_case_Nat_bool(false, X), cons_nat(zero, Y)) -> prop_mapFilter(fn_id_nat, fn_case_Nat_bool(false, X), Y)
+158. mapNatNat(fn_case_Nat_nat(X, fn_const_nat_nat(X)), cons_nat(suc(?), Y)) -> mapNatNat(fn_case_Nat_nat(X, fn_const_nat_nat(X)), cons_nat(zero, Y))
+159. eqListNat(nil_nat, filterNat(fn_const_nat_bool(true), filterNat(fn_const_nat_bool(true), cons_nat(X, Y)))) -> false
+160. eqListNat(filterNat(fn_const_nat_bool(true), filterNat(fn_const_nat_bool(true), cons_nat(X, Y))), nil_nat) -> false
+161. prop_mapFilter(fn_id_nat, fn_case_Nat_bool(X, fn_const_nat_bool(false)), cons_nat(suc(Y), nil_nat)) -> true
+162. eqListNat(nil_nat, mapNatNat(X, mapNatNat(Y, filterNat_case1(true, Z, W, V)))) -> false
+163. eqListNat(nil_nat, mapNatNat(X, mapNatNat(Y, mapNatNat(Z, cons_nat(W, V))))) -> false
+164. eqListNat(mapNatNat(X, mapNatNat(Y, filterNat_case1(true, Z, W, V))), nil_nat) -> false
+165. eqListNat(mapNatNat(X, mapNatNat(Y, mapNatNat(Z, cons_nat(W, V)))), nil_nat) -> false
+166. prop_mapFilter(fn_id_nat, fn_const_nat_bool(true), cons_nat(suc(X), nil_nat)) = opAnd(eqNat(X, X), true)
+167. filterNat(fn_case_Nat_bool(true, X), cons_nat(zero, cons_nat(zero, nil_nat))) -> cons_nat(zero, cons_nat(zero, nil_nat))
+168. eqListNat(mapNatNat(fn_const_nat_nat(zero), cons_nat(?, X)), cons_nat(zero, Y)) -> eqListNat(mapNatNat(fn_const_nat_nat(zero), X), Y)
+169. eqListNat(cons_nat(zero, X), mapNatNat(fn_const_nat_nat(zero), cons_nat(?, Y))) -> eqListNat(X, mapNatNat(fn_const_nat_nat(zero), Y))
+170. cons_nat(app_nat_nat(fn_case_Nat_nat(X, Y), Z), cons_nat(X, nil_nat)) -> mapNatNat(fn_case_Nat_nat(X, Y), cons_nat(Z, cons_nat(zero, nil_nat)))
+171. mapNatNat(fn_id_nat, cons_nat(X, cons_nat(Y, cons_nat(Z, nil_nat)))) -> cons_nat(X, cons_nat(Y, cons_nat(Z, nil_nat)))
+172. mapNatNat(fn_id_nat, cons_nat(X, mapNatNat(Y, cons_nat(Z, nil_nat)))) -> cons_nat(X, mapNatNat(Y, cons_nat(Z, nil_nat)))
+173. mapNatNat(fn_id_nat, mapNatNat(X, mapNatNat(Y, cons_nat(Z, nil_nat)))) -> mapNatNat(X, mapNatNat(Y, cons_nat(Z, nil_nat)))
+174. mapNatNat(fn_const_nat_nat(X), mapNatNat(?, cons_nat(?, cons_nat(?, nil_nat)))) = cons_nat(X, cons_nat(X, nil_nat))
+175. mapNatNat(fn_const_nat_nat(X), mapNatNat(Y, cons_nat(?, cons_nat(Z, nil_nat)))) ~> mapNatNat(fn_const_nat_nat(X), mapNatNat(?, cons_nat(?, cons_nat(?, nil_nat))))
+176. filterNat_case1(true, fn_const_nat_bool(false), X, mapNatNat(Y, cons_nat(Z, nil_nat))) -> cons_nat(X, nil_nat)
+177. eqListNat(nil_nat, mapNatNat(X, filterNat(fn_case_Nat_bool(true, Y), cons_nat(zero, Z)))) -> false
+178. eqListNat(mapNatNat(X, filterNat(fn_case_Nat_bool(true, Y), cons_nat(zero, Z))), nil_nat) -> false
+179. eqListNat(nil_nat, filterNat(fn_case_Nat_bool(true, X), filterNat_case1(true, Y, zero, Z))) -> false
+180. eqListNat(filterNat(fn_case_Nat_bool(true, X), filterNat_case1(true, Y, zero, Z)), nil_nat) -> false
+181. eqListNat(filterNat(fn_const_nat_bool(true), cons_nat(zero, X)), cons_nat(suc(Y), Z)) -> false
+182. eqListNat(cons_nat(zero, X), filterNat(fn_const_nat_bool(true), cons_nat(suc(Y), Z))) -> false
+183. eqListNat(filterNat(fn_const_nat_bool(true), cons_nat(suc(X), Y)), cons_nat(zero, Z)) -> false
+184. eqListNat(cons_nat(suc(X), Y), filterNat(fn_const_nat_bool(true), cons_nat(zero, Z))) -> false
+185. eqListNat(nil_nat, filterNat(fn_case_Nat_bool(X, fn_const_nat_bool(true)), cons_nat(suc(Y), Z))) -> false
+186. eqListNat(filterNat(fn_case_Nat_bool(X, fn_const_nat_bool(true)), cons_nat(suc(Y), Z)), nil_nat) -> false
+187. mapNatNat(fn_const_nat_nat(X), filterNat(fn_const_nat_bool(true), cons_nat(Y, Z))) ~> mapNatNat(fn_const_nat_nat(X), filterNat(fn_const_nat_bool(true), cons_nat(?, Z)))
+188. prop_mapFilter(fn_const_nat_nat(X), fn_const_nat_bool(true), cons_nat(Y, Z)) ~> prop_mapFilter(fn_const_nat_nat(X), fn_const_nat_bool(true), cons_nat(?, Z))
+189. prop_mapFilter(fn_case_Nat_nat(X, ?), fn_const_nat_bool(true), cons_nat(zero, nil_nat)) = opAnd(eqNat(X, X), true)
+190. prop_mapFilter(fn_case_Nat_nat(X, Y), fn_const_nat_bool(true), cons_nat(zero, nil_nat)) ~> prop_mapFilter(fn_case_Nat_nat(X, ?), fn_const_nat_bool(true), cons_nat(zero, nil_nat))
+191. mapNatNat(fn_case_Nat_nat(X, fn_id_nat), cons_nat(suc(Y), cons_nat(zero, nil_nat))) -> cons_nat(Y, cons_nat(X, nil_nat))
+192. mapNatNat(fn_case_Nat_nat(app_nat_nat(X, Y), X), cons_nat(suc(Y), Z)) -> mapNatNat(fn_case_Nat_nat(app_nat_nat(X, Y), X), cons_nat(zero, Z))
+193. filterNat(fn_const_nat_bool(false), filterNat(fn_const_nat_bool(true), cons_nat(X, Y))) -> filterNat(fn_const_nat_bool(false), filterNat(fn_const_nat_bool(true), Y))
+194. eqListNat(cons_nat(X, nil_nat), cons_nat(Y, filterNat_case1(true, Z, W, V))) -> opAnd(eqNat(X, Y), false)
+195. eqListNat(cons_nat(X, nil_nat), cons_nat(Y, mapNatNat(Z, cons_nat(W, V)))) -> opAnd(eqNat(X, Y), false)
+196. eqListNat(cons_nat(X, filterNat_case1(true, Y, Z, W)), cons_nat(V, nil_nat)) -> opAnd(eqNat(X, V), false)
+197. eqListNat(cons_nat(X, mapNatNat(Y, cons_nat(Z, W))), cons_nat(V, nil_nat)) -> opAnd(eqNat(X, V), false)
+198. eqListNat(nil_nat, filterNat(fn_case_Nat_bool(true, X), mapNatNat(fn_id_nat, cons_nat(zero, Y)))) -> false
+199. eqListNat(filterNat(fn_case_Nat_bool(true, X), mapNatNat(fn_id_nat, cons_nat(zero, Y))), nil_nat) -> false
+200. cons_nat(X, mapNatNat(fn_case_Nat_nat(Y, fn_case_Nat_nat(X, Z)), W)) -> mapNatNat(fn_case_Nat_nat(Y, fn_case_Nat_nat(X, Z)), cons_nat(suc(zero), W))
+201. prop_mapFilter(X, fn_const_nat_bool(false), filterNat_case1(true, Y, Z, W)) -> prop_mapFilter(X, fn_const_nat_bool(false), filterNat(Y, W))
+202. prop_mapFilter(X, fn_const_nat_bool(false), mapNatNat(Y, cons_nat(Z, W))) -> prop_mapFilter(X, fn_const_nat_bool(false), mapNatNat(Y, W))
+203. prop_mapFilter(fn_const_nat_nat(X), fn_const_nat_bool(true), cons_nat(?, nil_nat)) -> prop_mapFilter(fn_id_nat, fn_const_nat_bool(true), cons_nat(X, nil_nat))
+204. eqListNat(filterNat(fn_const_nat_bool(true), cons_nat(zero, X)), cons_nat(zero, Y)) -> eqListNat(filterNat(fn_const_nat_bool(true), X), Y)
+205. eqListNat(cons_nat(zero, X), filterNat(fn_const_nat_bool(true), cons_nat(zero, Y))) -> eqListNat(X, filterNat(fn_const_nat_bool(true), Y))
+206. eqListNat(mapNatNat(fn_case_Nat_nat(zero, X), cons_nat(zero, Y)), cons_nat(suc(Z), W)) -> false
+207. eqListNat(cons_nat(zero, X), mapNatNat(fn_case_Nat_nat(suc(Y), Z), cons_nat(zero, W))) -> false
+208. eqListNat(mapNatNat(fn_case_Nat_nat(suc(X), Y), cons_nat(zero, Z)), cons_nat(zero, W)) -> false
+209. eqListNat(cons_nat(suc(X), Y), mapNatNat(fn_case_Nat_nat(zero, Z), cons_nat(zero, W))) -> false
+210. mapNatNat(fn_case_Nat_nat(X, Y), cons_nat(zero, cons_nat(suc(Z), nil_nat))) -> cons_nat(X, mapNatNat(Y, cons_nat(Z, nil_nat)))
+211. mapNatNat(fn_case_Nat_nat(X, Y), cons_nat(suc(Z), cons_nat(zero, nil_nat))) -> cons_nat(app_nat_nat(Y, Z), cons_nat(X, nil_nat))
+212. mapNatNat(fn_case_Nat_nat(X, fn_id_nat), cons_nat(suc(app_nat_nat(fn_case_Nat_nat(X, fn_id_nat), Y)), Z)) -> mapNatNat(fn_case_Nat_nat(X, fn_id_nat), cons_nat(Y, Z))
+213. mapNatNat(fn_id_nat, mapNatNat(X, cons_nat(Y, cons_nat(Z, nil_nat)))) -> mapNatNat(X, cons_nat(Y, cons_nat(Z, nil_nat)))
+214. filterNat_case1(X, fn_case_Nat_bool(Y, fn_case_Nat_bool(X, Z)), suc(zero), W) -> filterNat(fn_case_Nat_bool(Y, fn_case_Nat_bool(X, Z)), cons_nat(suc(zero), W))
+215. filterNat(fn_case_Nat_bool(X, fn_case_Nat_bool(true, Y)), cons_nat(suc(zero), nil_nat)) -> cons_nat(suc(zero), nil_nat)
+216. filterNat(fn_case_Nat_bool(X, fn_case_Nat_bool(false, Y)), cons_nat(suc(zero), Z)) -> filterNat(fn_case_Nat_bool(X, fn_case_Nat_bool(false, Y)), Z)
+217. mapNatNat(fn_case_Nat_nat(X, ?), cons_nat(zero, cons_nat(zero, nil_nat))) -> mapNatNat(fn_const_nat_nat(X), cons_nat(?, cons_nat(?, nil_nat)))
+218. prop_mapFilter(fn_id_nat, fn_case_Nat_bool(?, fn_const_nat_bool(true)), cons_nat(suc(X), nil_nat)) = opAnd(eqNat(X, X), true)
+219. prop_mapFilter(fn_id_nat, fn_case_Nat_bool(X, fn_const_nat_bool(true)), cons_nat(suc(Y), nil_nat)) ~> prop_mapFilter(fn_id_nat, fn_case_Nat_bool(?, fn_const_nat_bool(true)), cons_nat(suc(Y), nil_nat))
+220. eqListNat(mapNatNat(X, cons_nat(Y, nil_nat)), cons_nat(Z, cons_nat(W, V))) -> opAnd(eqNat(app_nat_nat(X, Y), Z), false)
+221. eqListNat(cons_nat(X, cons_nat(Y, Z)), mapNatNat(W, cons_nat(V, nil_nat))) -> opAnd(eqNat(X, app_nat_nat(W, V)), false)
+222. prop_mapFilter(fn_id_nat, fn_case_Nat_bool(X, fn_case_Nat_bool(true, Y)), cons_nat(suc(zero), nil_nat)) -> true
+223. prop_mapFilter(fn_id_nat, fn_case_Nat_bool(X, fn_case_Nat_bool(false, Y)), cons_nat(suc(zero), nil_nat)) -> true
+224. eqListNat(filterNat_case1(true, X, zero, Y), filterNat_case1(true, Z, suc(W), V)) -> false
+225. eqListNat(filterNat_case1(true, X, suc(Y), Z), filterNat_case1(true, W, zero, V)) -> false
+226. eqListNat(cons_nat(X, cons_nat(zero, Y)), cons_nat(Z, cons_nat(zero, W))) -> eqListNat(cons_nat(X, Y), cons_nat(Z, W))
+227. mapNatNat(fn_const_nat_nat(X), mapNatNat(?, cons_nat(?, cons_nat(?, nil_nat)))) -> mapNatNat(fn_const_nat_nat(X), cons_nat(?, cons_nat(?, nil_nat)))
+228. mapNatNat(fn_case_Nat_nat(X, fn_case_Nat_nat(X, Y)), cons_nat(suc(zero), Z)) -> mapNatNat(fn_case_Nat_nat(X, fn_case_Nat_nat(X, Y)), cons_nat(zero, Z))
+229. prop_mapFilter(fn_id_nat, fn_const_nat_bool(true), cons_nat(suc(X), nil_nat)) -> prop_mapFilter(fn_id_nat, fn_const_nat_bool(true), cons_nat(X, nil_nat))
+230. eqListNat(cons_nat(X, nil_nat), mapNatNat(fn_id_nat, cons_nat(Y, cons_nat(Z, W)))) -> opAnd(eqNat(X, Y), false)
+231. eqListNat(mapNatNat(fn_id_nat, cons_nat(X, cons_nat(Y, Z))), cons_nat(W, nil_nat)) -> opAnd(eqNat(X, W), false)
+232. filterNat(fn_case_Nat_bool(false, X), mapNatNat(fn_const_nat_nat(zero), cons_nat(?, Y))) -> filterNat(fn_case_Nat_bool(false, X), mapNatNat(fn_const_nat_nat(zero), Y))
+233. eqListNat(filterNat_case1(true, X, zero, Y), mapNatNat(fn_id_nat, cons_nat(suc(Z), W))) -> false
+234. eqListNat(filterNat(fn_case_Nat_bool(true, X), cons_nat(zero, Y)), cons_nat(suc(Z), W)) -> false
+235. eqListNat(mapNatNat(fn_id_nat, cons_nat(zero, X)), filterNat_case1(true, Y, suc(Z), W)) -> false
+236. eqListNat(filterNat_case1(true, X, suc(Y), Z), mapNatNat(fn_id_nat, cons_nat(zero, W))) -> false
+237. eqListNat(mapNatNat(fn_id_nat, cons_nat(suc(X), Y)), filterNat_case1(true, Z, zero, W)) -> false
+238. eqListNat(cons_nat(suc(X), Y), filterNat(fn_case_Nat_bool(true, Z), cons_nat(zero, W))) -> false
+239. eqListNat(mapNatNat(fn_id_nat, filterNat_case1(true, X, zero, Y)), cons_nat(suc(Z), W)) -> false
+240. eqListNat(cons_nat(zero, X), mapNatNat(fn_id_nat, filterNat_case1(true, Y, suc(Z), W))) -> false
+241. eqListNat(mapNatNat(fn_id_nat, filterNat_case1(true, X, suc(Y), Z)), cons_nat(zero, W)) -> false
+242. eqListNat(cons_nat(suc(X), Y), mapNatNat(fn_id_nat, filterNat_case1(true, Z, zero, W))) -> false
+243. eqListNat(mapNatNat(fn_case_Nat_nat(zero, X), cons_nat(zero, Y)), cons_nat(zero, Z)) -> eqListNat(mapNatNat(fn_case_Nat_nat(zero, X), Y), Z)
+244. eqListNat(cons_nat(zero, X), mapNatNat(fn_case_Nat_nat(zero, Y), cons_nat(zero, Z))) -> eqListNat(X, mapNatNat(fn_case_Nat_nat(zero, Y), Z))
+245. filterNat(fn_const_nat_bool(true), cons_nat(X, cons_nat(Y, cons_nat(Z, nil_nat)))) -> cons_nat(X, cons_nat(Y, cons_nat(Z, nil_nat)))
+246. filterNat(fn_const_nat_bool(true), cons_nat(X, mapNatNat(Y, cons_nat(Z, nil_nat)))) -> cons_nat(X, mapNatNat(Y, cons_nat(Z, nil_nat)))
+247. filterNat(fn_const_nat_bool(true), mapNatNat(X, mapNatNat(Y, cons_nat(Z, nil_nat)))) -> mapNatNat(X, mapNatNat(Y, cons_nat(Z, nil_nat)))
+248. eqListNat(mapNatNat(X, mapNatNat(Y, cons_nat(Z, nil_nat))), mapNatNat(X, mapNatNat(Y, cons_nat(Z, nil_nat)))) -> prop_mapFilter(X, fn_const_nat_bool(true), mapNatNat(Y, cons_nat(Z, nil_nat)))
+249. mapNatNat(fn_const_nat_nat(X), mapNatNat(Y, filterNat_case1(true, Z, W, V))) ~> mapNatNat(fn_const_nat_nat(X), mapNatNat(Y, filterNat_case1(true, Z, ?, V)))
+250. mapNatNat(fn_const_nat_nat(X), mapNatNat(Y, cons_nat(?, mapNatNat(Z, W)))) -> mapNatNat(fn_const_nat_nat(X), mapNatNat(Y, mapNatNat(Z, cons_nat(?, W))))
+251. mapNatNat(fn_const_nat_nat(X), mapNatNat(Y, mapNatNat(Z, cons_nat(W, V)))) ~> mapNatNat(fn_const_nat_nat(X), mapNatNat(Y, mapNatNat(Z, cons_nat(?, V))))
+252. mapNatNat(fn_case_Nat_nat(X, fn_id_nat), cons_nat(suc(Y), cons_nat(suc(Z), nil_nat))) -> cons_nat(Y, cons_nat(Z, nil_nat))
+253. filterNat_case1(true, fn_const_nat_bool(false), X, filterNat_case1(true, Y, Z, W)) -> filterNat_case1(true, fn_const_nat_bool(false), X, filterNat(Y, W))
+254. filterNat_case1(true, fn_const_nat_bool(false), X, mapNatNat(Y, cons_nat(Z, W))) -> filterNat_case1(true, fn_const_nat_bool(false), X, mapNatNat(Y, W))
+255. filterNat(fn_const_nat_bool(false), mapNatNat(X, filterNat_case1(true, Y, Z, W))) -> filterNat(fn_const_nat_bool(false), mapNatNat(X, filterNat(Y, W)))
+256. filterNat(fn_const_nat_bool(false), mapNatNat(X, mapNatNat(Y, cons_nat(Z, W)))) -> filterNat(fn_const_nat_bool(false), mapNatNat(X, mapNatNat(Y, W)))
+257. eqListNat(mapNatNat(fn_id_nat, mapNatNat(fn_id_nat, cons_nat(zero, X))), cons_nat(suc(Y), Z)) -> false
+258. eqListNat(mapNatNat(fn_id_nat, cons_nat(zero, X)), mapNatNat(fn_id_nat, cons_nat(suc(Y), Z))) -> false
+259. eqListNat(cons_nat(zero, X), mapNatNat(fn_id_nat, mapNatNat(fn_id_nat, cons_nat(suc(Y), Z)))) -> false
+260. eqListNat(mapNatNat(fn_id_nat, mapNatNat(fn_id_nat, cons_nat(suc(X), Y))), cons_nat(zero, Z)) -> false
+261. eqListNat(mapNatNat(fn_id_nat, cons_nat(suc(X), Y)), mapNatNat(fn_id_nat, cons_nat(zero, Z))) -> false
+262. eqListNat(cons_nat(suc(X), Y), mapNatNat(fn_id_nat, mapNatNat(fn_id_nat, cons_nat(zero, Z)))) -> false
+263. eqListNat(nil_nat, filterNat(fn_case_Nat_bool(X, fn_case_Nat_bool(true, Y)), cons_nat(suc(zero), Z))) -> false
+264. eqListNat(filterNat(fn_case_Nat_bool(X, fn_case_Nat_bool(true, Y)), cons_nat(suc(zero), Z)), nil_nat) -> false
+265. eqListNat(filterNat_case1(true, X, suc(Y), Z), cons_nat(suc(W), V)) -> eqListNat(filterNat_case1(true, X, Y, Z), cons_nat(W, V))
+266. eqListNat(cons_nat(suc(X), Y), filterNat_case1(true, Z, suc(W), V)) -> eqListNat(cons_nat(X, Y), filterNat_case1(true, Z, W, V))
+267. mapNatNat(fn_const_nat_nat(app_nat_nat(X, Y)), cons_nat(?, cons_nat(?, nil_nat))) = mapNatNat(X, cons_nat(Y, cons_nat(Y, nil_nat)))
+268. prop_mapFilter(fn_case_Nat_nat(X, fn_id_nat), fn_const_nat_bool(true), cons_nat(suc(X), nil_nat)) -> opAnd(eqNat(X, X), true)
+269. prop_mapFilter(fn_id_nat, fn_const_nat_bool(true), mapNatNat(X, cons_nat(Y, nil_nat))) -> prop_mapFilter(X, fn_const_nat_bool(true), cons_nat(Y, nil_nat))
+270. eqListNat(cons_nat(X, nil_nat), mapNatNat(Y, cons_nat(Z, cons_nat(W, V)))) -> opAnd(eqNat(X, app_nat_nat(Y, Z)), false)
+271. mapNatNat(fn_const_nat_nat(X), cons_nat(?, filterNat_case1(true, Y, Z, W))) ~> mapNatNat(fn_const_nat_nat(X), cons_nat(?, filterNat_case1(true, Y, ?, W)))
+272. mapNatNat(fn_const_nat_nat(X), mapNatNat(Y, cons_nat(?, cons_nat(Z, W)))) ~> mapNatNat(fn_const_nat_nat(X), mapNatNat(Y, cons_nat(?, cons_nat(?, W))))
+273. mapNatNat(fn_const_nat_nat(X), cons_nat(?, cons_nat(?, mapNatNat(Y, Z)))) -> mapNatNat(fn_const_nat_nat(X), mapNatNat(Y, cons_nat(?, cons_nat(?, Z))))
+274. eqListNat(mapNatNat(X, cons_nat(Y, cons_nat(Z, W))), cons_nat(V, nil_nat)) -> opAnd(eqNat(app_nat_nat(X, Y), V), false)
+275. eqListNat(cons_nat(X, cons_nat(zero, Y)), cons_nat(Z, cons_nat(suc(W), V))) -> opAnd(eqNat(X, Z), false)
+276. mapNatNat(fn_const_nat_nat(X), filterNat_case1(true, fn_case_Nat_bool(true, Y), ?, Z)) -> mapNatNat(fn_const_nat_nat(X), filterNat(fn_case_Nat_bool(true, Y), cons_nat(zero, Z)))
+277. eqListNat(cons_nat(X, cons_nat(suc(Y), Z)), cons_nat(W, cons_nat(zero, V))) -> opAnd(eqNat(X, W), false)
+278. eqListNat(nil_nat, filterNat(fn_case_Nat_bool(true, X), mapNatNat(fn_const_nat_nat(zero), cons_nat(?, Y)))) -> false
+279. eqListNat(filterNat(fn_case_Nat_bool(true, X), mapNatNat(fn_const_nat_nat(zero), cons_nat(?, Y))), nil_nat) -> false
+280. mapNatNat(fn_const_nat_nat(X), cons_nat(?, cons_nat(?, cons_nat(?, nil_nat)))) = cons_nat(X, cons_nat(X, cons_nat(X, nil_nat)))
+281. eqListNat(cons_nat(X, cons_nat(Y, nil_nat)), cons_nat(Z, cons_nat(W, nil_nat))) -> opAnd(eqNat(X, Z), opAnd(eqNat(Y, W), true))
+282. eqListNat(mapNatNat(fn_id_nat, cons_nat(suc(X), Y)), cons_nat(suc(Z), W)) -> eqListNat(mapNatNat(fn_id_nat, cons_nat(X, Y)), cons_nat(Z, W))
+283. eqListNat(cons_nat(suc(X), Y), mapNatNat(fn_id_nat, cons_nat(suc(Z), W))) -> eqListNat(cons_nat(X, Y), mapNatNat(fn_id_nat, cons_nat(Z, W)))
+284. eqListNat(filterNat_case1(true, X, zero, Y), filterNat_case1(true, Z, zero, W)) -> eqListNat(filterNat(X, Y), filterNat(Z, W))
+285. mapNatNat(fn_case_Nat_nat(X, Y), cons_nat(suc(Z), cons_nat(suc(W), nil_nat))) -> mapNatNat(Y, cons_nat(Z, cons_nat(W, nil_nat)))
+286. mapNatNat(fn_case_Nat_nat(X, fn_id_nat), filterNat_case1(true, Y, suc(X), Z)) -> mapNatNat(fn_case_Nat_nat(X, fn_id_nat), filterNat_case1(true, Y, zero, Z))
+287. mapNatNat(fn_case_Nat_nat(X, fn_id_nat), cons_nat(Y, cons_nat(suc(X), Z))) -> mapNatNat(fn_case_Nat_nat(X, fn_id_nat), cons_nat(Y, cons_nat(zero, Z)))
+288. prop_mapFilter(fn_case_Nat_nat(X, ?), fn_const_nat_bool(true), cons_nat(zero, nil_nat)) -> prop_mapFilter(fn_id_nat, fn_const_nat_bool(true), cons_nat(X, nil_nat))
+289. mapNatNat(fn_const_nat_nat(X), cons_nat(?, cons_nat(?, cons_nat(Y, Z)))) ~> mapNatNat(fn_const_nat_nat(X), cons_nat(?, cons_nat(?, cons_nat(?, Z))))
+290. filterNat(fn_const_nat_bool(false), filterNat(fn_case_Nat_bool(true, X), cons_nat(zero, Y))) -> filterNat(fn_const_nat_bool(false), filterNat(fn_case_Nat_bool(true, X), Y))
+291. filterNat(fn_case_Nat_bool(false, X), filterNat(fn_const_nat_bool(true), cons_nat(zero, Y))) -> filterNat(fn_case_Nat_bool(false, X), filterNat(fn_const_nat_bool(true), Y))
+292. eqListNat(nil_nat, filterNat(fn_const_nat_bool(true), mapNatNat(X, filterNat_case1(true, Y, Z, W)))) -> false
+293. eqListNat(nil_nat, filterNat(fn_const_nat_bool(true), mapNatNat(X, mapNatNat(Y, cons_nat(Z, W))))) -> false
+294. eqListNat(filterNat(fn_const_nat_bool(true), mapNatNat(X, filterNat_case1(true, Y, Z, W))), nil_nat) -> false
+295. eqListNat(filterNat(fn_const_nat_bool(true), mapNatNat(X, mapNatNat(Y, cons_nat(Z, W)))), nil_nat) -> false
+296. prop_mapFilter(X, fn_const_nat_bool(false), mapNatNat(Y, mapNatNat(Z, cons_nat(W, nil_nat)))) -> true
+297. eqListNat(nil_nat, mapNatNat(X, filterNat(fn_const_nat_bool(true), filterNat_case1(true, Y, Z, W)))) -> false
+298. eqListNat(nil_nat, mapNatNat(X, filterNat(fn_const_nat_bool(true), mapNatNat(Y, cons_nat(Z, W))))) -> false
+299. eqListNat(mapNatNat(X, filterNat(fn_const_nat_bool(true), filterNat_case1(true, Y, Z, W))), nil_nat) -> false
+300. eqListNat(mapNatNat(X, filterNat(fn_const_nat_bool(true), mapNatNat(Y, cons_nat(Z, W)))), nil_nat) -> false
+301. eqListNat(nil_nat, mapNatNat(X, mapNatNat(Y, filterNat(fn_const_nat_bool(true), cons_nat(Z, W))))) -> false
+302. eqListNat(mapNatNat(X, mapNatNat(Y, filterNat(fn_const_nat_bool(true), cons_nat(Z, W)))), nil_nat) -> false
+303. eqListNat(filterNat_case1(true, X, zero, Y), mapNatNat(fn_id_nat, cons_nat(zero, Z))) -> eqListNat(filterNat(X, Y), mapNatNat(fn_id_nat, Z))
+304. eqListNat(filterNat(fn_case_Nat_bool(true, X), cons_nat(zero, Y)), cons_nat(zero, Z)) -> eqListNat(filterNat(fn_case_Nat_bool(true, X), Y), Z)
+305. eqListNat(mapNatNat(fn_id_nat, cons_nat(zero, X)), filterNat_case1(true, Y, zero, Z)) -> eqListNat(mapNatNat(fn_id_nat, X), filterNat(Y, Z))
+306. eqListNat(cons_nat(zero, X), filterNat(fn_case_Nat_bool(true, Y), cons_nat(zero, Z))) -> eqListNat(X, filterNat(fn_case_Nat_bool(true, Y), Z))
+307. eqListNat(mapNatNat(fn_id_nat, filterNat_case1(true, X, zero, Y)), cons_nat(zero, Z)) -> eqListNat(mapNatNat(fn_id_nat, filterNat(X, Y)), Z)
+308. eqListNat(cons_nat(zero, X), mapNatNat(fn_id_nat, filterNat_case1(true, Y, zero, Z))) -> eqListNat(X, mapNatNat(fn_id_nat, filterNat(Y, Z)))
+309. filterNat(fn_const_nat_bool(true), mapNatNat(X, cons_nat(Y, cons_nat(Z, nil_nat)))) -> mapNatNat(X, cons_nat(Y, cons_nat(Z, nil_nat)))
+310. filterNat(fn_const_nat_bool(true), cons_nat(X, cons_nat(X, nil_nat))) -> mapNatNat(fn_const_nat_nat(X), cons_nat(?, cons_nat(?, nil_nat)))
+311. cons_nat(app_nat_nat(fn_case_Nat_nat(X, fn_id_nat), Y), cons_nat(Z, nil_nat)) -> mapNatNat(fn_case_Nat_nat(X, fn_id_nat), cons_nat(Y, cons_nat(suc(Z), nil_nat)))
+312. eqListNat(mapNatNat(X, cons_nat(Y, cons_nat(Z, nil_nat))), mapNatNat(X, cons_nat(Y, cons_nat(Z, nil_nat)))) -> prop_mapFilter(X, fn_const_nat_bool(true), cons_nat(Y, cons_nat(Z, nil_nat)))
+313. prop_mapFilter(fn_case_Nat_nat(X, Y), fn_const_nat_bool(true), cons_nat(suc(Z), nil_nat)) -> prop_mapFilter(Y, fn_const_nat_bool(true), cons_nat(Z, nil_nat))
+314. mapNatNat(fn_case_Nat_nat(X, fn_id_nat), mapNatNat(fn_id_nat, cons_nat(suc(X), Y))) -> mapNatNat(fn_case_Nat_nat(X, fn_id_nat), mapNatNat(fn_id_nat, cons_nat(zero, Y)))
+315. prop_mapFilter(fn_const_nat_nat(X), fn_const_nat_bool(true), mapNatNat(?, cons_nat(?, nil_nat))) = opAnd(eqNat(X, X), true)
+316. prop_mapFilter(fn_const_nat_nat(X), fn_const_nat_bool(true), mapNatNat(Y, cons_nat(Z, nil_nat))) ~> prop_mapFilter(fn_const_nat_nat(X), fn_const_nat_bool(true), mapNatNat(?, cons_nat(?, nil_nat)))
+317. cons_nat(app_nat_nat(X, Y), mapNatNat(fn_case_Nat_nat(Z, fn_case_Nat_nat(W, X)), V)) -> mapNatNat(fn_case_Nat_nat(Z, fn_case_Nat_nat(W, X)), cons_nat(suc(suc(Y)), V))
+318. eqListNat(mapNatNat(fn_id_nat, mapNatNat(fn_id_nat, cons_nat(zero, X))), cons_nat(zero, Y)) -> eqListNat(mapNatNat(fn_id_nat, mapNatNat(fn_id_nat, X)), Y)
+319. eqListNat(mapNatNat(fn_id_nat, cons_nat(zero, X)), mapNatNat(fn_id_nat, cons_nat(zero, Y))) -> eqListNat(mapNatNat(fn_id_nat, X), mapNatNat(fn_id_nat, Y))
+320. eqListNat(cons_nat(zero, X), mapNatNat(fn_id_nat, mapNatNat(fn_id_nat, cons_nat(zero, Y)))) -> eqListNat(X, mapNatNat(fn_id_nat, mapNatNat(fn_id_nat, Y)))
+321. eqListNat(nil_nat, filterNat(fn_const_nat_bool(true), filterNat(fn_case_Nat_bool(true, X), cons_nat(zero, Y)))) -> false
+322. prop_mapFilter(fn_id_nat, fn_case_Nat_bool(false, X), filterNat_case1(true, Y, zero, Z)) -> prop_mapFilter(fn_id_nat, fn_case_Nat_bool(false, X), filterNat(Y, Z))
+323. eqListNat(filterNat(fn_const_nat_bool(true), filterNat(fn_case_Nat_bool(true, X), cons_nat(zero, Y))), nil_nat) -> false
+324. eqListNat(nil_nat, filterNat(fn_case_Nat_bool(true, X), filterNat(fn_const_nat_bool(true), cons_nat(zero, Y)))) -> false
+325. eqListNat(filterNat(fn_case_Nat_bool(true, X), filterNat(fn_const_nat_bool(true), cons_nat(zero, Y))), nil_nat) -> false
+326. filterNat_case1(true, fn_case_Nat_bool(X, fn_const_nat_bool(true)), Y, cons_nat(suc(Z), nil_nat)) -> cons_nat(Y, cons_nat(suc(Z), nil_nat))
+327. mapNatNat(fn_const_nat_nat(X), mapNatNat(Y, mapNatNat(Z, mapNatNat(W, cons_nat(V, nil_nat))))) -> cons_nat(X, nil_nat)
+328. eqListNat(mapNatNat(X, mapNatNat(Y, cons_nat(Z, nil_nat))), cons_nat(W, nil_nat)) -> opAnd(eqNat(app_nat_nat(X, app_nat_nat(Y, Z)), W), true)
+329. eqListNat(mapNatNat(X, cons_nat(Y, nil_nat)), mapNatNat(Z, cons_nat(W, nil_nat))) -> opAnd(eqNat(app_nat_nat(X, Y), app_nat_nat(Z, W)), true)
+330. eqListNat(cons_nat(X, nil_nat), mapNatNat(Y, mapNatNat(Z, cons_nat(W, nil_nat)))) -> opAnd(eqNat(X, app_nat_nat(Y, app_nat_nat(Z, W))), true)
+331. prop_mapFilter(fn_const_nat_nat(X), fn_const_nat_bool(true), mapNatNat(?, cons_nat(?, nil_nat))) -> prop_mapFilter(fn_id_nat, fn_const_nat_bool(true), cons_nat(X, nil_nat))
+332. cons_nat(X, mapNatNat(fn_case_Nat_nat(Y, fn_case_Nat_nat(Z, fn_id_nat)), W)) -> mapNatNat(fn_case_Nat_nat(Y, fn_case_Nat_nat(Z, fn_id_nat)), cons_nat(suc(suc(X)), W))
+333. opAnd(eqNat(X, X), true) = prop_mapFilter(fn_id_nat, fn_const_nat_bool(true), cons_nat(zero, cons_nat(X, nil_nat)))
+334. eqListNat(cons_nat(X, nil_nat), filterNat(fn_const_nat_bool(true), cons_nat(Y, cons_nat(Z, W)))) -> opAnd(eqNat(X, Y), false)
+335. eqListNat(filterNat(fn_const_nat_bool(true), cons_nat(X, cons_nat(Y, Z))), cons_nat(W, nil_nat)) -> opAnd(eqNat(X, W), false)
+336. eqListNat(mapNatNat(X, cons_nat(zero, nil_nat)), filterNat(fn_case_Nat_bool(true, Y), mapNatNat(X, cons_nat(zero, nil_nat)))) -> prop_mapFilter(X, fn_case_Nat_bool(true, Y), cons_nat(zero, nil_nat))
+337. eqListNat(cons_nat(X, nil_nat), filterNat(fn_case_Nat_bool(true, Y), cons_nat(X, nil_nat))) -> prop_mapFilter(fn_const_nat_nat(X), fn_case_Nat_bool(true, Y), cons_nat(zero, nil_nat))
+338. prop_mapFilter(fn_const_nat_nat(zero), fn_case_Nat_bool(true, X), cons_nat(zero, nil_nat)) -> true
+339. prop_mapFilter(fn_const_nat_nat(suc(X)), fn_case_Nat_bool(true, fn_const_nat_bool(false)), cons_nat(zero, nil_nat)) -> false
+340. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (mapNatNat_1): mapNatNat(X, nil_nat) = nil_nat.
+Axiom 2 (filterNat_1): filterNat(X, nil_nat) = nil_nat.
+Axiom 3 (app_fn_const_nat_bool_1): app_nat_bool(fn_const_nat_bool(X), Y) = X.
+Axiom 5 (app_fn_const_nat_nat_1): app_nat_nat(fn_const_nat_nat(X), Y) = X.
+Axiom 6 (filterNat_case1_2): filterNat_case1(false, X, Y, Z) = filterNat(X, Z).
+Axiom 7 (eqListNat_3): eqListNat(cons_nat(X, Y), nil_nat) = false.
+Axiom 8 (app_fn_case_Nat_bool_1): app_nat_bool(fn_case_Nat_bool(X, Y), zero) = X.
+Axiom 9 (app_fn_case_Nat_bool_2): app_nat_bool(fn_case_Nat_bool(X, Y), suc(Z)) = app_nat_bool(Y, Z).
+Axiom 10 (filterNat_case1_1): filterNat_case1(true, X, Y, Z) = cons_nat(Y, filterNat(X, Z)).
+Axiom 12 (filterNat_2): filterNat(X, cons_nat(Y, Z)) = filterNat_case1(app_nat_bool(X, Y), X, Y, Z).
+Axiom 13 (mapNatNat_2): mapNatNat(X, cons_nat(Y, Z)) = cons_nat(app_nat_nat(X, Y), mapNatNat(X, Z)).
+Axiom 14 (prop_mapFilter_1): prop_mapFilter(X, Y, Z) = eqListNat(mapNatNat(X, filterNat(Y, Z)), filterNat(Y, mapNatNat(X, Z))).
+
+Lemma 15: mapNatNat(fn_const_nat_nat(X), cons_nat(Y, nil_nat)) = cons_nat(X, nil_nat).
+Proof:
+  mapNatNat(fn_const_nat_nat(X), cons_nat(Y, nil_nat))
+= { by axiom 13 (mapNatNat_2) }
+  cons_nat(app_nat_nat(fn_const_nat_nat(X), Y), mapNatNat(fn_const_nat_nat(X), nil_nat))
+= { by axiom 1 (mapNatNat_1) }
+  cons_nat(app_nat_nat(fn_const_nat_nat(X), Y), nil_nat)
+= { by axiom 5 (app_fn_const_nat_nat_1) }
+  cons_nat(X, nil_nat)
+
+Goal 1 (prop_mapFilter): prop_mapFilter(X, Y, Z) = false.
+The goal is true when:
+  X = fn_const_nat_nat(suc(X))
+  Y = fn_case_Nat_bool(true, fn_const_nat_bool(false))
+  Z = cons_nat(zero, nil_nat)
+
+Proof:
+  prop_mapFilter(fn_const_nat_nat(suc(X)), fn_case_Nat_bool(true, fn_const_nat_bool(false)), cons_nat(zero, nil_nat))
+= { by axiom 14 (prop_mapFilter_1) }
+  eqListNat(mapNatNat(fn_const_nat_nat(suc(X)), filterNat(fn_case_Nat_bool(true, fn_const_nat_bool(false)), cons_nat(zero, nil_nat))), filterNat(fn_case_Nat_bool(true, fn_const_nat_bool(false)), mapNatNat(fn_const_nat_nat(suc(X)), cons_nat(zero, nil_nat))))
+= { by axiom 12 (filterNat_2) }
+  eqListNat(mapNatNat(fn_const_nat_nat(suc(X)), filterNat_case1(app_nat_bool(fn_case_Nat_bool(true, fn_const_nat_bool(false)), zero), fn_case_Nat_bool(true, fn_const_nat_bool(false)), zero, nil_nat)), filterNat(fn_case_Nat_bool(true, fn_const_nat_bool(false)), mapNatNat(fn_const_nat_nat(suc(X)), cons_nat(zero, nil_nat))))
+= { by axiom 8 (app_fn_case_Nat_bool_1) }
+  eqListNat(mapNatNat(fn_const_nat_nat(suc(X)), filterNat_case1(true, fn_case_Nat_bool(true, fn_const_nat_bool(false)), zero, nil_nat)), filterNat(fn_case_Nat_bool(true, fn_const_nat_bool(false)), mapNatNat(fn_const_nat_nat(suc(X)), cons_nat(zero, nil_nat))))
+= { by axiom 10 (filterNat_case1_1) }
+  eqListNat(mapNatNat(fn_const_nat_nat(suc(X)), cons_nat(zero, filterNat(fn_case_Nat_bool(true, fn_const_nat_bool(false)), nil_nat))), filterNat(fn_case_Nat_bool(true, fn_const_nat_bool(false)), mapNatNat(fn_const_nat_nat(suc(X)), cons_nat(zero, nil_nat))))
+= { by axiom 2 (filterNat_1) }
+  eqListNat(mapNatNat(fn_const_nat_nat(suc(X)), cons_nat(zero, nil_nat)), filterNat(fn_case_Nat_bool(true, fn_const_nat_bool(false)), mapNatNat(fn_const_nat_nat(suc(X)), cons_nat(zero, nil_nat))))
+= { by lemma 15 }
+  eqListNat(cons_nat(suc(X), nil_nat), filterNat(fn_case_Nat_bool(true, fn_const_nat_bool(false)), mapNatNat(fn_const_nat_nat(suc(X)), cons_nat(zero, nil_nat))))
+= { by lemma 15 }
+  eqListNat(cons_nat(suc(X), nil_nat), filterNat(fn_case_Nat_bool(true, fn_const_nat_bool(false)), cons_nat(suc(X), nil_nat)))
+= { by axiom 12 (filterNat_2) }
+  eqListNat(cons_nat(suc(X), nil_nat), filterNat_case1(app_nat_bool(fn_case_Nat_bool(true, fn_const_nat_bool(false)), suc(X)), fn_case_Nat_bool(true, fn_const_nat_bool(false)), suc(X), nil_nat))
+= { by axiom 9 (app_fn_case_Nat_bool_2) }
+  eqListNat(cons_nat(suc(X), nil_nat), filterNat_case1(app_nat_bool(fn_const_nat_bool(false), X), fn_case_Nat_bool(true, fn_const_nat_bool(false)), suc(X), nil_nat))
+= { by axiom 3 (app_fn_const_nat_bool_1) }
+  eqListNat(cons_nat(suc(X), nil_nat), filterNat_case1(false, fn_case_Nat_bool(true, fn_const_nat_bool(false)), suc(X), nil_nat))
+= { by axiom 6 (filterNat_case1_2) }
+  eqListNat(cons_nat(suc(X), nil_nat), filterNat(fn_case_Nat_bool(true, fn_const_nat_bool(false)), nil_nat))
+= { by axiom 2 (filterNat_1) }
+  eqListNat(cons_nat(suc(X), nil_nat), nil_nat)
+= { by axiom 7 (eqListNat_3) }
+  false
+
+RESULT: Theorem (the conjecture is true).

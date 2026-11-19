@@ -1,0 +1,173 @@
+Here is the input problem:
+  Axiom 1 (reverseNat_1): reverseNat(nil_nat) = nil_nat.
+  Axiom 2 (types15): reverseNat(X) = reverseNat(X).
+  Axiom 3 (types19): true = true.
+  Axiom 4 (types18): false = false.
+  Axiom 5 (types20): nil_nat = nil_nat.
+  Axiom 6 (types14): reverseNat(X) = reverseNat(X).
+  Axiom 7 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 8 (opAnd_2): opAnd(true, X) = X.
+  Axiom 9 (opAnd_1): opAnd(false, X) = false.
+  Axiom 10 (opAppendNat_1): opAppendNat(nil_nat, X) = X.
+  Axiom 11 (eqListNat_1): eqListNat(nil_nat, nil_nat) = true.
+  Axiom 12 (types21): X = X.
+  Axiom 13 (types22): X = X.
+  Axiom 14 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 15 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 16 (types13): prop_revApp(X, Y) = prop_revApp(X, Y).
+  Axiom 17 (types12): prop_revApp(X, Y) = prop_revApp(X, Y).
+  Axiom 18 (types3): opAnd(X, Y) = opAnd(X, Y).
+  Axiom 19 (types2): opAnd(X, Y) = opAnd(X, Y).
+  Axiom 20 (types6): opAppendNat(X, Y) = opAppendNat(X, Y).
+  Axiom 21 (types5): opAppendNat(X, Y) = opAppendNat(X, Y).
+  Axiom 22 (types10): eqListNat(X, Y) = eqListNat(X, Y).
+  Axiom 23 (types9): eqListNat(X, Y) = eqListNat(X, Y).
+  Axiom 24 (types17): cons_nat(X, Y) = cons_nat(X, Y).
+  Axiom 25 (types7): eqNat(X, Y) = eqNat(X, Y).
+  Axiom 26 (types11): prop_revApp(X, Y) = prop_revApp(X, Y).
+  Axiom 27 (types1): opAnd(X, Y) = opAnd(X, Y).
+  Axiom 28 (types8): eqListNat(X, Y) = eqListNat(X, Y).
+  Axiom 29 (types4): opAppendNat(X, Y) = opAppendNat(X, Y).
+  Axiom 30 (types16): cons_nat(X, Y) = cons_nat(X, Y).
+  Axiom 31 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 32 (reverseNat_2): reverseNat(cons_nat(X, Y)) = opAppendNat(reverseNat(Y), cons_nat(X, nil_nat)).
+  Axiom 33 (eqListNat_2): eqListNat(nil_nat, cons_nat(X, Y)) = false.
+  Axiom 34 (eqListNat_3): eqListNat(cons_nat(X, Y), nil_nat) = false.
+  Axiom 35 (opAppendNat_2): opAppendNat(cons_nat(X, Y), Z) = cons_nat(X, opAppendNat(Y, Z)).
+  Axiom 36 (eqListNat_4): eqListNat(cons_nat(X, Y), cons_nat(Z, W)) = opAnd(eqNat(X, Z), eqListNat(Y, W)).
+  Axiom 37 (prop_revApp_1): prop_revApp(X, Y) = eqListNat(reverseNat(opAppendNat(X, Y)), opAppendNat(reverseNat(X), reverseNat(Y))).
+  Axiom 38 (reflexivity): equals(X, X) = true.
+  Axiom 39 (prop_revApp): equals(prop_revApp(X, Y), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. reverseNat(nil_nat) -> nil_nat
+2. reverseNat(X) -> reverseNat(X)
+3. true -> true
+4. false -> false
+5. nil_nat -> nil_nat
+6. reverseNat(X) -> reverseNat(X)
+7. eqNat(zero, zero) -> true
+8. opAnd(true, X) -> X
+9. opAnd(false, X) -> false
+10. opAppendNat(nil_nat, X) -> X
+11. eqListNat(nil_nat, nil_nat) -> true
+12. X -> X
+13. X -> X
+14. eqNat(zero, suc(X)) -> false
+15. eqNat(suc(X), zero) -> false
+16. prop_revApp(X, Y) -> prop_revApp(X, Y)
+17. prop_revApp(X, Y) -> prop_revApp(X, Y)
+18. opAnd(X, Y) -> opAnd(X, Y)
+19. opAnd(X, Y) -> opAnd(X, Y)
+20. opAppendNat(X, Y) -> opAppendNat(X, Y)
+21. opAppendNat(X, Y) -> opAppendNat(X, Y)
+22. eqListNat(X, Y) -> eqListNat(X, Y)
+23. eqListNat(X, Y) -> eqListNat(X, Y)
+24. cons_nat(X, Y) -> cons_nat(X, Y)
+25. eqNat(X, Y) -> eqNat(X, Y)
+26. prop_revApp(X, Y) -> prop_revApp(X, Y)
+27. opAnd(X, Y) -> opAnd(X, Y)
+28. eqListNat(X, Y) -> eqListNat(X, Y)
+29. opAppendNat(X, Y) -> opAppendNat(X, Y)
+30. cons_nat(X, Y) -> cons_nat(X, Y)
+31. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+32. opAppendNat(reverseNat(X), cons_nat(Y, nil_nat)) -> reverseNat(cons_nat(Y, X))
+33. eqListNat(nil_nat, cons_nat(X, Y)) -> false
+34. eqListNat(cons_nat(X, Y), nil_nat) -> false
+35. cons_nat(X, opAppendNat(Y, Z)) -> opAppendNat(cons_nat(X, Y), Z)
+36. eqListNat(cons_nat(X, Y), cons_nat(Z, W)) -> opAnd(eqNat(X, Z), eqListNat(Y, W))
+37. eqListNat(reverseNat(opAppendNat(X, Y)), opAppendNat(reverseNat(X), reverseNat(Y))) -> prop_revApp(X, Y)
+38. equals(X, X) -> true
+39. equals(prop_revApp(X, Y), false) -> false
+40. reverseNat(cons_nat(X, nil_nat)) -> cons_nat(X, nil_nat)
+41. eqListNat(reverseNat(X), reverseNat(X)) -> prop_revApp(nil_nat, X)
+42. prop_revApp(nil_nat, nil_nat) -> true
+43. equals(true, false) -> false
+44. opAppendNat(cons_nat(X, nil_nat), Y) -> cons_nat(X, Y)
+45. opAnd(eqNat(X, X), true) -> prop_revApp(nil_nat, cons_nat(X, nil_nat))
+46. prop_revApp(nil_nat, cons_nat(zero, nil_nat)) -> true
+47. eqListNat(nil_nat, opAppendNat(cons_nat(X, Y), Z)) -> false
+48. eqListNat(opAppendNat(cons_nat(X, Y), Z), nil_nat) -> false
+49. prop_revApp(nil_nat, cons_nat(suc(X), nil_nat)) -> prop_revApp(nil_nat, cons_nat(X, nil_nat))
+50. opAppendNat(cons_nat(X, cons_nat(Y, nil_nat)), Z) -> cons_nat(X, cons_nat(Y, Z))
+51. reverseNat(cons_nat(X, cons_nat(Y, nil_nat))) -> cons_nat(Y, cons_nat(X, nil_nat))
+52. opAppendNat(cons_nat(X, reverseNat(Y)), cons_nat(Z, nil_nat)) -> cons_nat(X, reverseNat(cons_nat(Z, Y)))
+53. eqListNat(nil_nat, opAppendNat(opAppendNat(cons_nat(X, Y), Z), W)) -> false
+54. eqListNat(opAppendNat(opAppendNat(cons_nat(X, Y), Z), W), nil_nat) -> false
+55. eqListNat(reverseNat(opAppendNat(X, nil_nat)), opAppendNat(reverseNat(X), nil_nat)) -> prop_revApp(X, nil_nat)
+56. prop_revApp(cons_nat(X, nil_nat), nil_nat) -> prop_revApp(nil_nat, cons_nat(X, nil_nat))
+57. eqListNat(reverseNat(cons_nat(X, Y)), cons_nat(X, reverseNat(Y))) -> prop_revApp(cons_nat(X, nil_nat), Y)
+58. reverseNat(cons_nat(X, cons_nat(Y, cons_nat(Z, nil_nat)))) -> cons_nat(Z, cons_nat(Y, cons_nat(X, nil_nat)))
+59. eqListNat(opAppendNat(cons_nat(X, Y), Z), cons_nat(W, V)) -> opAnd(eqNat(X, W), eqListNat(opAppendNat(Y, Z), V))
+60. eqListNat(cons_nat(X, Y), opAppendNat(cons_nat(Z, W), V)) -> opAnd(eqNat(X, Z), eqListNat(Y, opAppendNat(W, V)))
+61. opAppendNat(cons_nat(X, cons_nat(Y, cons_nat(Z, nil_nat))), W) -> cons_nat(X, cons_nat(Y, cons_nat(Z, W)))
+62. opAnd(eqNat(X, Y), opAnd(eqNat(Y, X), true)) -> prop_revApp(cons_nat(Y, nil_nat), cons_nat(X, nil_nat))
+63. prop_revApp(cons_nat(zero, nil_nat), cons_nat(zero, nil_nat)) -> true
+64. prop_revApp(cons_nat(suc(X), nil_nat), cons_nat(zero, nil_nat)) -> false
+65. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (reverseNat_1): reverseNat(nil_nat) = nil_nat.
+Axiom 2 (opAnd_1): opAnd(false, X) = false.
+Axiom 3 (opAppendNat_1): opAppendNat(nil_nat, X) = X.
+Axiom 4 (eqListNat_1): eqListNat(nil_nat, nil_nat) = true.
+Axiom 5 (eqNat_2): eqNat(zero, suc(X)) = false.
+Axiom 8 (reverseNat_2): reverseNat(cons_nat(X, Y)) = opAppendNat(reverseNat(Y), cons_nat(X, nil_nat)).
+Axiom 9 (opAppendNat_2): opAppendNat(cons_nat(X, Y), Z) = cons_nat(X, opAppendNat(Y, Z)).
+Axiom 10 (eqListNat_4): eqListNat(cons_nat(X, Y), cons_nat(Z, W)) = opAnd(eqNat(X, Z), eqListNat(Y, W)).
+Axiom 11 (prop_revApp_1): prop_revApp(X, Y) = eqListNat(reverseNat(opAppendNat(X, Y)), opAppendNat(reverseNat(X), reverseNat(Y))).
+
+Lemma 12: reverseNat(cons_nat(X, nil_nat)) = cons_nat(X, nil_nat).
+Proof:
+  reverseNat(cons_nat(X, nil_nat))
+= { by axiom 8 (reverseNat_2) }
+  opAppendNat(reverseNat(nil_nat), cons_nat(X, nil_nat))
+= { by axiom 1 (reverseNat_1) }
+  opAppendNat(nil_nat, cons_nat(X, nil_nat))
+= { by axiom 3 (opAppendNat_1) }
+  cons_nat(X, nil_nat)
+
+Lemma 13: opAppendNat(cons_nat(X, nil_nat), Y) = cons_nat(X, Y).
+Proof:
+  opAppendNat(cons_nat(X, nil_nat), Y)
+= { by axiom 9 (opAppendNat_2) }
+  cons_nat(X, opAppendNat(nil_nat, Y))
+= { by axiom 3 (opAppendNat_1) }
+  cons_nat(X, Y)
+
+Goal 1 (prop_revApp): prop_revApp(X, Y) = false.
+The goal is true when:
+  X = cons_nat(suc(X), nil_nat)
+  Y = cons_nat(zero, nil_nat)
+
+Proof:
+  prop_revApp(cons_nat(suc(X), nil_nat), cons_nat(zero, nil_nat))
+= { by axiom 11 (prop_revApp_1) }
+  eqListNat(reverseNat(opAppendNat(cons_nat(suc(X), nil_nat), cons_nat(zero, nil_nat))), opAppendNat(reverseNat(cons_nat(suc(X), nil_nat)), reverseNat(cons_nat(zero, nil_nat))))
+= { by lemma 13 }
+  eqListNat(reverseNat(cons_nat(suc(X), cons_nat(zero, nil_nat))), opAppendNat(reverseNat(cons_nat(suc(X), nil_nat)), reverseNat(cons_nat(zero, nil_nat))))
+= { by lemma 12 }
+  eqListNat(reverseNat(cons_nat(suc(X), cons_nat(zero, nil_nat))), opAppendNat(cons_nat(suc(X), nil_nat), reverseNat(cons_nat(zero, nil_nat))))
+= { by lemma 13 }
+  eqListNat(reverseNat(cons_nat(suc(X), cons_nat(zero, nil_nat))), cons_nat(suc(X), reverseNat(cons_nat(zero, nil_nat))))
+= { by lemma 12 }
+  eqListNat(reverseNat(cons_nat(suc(X), cons_nat(zero, nil_nat))), cons_nat(suc(X), cons_nat(zero, nil_nat)))
+= { by axiom 8 (reverseNat_2) }
+  eqListNat(opAppendNat(reverseNat(cons_nat(zero, nil_nat)), cons_nat(suc(X), nil_nat)), cons_nat(suc(X), cons_nat(zero, nil_nat)))
+= { by lemma 12 }
+  eqListNat(opAppendNat(cons_nat(zero, nil_nat), cons_nat(suc(X), nil_nat)), cons_nat(suc(X), cons_nat(zero, nil_nat)))
+= { by lemma 13 }
+  eqListNat(cons_nat(zero, cons_nat(suc(X), nil_nat)), cons_nat(suc(X), cons_nat(zero, nil_nat)))
+= { by axiom 10 (eqListNat_4) }
+  opAnd(eqNat(zero, suc(X)), eqListNat(cons_nat(suc(X), nil_nat), cons_nat(zero, nil_nat)))
+= { by axiom 10 (eqListNat_4) }
+  opAnd(eqNat(zero, suc(X)), opAnd(eqNat(suc(X), zero), eqListNat(nil_nat, nil_nat)))
+= { by axiom 4 (eqListNat_1) }
+  opAnd(eqNat(zero, suc(X)), opAnd(eqNat(suc(X), zero), true))
+= { by axiom 5 (eqNat_2) }
+  opAnd(false, opAnd(eqNat(suc(X), zero), true))
+= { by axiom 2 (opAnd_1) }
+  false
+
+RESULT: Theorem (the conjecture is true).

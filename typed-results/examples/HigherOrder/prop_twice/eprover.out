@@ -1,0 +1,95 @@
+% Preprocessing class: FSMSSMSSSSSNFFN.
+% Configuration: G-E--_208_C18_F1_SE_CS_SOS_SP_PS_S5PRR_RG_S04AN
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSF21-MFFFFFNN
+% Configuration: G-E--_208_C12_11_nc_F1_SE_CS_SP_PS_S5PRR_RG_S04AN
+% Initializing proof state
+% Scanning for AC axioms
+%
+%tcf(i_0_15, plain, eqNat(zero,zero)=true).
+%
+%tcf(i_0_20, plain, ![X2:nat]:(app_nat_nat(fn_id_nat,X2)=X2)).
+%
+%tcf(i_0_16, plain, ![X2:nat]:(eqNat(zero,suc(X2))=false)).
+%
+%tcf(i_0_17, plain, ![X2:nat]:(eqNat(suc(X2),zero)=false)).
+%
+%tcf(i_0_19, plain, ![X2:nat, X3:nat]:(app_nat_nat(fn_const_nat_nat(X2),X3)=X2)).
+%
+%tcf(i_0_21, plain, ![X2:nat, X1:fun_nat_nat]:(app_nat_nat(fn_case_Nat_nat(X2,X1),zero)=X2)).
+%
+%tcf(i_0_18, plain, ![X2:nat, X3:nat]:(eqNat(suc(X2),suc(X3))=eqNat(X2,X3))).
+%
+%tcf(i_0_23, negated_conjecture, ![X1:fun_nat_nat, X2:nat]:(($answer(esk1_2(X1,X2))|eqNat(app_nat_nat(X1,app_nat_nat(X1,X2)),app_nat_nat(X1,X2))!=false))).
+%
+%tcf(i_0_22, plain, ![X2:nat, X1:fun_nat_nat, X3:nat]:(app_nat_nat(fn_case_Nat_nat(X2,X1),suc(X3))=app_nat_nat(X1,X3))).
+% Presaturation interreduction done
+%
+%tcf(i_0_20, plain, ![X2:nat]:(app_nat_nat(fn_id_nat,X2)=X2)).
+%
+%tcf(i_0_15, plain, eqNat(zero,zero)=true).
+%
+%tcf(i_0_16, plain, ![X2:nat]:(eqNat(zero,suc(X2))=false)).
+%
+%tcf(i_0_17, plain, ![X2:nat]:(eqNat(suc(X2),zero)=false)).
+%
+%tcf(i_0_19, plain, ![X2:nat, X3:nat]:(app_nat_nat(fn_const_nat_nat(X2),X3)=X2)).
+%
+%tcf(i_0_21, plain, ![X2:nat, X1:fun_nat_nat]:(app_nat_nat(fn_case_Nat_nat(X2,X1),zero)=X2)).
+%
+%tcf(i_0_23, negated_conjecture, ![X1:fun_nat_nat, X2:nat]:(($answer(esk1_2(X1,X2))|eqNat(app_nat_nat(X1,app_nat_nat(X1,X2)),app_nat_nat(X1,X2))!=false))).
+%
+%tcf(i_0_18, plain, ![X2:nat, X3:nat]:(eqNat(suc(X2),suc(X3))=eqNat(X2,X3))).
+%
+%tcf(i_0_25, negated_conjecture, ![X2:nat]:(($answer(esk1_2(fn_id_nat,X2))|eqNat(X2,X2)!=false))).
+%
+%tcf(i_0_22, plain, ![X2:nat, X1:fun_nat_nat, X3:nat]:(app_nat_nat(fn_case_Nat_nat(X2,X1),suc(X3))=app_nat_nat(X1,X3))).
+%
+%tcf(i_0_29, negated_conjecture, ($answer(esk1_2(fn_id_nat,zero))|true!=false)).
+%%
+%tcf(i_0_26, negated_conjecture, ![X2:nat, X3:nat]:(($answer(esk1_2(fn_const_nat_nat(X2),X3))|eqNat(X2,X2)!=false))).
+%
+%tcf(i_0_32, negated_conjecture, ![X2:nat]:(($answer(esk1_2(fn_const_nat_nat(zero),X2))|true!=false))).
+%%
+%tcf(i_0_30, negated_conjecture, ![X2:nat]:(($answer(esk1_2(fn_id_nat,suc(X2)))|eqNat(X2,X2)!=false))).
+%
+%tcf(i_0_34, negated_conjecture, ($answer(esk1_2(fn_id_nat,suc(zero)))|true!=false)).
+%
+%tcf(i_0_33, negated_conjecture, ![X2:nat, X3:nat]:(($answer(esk1_2(fn_const_nat_nat(suc(X2)),X3))|eqNat(X2,X2)!=false))).
+%
+%tcf(i_0_24, negated_conjecture, ![X2:nat, X1:fun_nat_nat]:(($answer(esk1_2(fn_case_Nat_nat(X2,X1),zero))|eqNat(app_nat_nat(fn_case_Nat_nat(X2,X1),X2),X2)!=false))).
+%
+%tcf(i_0_36, negated_conjecture, ![X2:nat]:(($answer(esk1_2(fn_const_nat_nat(suc(zero)),X2))|true!=false))).
+%
+%tcf(i_0_38, negated_conjecture, ![X1:fun_nat_nat]:(($answer(esk1_2(fn_case_Nat_nat(zero,X1),zero))|true!=false))).
+%
+%tcf(i_0_35, negated_conjecture, ![X2:nat]:(($answer(esk1_2(fn_id_nat,suc(suc(X2))))|eqNat(X2,X2)!=false))).
+%
+%tcf(i_0_40, negated_conjecture, ($answer(esk1_2(fn_id_nat,suc(suc(zero))))|true!=false)).
+%
+%tcf(i_0_37, negated_conjecture, ![X2:nat, X3:nat]:(($answer(esk1_2(fn_const_nat_nat(suc(suc(X2))),X3))|eqNat(X2,X2)!=false))).
+%
+%tcf(i_0_42, negated_conjecture, ![X2:nat]:(($answer(esk1_2(fn_const_nat_nat(suc(suc(zero))),X2))|true!=false))).
+%
+%tcf(i_0_41, negated_conjecture, ![X2:nat]:(($answer(esk1_2(fn_id_nat,suc(suc(suc(X2)))))|eqNat(X2,X2)!=false))).
+%
+%tcf(i_0_44, negated_conjecture, ($answer(esk1_2(fn_id_nat,suc(suc(suc(zero)))))|true!=false)).
+%
+%tcf(i_0_43, negated_conjecture, ![X2:nat, X3:nat]:(($answer(esk1_2(fn_const_nat_nat(suc(suc(suc(X2)))),X3))|eqNat(X2,X2)!=false))).
+%
+%tcf(i_0_46, negated_conjecture, ![X2:nat]:(($answer(esk1_2(fn_const_nat_nat(suc(suc(suc(zero)))),X2))|true!=false))).
+%
+%tcf(i_0_31, negated_conjecture, ![X2:nat, X1:fun_nat_nat, X3:nat]:(($answer(esk1_2(fn_case_Nat_nat(X2,X1),suc(X3)))|eqNat(app_nat_nat(fn_case_Nat_nat(X2,X1),app_nat_nat(X1,X3)),app_nat_nat(X1,X3))!=false))).
+%
+%tcf(i_0_45, negated_conjecture, ![X2:nat]:(($answer(esk1_2(fn_id_nat,suc(suc(suc(suc(X2))))))|eqNat(X2,X2)!=false))).
+%
+%tcf(i_0_52, negated_conjecture, ($answer(esk1_2(fn_id_nat,suc(suc(suc(suc(zero))))))|true!=false)).
+%
+%tcf(i_0_39, negated_conjecture, ![X2:nat, X1:fun_nat_nat]:(($answer(esk1_2(fn_case_Nat_nat(suc(X2),X1),zero))|eqNat(app_nat_nat(X1,X2),suc(X2))!=false))).
+%
+%tcf(i_0_56, negated_conjecture, ![X2:nat]:(($answer(esk1_2(fn_case_Nat_nat(suc(X2),fn_id_nat),zero))|eqNat(X2,suc(X2))!=false))).
+%% SZS status Theorem
+% SZS answers Tuple [[fn_case_Nat_nat(suc(zero),fn_id_nat), zero]|_]
+
+% Proof found!

@@ -1,0 +1,102 @@
+% Running in auto input_syntax mode. Trying TPTP
+% Detected formulas, will run a generic FOF schedule.
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_tgt=full:sil=2000:alpa=true:random_seed=1211986828:st=5:i=107:sd=1:qa=plain:ss=on:er=filter:ssat=axiom_1 on problem for (1ds/107Mi)
+%  found proof, printing to "/tmp/vampire-proof-8860-8863"...
+% SZS answers Tuple [∀X0.[zero,suc(X0)]|_] for problem
+% ...printing done.
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for problem
+% SZS output start Proof for problem
+tff(type_def_5,type,bool: $tType).
+tff(type_def_6,type,nat: $tType).
+tff(func_def_0,type,implies: (bool * bool) > bool).
+tff(func_def_1,type,eqNat: (nat * nat) > bool).
+tff(func_def_2,type,leq: (nat * nat) > bool).
+tff(func_def_3,type,prop_leqAntisym: (nat * nat) > bool).
+tff(func_def_4,type,false: bool).
+tff(func_def_5,type,suc: nat > nat).
+tff(func_def_6,type,true: bool).
+tff(func_def_7,type,zero: nat).
+tff(func_def_8,type,sF1: (nat * nat) > bool).
+tff(pred_def_1,type,ans0: (nat * nat) > $o).
+tff(f2,axiom,(
+  ! [X0 : bool] : (implies(true,X0) = X0)),
+  file('/home/claude/hs2fol/typed-results/examples/Nat/prop_leqAntisym/problem.p','implies_2')).
+tff(f3,axiom,(
+  ! [X0 : nat] : (leq(zero,X0) = true)),
+  file('/home/claude/hs2fol/typed-results/examples/Nat/prop_leqAntisym/problem.p','leq_1')).
+tff(f6,axiom,(
+  ! [X0 : nat, X1 : nat] : (prop_leqAntisym(X0,X1) = implies(leq(X0,X1),eqNat(X0,X1)))),
+  file('/home/claude/hs2fol/typed-results/examples/Nat/prop_leqAntisym/problem.p','prop_leqAntisym_1')).
+tff(f8,axiom,(
+  ! [X0 : nat] : (eqNat(zero,suc(X0)) = false)),
+  file('/home/claude/hs2fol/typed-results/examples/Nat/prop_leqAntisym/problem.p','eqNat_2')).
+tff(f11,conjecture,(
+  ? [X0 : nat, X1 : nat] : (prop_leqAntisym(X0,X1) = false)),
+  file('/home/claude/hs2fol/typed-results/examples/Nat/prop_leqAntisym/problem.p','prop_leqAntisym')).
+tff(f12,negated_conjecture,(
+  ~ ? [X0 : nat, X1 : nat] : (prop_leqAntisym(X0,X1) = false)),
+  inference(conjecture_negation,[status(cth)],[f11])).
+tff(f13,plain,(
+  ~ ? [X0 : nat, X1 : nat] : ((prop_leqAntisym(X0,X1) = false) & ans0(X0,X1))),
+  inference(answer_literal_injection,[],[f12])).
+tff(f14,plain,(
+  ! [X0 : nat, X1 : nat] : ((false != prop_leqAntisym(X0,X1)) | ~ans0(X0,X1))),
+  inference(ennf_transformation,[],[f13])).
+tff(f16,plain,(
+  (! [X0 : bool] : (implies(true,X0) = X0))),
+  inference(cnf_transformation,[],[f2])).
+tff(f17,plain,(
+  (! [X0 : nat] : (true = leq(zero,X0)))),
+  inference(cnf_transformation,[],[f3])).
+tff(f20,plain,(
+  (! [X0 : nat,X1 : nat] : (prop_leqAntisym(X0,X1) = implies(leq(X0,X1),eqNat(X0,X1))))),
+  inference(cnf_transformation,[],[f6])).
+tff(f22,plain,(
+  (! [X0 : nat] : (false = eqNat(zero,suc(X0))))),
+  inference(cnf_transformation,[],[f8])).
+tff(f25,plain,(
+  (! [X0 : nat,X1 : nat] : (false != prop_leqAntisym(X0,X1) | ~ans0(X0,X1)))),
+  inference(cnf_transformation,[],[f14])).
+tff(f26,plain,(
+  (! [X0 : nat,X1 : nat] : (false != implies(leq(X0,X1),eqNat(X0,X1)) | ~ans0(X0,X1)))),
+  inference(definition_unfolding,[],[f25,f20])).
+tff(f27,definition,(
+  (! [X0 : nat,X1 : nat] : (sF1(X0,X1) = implies(leq(X0,X1),eqNat(X0,X1))))),
+  introduced(definition,[new_symbols(definition,[sF1])],[function_definition])).
+tff(f28,plain,(
+  (! [X0 : nat,X1 : nat] : (implies(leq(X0,X1),eqNat(X0,X1)) = sF1(X0,X1)))),
+  inference(reorient_equations,[],[f27])).
+tff(f29,plain,(
+  (! [X0 : nat,X1 : nat] : (false != sF1(X0,X1) | ~ans0(X0,X1)))),
+  inference(definition_folding,[],[f26,f28])).
+tff(f30,plain,(
+  (! [X0 : nat] : (sF1(zero,X0) = implies(true,eqNat(zero,X0))))),
+  inference(superposition,[],[f28,f17])).
+tff(f43,plain,(
+  (! [X0 : nat] : (eqNat(zero,X0) = sF1(zero,X0)))),
+  inference(forward_demodulation,[],[f30,f16])).
+tff(f60,plain,(
+  (! [X0 : nat,X1 : nat] : (ans0(X0,X1)))),
+  introduced(theory,[answer_literal_resolver],[])).
+tff(f63,plain,(
+  (! [X0 : nat] : (false != eqNat(zero,X0) | ~ans0(zero,X0)))),
+  inference(superposition,[],[f29,f43])).
+tff(f65,plain,(
+  (! [X0 : nat] : (false != false | ~ans0(zero,suc(X0))))),
+  inference(superposition,[],[f63,f22])).
+tff(f66,plain,(
+  (! [X0 : nat] : (~ans0(zero,suc(X0))))),
+  inference(trivial_inequality_removal,[],[f65])).
+tff(f67,plain,(
+  $false),
+  inference(unit_resulting_resolution,[],[f66,f60])).
+% SZS output end Proof for problem
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation
+% Time elapsed: 0.001 s
+% Peak memory usage: 8 MB
+% Success in time 0.006 s

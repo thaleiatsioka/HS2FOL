@@ -1,0 +1,98 @@
+% Preprocessing class: FSMSSMSSSSSNFFN.
+% Configuration: G-E--_208_C18_F1_SE_CS_SOS_SP_PS_S5PRR_RG_S04AN
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSM31-MFFFFFNN
+% partial match(2): FHUSM-FFSF21-MFFFFFNN
+% Configuration: G-E--_208_C12_11_nc_F1_SE_CS_SP_PS_S5PRR_RG_S04AN
+% Initializing proof state
+% Scanning for AC axioms
+%
+%tcf(i_0_23, plain, not(false)=true).
+%
+%tcf(i_0_21, plain, isGT(eq)=false).
+%
+%tcf(i_0_20, plain, isGT(lt)=false).
+%
+%tcf(i_0_24, plain, not(true)=false).
+%
+%tcf(i_0_22, plain, isGT(gt)=true).
+%
+%tcf(i_0_28, plain, eqNat(zero,zero)=true).
+%
+%tcf(i_0_36, plain, compareNat(zero,zero)=eq).
+%
+%tcf(i_0_34, plain, ![X1:nat, X2:nat]:(maxNat_case1(false,X1,X2)=X1)).
+%
+%tcf(i_0_33, plain, ![X1:nat, X2:nat]:(maxNat_case1(true,X1,X2)=X2)).
+%
+%tcf(i_0_29, plain, ![X1:nat]:(eqNat(zero,suc(X1))=false)).
+%
+%tcf(i_0_37, plain, ![X1:nat]:(compareNat(zero,suc(X1))=lt)).
+%
+%tcf(i_0_38, plain, ![X1:nat]:(compareNat(suc(X1),zero)=gt)).
+%
+%tcf(i_0_30, plain, ![X1:nat]:(eqNat(suc(X1),zero)=false)).
+%
+%tcf(i_0_40, negated_conjecture, ![X1:nat, X2:nat]:(($answer(esk1_2(X1,X2))|prop_maxLeft_case1(not(isGT(compareNat(X1,X2))),X2,X1)!=false))).
+%
+%tcf(i_0_39, plain, ![X1:nat, X2:nat]:(compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%tcf(i_0_31, plain, ![X1:nat, X2:nat]:(eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%tcf(i_0_26, plain, ![X2:nat, X1:nat]:(eqNat(maxNat_case1(not(isGT(compareNat(X2,X1))),X2,X1),X1)=prop_maxLeft_case1(false,X1,X2))).
+%
+%tcf(i_0_25, plain, ![X1:nat, X2:nat]:(prop_maxLeft_case1(true,X1,X2)=prop_maxLeft_case1(false,X1,X2))).
+% Presaturation interreduction done
+%
+%tcf(i_0_23, plain, not(false)=true).
+%
+%tcf(i_0_21, plain, isGT(eq)=false).
+%
+%tcf(i_0_20, plain, isGT(lt)=false).
+%
+%tcf(i_0_24, plain, not(true)=false).
+%
+%tcf(i_0_22, plain, isGT(gt)=true).
+%
+%tcf(i_0_36, plain, compareNat(zero,zero)=eq).
+%
+%tcf(i_0_28, plain, eqNat(zero,zero)=true).
+%
+%tcf(i_0_34, plain, ![X1:nat, X2:nat]:(maxNat_case1(false,X1,X2)=X1)).
+%
+%tcf(i_0_37, plain, ![X1:nat]:(compareNat(zero,suc(X1))=lt)).
+%
+%tcf(i_0_33, plain, ![X1:nat, X2:nat]:(maxNat_case1(true,X1,X2)=X2)).
+%
+%tcf(i_0_38, plain, ![X1:nat]:(compareNat(suc(X1),zero)=gt)).
+%
+%tcf(i_0_29, plain, ![X1:nat]:(eqNat(zero,suc(X1))=false)).
+%
+%tcf(i_0_30, plain, ![X1:nat]:(eqNat(suc(X1),zero)=false)).
+%
+%tcf(i_0_39, plain, ![X1:nat, X2:nat]:(compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%tcf(i_0_31, plain, ![X1:nat, X2:nat]:(eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%tcf(i_0_40, negated_conjecture, ![X1:nat, X2:nat]:(($answer(esk1_2(X1,X2))|prop_maxLeft_case1(not(isGT(compareNat(X1,X2))),X2,X1)!=false))).
+%
+%tcf(i_0_41, negated_conjecture, ($answer(esk1_2(zero,zero))|prop_maxLeft_case1(true,zero,zero)!=false)).
+%
+%tcf(i_0_43, negated_conjecture, ![X1:nat]:(($answer(esk1_2(suc(X1),zero))|prop_maxLeft_case1(false,zero,suc(X1))!=false))).
+%
+%tcf(i_0_25, plain, ![X1:nat, X2:nat]:(prop_maxLeft_case1(true,X1,X2)=prop_maxLeft_case1(false,X1,X2))).
+%
+%tcf(i_0_41, negated_conjecture, ($answer(esk1_2(zero,zero))|prop_maxLeft_case1(false,zero,zero)!=false)).
+%
+%tcf(i_0_26, plain, ![X1:nat, X2:nat]:(eqNat(maxNat_case1(not(isGT(compareNat(X1,X2))),X1,X2),X2)=prop_maxLeft_case1(false,X2,X1))).
+%
+%tcf(i_0_45, plain, prop_maxLeft_case1(false,zero,zero)=true).
+%
+%tcf(i_0_41, negated_conjecture, ($answer(esk1_2(zero,zero))|true!=false)).
+%
+%tcf(i_0_47, plain, ![X1:nat]:(prop_maxLeft_case1(false,zero,suc(X1))=false)).
+%% SZS status Theorem
+% SZS answers Tuple [[suc(X1), zero]|_]
+
+% Proof found!

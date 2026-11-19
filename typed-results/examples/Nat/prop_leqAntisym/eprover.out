@@ -1,0 +1,32 @@
+% Preprocessing class: FSMSSMSSSSSNFFN.
+% Configuration: G-E--_208_C18_F1_SE_CS_SOS_SP_PS_S5PRR_RG_S04AN
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSF21-SFFFFFNN
+% Configuration: G-E--_208_C18_F1_AE_CS_SP_PI_S0a
+% Initializing proof state
+% Scanning for AC axioms
+%
+%tcf(i_0_11, plain, ![X1:bool]:(implies(false,X1)=true)).
+%
+%tcf(i_0_17, plain, eqNat(zero,zero)=true).
+%
+%tcf(i_0_13, plain, ![X2:nat]:(leq(zero,X2)=true)).
+%
+%tcf(i_0_12, plain, ![X1:bool]:(implies(true,X1)=X1)).
+%
+%tcf(i_0_18, plain, ![X2:nat]:(eqNat(zero,suc(X2))=false)).
+%
+%tcf(i_0_19, plain, ![X2:nat]:(eqNat(suc(X2),zero)=false)).
+%
+%tcf(i_0_14, plain, ![X2:nat]:(leq(suc(X2),zero)=false)).
+%
+%tcf(i_0_21, negated_conjecture, ![X2:nat, X3:nat]:(($answer(esk1_2(X2,X3))|implies(leq(X2,X3),eqNat(X2,X3))!=false))).
+%
+%tcf(i_0_20, plain, ![X2:nat, X3:nat]:(eqNat(suc(X2),suc(X3))=eqNat(X2,X3))).
+%
+%tcf(i_0_15, plain, ![X2:nat, X3:nat]:(leq(suc(X2),suc(X3))=leq(X2,X3))).
+%% SZS status Theorem
+% SZS answers Tuple [[zero, suc(X2)]|_]
+
+% Proof found!

@@ -1,0 +1,98 @@
+% Preprocessing class: FSMSSMSSSSSNFFN.
+% Configuration: G-E--_208_C18_F1_SE_CS_SOS_SP_PS_S5PRR_RG_S04AN
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSF21-SFFFFFNN
+% Configuration: G-E--_208_C18_F1_AE_CS_SP_PI_S0a
+% Initializing proof state
+% Scanning for AC axioms
+%
+%tcf(i_0_23, plain, eqListNat(nil_nat,nil_nat)=true).
+%
+%tcf(i_0_27, plain, ![X2:list_nat]:(revNat_go(nil_nat,X2)=X2)).
+%
+%tcf(i_0_16, plain, ![X1:bool]:(opAnd(false,X1)=false)).
+%
+%tcf(i_0_30, negated_conjecture, ![X2:list_nat]:(($answer(esk1_1(X2))|eqListNat(revNat_go(X2,nil_nat),X2)!=false))).
+%
+%tcf(i_0_24, plain, ![X3:nat, X2:list_nat]:(eqListNat(nil_nat,cons_nat(X3,X2))=false)).
+%
+%tcf(i_0_19, plain, eqNat(zero,zero)=true).
+%
+%tcf(i_0_17, plain, ![X1:bool]:(opAnd(true,X1)=X1)).
+%
+%tcf(i_0_20, plain, ![X3:nat]:(eqNat(zero,suc(X3))=false)).
+%
+%tcf(i_0_21, plain, ![X3:nat]:(eqNat(suc(X3),zero)=false)).
+%
+%tcf(i_0_25, plain, ![X3:nat, X2:list_nat]:(eqListNat(cons_nat(X3,X2),nil_nat)=false)).
+%
+%tcf(i_0_22, plain, ![X3:nat, X4:nat]:(eqNat(suc(X3),suc(X4))=eqNat(X3,X4))).
+%
+%tcf(i_0_28, plain, ![X3:nat, X2:list_nat, X6:list_nat]:(revNat_go(cons_nat(X3,X2),X6)=revNat_go(X2,cons_nat(X3,X6)))).
+%
+%tcf(i_0_26, plain, ![X3:nat, X4:nat, X2:list_nat, X6:list_nat]:(opAnd(eqNat(X3,X4),eqListNat(X2,X6))=eqListNat(cons_nat(X3,X2),cons_nat(X4,X6)))).
+%
+%tcf(i_0_31, negated_conjecture, ($answer(esk1_1(nil_nat))|true!=false)).
+%
+%tcf(i_0_32, negated_conjecture, ![X3:nat, X2:list_nat]:(($answer(esk1_1(cons_nat(X3,X2)))|eqListNat(revNat_go(X2,cons_nat(X3,nil_nat)),cons_nat(X3,X2))!=false))).
+%
+%tcf(i_0_40, negated_conjecture, ![X3:nat]:(($answer(esk1_1(cons_nat(X3,nil_nat)))|eqListNat(cons_nat(X3,nil_nat),cons_nat(X3,nil_nat))!=false))).
+%
+%tcf(i_0_33, plain, ![X3:nat, X4:nat]:(eqListNat(cons_nat(X3,nil_nat),cons_nat(X4,nil_nat))=opAnd(eqNat(X3,X4),true))).
+%
+%tcf(i_0_37, plain, ![X2:list_nat, X3:nat, X6:list_nat]:(eqListNat(cons_nat(zero,X2),cons_nat(suc(X3),X6))=false)).
+%
+%tcf(i_0_40, negated_conjecture, ![X3:nat]:(($answer(esk1_1(cons_nat(X3,nil_nat)))|opAnd(eqNat(X3,X3),true)!=false))).
+%
+%tcf(i_0_45, negated_conjecture, ($answer(esk1_1(cons_nat(zero,nil_nat)))|true!=false)).
+%
+%tcf(i_0_46, negated_conjecture, ![X3:nat]:(($answer(esk1_1(cons_nat(suc(X3),nil_nat)))|opAnd(eqNat(X3,X3),true)!=false))).
+%
+%tcf(i_0_47, negated_conjecture, ($answer(esk1_1(cons_nat(suc(zero),nil_nat)))|true!=false)).
+%
+%tcf(i_0_38, plain, ![X3:nat, X2:list_nat, X6:list_nat]:(eqListNat(cons_nat(suc(X3),X2),cons_nat(zero,X6))=false)).
+%
+%tcf(i_0_48, negated_conjecture, ![X3:nat]:(($answer(esk1_1(cons_nat(suc(suc(X3)),nil_nat)))|opAnd(eqNat(X3,X3),true)!=false))).
+%
+%tcf(i_0_51, negated_conjecture, ($answer(esk1_1(cons_nat(suc(suc(zero)),nil_nat)))|true!=false)).
+%
+%tcf(i_0_52, negated_conjecture, ![X3:nat]:(($answer(esk1_1(cons_nat(suc(suc(suc(X3))),nil_nat)))|opAnd(eqNat(X3,X3),true)!=false))).
+%
+%tcf(i_0_53, negated_conjecture, ($answer(esk1_1(cons_nat(suc(suc(suc(zero))),nil_nat)))|true!=false)).
+%
+%tcf(i_0_34, plain, ![X3:nat, X4:nat, X5:nat, X2:list_nat]:(eqListNat(cons_nat(X3,nil_nat),cons_nat(X4,cons_nat(X5,X2)))=opAnd(eqNat(X3,X4),false))).
+%
+%tcf(i_0_36, plain, ![X2:list_nat, X6:list_nat]:(eqListNat(cons_nat(zero,X2),cons_nat(zero,X6))=eqListNat(X2,X6))).
+%
+%tcf(i_0_54, negated_conjecture, ![X3:nat]:(($answer(esk1_1(cons_nat(suc(suc(suc(suc(X3)))),nil_nat)))|opAnd(eqNat(X3,X3),true)!=false))).
+%
+%tcf(i_0_61, negated_conjecture, ($answer(esk1_1(cons_nat(suc(suc(suc(suc(zero)))),nil_nat)))|true!=false)).
+%
+%tcf(i_0_62, negated_conjecture, ![X3:nat]:(($answer(esk1_1(cons_nat(suc(suc(suc(suc(suc(X3))))),nil_nat)))|opAnd(eqNat(X3,X3),true)!=false))).
+%
+%tcf(i_0_63, negated_conjecture, ($answer(esk1_1(cons_nat(suc(suc(suc(suc(suc(zero))))),nil_nat)))|true!=false)).
+%
+%tcf(i_0_35, plain, ![X3:nat, X5:nat, X2:list_nat, X4:nat]:(eqListNat(cons_nat(X3,cons_nat(X5,X2)),cons_nat(X4,nil_nat))=opAnd(eqNat(X3,X4),false))).
+%
+%tcf(i_0_64, negated_conjecture, ![X3:nat]:(($answer(esk1_1(cons_nat(suc(suc(suc(suc(suc(suc(X3)))))),nil_nat)))|opAnd(eqNat(X3,X3),true)!=false))).
+%
+%tcf(i_0_69, negated_conjecture, ($answer(esk1_1(cons_nat(suc(suc(suc(suc(suc(suc(zero)))))),nil_nat)))|true!=false)).
+%
+%tcf(i_0_70, negated_conjecture, ![X3:nat]:(($answer(esk1_1(cons_nat(suc(suc(suc(suc(suc(suc(suc(X3))))))),nil_nat)))|opAnd(eqNat(X3,X3),true)!=false))).
+%
+%tcf(i_0_71, negated_conjecture, ($answer(esk1_1(cons_nat(suc(suc(suc(suc(suc(suc(suc(zero))))))),nil_nat)))|true!=false)).
+%
+%tcf(i_0_39, plain, ![X3:nat, X2:list_nat, X4:nat, X6:list_nat]:(eqListNat(cons_nat(suc(X3),X2),cons_nat(suc(X4),X6))=eqListNat(cons_nat(X3,X2),cons_nat(X4,X6)))).
+%
+%tcf(i_0_72, negated_conjecture, ![X3:nat]:(($answer(esk1_1(cons_nat(suc(suc(suc(suc(suc(suc(suc(suc(X3)))))))),nil_nat)))|opAnd(eqNat(X3,X3),true)!=false))).
+%
+%tcf(i_0_77, negated_conjecture, ($answer(esk1_1(cons_nat(suc(suc(suc(suc(suc(suc(suc(suc(zero)))))))),nil_nat)))|true!=false)).
+%
+%tcf(i_0_41, negated_conjecture, ![X3:nat, X4:nat, X2:list_nat]:(($answer(esk1_1(cons_nat(X3,cons_nat(X4,X2))))|eqListNat(revNat_go(X2,cons_nat(X4,cons_nat(X3,nil_nat))),cons_nat(X3,cons_nat(X4,X2)))!=false))).
+%
+%tcf(i_0_79, negated_conjecture, ![X3:nat, X4:nat]:(($answer(esk1_1(cons_nat(X3,cons_nat(X4,nil_nat))))|eqListNat(cons_nat(X4,cons_nat(X3,nil_nat)),cons_nat(X3,cons_nat(X4,nil_nat)))!=false))).
+%% SZS status Theorem
+% SZS answers Tuple [[cons_nat(suc(X3),cons_nat(zero,nil_nat))]|_]
+
+% Proof found!

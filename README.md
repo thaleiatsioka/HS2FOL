@@ -1,5 +1,10 @@
 # hs2fol
 
+> **Branch `typed`:** this branch produces *typed* first-order problems
+> (TPTP TFF) instead of untyped FOF; `hs2fol --untyped` gives the old
+> output. With sorts, provers can no longer return ill-typed witnesses. See
+> section 9a of SPEC.md and `typed-results/COMPARISON.md`.
+
 Translate a well-behaved subset of Haskell into first-order logic (TPTP), so
 that theorem provers (E, Vampire, Twee) can search for counterexamples to
 QuickCheck-style properties.

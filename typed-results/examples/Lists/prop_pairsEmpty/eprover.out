@@ -1,0 +1,244 @@
+% Preprocessing class: FSMSSMSMSSSNFFN.
+% Configuration: G-E--_207_C18_F1_SE_CS_SP_PI_PS_S2SI
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSS31-MFFFFFNN
+% partial match(1): FHUSF-FFSS31-MFFFFFNN
+% Configuration: SAT001_MinMin_p005000_rr_RG
+% Initializing proof state
+% Scanning for AC axioms
+%
+%tcf(i_0_42, plain, nullPairNatNat(nil_pair_nat_nat)=true).
+%
+%tcf(i_0_33, plain, isLT(eq)=false).
+%
+%tcf(i_0_34, plain, isLT(gt)=false).
+%
+%tcf(i_0_52, negated_conjecture, ![X3:list_nat]:(($answer(esk1_1(X3))|nullPairNatNat(concatMapNatPairNatNat(lam1(X3),X3))!=false))).
+%
+%tcf(i_0_32, plain, isLT(lt)=true).
+%
+%tcf(i_0_44, plain, compareNat(zero,zero)=eq).
+%
+%tcf(i_0_39, plain, ![X4:fun_nat_list_pair_nat_nat]:(concatMapNatPairNatNat(X4,nil_nat)=nil_pair_nat_nat)).
+%
+%tcf(i_0_48, plain, ![X7:list_pair_nat_nat]:(opAppendPairNatNat(nil_pair_nat_nat,X7)=X7)).
+%
+%tcf(i_0_43, plain, ![X6:pair_nat_nat, X7:list_pair_nat_nat]:(nullPairNatNat(cons_pair_nat_nat(X6,X7))=false)).
+%
+%tcf(i_0_36, plain, ![X1:nat, X2:nat]:(lam2_body_case1(false,X1,X2)=nil_pair_nat_nat)).
+%
+%tcf(i_0_45, plain, ![X1:nat]:(compareNat(zero,suc(X1))=lt)).
+%
+%tcf(i_0_46, plain, ![X1:nat]:(compareNat(suc(X1),zero)=gt)).
+%
+%tcf(i_0_50, plain, ![X3:list_nat, X1:nat]:(app_nat_list_pair_nat_nat(lam1(X3),X1)=concatMapNatPairNatNat(lam2(X1),X3))).
+%
+%tcf(i_0_47, plain, ![X1:nat, X2:nat]:(compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%tcf(i_0_35, plain, ![X1:nat, X2:nat]:(cons_pair_nat_nat(pair_nat_nat_1(X1,X2),nil_pair_nat_nat)=lam2_body_case1(true,X1,X2))).
+%
+%tcf(i_0_49, plain, ![X6:pair_nat_nat, X7:list_pair_nat_nat, X10:list_pair_nat_nat]:(cons_pair_nat_nat(X6,opAppendPairNatNat(X7,X10))=opAppendPairNatNat(cons_pair_nat_nat(X6,X7),X10))).
+%
+%tcf(i_0_40, plain, ![X4:fun_nat_list_pair_nat_nat, X1:nat, X3:list_nat]:(opAppendPairNatNat(app_nat_list_pair_nat_nat(X4,X1),concatMapNatPairNatNat(X4,X3))=concatMapNatPairNatNat(X4,cons_nat(X1,X3)))).
+%
+%tcf(i_0_51, plain, ![X1:nat, X2:nat]:(lam2_body_case1(isLT(compareNat(X1,X2)),X1,X2)=app_nat_list_pair_nat_nat(lam2(X1),X2))).
+% Presaturation interreduction done
+%
+%tcf(i_0_42, plain, nullPairNatNat(nil_pair_nat_nat)=true).
+%
+%tcf(i_0_33, plain, isLT(eq)=false).
+%
+%tcf(i_0_34, plain, isLT(gt)=false).
+%
+%tcf(i_0_32, plain, isLT(lt)=true).
+%
+%tcf(i_0_39, plain, ![X4:fun_nat_list_pair_nat_nat]:(concatMapNatPairNatNat(X4,nil_nat)=nil_pair_nat_nat)).
+%
+%tcf(i_0_52, negated_conjecture, ![X3:list_nat]:(($answer(esk1_1(X3))|nullPairNatNat(concatMapNatPairNatNat(lam1(X3),X3))!=false))).
+%
+%tcf(i_0_53, negated_conjecture, ($answer(esk1_1(nil_nat))|true!=false)).
+%
+%tcf(i_0_43, plain, ![X6:pair_nat_nat, X7:list_pair_nat_nat]:(nullPairNatNat(cons_pair_nat_nat(X6,X7))=false)).
+%
+%tcf(i_0_44, plain, compareNat(zero,zero)=eq).
+%
+%tcf(i_0_48, plain, ![X7:list_pair_nat_nat]:(opAppendPairNatNat(nil_pair_nat_nat,X7)=X7)).
+%
+%tcf(i_0_36, plain, ![X1:nat, X2:nat]:(lam2_body_case1(false,X1,X2)=nil_pair_nat_nat)).
+%
+%tcf(i_0_45, plain, ![X1:nat]:(compareNat(zero,suc(X1))=lt)).
+%
+%tcf(i_0_46, plain, ![X1:nat]:(compareNat(suc(X1),zero)=gt)).
+%
+%tcf(i_0_50, plain, ![X3:list_nat, X1:nat]:(app_nat_list_pair_nat_nat(lam1(X3),X1)=concatMapNatPairNatNat(lam2(X1),X3))).
+%
+%tcf(i_0_47, plain, ![X1:nat, X2:nat]:(compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%tcf(i_0_35, plain, ![X1:nat, X2:nat]:(cons_pair_nat_nat(pair_nat_nat_1(X1,X2),nil_pair_nat_nat)=lam2_body_case1(true,X1,X2))).
+%
+%tcf(i_0_54, plain, ![X1:nat, X2:nat]:(nullPairNatNat(lam2_body_case1(true,X1,X2))=false)).
+%
+%tcf(i_0_49, plain, ![X6:pair_nat_nat, X7:list_pair_nat_nat, X10:list_pair_nat_nat]:(cons_pair_nat_nat(X6,opAppendPairNatNat(X7,X10))=opAppendPairNatNat(cons_pair_nat_nat(X6,X7),X10))).
+%
+%tcf(i_0_55, plain, ![X6:pair_nat_nat, X7:list_pair_nat_nat, X10:list_pair_nat_nat]:(nullPairNatNat(opAppendPairNatNat(cons_pair_nat_nat(X6,X7),X10))=false)).
+%
+%tcf(i_0_57, plain, ![X1:nat, X2:nat, X7:list_pair_nat_nat]:(nullPairNatNat(opAppendPairNatNat(lam2_body_case1(true,X1,X2),X7))=false)).
+%
+%tcf(i_0_40, plain, ![X4:fun_nat_list_pair_nat_nat, X1:nat, X3:list_nat]:(opAppendPairNatNat(app_nat_list_pair_nat_nat(X4,X1),concatMapNatPairNatNat(X4,X3))=concatMapNatPairNatNat(X4,cons_nat(X1,X3)))).
+%
+%tcf(i_0_56, plain, ![X6:pair_nat_nat, X7:list_pair_nat_nat]:(opAppendPairNatNat(cons_pair_nat_nat(X6,nil_pair_nat_nat),X7)=cons_pair_nat_nat(X6,X7))).
+%
+%tcf(i_0_51, plain, ![X1:nat, X2:nat]:(lam2_body_case1(isLT(compareNat(X1,X2)),X1,X2)=app_nat_list_pair_nat_nat(lam2(X1),X2))).
+%
+%tcf(i_0_65, plain, app_nat_list_pair_nat_nat(lam2(zero),zero)=nil_pair_nat_nat).
+%
+%tcf(i_0_67, plain, ![X1:nat]:(app_nat_list_pair_nat_nat(lam2(suc(X1)),zero)=nil_pair_nat_nat)).
+%
+%tcf(i_0_60, plain, ![X4:fun_nat_list_pair_nat_nat, X1:nat]:(concatMapNatPairNatNat(X4,cons_nat(X1,nil_nat))=opAppendPairNatNat(app_nat_list_pair_nat_nat(X4,X1),nil_pair_nat_nat))).
+%
+%tcf(i_0_58, plain, ![X6:pair_nat_nat, X7:list_pair_nat_nat, X10:list_pair_nat_nat, X12:list_pair_nat_nat]:(nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(cons_pair_nat_nat(X6,X7),X10),X12))=false)).
+%
+%tcf(i_0_69, plain, ![X3:list_nat]:(concatMapNatPairNatNat(lam2(zero),cons_nat(zero,X3))=concatMapNatPairNatNat(lam2(zero),X3))).
+%
+%tcf(i_0_71, negated_conjecture, ![X1:nat]:(($answer(esk1_1(cons_nat(X1,nil_nat)))|nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(app_nat_list_pair_nat_nat(lam2(X1),X1),nil_pair_nat_nat),nil_pair_nat_nat))!=false))).
+%
+%tcf(i_0_78, negated_conjecture, ($answer(esk1_1(cons_nat(zero,nil_nat)))|true!=false)).
+%
+%tcf(i_0_73, plain, ![X1:nat, X2:nat, X7:list_pair_nat_nat, X10:list_pair_nat_nat]:(nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(lam2_body_case1(true,X1,X2),X7),X10))=false)).
+%
+%tcf(i_0_59, plain, ![X6:pair_nat_nat, X4:fun_nat_list_pair_nat_nat, X1:nat, X3:list_nat]:(opAppendPairNatNat(cons_pair_nat_nat(X6,app_nat_list_pair_nat_nat(X4,X1)),concatMapNatPairNatNat(X4,X3))=cons_pair_nat_nat(X6,concatMapNatPairNatNat(X4,cons_nat(X1,X3))))).
+%
+%tcf(i_0_66, plain, ![X1:nat]:(app_nat_list_pair_nat_nat(lam2(zero),suc(X1))=lam2_body_case1(true,zero,suc(X1)))).
+%
+%tcf(i_0_64, plain, ![X1:nat, X2:nat, X7:list_pair_nat_nat]:(cons_pair_nat_nat(pair_nat_nat_1(X1,X2),X7)=opAppendPairNatNat(lam2_body_case1(true,X1,X2),X7))).
+%
+%tcf(i_0_35, plain, ![X1:nat, X2:nat]:(opAppendPairNatNat(lam2_body_case1(true,X1,X2),nil_pair_nat_nat)=lam2_body_case1(true,X1,X2))).
+%
+%tcf(i_0_62, plain, ![X6:pair_nat_nat, X11:pair_nat_nat, X7:list_pair_nat_nat]:(opAppendPairNatNat(cons_pair_nat_nat(X6,cons_pair_nat_nat(X11,nil_pair_nat_nat)),X7)=cons_pair_nat_nat(X6,cons_pair_nat_nat(X11,X7)))).
+%
+%tcf(i_0_70, plain, ![X1:nat, X3:list_nat]:(concatMapNatPairNatNat(lam2(suc(X1)),cons_nat(zero,X3))=concatMapNatPairNatNat(lam2(suc(X1)),X3))).
+%
+%tcf(i_0_74, plain, ![X6:pair_nat_nat, X7:list_pair_nat_nat, X10:list_pair_nat_nat, X12:list_pair_nat_nat, X28:list_pair_nat_nat]:(nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(opAppendPairNatNat(cons_pair_nat_nat(X6,X7),X10),X12),X28))=false)).
+%
+%tcf(i_0_61, plain, ![X1:nat, X3:list_nat, X13:list_nat]:(opAppendPairNatNat(concatMapNatPairNatNat(lam2(X1),X3),concatMapNatPairNatNat(lam1(X3),X13))=concatMapNatPairNatNat(lam1(X3),cons_nat(X1,X13)))).
+%
+%tcf(i_0_115, plain, ![X1:nat, X3:list_nat]:(concatMapNatPairNatNat(lam1(nil_nat),cons_nat(X1,X3))=concatMapNatPairNatNat(lam1(nil_nat),X3))).
+%
+%tcf(i_0_95, plain, ![X1:nat, X2:nat, X7:list_pair_nat_nat, X10:list_pair_nat_nat, X12:list_pair_nat_nat]:(nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(opAppendPairNatNat(lam2_body_case1(true,X1,X2),X7),X10),X12))=false)).
+%
+%tcf(i_0_76, plain, ![X1:nat, X3:list_nat]:(concatMapNatPairNatNat(lam2(zero),cons_nat(X1,cons_nat(zero,X3)))=concatMapNatPairNatNat(lam2(zero),cons_nat(X1,X3)))).
+%
+%tcf(i_0_68, plain, ![X1:nat, X2:nat]:(lam2_body_case1(isLT(compareNat(X1,X2)),suc(X1),suc(X2))=app_nat_list_pair_nat_nat(lam2(suc(X1)),suc(X2)))).
+%
+%tcf(i_0_127, plain, app_nat_list_pair_nat_nat(lam2(suc(zero)),suc(zero))=nil_pair_nat_nat).
+%
+%tcf(i_0_133, negated_conjecture, ($answer(esk1_1(cons_nat(suc(zero),nil_nat)))|true!=false)).
+%
+%tcf(i_0_129, plain, ![X1:nat]:(app_nat_list_pair_nat_nat(lam2(suc(suc(X1))),suc(zero))=nil_pair_nat_nat)).
+%%
+%tcf(i_0_96, plain, ![X6:pair_nat_nat, X1:nat, X2:nat]:(opAppendPairNatNat(cons_pair_nat_nat(X6,lam2_body_case1(true,X1,X2)),nil_pair_nat_nat)=cons_pair_nat_nat(X6,lam2_body_case1(true,X1,X2)))).
+%
+%tcf(i_0_131, plain, ![X3:list_nat]:(concatMapNatPairNatNat(lam2(suc(zero)),cons_nat(suc(zero),X3))=concatMapNatPairNatNat(lam2(suc(zero)),X3))).
+%
+%tcf(i_0_108, plain, ![X6:pair_nat_nat, X7:list_pair_nat_nat, X10:list_pair_nat_nat, X12:list_pair_nat_nat, X28:list_pair_nat_nat, X33:list_pair_nat_nat]:(nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(opAppendPairNatNat(opAppendPairNatNat(cons_pair_nat_nat(X6,X7),X10),X12),X28),X33))=false)).
+%
+%tcf(i_0_134, plain, ![X1:nat, X3:list_nat]:(concatMapNatPairNatNat(lam2(suc(suc(X1))),cons_nat(suc(zero),X3))=concatMapNatPairNatNat(lam2(suc(suc(X1))),X3))).
+%
+%tcf(i_0_128, plain, ![X1:nat]:(app_nat_list_pair_nat_nat(lam2(suc(zero)),suc(suc(X1)))=lam2_body_case1(true,suc(zero),suc(suc(X1))))).
+%%
+%tcf(i_0_72, plain, ![X4:fun_nat_list_pair_nat_nat, X1:nat, X2:nat]:(opAppendPairNatNat(app_nat_list_pair_nat_nat(X4,X1),opAppendPairNatNat(app_nat_list_pair_nat_nat(X4,X2),nil_pair_nat_nat))=concatMapNatPairNatNat(X4,cons_nat(X1,cons_nat(X2,nil_nat))))).
+%
+%tcf(i_0_104, plain, ![X1:nat, X2:nat, X3:list_nat]:(concatMapNatPairNatNat(lam2(suc(X1)),cons_nat(X2,cons_nat(zero,X3)))=concatMapNatPairNatNat(lam2(suc(X1)),cons_nat(X2,X3)))).
+%
+%tcf(i_0_92, plain, ![X1:nat, X2:nat, X7:list_pair_nat_nat, X10:list_pair_nat_nat]:(opAppendPairNatNat(opAppendPairNatNat(lam2_body_case1(true,X1,X2),X7),X10)=opAppendPairNatNat(lam2_body_case1(true,X1,X2),opAppendPairNatNat(X7,X10)))).
+%
+%tcf(i_0_99, plain, ![X6:pair_nat_nat, X11:pair_nat_nat, X27:pair_nat_nat, X7:list_pair_nat_nat]:(opAppendPairNatNat(cons_pair_nat_nat(X6,cons_pair_nat_nat(X11,cons_pair_nat_nat(X27,nil_pair_nat_nat))),X7)=cons_pair_nat_nat(X6,cons_pair_nat_nat(X11,cons_pair_nat_nat(X27,X7))))).
+%%%
+%tcf(i_0_88, plain, ![X1:nat, X3:list_nat]:(opAppendPairNatNat(lam2_body_case1(true,zero,suc(X1)),concatMapNatPairNatNat(lam2(zero),X3))=concatMapNatPairNatNat(lam2(zero),cons_nat(suc(X1),X3)))).
+%
+%tcf(i_0_188, plain, ![X1:nat, X3:list_nat]:(nullPairNatNat(concatMapNatPairNatNat(lam2(zero),cons_nat(suc(X1),X3)))=false)).
+%
+%tcf(i_0_87, plain, ![X6:pair_nat_nat, X1:nat, X3:list_nat, X13:list_nat]:(opAppendPairNatNat(cons_pair_nat_nat(X6,concatMapNatPairNatNat(lam2(X1),X3)),concatMapNatPairNatNat(lam1(X3),X13))=cons_pair_nat_nat(X6,concatMapNatPairNatNat(lam1(X3),cons_nat(X1,X13))))).
+%%
+%tcf(i_0_117, plain, ![X3:list_nat, X13:list_nat]:(opAppendPairNatNat(concatMapNatPairNatNat(lam2(zero),X3),concatMapNatPairNatNat(lam1(cons_nat(zero,X3)),X13))=concatMapNatPairNatNat(lam1(cons_nat(zero,X3)),cons_nat(zero,X13)))).
+%
+%tcf(i_0_79, plain, ![X6:pair_nat_nat, X11:pair_nat_nat, X4:fun_nat_list_pair_nat_nat, X1:nat, X3:list_nat]:(opAppendPairNatNat(cons_pair_nat_nat(X6,cons_pair_nat_nat(X11,app_nat_list_pair_nat_nat(X4,X1))),concatMapNatPairNatNat(X4,X3))=cons_pair_nat_nat(X6,cons_pair_nat_nat(X11,concatMapNatPairNatNat(X4,cons_nat(X1,X3)))))).
+%
+%tcf(i_0_216, plain, ![X3:list_nat]:(concatMapNatPairNatNat(lam1(cons_nat(zero,nil_nat)),cons_nat(zero,X3))=concatMapNatPairNatNat(lam1(cons_nat(zero,nil_nat)),X3))).
+%%%
+%tcf(i_0_136, plain, ![X6:pair_nat_nat, X11:pair_nat_nat, X1:nat, X2:nat]:(opAppendPairNatNat(cons_pair_nat_nat(X6,cons_pair_nat_nat(X11,lam2_body_case1(true,X1,X2))),nil_pair_nat_nat)=cons_pair_nat_nat(X6,cons_pair_nat_nat(X11,lam2_body_case1(true,X1,X2))))).
+%
+%tcf(i_0_146, plain, ![X6:pair_nat_nat, X7:list_pair_nat_nat, X10:list_pair_nat_nat, X12:list_pair_nat_nat, X28:list_pair_nat_nat, X33:list_pair_nat_nat, X35:list_pair_nat_nat]:(nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(opAppendPairNatNat(opAppendPairNatNat(opAppendPairNatNat(cons_pair_nat_nat(X6,X7),X10),X12),X28),X33),X35))=false)).
+%%
+%tcf(i_0_141, plain, ![X1:nat, X3:list_nat]:(concatMapNatPairNatNat(lam2(suc(zero)),cons_nat(X1,cons_nat(suc(zero),X3)))=concatMapNatPairNatNat(lam2(suc(zero)),cons_nat(X1,X3)))).
+%
+%tcf(i_0_114, plain, ![X1:nat, X3:list_nat, X2:nat]:(opAppendPairNatNat(concatMapNatPairNatNat(lam2(X1),X3),opAppendPairNatNat(concatMapNatPairNatNat(lam2(X2),X3),nil_pair_nat_nat))=concatMapNatPairNatNat(lam1(X3),cons_nat(X1,cons_nat(X2,nil_nat))))).
+%%%%%
+%tcf(i_0_124, plain, ![X1:nat, X2:nat, X3:list_nat]:(concatMapNatPairNatNat(lam2(zero),cons_nat(X1,cons_nat(X2,cons_nat(zero,X3))))=concatMapNatPairNatNat(lam2(zero),cons_nat(X1,cons_nat(X2,X3))))).
+%
+%tcf(i_0_177, plain, ![X6:pair_nat_nat, X1:nat, X2:nat, X7:list_pair_nat_nat, X10:list_pair_nat_nat]:(opAppendPairNatNat(opAppendPairNatNat(cons_pair_nat_nat(X6,lam2_body_case1(true,X1,X2)),X7),X10)=opAppendPairNatNat(cons_pair_nat_nat(X6,lam2_body_case1(true,X1,X2)),opAppendPairNatNat(X7,X10)))).
+%
+%tcf(i_0_160, plain, ![X1:nat, X2:nat]:(concatMapNatPairNatNat(lam2(zero),cons_nat(X1,cons_nat(suc(X2),nil_nat)))=opAppendPairNatNat(app_nat_list_pair_nat_nat(lam2(zero),X1),lam2_body_case1(true,zero,suc(X2))))).
+%
+%tcf(i_0_179, plain, ![X6:pair_nat_nat, X11:pair_nat_nat, X27:pair_nat_nat, X34:pair_nat_nat, X7:list_pair_nat_nat]:(opAppendPairNatNat(cons_pair_nat_nat(X6,cons_pair_nat_nat(X11,cons_pair_nat_nat(X27,cons_pair_nat_nat(X34,nil_pair_nat_nat)))),X7)=cons_pair_nat_nat(X6,cons_pair_nat_nat(X11,cons_pair_nat_nat(X27,cons_pair_nat_nat(X34,X7)))))).
+%%
+%tcf(i_0_118, plain, ![X1:nat, X3:list_nat, X13:list_nat]:(opAppendPairNatNat(concatMapNatPairNatNat(lam2(suc(X1)),X3),concatMapNatPairNatNat(lam1(cons_nat(zero,X3)),X13))=concatMapNatPairNatNat(lam1(cons_nat(zero,X3)),cons_nat(suc(X1),X13)))).
+%
+%tcf(i_0_336, plain, ![X1:nat, X3:list_nat]:(concatMapNatPairNatNat(lam1(cons_nat(zero,nil_nat)),cons_nat(suc(X1),X3))=concatMapNatPairNatNat(lam1(cons_nat(zero,nil_nat)),X3))).
+%%%
+%tcf(i_0_84, plain, ![X6:pair_nat_nat, X4:fun_nat_list_pair_nat_nat, X1:nat, X2:nat]:(opAppendPairNatNat(cons_pair_nat_nat(X6,app_nat_list_pair_nat_nat(X4,X1)),opAppendPairNatNat(app_nat_list_pair_nat_nat(X4,X2),nil_pair_nat_nat))=cons_pair_nat_nat(X6,concatMapNatPairNatNat(X4,cons_nat(X1,cons_nat(X2,nil_nat)))))).
+%
+%tcf(i_0_151, plain, ![X1:nat, X2:nat, X3:list_nat]:(concatMapNatPairNatNat(lam2(suc(suc(X1))),cons_nat(X2,cons_nat(suc(zero),X3)))=concatMapNatPairNatNat(lam2(suc(suc(X1))),cons_nat(X2,X3)))).
+%%
+%tcf(i_0_130, plain, ![X1:nat, X2:nat]:(lam2_body_case1(isLT(compareNat(X1,X2)),suc(suc(X1)),suc(suc(X2)))=app_nat_list_pair_nat_nat(lam2(suc(suc(X1))),suc(suc(X2))))).
+%
+%tcf(i_0_381, plain, app_nat_list_pair_nat_nat(lam2(suc(suc(zero))),suc(suc(zero)))=nil_pair_nat_nat).
+%
+%tcf(i_0_392, negated_conjecture, ($answer(esk1_1(cons_nat(suc(suc(zero)),nil_nat)))|true!=false)).
+%
+%tcf(i_0_383, plain, ![X1:nat]:(app_nat_list_pair_nat_nat(lam2(suc(suc(suc(X1)))),suc(suc(zero)))=nil_pair_nat_nat)).
+%
+%tcf(i_0_385, plain, ![X3:list_nat]:(concatMapNatPairNatNat(lam2(suc(suc(zero))),cons_nat(suc(suc(zero)),X3))=concatMapNatPairNatNat(lam2(suc(suc(zero))),X3))).
+%
+%tcf(i_0_393, plain, ![X1:nat, X3:list_nat]:(concatMapNatPairNatNat(lam2(suc(suc(suc(X1)))),cons_nat(suc(suc(zero)),X3))=concatMapNatPairNatNat(lam2(suc(suc(suc(X1)))),X3))).
+%
+%tcf(i_0_382, plain, ![X1:nat]:(app_nat_list_pair_nat_nat(lam2(suc(suc(zero))),suc(suc(suc(X1))))=lam2_body_case1(true,suc(suc(zero)),suc(suc(suc(X1)))))).
+%
+%tcf(i_0_259, plain, ![X6:pair_nat_nat, X7:list_pair_nat_nat, X10:list_pair_nat_nat, X12:list_pair_nat_nat, X28:list_pair_nat_nat, X33:list_pair_nat_nat, X35:list_pair_nat_nat, X36:list_pair_nat_nat]:(nullPairNatNat(opAppendPairNatNat(opAppendPairNatNat(opAppendPairNatNat(opAppendPairNatNat(opAppendPairNatNat(opAppendPairNatNat(cons_pair_nat_nat(X6,X7),X10),X12),X28),X33),X35),X36))=false)).
+%
+%tcf(i_0_89, plain, ![X6:pair_nat_nat, X1:nat, X3:list_nat]:(opAppendPairNatNat(cons_pair_nat_nat(X6,lam2_body_case1(true,zero,suc(X1))),concatMapNatPairNatNat(lam2(zero),X3))=cons_pair_nat_nat(X6,concatMapNatPairNatNat(lam2(zero),cons_nat(suc(X1),X3))))).
+%%%%
+%tcf(i_0_172, plain, ![X1:nat, X2:nat, X5:nat, X3:list_nat]:(concatMapNatPairNatNat(lam2(suc(X1)),cons_nat(X2,cons_nat(X5,cons_nat(zero,X3))))=concatMapNatPairNatNat(lam2(suc(X1)),cons_nat(X2,cons_nat(X5,X3))))).
+%%%
+%tcf(i_0_116, plain, ![X1:nat, X2:nat, X3:list_nat]:(opAppendPairNatNat(opAppendPairNatNat(app_nat_list_pair_nat_nat(lam2(X1),X2),nil_pair_nat_nat),concatMapNatPairNatNat(lam1(cons_nat(X2,nil_nat)),X3))=concatMapNatPairNatNat(lam1(cons_nat(X2,nil_nat)),cons_nat(X1,X3)))).
+%
+%tcf(i_0_480, plain, ![X3:list_nat]:(concatMapNatPairNatNat(lam1(cons_nat(suc(zero),nil_nat)),cons_nat(suc(zero),X3))=concatMapNatPairNatNat(lam1(cons_nat(suc(zero),nil_nat)),X3))).
+%%
+%tcf(i_0_475, plain, ![X1:nat, X3:list_nat]:(concatMapNatPairNatNat(lam1(cons_nat(zero,nil_nat)),cons_nat(X1,cons_nat(zero,X3)))=concatMapNatPairNatNat(lam1(cons_nat(zero,nil_nat)),cons_nat(X1,X3)))).
+%%
+%tcf(i_0_481, plain, ![X1:nat, X3:list_nat]:(concatMapNatPairNatNat(lam1(cons_nat(suc(zero),nil_nat)),cons_nat(suc(suc(X1)),X3))=concatMapNatPairNatNat(lam1(cons_nat(suc(zero),nil_nat)),X3))).
+%
+%tcf(i_0_476, plain, ![X1:nat, X2:nat, X3:list_nat]:(concatMapNatPairNatNat(lam1(cons_nat(zero,nil_nat)),cons_nat(X1,cons_nat(suc(X2),X3)))=concatMapNatPairNatNat(lam1(cons_nat(zero,nil_nat)),cons_nat(X1,X3)))).
+%%
+%tcf(i_0_251, plain, ![X6:pair_nat_nat, X11:pair_nat_nat, X27:pair_nat_nat, X1:nat, X2:nat]:(opAppendPairNatNat(cons_pair_nat_nat(X6,cons_pair_nat_nat(X11,cons_pair_nat_nat(X27,lam2_body_case1(true,X1,X2)))),nil_pair_nat_nat)=cons_pair_nat_nat(X6,cons_pair_nat_nat(X11,cons_pair_nat_nat(X27,lam2_body_case1(true,X1,X2)))))).
+%%
+%tcf(i_0_483, plain, ![X3:list_nat]:(concatMapNatPairNatNat(lam1(cons_nat(suc(suc(zero)),nil_nat)),cons_nat(suc(suc(zero)),X3))=concatMapNatPairNatNat(lam1(cons_nat(suc(suc(zero)),nil_nat)),X3))).
+%%
+%tcf(i_0_486, plain, ![X1:nat, X3:list_nat]:(concatMapNatPairNatNat(lam1(cons_nat(suc(zero),nil_nat)),cons_nat(X1,cons_nat(suc(zero),X3)))=concatMapNatPairNatNat(lam1(cons_nat(suc(zero),nil_nat)),cons_nat(X1,X3)))).
+%%%
+%tcf(i_0_126, plain, ![X1:nat, X3:list_nat, X13:list_nat]:(opAppendPairNatNat(concatMapNatPairNatNat(lam2(zero),cons_nat(X1,X3)),concatMapNatPairNatNat(lam1(cons_nat(X1,cons_nat(zero,X3))),X13))=concatMapNatPairNatNat(lam1(cons_nat(X1,cons_nat(zero,X3))),cons_nat(zero,X13)))).
+%
+%tcf(i_0_400, plain, ![X1:nat, X3:list_nat]:(concatMapNatPairNatNat(lam2(suc(suc(zero))),cons_nat(X1,cons_nat(suc(suc(zero)),X3)))=concatMapNatPairNatNat(lam2(suc(suc(zero))),cons_nat(X1,X3)))).
+%%%
+%tcf(i_0_189, plain, ![X1:nat, X3:list_nat, X7:list_pair_nat_nat]:(opAppendPairNatNat(lam2_body_case1(true,zero,suc(X1)),opAppendPairNatNat(concatMapNatPairNatNat(lam2(zero),X3),X7))=opAppendPairNatNat(concatMapNatPairNatNat(lam2(zero),cons_nat(suc(X1),X3)),X7))).
+%
+%tcf(i_0_565, plain, ![X1:nat, X3:list_nat, X7:list_pair_nat_nat]:(nullPairNatNat(opAppendPairNatNat(concatMapNatPairNatNat(lam2(zero),cons_nat(suc(X1),X3)),X7))=false)).
+%
+%tcf(i_0_581, plain, ![X1:nat, X3:list_nat, X13:list_nat]:(nullPairNatNat(concatMapNatPairNatNat(lam1(cons_nat(suc(X1),X3)),cons_nat(zero,X13)))=false)).
+%
+%tcf(i_0_582, plain, ![X1:nat, X3:list_nat, X13:list_nat]:(nullPairNatNat(concatMapNatPairNatNat(lam1(cons_nat(zero,cons_nat(suc(X1),X3))),cons_nat(zero,X13)))=false)).
+%% SZS status Theorem
+% SZS answers Tuple [[cons_nat(zero,cons_nat(suc(X1),X3))]|_]
+
+% Proof found!

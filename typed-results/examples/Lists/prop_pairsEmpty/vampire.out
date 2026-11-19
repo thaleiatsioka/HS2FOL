@@ -1,0 +1,247 @@
+% Running in auto input_syntax mode. Trying TPTP
+% Detected formulas, will run a generic FOF schedule.
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_tgt=full:sil=2000:alpa=true:random_seed=3730907517:st=5:i=107:sd=1:qa=plain:ss=on:er=filter:ssat=axiom_1 on problem for (1ds/107Mi)
+%  found proof, printing to "/tmp/vampire-proof-11454-11456"...
+% SZS answers Tuple [∀X1,X0.[cons_nat(zero,cons_nat(suc(X0),X1))]|_] for problem
+% ...printing done.
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for problem
+% SZS output start Proof for problem
+tff(type_def_5,type,pair_nat_nat: $tType).
+tff(type_def_6,type,fun_nat_list_pair_nat_nat: $tType).
+tff(type_def_7,type,bool: $tType).
+tff(type_def_8,type,nat: $tType).
+tff(type_def_9,type,ordering: $tType).
+tff(type_def_10,type,list_pair_nat_nat: $tType).
+tff(type_def_11,type,list_nat: $tType).
+tff(func_def_0,type,opAppendPairNatNat: (list_pair_nat_nat * list_pair_nat_nat) > list_pair_nat_nat).
+tff(func_def_1,type,concatMapNatPairNatNat: (fun_nat_list_pair_nat_nat * list_nat) > list_pair_nat_nat).
+tff(func_def_2,type,ltNat: (nat * nat) > bool).
+tff(func_def_3,type,compareNat: (nat * nat) > ordering).
+tff(func_def_4,type,isLT: ordering > bool).
+tff(func_def_5,type,lam2_body_case1: (bool * nat * nat) > list_pair_nat_nat).
+tff(func_def_6,type,nullPairNatNat: list_pair_nat_nat > bool).
+tff(func_def_7,type,pairs: list_nat > list_pair_nat_nat).
+tff(func_def_8,type,prop_pairsEmpty: list_nat > bool).
+tff(func_def_9,type,pair_nat_nat_1: (nat * nat) > pair_nat_nat).
+tff(func_def_10,type,cons_pair_nat_nat: (pair_nat_nat * list_pair_nat_nat) > list_pair_nat_nat).
+tff(func_def_11,type,cons_nat: (nat * list_nat) > list_nat).
+tff(func_def_12,type,eq: ordering).
+tff(func_def_13,type,false: bool).
+tff(func_def_14,type,gt: ordering).
+tff(func_def_15,type,lt: ordering).
+tff(func_def_16,type,suc: nat > nat).
+tff(func_def_17,type,true: bool).
+tff(func_def_18,type,zero: nat).
+tff(func_def_19,type,nil_pair_nat_nat: list_pair_nat_nat).
+tff(func_def_20,type,nil_nat: list_nat).
+tff(func_def_21,type,lam1: list_nat > fun_nat_list_pair_nat_nat).
+tff(func_def_22,type,lam2: nat > fun_nat_list_pair_nat_nat).
+tff(func_def_23,type,app_nat_list_pair_nat_nat: (fun_nat_list_pair_nat_nat * nat) > list_pair_nat_nat).
+tff(func_def_24,type,sF1: list_nat > list_pair_nat_nat).
+tff(func_def_25,type,sF2: list_nat > bool).
+tff(pred_def_1,type,ans0: list_nat > $o).
+tff(f1,axiom,(
+  isLT(lt) = true),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_pairsEmpty/problem.p','isLT_1')).
+tff(f2,axiom,(
+  isLT(eq) = false),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_pairsEmpty/problem.p','isLT_2')).
+tff(f4,axiom,(
+  ! [X0 : nat, X1 : nat] : (lam2_body_case1(true,X0,X1) = cons_pair_nat_nat(pair_nat_nat_1(X0,X1),nil_pair_nat_nat))),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_pairsEmpty/problem.p','lam2_body_case1_1')).
+tff(f5,axiom,(
+  ! [X0 : nat, X1 : nat] : (lam2_body_case1(false,X0,X1) = nil_pair_nat_nat)),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_pairsEmpty/problem.p','lam2_body_case1_2')).
+tff(f6,axiom,(
+  ! [X0 : list_nat] : (pairs(X0) = concatMapNatPairNatNat(lam1(X0),X0))),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_pairsEmpty/problem.p','pairs_1')).
+tff(f7,axiom,(
+  ! [X0 : list_nat] : (prop_pairsEmpty(X0) = nullPairNatNat(pairs(X0)))),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_pairsEmpty/problem.p','prop_pairsEmpty_1')).
+tff(f9,axiom,(
+  ! [X0 : fun_nat_list_pair_nat_nat, X1 : nat, X2 : list_nat] : (concatMapNatPairNatNat(X0,cons_nat(X1,X2)) = opAppendPairNatNat(app_nat_list_pair_nat_nat(X0,X1),concatMapNatPairNatNat(X0,X2)))),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_pairsEmpty/problem.p','concatMapNatPairNatNat_2')).
+tff(f10,axiom,(
+  ! [X0 : nat, X1 : nat] : (ltNat(X0,X1) = isLT(compareNat(X0,X1)))),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_pairsEmpty/problem.p','ltNat_1')).
+tff(f12,axiom,(
+  ! [X0 : pair_nat_nat, X1 : list_pair_nat_nat] : (nullPairNatNat(cons_pair_nat_nat(X0,X1)) = false)),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_pairsEmpty/problem.p','nullPairNatNat_2')).
+tff(f13,axiom,(
+  compareNat(zero,zero) = eq),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_pairsEmpty/problem.p','compareNat_1')).
+tff(f14,axiom,(
+  ! [X0 : nat] : (compareNat(zero,suc(X0)) = lt)),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_pairsEmpty/problem.p','compareNat_2')).
+tff(f17,axiom,(
+  ! [X0 : list_pair_nat_nat] : (opAppendPairNatNat(nil_pair_nat_nat,X0) = X0)),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_pairsEmpty/problem.p','opAppendPairNatNat_1')).
+tff(f18,axiom,(
+  ! [X0 : pair_nat_nat, X1 : list_pair_nat_nat, X2 : list_pair_nat_nat] : (opAppendPairNatNat(cons_pair_nat_nat(X0,X1),X2) = cons_pair_nat_nat(X0,opAppendPairNatNat(X1,X2)))),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_pairsEmpty/problem.p','opAppendPairNatNat_2')).
+tff(f19,axiom,(
+  ! [X0 : list_nat, X1 : nat] : (app_nat_list_pair_nat_nat(lam1(X0),X1) = concatMapNatPairNatNat(lam2(X1),X0))),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_pairsEmpty/problem.p','app_lam1_1')).
+tff(f20,axiom,(
+  ! [X0 : nat, X1 : nat] : (app_nat_list_pair_nat_nat(lam2(X0),X1) = lam2_body_case1(ltNat(X0,X1),X0,X1))),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_pairsEmpty/problem.p','app_lam2_1')).
+tff(f21,conjecture,(
+  ? [X0 : list_nat] : (prop_pairsEmpty(X0) = false)),
+  file('/home/claude/hs2fol/typed-results/examples/Lists/prop_pairsEmpty/problem.p','prop_pairsEmpty')).
+tff(f22,negated_conjecture,(
+  ~ ? [X0 : list_nat] : (prop_pairsEmpty(X0) = false)),
+  inference(conjecture_negation,[status(cth)],[f21])).
+tff(f23,plain,(
+  ~ ? [X0 : list_nat] : ((prop_pairsEmpty(X0) = false) & ans0(X0))),
+  inference(answer_literal_injection,[],[f22])).
+tff(f24,plain,(
+  ! [X0 : list_nat] : ((false != prop_pairsEmpty(X0)) | ~ans0(X0))),
+  inference(ennf_transformation,[],[f23])).
+tff(f25,plain,(
+  isLT(lt) = true),
+  inference(cnf_transformation,[],[f1])).
+tff(f26,plain,(
+  isLT(eq) = false),
+  inference(cnf_transformation,[],[f2])).
+tff(f28,plain,(
+  (! [X0 : nat,X1 : nat] : (lam2_body_case1(true,X0,X1) = cons_pair_nat_nat(pair_nat_nat_1(X0,X1),nil_pair_nat_nat)))),
+  inference(cnf_transformation,[],[f4])).
+tff(f29,plain,(
+  (! [X0 : nat,X1 : nat] : (nil_pair_nat_nat = lam2_body_case1(false,X0,X1)))),
+  inference(cnf_transformation,[],[f5])).
+tff(f30,plain,(
+  (! [X0 : list_nat] : (pairs(X0) = concatMapNatPairNatNat(lam1(X0),X0)))),
+  inference(cnf_transformation,[],[f6])).
+tff(f31,plain,(
+  (! [X0 : list_nat] : (prop_pairsEmpty(X0) = nullPairNatNat(pairs(X0))))),
+  inference(cnf_transformation,[],[f7])).
+tff(f33,plain,(
+  (! [X0 : fun_nat_list_pair_nat_nat,X1 : nat,X2 : list_nat] : (concatMapNatPairNatNat(X0,cons_nat(X1,X2)) = opAppendPairNatNat(app_nat_list_pair_nat_nat(X0,X1),concatMapNatPairNatNat(X0,X2))))),
+  inference(cnf_transformation,[],[f9])).
+tff(f34,plain,(
+  (! [X0 : nat,X1 : nat] : (ltNat(X0,X1) = isLT(compareNat(X0,X1))))),
+  inference(cnf_transformation,[],[f10])).
+tff(f36,plain,(
+  (! [X0 : pair_nat_nat,X1 : list_pair_nat_nat] : (false = nullPairNatNat(cons_pair_nat_nat(X0,X1))))),
+  inference(cnf_transformation,[],[f12])).
+tff(f37,plain,(
+  eq = compareNat(zero,zero)),
+  inference(cnf_transformation,[],[f13])).
+tff(f38,plain,(
+  (! [X0 : nat] : (lt = compareNat(zero,suc(X0))))),
+  inference(cnf_transformation,[],[f14])).
+tff(f41,plain,(
+  (! [X0 : list_pair_nat_nat] : (opAppendPairNatNat(nil_pair_nat_nat,X0) = X0))),
+  inference(cnf_transformation,[],[f17])).
+tff(f42,plain,(
+  (! [X0 : pair_nat_nat,X1 : list_pair_nat_nat,X2 : list_pair_nat_nat] : (opAppendPairNatNat(cons_pair_nat_nat(X0,X1),X2) = cons_pair_nat_nat(X0,opAppendPairNatNat(X1,X2))))),
+  inference(cnf_transformation,[],[f18])).
+tff(f43,plain,(
+  (! [X0 : list_nat,X1 : nat] : (app_nat_list_pair_nat_nat(lam1(X0),X1) = concatMapNatPairNatNat(lam2(X1),X0)))),
+  inference(cnf_transformation,[],[f19])).
+tff(f44,plain,(
+  (! [X0 : nat,X1 : nat] : (app_nat_list_pair_nat_nat(lam2(X0),X1) = lam2_body_case1(ltNat(X0,X1),X0,X1)))),
+  inference(cnf_transformation,[],[f20])).
+tff(f45,plain,(
+  (! [X0 : list_nat] : (false != prop_pairsEmpty(X0) | ~ans0(X0)))),
+  inference(cnf_transformation,[],[f24])).
+tff(f46,plain,(
+  (! [X0 : list_nat] : (prop_pairsEmpty(X0) = nullPairNatNat(concatMapNatPairNatNat(lam1(X0),X0))))),
+  inference(definition_unfolding,[],[f31,f30])).
+tff(f47,plain,(
+  (! [X0 : nat,X1 : nat] : (app_nat_list_pair_nat_nat(lam2(X0),X1) = lam2_body_case1(isLT(compareNat(X0,X1)),X0,X1)))),
+  inference(definition_unfolding,[],[f44,f34])).
+tff(f48,plain,(
+  (! [X0 : list_nat] : (false != nullPairNatNat(concatMapNatPairNatNat(lam1(X0),X0)) | ~ans0(X0)))),
+  inference(definition_unfolding,[],[f45,f46])).
+tff(f49,definition,(
+  (! [X0 : list_nat] : (sF1(X0) = concatMapNatPairNatNat(lam1(X0),X0)))),
+  introduced(definition,[new_symbols(definition,[sF1])],[function_definition])).
+tff(f50,plain,(
+  (! [X0 : list_nat] : (concatMapNatPairNatNat(lam1(X0),X0) = sF1(X0)))),
+  inference(reorient_equations,[],[f49])).
+tff(f51,definition,(
+  (! [X0 : list_nat] : (sF2(X0) = nullPairNatNat(sF1(X0))))),
+  introduced(definition,[new_symbols(definition,[sF2])],[function_definition])).
+tff(f52,plain,(
+  (! [X0 : list_nat] : (nullPairNatNat(sF1(X0)) = sF2(X0)))),
+  inference(reorient_equations,[],[f51])).
+tff(f53,plain,(
+  (! [X0 : list_nat] : (false != sF2(X0) | ~ans0(X0)))),
+  inference(definition_folding,[],[f48,f52,f50])).
+tff(f68,plain,(
+  (! [X0 : list_nat] : (ans0(X0)))),
+  introduced(theory,[answer_literal_resolver],[])).
+tff(f72,plain,(
+  (! [X0 : list_pair_nat_nat,X1 : pair_nat_nat] : (opAppendPairNatNat(cons_pair_nat_nat(X1,nil_pair_nat_nat),X0) = cons_pair_nat_nat(X1,X0)))),
+  inference(superposition,[],[f42,f41])).
+tff(f73,plain,(
+  (! [X0 : pair_nat_nat,X1 : list_pair_nat_nat,X2 : list_pair_nat_nat] : (false = nullPairNatNat(opAppendPairNatNat(cons_pair_nat_nat(X0,X1),X2))))),
+  inference(superposition,[],[f36,f42])).
+tff(f76,plain,(
+  (! [X0 : nat,X1 : nat,X2 : list_pair_nat_nat] : (opAppendPairNatNat(lam2_body_case1(true,X0,X1),X2) = cons_pair_nat_nat(pair_nat_nat_1(X0,X1),X2)))),
+  inference(superposition,[],[f72,f28])).
+tff(f83,plain,(
+  app_nat_list_pair_nat_nat(lam2(zero),zero) = lam2_body_case1(isLT(eq),zero,zero)),
+  inference(superposition,[],[f47,f37])).
+tff(f84,plain,(
+  (! [X0 : nat] : (app_nat_list_pair_nat_nat(lam2(zero),suc(X0)) = lam2_body_case1(isLT(lt),zero,suc(X0))))),
+  inference(superposition,[],[f47,f38])).
+tff(f88,plain,(
+  (! [X0 : nat] : (app_nat_list_pair_nat_nat(lam2(zero),suc(X0)) = lam2_body_case1(true,zero,suc(X0))))),
+  inference(forward_demodulation,[],[f84,f25])).
+tff(f89,plain,(
+  app_nat_list_pair_nat_nat(lam2(zero),zero) = lam2_body_case1(false,zero,zero)),
+  inference(forward_demodulation,[],[f83,f26])).
+tff(f91,plain,(
+  nil_pair_nat_nat = app_nat_list_pair_nat_nat(lam2(zero),zero)),
+  inference(forward_demodulation,[],[f89,f29])).
+tff(f98,plain,(
+  (! [X0 : nat,X1 : list_nat,X2 : list_nat] : (concatMapNatPairNatNat(lam1(X1),cons_nat(X0,X2)) = opAppendPairNatNat(concatMapNatPairNatNat(lam2(X0),X1),concatMapNatPairNatNat(lam1(X1),X2))))),
+  inference(superposition,[],[f33,f43])).
+tff(f99,plain,(
+  (! [X0 : list_nat] : (concatMapNatPairNatNat(lam2(zero),cons_nat(zero,X0)) = opAppendPairNatNat(nil_pair_nat_nat,concatMapNatPairNatNat(lam2(zero),X0))))),
+  inference(superposition,[],[f33,f91])).
+tff(f101,plain,(
+  (! [X0 : nat,X1 : list_nat] : (concatMapNatPairNatNat(lam2(zero),cons_nat(suc(X0),X1)) = opAppendPairNatNat(lam2_body_case1(true,zero,suc(X0)),concatMapNatPairNatNat(lam2(zero),X1))))),
+  inference(superposition,[],[f33,f88])).
+tff(f106,plain,(
+  (! [X0 : nat,X1 : list_nat] : (concatMapNatPairNatNat(lam2(zero),cons_nat(suc(X0),X1)) = cons_pair_nat_nat(pair_nat_nat_1(zero,suc(X0)),concatMapNatPairNatNat(lam2(zero),X1))))),
+  inference(forward_demodulation,[],[f101,f76])).
+tff(f108,plain,(
+  (! [X0 : list_nat] : (concatMapNatPairNatNat(lam2(zero),cons_nat(zero,X0)) = concatMapNatPairNatNat(lam2(zero),X0)))),
+  inference(forward_demodulation,[],[f99,f41])).
+tff(f247,plain,(
+  (! [X0 : list_nat,X1 : list_nat] : (concatMapNatPairNatNat(lam1(cons_nat(zero,X0)),cons_nat(zero,X1)) = opAppendPairNatNat(concatMapNatPairNatNat(lam2(zero),X0),concatMapNatPairNatNat(lam1(cons_nat(zero,X0)),X1))))),
+  inference(superposition,[],[f98,f108])).
+tff(f396,plain,(
+  (! [X0 : nat,X1 : list_nat,X2 : list_pair_nat_nat] : (false = nullPairNatNat(opAppendPairNatNat(concatMapNatPairNatNat(lam2(zero),cons_nat(suc(X0),X1)),X2))))),
+  inference(superposition,[],[f73,f106])).
+tff(f899,plain,(
+  (! [X0 : nat,X1 : list_nat,X2 : list_nat] : (false = nullPairNatNat(concatMapNatPairNatNat(lam1(cons_nat(zero,cons_nat(suc(X0),X1))),cons_nat(zero,X2)))))),
+  inference(superposition,[],[f396,f247])).
+tff(f910,plain,(
+  (! [X0 : nat,X1 : list_nat] : (false = nullPairNatNat(sF1(cons_nat(zero,cons_nat(suc(X0),X1))))))),
+  inference(superposition,[],[f899,f50])).
+tff(f911,plain,(
+  (! [X0 : nat,X1 : list_nat] : (false = sF2(cons_nat(zero,cons_nat(suc(X0),X1)))))),
+  inference(forward_demodulation,[],[f910,f52])).
+tff(f912,plain,(
+  (! [X0 : nat,X1 : list_nat] : (false != false | ~ans0(cons_nat(zero,cons_nat(suc(X0),X1)))))),
+  inference(superposition,[],[f53,f911])).
+tff(f913,plain,(
+  (! [X0 : nat,X1 : list_nat] : (~ans0(cons_nat(zero,cons_nat(suc(X0),X1)))))),
+  inference(trivial_inequality_removal,[],[f912])).
+tff(f914,plain,(
+  $false),
+  inference(unit_resulting_resolution,[],[f913,f68])).
+% SZS output end Proof for problem
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation
+% Time elapsed: 0.007 s
+% Peak memory usage: 9 MB
+% Success in time 0.01 s

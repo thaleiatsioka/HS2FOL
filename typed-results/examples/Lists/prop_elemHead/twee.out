@@ -1,0 +1,137 @@
+Here is the input problem:
+  Axiom 1 (types18): suc(X) = suc(X).
+  Axiom 2 (types20): zero = zero.
+  Axiom 3 (types17): suc(X) = suc(X).
+  Axiom 4 (types19): true = true.
+  Axiom 5 (types16): false = false.
+  Axiom 6 (elemNat_1): elemNat(X, nil_nat) = false.
+  Axiom 7 (implies_2): implies(true, X) = X.
+  Axiom 8 (implies_1): implies(false, X) = true.
+  Axiom 9 (opOr_2): opOr(true, X) = true.
+  Axiom 10 (opOr_1): opOr(false, X) = X.
+  Axiom 11 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 12 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 13 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 14 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 15 (types6): headNat(X) = headNat(X).
+  Axiom 16 (types22): X = X.
+  Axiom 17 (types21): X = X.
+  Axiom 18 (headNat_1): headNat(cons_nat(X, Y)) = X.
+  Axiom 19 (types15): cons_nat(X, Y) = cons_nat(X, Y).
+  Axiom 20 (types11): prop_elemHead(X, Y) = prop_elemHead(X, Y).
+  Axiom 21 (types5): elemNat(X, Y) = elemNat(X, Y).
+  Axiom 22 (types3): implies(X, Y) = implies(X, Y).
+  Axiom 23 (types2): implies(X, Y) = implies(X, Y).
+  Axiom 24 (types14): opOr(X, Y) = opOr(X, Y).
+  Axiom 25 (types13): opOr(X, Y) = opOr(X, Y).
+  Axiom 26 (types9): eqNat(X, Y) = eqNat(X, Y).
+  Axiom 27 (types8): eqNat(X, Y) = eqNat(X, Y).
+  Axiom 28 (types10): prop_elemHead(X, Y) = prop_elemHead(X, Y).
+  Axiom 29 (types4): elemNat(X, Y) = elemNat(X, Y).
+  Axiom 30 (types1): implies(X, Y) = implies(X, Y).
+  Axiom 31 (types12): opOr(X, Y) = opOr(X, Y).
+  Axiom 32 (types7): eqNat(X, Y) = eqNat(X, Y).
+  Axiom 33 (elemNat_2): elemNat(X, cons_nat(Y, Z)) = opOr(eqNat(X, Y), elemNat(X, Z)).
+  Axiom 34 (prop_elemHead_1): prop_elemHead(X, Y) = implies(elemNat(X, Y), eqNat(headNat(Y), X)).
+  Axiom 35 (reflexivity): equals(X, X) = true.
+  Axiom 36 (prop_elemHead): equals(prop_elemHead(X, Y), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. suc(X) -> suc(X)
+2. zero -> zero
+3. suc(X) -> suc(X)
+4. true -> true
+5. false -> false
+6. elemNat(X, nil_nat) -> false
+7. implies(true, X) -> X
+8. implies(false, X) -> true
+9. opOr(true, X) -> true
+10. opOr(false, X) -> X
+11. eqNat(zero, zero) -> true
+12. eqNat(zero, suc(X)) -> false
+13. eqNat(suc(X), zero) -> false
+14. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+15. headNat(X) -> headNat(X)
+16. X -> X
+17. X -> X
+18. headNat(cons_nat(X, Y)) -> X
+19. cons_nat(X, Y) -> cons_nat(X, Y)
+20. prop_elemHead(X, Y) -> prop_elemHead(X, Y)
+21. elemNat(X, Y) -> elemNat(X, Y)
+22. implies(X, Y) -> implies(X, Y)
+23. implies(X, Y) -> implies(X, Y)
+24. opOr(X, Y) -> opOr(X, Y)
+25. opOr(X, Y) -> opOr(X, Y)
+26. eqNat(X, Y) -> eqNat(X, Y)
+27. eqNat(X, Y) -> eqNat(X, Y)
+28. prop_elemHead(X, Y) -> prop_elemHead(X, Y)
+29. elemNat(X, Y) -> elemNat(X, Y)
+30. implies(X, Y) -> implies(X, Y)
+31. opOr(X, Y) -> opOr(X, Y)
+32. eqNat(X, Y) -> eqNat(X, Y)
+33. opOr(eqNat(X, Y), elemNat(X, Z)) -> elemNat(X, cons_nat(Y, Z))
+34. implies(elemNat(X, Y), eqNat(headNat(Y), X)) -> prop_elemHead(X, Y)
+35. equals(X, X) -> true
+36. equals(prop_elemHead(X, Y), false) -> false
+37. prop_elemHead(X, nil_nat) -> true
+38. equals(true, false) -> false
+39. elemNat(zero, cons_nat(zero, X)) -> true
+40. prop_elemHead(zero, cons_nat(zero, X)) -> true
+41. opOr(eqNat(X, Y), false) -> elemNat(X, cons_nat(Y, nil_nat))
+42. elemNat(zero, cons_nat(suc(X), Y)) -> elemNat(zero, Y)
+43. elemNat(suc(X), cons_nat(zero, nil_nat)) -> false
+44. elemNat(suc(X), cons_nat(zero, Y)) -> elemNat(suc(X), Y)
+45. prop_elemHead(suc(X), cons_nat(zero, nil_nat)) -> true
+46. implies(elemNat(zero, X), false) -> prop_elemHead(zero, cons_nat(suc(?), X))
+47. prop_elemHead(zero, cons_nat(suc(X), Y)) ~> prop_elemHead(zero, cons_nat(suc(?), Y))
+48. prop_elemHead(zero, cons_nat(suc(?), nil_nat)) -> true
+49. implies(elemNat(suc(X), Y), false) -> prop_elemHead(suc(X), cons_nat(zero, Y))
+50. elemNat(suc(X), cons_nat(suc(Y), nil_nat)) -> elemNat(X, cons_nat(Y, nil_nat))
+51. elemNat(zero, cons_nat(X, cons_nat(zero, Y))) -> opOr(eqNat(zero, X), true)
+52. opOr(eqNat(X, Y), elemNat(suc(X), Z)) -> elemNat(suc(X), cons_nat(suc(Y), Z))
+53. elemNat(suc(zero), cons_nat(suc(zero), X)) -> true
+54. prop_elemHead(suc(zero), cons_nat(suc(zero), X)) -> true
+55. prop_elemHead(zero, cons_nat(suc(?), cons_nat(zero, X))) -> false
+56. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 2 (implies_2): implies(true, X) = X.
+Axiom 3 (opOr_2): opOr(true, X) = true.
+Axiom 4 (opOr_1): opOr(false, X) = X.
+Axiom 5 (eqNat_1): eqNat(zero, zero) = true.
+Axiom 6 (eqNat_2): eqNat(zero, suc(X)) = false.
+Axiom 7 (eqNat_3): eqNat(suc(X), zero) = false.
+Axiom 8 (headNat_1): headNat(cons_nat(X, Y)) = X.
+Axiom 11 (elemNat_2): elemNat(X, cons_nat(Y, Z)) = opOr(eqNat(X, Y), elemNat(X, Z)).
+Axiom 12 (prop_elemHead_1): prop_elemHead(X, Y) = implies(elemNat(X, Y), eqNat(headNat(Y), X)).
+
+Goal 1 (prop_elemHead): prop_elemHead(X, Y) = false.
+The goal is true when:
+  X = zero
+  Y = cons_nat(suc(Y), cons_nat(zero, X))
+
+Proof:
+  prop_elemHead(zero, cons_nat(suc(Y), cons_nat(zero, X)))
+= { by axiom 12 (prop_elemHead_1) }
+  implies(elemNat(zero, cons_nat(suc(Y), cons_nat(zero, X))), eqNat(headNat(cons_nat(suc(Y), cons_nat(zero, X))), zero))
+= { by axiom 11 (elemNat_2) }
+  implies(opOr(eqNat(zero, suc(Y)), elemNat(zero, cons_nat(zero, X))), eqNat(headNat(cons_nat(suc(Y), cons_nat(zero, X))), zero))
+= { by axiom 6 (eqNat_2) }
+  implies(opOr(false, elemNat(zero, cons_nat(zero, X))), eqNat(headNat(cons_nat(suc(Y), cons_nat(zero, X))), zero))
+= { by axiom 4 (opOr_1) }
+  implies(elemNat(zero, cons_nat(zero, X)), eqNat(headNat(cons_nat(suc(Y), cons_nat(zero, X))), zero))
+= { by axiom 8 (headNat_1) }
+  implies(elemNat(zero, cons_nat(zero, X)), eqNat(suc(Y), zero))
+= { by axiom 7 (eqNat_3) }
+  implies(elemNat(zero, cons_nat(zero, X)), false)
+= { by axiom 11 (elemNat_2) }
+  implies(opOr(eqNat(zero, zero), elemNat(zero, X)), false)
+= { by axiom 5 (eqNat_1) }
+  implies(opOr(true, elemNat(zero, X)), false)
+= { by axiom 3 (opOr_2) }
+  implies(true, false)
+= { by axiom 2 (implies_2) }
+  false
+
+RESULT: Theorem (the conjecture is true).

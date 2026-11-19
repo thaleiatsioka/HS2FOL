@@ -11,6 +11,7 @@ module FOL
   , substTerm
   , substTerms
   , sliceEquations
+  , reachableSyms
   , NameMap
   , assignNames
   , showTerm
@@ -76,6 +77,12 @@ substTerms m (TF s ts) = TF s (map (substTerms m) ts)
 sliceEquations :: [Equation] -> [Sym] -> [Equation]
 sliceEquations eqs roots = filter (\e -> S.member (eqOwner e) reached) eqs
   where
+    reached = reachableSyms eqs roots
+
+-- | The symbols reachable from the roots through defining equations.
+reachableSyms :: [Equation] -> [Sym] -> S.Set Sym
+reachableSyms eqs roots = reached
+  where
     byOwner = M.fromListWith (flip (++)) [ (eqOwner e, [e]) | e <- eqs ]
     reached = go S.empty roots
     go seen [] = seen
@@ -90,7 +97,7 @@ type NameMap = M.Map Sym String
 
 -- | Allocate unique FOL names. Entries are (symbol, priority, desired name);
 -- lower priority values are served first.
-assignNames :: [(Sym, Int, String)] -> NameMap
+assignNames :: Ord k => [(k, Int, String)] -> M.Map k String
 assignNames entries = snd (foldl step (S.empty, M.empty) (sortOn (\(s, p, _) -> (p, s)) (nubSyms entries)))
   where
     nubSyms es = M.elems (M.fromList [ (s, e) | e@(s, _, _) <- es ])

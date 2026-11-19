@@ -1,0 +1,209 @@
+% Running in auto input_syntax mode. Trying TPTP
+% Detected formulas, will run a generic FOF schedule.
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_tgt=full:sil=2000:alpa=true:random_seed=1686946089:st=5:i=107:sd=1:qa=plain:ss=on:er=filter:ssat=axiom_1 on problem for (1ds/107Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 16 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_2:3_to=lpo:sil=16000:sp=arity:random_seed=2762331431:i=114:bd=all:qa=plain:ss=on:sgt=4_1 on problem for (1ds/114Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.101 s
+% Peak memory usage: 10 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+1011_2_sil=4000:lsd=20:rp=on:sac=on:newcnf=on:random_seed=3013751640:i=132:kws=arity:qa=plain:er=filter_1 on problem for (1ds/132Mi)
+%  found proof, printing to "/tmp/vampire-proof-11642-11650"...
+% SZS answers Tuple [∀X0.[fn_const_nat_nat(suc(X0)),fn_case_Nat_bool(true,fn_const_nat_bool(false)),cons_nat(zero,nil_nat)]|_] for problem
+% ...printing done.
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for problem
+% SZS output start Proof for problem
+tff(type_def_5,type,fun_nat_bool: $tType).
+tff(type_def_6,type,fun_nat_nat: $tType).
+tff(type_def_7,type,bool: $tType).
+tff(type_def_8,type,nat: $tType).
+tff(type_def_9,type,list_nat: $tType).
+tff(func_def_0,type,opAnd: (bool * bool) > bool).
+tff(func_def_1,type,filterNat: (fun_nat_bool * list_nat) > list_nat).
+tff(func_def_2,type,filterNat_case1: (bool * fun_nat_bool * nat * list_nat) > list_nat).
+tff(func_def_3,type,eqNat: (nat * nat) > bool).
+tff(func_def_4,type,eqListNat: (list_nat * list_nat) > bool).
+tff(func_def_5,type,mapNatNat: (fun_nat_nat * list_nat) > list_nat).
+tff(func_def_6,type,prop_mapFilter: (fun_nat_nat * fun_nat_bool * list_nat) > bool).
+tff(func_def_7,type,cons_nat: (nat * list_nat) > list_nat).
+tff(func_def_8,type,false: bool).
+tff(func_def_9,type,suc: nat > nat).
+tff(func_def_10,type,true: bool).
+tff(func_def_11,type,zero: nat).
+tff(func_def_12,type,nil_nat: list_nat).
+tff(func_def_13,type,app_nat_bool: (fun_nat_bool * nat) > bool).
+tff(func_def_14,type,app_nat_nat: (fun_nat_nat * nat) > nat).
+tff(func_def_15,type,fn_const_nat_bool: bool > fun_nat_bool).
+tff(func_def_16,type,fn_const_nat_nat: nat > fun_nat_nat).
+tff(func_def_17,type,fn_id_nat: fun_nat_nat).
+tff(func_def_18,type,fn_case_Nat_bool: (bool * fun_nat_bool) > fun_nat_bool).
+tff(func_def_19,type,fn_case_Nat_nat: (nat * fun_nat_nat) > fun_nat_nat).
+tff(pred_def_1,type,ans0: (fun_nat_nat * fun_nat_bool * list_nat) > $o).
+tff(f3,axiom,(
+  ! [X0 : fun_nat_nat, X1 : fun_nat_bool, X2 : list_nat] : (prop_mapFilter(X0,X1,X2) = eqListNat(mapNatNat(X0,filterNat(X1,X2)),filterNat(X1,mapNatNat(X0,X2))))),
+  file('/home/claude/hs2fol/typed-results/examples/HigherOrder/prop_mapFilter/problem.p','prop_mapFilter_1')).
+tff(f10,axiom,(
+  ! [X0 : nat, X1 : list_nat] : (eqListNat(cons_nat(X0,X1),nil_nat) = false)),
+  file('/home/claude/hs2fol/typed-results/examples/HigherOrder/prop_mapFilter/problem.p','eqListNat_3')).
+tff(f12,axiom,(
+  ! [X0 : fun_nat_nat] : (mapNatNat(X0,nil_nat) = nil_nat)),
+  file('/home/claude/hs2fol/typed-results/examples/HigherOrder/prop_mapFilter/problem.p','mapNatNat_1')).
+tff(f13,axiom,(
+  ! [X0 : fun_nat_nat, X1 : nat, X2 : list_nat] : (mapNatNat(X0,cons_nat(X1,X2)) = cons_nat(app_nat_nat(X0,X1),mapNatNat(X0,X2)))),
+  file('/home/claude/hs2fol/typed-results/examples/HigherOrder/prop_mapFilter/problem.p','mapNatNat_2')).
+tff(f14,axiom,(
+  ! [X0 : fun_nat_bool] : (filterNat(X0,nil_nat) = nil_nat)),
+  file('/home/claude/hs2fol/typed-results/examples/HigherOrder/prop_mapFilter/problem.p','filterNat_1')).
+tff(f15,axiom,(
+  ! [X0 : fun_nat_bool, X1 : nat, X2 : list_nat] : (filterNat(X0,cons_nat(X1,X2)) = filterNat_case1(app_nat_bool(X0,X1),X0,X1,X2))),
+  file('/home/claude/hs2fol/typed-results/examples/HigherOrder/prop_mapFilter/problem.p','filterNat_2')).
+tff(f16,axiom,(
+  ! [X0 : fun_nat_bool, X1 : nat, X2 : list_nat] : (filterNat_case1(true,X0,X1,X2) = cons_nat(X1,filterNat(X0,X2)))),
+  file('/home/claude/hs2fol/typed-results/examples/HigherOrder/prop_mapFilter/problem.p','filterNat_case1_1')).
+tff(f17,axiom,(
+  ! [X0 : fun_nat_bool, X1 : nat, X2 : list_nat] : (filterNat_case1(false,X0,X1,X2) = filterNat(X0,X2))),
+  file('/home/claude/hs2fol/typed-results/examples/HigherOrder/prop_mapFilter/problem.p','filterNat_case1_2')).
+tff(f18,axiom,(
+  ! [X0 : nat, X1 : nat] : (app_nat_nat(fn_const_nat_nat(X0),X1) = X0)),
+  file('/home/claude/hs2fol/typed-results/examples/HigherOrder/prop_mapFilter/problem.p','app_fn_const_nat_nat_1')).
+tff(f22,axiom,(
+  ! [X0 : bool, X1 : nat] : (app_nat_bool(fn_const_nat_bool(X0),X1) = X0)),
+  file('/home/claude/hs2fol/typed-results/examples/HigherOrder/prop_mapFilter/problem.p','app_fn_const_nat_bool_1')).
+tff(f23,axiom,(
+  ! [X0 : bool, X1 : fun_nat_bool] : (app_nat_bool(fn_case_Nat_bool(X0,X1),zero) = X0)),
+  file('/home/claude/hs2fol/typed-results/examples/HigherOrder/prop_mapFilter/problem.p','app_fn_case_Nat_bool_1')).
+tff(f24,axiom,(
+  ! [X0 : bool, X1 : fun_nat_bool, X2 : nat] : (app_nat_bool(fn_case_Nat_bool(X0,X1),suc(X2)) = app_nat_bool(X1,X2))),
+  file('/home/claude/hs2fol/typed-results/examples/HigherOrder/prop_mapFilter/problem.p','app_fn_case_Nat_bool_2')).
+tff(f25,conjecture,(
+  ? [X0 : fun_nat_nat, X1 : fun_nat_bool, X2 : list_nat] : (prop_mapFilter(X0,X1,X2) = false)),
+  file('/home/claude/hs2fol/typed-results/examples/HigherOrder/prop_mapFilter/problem.p','prop_mapFilter')).
+tff(f26,negated_conjecture,(
+  ~ ? [X0 : fun_nat_nat, X1 : fun_nat_bool, X2 : list_nat] : (prop_mapFilter(X0,X1,X2) = false)),
+  inference(conjecture_negation,[status(cth)],[f25])).
+tff(f27,plain,(
+  ~ ? [X0 : fun_nat_nat, X1 : fun_nat_bool, X2 : list_nat] : ((prop_mapFilter(X0,X1,X2) = false) & ans0(X0,X1,X2))),
+  inference(answer_literal_injection,[],[f26])).
+tff(f28,plain,(
+  ! [X0 : fun_nat_nat, X1 : fun_nat_bool, X2 : list_nat] : ((false != prop_mapFilter(X0,X1,X2)) | ~ans0(X0,X1,X2))),
+  inference(ennf_transformation,[],[f27])).
+tff(f31,plain,(
+  (! [X0 : fun_nat_nat,X1 : fun_nat_bool,X2 : list_nat] : (prop_mapFilter(X0,X1,X2) = eqListNat(mapNatNat(X0,filterNat(X1,X2)),filterNat(X1,mapNatNat(X0,X2)))))),
+  inference(cnf_transformation,[],[f3])).
+tff(f38,plain,(
+  (! [X0 : nat,X1 : list_nat] : (false = eqListNat(cons_nat(X0,X1),nil_nat)))),
+  inference(cnf_transformation,[],[f10])).
+tff(f40,plain,(
+  (! [X0 : fun_nat_nat] : (nil_nat = mapNatNat(X0,nil_nat)))),
+  inference(cnf_transformation,[],[f12])).
+tff(f41,plain,(
+  (! [X0 : fun_nat_nat,X1 : nat,X2 : list_nat] : (mapNatNat(X0,cons_nat(X1,X2)) = cons_nat(app_nat_nat(X0,X1),mapNatNat(X0,X2))))),
+  inference(cnf_transformation,[],[f13])).
+tff(f42,plain,(
+  (! [X0 : fun_nat_bool] : (nil_nat = filterNat(X0,nil_nat)))),
+  inference(cnf_transformation,[],[f14])).
+tff(f43,plain,(
+  (! [X0 : fun_nat_bool,X1 : nat,X2 : list_nat] : (filterNat(X0,cons_nat(X1,X2)) = filterNat_case1(app_nat_bool(X0,X1),X0,X1,X2)))),
+  inference(cnf_transformation,[],[f15])).
+tff(f44,plain,(
+  (! [X0 : fun_nat_bool,X1 : nat,X2 : list_nat] : (filterNat_case1(true,X0,X1,X2) = cons_nat(X1,filterNat(X0,X2))))),
+  inference(cnf_transformation,[],[f16])).
+tff(f45,plain,(
+  (! [X0 : fun_nat_bool,X1 : nat,X2 : list_nat] : (filterNat(X0,X2) = filterNat_case1(false,X0,X1,X2)))),
+  inference(cnf_transformation,[],[f17])).
+tff(f46,plain,(
+  (! [X0 : nat,X1 : nat] : (app_nat_nat(fn_const_nat_nat(X0),X1) = X0))),
+  inference(cnf_transformation,[],[f18])).
+tff(f50,plain,(
+  (! [X0 : bool,X1 : nat] : (app_nat_bool(fn_const_nat_bool(X0),X1) = X0))),
+  inference(cnf_transformation,[],[f22])).
+tff(f51,plain,(
+  (! [X0 : bool,X1 : fun_nat_bool] : (app_nat_bool(fn_case_Nat_bool(X0,X1),zero) = X0))),
+  inference(cnf_transformation,[],[f23])).
+tff(f52,plain,(
+  (! [X0 : bool,X1 : fun_nat_bool,X2 : nat] : (app_nat_bool(fn_case_Nat_bool(X0,X1),suc(X2)) = app_nat_bool(X1,X2)))),
+  inference(cnf_transformation,[],[f24])).
+tff(f53,plain,(
+  (! [X0 : fun_nat_nat,X1 : fun_nat_bool,X2 : list_nat] : (~ans0(X0,X1,X2) | false != prop_mapFilter(X0,X1,X2)))),
+  inference(cnf_transformation,[],[f28])).
+tff(f54,plain,(
+  (! [X0 : fun_nat_nat,X1 : fun_nat_bool,X2 : list_nat] : (false != eqListNat(mapNatNat(X0,filterNat(X1,X2)),filterNat(X1,mapNatNat(X0,X2))) | ~ans0(X0,X1,X2)))),
+  inference(definition_unfolding,[],[f53,f31])).
+tff(f75,plain,(
+  (! [X0 : fun_nat_nat,X1 : nat] : (mapNatNat(X0,cons_nat(X1,nil_nat)) = cons_nat(app_nat_nat(X0,X1),nil_nat)))),
+  inference(superposition,[],[f41,f40])).
+tff(f80,plain,(
+  (! [X0 : bool,X1 : fun_nat_bool,X2 : list_nat] : (filterNat(fn_case_Nat_bool(X0,X1),cons_nat(zero,X2)) = filterNat_case1(X0,fn_case_Nat_bool(X0,X1),zero,X2)))),
+  inference(superposition,[],[f43,f51])).
+tff(f81,plain,(
+  (! [X0 : fun_nat_bool,X1 : nat,X2 : bool,X3 : list_nat] : (filterNat(fn_case_Nat_bool(X2,X0),cons_nat(suc(X1),X3)) = filterNat_case1(app_nat_bool(X0,X1),fn_case_Nat_bool(X2,X0),suc(X1),X3)))),
+  inference(superposition,[],[f43,f52])).
+tff(f130,plain,(
+  (! [X0 : fun_nat_nat,X1 : nat,X2 : fun_nat_bool] : (false != eqListNat(mapNatNat(X0,filterNat(X2,cons_nat(X1,nil_nat))),filterNat(X2,cons_nat(app_nat_nat(X0,X1),nil_nat))) | ~ans0(X0,X2,cons_nat(X1,nil_nat))))),
+  inference(superposition,[],[f54,f75])).
+tff(f141,plain,(
+  (! [X0 : nat,X1 : fun_nat_bool,X2 : nat] : (false != eqListNat(mapNatNat(fn_const_nat_nat(X0),filterNat(X1,cons_nat(X2,nil_nat))),filterNat(X1,cons_nat(X0,nil_nat))) | ~ans0(fn_const_nat_nat(X0),X1,cons_nat(X2,nil_nat))))),
+  inference(superposition,[],[f130,f46])).
+tff(f254,plain,(
+  (! [X0 : fun_nat_bool,X1 : list_nat] : (cons_nat(zero,filterNat(fn_case_Nat_bool(true,X0),X1)) = filterNat(fn_case_Nat_bool(true,X0),cons_nat(zero,X1))))),
+  inference(superposition,[],[f44,f80])).
+tff(f385,plain,(
+  (! [X0 : bool,X1 : bool,X2 : nat,X3 : list_nat] : (filterNat(fn_case_Nat_bool(X1,fn_const_nat_bool(X0)),cons_nat(suc(X2),X3)) = filterNat_case1(X0,fn_case_Nat_bool(X1,fn_const_nat_bool(X0)),suc(X2),X3)))),
+  inference(superposition,[],[f81,f50])).
+tff(f1564,plain,(
+  (! [X0 : fun_nat_bool,X1 : nat] : (false != eqListNat(mapNatNat(fn_const_nat_nat(X1),cons_nat(zero,filterNat(fn_case_Nat_bool(true,X0),nil_nat))),filterNat(fn_case_Nat_bool(true,X0),cons_nat(X1,nil_nat))) | ~ans0(fn_const_nat_nat(X1),fn_case_Nat_bool(true,X0),cons_nat(zero,nil_nat))))),
+  inference(superposition,[],[f141,f254])).
+tff(f1594,plain,(
+  (! [X0 : fun_nat_bool,X1 : nat] : (false != eqListNat(mapNatNat(fn_const_nat_nat(X1),cons_nat(zero,nil_nat)),filterNat(fn_case_Nat_bool(true,X0),cons_nat(X1,nil_nat))) | ~ans0(fn_const_nat_nat(X1),fn_case_Nat_bool(true,X0),cons_nat(zero,nil_nat))))),
+  inference(forward_demodulation,[],[f1564,f42])).
+tff(f1630,plain,(
+  (! [X0 : fun_nat_bool,X1 : nat] : (false != eqListNat(cons_nat(app_nat_nat(fn_const_nat_nat(X1),zero),nil_nat),filterNat(fn_case_Nat_bool(true,X0),cons_nat(X1,nil_nat))) | ~ans0(fn_const_nat_nat(X1),fn_case_Nat_bool(true,X0),cons_nat(zero,nil_nat))))),
+  inference(forward_demodulation,[],[f1594,f75])).
+tff(f1666,plain,(
+  (! [X0 : fun_nat_bool,X1 : nat] : (false != eqListNat(cons_nat(X1,nil_nat),filterNat(fn_case_Nat_bool(true,X0),cons_nat(X1,nil_nat))) | ~ans0(fn_const_nat_nat(X1),fn_case_Nat_bool(true,X0),cons_nat(zero,nil_nat))))),
+  inference(forward_demodulation,[],[f1630,f46])).
+tff(f3237,plain,(
+  (! [X0 : bool,X1 : nat,X2 : list_nat] : (filterNat(fn_case_Nat_bool(X0,fn_const_nat_bool(false)),cons_nat(suc(X1),X2)) = filterNat(fn_case_Nat_bool(X0,fn_const_nat_bool(false)),X2)))),
+  inference(superposition,[],[f45,f385])).
+tff(f10765,plain,(
+  (! [X0 : nat] : (false != eqListNat(cons_nat(suc(X0),nil_nat),filterNat(fn_case_Nat_bool(true,fn_const_nat_bool(false)),nil_nat)) | ~ans0(fn_const_nat_nat(suc(X0)),fn_case_Nat_bool(true,fn_const_nat_bool(false)),cons_nat(zero,nil_nat))))),
+  inference(superposition,[],[f1666,f3237])).
+tff(f10922,plain,(
+  (! [X0 : nat] : (false != eqListNat(cons_nat(suc(X0),nil_nat),nil_nat) | ~ans0(fn_const_nat_nat(suc(X0)),fn_case_Nat_bool(true,fn_const_nat_bool(false)),cons_nat(zero,nil_nat))))),
+  inference(forward_demodulation,[],[f10765,f42])).
+tff(f10961,plain,(
+  (! [X0 : nat] : (~ans0(fn_const_nat_nat(suc(X0)),fn_case_Nat_bool(true,fn_const_nat_bool(false)),cons_nat(zero,nil_nat))))),
+  inference(forward_subsumption_resolution,[],[f10922,f38])).
+tff(f10962,plain,(
+  (! [X0 : fun_nat_nat,X1 : fun_nat_bool,X2 : list_nat] : (ans0(X0,X1,X2)))),
+  introduced(theory,[answer_literal_resolver],[])).
+tff(f10963,plain,(
+  $false),
+  inference(unit_resulting_resolution,[],[f10961,f10962])).
+% SZS output end Proof for problem
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation
+% Time elapsed: 0.094 s
+% Peak memory usage: 17 MB
+% Success in time 0.299 s

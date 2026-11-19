@@ -1,0 +1,7 @@
+property:   prop_leqAntisym
+file:       examples/Nat.hs
+prover:     eprover
+witness:    prop_leqAntisym Zero (Suc _X2)
+input:      prop_leqAntisym Zero (Suc undefined)
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

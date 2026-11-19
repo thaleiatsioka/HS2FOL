@@ -23,6 +23,7 @@ executable hs2fol
                     Syntax
                     Translate
                     TypeCheck
+                    Typed
   build-depends:    base >=4.11 && <5,
                     containers,
                     mtl,
@@ -49,6 +50,7 @@ executable witness2input
                     Syntax
                     Translate
                     TypeCheck
+                    Typed
   build-depends:    base >=4.11 && <5,
                     containers,
                     mtl,

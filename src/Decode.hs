@@ -80,7 +80,7 @@ extractWitnesses arity input =
 normaliseWitness :: Translation -> [PT] -> [PT]
 normaliseWitness tr = map norm
   where
-    inverse = M.fromList [ (v, k) | (k, v) <- M.toList (trNames tr) ]
+    inverse = trInverse tr
     norm pt = maybe pt (fromTerm . normalise 100000 (trEqns tr)) (toTerm pt)
     toTerm (PV v) = Just (TV (Name v (-2)))
     toTerm (PF n args) = do
@@ -166,7 +166,7 @@ decodeTerm mode tr depth t = case t of
       as <- mapM (decodeTerm mode tr (depth + 1)) args
       sym s as args
   where
-    inverse = M.fromList [ (v, k) | (k, v) <- M.toList (trNames tr) ]
+    inverse = trInverse tr
     funs = trFuns tr
     sym s as args = case s of
       SCon c -> Right (con c as args)
