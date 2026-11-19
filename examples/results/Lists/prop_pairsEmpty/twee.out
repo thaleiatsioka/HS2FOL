@@ -1,0 +1,251 @@
+Here is the input problem:
+  Axiom 1 (null_1): null(nil) = true.
+  Axiom 2 (isLT_1): isLT(lt) = true.
+  Axiom 3 (isLT_2): isLT(eq) = false.
+  Axiom 4 (isLT_3): isLT(gt) = false.
+  Axiom 5 (prop_pairsEmpty_1): prop_pairsEmpty(X) = null(pairs(X)).
+  Axiom 6 (opAppend_1): opAppend(nil, X) = X.
+  Axiom 7 (concatMap_1): concatMap(X, nil) = nil.
+  Axiom 8 (compareNat_1): compareNat(zero, zero) = eq.
+  Axiom 9 (compareNat_2): compareNat(zero, suc(X)) = lt.
+  Axiom 10 (compareNat_3): compareNat(suc(X), zero) = gt.
+  Axiom 11 (compareNat_4): compareNat(suc(X), suc(Y)) = compareNat(X, Y).
+  Axiom 12 (null_2): null(cons(X, Y)) = false.
+  Axiom 13 (lam2_body_case1_2): lam2_body_case1(false, X, Y) = nil.
+  Axiom 14 (ltNat_1): ltNat(X, Y) = isLT(compareNat(X, Y)).
+  Axiom 15 (pairs_1): pairs(X) = concatMap(lam1(X), X).
+  Axiom 16 (app_lam1_1): app(lam1(X), Y) = concatMap(lam2(Y), X).
+  Axiom 17 (opAppend_2): opAppend(cons(X, Y), Z) = cons(X, opAppend(Y, Z)).
+  Axiom 18 (lam2_body_case1_1): lam2_body_case1(true, X, Y) = cons(pair(X, Y), nil).
+  Axiom 19 (app_lam2_1): app(lam2(X), Y) = lam2_body_case1(ltNat(X, Y), X, Y).
+  Axiom 20 (concatMap_2): concatMap(X, cons(Y, Z)) = opAppend(app(X, Y), concatMap(X, Z)).
+  Axiom 21 (reflexivity): equals(X, X) = true.
+  Axiom 22 (prop_pairsEmpty): equals(prop_pairsEmpty(X), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. null(nil) -> true
+2. isLT(lt) -> true
+3. isLT(eq) -> false
+4. isLT(gt) -> false
+5. null(pairs(X)) -> prop_pairsEmpty(X)
+6. opAppend(nil, X) -> X
+7. concatMap(X, nil) -> nil
+8. compareNat(zero, zero) -> eq
+9. compareNat(zero, suc(X)) -> lt
+10. compareNat(suc(X), zero) -> gt
+11. compareNat(suc(X), suc(Y)) -> compareNat(X, Y)
+12. null(cons(X, Y)) -> false
+13. lam2_body_case1(false, X, Y) -> nil
+14. isLT(compareNat(X, Y)) -> ltNat(X, Y)
+15. concatMap(lam1(X), X) -> pairs(X)
+16. concatMap(lam2(X), Y) -> app(lam1(Y), X)
+17. cons(X, opAppend(Y, Z)) -> opAppend(cons(X, Y), Z)
+18. cons(pair(X, Y), nil) -> lam2_body_case1(true, X, Y)
+19. lam2_body_case1(ltNat(X, Y), X, Y) -> app(lam2(X), Y)
+20. opAppend(app(X, Y), concatMap(X, Z)) -> concatMap(X, cons(Y, Z))
+21. equals(X, X) -> true
+22. equals(prop_pairsEmpty(X), false) -> false
+23. pairs(nil) -> nil
+24. prop_pairsEmpty(nil) -> true
+25. ltNat(zero, zero) -> false
+26. ltNat(zero, suc(X)) -> true
+27. ltNat(suc(X), zero) -> false
+28. app(lam1(nil), X) -> nil
+29. equals(true, false) -> false
+30. app(lam2(zero), zero) -> nil
+31. null(lam2_body_case1(true, X, Y)) -> false
+32. ltNat(suc(X), suc(Y)) -> ltNat(X, Y)
+33. opAppend(cons(X, nil), Y) -> cons(X, Y)
+34. app(lam2(suc(X)), zero) -> nil
+35. null(opAppend(cons(X, Y), Z)) -> false
+36. concatMap(X, cons(Y, nil)) -> opAppend(app(X, Y), nil)
+37. lam2_body_case1(true, zero, suc(X)) -> app(lam2(zero), suc(X))
+38. null(app(lam2(zero), suc(X))) -> false
+39. concatMap(lam1(nil), cons(X, Y)) -> concatMap(lam1(nil), Y)
+40. opAppend(lam2_body_case1(true, X, Y), Z) -> cons(pair(X, Y), Z)
+41. opAppend(app(lam2(X), Y), nil) -> app(lam1(cons(Y, nil)), X)
+42. app(lam1(cons(zero, nil)), zero) -> nil
+43. app(lam1(cons(zero, X)), zero) -> app(lam1(X), zero)
+44. opAppend(app(lam1(X), Y), pairs(X)) -> concatMap(lam1(X), cons(Y, X))
+45. concatMap(lam1(nil), lam2_body_case1(true, X, Y)) -> nil
+46. app(lam1(cons(zero, nil)), suc(X)) -> nil
+47. null(opAppend(opAppend(cons(X, Y), Z), W)) -> false
+48. opAppend(cons(X, cons(Y, nil)), Z) -> cons(X, cons(Y, Z))
+49. opAppend(app(X, pair(Y, Z)), nil) -> concatMap(X, lam2_body_case1(true, Y, Z))
+50. app(lam1(cons(zero, X)), suc(Y)) -> app(lam1(X), suc(Y))
+51. opAppend(app(lam2(zero), suc(X)), Y) -> cons(pair(zero, suc(X)), Y)
+52. opAppend(app(lam1(cons(X, nil)), X), nil) -> pairs(cons(X, nil))
+53. pairs(cons(zero, nil)) -> nil
+54. prop_pairsEmpty(cons(zero, nil)) -> true
+55. lam2_body_case1(ltNat(X, Y), suc(X), suc(Y)) -> app(lam2(suc(X)), suc(Y))
+56. app(lam2(suc(zero)), suc(zero)) -> nil
+57. app(lam2(suc(suc(X))), suc(zero)) -> nil
+58. app(lam1(cons(suc(zero), nil)), suc(zero)) -> nil
+59. pairs(cons(suc(zero), nil)) -> nil
+60. prop_pairsEmpty(cons(suc(zero), nil)) -> true
+61. app(lam1(cons(suc(X), nil)), zero) -> app(lam2(zero), suc(X))
+62. lam2_body_case1(true, suc(zero), suc(suc(X))) -> app(lam2(suc(zero)), suc(suc(X)))
+63. app(lam1(cons(suc(zero), X)), suc(zero)) -> app(lam1(X), suc(zero))
+64. concatMap(lam1(nil), app(lam2(zero), suc(X))) -> nil
+65. null(app(lam2(suc(zero)), suc(suc(X)))) -> false
+66. opAppend(app(lam2(X), Y), app(lam1(Z), X)) -> app(lam1(cons(Y, Z)), X)
+67. opAppend(cons(X, app(Y, Z)), concatMap(Y, W)) -> cons(X, concatMap(Y, cons(Z, W)))
+68. concatMap(lam1(nil), opAppend(cons(X, Y), Z)) -> concatMap(lam1(nil), opAppend(Y, Z))
+69. opAppend(cons(X, lam2_body_case1(true, Y, Z)), W) -> cons(X, cons(pair(Y, Z), W))
+70. cons(X, app(lam1(cons(Y, nil)), Z)) -> opAppend(cons(X, app(lam2(Z), Y)), nil)
+71. concatMap(lam1(cons(zero, nil)), cons(zero, cons(zero, nil))) -> nil
+72. null(opAppend(opAppend(opAppend(cons(X, Y), Z), W), V)) -> false
+73. opAppend(app(X, Y), opAppend(app(X, Z), nil)) -> concatMap(X, cons(Y, cons(Z, nil)))
+74. app(lam1(cons(X, cons(zero, nil))), zero) -> app(lam1(cons(X, nil)), zero)
+75. app(lam1(cons(suc(zero), nil)), suc(suc(X))) -> nil
+76. app(lam1(opAppend(cons(zero, X), Y)), zero) -> app(lam1(opAppend(X, Y)), zero)
+77. app(lam1(cons(X, cons(zero, Y))), zero) -> app(lam1(cons(X, Y)), zero)
+78. opAppend(cons(X, app(lam1(Y), Z)), pairs(Y)) -> cons(X, concatMap(lam1(Y), cons(Z, Y)))
+79. concatMap(lam1(cons(zero, nil)), cons(zero, X)) -> concatMap(lam1(cons(zero, nil)), X)
+80. opAppend(cons(X, cons(Y, cons(Z, nil))), W) -> cons(X, cons(Y, cons(Z, W)))
+81. opAppend(cons(X, app(Y, pair(Z, W))), nil) -> cons(X, concatMap(Y, lam2_body_case1(true, Z, W)))
+82. concatMap(lam1(cons(zero, nil)), cons(X, cons(zero, nil))) -> opAppend(app(lam1(cons(zero, nil)), X), nil)
+83. app(lam1(cons(X, cons(zero, nil))), suc(Y)) -> app(lam1(cons(X, nil)), suc(Y))
+84. concatMap(lam1(nil), app(lam2(suc(zero)), suc(suc(X)))) -> nil
+85. app(lam1(cons(suc(zero), X)), suc(suc(Y))) -> app(lam1(X), suc(suc(Y)))
+86. concatMap(lam1(cons(zero, nil)), cons(suc(X), Y)) -> concatMap(lam1(cons(zero, nil)), Y)
+87. app(lam1(opAppend(cons(zero, X), Y)), suc(Z)) -> app(lam1(opAppend(X, Y)), suc(Z))
+88. app(lam1(cons(X, cons(zero, Y))), suc(Z)) -> app(lam1(cons(X, Y)), suc(Z))
+89. cons(pair(zero, suc(X)), app(lam1(Y), zero)) -> app(lam1(cons(suc(X), Y)), zero)
+90. null(app(lam1(cons(suc(X), Y)), zero)) -> false
+91. null(opAppend(app(lam1(cons(suc(X), Y)), zero), Z)) -> false
+92. opAppend(cons(X, app(lam2(zero), suc(Y))), Z) -> cons(X, cons(pair(zero, suc(Y)), Z))
+93. opAppend(opAppend(cons(X, app(lam2(Y), Y)), nil), nil) -> cons(X, pairs(cons(Y, nil)))
+94. app(lam1(cons(X, cons(suc(zero), nil))), suc(zero)) -> app(lam1(cons(X, nil)), suc(zero))
+95. opAppend(app(lam2(suc(zero)), suc(suc(X))), Y) -> cons(pair(suc(zero), suc(suc(X))), Y)
+96. concatMap(lam1(cons(zero, X)), cons(zero, cons(zero, X))) -> opAppend(app(lam1(X), zero), pairs(cons(zero, X)))
+97. concatMap(lam1(cons(suc(zero), nil)), cons(suc(zero), cons(suc(zero), nil))) -> nil
+98. null(app(lam1(opAppend(cons(suc(X), Y), Z)), zero)) -> false
+99. null(concatMap(lam1(cons(suc(X), Y)), cons(zero, Z))) -> false
+100. lam2_body_case1(ltNat(X, Y), suc(suc(X)), suc(suc(Y))) -> app(lam2(suc(suc(X))), suc(suc(Y)))
+101. app(lam2(suc(suc(zero))), suc(suc(zero))) -> nil
+102. app(lam1(cons(suc(suc(zero)), nil)), suc(suc(zero))) -> nil
+103. pairs(cons(suc(suc(zero)), nil)) -> nil
+104. prop_pairsEmpty(cons(suc(suc(zero)), nil)) -> true
+105. app(lam2(suc(suc(suc(X)))), suc(suc(zero))) -> nil
+106. app(lam1(cons(suc(suc(zero)), X)), suc(suc(zero))) -> app(lam1(X), suc(suc(zero)))
+107. app(lam1(opAppend(cons(suc(zero), X), Y)), suc(zero)) -> app(lam1(opAppend(X, Y)), suc(zero))
+108. app(lam1(cons(X, cons(suc(zero), Y))), suc(zero)) -> app(lam1(cons(X, Y)), suc(zero))
+109. opAppend(app(lam2(zero), X), app(lam2(zero), suc(Y))) -> app(lam1(cons(X, cons(suc(Y), nil))), zero)
+110. concatMap(lam1(cons(suc(zero), nil)), cons(suc(zero), X)) -> concatMap(lam1(cons(suc(zero), nil)), X)
+111. lam2_body_case1(true, suc(suc(zero)), suc(suc(suc(X)))) -> app(lam2(suc(suc(zero))), suc(suc(suc(X))))
+112. null(app(lam2(suc(suc(zero))), suc(suc(suc(X))))) -> false
+113. app(lam1(cons(suc(suc(X)), nil)), suc(zero)) -> app(lam2(suc(zero)), suc(suc(X)))
+114. opAppend(cons(X, app(lam2(Y), Z)), app(lam1(W), Y)) -> cons(X, app(lam1(cons(Z, W)), Y))
+115. opAppend(cons(X, cons(Y, app(Z, W))), concatMap(Z, V)) -> cons(X, cons(Y, concatMap(Z, cons(W, V))))
+116. concatMap(lam1(nil), opAppend(opAppend(cons(X, Y), Z), W)) -> concatMap(lam1(nil), opAppend(opAppend(Y, Z), W))
+117. opAppend(cons(X, cons(Y, lam2_body_case1(true, Z, W))), V) -> cons(X, cons(Y, cons(pair(Z, W), V)))
+118. null(opAppend(opAppend(opAppend(opAppend(cons(X, Y), Z), W), V), U)) -> false
+119. opAppend(cons(X, app(Y, Z)), opAppend(app(Y, W), nil)) -> cons(X, concatMap(Y, cons(Z, cons(W, nil))))
+120. concatMap(lam1(cons(suc(X), nil)), cons(zero, cons(suc(X), nil))) -> cons(pair(zero, suc(X)), pairs(cons(suc(X), nil)))
+121. concatMap(lam1(cons(suc(zero), nil)), cons(X, cons(suc(zero), nil))) -> opAppend(app(lam1(cons(suc(zero), nil)), X), nil)
+122. app(lam1(cons(suc(suc(zero)), nil)), suc(suc(suc(X)))) -> nil
+123. app(lam1(cons(X, cons(Y, cons(zero, nil)))), zero) -> app(lam1(cons(X, cons(Y, nil))), zero)
+124. concatMap(lam1(cons(zero, X)), cons(suc(Y), cons(zero, X))) -> opAppend(app(lam1(X), suc(Y)), pairs(cons(zero, X)))
+125. concatMap(lam1(nil), app(lam1(cons(suc(X), Y)), zero)) -> concatMap(lam1(nil), app(lam1(Y), zero))
+126. app(lam1(opAppend(opAppend(cons(zero, X), Y), Z)), zero) -> app(lam1(opAppend(opAppend(X, Y), Z)), zero)
+127. app(lam1(opAppend(cons(X, cons(zero, Y)), Z)), zero) -> app(lam1(opAppend(cons(X, Y), Z)), zero)
+128. app(lam1(cons(X, cons(Y, cons(zero, Z)))), zero) -> app(lam1(cons(X, cons(Y, Z))), zero)
+129. opAppend(cons(X, cons(Y, app(lam1(Z), W))), pairs(Z)) -> cons(X, cons(Y, concatMap(lam1(Z), cons(W, Z))))
+130. concatMap(lam1(cons(zero, nil)), opAppend(cons(zero, X), Y)) -> concatMap(lam1(cons(zero, nil)), opAppend(X, Y))
+131. concatMap(lam1(cons(zero, nil)), cons(X, cons(zero, Y))) -> concatMap(lam1(cons(zero, nil)), cons(X, Y))
+132. null(opAppend(opAppend(app(lam1(cons(suc(X), Y)), zero), Z), W)) -> false
+133. app(lam1(cons(X, cons(suc(suc(zero)), nil))), suc(suc(zero))) -> app(lam1(cons(X, nil)), suc(suc(zero)))
+134. opAppend(cons(X, cons(Y, cons(Z, cons(W, nil)))), V) -> cons(X, cons(Y, cons(Z, cons(W, V))))
+135. concatMap(lam1(cons(suc(zero), X)), cons(suc(zero), cons(suc(zero), X))) -> opAppend(app(lam1(X), suc(zero)), pairs(cons(suc(zero), X)))
+136. opAppend(app(lam1(X), zero), concatMap(lam1(cons(zero, X)), Y)) -> concatMap(lam1(cons(zero, X)), cons(zero, Y))
+137. concatMap(lam1(cons(zero, cons(zero, nil))), cons(zero, X)) -> concatMap(lam1(cons(zero, cons(zero, nil))), X)
+138. pairs(cons(zero, cons(zero, nil))) -> nil
+139. prop_pairsEmpty(cons(zero, cons(zero, nil))) -> true
+140. concatMap(lam1(cons(suc(suc(zero)), nil)), cons(suc(suc(zero)), cons(suc(suc(zero)), nil))) -> nil
+141. concatMap(lam1(nil), app(lam2(suc(suc(zero))), suc(suc(suc(X))))) -> nil
+142. opAppend(cons(X, cons(Y, app(Z, pair(W, V)))), nil) -> cons(X, cons(Y, concatMap(Z, lam2_body_case1(true, W, V))))
+143. app(lam1(cons(X, cons(suc(zero), nil))), suc(suc(Y))) -> app(lam1(cons(X, nil)), suc(suc(Y)))
+144. concatMap(lam1(cons(zero, nil)), cons(X, cons(Y, cons(zero, nil)))) -> concatMap(lam1(cons(zero, nil)), cons(X, cons(Y, nil)))
+145. cons(pair(zero, suc(X)), app(lam2(zero), suc(Y))) -> app(lam1(cons(suc(X), cons(suc(Y), nil))), zero)
+146. app(lam1(opAppend(cons(suc(suc(zero)), X), Y)), suc(suc(zero))) -> app(lam1(opAppend(X, Y)), suc(suc(zero)))
+147. app(lam1(cons(X, cons(suc(suc(zero)), Y))), suc(suc(zero))) -> app(lam1(cons(X, Y)), suc(suc(zero)))
+148. null(opAppend(app(lam1(opAppend(cons(suc(X), Y), Z)), zero), W)) -> false
+149. null(opAppend(concatMap(lam1(cons(suc(X), Y)), cons(zero, Z)), W)) -> false
+150. concatMap(lam1(cons(zero, nil)), cons(X, cons(suc(Y), nil))) -> opAppend(app(lam1(cons(zero, nil)), X), nil)
+151. app(lam1(cons(X, cons(Y, cons(zero, nil)))), suc(Z)) -> app(lam1(cons(X, cons(Y, nil))), suc(Z))
+152. concatMap(lam1(cons(suc(suc(zero)), nil)), cons(suc(suc(zero)), X)) -> concatMap(lam1(cons(suc(suc(zero)), nil)), X)
+153. null(concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(zero, Z))) -> false
+154. prop_pairsEmpty(cons(zero, cons(suc(X), Y))) -> false
+155. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (isLT_1): isLT(lt) = true.
+Axiom 2 (isLT_2): isLT(eq) = false.
+Axiom 3 (prop_pairsEmpty_1): prop_pairsEmpty(X) = null(pairs(X)).
+Axiom 4 (opAppend_1): opAppend(nil, X) = X.
+Axiom 5 (compareNat_1): compareNat(zero, zero) = eq.
+Axiom 6 (compareNat_2): compareNat(zero, suc(X)) = lt.
+Axiom 7 (null_2): null(cons(X, Y)) = false.
+Axiom 8 (lam2_body_case1_2): lam2_body_case1(false, X, Y) = nil.
+Axiom 9 (ltNat_1): ltNat(X, Y) = isLT(compareNat(X, Y)).
+Axiom 10 (pairs_1): pairs(X) = concatMap(lam1(X), X).
+Axiom 11 (app_lam1_1): app(lam1(X), Y) = concatMap(lam2(Y), X).
+Axiom 12 (opAppend_2): opAppend(cons(X, Y), Z) = cons(X, opAppend(Y, Z)).
+Axiom 13 (lam2_body_case1_1): lam2_body_case1(true, X, Y) = cons(pair(X, Y), nil).
+Axiom 14 (app_lam2_1): app(lam2(X), Y) = lam2_body_case1(ltNat(X, Y), X, Y).
+Axiom 15 (concatMap_2): concatMap(X, cons(Y, Z)) = opAppend(app(X, Y), concatMap(X, Z)).
+
+Goal 1 (prop_pairsEmpty): prop_pairsEmpty(X) = false.
+The goal is true when:
+  X = cons(zero, cons(suc(X), Y))
+
+Proof:
+  prop_pairsEmpty(cons(zero, cons(suc(X), Y)))
+= { by axiom 3 (prop_pairsEmpty_1) }
+  null(pairs(cons(zero, cons(suc(X), Y))))
+= { by axiom 10 (pairs_1) }
+  null(concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(zero, cons(suc(X), Y))))
+= { by axiom 15 (concatMap_2) }
+  null(opAppend(app(lam1(cons(zero, cons(suc(X), Y))), zero), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 11 (app_lam1_1) }
+  null(opAppend(concatMap(lam2(zero), cons(zero, cons(suc(X), Y))), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 15 (concatMap_2) }
+  null(opAppend(opAppend(app(lam2(zero), zero), concatMap(lam2(zero), cons(suc(X), Y))), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 14 (app_lam2_1) }
+  null(opAppend(opAppend(lam2_body_case1(ltNat(zero, zero), zero, zero), concatMap(lam2(zero), cons(suc(X), Y))), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 9 (ltNat_1) }
+  null(opAppend(opAppend(lam2_body_case1(isLT(compareNat(zero, zero)), zero, zero), concatMap(lam2(zero), cons(suc(X), Y))), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 5 (compareNat_1) }
+  null(opAppend(opAppend(lam2_body_case1(isLT(eq), zero, zero), concatMap(lam2(zero), cons(suc(X), Y))), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 2 (isLT_2) }
+  null(opAppend(opAppend(lam2_body_case1(false, zero, zero), concatMap(lam2(zero), cons(suc(X), Y))), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 8 (lam2_body_case1_2) }
+  null(opAppend(opAppend(nil, concatMap(lam2(zero), cons(suc(X), Y))), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 4 (opAppend_1) }
+  null(opAppend(concatMap(lam2(zero), cons(suc(X), Y)), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 15 (concatMap_2) }
+  null(opAppend(opAppend(app(lam2(zero), suc(X)), concatMap(lam2(zero), Y)), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 14 (app_lam2_1) }
+  null(opAppend(opAppend(lam2_body_case1(ltNat(zero, suc(X)), zero, suc(X)), concatMap(lam2(zero), Y)), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 9 (ltNat_1) }
+  null(opAppend(opAppend(lam2_body_case1(isLT(compareNat(zero, suc(X))), zero, suc(X)), concatMap(lam2(zero), Y)), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 6 (compareNat_2) }
+  null(opAppend(opAppend(lam2_body_case1(isLT(lt), zero, suc(X)), concatMap(lam2(zero), Y)), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 1 (isLT_1) }
+  null(opAppend(opAppend(lam2_body_case1(true, zero, suc(X)), concatMap(lam2(zero), Y)), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 13 (lam2_body_case1_1) }
+  null(opAppend(opAppend(cons(pair(zero, suc(X)), nil), concatMap(lam2(zero), Y)), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 12 (opAppend_2) }
+  null(opAppend(cons(pair(zero, suc(X)), opAppend(nil, concatMap(lam2(zero), Y))), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 4 (opAppend_1) }
+  null(opAppend(cons(pair(zero, suc(X)), concatMap(lam2(zero), Y)), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 11 (app_lam1_1) R->L }
+  null(opAppend(cons(pair(zero, suc(X)), app(lam1(Y), zero)), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y))))
+= { by axiom 12 (opAppend_2) }
+  null(cons(pair(zero, suc(X)), opAppend(app(lam1(Y), zero), concatMap(lam1(cons(zero, cons(suc(X), Y))), cons(suc(X), Y)))))
+= { by axiom 7 (null_2) }
+  false
+
+RESULT: Theorem (the conjecture is true).

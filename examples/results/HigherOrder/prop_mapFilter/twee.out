@@ -1,0 +1,593 @@
+Here is the input problem:
+  Axiom 1 (opAnd_2): opAnd(true, X) = X.
+  Axiom 2 (opAnd_1): opAnd(false, X) = false.
+  Axiom 3 (map_1): map(X, nil) = nil.
+  Axiom 4 (filter_1): filter(X, nil) = nil.
+  Axiom 5 (eqListNat_1): eqListNat(nil, nil) = true.
+  Axiom 6 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 7 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 8 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 9 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 10 (app_fn_id_1): app(fn_id, X) = X.
+  Axiom 11 (app_fn_const_1): app(fn_const(X), Y) = X.
+  Axiom 12 (filter_case1_2): filter_case1(false, X, Y, Z) = filter(X, Z).
+  Axiom 13 (eqListNat_2): eqListNat(nil, cons(X, Y)) = false.
+  Axiom 14 (eqListNat_3): eqListNat(cons(X, Y), nil) = false.
+  Axiom 15 (app_fn_case_Nat_1): app(fn_case_Nat(X, Y), zero) = X.
+  Axiom 16 (app_fn_case_Nat_2): app(fn_case_Nat(X, Y), suc(Z)) = app(Y, Z).
+  Axiom 17 (filter_case1_1): filter_case1(true, X, Y, Z) = cons(Y, filter(X, Z)).
+  Axiom 18 (filter_2): filter(X, cons(Y, Z)) = filter_case1(app(X, Y), X, Y, Z).
+  Axiom 19 (eqListNat_4): eqListNat(cons(X, Y), cons(Z, W)) = opAnd(eqNat(X, Z), eqListNat(Y, W)).
+  Axiom 20 (map_2): map(X, cons(Y, Z)) = cons(app(X, Y), map(X, Z)).
+  Axiom 21 (prop_mapFilter_1): prop_mapFilter(X, Y, Z) = eqListNat(map(X, filter(Y, Z)), filter(Y, map(X, Z))).
+  Axiom 22 (reflexivity): equals(X, X) = true.
+  Axiom 23 (prop_mapFilter): equals(prop_mapFilter(X, Y, Z), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. opAnd(true, X) -> X
+2. opAnd(false, X) -> false
+3. map(X, nil) -> nil
+4. filter(X, nil) -> nil
+5. eqListNat(nil, nil) -> true
+6. eqNat(zero, zero) -> true
+7. eqNat(zero, suc(X)) -> false
+8. eqNat(suc(X), zero) -> false
+9. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+10. app(fn_id, X) -> X
+11. app(fn_const(X), Y) -> X
+12. filter_case1(false, X, Y, Z) -> filter(X, Z)
+13. eqListNat(nil, cons(X, Y)) -> false
+14. eqListNat(cons(X, Y), nil) -> false
+15. app(fn_case_Nat(X, Y), zero) -> X
+16. app(fn_case_Nat(X, Y), suc(Z)) -> app(Y, Z)
+17. cons(X, filter(Y, Z)) -> filter_case1(true, Y, X, Z)
+18. filter_case1(app(X, Y), X, Y, Z) -> filter(X, cons(Y, Z))
+19. eqListNat(cons(X, Y), cons(Z, W)) -> opAnd(eqNat(X, Z), eqListNat(Y, W))
+20. cons(app(X, Y), map(X, Z)) -> map(X, cons(Y, Z))
+21. eqListNat(map(X, filter(Y, Z)), filter(Y, map(X, Z))) -> prop_mapFilter(X, Y, Z)
+22. equals(X, X) -> true
+23. equals(prop_mapFilter(X, Y, Z), false) -> false
+24. prop_mapFilter(X, Y, nil) -> true
+25. equals(true, false) -> false
+26. filter_case1(true, X, Y, nil) -> cons(Y, nil)
+27. filter(fn_id, cons(X, Y)) = filter_case1(X, fn_id, X, Y)
+28. cons(app(X, Y), nil) -> map(X, cons(Y, nil))
+29. cons(X, map(fn_id, Y)) -> map(fn_id, cons(X, Y))
+30. map(fn_id, cons(X, nil)) -> cons(X, nil)
+31. eqListNat(nil, filter_case1(true, X, Y, Z)) -> false
+32. eqListNat(filter_case1(true, X, Y, Z), nil) -> false
+33. eqListNat(nil, map(X, cons(Y, Z))) -> false
+34. eqListNat(map(X, cons(Y, Z)), nil) -> false
+35. map(fn_const(X), cons(Y, nil)) -> cons(X, nil)
+36. filter(fn_const(X), cons(Y, Z)) = filter_case1(X, fn_const(X), Y, Z)
+37. cons(X, map(fn_const(X), Y)) -> map(fn_const(X), cons(?, Y))
+38. map(fn_const(X), cons(Y, Z)) ~> map(fn_const(X), cons(?, Z))
+39. map(fn_case_Nat(X, Y), cons(zero, nil)) -> cons(X, nil)
+40. filter(fn_case_Nat(X, Y), cons(zero, Z)) = filter_case1(X, fn_case_Nat(X, Y), zero, Z)
+41. cons(X, map(fn_case_Nat(X, Y), Z)) -> map(fn_case_Nat(X, Y), cons(zero, Z))
+42. filter_case1(X, fn_id, X, filter(Y, Z)) = filter(fn_id, filter_case1(true, Y, X, Z))
+43. cons(X, filter_case1(Y, fn_id, Y, Z)) -> filter_case1(true, fn_id, X, cons(Y, Z))
+44. map(fn_const(X), map(Y, cons(Z, nil))) -> cons(X, nil)
+45. filter_case1(X, fn_id, X, map(fn_id, Y)) = filter(fn_id, map(fn_id, cons(X, Y)))
+46. map(fn_id, cons(X, cons(Y, nil))) -> cons(X, cons(Y, nil))
+47. map(fn_id, map(X, cons(Y, nil))) -> map(X, cons(Y, nil))
+48. filter_case1(true, fn_id, X, cons(false, Y)) -> filter_case1(true, fn_id, X, Y)
+49. filter_case1(true, fn_id, X, cons(true, nil)) -> cons(X, cons(true, nil))
+50. eqListNat(nil, map(X, filter_case1(true, Y, Z, W))) -> false
+51. eqListNat(nil, map(X, map(Y, cons(Z, W)))) -> false
+52. eqListNat(map(X, filter_case1(true, Y, Z, W)), nil) -> false
+53. eqListNat(map(X, map(Y, cons(Z, W))), nil) -> false
+54. map(fn_case_Nat(X, Y), cons(suc(Z), nil)) -> map(Y, cons(Z, nil))
+55. map(fn_const(X), cons(?, cons(?, nil))) = cons(X, cons(X, nil))
+56. map(fn_const(X), cons(?, cons(Y, nil))) ~> map(fn_const(X), cons(?, cons(?, nil)))
+57. cons(X, filter_case1(Y, fn_const(Y), Z, W)) -> filter_case1(true, fn_const(Y), X, cons(Z, W))
+58. filter_case1(X, fn_const(X), Y, filter(Z, W)) = filter(fn_const(X), filter_case1(true, Z, Y, W))
+59. filter_case1(true, fn_const(true), X, cons(Y, nil)) -> cons(X, cons(Y, nil))
+60. filter_case1(X, fn_const(X), app(Y, Z), nil) = filter(fn_const(X), map(Y, cons(Z, nil)))
+61. filter_case1(X, fn_const(X), Y, map(fn_id, Z)) = filter(fn_const(X), map(fn_id, cons(Y, Z)))
+62. map(fn_const(X), filter_case1(true, Y, Z, W)) ~> map(fn_const(X), filter_case1(true, Y, ?, W))
+63. map(fn_const(X), cons(?, map(Y, Z))) -> map(fn_const(X), map(Y, cons(?, Z)))
+64. map(fn_const(X), map(Y, cons(Z, W))) ~> map(fn_const(X), map(Y, cons(?, W)))
+65. filter_case1(true, fn_const(false), X, cons(Y, Z)) -> filter_case1(true, fn_const(false), X, Z)
+66. filter_case1(X, fn_id, X, map(fn_const(X), Y)) = filter(fn_id, map(fn_const(X), cons(?, Y)))
+67. map(fn_const(X), cons(?, cons(Y, Z))) ~> map(fn_const(X), cons(?, cons(?, Z)))
+68. cons(app(X, Y), map(fn_case_Nat(Z, X), W)) -> map(fn_case_Nat(Z, X), cons(suc(Y), W))
+69. cons(X, map(fn_case_Nat(Y, fn_id), Z)) -> map(fn_case_Nat(Y, fn_id), cons(suc(X), Z))
+70. map(fn_case_Nat(X, fn_id), cons(suc(X), Y)) -> map(fn_case_Nat(X, fn_id), cons(zero, Y))
+71. eqListNat(filter_case1(true, X, Y, Z), cons(W, V)) -> opAnd(eqNat(Y, W), eqListNat(filter(X, Z), V))
+72. eqListNat(cons(X, Y), filter_case1(true, Z, W, V)) -> opAnd(eqNat(X, W), eqListNat(Y, filter(Z, V)))
+73. cons(X, map(fn_case_Nat(Y, fn_const(X)), Z)) -> map(fn_case_Nat(Y, fn_const(X)), cons(suc(?), Z))
+74. map(fn_case_Nat(X, fn_const(Y)), cons(suc(Z), W)) ~> map(fn_case_Nat(X, fn_const(Y)), cons(suc(?), W))
+75. map(fn_case_Nat(X, ?), cons(zero, cons(zero, nil))) = cons(X, cons(X, nil))
+76. map(fn_case_Nat(X, Y), cons(zero, cons(zero, nil))) ~> map(fn_case_Nat(X, ?), cons(zero, cons(zero, nil)))
+77. filter_case1(app(X, Y), fn_case_Nat(Z, X), suc(Y), W) -> filter(fn_case_Nat(Z, X), cons(suc(Y), W))
+78. filter(fn_case_Nat(X, fn_id), cons(suc(Y), Z)) = filter_case1(Y, fn_case_Nat(X, fn_id), suc(Y), Z)
+79. cons(X, filter_case1(Y, fn_case_Nat(Y, Z), zero, W)) -> filter_case1(true, fn_case_Nat(Y, Z), X, cons(zero, W))
+80. filter_case1(true, fn_case_Nat(true, X), Y, cons(zero, nil)) -> cons(Y, cons(zero, nil))
+81. filter_case1(X, fn_case_Nat(X, Y), zero, filter(Z, W)) = filter(fn_case_Nat(X, Y), filter_case1(true, Z, zero, W))
+82. filter(fn_case_Nat(X, fn_const(Y)), cons(suc(Z), W)) = filter_case1(Y, fn_case_Nat(X, fn_const(Y)), suc(Z), W)
+83. eqListNat(map(X, cons(Y, nil)), cons(Z, W)) -> opAnd(eqNat(app(X, Y), Z), eqListNat(nil, W))
+84. eqListNat(cons(X, Y), map(Z, cons(W, nil))) -> opAnd(eqNat(X, app(Z, W)), eqListNat(Y, nil))
+85. eqListNat(map(fn_id, cons(X, Y)), cons(Z, W)) -> opAnd(eqNat(X, Z), eqListNat(map(fn_id, Y), W))
+86. eqListNat(cons(X, Y), map(fn_id, cons(Z, W))) -> opAnd(eqNat(X, Z), eqListNat(Y, map(fn_id, W)))
+87. eqListNat(map(fn_id, filter(X, cons(Y, nil))), filter(X, cons(Y, nil))) -> prop_mapFilter(fn_id, X, cons(Y, nil))
+88. filter_case1(X, fn_const(X), Y, map(fn_const(Y), Z)) = filter(fn_const(X), map(fn_const(Y), cons(?, Z)))
+89. filter_case1(X, fn_id, X, map(fn_case_Nat(X, Y), Z)) = filter(fn_id, map(fn_case_Nat(X, Y), cons(zero, Z)))
+90. map(fn_const(X), map(Y, map(Z, cons(W, nil)))) -> cons(X, nil)
+91. filter_case1(X, fn_case_Nat(X, Y), zero, map(fn_id, Z)) = filter(fn_case_Nat(X, Y), map(fn_id, cons(zero, Z)))
+92. filter_case1(true, fn_case_Nat(false, X), Y, cons(zero, Z)) -> filter_case1(true, fn_case_Nat(false, X), Y, Z)
+93. filter(fn_const(false), map(fn_const(X), cons(?, Y))) -> filter(fn_const(false), map(fn_const(X), Y))
+94. map(fn_case_Nat(X, fn_const(X)), cons(suc(?), Y)) -> map(fn_case_Nat(X, fn_const(X)), cons(zero, Y))
+95. filter_case1(X, fn_const(X), app(Y, Z), map(Y, W)) -> filter(fn_const(X), map(Y, cons(Z, W)))
+96. filter(fn_const(false), map(X, cons(Y, Z))) -> filter(fn_const(false), map(X, Z))
+97. eqListNat(nil, filter(fn_const(true), map(X, cons(Y, Z)))) -> false
+98. eqListNat(filter(fn_const(true), map(X, cons(Y, Z))), nil) -> false
+99. filter(fn_const(false), map(X, map(Y, cons(Z, nil)))) -> nil
+100. prop_mapFilter(X, fn_const(false), map(Y, cons(Z, nil))) -> true
+101. prop_mapFilter(X, fn_const(false), cons(Y, nil)) -> true
+102. eqListNat(nil, map(X, map(Y, filter_case1(true, Z, W, V)))) -> false
+103. eqListNat(nil, map(X, map(Y, map(Z, cons(W, V))))) -> false
+104. eqListNat(map(X, map(Y, filter_case1(true, Z, W, V))), nil) -> false
+105. eqListNat(map(X, map(Y, map(Z, cons(W, V)))), nil) -> false
+106. filter(fn_id, filter_case1(true, fn_id, X, cons(Y, Z))) = filter_case1(X, fn_id, X, filter_case1(Y, fn_id, Y, Z))
+107. cons(app(fn_case_Nat(X, Y), Z), cons(X, nil)) -> map(fn_case_Nat(X, Y), cons(Z, cons(zero, nil)))
+108. filter_case1(X, fn_id, X, map(fn_id, filter(Y, Z))) = filter(fn_id, map(fn_id, filter_case1(true, Y, X, Z)))
+109. map(fn_id, cons(X, cons(Y, cons(Z, nil)))) -> cons(X, cons(Y, cons(Z, nil)))
+110. map(fn_id, cons(X, map(Y, cons(Z, nil)))) -> cons(X, map(Y, cons(Z, nil)))
+111. map(fn_id, map(X, map(Y, cons(Z, nil)))) -> map(X, map(Y, cons(Z, nil)))
+112. filter_case1(true, fn_id, X, filter_case1(true, Y, false, Z)) -> filter_case1(true, fn_id, X, filter(Y, Z))
+113. map(fn_const(X), map(?, cons(?, cons(?, nil)))) = cons(X, cons(X, nil))
+114. map(fn_const(X), map(Y, cons(?, cons(Z, nil)))) ~> map(fn_const(X), map(?, cons(?, cons(?, nil))))
+115. filter_case1(true, fn_const(false), X, map(Y, cons(Z, nil))) -> cons(X, nil)
+116. filter_case1(X, fn_id, X, map(fn_id, map(fn_id, Y))) = filter(fn_id, map(fn_id, map(fn_id, cons(X, Y))))
+117. filter_case1(true, fn_id, X, map(fn_id, cons(false, Y))) -> filter_case1(true, fn_id, X, map(fn_id, Y))
+118. filter_case1(true, fn_id, X, cons(true, cons(false, Y))) -> filter_case1(true, fn_id, X, cons(true, Y))
+119. map(fn_case_Nat(X, fn_id), cons(suc(Y), cons(zero, nil))) -> cons(Y, cons(X, nil))
+120. map(fn_case_Nat(app(X, Y), X), cons(suc(Y), Z)) -> map(fn_case_Nat(app(X, Y), X), cons(zero, Z))
+121. cons(X, map(fn_case_Nat(Y, fn_case_Nat(X, Z)), W)) -> map(fn_case_Nat(Y, fn_case_Nat(X, Z)), cons(suc(zero), W))
+122. filter_case1(true, fn_id, X, cons(true, cons(true, nil))) -> cons(X, cons(true, cons(true, nil)))
+123. opAnd(eqNat(app(X, Y), Z), eqListNat(map(X, W), V)) -> eqListNat(map(X, cons(Y, W)), cons(Z, V))
+124. opAnd(eqNat(X, app(Y, Z)), eqListNat(W, map(Y, V))) -> eqListNat(cons(X, W), map(Y, cons(Z, V)))
+125. filter_case1(X, fn_const(X), Y, map(fn_case_Nat(Y, Z), W)) = filter(fn_const(X), map(fn_case_Nat(Y, Z), cons(zero, W)))
+126. map(fn_case_Nat(X, Y), cons(zero, cons(suc(Z), nil))) -> cons(X, map(Y, cons(Z, nil)))
+127. map(fn_case_Nat(X, Y), cons(suc(Z), cons(zero, nil))) -> cons(app(Y, Z), cons(X, nil))
+128. map(fn_case_Nat(X, fn_id), cons(suc(app(fn_case_Nat(X, fn_id), Y)), Z)) -> map(fn_case_Nat(X, fn_id), cons(Y, Z))
+129. map(fn_id, map(X, cons(Y, cons(Z, nil)))) -> map(X, cons(Y, cons(Z, nil)))
+130. opAnd(eqNat(X, Y), eqListNat(map(fn_const(X), Z), W)) = eqListNat(map(fn_const(X), cons(?, Z)), cons(Y, W))
+131. eqListNat(map(fn_const(suc(X)), cons(?, Y)), cons(zero, Z)) -> false
+132. opAnd(eqNat(X, Y), eqListNat(Z, map(fn_const(Y), W))) = eqListNat(cons(X, Z), map(fn_const(Y), cons(?, W)))
+133. eqListNat(cons(zero, X), map(fn_const(suc(Y)), cons(?, Z))) -> false
+134. filter(fn_case_Nat(X, fn_case_Nat(Y, Z)), cons(suc(zero), W)) = filter_case1(Y, fn_case_Nat(X, fn_case_Nat(Y, Z)), suc(zero), W)
+135. map(fn_case_Nat(X, ?), cons(zero, cons(zero, nil))) -> map(fn_const(X), cons(?, cons(?, nil)))
+136. eqListNat(cons(X, nil), map(Y, cons(Z, cons(W, V)))) -> opAnd(eqNat(X, app(Y, Z)), false)
+137. filter_case1(X, fn_case_Nat(X, Y), zero, map(fn_const(zero), Z)) = filter(fn_case_Nat(X, Y), map(fn_const(zero), cons(?, Z)))
+138. eqListNat(map(X, cons(Y, cons(Z, W))), cons(V, nil)) -> opAnd(eqNat(app(X, Y), V), false)
+139. filter(fn_id, map(fn_const(X), cons(?, cons(?, nil)))) = filter_case1(X, fn_id, X, cons(X, nil))
+140. map(fn_const(X), map(?, cons(?, cons(?, nil)))) -> map(fn_const(X), cons(?, cons(?, nil)))
+141. map(fn_case_Nat(X, fn_case_Nat(X, Y)), cons(suc(zero), Z)) -> map(fn_case_Nat(X, fn_case_Nat(X, Y)), cons(zero, Z))
+142. eqListNat(nil, map(X, filter(fn_const(true), map(Y, cons(Z, W))))) -> false
+143. eqListNat(map(X, filter(fn_const(true), map(Y, cons(Z, W)))), nil) -> false
+144. filter_case1(X, fn_id, X, map(fn_case_Nat(Y, fn_id), Z)) = filter(fn_id, map(fn_case_Nat(Y, fn_id), cons(suc(X), Z)))
+145. filter(fn_id, filter_case1(true, fn_const(X), Y, cons(Z, W))) = filter_case1(Y, fn_id, Y, filter_case1(X, fn_const(X), Z, W))
+146. filter_case1(X, fn_const(X), Y, filter_case1(Z, fn_id, Z, W)) = filter(fn_const(X), filter_case1(true, fn_id, Y, cons(Z, W)))
+147. filter_case1(true, fn_const(true), X, map(Y, cons(Z, nil))) -> cons(X, map(Y, cons(Z, nil)))
+148. filter_case1(true, fn_const(true), X, cons(Y, cons(Z, nil))) -> cons(X, cons(Y, cons(Z, nil)))
+149. filter_case1(X, fn_const(X), app(Y, app(Z, W)), nil) = filter(fn_const(X), map(Y, map(Z, cons(W, nil))))
+150. filter_case1(X, fn_const(X), Y, map(fn_id, filter(Z, W))) = filter(fn_const(X), map(fn_id, filter_case1(true, Z, Y, W)))
+151. map(fn_const(X), map(Y, filter_case1(true, Z, W, V))) ~> map(fn_const(X), map(Y, filter_case1(true, Z, ?, V)))
+152. map(fn_const(X), map(Y, cons(?, map(Z, W)))) -> map(fn_const(X), map(Y, map(Z, cons(?, W))))
+153. map(fn_const(X), map(Y, map(Z, cons(W, V)))) ~> map(fn_const(X), map(Y, map(Z, cons(?, V))))
+154. map(fn_case_Nat(X, fn_id), cons(suc(Y), cons(suc(Z), nil))) -> cons(Y, cons(Z, nil))
+155. cons(X, filter_case1(Y, fn_case_Nat(Z, fn_id), suc(Y), W)) -> filter_case1(true, fn_case_Nat(Z, fn_id), X, cons(suc(Y), W))
+156. filter_case1(true, fn_case_Nat(X, fn_id), Y, cons(suc(true), nil)) -> cons(Y, cons(suc(true), nil))
+157. filter_case1(true, fn_case_Nat(X, fn_id), Y, cons(suc(false), Z)) -> filter_case1(true, fn_case_Nat(X, fn_id), Y, Z)
+158. filter_case1(X, fn_case_Nat(Y, fn_id), suc(X), filter(Z, W)) = filter(fn_case_Nat(Y, fn_id), filter_case1(true, Z, suc(X), W))
+159. filter_case1(true, fn_const(false), X, filter_case1(true, Y, Z, W)) -> filter_case1(true, fn_const(false), X, filter(Y, W))
+160. filter_case1(true, fn_const(false), X, map(Y, cons(Z, W))) -> filter_case1(true, fn_const(false), X, map(Y, W))
+161. filter(fn_const(false), map(X, filter_case1(true, Y, Z, W))) -> filter(fn_const(false), map(X, filter(Y, W)))
+162. filter(fn_const(false), map(X, map(Y, cons(Z, W)))) -> filter(fn_const(false), map(X, map(Y, W)))
+163. prop_mapFilter(X, fn_const(false), map(Y, cons(Z, W))) -> prop_mapFilter(X, fn_const(false), map(Y, W))
+164. prop_mapFilter(X, fn_const(false), cons(Y, cons(Z, nil))) -> true
+165. map(fn_const(app(X, Y)), cons(?, cons(?, nil))) = map(X, cons(Y, cons(Y, nil)))
+166. filter_case1(X, fn_id, X, map(fn_const(X), filter(Y, Z))) = filter(fn_id, map(fn_const(X), filter_case1(true, Y, ?, Z)))
+167. filter_case1(X, fn_id, X, map(fn_const(X), map(Y, Z))) = filter(fn_id, map(fn_const(X), map(Y, cons(?, Z))))
+168. filter_case1(X, fn_const(X), Y, map(fn_id, map(fn_id, Z))) = filter(fn_const(X), map(fn_id, map(fn_id, cons(Y, Z))))
+169. map(fn_const(X), cons(?, filter_case1(true, Y, Z, W))) ~> map(fn_const(X), cons(?, filter_case1(true, Y, ?, W)))
+170. map(fn_const(X), map(Y, cons(?, cons(Z, W)))) ~> map(fn_const(X), map(Y, cons(?, cons(?, W))))
+171. map(fn_const(X), cons(?, cons(?, map(Y, Z)))) -> map(fn_const(X), map(Y, cons(?, cons(?, Z))))
+172. filter_case1(X, fn_case_Nat(Y, fn_id), suc(X), map(fn_id, Z)) = filter(fn_case_Nat(Y, fn_id), map(fn_id, cons(suc(X), Z)))
+173. map(fn_const(X), cons(?, cons(?, cons(?, nil)))) = cons(X, cons(X, cons(X, nil)))
+174. filter_case1(X, fn_id, X, map(fn_id, map(fn_const(X), Y))) = filter(fn_id, map(fn_id, map(fn_const(X), cons(?, Y))))
+175. map(fn_case_Nat(X, Y), cons(suc(Z), cons(suc(W), nil))) -> map(Y, cons(Z, cons(W, nil)))
+176. map(fn_case_Nat(X, fn_id), filter_case1(true, Y, suc(X), Z)) -> map(fn_case_Nat(X, fn_id), filter_case1(true, Y, zero, Z))
+177. map(fn_case_Nat(X, fn_id), cons(Y, cons(suc(X), Z))) -> map(fn_case_Nat(X, fn_id), cons(Y, cons(zero, Z)))
+178. map(fn_const(X), cons(?, cons(?, cons(Y, Z)))) ~> map(fn_const(X), cons(?, cons(?, cons(?, Z))))
+179. filter_case1(true, fn_id, X, map(fn_const(false), cons(?, Y))) -> filter_case1(true, fn_id, X, map(fn_const(false), Y))
+180. eqListNat(filter_case1(true, X, Y, Z), filter_case1(true, W, V, U)) -> opAnd(eqNat(Y, V), eqListNat(filter(X, Z), filter(W, U)))
+181. eqListNat(nil, filter(fn_const(true), map(X, filter_case1(true, Y, Z, W)))) -> false
+182. eqListNat(nil, filter(fn_const(true), map(X, map(Y, cons(Z, W))))) -> false
+183. eqListNat(filter(fn_const(true), map(X, filter_case1(true, Y, Z, W))), nil) -> false
+184. eqListNat(filter(fn_const(true), map(X, map(Y, cons(Z, W)))), nil) -> false
+185. prop_mapFilter(X, fn_const(false), map(Y, map(Z, cons(W, nil)))) -> true
+186. prop_mapFilter(X, fn_const(false), cons(Y, cons(Z, cons(W, nil)))) -> true
+187. prop_mapFilter(X, fn_const(false), cons(Y, map(Z, cons(W, nil)))) -> true
+188. filter(fn_const(true), map(X, cons(Y, cons(Z, nil)))) -> map(X, cons(Y, cons(Z, nil)))
+189. cons(app(fn_case_Nat(X, fn_id), Y), cons(Z, nil)) -> map(fn_case_Nat(X, fn_id), cons(Y, cons(suc(Z), nil)))
+190. map(fn_case_Nat(X, fn_id), map(fn_id, cons(suc(X), Y))) -> map(fn_case_Nat(X, fn_id), map(fn_id, cons(zero, Y)))
+191. opAnd(eqNat(X, Y), eqListNat(map(fn_case_Nat(X, Z), W), V)) = eqListNat(map(fn_case_Nat(X, Z), cons(zero, W)), cons(Y, V))
+192. eqListNat(map(fn_case_Nat(suc(X), Y), cons(zero, Z)), cons(zero, W)) -> false
+193. cons(app(X, Y), map(fn_case_Nat(Z, fn_case_Nat(W, X)), V)) -> map(fn_case_Nat(Z, fn_case_Nat(W, X)), cons(suc(suc(Y)), V))
+194. opAnd(eqNat(X, Y), eqListNat(Z, map(fn_case_Nat(Y, W), V))) = eqListNat(cons(X, Z), map(fn_case_Nat(Y, W), cons(zero, V)))
+195. eqListNat(cons(zero, X), map(fn_case_Nat(suc(Y), Z), cons(zero, W))) -> false
+196. eqListNat(map(X, cons(Y, nil)), filter_case1(true, Z, W, V)) -> opAnd(eqNat(app(X, Y), W), eqListNat(nil, filter(Z, V)))
+197. eqListNat(map(fn_id, cons(X, Y)), filter_case1(true, Z, W, V)) -> opAnd(eqNat(X, W), eqListNat(map(fn_id, Y), filter(Z, V)))
+198. eqListNat(filter_case1(true, X, Y, Z), map(fn_id, cons(W, V))) -> opAnd(eqNat(Y, W), eqListNat(filter(X, Z), map(fn_id, V)))
+199. eqListNat(filter_case1(true, X, Y, Z), map(W, cons(V, nil))) -> opAnd(eqNat(Y, app(W, V)), eqListNat(filter(X, Z), nil))
+200. filter_case1(X, fn_case_Nat(X, Y), zero, map(fn_case_Nat(zero, Z), W)) = filter(fn_case_Nat(X, Y), map(fn_case_Nat(zero, Z), cons(zero, W)))
+201. map(fn_const(X), map(Y, map(Z, map(W, cons(V, nil))))) -> cons(X, nil)
+202. eqListNat(map(X, cons(Y, nil)), map(Z, cons(W, nil))) -> opAnd(eqNat(app(X, Y), app(Z, W)), true)
+203. cons(X, map(fn_case_Nat(Y, fn_case_Nat(Z, fn_id)), W)) -> map(fn_case_Nat(Y, fn_case_Nat(Z, fn_id)), cons(suc(suc(X)), W))
+204. filter(fn_const(X), map(fn_const(Y), cons(?, cons(?, nil)))) = filter_case1(X, fn_const(X), Y, cons(Y, nil))
+205. map(fn_const(X), cons(?, filter_case1(true, fn_id, ?, Y))) -> map(fn_const(X), filter_case1(true, fn_id, ?, cons(true, Y)))
+206. cons(app(fn_case_Nat(X, Y), Z), map(Y, cons(W, nil))) -> map(fn_case_Nat(X, Y), cons(Z, cons(suc(W), nil)))
+207. filter(fn_const(false), map(X, map(Y, map(Z, cons(W, nil))))) -> nil
+208. filter_case1(X, fn_const(X), Y, map(fn_case_Nat(Z, fn_id), W)) = filter(fn_const(X), map(fn_case_Nat(Z, fn_id), cons(suc(Y), W)))
+209. filter_case1(X, fn_const(X), Y, filter_case1(Z, fn_const(Z), W, V)) = filter(fn_const(X), filter_case1(true, fn_const(Z), Y, cons(W, V)))
+210. cons(X, filter_case1(Y, fn_case_Nat(Z, fn_const(Y)), suc(W), V)) -> filter_case1(true, fn_case_Nat(Z, fn_const(Y)), X, cons(suc(W), V))
+211. filter_case1(true, fn_case_Nat(X, fn_const(true)), Y, cons(suc(Z), nil)) -> cons(Y, cons(suc(Z), nil))
+212. filter_case1(X, fn_case_Nat(Y, fn_const(X)), suc(Z), filter(W, V)) = filter(fn_case_Nat(Y, fn_const(X)), filter_case1(true, W, suc(Z), V))
+213. map(fn_case_Nat(X, fn_const(X)), cons(zero, cons(suc(Y), Z))) -> map(fn_case_Nat(X, fn_const(X)), cons(zero, cons(zero, Z)))
+214. filter_case1(true, fn_case_Nat(X, fn_const(false)), Y, cons(suc(Z), W)) -> filter_case1(true, fn_case_Nat(X, fn_const(false)), Y, W)
+215. eqListNat(map(fn_id, filter_case1(true, X, Y, Z)), cons(W, V)) -> opAnd(eqNat(Y, W), eqListNat(map(fn_id, filter(X, Z)), V))
+216. eqListNat(cons(X, Y), map(fn_id, filter_case1(true, Z, W, V))) -> opAnd(eqNat(X, W), eqListNat(Y, map(fn_id, filter(Z, V))))
+217. eqListNat(map(X, map(Y, cons(Z, nil))), cons(W, V)) -> opAnd(eqNat(app(X, app(Y, Z)), W), eqListNat(nil, V))
+218. eqListNat(cons(X, Y), map(Z, map(W, cons(V, nil)))) -> opAnd(eqNat(X, app(Z, app(W, V))), eqListNat(Y, nil))
+219. filter(fn_const(true), map(X, cons(Y, cons(Y, nil)))) -> map(fn_const(app(X, Y)), cons(?, cons(?, nil)))
+220. eqListNat(nil, map(X, map(Y, map(Z, filter_case1(true, W, V, U))))) -> false
+221. eqListNat(nil, map(X, map(Y, map(Z, map(W, cons(V, U)))))) -> false
+222. eqListNat(map(X, map(Y, map(Z, filter_case1(true, W, V, U)))), nil) -> false
+223. filter_case1(X, fn_id, X, map(fn_case_Nat(Y, fn_const(X)), Z)) = filter(fn_id, map(fn_case_Nat(Y, fn_const(X)), cons(suc(?), Z)))
+224. eqListNat(map(X, map(Y, map(Z, map(W, cons(V, U))))), nil) -> false
+225. filter_case1(true, fn_case_Nat(true, X), Y, cons(zero, cons(zero, nil))) -> cons(Y, cons(zero, cons(zero, nil)))
+226. filter(fn_id, filter_case1(true, fn_case_Nat(X, Y), Z, cons(zero, W))) = filter_case1(Z, fn_id, Z, filter_case1(X, fn_case_Nat(X, Y), zero, W))
+227. filter(fn_id, filter_case1(true, fn_id, X, filter_case1(true, Y, Z, W))) = filter_case1(X, fn_id, X, filter_case1(Z, fn_id, Z, filter(Y, W)))
+228. filter_case1(X, fn_case_Nat(X, Y), zero, filter_case1(Z, fn_id, Z, W)) = filter(fn_case_Nat(X, Y), filter_case1(true, fn_id, zero, cons(Z, W)))
+229. eqListNat(map(fn_id, filter(X, cons(Y, cons(Z, nil)))), filter(X, cons(Y, cons(Z, nil)))) -> prop_mapFilter(fn_id, X, cons(Y, cons(Z, nil)))
+230. eqListNat(map(fn_id, filter(X, map(Y, cons(Z, nil)))), filter(X, map(Y, cons(Z, nil)))) -> prop_mapFilter(fn_id, X, map(Y, cons(Z, nil)))
+231. filter_case1(X, fn_const(X), Y, map(fn_const(Y), filter(Z, W))) = filter(fn_const(X), map(fn_const(Y), filter_case1(true, Z, ?, W)))
+232. filter_case1(X, fn_const(X), Y, map(fn_const(Y), map(Z, W))) = filter(fn_const(X), map(fn_const(Y), map(Z, cons(?, W))))
+233. filter_case1(X, fn_id, X, map(fn_case_Nat(X, Y), filter(Z, W))) = filter(fn_id, map(fn_case_Nat(X, Y), filter_case1(true, Z, zero, W)))
+234. map(fn_case_Nat(X, fn_const(Y)), filter_case1(true, Z, suc(W), V)) ~> map(fn_case_Nat(X, fn_const(Y)), filter_case1(true, Z, suc(?), V))
+235. map(fn_case_Nat(X, fn_const(Y)), cons(Z, cons(suc(W), V))) ~> map(fn_case_Nat(X, fn_const(Y)), cons(Z, cons(suc(?), V)))
+236. filter_case1(X, fn_case_Nat(X, Y), zero, map(fn_id, filter(Z, W))) = filter(fn_case_Nat(X, Y), map(fn_id, filter_case1(true, Z, zero, W)))
+237. map(fn_case_Nat(X, ?), cons(zero, cons(zero, cons(zero, nil)))) = cons(X, cons(X, cons(X, nil)))
+238. filter_case1(X, fn_case_Nat(Y, fn_const(X)), suc(Z), map(fn_id, W)) = filter(fn_case_Nat(Y, fn_const(X)), map(fn_id, cons(suc(Z), W)))
+239. eqListNat(map(X, cons(Y, nil)), map(fn_id, cons(Z, W))) -> opAnd(eqNat(app(X, Y), Z), eqListNat(nil, map(fn_id, W)))
+240. eqListNat(map(fn_id, cons(X, Y)), map(Z, cons(W, nil))) -> opAnd(eqNat(X, app(Z, W)), eqListNat(map(fn_id, Y), nil))
+241. eqListNat(map(fn_id, map(fn_id, cons(X, Y))), cons(Z, W)) -> opAnd(eqNat(X, Z), eqListNat(map(fn_id, map(fn_id, Y)), W))
+242. eqListNat(map(fn_id, cons(X, Y)), map(fn_id, cons(Z, W))) -> opAnd(eqNat(X, Z), eqListNat(map(fn_id, Y), map(fn_id, W)))
+243. eqListNat(cons(X, Y), map(fn_id, map(fn_id, cons(Z, W)))) -> opAnd(eqNat(X, Z), eqListNat(Y, map(fn_id, map(fn_id, W))))
+244. filter_case1(true, fn_case_Nat(false, X), Y, filter_case1(true, Z, zero, W)) -> filter_case1(true, fn_case_Nat(false, X), Y, filter(Z, W))
+245. filter_case1(X, fn_const(X), app(Y, Z), map(fn_case_Nat(W, Y), V)) -> filter(fn_const(X), map(fn_case_Nat(W, Y), cons(suc(Z), V)))
+246. map(fn_case_Nat(X, fn_case_Nat(Y, fn_id)), cons(suc(suc(X)), Z)) -> map(fn_case_Nat(X, fn_case_Nat(Y, fn_id)), cons(zero, Z))
+247. map(fn_const(X), map(?, map(?, cons(?, cons(?, nil))))) = cons(X, cons(X, nil))
+248. map(fn_const(X), map(Y, map(Z, cons(?, cons(W, nil))))) ~> map(fn_const(X), map(?, map(?, cons(?, cons(?, nil)))))
+249. filter_case1(X, fn_id, X, map(fn_id, map(fn_case_Nat(X, Y), Z))) = filter(fn_id, map(fn_id, map(fn_case_Nat(X, Y), cons(zero, Z))))
+250. filter(fn_id, filter_case1(true, fn_id, X, map(fn_id, cons(Y, Z)))) = filter_case1(X, fn_id, X, filter_case1(Y, fn_id, Y, map(fn_id, Z)))
+251. filter_case1(X, fn_id, X, map(fn_id, filter_case1(Y, fn_id, Y, Z))) = filter(fn_id, map(fn_id, filter_case1(true, fn_id, X, cons(Y, Z))))
+252. filter_case1(X, fn_const(X), Y, map(fn_id, map(fn_const(Y), Z))) = filter(fn_const(X), map(fn_id, map(fn_const(Y), cons(?, Z))))
+253. filter_case1(X, fn_id, X, map(fn_case_Nat(X, Y), map(fn_id, Z))) = filter(fn_id, map(fn_case_Nat(X, Y), map(fn_id, cons(zero, Z))))
+254. filter_case1(true, fn_const(false), X, map(Y, map(Z, cons(W, nil)))) -> cons(X, nil)
+255. map(fn_const(app(X, Y)), cons(?, cons(?, nil))) -> map(X, map(fn_const(Y), cons(?, cons(?, nil))))
+256. eqListNat(map(fn_const(suc(X)), filter_case1(true, Y, ?, Z)), cons(zero, W)) -> false
+257. eqListNat(map(fn_const(suc(X)), cons(?, Y)), filter_case1(true, Z, zero, W)) -> false
+258. eqListNat(map(fn_const(suc(X)), map(Y, cons(?, Z))), cons(zero, W)) -> false
+259. eqListNat(filter_case1(true, X, zero, Y), map(fn_const(suc(Z)), cons(?, W))) -> false
+260. eqListNat(cons(zero, X), map(fn_const(suc(Y)), filter_case1(true, Z, ?, W))) -> false
+261. eqListNat(cons(zero, X), map(fn_const(suc(Y)), map(Z, cons(?, W)))) -> false
+262. map(fn_case_Nat(X, fn_const(Y)), map(fn_id, cons(suc(Z), W))) ~> map(fn_case_Nat(X, fn_const(Y)), map(fn_id, cons(suc(?), W)))
+263. filter_case1(X, fn_case_Nat(Y, fn_id), suc(X), map(fn_const(suc(X)), Z)) = filter(fn_case_Nat(Y, fn_id), map(fn_const(suc(X)), cons(?, Z)))
+264. filter_case1(X, fn_case_Nat(X, Y), zero, map(fn_id, map(fn_id, Z))) = filter(fn_case_Nat(X, Y), map(fn_id, map(fn_id, cons(zero, Z))))
+265. map(fn_const(X), filter(fn_const(true), map(Y, cons(Z, W)))) -> map(fn_const(X), filter_case1(true, fn_const(true), ?, map(Y, W)))
+266. filter_case1(true, fn_id, X, map(fn_case_Nat(false, Y), cons(zero, Z))) -> filter_case1(true, fn_id, X, map(fn_case_Nat(false, Y), Z))
+267. filter_case1(true, fn_case_Nat(false, X), Y, map(fn_id, cons(zero, Z))) -> filter_case1(true, fn_case_Nat(false, X), Y, map(fn_id, Z))
+268. map(fn_case_Nat(X, fn_const(X)), filter_case1(true, Y, suc(?), Z)) -> map(fn_case_Nat(X, fn_const(X)), filter_case1(true, Y, zero, Z))
+269. map(fn_case_Nat(X, fn_const(X)), cons(Y, cons(suc(?), Z))) -> map(fn_case_Nat(X, fn_const(X)), cons(Y, cons(zero, Z)))
+270. cons(app(fn_case_Nat(X, fn_const(Y)), Z), cons(Y, nil)) -> map(fn_case_Nat(X, fn_const(Y)), cons(Z, cons(suc(?), nil)))
+271. map(fn_const(X), map(fn_const(Y), cons(?, cons(?, cons(?, nil))))) -> map(fn_const(X), cons(?, cons(?, cons(?, nil))))
+272. filter_case1(X, fn_id, X, filter(fn_const(true), map(fn_const(X), Y))) = filter(fn_id, filter(fn_const(true), map(fn_const(X), cons(?, Y))))
+273. eqListNat(map(fn_const(suc(X)), cons(?, Y)), map(fn_id, cons(zero, Z))) -> false
+274. eqListNat(map(fn_id, cons(zero, X)), map(fn_const(suc(Y)), cons(?, Z))) -> false
+275. map(fn_case_Nat(X, fn_case_Nat(Y, fn_id)), cons(suc(suc(Y)), Z)) -> map(fn_case_Nat(X, fn_case_Nat(Y, fn_id)), cons(suc(zero), Z))
+276. map(fn_case_Nat(X, fn_const(X)), map(fn_id, cons(suc(?), Y))) -> map(fn_case_Nat(X, fn_const(X)), map(fn_id, cons(zero, Y)))
+277. filter_case1(X, fn_const(X), app(Y, Z), map(fn_id, map(Y, W))) -> filter(fn_const(X), map(fn_id, map(Y, cons(Z, W))))
+278. map(fn_id, cons(X, cons(Y, cons(Z, cons(W, nil))))) -> cons(X, cons(Y, cons(Z, cons(W, nil))))
+279. map(fn_id, cons(X, cons(Y, map(Z, cons(W, nil))))) -> cons(X, cons(Y, map(Z, cons(W, nil))))
+280. map(fn_id, cons(X, map(Y, map(Z, cons(W, nil))))) -> cons(X, map(Y, map(Z, cons(W, nil))))
+281. map(fn_id, map(X, map(Y, map(Z, cons(W, nil))))) -> map(X, map(Y, map(Z, cons(W, nil))))
+282. opAnd(eqNat(X, Y), eqListNat(map(fn_const(X), Z), filter(W, V))) = eqListNat(map(fn_const(X), cons(?, Z)), filter_case1(true, W, Y, V))
+283. opAnd(eqNat(X, Y), eqListNat(filter(Z, W), map(fn_const(Y), V))) = eqListNat(filter_case1(true, Z, X, W), map(fn_const(Y), cons(?, V)))
+284. filter_case1(X, fn_const(X), Y, cons(Y, nil)) = filter(fn_const(X), map(fn_case_Nat(?, fn_id), map(fn_const(suc(Y)), cons(?, cons(?, nil)))))
+285. filter(fn_const(X), map(fn_case_Nat(Y, fn_id), map(fn_const(suc(Z)), cons(?, cons(?, nil))))) ~> filter(fn_const(X), map(fn_case_Nat(?, fn_id), map(fn_const(suc(Z)), cons(?, cons(?, nil)))))
+286. cons(X, map(fn_case_Nat(Y, fn_case_Nat(Z, fn_const(X))), W)) -> map(fn_case_Nat(Y, fn_case_Nat(Z, fn_const(X))), cons(suc(suc(?)), W))
+287. map(fn_case_Nat(X, fn_case_Nat(Y, fn_const(Z))), cons(suc(suc(W)), V)) ~> map(fn_case_Nat(X, fn_case_Nat(Y, fn_const(Z))), cons(suc(suc(?)), V))
+288. filter_case1(X, fn_id, X, map(fn_id, map(fn_id, filter(Y, Z)))) = filter(fn_id, map(fn_id, map(fn_id, filter_case1(true, Y, X, Z))))
+289. eqListNat(map(fn_const(X), cons(?, cons(?, nil))), cons(Y, Z)) = opAnd(eqNat(X, Y), eqListNat(cons(X, nil), Z))
+290. eqListNat(cons(X, Y), map(fn_const(Z), cons(?, cons(?, nil)))) = opAnd(eqNat(X, Z), eqListNat(Y, cons(Z, nil)))
+291. map(fn_case_Nat(X, fn_id), cons(zero, map(fn_const(suc(X)), Y))) -> map(fn_case_Nat(X, fn_id), map(fn_const(suc(X)), cons(?, Y)))
+292. filter_case1(true, fn_id, X, cons(true, filter_case1(true, Y, false, Z))) -> filter_case1(true, fn_id, X, filter_case1(true, Y, true, Z))
+293. filter_case1(true, fn_id, X, map(fn_id, filter_case1(true, Y, false, Z))) -> filter_case1(true, fn_id, X, map(fn_id, filter(Y, Z)))
+294. map(fn_case_Nat(app(X, Y), X), filter_case1(true, Z, suc(Y), W)) -> map(fn_case_Nat(app(X, Y), X), filter_case1(true, Z, zero, W))
+295. map(fn_case_Nat(app(X, Y), X), cons(Z, cons(suc(Y), W))) -> map(fn_case_Nat(app(X, Y), X), cons(Z, cons(zero, W)))
+296. eqListNat(map(X, cons(Y, filter_case1(true, Z, W, V))), cons(U, nil)) -> opAnd(eqNat(app(X, Y), U), false)
+297. eqListNat(map(X, cons(Y, map(Z, cons(W, V)))), cons(U, nil)) -> opAnd(eqNat(app(X, Y), U), false)
+298. eqListNat(cons(X, nil), map(Y, cons(Z, filter_case1(true, W, V, U)))) -> opAnd(eqNat(X, app(Y, Z)), false)
+299. eqListNat(cons(X, nil), map(Y, cons(Z, map(W, cons(V, U))))) -> opAnd(eqNat(X, app(Y, Z)), false)
+300. cons(app(fn_case_Nat(X, ?), Y), cons(X, cons(X, nil))) -> map(fn_case_Nat(X, ?), cons(Y, cons(zero, cons(zero, nil))))
+301. eqListNat(map(fn_case_Nat(X, fn_id), cons(suc(Y), Z)), cons(W, V)) -> opAnd(eqNat(Y, W), eqListNat(map(fn_case_Nat(X, fn_id), Z), V))
+302. eqListNat(cons(X, Y), map(fn_case_Nat(Z, fn_id), cons(suc(W), V))) -> opAnd(eqNat(X, W), eqListNat(Y, map(fn_case_Nat(Z, fn_id), V)))
+303. filter_case1(X, fn_id, X, map(fn_id, map(fn_id, map(fn_id, Y)))) = filter(fn_id, map(fn_id, map(fn_id, map(fn_id, cons(X, Y)))))
+304. map(fn_const(X), filter_case1(true, fn_const(true), ?, cons(Y, Z))) ~> map(fn_const(X), filter_case1(true, fn_const(true), ?, cons(?, Z)))
+305. map(fn_case_Nat(X, fn_id), cons(zero, cons(suc(Y), cons(zero, nil)))) = cons(X, cons(Y, cons(X, nil)))
+306. map(fn_case_Nat(X, fn_id), cons(zero, cons(zero, cons(zero, nil)))) = cons(X, cons(X, cons(X, nil)))
+307. map(fn_case_Nat(app(X, Y), X), map(fn_id, cons(suc(Y), Z))) -> map(fn_case_Nat(app(X, Y), X), map(fn_id, cons(zero, Z)))
+308. filter_case1(true, fn_id, X, map(fn_id, map(fn_id, cons(false, Y)))) -> filter_case1(true, fn_id, X, map(fn_id, map(fn_id, Y)))
+309. filter_case1(true, fn_id, X, map(fn_id, cons(true, cons(false, Y)))) -> filter_case1(true, fn_id, X, map(fn_id, cons(true, Y)))
+310. filter_case1(true, fn_id, X, cons(true, cons(true, cons(false, Y)))) -> filter_case1(true, fn_id, X, cons(true, cons(true, Y)))
+311. prop_mapFilter(X, fn_const(false), map(Y, filter_case1(true, Z, W, V))) -> prop_mapFilter(X, fn_const(false), map(Y, filter(Z, V)))
+312. prop_mapFilter(X, fn_const(false), map(Y, map(Z, cons(W, V)))) -> prop_mapFilter(X, fn_const(false), map(Y, map(Z, V)))
+313. map(fn_const(X), map(?, map(?, cons(?, cons(?, nil))))) -> map(fn_const(X), cons(?, cons(?, nil)))
+314. filter_case1(X, fn_const(X), Y, map(fn_case_Nat(Z, fn_const(Y)), W)) = filter(fn_const(X), map(fn_case_Nat(Z, fn_const(Y)), cons(suc(?), W)))
+315. filter_case1(X, fn_id, X, map(fn_case_Nat(Y, fn_case_Nat(X, Z)), W)) = filter(fn_id, map(fn_case_Nat(Y, fn_case_Nat(X, Z)), cons(suc(zero), W)))
+316. eqListNat(map(fn_const(suc(X)), cons(?, Y)), cons(suc(Z), W)) = opAnd(eqNat(X, Z), eqListNat(map(fn_const(suc(X)), Y), W))
+317. eqListNat(map(fn_const(suc(suc(X))), cons(?, Y)), cons(suc(zero), Z)) -> false
+318. eqListNat(cons(suc(X), Y), map(fn_const(suc(Z)), cons(?, W))) = opAnd(eqNat(X, Z), eqListNat(Y, map(fn_const(suc(Z)), W)))
+319. eqListNat(cons(suc(zero), X), map(fn_const(suc(suc(Y))), cons(?, Z))) -> false
+320. filter_case1(X, fn_case_Nat(X, Y), zero, map(fn_case_Nat(Z, fn_id), W)) = filter(fn_case_Nat(X, Y), map(fn_case_Nat(Z, fn_id), cons(suc(zero), W)))
+321. map(fn_const(X), map(?, cons(?, cons(?, cons(?, nil))))) = cons(X, cons(X, cons(X, nil)))
+322. filter_case1(X, fn_case_Nat(X, Y), zero, filter_case1(Z, fn_const(Z), W, V)) = filter(fn_case_Nat(X, Y), filter_case1(true, fn_const(Z), zero, cons(W, V)))
+323. filter(fn_id, filter_case1(true, fn_const(X), Y, filter_case1(true, Z, W, V))) = filter_case1(Y, fn_id, Y, filter_case1(X, fn_const(X), W, filter(Z, V)))
+324. filter(fn_const(X), filter_case1(true, fn_id, Y, filter_case1(true, Z, W, V))) = filter_case1(X, fn_const(X), Y, filter_case1(W, fn_id, W, filter(Z, V)))
+325. eqListNat(nil, map(X, map(Y, filter(fn_const(true), map(Z, cons(W, V)))))) -> false
+326. eqListNat(map(X, map(Y, filter(fn_const(true), map(Z, cons(W, V))))), nil) -> false
+327. filter_case1(X, fn_const(X), Y, map(fn_case_Nat(Y, Z), filter(W, V))) = filter(fn_const(X), map(fn_case_Nat(Y, Z), filter_case1(true, W, zero, V)))
+328. eqListNat(nil, map(X, filter(fn_const(true), map(Y, filter_case1(true, Z, W, V))))) -> false
+329. eqListNat(nil, map(X, filter(fn_const(true), map(Y, map(Z, cons(W, V)))))) -> false
+330. eqListNat(map(X, filter(fn_const(true), map(Y, filter_case1(true, Z, W, V)))), nil) -> false
+331. eqListNat(map(X, filter(fn_const(true), map(Y, map(Z, cons(W, V))))), nil) -> false
+332. eqListNat(map(fn_case_Nat(suc(X), Y), filter_case1(true, Z, zero, W)), cons(zero, V)) -> false
+333. eqListNat(map(fn_case_Nat(suc(X), Y), cons(zero, Z)), filter_case1(true, W, zero, V)) -> false
+334. eqListNat(filter_case1(true, X, zero, Y), map(fn_case_Nat(suc(Z), W), cons(zero, V))) -> false
+335. eqListNat(cons(zero, X), map(fn_case_Nat(suc(Y), Z), filter_case1(true, W, zero, V))) -> false
+336. prop_mapFilter(X, fn_const(false), cons(Y, cons(Z, cons(W, cons(V, nil))))) -> true
+337. prop_mapFilter(X, fn_const(false), cons(Y, cons(Z, map(W, cons(V, nil))))) -> true
+338. prop_mapFilter(X, fn_const(false), cons(Y, map(Z, map(W, cons(V, nil))))) -> true
+339. filter(fn_const(X), filter_case1(true, fn_case_Nat(Y, Z), W, cons(zero, V))) = filter_case1(X, fn_const(X), W, filter_case1(Y, fn_case_Nat(Y, Z), zero, V))
+340. map(fn_case_Nat(X, fn_id), filter_case1(true, Y, suc(app(fn_case_Nat(X, fn_id), Z)), W)) -> map(fn_case_Nat(X, fn_id), filter_case1(true, Y, Z, W))
+341. map(fn_case_Nat(X, fn_id), cons(Y, cons(suc(app(fn_case_Nat(X, fn_id), Z)), W))) -> map(fn_case_Nat(X, fn_id), cons(Y, cons(Z, W)))
+342. map(fn_id, cons(X, map(Y, cons(Z, cons(W, nil))))) -> cons(X, map(Y, cons(Z, cons(W, nil))))
+343. map(fn_id, map(X, cons(Y, map(Z, cons(W, nil))))) -> map(X, cons(Y, map(Z, cons(W, nil))))
+344. map(fn_case_Nat(X, Y), cons(zero, cons(zero, cons(zero, nil)))) ~> map(fn_case_Nat(X, ?), cons(zero, cons(zero, cons(zero, nil))))
+345. filter_case1(app(X, Y), fn_case_Nat(Z, fn_case_Nat(W, X)), suc(suc(Y)), V) -> filter(fn_case_Nat(Z, fn_case_Nat(W, X)), cons(suc(suc(Y)), V))
+346. filter(fn_case_Nat(X, fn_case_Nat(Y, fn_id)), cons(suc(suc(Z)), W)) = filter_case1(Z, fn_case_Nat(X, fn_case_Nat(Y, fn_id)), suc(suc(Z)), W)
+347. opAnd(eqNat(X, Y), eqListNat(map(fn_const(X), filter(Z, W)), V)) = eqListNat(map(fn_const(X), filter_case1(true, Z, ?, W)), cons(Y, V))
+348. opAnd(eqNat(X, Y), eqListNat(map(fn_const(X), map(Z, W)), V)) = eqListNat(map(fn_const(X), map(Z, cons(?, W))), cons(Y, V))
+349. opAnd(eqNat(X, Y), eqListNat(Z, map(fn_const(Y), filter(W, V)))) = eqListNat(cons(X, Z), map(fn_const(Y), filter_case1(true, W, ?, V)))
+350. filter(fn_case_Nat(X, fn_case_Nat(Y, fn_const(Z))), cons(suc(suc(W)), V)) = filter_case1(Z, fn_case_Nat(X, fn_case_Nat(Y, fn_const(Z))), suc(suc(W)), V)
+351. opAnd(eqNat(X, Y), eqListNat(Z, map(fn_const(Y), map(W, V)))) = eqListNat(cons(X, Z), map(fn_const(Y), map(W, cons(?, V))))
+352. cons(X, filter_case1(Y, fn_case_Nat(Z, fn_case_Nat(Y, W)), suc(zero), V)) -> filter_case1(true, fn_case_Nat(Z, fn_case_Nat(Y, W)), X, cons(suc(zero), V))
+353. filter_case1(true, fn_case_Nat(X, fn_case_Nat(true, Y)), Z, cons(suc(zero), nil)) -> cons(Z, cons(suc(zero), nil))
+354. filter_case1(true, fn_case_Nat(X, fn_case_Nat(false, Y)), Z, cons(suc(zero), W)) -> filter_case1(true, fn_case_Nat(X, fn_case_Nat(false, Y)), Z, W)
+355. filter_case1(X, fn_case_Nat(Y, fn_case_Nat(X, Z)), suc(zero), filter(W, V)) = filter(fn_case_Nat(Y, fn_case_Nat(X, Z)), filter_case1(true, W, suc(zero), V))
+356. filter_case1(true, fn_id, X, cons(true, cons(true, cons(true, nil)))) -> cons(X, cons(true, cons(true, cons(true, nil))))
+357. eqListNat(map(fn_case_Nat(suc(X), Y), map(fn_id, cons(zero, Z))), cons(zero, W)) -> false
+358. eqListNat(map(fn_case_Nat(suc(X), Y), cons(zero, Z)), map(fn_id, cons(zero, W))) -> false
+359. eqListNat(map(fn_id, cons(zero, X)), map(fn_case_Nat(suc(Y), Z), cons(zero, W))) -> false
+360. eqListNat(cons(zero, X), map(fn_case_Nat(suc(Y), Z), map(fn_id, cons(zero, W)))) -> false
+361. filter_case1(X, fn_id, X, map(fn_id, map(fn_case_Nat(Y, fn_id), Z))) = filter(fn_id, map(fn_id, map(fn_case_Nat(Y, fn_id), cons(suc(X), Z))))
+362. map(fn_case_Nat(X, Y), cons(zero, cons(zero, cons(suc(Z), nil)))) = cons(X, cons(X, map(Y, cons(Z, nil))))
+363. map(fn_case_Nat(X, Y), cons(zero, cons(suc(Z), cons(zero, nil)))) = cons(X, cons(app(Y, Z), cons(X, nil)))
+364. filter_case1(X, fn_id, X, map(fn_id, filter_case1(Y, fn_const(Y), Z, W))) = filter(fn_id, map(fn_id, filter_case1(true, fn_const(Y), X, cons(Z, W))))
+365. filter(fn_const(X), filter_case1(true, fn_id, Y, map(fn_id, cons(Z, W)))) = filter_case1(X, fn_const(X), Y, filter_case1(Z, fn_id, Z, map(fn_id, W)))
+366. filter(fn_id, filter_case1(true, fn_const(X), Y, map(Z, cons(W, nil)))) = filter_case1(Y, fn_id, Y, filter_case1(X, fn_const(X), app(Z, W), nil))
+367. filter_case1(X, fn_const(X), Y, map(fn_id, map(fn_case_Nat(Y, Z), W))) = filter(fn_const(X), map(fn_id, map(fn_case_Nat(Y, Z), cons(zero, W))))
+368. filter(fn_id, filter_case1(true, fn_const(X), Y, map(fn_id, cons(Z, W)))) = filter_case1(Y, fn_id, Y, filter_case1(X, fn_const(X), Z, map(fn_id, W)))
+369. filter_case1(X, fn_const(X), Y, map(fn_id, filter_case1(Z, fn_id, Z, W))) = filter(fn_const(X), map(fn_id, filter_case1(true, fn_id, Y, cons(Z, W))))
+370. filter(fn_id, filter_case1(true, fn_case_Nat(X, fn_id), Y, cons(suc(Z), W))) = filter_case1(Y, fn_id, Y, filter_case1(Z, fn_case_Nat(X, fn_id), suc(Z), W))
+371. filter_case1(X, fn_case_Nat(Y, fn_id), suc(X), filter_case1(Z, fn_id, Z, W)) = filter(fn_case_Nat(Y, fn_id), filter_case1(true, fn_id, suc(X), cons(Z, W)))
+372. filter(fn_const(X), map(fn_case_Nat(Y, Z), cons(W, cons(zero, nil)))) = filter_case1(X, fn_const(X), app(fn_case_Nat(Y, Z), W), cons(Y, nil))
+373. filter_case1(X, fn_const(X), Y, map(fn_case_Nat(Y, Z), map(fn_id, W))) = filter(fn_const(X), map(fn_case_Nat(Y, Z), map(fn_id, cons(zero, W))))
+374. map(fn_case_Nat(X, fn_id), map(fn_id, cons(suc(app(fn_case_Nat(X, fn_id), Y)), Z))) -> map(fn_case_Nat(X, fn_id), map(fn_id, cons(Y, Z)))
+375. filter_case1(true, fn_id, X, map(fn_case_Nat(Y, fn_id), cons(suc(false), Z))) -> filter_case1(true, fn_id, X, map(fn_case_Nat(Y, fn_id), Z))
+376. eqListNat(map(X, cons(Y, nil)), map(Z, cons(W, cons(V, U)))) -> opAnd(eqNat(app(X, Y), app(Z, W)), false)
+377. filter_case1(X, fn_case_Nat(Y, fn_id), suc(X), map(fn_case_Nat(suc(X), Z), W)) = filter(fn_case_Nat(Y, fn_id), map(fn_case_Nat(suc(X), Z), cons(zero, W)))
+378. filter_case1(X, fn_case_Nat(Y, fn_const(X)), suc(Z), map(fn_const(suc(Z)), W)) = filter(fn_case_Nat(Y, fn_const(X)), map(fn_const(suc(Z)), cons(?, W)))
+379. opAnd(eqNat(app(X, Y), Z), eqListNat(nil, map(fn_const(Z), W))) = eqListNat(map(X, cons(Y, nil)), map(fn_const(Z), cons(?, W)))
+380. opAnd(eqNat(X, app(Y, Z)), eqListNat(map(fn_const(X), W), nil)) = eqListNat(map(fn_const(X), cons(?, W)), map(Y, cons(Z, nil)))
+381. opAnd(eqNat(X, Y), eqListNat(map(fn_id, map(fn_const(X), Z)), W)) = eqListNat(map(fn_id, map(fn_const(X), cons(?, Z))), cons(Y, W))
+382. eqListNat(map(fn_id, map(fn_const(suc(X)), cons(?, Y))), cons(zero, Z)) -> false
+383. opAnd(eqNat(X, Y), eqListNat(map(fn_id, Z), map(fn_const(Y), W))) = eqListNat(map(fn_id, cons(X, Z)), map(fn_const(Y), cons(?, W)))
+384. opAnd(eqNat(X, Y), eqListNat(Z, map(fn_id, map(fn_const(Y), W)))) = eqListNat(cons(X, Z), map(fn_id, map(fn_const(Y), cons(?, W))))
+385. eqListNat(cons(zero, X), map(fn_id, map(fn_const(suc(Y)), cons(?, Z)))) -> false
+386. filter_case1(X, fn_case_Nat(X, Y), zero, map(fn_const(zero), filter(Z, W))) = filter(fn_case_Nat(X, Y), map(fn_const(zero), filter_case1(true, Z, ?, W)))
+387. filter_case1(X, fn_case_Nat(X, Y), zero, map(fn_const(zero), map(Z, W))) = filter(fn_case_Nat(X, Y), map(fn_const(zero), map(Z, cons(?, W))))
+388. opAnd(eqNat(X, Y), eqListNat(map(fn_const(X), Z), map(fn_id, W))) = eqListNat(map(fn_const(X), cons(?, Z)), map(fn_id, cons(Y, W)))
+389. filter_case1(X, fn_case_Nat(Y, fn_case_Nat(X, Z)), suc(zero), map(fn_id, W)) = filter(fn_case_Nat(Y, fn_case_Nat(X, Z)), map(fn_id, cons(suc(zero), W)))
+390. eqListNat(map(X, cons(Y, cons(Z, W))), map(V, cons(U, nil))) -> opAnd(eqNat(app(X, Y), app(V, U)), false)
+391. opAnd(eqNat(app(X, Y), Z), eqListNat(map(fn_case_Nat(W, X), V), U)) -> eqListNat(map(fn_case_Nat(W, X), cons(suc(Y), V)), cons(Z, U))
+392. opAnd(eqNat(X, app(Y, Z)), eqListNat(W, map(fn_case_Nat(V, Y), U))) -> eqListNat(cons(X, W), map(fn_case_Nat(V, Y), cons(suc(Z), U)))
+393. map(fn_case_Nat(X, fn_case_Nat(Y, fn_const(X))), cons(suc(suc(?)), Z)) -> map(fn_case_Nat(X, fn_case_Nat(Y, fn_const(X))), cons(zero, Z))
+394. eqListNat(map(fn_const(suc(X)), cons(?, Y)), map(fn_const(zero), cons(?, Z))) -> false
+395. eqListNat(map(fn_const(zero), cons(?, X)), map(fn_const(suc(Y)), cons(?, Z))) -> false
+396. eqListNat(nil, filter(fn_case_Nat(X, fn_const(true)), map(fn_const(suc(Y)), cons(?, Z)))) -> false
+397. eqListNat(filter(fn_case_Nat(X, fn_const(true)), map(fn_const(suc(Y)), cons(?, Z))), nil) -> false
+398. map(fn_case_Nat(X, ?), cons(zero, cons(zero, cons(zero, nil)))) -> map(fn_const(X), cons(?, cons(?, cons(?, nil))))
+399. filter_case1(true, fn_case_Nat(true, fn_id), X, cons(suc(true), cons(zero, nil))) -> cons(X, cons(suc(true), cons(zero, nil)))
+400. map(fn_case_Nat(X, ?), cons(suc(Y), cons(zero, cons(zero, nil)))) = cons(app(?, Y), cons(X, cons(X, nil)))
+401. filter(fn_id, filter_case1(true, fn_id, X, map(fn_const(Y), cons(?, Z)))) = filter_case1(X, fn_id, X, filter_case1(Y, fn_id, Y, map(fn_const(Y), Z)))
+402. filter_case1(X, fn_id, X, map(fn_const(X), filter_case1(Y, fn_id, Y, Z))) = filter(fn_id, map(fn_const(X), filter_case1(true, fn_id, ?, cons(Y, Z))))
+403. map(fn_case_Nat(X, fn_case_Nat(X, Y)), filter_case1(true, Z, suc(zero), W)) -> map(fn_case_Nat(X, fn_case_Nat(X, Y)), filter_case1(true, Z, zero, W))
+404. map(fn_case_Nat(X, fn_case_Nat(X, Y)), cons(Z, cons(suc(zero), W))) -> map(fn_case_Nat(X, fn_case_Nat(X, Y)), cons(Z, cons(zero, W)))
+405. map(fn_case_Nat(X, fn_id), cons(zero, cons(zero, cons(suc(Y), nil)))) = cons(X, cons(X, cons(Y, nil)))
+406. filter_case1(X, fn_const(X), Y, filter(fn_const(true), map(fn_const(Y), Z))) = filter(fn_const(X), filter(fn_const(true), map(fn_const(Y), cons(?, Z))))
+407. eqListNat(nil, filter(fn_const(true), filter(fn_const(true), map(fn_const(X), cons(?, Y))))) -> false
+408. eqListNat(filter(fn_const(true), filter(fn_const(true), map(fn_const(X), cons(?, Y)))), nil) -> false
+409. filter_case1(X, fn_id, X, filter(fn_const(true), map(fn_case_Nat(X, Y), Z))) = filter(fn_id, filter(fn_const(true), map(fn_case_Nat(X, Y), cons(zero, Z))))
+410. cons(X, cons(X, nil)) = map(fn_case_Nat(?, fn_id), map(fn_const(suc(X)), cons(?, cons(?, nil))))
+411. map(fn_case_Nat(X, fn_id), map(fn_const(suc(Y)), cons(?, cons(?, nil)))) ~> map(fn_case_Nat(?, fn_id), map(fn_const(suc(Y)), cons(?, cons(?, nil))))
+412. filter_case1(X, fn_id, X, map(fn_case_Nat(X, Y), map(fn_const(zero), Z))) = filter(fn_id, map(fn_case_Nat(X, Y), map(fn_const(zero), cons(?, Z))))
+413. eqListNat(map(X, map(fn_id, cons(Y, cons(Z, W)))), cons(V, nil)) -> opAnd(eqNat(app(X, Y), V), false)
+414. eqListNat(cons(X, nil), map(Y, map(fn_id, cons(Z, cons(W, V))))) -> opAnd(eqNat(X, app(Y, Z)), false)
+415. filter_case1(X, fn_case_Nat(X, Y), zero, map(fn_id, map(fn_const(zero), Z))) = filter(fn_case_Nat(X, Y), map(fn_id, map(fn_const(zero), cons(?, Z))))
+416. filter_case1(true, fn_case_Nat(false, X), Y, map(fn_const(zero), cons(?, Z))) -> filter_case1(true, fn_case_Nat(false, X), Y, map(fn_const(zero), Z))
+417. filter(fn_case_Nat(X, fn_const(false)), map(fn_const(suc(Y)), cons(?, Z))) -> filter(fn_case_Nat(X, fn_const(false)), map(fn_const(suc(Y)), Z))
+418. prop_mapFilter(fn_id, fn_case_Nat(X, fn_const(false)), cons(suc(Y), nil)) -> true
+419. filter(fn_id, map(fn_const(X), cons(?, cons(?, cons(?, nil))))) = filter_case1(X, fn_id, X, cons(X, cons(X, nil)))
+420. filter_case1(X, fn_id, X, map(fn_case_Nat(Y, fn_id), filter(Z, W))) = filter(fn_id, map(fn_case_Nat(Y, fn_id), filter_case1(true, Z, suc(X), W)))
+421. cons(X, cons(X, cons(X, nil))) = map(fn_id, map(fn_const(X), cons(?, cons(?, cons(?, nil)))))
+422. cons(app(fn_case_Nat(X, fn_case_Nat(Y, Z)), W), cons(Y, nil)) -> map(fn_case_Nat(X, fn_case_Nat(Y, Z)), cons(W, cons(suc(zero), nil)))
+423. map(fn_case_Nat(X, fn_case_Nat(X, Y)), map(fn_id, cons(suc(zero), Z))) -> map(fn_case_Nat(X, fn_case_Nat(X, Y)), map(fn_id, cons(zero, Z)))
+424. filter_case1(true, fn_const(true), X, map(Y, map(Z, cons(W, nil)))) -> cons(X, map(Y, map(Z, cons(W, nil))))
+425. filter_case1(true, fn_const(true), X, cons(Y, map(Z, cons(W, nil)))) -> cons(X, cons(Y, map(Z, cons(W, nil))))
+426. filter_case1(true, fn_const(true), X, cons(Y, cons(Z, cons(W, nil)))) -> cons(X, cons(Y, cons(Z, cons(W, nil))))
+427. filter_case1(true, fn_case_Nat(X, fn_id), Y, filter_case1(true, Z, suc(false), W)) -> filter_case1(true, fn_case_Nat(X, fn_id), Y, filter(Z, W))
+428. eqListNat(nil, filter(fn_const(true), map(X, map(Y, filter_case1(true, Z, W, V))))) -> false
+429. eqListNat(nil, filter(fn_const(true), map(X, map(Y, map(Z, cons(W, V)))))) -> false
+430. eqListNat(filter(fn_const(true), map(X, map(Y, filter_case1(true, Z, W, V)))), nil) -> false
+431. eqListNat(filter(fn_const(true), map(X, map(Y, map(Z, cons(W, V))))), nil) -> false
+432. prop_mapFilter(X, fn_const(false), map(Y, map(Z, map(W, cons(V, nil))))) -> true
+433. map(fn_case_Nat(X, fn_case_Nat(Y, fn_const(Y))), cons(suc(suc(?)), Z)) -> map(fn_case_Nat(X, fn_case_Nat(Y, fn_const(Y))), cons(suc(zero), Z))
+434. prop_mapFilter(X, fn_const(false), cons(Y, map(Z, cons(W, cons(V, nil))))) -> true
+435. map(fn_id, map(X, cons(Y, cons(Z, cons(W, nil))))) -> map(X, cons(Y, cons(Z, cons(W, nil))))
+436. map(fn_id, map(X, map(Y, cons(Z, cons(W, nil))))) -> map(X, map(Y, cons(Z, cons(W, nil))))
+437. eqListNat(map(fn_id, filter_case1(X, fn_id, X, nil)), filter(fn_id, cons(X, nil))) -> prop_mapFilter(fn_id, fn_id, cons(X, nil))
+438. prop_mapFilter(fn_id, fn_id, cons(false, nil)) -> true
+439. prop_mapFilter(fn_id, fn_id, cons(true, nil)) -> opAnd(eqNat(true, true), true)
+440. equals(opAnd(eqNat(true, true), true), false) -> false
+441. eqListNat(map(fn_id, filter_case1(X, fn_id, X, nil)), filter_case1(X, fn_id, X, nil)) -> prop_mapFilter(fn_id, fn_id, cons(X, nil))
+442. map(fn_case_Nat(X, fn_const(Y)), map(fn_const(suc(Z)), cons(?, cons(?, nil)))) -> map(fn_const(Y), cons(?, cons(?, nil)))
+443. map(fn_const(X), map(Y, cons(?, cons(?, cons(Z, nil))))) -> map(fn_const(X), cons(?, cons(?, cons(?, nil))))
+444. map(fn_const(X), map(Y, map(Z, filter_case1(true, W, V, U)))) ~> map(fn_const(X), map(Y, map(Z, filter_case1(true, W, ?, U))))
+445. map(fn_const(X), map(Y, map(Z, cons(?, map(W, V))))) -> map(fn_const(X), map(Y, map(Z, map(W, cons(?, V)))))
+446. map(fn_const(X), map(Y, map(Z, map(W, cons(V, U))))) ~> map(fn_const(X), map(Y, map(Z, map(W, cons(?, U)))))
+447. filter_case1(X, fn_const(X), app(Y, app(Z, app(W, V))), nil) = filter(fn_const(X), map(Y, map(Z, map(W, cons(V, nil)))))
+448. eqListNat(map(X, filter_case1(true, fn_id, Y, cons(true, Z))), cons(W, nil)) -> opAnd(eqNat(app(X, Y), W), false)
+449. eqListNat(cons(X, nil), map(Y, filter_case1(true, fn_id, Z, cons(true, W)))) -> opAnd(eqNat(X, app(Y, Z)), false)
+450. opAnd(eqNat(X, Y), eqListNat(map(fn_case_Nat(X, Z), W), filter(V, U))) = eqListNat(map(fn_case_Nat(X, Z), cons(zero, W)), filter_case1(true, V, Y, U))
+451. opAnd(eqNat(X, Y), eqListNat(filter(Z, W), map(fn_case_Nat(Y, V), U))) = eqListNat(filter_case1(true, Z, X, W), map(fn_case_Nat(Y, V), cons(zero, U)))
+452. filter_case1(true, fn_case_Nat(false, fn_id), X, cons(suc(true), cons(zero, Y))) -> filter_case1(true, fn_case_Nat(false, fn_id), X, cons(suc(true), Y))
+453. filter_case1(true, fn_const(false), X, map(Y, filter_case1(true, Z, W, V))) -> filter_case1(true, fn_const(false), X, map(Y, filter(Z, V)))
+454. filter_case1(true, fn_const(false), X, map(Y, map(Z, cons(W, V)))) -> filter_case1(true, fn_const(false), X, map(Y, map(Z, V)))
+455. filter(fn_const(false), map(X, map(Y, filter_case1(true, Z, W, V)))) -> filter(fn_const(false), map(X, map(Y, filter(Z, V))))
+456. filter(fn_const(false), map(X, map(Y, map(Z, cons(W, V))))) -> filter(fn_const(false), map(X, map(Y, map(Z, V))))
+457. filter(fn_const(false), filter(fn_const(true), map(fn_const(X), cons(?, Y)))) -> filter(fn_const(false), filter(fn_const(true), map(fn_const(X), Y)))
+458. eqListNat(nil, filter(fn_const(true), map(X, filter(fn_const(true), map(Y, cons(Z, W)))))) -> false
+459. eqListNat(filter(fn_const(true), map(X, filter(fn_const(true), map(Y, cons(Z, W))))), nil) -> false
+460. cons(app(fn_case_Nat(X, fn_id), Y), cons(Z, cons(X, nil))) -> map(fn_case_Nat(X, fn_id), cons(Y, cons(suc(Z), cons(zero, nil))))
+461. filter_case1(X, fn_id, X, map(fn_case_Nat(Y, fn_id), map(fn_id, Z))) = filter(fn_id, map(fn_case_Nat(Y, fn_id), map(fn_id, cons(suc(X), Z))))
+462. filter_case1(true, fn_case_Nat(X, fn_id), Y, cons(suc(true), cons(suc(true), nil))) -> cons(Y, cons(suc(true), cons(suc(true), nil)))
+463. opAnd(eqNat(app(X, Y), Z), eqListNat(map(fn_id, map(X, W)), V)) -> eqListNat(map(fn_id, map(X, cons(Y, W))), cons(Z, V))
+464. eqListNat(map(fn_id, map(X, cons(Y, cons(Z, W)))), cons(V, nil)) -> opAnd(eqNat(app(X, Y), V), false)
+465. opAnd(eqNat(X, app(Y, Z)), eqListNat(W, map(fn_id, map(Y, V)))) -> eqListNat(cons(X, W), map(fn_id, map(Y, cons(Z, V))))
+466. eqListNat(cons(X, nil), map(fn_id, map(Y, cons(Z, cons(W, V))))) -> opAnd(eqNat(X, app(Y, Z)), false)
+467. map(fn_case_Nat(app(X, Y), fn_case_Nat(Z, X)), cons(suc(suc(Y)), W)) -> map(fn_case_Nat(app(X, Y), fn_case_Nat(Z, X)), cons(zero, W))
+468. filter_case1(X, fn_id, X, map(fn_const(X), map(Y, filter(Z, W)))) = filter(fn_id, map(fn_const(X), map(Y, filter_case1(true, Z, ?, W))))
+469. filter_case1(X, fn_id, X, map(fn_const(X), map(Y, map(Z, W)))) = filter(fn_id, map(fn_const(X), map(Y, map(Z, cons(?, W)))))
+470. map(fn_case_Nat(X, fn_id), cons(suc(Y), cons(suc(Z), cons(zero, nil)))) -> cons(Y, cons(Z, cons(X, nil)))
+471. map(fn_case_Nat(X, fn_id), cons(suc(Y), cons(zero, cons(zero, nil)))) = cons(Y, cons(X, cons(X, nil)))
+472. map(fn_case_Nat(X, fn_id), cons(suc(Y), cons(zero, cons(suc(Z), nil)))) -> cons(Y, cons(X, cons(Z, nil)))
+473. map(fn_case_Nat(X, fn_id), cons(zero, cons(suc(Y), cons(suc(Z), nil)))) -> cons(X, cons(Y, cons(Z, nil)))
+474. filter_case1(true, fn_case_Nat(X, fn_id), Y, map(fn_id, cons(suc(false), Z))) -> filter_case1(true, fn_case_Nat(X, fn_id), Y, map(fn_id, Z))
+475. filter_case1(X, fn_id, X, map(fn_const(X), cons(?, cons(?, nil)))) -> filter(fn_id, cons(X, cons(X, cons(X, nil))))
+476. map(X, cons(Y, cons(Y, nil))) = map(fn_case_Nat(?, X), map(fn_const(suc(Y)), cons(?, cons(?, nil))))
+477. map(fn_case_Nat(X, Y), map(fn_const(suc(Z)), cons(?, cons(?, nil)))) ~> map(fn_case_Nat(?, Y), map(fn_const(suc(Z)), cons(?, cons(?, nil))))
+478. eqListNat(cons(X, nil), map(Y, map(Z, cons(W, cons(V, U))))) -> opAnd(eqNat(X, app(Y, app(Z, W))), false)
+479. filter_case1(X, fn_const(X), app(Y, Z), filter(fn_const(true), map(Y, W))) -> filter(fn_const(X), filter(fn_const(true), map(Y, cons(Z, W))))
+480. eqListNat(nil, filter(fn_const(true), filter(fn_const(true), map(X, cons(Y, Z))))) -> false
+481. eqListNat(filter(fn_const(true), filter(fn_const(true), map(X, cons(Y, Z)))), nil) -> false
+482. filter(fn_const(false), filter(fn_const(true), map(X, cons(Y, Z)))) -> filter(fn_const(false), filter(fn_const(true), map(X, Z)))
+483. eqListNat(nil, map(X, filter(fn_const(true), filter(fn_const(true), map(Y, cons(Z, W)))))) -> false
+484. eqListNat(map(X, filter(fn_const(true), filter(fn_const(true), map(Y, cons(Z, W))))), nil) -> false
+485. eqListNat(nil, filter(fn_const(true), filter(fn_const(true), map(X, filter_case1(true, Y, Z, W))))) -> false
+486. eqListNat(nil, filter(fn_const(true), filter(fn_const(true), map(X, map(Y, cons(Z, W)))))) -> false
+487. eqListNat(filter(fn_const(true), filter(fn_const(true), map(X, filter_case1(true, Y, Z, W)))), nil) -> false
+488. eqListNat(filter(fn_const(true), filter(fn_const(true), map(X, map(Y, cons(Z, W))))), nil) -> false
+489. map(fn_const(X), map(Y, cons(?, filter_case1(true, Z, W, V)))) ~> map(fn_const(X), map(Y, cons(?, filter_case1(true, Z, ?, V))))
+490. map(fn_const(X), map(Y, map(Z, cons(?, cons(W, V))))) ~> map(fn_const(X), map(Y, map(Z, cons(?, cons(?, V)))))
+491. filter_case1(X, fn_const(X), Y, map(fn_id, map(fn_id, filter(Z, W)))) = filter(fn_const(X), map(fn_id, map(fn_id, filter_case1(true, Z, Y, W))))
+492. map(fn_const(X), map(Y, cons(?, cons(?, map(Z, W))))) -> map(fn_const(X), map(Y, map(Z, cons(?, cons(?, W)))))
+493. filter_case1(X, fn_case_Nat(Y, fn_id), suc(X), map(fn_id, filter(Z, W))) = filter(fn_case_Nat(Y, fn_id), map(fn_id, filter_case1(true, Z, suc(X), W)))
+494. eqListNat(map(X, map(Y, cons(Z, cons(W, V)))), cons(U, nil)) -> opAnd(eqNat(app(X, app(Y, Z)), U), false)
+495. map(fn_case_Nat(X, fn_id), cons(zero, map(fn_case_Nat(suc(X), Y), Z))) -> map(fn_case_Nat(X, fn_id), map(fn_case_Nat(suc(X), Y), cons(zero, Z)))
+496. map(fn_const(app(X, Y)), cons(?, cons(?, cons(?, nil)))) = map(X, cons(Y, cons(Y, cons(Y, nil))))
+497. cons(X, map(fn_case_Nat(Y, fn_case_Nat(Z, fn_case_Nat(X, W))), V)) -> map(fn_case_Nat(Y, fn_case_Nat(Z, fn_case_Nat(X, W))), cons(suc(suc(zero)), V))
+498. filter_case1(true, fn_case_Nat(true, fn_id), X, cons(zero, cons(suc(true), nil))) -> cons(X, cons(zero, cons(suc(true), nil)))
+499. map(fn_const(X), map(Y, map(Z, map(W, map(V, cons(U, nil)))))) -> cons(X, nil)
+500. eqListNat(map(X, filter_case1(Y, fn_id, Y, Z)), filter(fn_id, map(X, cons(Y, Z)))) -> prop_mapFilter(X, fn_id, cons(Y, Z))
+501. eqListNat(map(X, cons(true, nil)), filter(fn_id, map(X, cons(true, nil)))) -> prop_mapFilter(X, fn_id, cons(true, nil))
+502. eqListNat(cons(X, nil), filter(fn_id, cons(X, nil))) -> prop_mapFilter(fn_const(X), fn_id, cons(true, nil))
+503. eqListNat(cons(X, nil), filter_case1(X, fn_id, X, nil)) -> prop_mapFilter(fn_const(X), fn_id, cons(true, nil))
+504. prop_mapFilter(fn_const(false), fn_id, cons(true, nil)) -> false
+505. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (map_1): map(X, nil) = nil.
+Axiom 2 (filter_1): filter(X, nil) = nil.
+Axiom 3 (app_fn_id_1): app(fn_id, X) = X.
+Axiom 4 (app_fn_const_1): app(fn_const(X), Y) = X.
+Axiom 5 (filter_case1_2): filter_case1(false, X, Y, Z) = filter(X, Z).
+Axiom 6 (eqListNat_3): eqListNat(cons(X, Y), nil) = false.
+Axiom 7 (filter_case1_1): filter_case1(true, X, Y, Z) = cons(Y, filter(X, Z)).
+Axiom 8 (filter_2): filter(X, cons(Y, Z)) = filter_case1(app(X, Y), X, Y, Z).
+Axiom 9 (map_2): map(X, cons(Y, Z)) = cons(app(X, Y), map(X, Z)).
+Axiom 10 (prop_mapFilter_1): prop_mapFilter(X, Y, Z) = eqListNat(map(X, filter(Y, Z)), filter(Y, map(X, Z))).
+
+Lemma 11: filter(fn_id, cons(X, Y)) = filter_case1(X, fn_id, X, Y).
+Proof:
+  filter(fn_id, cons(X, Y))
+= { by axiom 8 (filter_2) }
+  filter_case1(app(fn_id, X), fn_id, X, Y)
+= { by axiom 3 (app_fn_id_1) }
+  filter_case1(X, fn_id, X, Y)
+
+Lemma 12: map(fn_const(X), cons(Y, nil)) = cons(X, nil).
+Proof:
+  map(fn_const(X), cons(Y, nil))
+= { by axiom 9 (map_2) }
+  cons(app(fn_const(X), Y), map(fn_const(X), nil))
+= { by axiom 1 (map_1) }
+  cons(app(fn_const(X), Y), nil)
+= { by axiom 4 (app_fn_const_1) }
+  cons(X, nil)
+
+Goal 1 (prop_mapFilter): prop_mapFilter(X, Y, Z) = false.
+The goal is true when:
+  X = fn_const(false)
+  Y = fn_id
+  Z = cons(true, nil)
+
+Proof:
+  prop_mapFilter(fn_const(false), fn_id, cons(true, nil))
+= { by axiom 10 (prop_mapFilter_1) }
+  eqListNat(map(fn_const(false), filter(fn_id, cons(true, nil))), filter(fn_id, map(fn_const(false), cons(true, nil))))
+= { by lemma 11 }
+  eqListNat(map(fn_const(false), filter_case1(true, fn_id, true, nil)), filter(fn_id, map(fn_const(false), cons(true, nil))))
+= { by axiom 7 (filter_case1_1) }
+  eqListNat(map(fn_const(false), cons(true, filter(fn_id, nil))), filter(fn_id, map(fn_const(false), cons(true, nil))))
+= { by axiom 2 (filter_1) }
+  eqListNat(map(fn_const(false), cons(true, nil)), filter(fn_id, map(fn_const(false), cons(true, nil))))
+= { by lemma 12 }
+  eqListNat(cons(false, nil), filter(fn_id, map(fn_const(false), cons(true, nil))))
+= { by lemma 12 }
+  eqListNat(cons(false, nil), filter(fn_id, cons(false, nil)))
+= { by lemma 11 }
+  eqListNat(cons(false, nil), filter_case1(false, fn_id, false, nil))
+= { by axiom 5 (filter_case1_2) }
+  eqListNat(cons(false, nil), filter(fn_id, nil))
+= { by axiom 2 (filter_1) }
+  eqListNat(cons(false, nil), nil)
+= { by axiom 6 (eqListNat_3) }
+  false
+
+RESULT: Theorem (the conjecture is true).

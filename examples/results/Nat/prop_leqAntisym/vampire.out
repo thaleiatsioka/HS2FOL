@@ -1,0 +1,90 @@
+% Running in auto input_syntax mode. Trying TPTP
+% Detected formulas, will run a generic FOF schedule.
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_tgt=full:sil=2000:alpa=true:random_seed=3471138448:st=5:i=107:sd=1:qa=plain:ss=on:er=filter:ssat=axiom_1 on problem for (1ds/107Mi)
+%  found proof, printing to "/tmp/vampire-proof-1328-1330"...
+% SZS answers Tuple [∀X0.[zero,suc(X0)]|_] for problem
+% ...printing done.
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for problem
+% SZS output start Proof for problem
+fof(f2,axiom,(
+  ! [X0] : (implies(true,X0) = X0)),
+  file('/home/claude/hs2fol/examples/results/Nat/prop_leqAntisym/problem.p','implies_2')).
+fof(f3,axiom,(
+  ! [X0] : (leq(zero,X0) = true)),
+  file('/home/claude/hs2fol/examples/results/Nat/prop_leqAntisym/problem.p','leq_1')).
+fof(f6,axiom,(
+  ! [X0, X1] : (prop_leqAntisym(X0,X1) = implies(leq(X0,X1),eqNat(X0,X1)))),
+  file('/home/claude/hs2fol/examples/results/Nat/prop_leqAntisym/problem.p','prop_leqAntisym_1')).
+fof(f8,axiom,(
+  ! [X0] : (eqNat(zero,suc(X0)) = false)),
+  file('/home/claude/hs2fol/examples/results/Nat/prop_leqAntisym/problem.p','eqNat_2')).
+fof(f11,conjecture,(
+  ? [X0, X1] : (prop_leqAntisym(X0,X1) = false)),
+  file('/home/claude/hs2fol/examples/results/Nat/prop_leqAntisym/problem.p','prop_leqAntisym')).
+fof(f12,negated_conjecture,(
+  ~ ? [X0, X1] : (prop_leqAntisym(X0,X1) = false)),
+  inference(conjecture_negation,[status(cth)],[f11])).
+fof(f13,plain,(
+  ~ ? [X0, X1] : ((prop_leqAntisym(X0,X1) = false) & ans0(X0,X1))),
+  inference(answer_literal_injection,[],[f12])).
+fof(f14,plain,(
+  ! [X0, X1] : ((false != prop_leqAntisym(X0,X1)) | ~ans0(X0,X1))),
+  inference(ennf_transformation,[],[f13])).
+fof(f16,plain,(
+  (! [X0] : (implies(true,X0) = X0))),
+  inference(cnf_transformation,[],[f2])).
+fof(f17,plain,(
+  (! [X0] : (true = leq(zero,X0)))),
+  inference(cnf_transformation,[],[f3])).
+fof(f20,plain,(
+  (! [X0,X1] : (prop_leqAntisym(X0,X1) = implies(leq(X0,X1),eqNat(X0,X1))))),
+  inference(cnf_transformation,[],[f6])).
+fof(f22,plain,(
+  (! [X0] : (false = eqNat(zero,suc(X0))))),
+  inference(cnf_transformation,[],[f8])).
+fof(f25,plain,(
+  (! [X0,X1] : (false != prop_leqAntisym(X0,X1) | ~ans0(X0,X1)))),
+  inference(cnf_transformation,[],[f14])).
+fof(f26,plain,(
+  (! [X0,X1] : (false != implies(leq(X0,X1),eqNat(X0,X1)) | ~ans0(X0,X1)))),
+  inference(definition_unfolding,[],[f25,f20])).
+fof(f27,definition,(
+  (! [X0,X1] : (sF1(X0,X1) = implies(leq(X0,X1),eqNat(X0,X1))))),
+  introduced(definition,[new_symbols(definition,[sF1])],[function_definition])).
+fof(f28,plain,(
+  (! [X0,X1] : (implies(leq(X0,X1),eqNat(X0,X1)) = sF1(X0,X1)))),
+  inference(reorient_equations,[],[f27])).
+fof(f29,plain,(
+  (! [X0,X1] : (false != sF1(X0,X1) | ~ans0(X0,X1)))),
+  inference(definition_folding,[],[f26,f28])).
+fof(f30,plain,(
+  (! [X0] : (sF1(zero,X0) = implies(true,eqNat(zero,X0))))),
+  inference(superposition,[],[f28,f17])).
+fof(f43,plain,(
+  (! [X0] : (eqNat(zero,X0) = sF1(zero,X0)))),
+  inference(forward_demodulation,[],[f30,f16])).
+fof(f60,plain,(
+  (! [X0,X1] : (ans0(X0,X1)))),
+  introduced(theory,[answer_literal_resolver],[])).
+fof(f63,plain,(
+  (! [X0] : (false != eqNat(zero,X0) | ~ans0(zero,X0)))),
+  inference(superposition,[],[f29,f43])).
+fof(f65,plain,(
+  (! [X0] : (false != false | ~ans0(zero,suc(X0))))),
+  inference(superposition,[],[f63,f22])).
+fof(f66,plain,(
+  (! [X0] : (~ans0(zero,suc(X0))))),
+  inference(trivial_inequality_removal,[],[f65])).
+fof(f67,plain,(
+  $false),
+  inference(unit_resulting_resolution,[],[f66,f60])).
+% SZS output end Proof for problem
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation
+% Time elapsed: 0.001 s
+% Peak memory usage: 8 MB
+% Success in time 0.002 s

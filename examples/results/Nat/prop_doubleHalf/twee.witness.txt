@@ -1,0 +1,6 @@
+property:   prop_doubleHalf
+file:       examples/Nat.hs
+prover:     twee
+witness:    prop_doubleHalf (Suc Zero)
+input:      prop_doubleHalf (Suc Zero)
+result:     False -- counterexample confirmed

@@ -1,0 +1,54 @@
+Here is the input problem:
+  Axiom 1 (double_1): double(zero) = zero.
+  Axiom 2 (half_1): half(zero) = zero.
+  Axiom 3 (half_2): half(suc(zero)) = zero.
+  Axiom 4 (half_3): half(suc(suc(X))) = suc(half(X)).
+  Axiom 5 (double_2): double(suc(X)) = suc(suc(double(X))).
+  Axiom 6 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 7 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 8 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 9 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 10 (prop_doubleHalf_1): prop_doubleHalf(X) = eqNat(double(half(X)), X).
+  Axiom 11 (reflexivity): equals(X, X) = true.
+  Axiom 12 (prop_doubleHalf): equals(prop_doubleHalf(X), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. double(zero) -> zero
+2. half(zero) -> zero
+3. half(suc(zero)) -> zero
+4. suc(half(X)) -> half(suc(suc(X)))
+5. suc(suc(double(X))) -> double(suc(X))
+6. eqNat(zero, zero) -> true
+7. eqNat(zero, suc(X)) -> false
+8. eqNat(suc(X), zero) -> false
+9. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+10. eqNat(double(half(X)), X) -> prop_doubleHalf(X)
+11. equals(X, X) -> true
+12. equals(prop_doubleHalf(X), false) -> false
+13. prop_doubleHalf(zero) -> true
+14. prop_doubleHalf(suc(zero)) -> false
+15. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (double_1): double(zero) = zero.
+Axiom 2 (half_2): half(suc(zero)) = zero.
+Axiom 3 (eqNat_2): eqNat(zero, suc(X)) = false.
+Axiom 4 (prop_doubleHalf_1): prop_doubleHalf(X) = eqNat(double(half(X)), X).
+
+Goal 1 (prop_doubleHalf): prop_doubleHalf(X) = false.
+The goal is true when:
+  X = suc(zero)
+
+Proof:
+  prop_doubleHalf(suc(zero))
+= { by axiom 4 (prop_doubleHalf_1) }
+  eqNat(double(half(suc(zero))), suc(zero))
+= { by axiom 2 (half_2) }
+  eqNat(double(zero), suc(zero))
+= { by axiom 1 (double_1) }
+  eqNat(zero, suc(zero))
+= { by axiom 3 (eqNat_2) }
+  false
+
+RESULT: Theorem (the conjecture is true).

@@ -1,0 +1,203 @@
+% Preprocessing class: FSMSSMSSSSSNFFN.
+% Configuration: G-E--_208_C18_F1_SE_CS_SOS_SP_PS_S5PRR_RG_S04AN
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSF21-SFFFFFNN
+% Configuration: G-E--_208_C18_F1_AE_CS_SP_PI_S0a
+% Initializing proof state
+% Scanning for AC axioms
+%
+%cnf(i_0_1, plain, (opAnd(false,X1)=false)).
+%
+%cnf(i_0_17, negated_conjecture, ($answer(esk1_1(X1))|eqListNat(map(lam3,X1),X1)!=false)).
+%
+%cnf(i_0_12, plain, (eqListNat(nil,nil)=true)).
+%
+%cnf(i_0_3, plain, (map(X1,nil)=nil)).
+%
+%cnf(i_0_8, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_2, plain, (opAnd(true,X1)=X1)).
+%
+%cnf(i_0_6, plain, (plus(zero,X1)=X1)).
+%
+%cnf(i_0_16, plain, (app(lam3,X1)=plus(X1,zero))).
+%
+%cnf(i_0_9, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_10, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_13, plain, (eqListNat(nil,cons(X1,X2))=false)).
+%
+%cnf(i_0_14, plain, (eqListNat(cons(X1,X2),nil)=false)).
+%
+%cnf(i_0_7, plain, (plus(suc(X1),X2)=suc(plus(X1,X2)))).
+%
+%cnf(i_0_11, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_4, plain, (cons(app(X1,X2),map(X1,X3))=map(X1,cons(X2,X3)))).
+%
+%cnf(i_0_15, plain, (opAnd(eqNat(X1,X3),eqListNat(X2,X4))=eqListNat(cons(X1,X2),cons(X3,X4)))).
+%
+%cnf(i_0_18, negated_conjecture, ($answer(esk1_1(nil))|true!=false)).
+%
+%cnf(i_0_19, plain, (eqListNat(nil,map(X1,cons(X2,X3)))=false)).
+%
+%cnf(i_0_20, plain, (eqListNat(map(X1,cons(X2,X3)),nil)=false)).
+%
+%cnf(i_0_21, plain, (cons(app(X1,X2),nil)=map(X1,cons(X2,nil)))).
+%
+%cnf(i_0_38, plain, (map(lam3,cons(X1,nil))=cons(plus(X1,zero),nil))).
+%
+%cnf(i_0_42, negated_conjecture, ($answer(esk1_1(cons(X1,nil)))|eqListNat(cons(plus(X1,zero),nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_27, plain, (eqListNat(cons(suc(X1),X2),cons(zero,X3))=false)).
+%
+%cnf(i_0_46, negated_conjecture, ($answer(esk1_1(cons(zero,nil)))|eqListNat(cons(zero,nil),cons(zero,nil))!=false)).
+%
+%cnf(i_0_31, plain, (eqListNat(nil,map(X1,map(X2,cons(X3,X4))))=false)).
+%
+%cnf(i_0_33, plain, (eqListNat(map(X1,map(X2,cons(X3,X4))),nil)=false)).
+%%
+%cnf(i_0_22, plain, (cons(plus(X1,zero),map(lam3,X2))=map(lam3,cons(X1,X2)))).
+%
+%cnf(i_0_65, plain, (map(lam3,cons(zero,X1))=cons(zero,map(lam3,X1)))).
+%
+%cnf(i_0_71, negated_conjecture, ($answer(esk1_1(cons(zero,X1)))|eqListNat(cons(zero,map(lam3,X1)),cons(zero,X1))!=false)).
+%%
+%cnf(i_0_28, plain, (eqListNat(cons(zero,X2),cons(suc(X1),X3))=false)).
+%
+%cnf(i_0_29, plain, (eqListNat(cons(zero,X1),cons(zero,X2))=eqListNat(X1,X2))).
+%
+%cnf(i_0_46, negated_conjecture, ($answer(esk1_1(cons(zero,nil)))|true!=false)).
+%
+%cnf(i_0_71, negated_conjecture, ($answer(esk1_1(cons(zero,X1)))|eqListNat(map(lam3,X1),X1)!=false)).
+%%
+%cnf(i_0_80, negated_conjecture, ($answer(esk1_1(cons(zero,cons(zero,X1))))|eqListNat(map(lam3,X1),X1)!=false)).
+%
+%cnf(i_0_82, negated_conjecture, ($answer(esk1_1(cons(zero,cons(zero,nil))))|true!=false)).
+%
+%cnf(i_0_23, plain, (eqListNat(cons(X1,cons(X3,X4)),cons(X2,nil))=opAnd(eqNat(X1,X2),false))).
+%%
+%cnf(i_0_83, negated_conjecture, ($answer(esk1_1(cons(zero,cons(zero,cons(zero,X1)))))|eqListNat(map(lam3,X1),X1)!=false)).
+%
+%cnf(i_0_93, negated_conjecture, ($answer(esk1_1(cons(zero,cons(zero,cons(zero,nil)))))|true!=false)).
+%
+%cnf(i_0_25, plain, (eqListNat(cons(X1,nil),cons(X2,nil))=opAnd(eqNat(X1,X2),true))).
+%
+%cnf(i_0_42, negated_conjecture, ($answer(esk1_1(cons(X1,nil)))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%
+%cnf(i_0_56, plain, (eqListNat(nil,map(X1,map(X2,map(lam3,cons(X3,X4)))))=false)).
+%
+%cnf(i_0_57, plain, (eqListNat(map(X1,map(X2,map(lam3,cons(X3,X4)))),nil)=false)).
+%
+%cnf(i_0_105, plain, (eqListNat(nil,map(X1,map(X2,map(lam3,map(lam3,cons(X3,X4))))))=false)).
+%
+%cnf(i_0_111, plain, (eqListNat(map(X1,map(X2,map(lam3,map(lam3,cons(X3,X4))))),nil)=false)).
+%
+%cnf(i_0_24, plain, (eqListNat(cons(X1,nil),cons(X2,cons(X3,X4)))=opAnd(eqNat(X1,X2),false))).
+%
+%cnf(i_0_49, plain, (eqListNat(nil,map(X1,map(X2,map(X3,cons(X4,X5)))))=false)).
+
+[... hs2fol: 64926 lines of search output omitted to keep the repository small; rerun to regenerate ...]
+
+%
+%cnf(i_0_1214365, negated_conjecture, ($answer(esk1_1(cons(zero,cons(X1,cons(suc(suc(zero)),cons(suc(suc(zero)),cons(suc(suc(zero)),nil)))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%%
+%cnf(i_0_247101, negated_conjecture, ($answer(esk1_1(cons(suc(zero),cons(zero,cons(zero,cons(suc(suc(suc(suc(suc(zero))))),cons(suc(zero),cons(zero,X1))))))))|eqListNat(map(lam3,X1),X1)!=false)).
+%
+%cnf(i_0_1738635, negated_conjecture, ($answer(esk1_1(cons(suc(zero),cons(zero,cons(zero,cons(suc(suc(suc(suc(suc(zero))))),cons(suc(zero),cons(zero,nil))))))))|true!=false)).
+%%%
+%cnf(i_0_1480485, negated_conjecture, ($answer(esk1_1(map(lam3,cons(suc(plus(X1,zero)),cons(zero,cons(suc(suc(zero)),cons(zero,map(lam3,X2))))))))|eqListNat(map(lam3,map(lam3,map(lam3,cons(X1,X2)))),map(lam3,map(lam3,cons(X1,X2))))!=false)).
+%%
+%cnf(i_0_247202, negated_conjecture, ($answer(esk1_1(cons(suc(zero),cons(suc(suc(zero)),cons(suc(suc(suc(suc(suc(zero))))),cons(suc(zero),cons(zero,X1)))))))|eqListNat(map(lam3,X1),X1)!=false)).
+%
+%cnf(i_0_1738849, negated_conjecture, ($answer(esk1_1(cons(suc(zero),cons(suc(suc(zero)),cons(suc(suc(suc(suc(suc(zero))))),cons(suc(zero),cons(zero,nil)))))))|true!=false)).
+%%
+%cnf(i_0_1214678, negated_conjecture, ($answer(esk1_1(cons(suc(suc(X1)),cons(suc(suc(zero)),cons(suc(suc(zero)),cons(zero,cons(zero,nil)))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%
+%cnf(i_0_247231, negated_conjecture, ($answer(esk1_1(cons(suc(suc(zero)),cons(suc(zero),cons(suc(suc(suc(suc(suc(zero))))),cons(suc(zero),cons(zero,X1)))))))|eqListNat(map(lam3,X1),X1)!=false)).
+%%%%%%
+%cnf(i_0_1738885, negated_conjecture, ($answer(esk1_1(cons(suc(suc(zero)),cons(suc(zero),cons(suc(suc(suc(suc(suc(zero))))),cons(suc(zero),cons(zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_1214681, negated_conjecture, ($answer(esk1_1(cons(suc(suc(X1)),cons(suc(suc(zero)),cons(suc(suc(zero)),cons(suc(suc(zero)),nil))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%%%
+%cnf(i_0_247641, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(suc(zero)),cons(suc(zero),cons(suc(zero),cons(suc(suc(suc(suc(suc(zero))))),X1)))))))|eqListNat(map(lam3,X1),X1)!=false)).
+%%%
+%cnf(i_0_1738921, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(suc(zero)),cons(suc(zero),cons(suc(zero),cons(suc(suc(suc(suc(suc(zero))))),nil)))))))|true!=false)).
+%%%
+%cnf(i_0_247805, negated_conjecture, ($answer(esk1_1(cons(suc(suc(suc(zero))),cons(zero,cons(suc(suc(suc(suc(suc(zero))))),cons(suc(zero),cons(zero,X1)))))))|eqListNat(map(lam3,X1),X1)!=false)).
+%
+%cnf(i_0_1738950, negated_conjecture, ($answer(esk1_1(cons(suc(suc(suc(zero))),cons(zero,cons(suc(suc(suc(suc(suc(zero))))),cons(suc(zero),cons(zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_1215284, negated_conjecture, ($answer(esk1_1(cons(X1,cons(zero,cons(suc(suc(zero)),cons(suc(suc(zero)),cons(zero,cons(zero,nil))))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%
+%cnf(i_0_1215287, negated_conjecture, ($answer(esk1_1(cons(X1,cons(zero,cons(suc(suc(zero)),cons(suc(suc(zero)),cons(suc(suc(zero)),nil)))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%%
+%cnf(i_0_1515701, negated_conjecture, ($answer(esk1_1(map(lam3,map(lam3,cons(suc(suc(suc(X1))),cons(zero,cons(suc(suc(zero)),cons(zero,X2))))))))|eqListNat(map(lam3,map(lam3,map(lam3,cons(X1,X2)))),map(lam3,map(lam3,cons(X1,X2))))!=false)).
+%%%%
+%cnf(i_0_247958, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(suc(suc(zero))),cons(suc(suc(suc(suc(suc(zero))))),cons(suc(zero),cons(zero,X1)))))))|eqListNat(map(lam3,X1),X1)!=false)).
+%
+%cnf(i_0_1739178, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(suc(suc(zero))),cons(suc(suc(suc(suc(suc(zero))))),cons(suc(zero),cons(zero,nil)))))))|true!=false)).
+%%%
+%cnf(i_0_1215745, negated_conjecture, ($answer(esk1_1(cons(X1,cons(suc(suc(zero)),cons(zero,cons(suc(suc(zero)),cons(zero,cons(zero,nil))))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%%%%%%
+%cnf(i_0_248039, negated_conjecture, ($answer(esk1_1(cons(suc(suc(suc(suc(suc(zero))))),cons(suc(suc(suc(suc(suc(zero))))),cons(suc(zero),cons(zero,X1))))))|eqListNat(map(lam3,X1),X1)!=false)).
+%
+%cnf(i_0_1739214, negated_conjecture, ($answer(esk1_1(cons(suc(suc(suc(suc(suc(zero))))),cons(suc(suc(suc(suc(suc(zero))))),cons(suc(zero),cons(zero,nil))))))|true!=false)).
+%
+%cnf(i_0_1215748, negated_conjecture, ($answer(esk1_1(cons(X1,cons(suc(suc(zero)),cons(zero,cons(suc(suc(zero)),cons(suc(suc(zero)),nil)))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%
+%cnf(i_0_1215903, negated_conjecture, ($answer(esk1_1(cons(suc(zero),cons(X1,cons(suc(suc(zero)),cons(suc(zero),cons(zero,cons(zero,nil))))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%%%%%%
+%cnf(i_0_248423, negated_conjecture, ($answer(esk1_1(cons(suc(suc(zero)),cons(zero,cons(suc(zero),cons(suc(zero),cons(suc(suc(suc(suc(suc(zero))))),X1)))))))|eqListNat(map(lam3,X1),X1)!=false)).
+%
+%cnf(i_0_1739257, negated_conjecture, ($answer(esk1_1(cons(suc(suc(zero)),cons(zero,cons(suc(zero),cons(suc(zero),cons(suc(suc(suc(suc(suc(zero))))),nil)))))))|true!=false)).
+%
+%cnf(i_0_1215906, negated_conjecture, ($answer(esk1_1(cons(suc(zero),cons(X1,cons(suc(suc(zero)),cons(suc(zero),cons(suc(suc(zero)),nil)))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%
+%cnf(i_0_1216061, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(X1),cons(suc(suc(zero)),cons(suc(zero),cons(zero,cons(zero,nil))))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%%
+%cnf(i_0_1519062, negated_conjecture, ($answer(esk1_1(map(lam3,map(lam3,cons(suc(suc(X1)),cons(zero,cons(suc(suc(zero)),cons(suc(zero),X2))))))))|eqListNat(map(lam3,map(lam3,map(lam3,cons(X1,X2)))),map(lam3,map(lam3,cons(X1,X2))))!=false)).
+%%%%
+%cnf(i_0_248537, negated_conjecture, ($answer(esk1_1(cons(zero,cons(zero,cons(zero,cons(suc(suc(suc(suc(suc(suc(zero)))))),cons(suc(zero),cons(zero,X1))))))))|eqListNat(map(lam3,X1),X1)!=false)).
+%
+%cnf(i_0_1739485, negated_conjecture, ($answer(esk1_1(cons(zero,cons(zero,cons(zero,cons(suc(suc(suc(suc(suc(suc(zero)))))),cons(suc(zero),cons(zero,nil))))))))|true!=false)).
+%
+%cnf(i_0_1216064, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(X1),cons(suc(suc(zero)),cons(suc(zero),cons(suc(suc(zero)),nil)))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%
+%cnf(i_0_1216219, negated_conjecture, ($answer(esk1_1(cons(suc(suc(suc(X1))),cons(suc(suc(zero)),cons(suc(zero),cons(zero,cons(zero,nil)))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%%%%%%
+%cnf(i_0_248618, negated_conjecture, ($answer(esk1_1(cons(suc(zero),cons(suc(zero),cons(suc(suc(suc(suc(suc(suc(zero)))))),cons(suc(zero),cons(zero,X1)))))))|eqListNat(map(lam3,X1),X1)!=false)).
+%
+%cnf(i_0_1739528, negated_conjecture, ($answer(esk1_1(cons(suc(zero),cons(suc(zero),cons(suc(suc(suc(suc(suc(suc(zero)))))),cons(suc(zero),cons(zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_1216222, negated_conjecture, ($answer(esk1_1(cons(suc(suc(suc(X1))),cons(suc(suc(zer
+% Failure: Resource limit exceeded (time)
+% SZS status ResourceOut
+eprover: CPU time limit exceeded, terminating
+o)),cons(suc(zero),cons(suc(suc(zero)),nil))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%
+%cnf(i_0_1216377, negated_conjecture, ($answer(esk1_1(cons(suc(X1),cons(zero,cons(suc(suc(zero)),cons(suc(zero),cons(zero,cons(zero,nil))))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%%%%%%
+%cnf(i_0_248782, negated_conjecture, ($answer(esk1_1(cons(suc(zero),cons(zero,cons(suc(suc(zero)),cons(zero,cons(suc(suc(zero)),cons(zero,cons(zero,X1)))))))))|eqListNat(map(lam3,X1),X1)!=false)).
+%
+%cnf(i_0_1739571, negated_conjecture, ($answer(esk1_1(cons(suc(zero),cons(zero,cons(suc(suc(zero)),cons(zero,cons(suc(suc(zero)),cons(zero,cons(zero,nil)))))))))|true!=false)).
+%
+%cnf(i_0_1216380, negated_conjecture, ($answer(esk1_1(cons(suc(X1),cons(zero,cons(suc(suc(zero)),cons(suc(zero),cons(suc(suc(zero)),nil)))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%
+%cnf(i_0_1216680, negated_conjecture, ($answer(esk1_1(cons(X1,cons(suc(zero),cons(suc(suc(zero)),cons(suc(zero),cons(zero,cons(zero,nil))))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%%%
+%cnf(i_0_1521808, negated_conjecture, ($answer(esk1_1(cons(zero,cons(zero,cons(suc(zero),map(lam3,map(lam3,cons(X1,cons(suc(suc(zero)),X2)))))))))|eqListNat(map(lam3,map(lam3,map(lam3,cons(X1,X2)))),map(lam3,map(lam3,cons(X1,X2))))!=false)).
+%%%
+%cnf(i_0_248823, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(suc(zero)),cons(suc(suc(suc(suc(suc(suc(zero)))))),cons(suc(zero),cons(zero,X1)))))))|eqListNat(map(lam3,X1),X1)!=false)).
+%
+%cnf(i_0_1739799, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(suc(zero)),cons(suc(suc(suc(suc(suc(suc(zero)))))),cons(suc(zero),cons(zero,nil)))))))|true!=false)).
+%
+%cnf(i_0_1216683, negated_conjecture, ($answer(esk1_1(cons(X1,cons(suc(zero),cons(suc(suc(zero)),cons(suc(zero),cons(suc(suc(zero)),nil)))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%
+%cnf(i_0_1216838, negated_conjecture, ($answer(esk1_1(cons(X1,cons(suc(suc(zero)),cons(suc(zero),cons(suc(zero),cons(zero,cons(zero,nil))))))))|opAnd(eqNat(plus(X1,zero),X1),true)!=false)).
+%%%%%
+%cnf(i_0_1522013, negated_conjecture, ($answer(esk1_1(cons(zero,cons(suc(zero),cons(zero,map(lam3,map(lam3,cons(X1,cons(suc(suc(zero)),X2)))))))))|eqListNat(map(lam3,map(lam3,map(lam3,cons(X1,X2)))),map(lam3,map(lam3,cons(X1,X2))))!=false)).
+%%
+%cnf(i_0_248858, negated_conjecture, ($answer(esk1_1(cons(suc(suc(zero)),cons(zero,cons(suc(suc(suc(suc(suc(suc(zero)))))),cons(suc(zero),cons(zero,X1)))))))|eqListNat(map(lam3,X1),X1)!=false)).

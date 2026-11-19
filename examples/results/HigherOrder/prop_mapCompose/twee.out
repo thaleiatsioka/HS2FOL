@@ -1,0 +1,203 @@
+Here is the input problem:
+  Axiom 1 (opAnd_2): opAnd(true, X) = X.
+  Axiom 2 (opAnd_1): opAnd(false, X) = false.
+  Axiom 3 (map_1): map(X, nil) = nil.
+  Axiom 4 (eqListNat_1): eqListNat(nil, nil) = true.
+  Axiom 5 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 6 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 7 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 8 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 9 (app_fn_id_1): app(fn_id, X) = X.
+  Axiom 10 (app_fn_const_1): app(fn_const(X), Y) = X.
+  Axiom 11 (eqListNat_2): eqListNat(nil, cons(X, Y)) = false.
+  Axiom 12 (eqListNat_3): eqListNat(cons(X, Y), nil) = false.
+  Axiom 13 (opCompose_1): opCompose(X, Y, Z) = app(X, app(Y, Z)).
+  Axiom 14 (app_opCompose_2_1): app(opCompose_2(X, Y), Z) = opCompose(X, Y, Z).
+  Axiom 15 (app_fn_case_Nat_1): app(fn_case_Nat(X, Y), zero) = X.
+  Axiom 16 (app_fn_case_Nat_2): app(fn_case_Nat(X, Y), suc(Z)) = app(Y, Z).
+  Axiom 17 (map_2): map(X, cons(Y, Z)) = cons(app(X, Y), map(X, Z)).
+  Axiom 18 (eqListNat_4): eqListNat(cons(X, Y), cons(Z, W)) = opAnd(eqNat(X, Z), eqListNat(Y, W)).
+  Axiom 19 (prop_mapCompose_1): prop_mapCompose(X, Y, Z) = eqListNat(map(opCompose_2(X, Y), Z), map(X, map(Y, Z))).
+  Axiom 20 (reflexivity): equals(X, X) = true.
+  Axiom 21 (prop_mapCompose): equals(prop_mapCompose(X, Y, Z), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. opAnd(true, X) -> X
+2. opAnd(false, X) -> false
+3. map(X, nil) -> nil
+4. eqListNat(nil, nil) -> true
+5. eqNat(zero, zero) -> true
+6. eqNat(zero, suc(X)) -> false
+7. eqNat(suc(X), zero) -> false
+8. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+9. app(fn_id, X) -> X
+10. app(fn_const(X), Y) -> X
+11. eqListNat(nil, cons(X, Y)) -> false
+12. eqListNat(cons(X, Y), nil) -> false
+13. app(X, app(Y, Z)) -> opCompose(X, Y, Z)
+14. app(opCompose_2(X, Y), Z) -> opCompose(X, Y, Z)
+15. app(fn_case_Nat(X, Y), zero) -> X
+16. app(fn_case_Nat(X, Y), suc(Z)) -> app(Y, Z)
+17. cons(app(X, Y), map(X, Z)) -> map(X, cons(Y, Z))
+18. eqListNat(cons(X, Y), cons(Z, W)) -> opAnd(eqNat(X, Z), eqListNat(Y, W))
+19. eqListNat(map(opCompose_2(X, Y), Z), map(X, map(Y, Z))) -> prop_mapCompose(X, Y, Z)
+20. equals(X, X) -> true
+21. equals(prop_mapCompose(X, Y, Z), false) -> false
+22. prop_mapCompose(X, Y, nil) -> true
+23. equals(true, false) -> false
+24. opCompose(fn_id, X, Y) -> app(X, Y)
+25. opCompose(X, fn_id, Y) -> app(X, Y)
+26. opCompose(fn_const(X), Y, Z) -> X
+27. opCompose(X, fn_const(Y), Z) -> app(X, Y)
+28. cons(app(X, Y), nil) -> map(X, cons(Y, nil))
+29. cons(X, map(fn_id, Y)) -> map(fn_id, cons(X, Y))
+30. map(fn_id, cons(X, nil)) -> cons(X, nil)
+31. opCompose(X, fn_case_Nat(Y, Z), zero) -> app(X, Y)
+32. app(X, opCompose(Y, Z, W)) -> opCompose(X, Y, app(Z, W))
+33. opCompose(opCompose_2(X, Y), Z, W) -> opCompose(X, Y, app(Z, W))
+34. opCompose(X, opCompose_2(Y, Z), W) -> opCompose(X, Y, app(Z, W))
+35. eqListNat(nil, map(X, cons(Y, Z))) -> false
+36. eqListNat(map(X, cons(Y, Z)), nil) -> false
+37. map(fn_const(X), cons(Y, nil)) -> cons(X, nil)
+38. cons(X, map(fn_const(X), Y)) -> map(fn_const(X), cons(?, Y))
+39. map(fn_const(X), cons(Y, Z)) ~> map(fn_const(X), cons(?, Z))
+40. opCompose(X, fn_case_Nat(Y, Z), suc(W)) -> opCompose(X, Z, W)
+41. map(fn_case_Nat(X, Y), cons(zero, nil)) -> cons(X, nil)
+42. cons(X, map(fn_case_Nat(X, Y), Z)) -> map(fn_case_Nat(X, Y), cons(zero, Z))
+43. map(X, map(Y, cons(Z, nil))) -> cons(opCompose(X, Y, Z), nil)
+44. map(opCompose_2(X, Y), cons(Z, nil)) -> cons(opCompose(X, Y, Z), nil)
+45. map(fn_id, cons(X, cons(Y, nil))) -> cons(X, cons(Y, nil))
+46. cons(opCompose(X, Y, Z), map(X, W)) -> map(X, cons(app(Y, Z), W))
+47. eqListNat(nil, map(X, map(Y, cons(Z, W)))) -> false
+48. eqListNat(map(X, map(Y, cons(Z, W))), nil) -> false
+49. map(fn_case_Nat(X, Y), cons(suc(Z), nil)) -> map(Y, cons(Z, nil))
+50. map(fn_const(X), cons(?, cons(?, nil))) = cons(X, cons(X, nil))
+51. map(fn_const(X), cons(?, cons(Y, nil))) ~> map(fn_const(X), cons(?, cons(?, nil)))
+52. cons(opCompose(X, Y, app(Z, W)), nil) -> map(X, cons(opCompose(Y, Z, W), nil))
+53. map(fn_const(X), cons(?, map(Y, Z))) -> map(fn_const(X), map(Y, cons(?, Z)))
+54. map(fn_const(X), map(Y, cons(Z, W))) ~> map(fn_const(X), map(Y, cons(?, W)))
+55. opAnd(eqNat(opCompose(X, Y, Z), opCompose(X, Y, Z)), true) -> prop_mapCompose(X, Y, cons(Z, nil))
+56. prop_mapCompose(fn_const(X), ?, cons(?, nil)) = opAnd(eqNat(X, X), true)
+57. prop_mapCompose(fn_const(X), Y, cons(Z, nil)) ~> prop_mapCompose(fn_const(X), ?, cons(?, nil))
+58. equals(opAnd(eqNat(X, X), true), false) -> false
+59. prop_mapCompose(fn_const(app(X, Y)), ?, cons(?, nil)) -> prop_mapCompose(fn_id, X, cons(Y, nil))
+60. prop_mapCompose(X, fn_id, cons(Y, nil)) = prop_mapCompose(fn_id, X, cons(Y, nil))
+61. prop_mapCompose(X, fn_const(Y), cons(Z, nil)) -> prop_mapCompose(X, fn_id, cons(Y, nil))
+62. map(fn_const(X), cons(?, cons(Y, Z))) ~> map(fn_const(X), cons(?, cons(?, Z)))
+63. cons(app(X, Y), map(fn_case_Nat(Z, X), W)) -> map(fn_case_Nat(Z, X), cons(suc(Y), W))
+64. cons(X, map(fn_case_Nat(Y, fn_id), Z)) -> map(fn_case_Nat(Y, fn_id), cons(suc(X), Z))
+65. map(fn_case_Nat(X, fn_id), cons(suc(X), Y)) -> map(fn_case_Nat(X, fn_id), cons(zero, Y))
+66. prop_mapCompose(fn_const(X), ?, cons(?, nil)) -> prop_mapCompose(fn_id, fn_id, cons(X, nil))
+67. opAnd(eqNat(X, X), true) = prop_mapCompose(fn_id, fn_id, cons(X, nil))
+68. cons(opCompose(X, Y, Z), map(opCompose_2(X, Y), W)) -> map(opCompose_2(X, Y), cons(Z, W))
+69. cons(X, map(opCompose_2(fn_const(X), Y), Z)) -> map(opCompose_2(fn_const(X), Y), cons(?, Z))
+70. map(opCompose_2(fn_const(X), Y), cons(Z, W)) ~> map(opCompose_2(fn_const(X), Y), cons(?, W))
+71. prop_mapCompose(fn_const(X), Y, cons(Z, W)) ~> prop_mapCompose(fn_const(X), Y, cons(?, W))
+72. cons(app(X, Y), map(opCompose_2(fn_id, X), Z)) -> map(opCompose_2(fn_id, X), cons(Y, Z))
+73. cons(X, map(opCompose_2(fn_id, fn_id), Y)) -> map(opCompose_2(fn_id, fn_id), cons(X, Y))
+74. cons(X, map(opCompose_2(fn_id, fn_const(X)), Y)) -> map(opCompose_2(fn_id, fn_const(X)), cons(?, Y))
+75. map(opCompose_2(fn_id, fn_const(X)), cons(Y, Z)) ~> map(opCompose_2(fn_id, fn_const(X)), cons(?, Z))
+76. prop_mapCompose(fn_id, fn_const(X), cons(Y, Z)) ~> prop_mapCompose(fn_id, fn_const(X), cons(?, Z))
+
+[... hs2fol: 6889 lines of search output omitted to keep the repository small; rerun to regenerate ...]
+
+  (delete rule 3457)
+  (delete rule 3458)
+  (delete rule 3577)
+  (delete rule 3578)
+  (delete rule 3579)
+  (delete rule 3580)
+  (delete rule 3581)
+  (delete rule 3583)
+  (delete rule 3584)
+  (delete rule 3590)
+  (delete rule 3640)
+  (delete rule 3821)
+  (delete rule 3842)
+  (delete rule 3844)
+  (delete rule 3859)
+  (delete rule 3902)
+  (delete rule 3905)
+  (delete rule 3909)
+  (delete rule 3938)
+  (delete rule 3939)
+  (delete rule 3958)
+6155. map(fn_case_Nat(app(X, Y), opCompose_2(fn_id, X)), cons(zero, cons(zero, cons(suc(Y), cons(zero, nil))))) -> map(X, map(fn_const(Y), cons(?, cons(?, cons(?, cons(?, nil))))))
+  (delete rule 4051)
+  (delete rule 4095)
+  (delete rule 4096)
+  (delete rule 4097)
+  (delete rule 4291)
+  (delete rule 4294)
+  (delete rule 4368)
+  (delete rule 4509)
+  (delete rule 4609)
+  (delete rule 4623)
+  (delete rule 4640)
+  (delete rule 4645)
+  (delete rule 4655)
+  (delete rule 4661)
+  (delete rule 4675)
+  (delete rule 4676)
+  (delete rule 4677)
+  (delete rule 4678)
+  (delete rule 4682)
+  (delete rule 4683)
+  (delete rule 4746)
+  (delete rule 4761)
+  (delete rule 4860)
+  (delete rule 4886)
+  (delete rule 4907)
+  (delete rule 4908)
+  (delete rule 4909)
+  (delete rule 4911)
+  (delete rule 4912)
+  (delete rule 4967)
+  (delete rule 4968)
+  (delete rule 4996)
+  (delete rule 4997)
+  (delete rule 5011)
+  (delete rule 5033)
+  (delete rule 5052)
+  (delete rule 5101)
+  (delete rule 5106)
+  (delete rule 5137)
+  (delete rule 5150)
+  (delete rule 5151)
+  (delete rule 5162)
+  (delete rule 5175)
+  (delete rule 5176)
+  (delete rule 5184)
+  (delete rule 5217)
+  (delete rule 5227)
+  (delete rule 5279)
+  (delete rule 5304)
+  (delete rule 5359)
+  (delete rule 5399)
+  (delete rule 5404)
+  (delete rule 5424)
+  (delete rule 5442)
+  (delete rule 5517)
+  (delete rule 5626)
+  (delete rule 5643)
+  (delete rule 5684)
+  (delete rule 5685)
+  (delete rule 5747)
+  (delete rule 5748)
+  (delete rule 5749)
+  (delete rule 5750)
+  (delete rule 5757)
+  (delete rule 5771)
+  (delete rule 5772)
+  (delete rule 6090)
+6156. cons(X, map(opCompose_2(fn_id, fn_case_Nat(Y, opCompose_2(fn_case_Nat(X, Z), fn_const(zero)))), W)) -> map(opCompose_2(fn_id, fn_case_Nat(Y, opCompose_2(fn_case_Nat(X, Z), fn_const(zero)))), cons(suc(?), W))
+6157. cons(X, map(opCompose_2(fn_case_Nat(Y, opCompose_2(fn_case_Nat(X, Z), fn_const(zero))), fn_id), W)) -> map(opCompose_2(fn_case_Nat(Y, opCompose_2(fn_case_Nat(X, Z), fn_const(zero))), fn_id), cons(suc(?), W))
+6158. cons(X, map(fn_case_Nat(Y, opCompose_2(fn_id, opCompose_2(fn_case_Nat(X, Z), fn_const(zero)))), W)) -> map(fn_case_Nat(Y, opCompose_2(fn_id, opCompose_2(fn_case_Nat(X, Z), fn_const(zero)))), cons(suc(?), W))
+6159. cons(X, map(opCompose_2(fn_id, opCompose_2(fn_case_Nat(X, Y), fn_case_Nat(Z, fn_const(zero)))), W)) -> map(opCompose_2(fn_id, opCompose_2(fn_case_Nat(X, Y), fn_case_Nat(Z, fn_const(zero)))), cons(suc(?), W))
+6160. cons(X, map(opCompose_2(opCompose_2(fn_case_Nat(X, Y), fn_case_Nat(Z, fn_const(zero))), fn_id), W)) -> map(opCompose_2(opCompose_2(fn_case_Nat(X, Y), fn_case_Nat(Z, fn_const(zero))), fn_id), cons(suc(?), W))
+6161. cons(X, map(opCompose_2(fn_case_Nat(X, Y), opCompose_2(fn_case_Nat(Z, fn_const(zero)), fn_id)), W)) -> map(opCompose_2(fn_case_Nat(X, Y), opCompose_2(fn_case_Nat(Z, fn_const(zero)), fn_id)), cons(suc(?), W))
+6162. cons(X, map(opCompose_2(fn_case_Nat(X, Y), opCompose_2(fn_id, fn_case_Nat(Z, fn_const(zero)))), W)) -> map(opCompose_2(fn_case_Nat(X, Y), opCompose_2(fn_id, fn_case_Nat(Z, fn_const(zero)))), cons(suc(?), W))
+6163. cons(X, map(opCompose_2(opCompose_2(fn_id, fn_case_Nat(X, Y)), fn_case_Nat(Z, fn_const(zero))), W)) -> map(opCompose_2(opCompose_2(fn_id, fn_case_Nat(X, Y)), fn_case_Nat(Z, fn_const(zero))), cons(suc(?), W))
+6164. cons(X, map(opCompose_2(opCompose_2(fn_case_Nat(X, Y), fn_id), fn_case_Nat(Z, fn_const(zero))), W)) -> map(opCompose_2(opCompose_2(fn_case_Nat(X, Y), fn_id), fn_case_Nat(Z, fn_const(zero))), cons(suc(?), W))
+6165. cons(app(fn_case_Nat(X, opCompose_2(fn_case_Nat(Y, Z), fn_const(zero))), W), cons(Y, nil)) -> map(fn_case_Nat(X, opCompose_2(fn_case_Nat(Y, Z), fn_const(zero))), cons(W, cons(suc(?), nil)))
+  (simplifying queued critical pairs...)

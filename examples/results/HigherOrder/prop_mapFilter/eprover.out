@@ -1,0 +1,203 @@
+% Preprocessing class: FSMSSMSSSSSNFFN.
+% Configuration: G-E--_208_C18_F1_SE_CS_SOS_SP_PS_S5PRR_RG_S04AN
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSF32-MFFFFFNN
+% partial match(1): FHUSM-FFSF22-MFFFFFNN
+% Configuration: H----_042_B03_F1_AE_Q4_SP_S2S
+% Initializing proof state
+% Scanning for AC axioms
+%
+%cnf(i_0_14, plain, (true=eqListNat(nil,nil))).
+%
+%cnf(i_0_10, plain, (eqNat(zero,zero)=eqListNat(nil,nil))).
+%
+%cnf(i_0_3, plain, (map(X1,nil)=nil)).
+%
+%cnf(i_0_5, plain, (filter(X1,nil)=nil)).
+%
+%cnf(i_0_1, plain, (opAnd(false,X1)=false)).
+%
+%cnf(i_0_2, plain, (opAnd(eqListNat(nil,nil),X1)=X1)).
+%
+%cnf(i_0_19, plain, (app(fn_id,X1)=X1)).
+%
+%cnf(i_0_11, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_12, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_18, plain, (app(fn_const(X1),X2)=X1)).
+%
+%cnf(i_0_20, plain, (app(fn_case_Nat(X1,X2),zero)=X1)).
+%
+%cnf(i_0_15, plain, (eqListNat(nil,cons(X1,X2))=false)).
+%
+%cnf(i_0_16, plain, (eqListNat(cons(X1,X2),nil)=false)).
+%
+%cnf(i_0_13, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_21, plain, (app(fn_case_Nat(X1,X2),suc(X3))=app(X2,X3))).
+%
+%cnf(i_0_8, plain, (filter_case1(false,X1,X2,X3)=filter(X1,X3))).
+%
+%cnf(i_0_28, plain, (filter_case1(false,X1,X2,nil)=nil)).
+%
+%cnf(i_0_6, plain, (filter(X1,cons(X2,X3))=filter_case1(app(X1,X2),X1,X2,X3))).
+%
+%cnf(i_0_22, negated_conjecture, ($answer(esk1_3(X1,X2,X3))|eqListNat(map(X1,filter(X2,X3)),filter(X2,map(X1,X3)))!=false)).
+%
+%cnf(i_0_38, negated_conjecture, ($answer(esk1_3(X1,X2,nil))|false!=eqListNat(nil,nil))).
+%
+%cnf(i_0_4, plain, (cons(app(X1,X2),map(X1,X3))=map(X1,cons(X2,X3)))).
+%
+%cnf(i_0_48, plain, (cons(app(X1,X2),nil)=map(X1,cons(X2,nil)))).
+%
+%cnf(i_0_51, plain, (cons(X1,map(fn_id,X2))=map(fn_id,cons(X1,X2)))).
+%
+%cnf(i_0_58, plain, (map(fn_id,cons(X1,nil))=cons(X1,nil))).
+%%
+%cnf(i_0_17, plain, (eqListNat(cons(X1,X2),cons(X3,X4))=opAnd(eqNat(X1,X3),eqListNat(X2,X4)))).
+%%
+%cnf(i_0_54, plain, (eqListNat(nil,map(X1,cons(X2,nil)))=false)).
+%%
+%cnf(i_0_55, plain, (eqListNat(map(X1,cons(X2,nil)),nil)=false)).
+%%
+%cnf(i_0_62, plain, (eqListNat(nil,map(fn_id,cons(X1,X2)))=false)).
+%%
+%cnf(i_0_63, plain, (eqListNat(map(fn_id,cons(X1,X2)),nil)=false)).
+%%
+%cnf(i_0_46, plain, (eqListNat(nil,map(X1,cons(X2,X3)))=false)).
+%
+%cnf(i_0_43, negated_conjecture, ($answer(esk1_3(X1,X2,nil))|eqListNat(nil,cons(X3,X4))!=eqListNat(nil,nil))).
+%%
+%cnf(i_0_44, negated_conjecture, ($answer(esk1_3(X1,X2,nil))|eqListNat(cons(X3,X4),nil)!=eqListNat(nil,nil))).
+%%
+%cnf(i_0_98, negated_conjecture, ($answer(esk1_3(X1,X2,nil))|eqListNat(map(X3,cons(X4,nil)),nil)!=eqListNat(nil,nil))).
+%%%%%
+%cnf(i_0_151, negated_conjecture, ($answer(esk1_3(X1,X2,nil))|eqListNat(nil,map(X3,cons(X4,nil)))!=eqListNat(nil,nil))).
+%
+%cnf(i_0_23, plain, (opAnd(eqListNat(nil,cons(X2,X3)),X1)=eqListNat(nil,cons(X2,X3)))).
+%
+%cnf(i_0_25, plain, (opAnd(eqListNat(cons(X2,X3),nil),X1)=eqListNat(cons(X2,X3),nil))).
+%
+%cnf(i_0_65, plain, (map(fn_id,cons(X1,cons(X2,nil)))=cons(X1,cons(X2,nil)))).
+%%
+%cnf(i_0_68, plain, (map(fn_id,map(X1,cons(X2,nil)))=map(X1,cons(X2,nil)))).
+%
+%cnf(i_0_7, plain, (filter_case1(eqListNat(nil,nil),X1,X2,X3)=cons(X2,filter(X1,X3)))).
+%%%%
+%cnf(i_0_47, plain, (eqListNat(map(X1,cons(X2,X3)),nil)=false)).
+%%%%
+%cnf(i_0_73, plain, (eqListNat(cons(suc(X1),X2),cons(zero,X3))=false)).
+%
+%cnf(i_0_74, plain, (eqListNat(cons(zero,X1),cons(suc(X2),X3))=false)).
+%
+%cnf(i_0_59, plain, (cons(X1,nil)=map(fn_const(X1),cons(X2,nil)))).
+%%%%%%%
+%cnf(i_0_141, negated_conjecture, ($answer(esk1_3(X1,X2,nil))|eqListNat(nil,map(X3,cons(X4,X5)))!=eqListNat(nil,nil))).
+%%%%
+%cnf(i_0_197, plain, (cons(X2,filter_case1(false,X1,X4,X3))=filter_case1(eqListNat(nil,nil),X1,X2,X3))).
+%
+
+[... hs2fol: 5717 lines of search output omitted to keep the repository small; rerun to regenerate ...]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4888, negated_conjecture, ($answer(esk1_3(X1,X2,X3))|eqListNat(map(X1,filter(X2,X3)),filter(X2,map(X1,X3)))!=eqListNat(nil,map(X4,map(fn_const(X5),map(X6,cons(X7,nil))))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4909, negated_conjecture, ($answer(esk1_3(fn_case_Nat(X1,X2),X3,cons(suc(X4),cons(suc(X5),nil))))|eqListNat(map(fn_case_Nat(X1,X2),filter_case1(app(X3,suc(X4)),X3,suc(X4),cons(suc(X5),nil))),filter_case1(app(X3,app(X2,X4)),X3,app(X2,X4),map(X2,cons(X5,nil))))!=eqListNat(nil,map(X6,cons(X7,X8))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4910, negated_conjecture, ($answer(esk1_3(fn_case_Nat(X1,X2),X3,cons(suc(X4),nil)))|eqListNat(map(fn_case_Nat(X1,X2),filter_case1(app(X3,suc(X4)),X3,suc(X4),nil)),filter_case1(app(X3,app(X2,X4)),X3,app(X2,X4),nil))!=eqListNat(nil,map(X5,cons(X6,X7))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4911, negated_conjecture, ($answer(esk1_3(fn_case_Nat(X1,X2),X3,cons(suc(X4),X5)))|eqListNat(map(fn_case_Nat(X1,X2),filter_case1(app(X3,suc(X4)),X3,suc(X4),X5)),filter_case1(app(X3,app(X2,X4)),X3,app(X2,X4),map(fn_case_Nat(X1,X2),X5)))!=eqListNat(nil,map(X6,cons(X7,X8))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4912, negated_conjecture, ($answer(esk1_3(fn_case_Nat(X1,X2),X3,cons(zero,nil)))|eqListNat(map(fn_case_Nat(X1,X2),filter_case1(app(X3,zero),X3,zero,nil)),filter_case1(app(X3,X1),X3,X1,nil))!=eqListNat(nil,map(X4,cons(X5,X6))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4913, negated_conjecture, ($answer(esk1_3(fn_case_Nat(X1,X2),X3,cons(zero,X4)))|eqListNat(map(fn_case_Nat(X1,X2),filter_case1(app(X3,zero),X3,zero,X4)),filter_case1(app(X3,X1),X3,X1,map(fn_case_Nat(X1,X2),X4)))!=eqListNat(nil,map(X5,cons(X6,X7))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4914, negated_conjecture, ($answer(esk1_3(fn_id,X1,filter_case1(eqListNat(nil,nil),X2,X3,nil)))|eqListNat(map(fn_id,filter_case1(app(X1,X3),X1,X3,nil)),filter_case1(app(X1,X3),X1,X3,nil))!=eqListNat(nil,map(X4,cons(X5,X6))))).
+%%%%%%
+%cnf(i_0_624911, plain, (cons(X1,map(fn_case_Nat(X1,fn_id),cons(zero,nil)))=map(fn_const(X1),cons(X2,cons(X3,nil))))).
+%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4915, negated_conjecture, ($answer(esk1_3(fn_id,X1,cons(X2,cons(X3,nil))))|eqListNat(map(fn_id,filter_case1(app(X1,X2),X1,X2,cons(X3,nil))),filter_case1(app(X1,X2),X1,X2,cons(X3,nil)))!=eqListNat(nil,map(X4,cons(X5,X6))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4916, negated_conjecture, ($answer(esk1_3(fn_id,X1,cons(X2,cons(X3,cons(X4,nil)))))|eqListNat(map(fn_id,filter_case1(app(X1,X2),X1,X2,cons(X3,cons(X4,nil)))),filter_case1(app(X1,X2),X1,X2,cons(X3,cons(X4,nil))))!=eqListNat(nil,map(X5,cons(X6,X7))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4917, negated_conjecture, ($answer(esk1_3(fn_id,X1,cons(X2,cons(X3,cons(X4,cons(X5,nil))))))|eqListNat(map(fn_id,filter_case1(app(X1,X2),X1,X2,cons(X3,cons(X4,cons(X5,nil))))),filter_case1(app(X1,X2),X1,X2,cons(X3,cons(X4,cons(X5,nil)))))!=eqListNat(nil,map(X6,cons(X7,X8))))).
+%%%%%%%
+%cnf(i_0_627084, plain, (cons(X1,map(fn_case_Nat(X1,fn_id),cons(zero,nil)))=map(fn_case_Nat(X1,X2),cons(zero,cons(zero,nil))))).
+%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4918, negated_conjecture, ($answer(esk1_3(fn_id,X1,cons(X2,cons(X3,map(X4,cons(X5,nil))))))|eqListNat(map(fn_id,filter_case1(app(X1,X2),X1,X2,cons(X3,map(X4,cons(X5,nil))))),filter_case1(app(X1,X2),X1,X2,cons(X3,map(X4,cons(X5,nil)))))!=eqListNat(nil,map(X6,cons(X7,X8))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4919, negated_conjecture, ($answer(esk1_3(fn_id,X1,cons(X2,map(X3,cons(X4,nil)))))|eqListNat(map(fn_id,filter_case1(app(X1,X2),X1,X2,map(X3,cons(X4,nil)))),filter_case1(app(X1,X2),X1,X2,map(X3,cons(X4,nil))))!=eqListNat(nil,map(X5,cons(X6,X7))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4920, negated_conjecture, ($answer(esk1_3(fn_id,X1,cons(X2,map(X3,map(X4,cons(X5,nil))))))|eqListNat(map(fn_id,filter_case1(app(X1,X2),X1,X2,map(X3,map(X4,cons(X5,nil))))),filter_case1(app(X1,X2),X1,X2,map(X3,map(X4,cons(X5,nil)))))!=eqListNat(nil,map(X6,cons(X7,X8))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4921, negated_conjecture, ($answer(esk1_3(fn_id,X1,cons(X2,map(X3,cons(X4,cons(X5,nil))))))|eqListNat(map(fn_id,filter_case1(app(X1,X2),X1,X2,map(X3,cons(X4,cons(X5,nil))))),filter_case1(app(X1,X2),X1,X2,map(X3,cons(X4,cons(X5,nil)))))!=eqListNat(nil,map(X6,cons(X7,X8))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4923, negated_conjecture, ($answer(esk1_3(fn_id,X1,map(X2,cons(X3,nil))))|eqListNat(map(fn_id,filter_case1(app(X1,app(X2,X3)),X1,app(X2,X3),nil)),filter_case1(app(X1,app(X2,X3)),X1,app(X2,X3),nil))!=eqListNat(nil,map(X4,cons(X5,X6))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4924, negated_conjecture, ($answer(esk1_3(fn_id,X1,map(X2,cons(X3,cons(X4,nil)))))|eqListNat(map(fn_id,filter_case1(app(X1,app(X2,X3)),X1,app(X2,X3),map(X2,cons(X4,nil)))),filter_case1(app(X1,app(X2,X3)),X1,app(X2,X3),map(X2,cons(X4,nil))))!=eqListNat(nil,map(X5,cons(X6,X7))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4925, negated_conjecture, ($answer(esk1_3(fn_id,X1,map(X2,cons(X3,map(X4,cons(X5,nil))))))|eqListNat(map(fn_id,filter_case1(app(X1,app(X2,X3)),X1,app(X2,X3),map(X2,map(X4,cons(X5,nil))))),filter_case1(app(X1,app(X2,X3)),X1,app(X2,X3),map(X2,map(X4,cons(X5,nil)))))!=eqListNat(nil,map(X6,cons(X7,X8))))).
+%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_6330, negated_conjecture, ($answer(esk1_3(X1,X2,X3))|eqListNat(map(X1,filter_case1(false,X2,X4,X3)),filter_case1(eqListNat(map(X5,cons(X6,X7)),nil),X2,X8,map(X1,X3)))!=false)).
+%%%%%%
+%cnf(i_0_4926, negated_conjecture, ($answer(esk1_3(fn_id,X1,map(X2,cons(X3,cons(X4,cons(X5,nil))))))|eqListNat(map(fn_id,filter_case1(app(X1,app(X2,X3)),X1,app(X2,X3),map(X2,cons(X4,cons(X5,nil))))),filter_case1(app(X1,app(X2,X3)),X1,app(X2,X3),map(X2,cons(X4,cons(X5,nil)))))!=eqListNat(nil,map(X6,cons(X7,X8))))).
+%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_6339, negated_conjecture, ($answer(esk1_3(X1,X2,X3))|eqListNat(map(X1,filter_case1(eqListNat(map(X5,cons(X6,X7)),nil),X2,X8,X3)),filter_case1(false,X2,X4,map(X1,X3)))!=false)).
+%%%%%%%
+%cnf(i_0_4927, negated_conjecture, ($answer(esk1_3(fn_id,X1,map(X2,map(X3,cons(X4,nil)))))|eqListNat(map(fn_id,filter_case1(app(X1,app(X2,app(X3,X4))),X1,app(X2,app(X3,X4)),nil)),filter_case1(app(X1,app(X2,app(X3,X4))),X1,app(X2,app(X3,X4)),nil))!=eqListNat(nil,map(X5,cons(X6,X7))))).
+%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_97231, plain, (cons(X1,filter_case1(eqListNat(nil,map(X2,map(X3,map(X4,map(X5,cons(X6,X7)))))),X8,X9,X10))=filter_case1(eqListNat(nil,nil),X8,X1,X10))).
+%%%%%
+%cnf(i_0_4928, negated_conjecture, ($answer(esk1_3(fn_id,X1,map(X2,map(X3,map(X4,cons(X5,nil))))))|eqListNat(map(fn_id,filter_case1(app(X1,app(X2,app(X3,app(X4,X5)))),X1,app(X2,app(X3,app(X4,X5))),nil)),filter_case1(app(X1,app(X2,app(X3,app(X4,X5)))),X1,app(X2,app(X3,app(X4,X5))),nil))!=eqListNat(nil,map(X6,cons(X7,X8))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4929, negated_conjecture, ($answer(esk1_3(fn_id,X1,map(X2,map(X3,cons(X4,cons(X5,nil))))))|eqListNat(map(fn_id,filter_case1(app(X1,app(X2,app(X3,X4))),X1,app(X2,app(X3,X4)),map(X2,map(X3,cons(X5,nil))))),filter_case1(app(X1,app(X2,app(X3,X4))),X1,app(X2,app(X3,X4)),map(X2,map(X3,cons(X5,nil)))))!=eqListNat(nil,map(X6,cons(X7,X8))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4930, negated_conjecture, ($answer(esk1_3(fn_const(X1),X2,cons(X3,nil)))|eqListNat(map(fn_const(X1),filter_case1(app(X2,X3),X2,X3,nil)),filter_case1(app(X2,X1),X2,X1,nil))!=eqListNat(nil,map(X4,cons(X5,X6))))).
+%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_98402, plain, (cons(X1,filter_case1(eqListNat(map(X2,map(X3,map(X4,map(X5,cons(X6,X7))))),nil),X8,X9,X10))=filter_case1(eqListNat(nil,nil),X8,X1,X10))).
+%%%%%
+%cnf(i_0_4931, negated_conjecture, ($answer(esk1_3(fn_const(X1),X2,cons(X3,X4)))|eqListNat(map(fn_const(X1),filter_case1(app(X2,X3),X2,X3,X4)),filter_case1(app(X2,X1),X2,X1,map(fn_const(X1),X4)))!=eqListNat(nil,map(X5,cons(X6,X7))))).
+%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_98671, plain, (filter(X1,map(X2,map(X3,map(fn_case_Nat(X5,fn_id),map(fn_const(suc(X4)),cons(X6,nil))))))=filter_case1(app(X1,app(X2,app(X3,X4))),X1,app(X2,app(X3,X4)),nil))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_99790, plain, (filter(X1,map(X2,filter_case1(eqListNat(nil,nil),X3,X4,map(fn_case_Nat(X5,X6),cons(zero,nil)))))=filter_case1(app(X1,app(X2,X4)),X1,app(X2,X4),map(X2,filter_case1(app(X3,X5),X3,X5,nil))))).
+%%%%%
+%cnf(i_0_681377, plain, (filter(fn_const(false),filter(X1,X3))=filter_case1(false,fn_const(false),X2,filter_case1(false,X1,X4,X3)))).
+%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4934, negated_conjecture, ($answer(esk1_3(fn_const(X1),X2,map(X3,cons(X4,nil))))|eqListNat(map(fn_const(X1),filter_case1(app(X2,app(X3,X4)),X2,app(X3,X4),nil)),filter_case1(app(X2,X1),X2,X1,nil))!=eqListNat(nil,map(X5,cons(X6,X7))))).
+%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_103056, plain, (eqListNat(map(fn_id,map(fn_const(suc(X1)),map(X2,map(X3,cons(X4,X5))))),cons(zero,X6))=false)).
+%
+%cnf(i_0_103204, plain, (eqListNat(cons(zero,X1),map(fn_id,map(fn_const(suc(X2)),map(X3,map(X4,cons(X5,X6))))))=false)).
+%%%
+%cnf(i_0_105228, plain, (cons(X1,filter_case1(X2,fn_case_Nat(X2,X3),zero,filter_case1(eqListNat(nil,map(X7,cons(X8,X9))),X4,X5,X6)))=filter_case1(eqListNat(nil,nil),fn_case_Nat(X2,X3),X1,filter_case1(eqListNat(nil,nil),X4,zero,X6)))).
+%
+%cnf(i_0_4937, negated_conjecture, ($answer(esk1_3(X1,X2,X3))|eqListNat(map(X1,filter(X2,X3)),filter_case1(eqListNat(nil,cons(X7,X8)),X2,X9,map(X1,X3)))!=eqListNat(nil,map(X4,cons(X5,X6))))).
+%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_105229, plain, (cons(X1,filter_case1(X2,fn_case_Nat(X2,X3),zero,filter_case1(eqListNat(map(X7,cons(X8,X9)),nil),X4,X5,X6)))=filter_case1(eqListNat(nil,nil),fn_case_Nat(X2,X3),X1,filter_case1(eqListNat(nil,nil),X4,zero,X6)))).
+%%%
+%cnf(i_0_105363, plain, (eqListNat(cons(suc(X1),X2),map(fn_id,map(fn_const(zero),map(X3,map(X4,cons(X5,X6))))))=false)).
+%%
+%cnf(i_0_4938, negated_conjecture, ($answer(esk1_3(X1,X2,X3))|eqListNat(map(X1,filter(X2,X3)),filter_case1(eqListNat(cons(X7,X8),nil),X2,X9,map(X1,X3)))!=eqListNat(nil,map(X4,cons(X5,X6))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4939, negated_conjecture, ($answer(esk1_3(X1,X2,X3))|eqListNat(map(X1,filter(X2,X3)),filter_case1(eqListNat(nil,map(X7,cons(X8,X9))),X2,X10,map(X1,X3)))!=eqListNat(nil,map(X4,cons(X5,X6))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_106386, plain, (eqListNat(map(fn_id,map(fn_const(zero),map(X1,map(X2,cons(X3,X4))))),cons(suc(X5),X6))=false)).
+%
+%cnf(i_0_4941, negated_conjecture, ($answer(esk1_3(X1,X2,filter_case1(eqListNat(nil,nil),X3,X4,nil)))|eqListNat(map(X1,filter_case1(app(X2,X4),X2,X4,nil)),filter_case1(app(X2,app(X1,X4)),X2,app(X1,X4),nil))!=eqListNat(nil,map(X5,cons(X6,X7))))).
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_4942, negated_conjecture, ($answer(esk1_3(X1,X2,cons(X3,X4)))|eqListNat(map(X1,filter_case1(app(X2,X3),X2,X3,X4)),filter_case1(app(X2,app(X1,X3)),X2,app(X1,X3),map(X1,X4)))!=eqListNat(nil,map(X5,cons(X6,X7))))).
+%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_109407, plain, (filter_case1(false,fn_id,X1,map(X2,map(fn_const(X3),cons(X4,map(X5,cons(X6,nil))))))=filter_case1(app(X2,X3),fn_id,app(X2,X3),map(X2,map(fn_const(X3),map(X5,cons(X6,nil))))))).
+%
+%cnf(i_0_109409, plain, (filter_case1(false,fn_id,X1,map(X2,map(fn_const(X3),cons(X4,cons(X5,cons(X6,nil))))))=filter_case1(app(X2,X3),fn_id,app(X2,X3),map(X2,map(fn_const(X3),cons(X5,cons(X6,nil))))))).
+%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_7899, negated_conjecture, ($answer(esk1_3(fn_const(X1),fn_id,cons(X2,nil)))|eqListNat(map(fn_const(X1),filter_case1(X2,fn_id,X2,nil)),filter_case1(X1,fn_id,X1,nil))!=false)).
+%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf(i_0_877999, negated_conjecture, ($answer(esk1_3(fn_const(false),fn_id,cons(X1,nil)))|eqListNat(map(fn_const(false),filter_case1(X1,fn_id,X1,nil)),nil)!=false)).
+%% SZS status Theorem
+% SZS answers Tuple [[fn_const(false), fn_id, cons(eqListNat(nil,nil),nil)]|_]
+
+% Proof found!

@@ -1,0 +1,203 @@
+Here is the input problem:
+  Axiom 1 (opAnd_2): opAnd(true, X) = X.
+  Axiom 2 (opAnd_1): opAnd(false, X) = false.
+  Axiom 3 (map_1): map(X, nil) = nil.
+  Axiom 4 (app_lam3_1): app(lam3, X) = plus(X, zero).
+  Axiom 5 (plus_1): plus(zero, X) = X.
+  Axiom 6 (eqListNat_1): eqListNat(nil, nil) = true.
+  Axiom 7 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 8 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 9 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 10 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 11 (plus_2): plus(suc(X), Y) = suc(plus(X, Y)).
+  Axiom 12 (eqListNat_2): eqListNat(nil, cons(X, Y)) = false.
+  Axiom 13 (prop_mapId_1): prop_mapId(X) = eqListNat(map(lam3, X), X).
+  Axiom 14 (eqListNat_3): eqListNat(cons(X, Y), nil) = false.
+  Axiom 15 (map_2): map(X, cons(Y, Z)) = cons(app(X, Y), map(X, Z)).
+  Axiom 16 (eqListNat_4): eqListNat(cons(X, Y), cons(Z, W)) = opAnd(eqNat(X, Z), eqListNat(Y, W)).
+  Axiom 17 (reflexivity): equals(X, X) = true.
+  Axiom 18 (prop_mapId): equals(prop_mapId(X), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. opAnd(true, X) -> X
+2. opAnd(false, X) -> false
+3. map(X, nil) -> nil
+4. plus(X, zero) -> app(lam3, X)
+5. plus(zero, X) -> X
+6. eqListNat(nil, nil) -> true
+7. eqNat(zero, zero) -> true
+8. eqNat(zero, suc(X)) -> false
+9. eqNat(suc(X), zero) -> false
+10. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+11. suc(plus(X, Y)) -> plus(suc(X), Y)
+12. eqListNat(nil, cons(X, Y)) -> false
+13. eqListNat(map(lam3, X), X) -> prop_mapId(X)
+14. eqListNat(cons(X, Y), nil) -> false
+15. cons(app(X, Y), map(X, Z)) -> map(X, cons(Y, Z))
+16. eqListNat(cons(X, Y), cons(Z, W)) -> opAnd(eqNat(X, Z), eqListNat(Y, W))
+17. equals(X, X) -> true
+18. equals(prop_mapId(X), false) -> false
+19. prop_mapId(nil) -> true
+20. app(lam3, zero) -> zero
+21. equals(true, false) -> false
+22. plus(suc(zero), X) -> suc(X)
+23. suc(app(lam3, X)) -> app(lam3, suc(X))
+24. app(lam3, suc(zero)) -> suc(zero)
+25. cons(app(X, Y), nil) -> map(X, cons(Y, nil))
+26. eqNat(zero, plus(suc(X), Y)) -> false
+27. eqNat(plus(suc(X), Y), zero) -> false
+28. plus(suc(suc(zero)), X) -> suc(suc(X))
+29. map(lam3, cons(zero, nil)) -> cons(zero, nil)
+30. prop_mapId(cons(zero, nil)) -> true
+31. cons(zero, map(lam3, X)) -> map(lam3, cons(zero, X))
+32. eqNat(zero, app(lam3, suc(X))) -> false
+33. eqNat(app(lam3, suc(X)), zero) -> false
+34. app(lam3, suc(suc(zero))) -> suc(suc(zero))
+35. eqListNat(nil, map(X, cons(Y, Z))) -> false
+36. eqListNat(map(X, cons(Y, Z)), nil) -> false
+37. eqNat(plus(suc(X), Y), suc(Z)) -> eqNat(plus(X, Y), Z)
+38. eqNat(suc(X), plus(suc(Y), Z)) -> eqNat(X, plus(Y, Z))
+39. plus(suc(suc(suc(zero))), X) -> suc(suc(suc(X)))
+40. map(lam3, cons(suc(zero), nil)) -> cons(suc(zero), nil)
+41. prop_mapId(cons(suc(zero), nil)) -> true
+42. cons(suc(zero), map(lam3, X)) -> map(lam3, cons(suc(zero), X))
+43. eqNat(zero, plus(plus(suc(X), Y), Z)) -> false
+44. eqNat(plus(plus(suc(X), Y), Z), zero) -> false
+45. eqNat(app(lam3, suc(X)), suc(Y)) -> eqNat(app(lam3, X), Y)
+46. eqNat(suc(X), app(lam3, suc(Y))) -> eqNat(X, app(lam3, Y))
+47. eqNat(zero, plus(app(lam3, suc(X)), Y)) -> false
+48. eqNat(plus(app(lam3, suc(X)), Y), zero) -> false
+49. app(lam3, suc(suc(suc(zero)))) -> suc(suc(suc(zero)))
+50. eqNat(zero, app(lam3, plus(suc(X), Y))) -> false
+51. eqNat(app(lam3, plus(suc(X), Y)), zero) -> false
+52. eqNat(zero, app(lam3, app(lam3, suc(X)))) -> false
+53. eqNat(app(lam3, app(lam3, suc(X))), zero) -> false
+54. eqListNat(nil, map(X, map(Y, cons(Z, W)))) -> false
+55. eqListNat(map(X, map(Y, cons(Z, W))), nil) -> false
+56. map(lam3, cons(zero, cons(zero, nil))) -> cons(zero, cons(zero, nil))
+57. prop_mapId(cons(zero, cons(zero, nil))) -> true
+58. cons(app(lam3, X), cons(zero, nil)) -> map(lam3, cons(X, cons(zero, nil)))
+59. plus(suc(suc(suc(suc(zero)))), X) -> suc(suc(suc(suc(X))))
+60. map(lam3, cons(suc(suc(zero)), nil)) -> cons(suc(suc(zero)), nil)
+61. prop_mapId(cons(suc(suc(zero)), nil)) -> true
+62. cons(suc(suc(zero)), map(lam3, X)) -> map(lam3, cons(suc(suc(zero)), X))
+63. app(lam3, suc(suc(suc(suc(zero))))) -> suc(suc(suc(suc(zero))))
+64. eqNat(plus(plus(suc(X), Y), Z), suc(W)) -> eqNat(plus(plus(X, Y), Z), W)
+65. eqNat(plus(suc(X), Y), plus(suc(Z), W)) -> eqNat(plus(X, Y), plus(Z, W))
+66. eqNat(suc(X), plus(plus(suc(Y), Z), W)) -> eqNat(X, plus(plus(Y, Z), W))
+67. eqNat(zero, plus(plus(plus(suc(X), Y), Z), W)) -> false
+68. eqNat(plus(plus(plus(suc(X), Y), Z), W), zero) -> false
+69. eqNat(plus(app(lam3, suc(X)), Y), suc(Z)) -> eqNat(plus(app(lam3, X), Y), Z)
+70. eqNat(plus(suc(X), Y), app(lam3, suc(Z))) -> eqNat(plus(X, Y), app(lam3, Z))
+71. eqNat(app(lam3, suc(X)), plus(suc(Y), Z)) -> eqNat(app(lam3, X), plus(Y, Z))
+72. eqNat(suc(X), plus(app(lam3, suc(Y)), Z)) -> eqNat(X, plus(app(lam3, Y), Z))
+73. eqNat(zero, plus(plus(app(lam3, suc(X)), Y), Z)) -> false
+74. eqNat(plus(plus(app(lam3, suc(X)), Y), Z), zero) -> false
+75. eqNat(zero, plus(app(lam3, plus(suc(X), Y)), Z)) -> false
+76. eqNat(plus(app(lam3, plus(suc(X), Y)), Z), zero) -> false
+77. eqNat(zero, plus(app(lam3, app(lam3, suc(X))), Y)) -> false
+78. eqNat(plus(app(lam3, app(lam3, suc(X))), Y), zero) -> false
+79. map(lam3, cons(zero, cons(suc(zero), nil))) -> cons(zero, cons(suc(zero), nil))
+
+[... hs2fol: 9595 lines of search output omitted to keep the repository small; rerun to regenerate ...]
+
+9043. map(lam3, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))) -> cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))
+9044. map(lam3, cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))) -> cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))
+9045. map(lam3, cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))) -> cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))
+9046. map(lam3, cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))) -> cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))
+9047. map(lam3, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))) -> cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))
+9048. map(lam3, cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))) -> cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))
+9049. map(lam3, cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))) -> cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))
+9050. map(lam3, cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))) -> cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))
+9051. map(lam3, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))) -> cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))
+9052. map(lam3, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))) -> cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(zero), nil))))))
+9053. map(lam3, cons(zero, cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(zero, cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9054. map(lam3, cons(suc(zero), cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(zero), cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9055. map(lam3, cons(suc(suc(zero)), cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9056. map(lam3, cons(zero, cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(zero, cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9057. map(lam3, cons(suc(zero), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(zero), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9058. map(lam3, cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9059. map(lam3, cons(zero, cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(zero, cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9060. map(lam3, cons(suc(zero), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(zero), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9061. map(lam3, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9062. map(lam3, cons(zero, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(zero, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9063. map(lam3, cons(suc(zero), cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(zero), cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9064. map(lam3, cons(suc(suc(zero)), cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9065. map(lam3, cons(zero, cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(zero, cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9066. map(lam3, cons(suc(zero), cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(zero), cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9067. map(lam3, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9068. map(lam3, cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9069. map(lam3, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9070. map(lam3, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9071. map(lam3, cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9072. map(lam3, cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9073. map(lam3, cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9074. map(lam3, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9075. map(lam3, cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9076. map(lam3, cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9077. map(lam3, cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9078. map(lam3, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9079. map(lam3, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, nil))))))
+9080. map(lam3, cons(zero, cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(zero, cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9081. map(lam3, cons(suc(zero), cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(zero), cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9082. map(lam3, cons(suc(suc(zero)), cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(suc(zero)), cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9083. map(lam3, cons(zero, cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(zero, cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9084. map(lam3, cons(suc(zero), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(zero), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9085. map(lam3, cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9086. map(lam3, cons(zero, cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(zero, cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9087. map(lam3, cons(suc(zero), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(zero), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9088. map(lam3, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9089. map(lam3, cons(zero, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(zero, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9090. map(lam3, cons(suc(zero), cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(zero), cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9091. map(lam3, cons(suc(suc(zero)), cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(suc(zero)), cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9092. map(lam3, cons(zero, cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(zero, cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9093. map(lam3, cons(suc(zero), cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(zero), cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9094. map(lam3, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9095. map(lam3, cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9096. map(lam3, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9097. map(lam3, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9098. map(lam3, cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(zero, cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9099. map(lam3, cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9100. map(lam3, cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9101. map(lam3, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9102. map(lam3, cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9103. map(lam3, cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9104. map(lam3, cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9105. map(lam3, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9106. map(lam3, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))) -> cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), nil))))))
+9107. map(lam3, cons(zero, cons(zero, cons(zero, cons(zero, cons(zero, cons(zero, cons(zero, nil)))))))) -> cons(zero, cons(zero, cons(zero, cons(zero, cons(zero, cons(zero, cons(zero, nil)))))))
+9108. map(lam3, cons(zero, cons(zero, cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(zero, cons(zero, cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9109. map(lam3, cons(suc(zero), cons(zero, cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(zero), cons(zero, cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9110. map(lam3, cons(suc(suc(zero)), cons(zero, cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(zero, cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9111. map(lam3, cons(zero, cons(suc(zero), cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(zero, cons(suc(zero), cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9112. map(lam3, cons(suc(zero), cons(suc(zero), cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(zero), cons(suc(zero), cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9113. map(lam3, cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9114. map(lam3, cons(zero, cons(suc(suc(zero)), cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(zero, cons(suc(suc(zero)), cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9115. map(lam3, cons(suc(zero), cons(suc(suc(zero)), cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(zero), cons(suc(suc(zero)), cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9116. map(lam3, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9117. map(lam3, cons(zero, cons(zero, cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(zero, cons(zero, cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9118. map(lam3, cons(suc(zero), cons(zero, cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(zero), cons(zero, cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9119. map(lam3, cons(suc(suc(zero)), cons(zero, cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(zero, cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9120. map(lam3, cons(zero, cons(suc(zero), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(zero, cons(suc(zero), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9121. map(lam3, cons(suc(zero), cons(suc(zero), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(zero), cons(suc(zero), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9122. map(lam3, cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(suc(zero), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9123. map(lam3, cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(zero, cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9124. map(lam3, cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(zero), cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9125. map(lam3, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9126. map(lam3, cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(zero, cons(zero, cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9127. map(lam3, cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(zero), cons(zero, cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9128. map(lam3, cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9129. map(lam3, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9130. map(lam3, cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(zero), cons(suc(zero), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9131. map(lam3, cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(suc(zero), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9132. map(lam3, cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(zero, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9133. map(lam3, cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(zero), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9134. map(lam3, cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(suc(suc(zero)), cons(suc(suc(zero)), cons(zero, cons(suc(suc(zero)), cons(zero, nil))))))
+9135. map(lam3, cons(zero, cons(zero, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(zero, cons(zero, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(zero, nil))))))
+9136. map(lam3, cons(suc(zero), cons(zero, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(zero), cons(zero, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(zero, nil))))))
+9137. map(lam3, cons(suc(suc(zero)), cons(zero, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(zero, cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(zero, nil))))))
+9138. map(lam3, cons(zero, cons(suc(zero), cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(zero, cons(suc(zero), cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(zero, nil))))))
+9139. map(lam3, cons(suc(zero), cons(suc(zero), cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(zero), cons(suc(zero), cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(zero, nil))))))
+9140. map(lam3, cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(suc(suc(zero)), cons(suc(zero), cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(zero, nil))))))
+9141. map(lam3, cons(zero, cons(suc(suc(zero)), cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(zero, nil))))))) -> cons(zero, cons(suc(suc(zero)), cons(zero, cons(suc(zero), cons(suc(suc(zero)), cons(zero, nil))))))
+  (simplifying rules with respect to one another...)

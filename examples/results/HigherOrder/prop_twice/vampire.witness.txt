@@ -1,0 +1,7 @@
+property:   prop_twice
+file:       examples/HigherOrder.hs
+prover:     vampire
+witness:    prop_twice (\x0 -> case x0 of { Zero -> (Suc _X0); Suc y0_1 -> (\x -> x) y0_1 }) (Suc Zero)
+input:      prop_twice (\x0 -> case x0 of { Zero -> (Suc undefined); Suc y0_1 -> (\x -> x) y0_1 }) (Suc Zero)
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

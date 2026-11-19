@@ -1,0 +1,203 @@
+% Preprocessing class: FSSSSMSSSSSNFFN.
+% Configuration: G-E--_302_C18_F1_URBAN_RG_S04BN
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSS21-MFFFFFNN
+% partial match(1): FHUSM-FFSF21-MFFFFFNN
+% Configuration: G-E--_208_C12_11_nc_F1_SE_CS_SP_PS_S5PRR_RG_S04AN
+% Initializing proof state
+% Scanning for AC axioms
+%
+%cnf(i_0_1, plain, (double(zero)=zero)).
+%
+%cnf(i_0_3, plain, (half(zero)=zero)).
+%
+%cnf(i_0_11, negated_conjecture, ($answer(esk1_1(X1))|eqNat(half(double(X1)),X1)!=false)).
+%
+%cnf(i_0_4, plain, (half(suc(zero))=zero)).
+%
+%cnf(i_0_7, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_8, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_9, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_2, plain, (suc(suc(double(X1)))=double(suc(X1)))).
+%
+%cnf(i_0_5, plain, (half(suc(suc(X1)))=suc(half(X1)))).
+%
+%cnf(i_0_10, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+% Presaturation interreduction done
+%
+%cnf(i_0_1, plain, (double(zero)=zero)).
+%
+%cnf(i_0_3, plain, (half(zero)=zero)).
+%
+%cnf(i_0_11, negated_conjecture, ($answer(esk1_1(X1))|eqNat(half(double(X1)),X1)!=false)).
+%
+%cnf(i_0_12, negated_conjecture, ($answer(esk1_1(zero))|eqNat(zero,zero)!=false)).
+%
+%cnf(i_0_4, plain, (half(suc(zero))=zero)).
+%
+%cnf(i_0_7, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_8, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_12, negated_conjecture, ($answer(esk1_1(zero))|true!=false)).
+%
+%cnf(i_0_9, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_2, plain, (suc(suc(double(X1)))=double(suc(X1)))).
+%
+%cnf(i_0_5, plain, (half(suc(suc(X1)))=suc(half(X1)))).
+%
+%cnf(i_0_10, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_13, plain, (eqNat(zero,double(suc(X1)))=false)).
+%
+%cnf(i_0_14, plain, (eqNat(double(suc(X1)),zero)=false)).
+%
+%cnf(i_0_20, plain, (eqNat(zero,double(double(suc(X1))))=false)).
+%
+%cnf(i_0_21, plain, (eqNat(double(double(suc(X1))),zero)=false)).
+%
+%cnf(i_0_22, plain, (eqNat(zero,double(double(double(suc(X1)))))=false)).
+%
+%cnf(i_0_15, plain, (suc(suc(zero))=double(suc(zero)))).
+%
+%cnf(i_0_35, plain, (half(double(suc(zero)))=suc(zero))).
+%
+%cnf(i_0_36, negated_conjecture, ($answer(esk1_1(suc(zero)))|true!=false)).
+%
+%cnf(i_0_17, plain, (suc(half(double(X1)))=half(double(suc(X1))))).
+%
+%cnf(i_0_27, plain, (half(suc(double(suc(zero))))=suc(zero))).
+%
+%cnf(i_0_37, plain, (eqNat(zero,half(double(suc(X1))))=false)).
+%
+%cnf(i_0_38, plain, (eqNat(half(double(suc(X1))),zero)=false)).
+%
+%cnf(i_0_23, plain, (eqNat(double(double(double(suc(X1)))),zero)=false)).
+%%
+%cnf(i_0_41, plain, (eqNat(zero,double(half(double(suc(X1)))))=false)).
+%
+%cnf(i_0_42, plain, (eqNat(double(half(double(suc(X1)))),zero)=false)).
+%
+%cnf(i_0_16, plain, (suc(half(suc(double(X1))))=half(suc(double(suc(X1)))))).
+%
+%cnf(i_0_48, plain, (half(double(double(suc(zero))))=double(suc(zero)))).
+%
+%cnf(i_0_85, negated_conjecture, ($answer(esk1_1(double(suc(zero))))|eqNat(double(suc(zero)),double(suc(zero)))!=false)).
+%
+%cnf(i_0_50, plain, (eqNat(zero,half(double(double(suc(X1)))))=false)).
+%
+%cnf(i_0_54, plain, (eqNat(half(double(double(suc(X1)))),zero)=false)).
+%
+%cnf(i_0_68, plain, (eqNat(zero,half(suc(double(suc(X1)))))=false)).
+%%%
+%cnf(i_0_24, plain, (eqNat(zero,double(double(double(double(suc(X1))))))=false)).
+%%
+%cnf(i_0_43, plain, (eqNat(zero,double(double(half(double(suc(X1))))))=false)).
+
+[... hs2fol: 59815 lines of search output omitted to keep the repository small; rerun to regenerate ...]
+
+%
+%cnf(i_0_9809, plain, (eqNat(double(double(double(double(half(double(half(double(double(half(half(half(double(double(double(suc(X1)))))))))))))))),zero)=false)).
+%
+%cnf(i_0_24427, plain, (eqNat(half(half(half(double(double(double(half(half(double(half(suc(double(double(suc(X1)))))))))))))),zero)=false)).
+%
+%cnf(i_0_435988, negated_conjecture, ($answer(esk1_1(half(double(double(suc(double(double(suc(double(suc(X1)))))))))))|eqNat(half(double(half(double(double(double(double(double(suc(X1))))))))),half(double(double(double(double(double(suc(X1))))))))!=false)).
+%%
+%cnf(i_0_436283, negated_conjecture, ($answer(esk1_1(half(double(double(double(suc(double(suc(double(suc(X1)))))))))))|eqNat(half(double(half(double(double(double(double(double(suc(X1))))))))),half(double(double(double(double(double(suc(X1))))))))!=false)).
+%%
+%cnf(i_0_24710, plain, (eqNat(zero,half(half(double(half(suc(double(double(half(half(double(half(double(double(suc(X1)))))))))))))))=false)).
+%%
+%cnf(i_0_576954, plain, (eqNat(zero,half(half(double(half(half(double(double(double(double(double(double(double(double(double(suc(X1))))))))))))))))=false)).
+%%
+%cnf(i_0_576984, plain, (eqNat(half(half(double(half(half(double(double(double(double(double(double(double(double(double(suc(X1))))))))))))))),zero)=false)).
+%
+%cnf(i_0_9817, plain, (eqNat(zero,double(half(double(double(half(double(half(double(double(half(half(double(suc(double(suc(X1))))))))))))))))=false)).
+%
+%cnf(i_0_24711, plain, (eqNat(zero,half(half(double(half(suc(double(double(half(half(half(double(double(double(suc(X1)))))))))))))))=false)).
+%
+%cnf(i_0_444898, negated_conjecture, ($answer(esk1_1(suc(double(half(double(suc(double(half(double(suc(X1)))))))))))|eqNat(half(double(double(half(double(double(half(double(suc(X1))))))))),double(half(double(double(half(double(suc(X1))))))))!=false)).
+%%%%%%
+%cnf(i_0_577423, plain, (eqNat(zero,double(double(double(double(half(half(double(half(double(half(double(double(double(double(suc(X1))))))))))))))))=false)).
+%
+%cnf(i_0_577457, plain, (eqNat(zero,double(double(half(double(half(half(double(half(double(half(double(double(double(double(suc(X1))))))))))))))))=false)).
+%
+%cnf(i_0_577491, plain, (eqNat(double(double(half(double(half(half(double(half(double(half(double(double(double(double(suc(X1))))))))))))))),zero)=false)).
+%
+%cnf(i_0_9819, plain, (eqNat(zero,double(half(double(double(half(double(half(double(double(half(half(suc(double(suc(double(suc(X1)))))))))))))))))=false)).
+%%%
+%cnf(i_0_445033, negated_conjecture, ($answer(esk1_1(suc(double(half(double(double(half(double(suc(suc(X1)))))))))))|eqNat(half(double(double(half(double(double(half(double(suc(X1))))))))),double(half(double(double(half(double(suc(X1))))))))!=false)).
+%%%%%%
+%cnf(i_0_577525, plain, (eqNat(zero,half(double(half(double(half(half(double(half(double(half(double(double(double(double(suc(X1))))))))))))))))=false)).
+%
+%cnf(i_0_577908, plain, (eqNat(half(double(half(double(half(half(double(half(double(half(double(double(double(double(suc(X1))))))))))))))),zero)=false)).
+%
+%cnf(i_0_9820, plain, (eqNat(zero,double(half(double(double(half(double(half(double(double(half(half(suc(double(double(suc(X1))))))))))))))))=false)).
+%
+%cnf(i_0_24724, plain, (eqNat(half(half(double(half(suc(double(double(half(half(double(half(double(double(suc(X1)))))))))))))),zero)=false)).
+%%%
+%cnf(i_0_445310, negated_conjecture, ($answer(esk1_1(double(half(double(suc(double(half(double(suc(suc(X1)))))))))))|eqNat(half(double(double(half(double(double(half(double(suc(X1))))))))),double(half(double(double(half(double(suc(X1))))))))!=false)).
+%%%%%%
+%cnf(i_0_577942, plain, (eqNat(double(double(double(double(half(half(double(half(double(half(double(double(double(double(suc(X1))))))))))))))),zero)=false)).
+%
+%cnf(i_0_9821, plain, (eqNat(zero,double(half(double(double(half(double(half(double(double(half(half(double(half(double(double(suc(X1)))))))))))))))))=false)).
+%
+%cnf(i_0_24725, plain, (eqNat(half(half(double(half(suc(double(double(half(half(half(double(double(double(suc(X1)))))))))))))),zero)=false)).
+%%%
+%cnf(i_0_445553, negated_conjecture, ($answer(esk1_1(double(half(double(double(half(double(suc(suc(suc(X1)))))))))))|eqNat(half(double(double(half(double(double(half(double(suc(X1))))))))),double(half(double(double(half(double(suc(X1))))))))!=false)).
+%%%%%%
+%cnf(i_0_577976, plain, (eqNat(zero,double(half(double(double(half(half(double(half(double(half(double(double(double(double(suc(X1))))))))))))))))=false)).
+%
+%cnf(i_0_9822, plain, (eqNat(zero,double(half(double(double(half(double(half(double(double(half(half(half(double(double(double(suc(X1)))))))))))))))))=false)).
+%
+%cnf(i_0_24740, plain, (eqNat(zero,half(half(double(double(double(double(double(half(double(double(half(suc(double(suc(X1)))))))))))))))=false)).
+%%%
+%cnf(i_0_451244, negated_conjecture, ($answer(esk1_1(half(double(suc(double(suc(double(half(double(suc(X1)))))))))))|eqNat(half(double(half(double(double(double(half(double(suc(X1))))))))),half(double(double(double(half(double(suc(X1))))))))!=false)).
+%%%%%
+%cnf(i_0_578010, plain, (eqNat(double(half(double(double(half(half(double(half(double(half(double(double(double(double(suc(X1))))))))))))))),zero)=false)).
+%
+%cnf(i_0_578444, plain, (eqNat(zero,half(double(double(double(half(half(double(half(double(half(double(double(double(double(suc(X1))))))))))))))))=false)).
+%
+%cnf(i_0_9830, plain, (eqNat(double(half(double(double(half(double(half(double(double(half(half(double(suc(double(suc(X1))))))))))))))),zero)=false)).
+%%
+%cnf(i_0_451499, negated_conjecture, ($answer(esk1_1(half(double(suc(double(double(half(double(suc(suc(X1)))))))))))|eqNat(half(double(half(double(double(double(half(double(suc(X1))))))))),half(double(double(double(half(double(suc(X1))))))))!=false)).
+%%%%%%
+%cnf(i_0_578478, plain, (eqNat(half(double(double(double(half(half(double(half(double(half(double(double(double(double(suc(X1))))))))))))))),zero)=false)).
+%
+%cnf(i_0_578512, plain, (eqNat(zero,half(half(double(double(half(half(double(half(double(half(double(double(double(double(suc(X1))))))))))))))))=false)).
+%
+%cnf(i_0_578546, plain, (eqNat(half(half(double(double(half(half(double(half(double(half(double(double(double(double(suc(X1))))))))))))))),zero)=false)).
+%
+%cnf(i_0_9832, plain, (eqNat(double(half(double(double(half(double(half(double(double(half(half(suc(double(suc(double(suc(X1)))))))))))))))),zero)=false)).
+%
+%cnf(i_0_24755, plain, (eqNat(half(half(double(double(double(double(double(half(double(double(half(suc(double(suc(X1)))))))))))))),zero)=false)).
+%
+%cnf(i_0_451785, negated_conjecture, ($answer(esk1_1(half(double(double(suc(double(half(double(suc(suc(X1)))))))))))|eqNat(half(double(half(d
+% Failure: Resource limit exceeded (time)
+% SZS status ResourceOut
+eprover: CPU time limit exceeded, terminating
+ouble(double(double(half(double(suc(X1))))))))),half(double(double(double(half(double(suc(X1))))))))!=false)).
+%%%%%%
+%cnf(i_0_578835, plain, (eqNat(zero,half(half(double(half(double(half(double(double(half(half(double(double(double(double(suc(X1))))))))))))))))=false)).
+%
+%cnf(i_0_578870, plain, (eqNat(half(half(double(half(double(half(double(double(half(half(double(double(double(double(suc(X1))))))))))))))),zero)=false)).
+%
+%cnf(i_0_578905, plain, (eqNat(zero,double(double(half(half(double(half(double(half(double(double(half(double(double(double(suc(X1))))))))))))))))=false)).
+%
+%cnf(i_0_9833, plain, (eqNat(double(half(double(double(half(double(half(double(double(half(half(suc(double(double(suc(X1))))))))))))))),zero)=false)).
+%
+%cnf(i_0_24770, plain, (eqNat(zero,double(double(double(double(half(half(double(double(double(double(half(suc(double(suc(X1)))))))))))))))=false)).
+%
+%cnf(i_0_452033, negated_conjecture, ($answer(esk1_1(half(double(double(double(half(double(suc(suc(suc(X1)))))))))))|eqNat(half(double(half(double(double(double(half(double(suc(X1))))))))),half(double(double(double(half(double(suc(X1))))))))!=false)).
+%%%%%%
+%cnf(i_0_578943, plain, (eqNat(double(double(half(half(double(half(double(half(double(double(half(double(double(double(suc(X1))))))))))))))),zero)=false)).
+%
+%cnf(i_0_579311, plain, (eqNat(zero,half(double(half(half(double(half(double(half(double(double(half(double(double(double(suc(X1))))))))))))))))=false)).
+%
+%cnf(i_0_579349, plain, (eqNat(half(double(half(half(double(half(double(half(double(double(half(double(double(double(suc(X1))))))))))))))),zero)=false)).
+%
+%cnf(i_0_9834, plain, (eqNat(double(half(double(double(half(double(half(double(double(half(half(double(half(double(double(suc(X1)))))))))))))))),zero)=false)).
