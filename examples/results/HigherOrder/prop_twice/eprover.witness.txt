@@ -1,0 +1,6 @@
+property:   prop_twice
+file:       examples/HigherOrder.hs
+prover:     eprover
+witness:    prop_twice (\x0 -> case x0 of { Zero -> (Suc Zero); Suc y0_1 -> (\x -> x) y0_1 }) Zero
+input:      prop_twice (\x0 -> case x0 of { Zero -> (Suc Zero); Suc y0_1 -> (\x -> x) y0_1 }) Zero
+result:     False -- counterexample confirmed

@@ -1,0 +1,177 @@
+% Running in auto input_syntax mode. Trying TPTP
+% Detected formulas, will run a generic FOF schedule.
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_tgt=full:sil=2000:alpa=true:random_seed=4046189780:st=5:i=107:sd=1:qa=plain:ss=on:er=filter:ssat=axiom_1 on problem for (1ds/107Mi)
+%  found proof, printing to "/tmp/vampire-proof-2750-2752"...
+% SZS answers Tuple [∀X0.[cons(zero,nil),cons(suc(X0),nil)]|_] for problem
+% ...printing done.
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for problem
+% SZS output start Proof for problem
+fof(f1,axiom,(
+  ! [X0] : (opAnd(false,X0) = false)),
+  file('/home/claude/hs2fol/examples/results/Lists/prop_revApp/problem.p','opAnd_1')).
+fof(f3,axiom,(
+  ! [X0] : (opAppend(nil,X0) = X0)),
+  file('/home/claude/hs2fol/examples/results/Lists/prop_revApp/problem.p','opAppend_1')).
+fof(f4,axiom,(
+  ! [X0, X1, X2] : (opAppend(cons(X0,X1),X2) = cons(X0,opAppend(X1,X2)))),
+  file('/home/claude/hs2fol/examples/results/Lists/prop_revApp/problem.p','opAppend_2')).
+fof(f5,axiom,(
+  reverse(nil) = nil),
+  file('/home/claude/hs2fol/examples/results/Lists/prop_revApp/problem.p','reverse_1')).
+fof(f6,axiom,(
+  ! [X0, X1] : (reverse(cons(X0,X1)) = opAppend(reverse(X1),cons(X0,nil)))),
+  file('/home/claude/hs2fol/examples/results/Lists/prop_revApp/problem.p','reverse_2')).
+fof(f7,axiom,(
+  ! [X0, X1] : (prop_revApp(X0,X1) = eqListNat(reverse(opAppend(X0,X1)),opAppend(reverse(X0),reverse(X1))))),
+  file('/home/claude/hs2fol/examples/results/Lists/prop_revApp/problem.p','prop_revApp_1')).
+fof(f10,axiom,(
+  ! [X0] : (eqNat(suc(X0),zero) = false)),
+  file('/home/claude/hs2fol/examples/results/Lists/prop_revApp/problem.p','eqNat_3')).
+fof(f12,axiom,(
+  eqListNat(nil,nil) = true),
+  file('/home/claude/hs2fol/examples/results/Lists/prop_revApp/problem.p','eqListNat_1')).
+fof(f15,axiom,(
+  ! [X0, X1, X2, X3] : (eqListNat(cons(X0,X1),cons(X2,X3)) = opAnd(eqNat(X0,X2),eqListNat(X1,X3)))),
+  file('/home/claude/hs2fol/examples/results/Lists/prop_revApp/problem.p','eqListNat_4')).
+fof(f16,conjecture,(
+  ? [X0, X1] : (prop_revApp(X0,X1) = false)),
+  file('/home/claude/hs2fol/examples/results/Lists/prop_revApp/problem.p','prop_revApp')).
+fof(f17,negated_conjecture,(
+  ~ ? [X0, X1] : (prop_revApp(X0,X1) = false)),
+  inference(conjecture_negation,[status(cth)],[f16])).
+fof(f18,plain,(
+  ~ ? [X0, X1] : ((prop_revApp(X0,X1) = false) & ans0(X0,X1))),
+  inference(answer_literal_injection,[],[f17])).
+fof(f19,plain,(
+  ! [X0, X1] : ((false != prop_revApp(X0,X1)) | ~ans0(X0,X1))),
+  inference(ennf_transformation,[],[f18])).
+fof(f20,plain,(
+  (! [X0] : (false = opAnd(false,X0)))),
+  inference(cnf_transformation,[],[f1])).
+fof(f22,plain,(
+  (! [X0] : (opAppend(nil,X0) = X0))),
+  inference(cnf_transformation,[],[f3])).
+fof(f23,plain,(
+  (! [X0,X1,X2] : (opAppend(cons(X0,X1),X2) = cons(X0,opAppend(X1,X2))))),
+  inference(cnf_transformation,[],[f4])).
+fof(f24,plain,(
+  nil = reverse(nil)),
+  inference(cnf_transformation,[],[f5])).
+fof(f25,plain,(
+  (! [X0,X1] : (reverse(cons(X0,X1)) = opAppend(reverse(X1),cons(X0,nil))))),
+  inference(cnf_transformation,[],[f6])).
+fof(f26,plain,(
+  (! [X0,X1] : (prop_revApp(X0,X1) = eqListNat(reverse(opAppend(X0,X1)),opAppend(reverse(X0),reverse(X1)))))),
+  inference(cnf_transformation,[],[f7])).
+fof(f29,plain,(
+  (! [X0] : (false = eqNat(suc(X0),zero)))),
+  inference(cnf_transformation,[],[f10])).
+fof(f31,plain,(
+  true = eqListNat(nil,nil)),
+  inference(cnf_transformation,[],[f12])).
+fof(f34,plain,(
+  (! [X0,X1,X2,X3] : (eqListNat(cons(X0,X1),cons(X2,X3)) = opAnd(eqNat(X0,X2),eqListNat(X1,X3))))),
+  inference(cnf_transformation,[],[f15])).
+fof(f35,plain,(
+  (! [X0,X1] : (false != prop_revApp(X0,X1) | ~ans0(X0,X1)))),
+  inference(cnf_transformation,[],[f19])).
+fof(f36,plain,(
+  (! [X0,X1] : (false != eqListNat(reverse(opAppend(X0,X1)),opAppend(reverse(X0),reverse(X1))) | ~ans0(X0,X1)))),
+  inference(definition_unfolding,[],[f35,f26])).
+fof(f37,definition,(
+  (! [X0,X1] : (sF1(X0,X1) = reverse(opAppend(X0,X1))))),
+  introduced(definition,[new_symbols(definition,[sF1])],[function_definition])).
+fof(f38,plain,(
+  (! [X0,X1] : (reverse(opAppend(X0,X1)) = sF1(X0,X1)))),
+  inference(reorient_equations,[],[f37])).
+fof(f39,definition,(
+  (! [X0,X1] : (sF2(X0,X1) = opAppend(reverse(X0),reverse(X1))))),
+  introduced(definition,[new_symbols(definition,[sF2])],[function_definition])).
+fof(f40,plain,(
+  (! [X0,X1] : (opAppend(reverse(X0),reverse(X1)) = sF2(X0,X1)))),
+  inference(reorient_equations,[],[f39])).
+fof(f41,definition,(
+  (! [X0,X1] : (sF3(X0,X1) = eqListNat(sF1(X0,X1),sF2(X0,X1))))),
+  introduced(definition,[new_symbols(definition,[sF3])],[function_definition])).
+fof(f42,plain,(
+  (! [X0,X1] : (eqListNat(sF1(X0,X1),sF2(X0,X1)) = sF3(X0,X1)))),
+  inference(reorient_equations,[],[f41])).
+fof(f43,plain,(
+  (! [X0,X1] : (false != sF3(X0,X1) | ~ans0(X0,X1)))),
+  inference(definition_folding,[],[f36,f42,f40,f38])).
+fof(f68,plain,(
+  (! [X0] : (reverse(cons(X0,nil)) = opAppend(nil,cons(X0,nil))))),
+  inference(superposition,[],[f25,f24])).
+fof(f70,plain,(
+  (! [X0,X1] : (sF1(reverse(X1),cons(X0,nil)) = reverse(reverse(cons(X0,X1)))))),
+  inference(superposition,[],[f38,f25])).
+fof(f72,plain,(
+  (! [X0] : (cons(X0,nil) = reverse(cons(X0,nil))))),
+  inference(forward_demodulation,[],[f68,f22])).
+fof(f73,plain,(
+  (! [X0,X1] : (reverse(cons(X1,cons(X0,nil))) = opAppend(cons(X0,nil),cons(X1,nil))))),
+  inference(superposition,[],[f25,f72])).
+fof(f74,plain,(
+  (! [X0,X1] : (opAppend(reverse(X1),cons(X0,nil)) = sF2(X1,cons(X0,nil))))),
+  inference(superposition,[],[f40,f72])).
+fof(f83,plain,(
+  (! [X0,X1] : (reverse(cons(X0,X1)) = sF2(X1,cons(X0,nil))))),
+  inference(forward_demodulation,[],[f74,f25])).
+fof(f84,plain,(
+  (! [X0,X1] : (reverse(cons(X1,cons(X0,nil))) = cons(X0,opAppend(nil,cons(X1,nil)))))),
+  inference(forward_demodulation,[],[f73,f23])).
+fof(f87,plain,(
+  (! [X0,X1] : (reverse(cons(X1,cons(X0,nil))) = cons(X0,cons(X1,nil))))),
+  inference(forward_demodulation,[],[f84,f22])).
+fof(f117,plain,(
+  (! [X0,X1] : (ans0(X0,X1)))),
+  introduced(theory,[answer_literal_resolver],[])).
+fof(f189,plain,(
+  (! [X0,X1] : (eqListNat(cons(X0,nil),cons(X1,nil)) = opAnd(eqNat(X0,X1),true)))),
+  inference(superposition,[],[f34,f31])).
+fof(f216,plain,(
+  (! [X0,X1] : (sF3(reverse(X1),cons(X0,nil)) = eqListNat(reverse(reverse(cons(X0,X1))),sF2(reverse(X1),cons(X0,nil)))))),
+  inference(superposition,[],[f42,f70])).
+fof(f217,plain,(
+  (! [X0,X1] : (sF3(reverse(X1),cons(X0,nil)) = eqListNat(reverse(reverse(cons(X0,X1))),reverse(cons(X0,reverse(X1))))))),
+  inference(forward_demodulation,[],[f216,f83])).
+fof(f337,plain,(
+  (! [X0,X1,X2,X3] : (eqListNat(cons(X2,cons(X0,nil)),cons(X3,cons(X1,nil))) = opAnd(eqNat(X2,X3),opAnd(eqNat(X0,X1),true))))),
+  inference(superposition,[],[f34,f189])).
+fof(f2999,plain,(
+  (! [X0,X1] : (sF3(cons(X0,nil),cons(X1,nil)) = eqListNat(reverse(reverse(cons(X1,cons(X0,nil)))),reverse(cons(X1,cons(X0,nil))))))),
+  inference(superposition,[],[f217,f72])).
+fof(f3011,plain,(
+  (! [X0,X1] : (sF3(cons(X0,nil),cons(X1,nil)) = eqListNat(reverse(cons(X0,cons(X1,nil))),cons(X0,cons(X1,nil)))))),
+  inference(forward_demodulation,[],[f2999,f87])).
+fof(f3020,plain,(
+  (! [X0,X1] : (sF3(cons(X0,nil),cons(X1,nil)) = eqListNat(cons(X1,cons(X0,nil)),cons(X0,cons(X1,nil)))))),
+  inference(forward_demodulation,[],[f3011,f87])).
+fof(f3025,plain,(
+  (! [X0,X1] : (sF3(cons(X0,nil),cons(X1,nil)) = opAnd(eqNat(X1,X0),opAnd(eqNat(X0,X1),true))))),
+  inference(forward_demodulation,[],[f3020,f337])).
+fof(f4910,plain,(
+  (! [X0] : (sF3(cons(zero,nil),cons(suc(X0),nil)) = opAnd(false,opAnd(eqNat(zero,suc(X0)),true))))),
+  inference(superposition,[],[f3025,f29])).
+fof(f4924,plain,(
+  (! [X0] : (false = sF3(cons(zero,nil),cons(suc(X0),nil))))),
+  inference(forward_demodulation,[],[f4910,f20])).
+fof(f4936,plain,(
+  (! [X0] : (false != false | ~ans0(cons(zero,nil),cons(suc(X0),nil))))),
+  inference(superposition,[],[f43,f4924])).
+fof(f4937,plain,(
+  (! [X0] : (~ans0(cons(zero,nil),cons(suc(X0),nil))))),
+  inference(trivial_inequality_removal,[],[f4936])).
+fof(f4938,plain,(
+  $false),
+  inference(unit_resulting_resolution,[],[f4937,f117])).
+% SZS output end Proof for problem
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation
+% Time elapsed: 0.044 s
+% Peak memory usage: 10 MB
+% Success in time 0.046 s

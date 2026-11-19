@@ -1,0 +1,7 @@
+property:   prop_fnSuc
+file:       examples/HigherOrder.hs
+prover:     twee
+witness:    prop_fnSuc (\_ -> Zero) _X
+input:      prop_fnSuc (\_ -> Zero) undefined
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

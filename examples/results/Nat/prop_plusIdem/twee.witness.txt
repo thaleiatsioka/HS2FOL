@@ -1,0 +1,6 @@
+property:   prop_plusIdem
+file:       examples/Nat.hs
+prover:     twee
+witness:    prop_plusIdem (Suc Zero)
+input:      prop_plusIdem (Suc Zero)
+result:     False -- counterexample confirmed

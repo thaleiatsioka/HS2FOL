@@ -1,0 +1,7 @@
+property:   prop_sortLength
+file:       examples/Lists.hs
+prover:     eprover
+witness:    prop_sortLength (insertBad_case1 False Zero Zero [])
+evaluated:  prop_sortLength [Zero, Zero]
+input:      prop_sortLength [Zero, Zero]
+result:     False -- counterexample confirmed

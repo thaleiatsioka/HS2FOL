@@ -1,0 +1,159 @@
+% Running in auto input_syntax mode. Trying TPTP
+% Detected formulas, will run a generic FOF schedule.
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+1011_32_tgt=full:sil=2000:alpa=true:random_seed=2611947354:st=5:i=107:sd=1:qa=plain:ss=on:er=filter:ssat=axiom_1 on problem for (1ds/107Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.101 s
+% Peak memory usage: 13 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% lrs+10_2:3_to=lpo:sil=16000:sp=arity:random_seed=3620320159:i=114:bd=all:qa=plain:ss=on:sgt=4_1 on problem for (1ds/114Mi)
+% Time limit reached! 
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Time limit
+% Termination phase: Saturation
+% Time elapsed: 0.100 s
+% Peak memory usage: 10 MB
+% ------------------------------
+% ------------------------------
+% WARNING: time unlimited strategy and instruction limiting not in place - attempting to translate instructions to time
+% ott+1011_2_sil=4000:lsd=20:rp=on:sac=on:newcnf=on:random_seed=2887540542:i=132:kws=arity:qa=plain:er=filter_1 on problem for (1ds/132Mi)
+%  found proof, printing to "/tmp/vampire-proof-4116-4124"...
+% SZS answers Tuple [[fn_const(true),fn_id,cons(false,nil)]|_] for problem
+% ...printing done.
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for problem
+% SZS output start Proof for problem
+fof(f3,axiom,(
+  ! [X0] : (map(X0,nil) = nil)),
+  file('/home/claude/hs2fol/examples/results/HigherOrder/prop_mapFilter/problem.p','map_1')).
+fof(f4,axiom,(
+  ! [X0, X1, X2] : (map(X0,cons(X1,X2)) = cons(app(X0,X1),map(X0,X2)))),
+  file('/home/claude/hs2fol/examples/results/HigherOrder/prop_mapFilter/problem.p','map_2')).
+fof(f5,axiom,(
+  ! [X0] : (filter(X0,nil) = nil)),
+  file('/home/claude/hs2fol/examples/results/HigherOrder/prop_mapFilter/problem.p','filter_1')).
+fof(f6,axiom,(
+  ! [X0, X1, X2] : (filter(X0,cons(X1,X2)) = filter_case1(app(X0,X1),X0,X1,X2))),
+  file('/home/claude/hs2fol/examples/results/HigherOrder/prop_mapFilter/problem.p','filter_2')).
+fof(f7,axiom,(
+  ! [X0, X1, X2] : (filter_case1(true,X0,X1,X2) = cons(X1,filter(X0,X2)))),
+  file('/home/claude/hs2fol/examples/results/HigherOrder/prop_mapFilter/problem.p','filter_case1_1')).
+fof(f8,axiom,(
+  ! [X0, X1, X2] : (filter_case1(false,X0,X1,X2) = filter(X0,X2))),
+  file('/home/claude/hs2fol/examples/results/HigherOrder/prop_mapFilter/problem.p','filter_case1_2')).
+fof(f9,axiom,(
+  ! [X0, X1, X2] : (prop_mapFilter(X0,X1,X2) = eqListNat(map(X0,filter(X1,X2)),filter(X1,map(X0,X2))))),
+  file('/home/claude/hs2fol/examples/results/HigherOrder/prop_mapFilter/problem.p','prop_mapFilter_1')).
+fof(f15,axiom,(
+  ! [X0, X1] : (eqListNat(nil,cons(X0,X1)) = false)),
+  file('/home/claude/hs2fol/examples/results/HigherOrder/prop_mapFilter/problem.p','eqListNat_2')).
+fof(f18,axiom,(
+  ! [X0, X1] : (app(fn_const(X0),X1) = X0)),
+  file('/home/claude/hs2fol/examples/results/HigherOrder/prop_mapFilter/problem.p','app_fn_const_1')).
+fof(f19,axiom,(
+  ! [X0] : (app(fn_id,X0) = X0)),
+  file('/home/claude/hs2fol/examples/results/HigherOrder/prop_mapFilter/problem.p','app_fn_id_1')).
+fof(f22,conjecture,(
+  ? [X0, X1, X2] : (prop_mapFilter(X0,X1,X2) = false)),
+  file('/home/claude/hs2fol/examples/results/HigherOrder/prop_mapFilter/problem.p','prop_mapFilter')).
+fof(f23,negated_conjecture,(
+  ~ ? [X0, X1, X2] : (prop_mapFilter(X0,X1,X2) = false)),
+  inference(conjecture_negation,[status(cth)],[f22])).
+fof(f24,plain,(
+  ~ ? [X0, X1, X2] : ((prop_mapFilter(X0,X1,X2) = false) & ans0(X0,X1,X2))),
+  inference(answer_literal_injection,[],[f23])).
+fof(f25,plain,(
+  ! [X0, X1, X2] : ((false != prop_mapFilter(X0,X1,X2)) | ~ans0(X0,X1,X2))),
+  inference(ennf_transformation,[],[f24])).
+fof(f28,plain,(
+  (! [X0] : (nil = map(X0,nil)))),
+  inference(cnf_transformation,[],[f3])).
+fof(f29,plain,(
+  (! [X0,X1,X2] : (map(X0,cons(X1,X2)) = cons(app(X0,X1),map(X0,X2))))),
+  inference(cnf_transformation,[],[f4])).
+fof(f30,plain,(
+  (! [X0] : (nil = filter(X0,nil)))),
+  inference(cnf_transformation,[],[f5])).
+fof(f31,plain,(
+  (! [X0,X1,X2] : (filter(X0,cons(X1,X2)) = filter_case1(app(X0,X1),X0,X1,X2)))),
+  inference(cnf_transformation,[],[f6])).
+fof(f32,plain,(
+  (! [X0,X1,X2] : (filter_case1(true,X0,X1,X2) = cons(X1,filter(X0,X2))))),
+  inference(cnf_transformation,[],[f7])).
+fof(f33,plain,(
+  (! [X0,X1,X2] : (filter(X0,X2) = filter_case1(false,X0,X1,X2)))),
+  inference(cnf_transformation,[],[f8])).
+fof(f34,plain,(
+  (! [X0,X1,X2] : (prop_mapFilter(X0,X1,X2) = eqListNat(map(X0,filter(X1,X2)),filter(X1,map(X0,X2)))))),
+  inference(cnf_transformation,[],[f9])).
+fof(f40,plain,(
+  (! [X0,X1] : (false = eqListNat(nil,cons(X0,X1))))),
+  inference(cnf_transformation,[],[f15])).
+fof(f43,plain,(
+  (! [X0,X1] : (app(fn_const(X0),X1) = X0))),
+  inference(cnf_transformation,[],[f18])).
+fof(f44,plain,(
+  (! [X0] : (app(fn_id,X0) = X0))),
+  inference(cnf_transformation,[],[f19])).
+fof(f47,plain,(
+  (! [X0,X1,X2] : (~ans0(X0,X1,X2) | false != prop_mapFilter(X0,X1,X2)))),
+  inference(cnf_transformation,[],[f25])).
+fof(f48,plain,(
+  (! [X0,X1,X2] : (false != eqListNat(map(X0,filter(X1,X2)),filter(X1,map(X0,X2))) | ~ans0(X0,X1,X2)))),
+  inference(definition_unfolding,[],[f47,f34])).
+fof(f69,plain,(
+  (! [X0,X1] : (map(X0,cons(X1,nil)) = cons(app(X0,X1),nil)))),
+  inference(superposition,[],[f29,f28])).
+fof(f73,plain,(
+  (! [X0,X1] : (filter(fn_id,cons(X0,X1)) = filter_case1(X0,fn_id,X0,X1)))),
+  inference(superposition,[],[f31,f44])).
+fof(f125,plain,(
+  (! [X0,X1,X2] : (false != eqListNat(map(X0,filter(X2,cons(X1,nil))),filter(X2,cons(app(X0,X1),nil))) | ~ans0(X0,X2,cons(X1,nil))))),
+  inference(superposition,[],[f48,f69])).
+fof(f136,plain,(
+  (! [X0,X1,X2] : (false != eqListNat(map(fn_const(X0),filter(X1,cons(X2,nil))),filter(X1,cons(X0,nil))) | ~ans0(fn_const(X0),X1,cons(X2,nil))))),
+  inference(superposition,[],[f125,f43])).
+fof(f141,plain,(
+  (! [X0] : (filter(fn_id,X0) = filter(fn_id,cons(false,X0))))),
+  inference(superposition,[],[f33,f73])).
+fof(f142,plain,(
+  (! [X0] : (cons(true,filter(fn_id,X0)) = filter(fn_id,cons(true,X0))))),
+  inference(superposition,[],[f32,f73])).
+fof(f441,plain,(
+  (! [X0] : (false != eqListNat(map(fn_const(X0),filter(fn_id,nil)),filter(fn_id,cons(X0,nil))) | ~ans0(fn_const(X0),fn_id,cons(false,nil))))),
+  inference(superposition,[],[f136,f141])).
+fof(f495,plain,(
+  (! [X0] : (false != eqListNat(map(fn_const(X0),nil),filter(fn_id,cons(X0,nil))) | ~ans0(fn_const(X0),fn_id,cons(false,nil))))),
+  inference(forward_demodulation,[],[f441,f30])).
+fof(f511,plain,(
+  (! [X0] : (false != eqListNat(nil,filter(fn_id,cons(X0,nil))) | ~ans0(fn_const(X0),fn_id,cons(false,nil))))),
+  inference(forward_demodulation,[],[f495,f28])).
+fof(f592,plain,(
+  false != eqListNat(nil,cons(true,filter(fn_id,nil))) | ~ans0(fn_const(true),fn_id,cons(false,nil))),
+  inference(superposition,[],[f511,f142])).
+fof(f677,plain,(
+  ~ans0(fn_const(true),fn_id,cons(false,nil))),
+  inference(forward_subsumption_resolution,[],[f592,f40])).
+fof(f678,plain,(
+  (! [X0,X1,X2] : (ans0(X0,X1,X2)))),
+  introduced(theory,[answer_literal_resolver],[])).
+fof(f679,plain,(
+  $false),
+  inference(unit_resulting_resolution,[],[f677,f678])).
+% SZS output end Proof for problem
+% ------------------------------
+% Version: Vampire 5.1.1 (Release build, commit c2a0a6e on 2026-11-18 09:38:05 +0100)
+% CaDiCaL version: 2.1.3
+% Termination reason: Refutation
+% Time elapsed: 0.005 s
+% Peak memory usage: 9 MB
+% Success in time 0.21 s

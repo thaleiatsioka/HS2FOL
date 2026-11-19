@@ -1,0 +1,7 @@
+property:   prop_maxLeft
+file:       examples/Nat.hs
+prover:     vampire
+witness:    prop_maxLeft (Suc _X0) Zero
+input:      prop_maxLeft (Suc undefined) Zero
+            (variables in the witness can be any value; undefined is used)
+result:     False -- counterexample confirmed

@@ -1,0 +1,196 @@
+% Preprocessing class: FSMSSMSSSSSNFFN.
+% Configuration: G-E--_208_C18_F1_SE_CS_SOS_SP_PS_S5PRR_RG_S04AN
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSS21-MFFFFFNN
+% partial match(1): FHUSM-FFSF21-MFFFFFNN
+% Configuration: G-E--_208_C12_11_nc_F1_SE_CS_SP_PS_S5PRR_RG_S04AN
+% Initializing proof state
+% Scanning for AC axioms
+%
+%cnf(i_0_5, plain, (reverse(nil)=nil)).
+%
+%cnf(i_0_1, plain, (opAnd(false,X1)=false)).
+%
+%cnf(i_0_12, plain, (eqListNat(nil,nil)=true)).
+%
+%cnf(i_0_3, plain, (opAppend(nil,X1)=X1)).
+%
+%cnf(i_0_8, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_2, plain, (opAnd(true,X1)=X1)).
+%
+%cnf(i_0_9, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_10, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_13, plain, (eqListNat(nil,cons(X1,X2))=false)).
+%
+%cnf(i_0_14, plain, (eqListNat(cons(X1,X2),nil)=false)).
+%
+%cnf(i_0_11, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_6, plain, (opAppend(reverse(X2),cons(X1,nil))=reverse(cons(X1,X2)))).
+%
+%cnf(i_0_16, negated_conjecture, ($answer(esk1_2(X1,X2))|eqListNat(reverse(opAppend(X1,X2)),opAppend(reverse(X1),reverse(X2)))!=false)).
+%
+%cnf(i_0_4, plain, (opAppend(cons(X1,X2),X3)=cons(X1,opAppend(X2,X3)))).
+%
+%cnf(i_0_15, plain, (opAnd(eqNat(X1,X3),eqListNat(X2,X4))=eqListNat(cons(X1,X2),cons(X3,X4)))).
+% Presaturation interreduction done
+%
+%cnf(i_0_5, plain, (reverse(nil)=nil)).
+%
+%cnf(i_0_1, plain, (opAnd(false,X1)=false)).
+%
+%cnf(i_0_12, plain, (eqListNat(nil,nil)=true)).
+%
+%cnf(i_0_3, plain, (opAppend(nil,X1)=X1)).
+%
+%cnf(i_0_2, plain, (opAnd(true,X1)=X1)).
+%
+%cnf(i_0_8, plain, (eqNat(zero,zero)=true)).
+%
+%cnf(i_0_9, plain, (eqNat(zero,suc(X1))=false)).
+%
+%cnf(i_0_10, plain, (eqNat(suc(X1),zero)=false)).
+%
+%cnf(i_0_13, plain, (eqListNat(nil,cons(X1,X2))=false)).
+%
+%cnf(i_0_14, plain, (eqListNat(cons(X1,X2),nil)=false)).
+%
+%cnf(i_0_16, negated_conjecture, ($answer(esk1_2(X1,X2))|eqListNat(reverse(opAppend(X1,X2)),opAppend(reverse(X1),reverse(X2)))!=false)).
+%
+%cnf(i_0_18, negated_conjecture, ($answer(esk1_2(nil,X1))|eqListNat(reverse(X1),reverse(X1))!=false)).
+%
+%cnf(i_0_11, plain, (eqNat(suc(X1),suc(X2))=eqNat(X1,X2))).
+%
+%cnf(i_0_20, negated_conjecture, ($answer(esk1_2(nil,nil))|true!=false)).
+%
+%cnf(i_0_4, plain, (opAppend(cons(X1,X2),X3)=cons(X1,opAppend(X2,X3)))).
+%
+%cnf(i_0_6, plain, (opAppend(reverse(X1),cons(X2,nil))=reverse(cons(X2,X1)))).
+%
+%cnf(i_0_15, plain, (opAnd(eqNat(X1,X2),eqListNat(X3,X4))=eqListNat(cons(X1,X3),cons(X2,X4)))).
+%%
+%cnf(i_0_23, plain, (reverse(cons(X1,nil))=cons(X1,nil))).
+%
+%cnf(i_0_17, negated_conjecture, ($answer(esk1_2(X1,nil))|eqListNat(reverse(opAppend(X1,nil)),opAppend(reverse(X1),nil))!=false)).
+%%%
+%cnf(i_0_34, negated_conjecture, ($answer(esk1_2(nil,cons(X1,nil)))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_21, negated_conjecture, ($answer(esk1_2(cons(X1,X2),X3))|eqListNat(reverse(cons(X1,opAppend(X2,X3))),opAppend(reverse(cons(X1,X2)),reverse(X3)))!=false)).
+%
+%cnf(i_0_28, plain, (eqListNat(cons(suc(X1),X2),cons(zero,X3))=false)).
+%
+%cnf(i_0_35, negated_conjecture, ($answer(esk1_2(cons(X1,nil),nil))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_33, negated_conjecture, ($answer(esk1_2(cons(X1,nil),X2))|eqListNat(reverse(cons(X1,X2)),cons(X1,reverse(X2)))!=false)).
+%%%
+%cnf(i_0_29, plain, (eqListNat(cons(zero,X2),cons(suc(X1),X3))=false)).
+%%%
+%cnf(i_0_30, plain, (eqListNat(cons(zero,X1),cons(zero,X2))=eqListNat(X1,X2))).
+%
+%cnf(i_0_51, negated_conjecture, ($answer(esk1_2(nil,cons(zero,nil)))|true!=false)).
+%
+%cnf(i_0_22, negated_conjecture, ($answer(esk1_2(reverse(X1),cons(X2,nil)))|eqListNat(reverse(reverse(cons(X2,X1))),reverse(cons(X2,reverse(X1))))!=false)).
+%
+%cnf(i_0_52, negated_conjecture, ($answer(esk1_2(cons(zero,nil),nil))|true!=false)).
+%%%
+%cnf(i_0_26, plain, (opAnd(eqNat(X1,X2),true)=eqListNat(cons(X1,nil),cons(X2,nil)))).
+%
+%cnf(i_0_32, plain, (reverse(cons(X2,cons(X1,nil)))=cons(X1,cons(X2,nil)))).
+%
+%cnf(i_0_24, plain, (eqListNat(cons(X1,cons(X3,X4)),cons(X2,nil))=opAnd(eqNat(X1,X2),false))).
+%
+%cnf(i_0_31, negated_conjecture, ($answer(esk1_2(X1,cons(X2,nil)))|eqListNat(reverse(opAppend(X1,cons(X2,nil))),reverse(cons(X2,X1)))!=false)).
+%%%%
+%cnf(i_0_25, plain, (eqListNat(cons(X1,nil),cons(X2,cons(X3,X4)))=opAnd(eqNat(X1,X2),false))).
+%
+%cnf(i_0_62, plain, (reverse(cons(X3,cons(X1,cons(X2,nil))))=cons(X2,cons(X1,cons(X3,nil))))).
+%
+%cnf(i_0_37, negated_conjecture, ($answer(esk1_2(cons(X1,X2),nil))|eqListNat(reverse(cons(X1,opAppend(X2,nil))),opAppend(reverse(cons(X1,X2)),nil))!=false)).
+%%%%
+%cnf(i_0_27, plain, (eqListNat(cons(suc(X1),X3),cons(suc(X2),X4))=eqListNat(cons(X1,X3),cons(X2,X4)))).
+%
+%cnf(i_0_104, negated_conjecture, ($answer(esk1_2(nil,cons(suc(X1),nil)))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_107, negated_conjecture, ($answer(esk1_2(nil,cons(suc(zero),nil)))|true!=false)).
+%
+%cnf(i_0_105, negated_conjecture, ($answer(esk1_2(cons(suc(X1),nil),nil))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_109, negated_conjecture, ($answer(esk1_2(cons(suc(zero),nil),nil))|true!=false)).
+%
+%cnf(i_0_39, negated_conjecture, ($answer(esk1_2(cons(X1,X2),cons(X3,nil)))|eqListNat(reverse(cons(X1,opAppend(X2,cons(X3,nil)))),reverse(cons(X3,cons(X1,X2))))!=false)).
+%
+%cnf(i_0_106, negated_conjecture, ($answer(esk1_2(nil,cons(suc(suc(X1)),nil)))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_116, negated_conjecture, ($answer(esk1_2(nil,cons(suc(suc(zero)),nil)))|true!=false)).
+%
+%cnf(i_0_108, negated_conjecture, ($answer(esk1_2(cons(suc(suc(X1)),nil),nil))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_118, negated_conjecture, ($answer(esk1_2(cons(suc(suc(zero)),nil),nil))|true!=false)).
+%
+%cnf(i_0_115, negated_conjecture, ($answer(esk1_2(nil,cons(suc(suc(suc(X1))),nil)))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_120, negated_conjecture, ($answer(esk1_2(nil,cons(suc(suc(suc(zero))),nil)))|true!=false)).
+%
+%cnf(i_0_117, negated_conjecture, ($answer(esk1_2(cons(suc(suc(suc(X1))),nil),nil))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_122, negated_conjecture, ($answer(esk1_2(cons(suc(suc(suc(zero))),nil),nil))|true!=false)).
+%
+%cnf(i_0_119, negated_conjecture, ($answer(esk1_2(nil,cons(suc(suc(suc(suc(X1)))),nil)))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_124, negated_conjecture, ($answer(esk1_2(nil,cons(suc(suc(suc(suc(zero)))),nil)))|true!=false)).
+%
+%cnf(i_0_42, negated_conjecture, ($answer(esk1_2(cons(X1,reverse(X2)),cons(X3,nil)))|eqListNat(reverse(cons(X1,reverse(cons(X3,X2)))),reverse(cons(X3,cons(X1,reverse(X2)))))!=false)).
+%%
+%cnf(i_0_121, negated_conjecture, ($answer(esk1_2(cons(suc(suc(suc(suc(X1)))),nil),nil))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_133, negated_conjecture, ($answer(esk1_2(cons(suc(suc(suc(suc(zero)))),nil),nil))|true!=false)).
+%
+%cnf(i_0_64, negated_conjecture, ($answer(esk1_2(cons(X1,cons(X2,nil)),nil))|eqListNat(cons(X2,cons(X1,nil)),cons(X2,cons(X1,nil)))!=false)).
+%
+%cnf(i_0_135, negated_conjecture, ($answer(esk1_2(cons(X1,cons(zero,nil)),nil))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_137, negated_conjecture, ($answer(esk1_2(cons(zero,cons(zero,nil)),nil))|true!=false)).
+%
+%cnf(i_0_136, negated_conjecture, ($answer(esk1_2(cons(suc(X1),cons(zero,nil)),nil))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_139, negated_conjecture, ($answer(esk1_2(cons(suc(zero),cons(zero,nil)),nil))|true!=false)).
+%
+%cnf(i_0_138, negated_conjecture, ($answer(esk1_2(cons(suc(suc(X1)),cons(zero,nil)),nil))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_141, negated_conjecture, ($answer(esk1_2(cons(suc(suc(zero)),cons(zero,nil)),nil))|true!=false)).
+%
+%cnf(i_0_43, negated_conjecture, ($answer(esk1_2(cons(X1,cons(X2,X3)),X4))|eqListNat(reverse(cons(X1,cons(X2,opAppend(X3,X4)))),opAppend(reverse(cons(X1,cons(X2,X3))),reverse(X4)))!=false)).
+%
+%cnf(i_0_123, negated_conjecture, ($answer(esk1_2(nil,cons(suc(suc(suc(suc(suc(X1))))),nil)))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_152, negated_conjecture, ($answer(esk1_2(nil,cons(suc(suc(suc(suc(suc(zero))))),nil)))|true!=false)).
+%
+%cnf(i_0_65, negated_conjecture, ($answer(esk1_2(nil,cons(X1,cons(X2,nil))))|eqListNat(cons(X2,cons(X1,nil)),cons(X2,cons(X1,nil)))!=false)).
+%
+%cnf(i_0_154, negated_conjecture, ($answer(esk1_2(nil,cons(X1,cons(zero,nil))))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_156, negated_conjecture, ($answer(esk1_2(nil,cons(zero,cons(zero,nil))))|true!=false)).
+%
+%cnf(i_0_155, negated_conjecture, ($answer(esk1_2(nil,cons(suc(X1),cons(zero,nil))))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_158, negated_conjecture, ($answer(esk1_2(nil,cons(suc(zero),cons(zero,nil))))|true!=false)).
+%
+%cnf(i_0_157, negated_conjecture, ($answer(esk1_2(nil,cons(suc(suc(X1)),cons(zero,nil))))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_160, negated_conjecture, ($answer(esk1_2(nil,cons(suc(suc(zero)),cons(zero,nil))))|true!=false)).
+%
+%cnf(i_0_132, negated_conjecture, ($answer(esk1_2(cons(suc(suc(suc(suc(suc(X1))))),nil),nil))|eqListNat(cons(X1,nil),cons(X1,nil))!=false)).
+%
+%cnf(i_0_45, plain, (eqListNat(cons(X1,cons(suc(X3),X4)),cons(X2,cons(zero,X5)))=opAnd(eqNat(X1,X2),false))).
+%
+%cnf(i_0_162, negated_conjecture, ($answer(esk1_2(cons(suc(suc(suc(suc(suc(zero))))),nil),nil))|true!=false)).
+%
+%cnf(i_0_69, negated_conjecture, ($answer(esk1_2(cons(X1,nil),cons(X2,nil)))|eqListNat(cons(X2,cons(X1,nil)),cons(X1,cons(X2,nil)))!=false)).
+%% SZS status Theorem
+% SZS answers Tuple [[cons(zero,nil), cons(suc(X1),nil)]|_]
+
+% Proof found!

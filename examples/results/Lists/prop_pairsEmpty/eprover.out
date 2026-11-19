@@ -1,0 +1,230 @@
+% Preprocessing class: FSMSSMSSSSSNFFN.
+% Configuration: G-E--_208_C18_F1_SE_CS_SOS_SP_PS_S5PRR_RG_S04AN
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHUSM-FFSS31-MFFFFFNN
+% partial match(1): FHUSF-FFSS31-MFFFFFNN
+% Configuration: SAT001_MinMin_p005000_rr_RG
+% Initializing proof state
+% Scanning for AC axioms
+%
+%cnf(i_0_4, plain, (null(nil)=true)).
+%
+%cnf(i_0_2, plain, (isLT(eq)=false)).
+%
+%cnf(i_0_3, plain, (isLT(gt)=false)).
+%
+%cnf(i_0_21, negated_conjecture, ($answer(esk1_1(X1))|null(concatMap(lam1(X1),X1))!=false)).
+%
+%cnf(i_0_1, plain, (isLT(lt)=true)).
+%
+%cnf(i_0_15, plain, (compareNat(zero,zero)=eq)).
+%
+%cnf(i_0_8, plain, (concatMap(X1,nil)=nil)).
+%
+%cnf(i_0_6, plain, (opAppend(nil,X1)=X1)).
+%
+%cnf(i_0_5, plain, (null(cons(X1,X2))=false)).
+%
+%cnf(i_0_11, plain, (lam2_body_case1(false,X1,X2)=nil)).
+%
+%cnf(i_0_16, plain, (compareNat(zero,suc(X1))=lt)).
+%
+%cnf(i_0_17, plain, (compareNat(suc(X1),zero)=gt)).
+%
+%cnf(i_0_19, plain, (app(lam1(X1),X2)=concatMap(lam2(X2),X1))).
+%
+%cnf(i_0_18, plain, (compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%cnf(i_0_10, plain, (cons(pair(X1,X2),nil)=lam2_body_case1(true,X1,X2))).
+%
+%cnf(i_0_7, plain, (opAppend(cons(X1,X2),X3)=cons(X1,opAppend(X2,X3)))).
+%
+%cnf(i_0_9, plain, (opAppend(app(X1,X2),concatMap(X1,X3))=concatMap(X1,cons(X2,X3)))).
+%
+%cnf(i_0_20, plain, (lam2_body_case1(isLT(compareNat(X1,X2)),X1,X2)=app(lam2(X1),X2))).
+% Presaturation interreduction done
+%
+%cnf(i_0_4, plain, (null(nil)=true)).
+%
+%cnf(i_0_2, plain, (isLT(eq)=false)).
+%
+%cnf(i_0_3, plain, (isLT(gt)=false)).
+%
+%cnf(i_0_1, plain, (isLT(lt)=true)).
+%
+%cnf(i_0_8, plain, (concatMap(X1,nil)=nil)).
+%
+%cnf(i_0_21, negated_conjecture, ($answer(esk1_1(X1))|null(concatMap(lam1(X1),X1))!=false)).
+%
+%cnf(i_0_22, negated_conjecture, ($answer(esk1_1(nil))|true!=false)).
+%
+%cnf(i_0_5, plain, (null(cons(X1,X2))=false)).
+%
+%cnf(i_0_15, plain, (compareNat(zero,zero)=eq)).
+%
+%cnf(i_0_6, plain, (opAppend(nil,X1)=X1)).
+%
+%cnf(i_0_11, plain, (lam2_body_case1(false,X1,X2)=nil)).
+%
+%cnf(i_0_16, plain, (compareNat(zero,suc(X1))=lt)).
+%
+%cnf(i_0_17, plain, (compareNat(suc(X1),zero)=gt)).
+%
+%cnf(i_0_19, plain, (app(lam1(X1),X2)=concatMap(lam2(X2),X1))).
+%
+%cnf(i_0_18, plain, (compareNat(suc(X1),suc(X2))=compareNat(X1,X2))).
+%
+%cnf(i_0_10, plain, (cons(pair(X1,X2),nil)=lam2_body_case1(true,X1,X2))).
+%
+%cnf(i_0_23, plain, (null(lam2_body_case1(true,X1,X2))=false)).
+%
+%cnf(i_0_7, plain, (opAppend(cons(X1,X2),X3)=cons(X1,opAppend(X2,X3)))).
+%
+%cnf(i_0_9, plain, (opAppend(app(X1,X2),concatMap(X1,X3))=concatMap(X1,cons(X2,X3)))).
+%
+%cnf(i_0_25, plain, (opAppend(app(X1,X2),nil)=concatMap(X1,cons(X2,nil)))).
+%
+%cnf(i_0_20, plain, (lam2_body_case1(isLT(compareNat(X1,X2)),X1,X2)=app(lam2(X1),X2))).
+%
+%cnf(i_0_31, plain, (app(lam2(zero),zero)=nil)).
+%
+%cnf(i_0_29, plain, (app(lam2(suc(X1)),zero)=nil)).
+%
+%cnf(i_0_33, plain, (concatMap(lam2(zero),cons(zero,nil))=nil)).
+%
+%cnf(i_0_24, plain, (opAppend(lam2_body_case1(true,X1,X2),X3)=cons(pair(X1,X2),X3))).
+%
+%cnf(i_0_30, plain, (app(lam2(zero),suc(X1))=lam2_body_case1(true,zero,suc(X1)))).
+%
+%cnf(i_0_35, plain, (concatMap(lam2(suc(X1)),cons(zero,nil))=nil)).
+%
+%cnf(i_0_32, plain, (concatMap(lam2(zero),cons(zero,X1))=concatMap(lam2(zero),X1))).
+%
+%cnf(i_0_27, plain, (opAppend(concatMap(lam2(X2),X1),nil)=concatMap(lam1(X1),cons(X2,nil)))).
+%
+%cnf(i_0_41, plain, (concatMap(lam1(nil),cons(X1,nil))=nil)).
+%
+%cnf(i_0_45, plain, (concatMap(lam1(nil),lam2_body_case1(true,X1,X2))=nil)).
+%
+%cnf(i_0_26, plain, (opAppend(concatMap(lam2(X2),X1),concatMap(lam1(X1),X3))=concatMap(lam1(X1),cons(X2,X3)))).
+%
+%cnf(i_0_50, plain, (concatMap(lam1(nil),cons(X1,X2))=concatMap(lam1(nil),X2))).
+%
+%cnf(i_0_34, plain, (concatMap(lam2(suc(X1)),cons(zero,X2))=concatMap(lam2(suc(X1)),X2))).
+%%%
+%cnf(i_0_38, plain, (concatMap(lam2(zero),cons(suc(X1),nil))=lam2_body_case1(true,zero,suc(X1)))).
+%
+%cnf(i_0_43, plain, (concatMap(lam1(cons(zero,X1)),cons(zero,nil))=concatMap(lam1(X1),cons(zero,nil)))).
+%
+%cnf(i_0_63, negated_conjecture, ($answer(esk1_1(cons(zero,nil)))|true!=false)).
+%
+%cnf(i_0_40, plain, (concatMap(lam2(zero),cons(X1,cons(zero,X2)))=concatMap(lam2(zero),cons(X1,X2)))).
+%
+%cnf(i_0_61, plain, (concatMap(lam1(cons(suc(X1),nil)),cons(zero,nil))=lam2_body_case1(true,zero,suc(X1)))).
+%
+%cnf(i_0_58, plain, (concatMap(lam1(cons(zero,X2)),cons(suc(X1),nil))=concatMap(lam1(X2),cons(suc(X1),nil)))).
+%
+%cnf(i_0_28, plain, (lam2_body_case1(isLT(compareNat(X1,X2)),suc(X1),suc(X2))=app(lam2(suc(X1)),suc(X2)))).
+%
+%cnf(i_0_75, plain, (app(lam2(suc(zero)),suc(zero))=nil)).
+%
+%cnf(i_0_73, plain, (app(lam2(suc(suc(X1))),suc(zero))=nil)).
+%
+%cnf(i_0_77, plain, (concatMap(lam2(suc(zero)),cons(suc(zero),nil))=nil)).
+%
+%cnf(i_0_79, plain, (concatMap(lam2(suc(suc(X1))),cons(suc(zero),nil))=nil)).
+%
+%cnf(i_0_74, plain, (app(lam2(suc(zero)),suc(suc(X1)))=lam2_body_case1(true,suc(zero),suc(suc(X1))))).
+%
+%cnf(i_0_82, plain, (concatMap(lam1(cons(suc(zero),nil)),cons(suc(zero),nil))=nil)).
+%
+%cnf(i_0_89, negated_conjecture, ($answer(esk1_1(cons(suc(zero),nil)))|true!=false)).
+%
+%cnf(i_0_76, plain, (concatMap(lam2(suc(zero)),cons(suc(zero),X1))=concatMap(lam2(suc(zero)),X1))).
+%
+%cnf(i_0_85, plain, (concatMap(lam1(cons(suc(zero),nil)),cons(suc(suc(X1)),nil))=nil)).
+%
+%cnf(i_0_78, plain, (concatMap(lam2(suc(suc(X1))),cons(suc(zero),X2))=concatMap(lam2(suc(suc(X1))),X2))).
+%
+%cnf(i_0_37, plain, (cons(pair(zero,suc(X1)),concatMap(lam2(zero),X2))=concatMap(lam2(zero),cons(suc(X1),X2)))).
+%
+%cnf(i_0_99, plain, (null(concatMap(lam2(zero),cons(suc(X1),X2)))=false)).
+%
+%cnf(i_0_56, plain, (concatMap(lam2(suc(X1)),cons(X2,cons(zero,X3)))=concatMap(lam2(suc(X1)),cons(X2,X3)))).
+%
+%cnf(i_0_87, plain, (concatMap(lam2(suc(zero)),cons(suc(suc(X1)),nil))=lam2_body_case1(true,suc(zero),suc(suc(X1))))).
+%
+%cnf(i_0_65, plain, (concatMap(lam2(zero),cons(X1,cons(X2,cons(zero,X3))))=concatMap(lam2(zero),cons(X1,cons(X2,X3))))).
+%
+%cnf(i_0_91, plain, (concatMap(lam2(suc(zero)),cons(X1,cons(suc(zero),X2)))=concatMap(lam2(suc(zero)),cons(X1,X2)))).
+%
+%cnf(i_0_101, plain, (concatMap(lam1(nil),concatMap(lam2(zero),cons(suc(X1),X2)))=concatMap(lam1(nil),concatMap(lam2(zero),X2)))).
+%
+%cnf(i_0_93, plain, (concatMap(lam1(cons(suc(zero),X1)),cons(suc(zero),nil))=concatMap(lam1(X1),cons(suc(zero),nil)))).
+%%
+%cnf(i_0_67, plain, (concatMap(lam1(cons(X1,cons(zero,X2))),cons(zero,nil))=concatMap(lam1(cons(X1,X2)),cons(zero,nil)))).
+%
+%cnf(i_0_52, plain, (opAppend(concatMap(lam2(zero),X1),concatMap(lam1(cons(zero,X1)),X2))=concatMap(lam1(cons(zero,X1)),cons(zero,X2)))).
+%
+%cnf(i_0_57, plain, (opAppend(concatMap(lam2(suc(X1)),X2),concatMap(lam1(cons(zero,X2)),X3))=concatMap(lam1(cons(zero,X2)),cons(suc(X1),X3)))).
+%
+%cnf(i_0_140, plain, (concatMap(lam1(cons(zero,nil)),cons(zero,X1))=concatMap(lam1(cons(zero,nil)),X1))).
+%%
+%cnf(i_0_149, plain, (concatMap(lam1(cons(zero,nil)),cons(suc(X1),X2))=concatMap(lam1(cons(zero,nil)),X2))).
+%
+%cnf(i_0_156, plain, (concatMap(lam1(cons(zero,nil)),cons(X1,cons(zero,X2)))=concatMap(lam1(cons(zero,nil)),cons(X1,X2)))).
+%%%
+%cnf(i_0_138, plain, (concatMap(lam1(cons(zero,X1)),cons(zero,cons(zero,nil)))=concatMap(lam1(X1),cons(zero,cons(zero,nil))))).
+%
+%cnf(i_0_173, negated_conjecture, ($answer(esk1_1(cons(zero,cons(zero,nil))))|true!=false)).
+%
+%cnf(i_0_98, plain, (concatMap(lam1(cons(suc(zero),X2)),cons(suc(suc(X1)),nil))=concatMap(lam1(X2),cons(suc(suc(X1)),nil)))).
+%
+%cnf(i_0_162, plain, (concatMap(lam1(cons(zero,nil)),cons(X1,cons(suc(X2),X3)))=concatMap(lam1(cons(zero,nil)),cons(X1,X3)))).
+%
+%cnf(i_0_59, plain, (opAppend(app(lam2(zero),X1),lam2_body_case1(true,zero,suc(X2)))=concatMap(lam2(zero),cons(X1,cons(suc(X2),nil))))).
+%
+%cnf(i_0_115, plain, (concatMap(lam1(cons(suc(suc(X1)),nil)),cons(suc(zero),nil))=lam2_body_case1(true,suc(zero),suc(suc(X1))))).
+%
+%cnf(i_0_72, plain, (lam2_body_case1(isLT(compareNat(X1,X2)),suc(suc(X1)),suc(suc(X2)))=app(lam2(suc(suc(X1))),suc(suc(X2))))).
+%
+%cnf(i_0_194, plain, (app(lam2(suc(suc(zero))),suc(suc(zero)))=nil)).
+%
+%cnf(i_0_192, plain, (app(lam2(suc(suc(suc(X1)))),suc(suc(zero)))=nil)).
+%
+%cnf(i_0_196, plain, (concatMap(lam2(suc(suc(zero))),cons(suc(suc(zero)),nil))=nil)).
+%
+%cnf(i_0_198, plain, (concatMap(lam2(suc(suc(suc(X1)))),cons(suc(suc(zero)),nil))=nil)).
+%
+%cnf(i_0_201, plain, (concatMap(lam1(cons(suc(suc(zero)),nil)),cons(suc(suc(zero)),nil))=nil)).
+%
+%cnf(i_0_208, negated_conjecture, ($answer(esk1_1(cons(suc(suc(zero)),nil)))|true!=false)).
+%
+%cnf(i_0_205, plain, (concatMap(lam1(cons(suc(suc(zero)),nil)),cons(suc(suc(suc(X1))),nil))=nil)).
+%
+%cnf(i_0_195, plain, (concatMap(lam2(suc(suc(zero))),cons(suc(suc(zero)),X1))=concatMap(lam2(suc(suc(zero))),X1))).
+%
+%cnf(i_0_60, plain, (cons(pair(zero,suc(X1)),concatMap(lam1(cons(suc(X1),nil)),X2))=concatMap(lam1(cons(suc(X1),nil)),cons(zero,X2)))).
+%
+%cnf(i_0_217, plain, (null(concatMap(lam1(cons(suc(X1),nil)),cons(zero,X2)))=false)).
+%
+%cnf(i_0_193, plain, (app(lam2(suc(suc(zero))),suc(suc(suc(X1))))=lam2_body_case1(true,suc(suc(zero)),suc(suc(suc(X1)))))).
+%
+%cnf(i_0_96, plain, (concatMap(lam2(suc(suc(X1))),cons(X2,cons(suc(zero),X3)))=concatMap(lam2(suc(suc(X1))),cons(X2,X3)))).
+%
+%cnf(i_0_108, plain, (concatMap(lam2(suc(X1)),cons(X2,cons(X3,cons(zero,X4))))=concatMap(lam2(suc(X1)),cons(X2,cons(X3,X4))))).
+%
+%cnf(i_0_197, plain, (concatMap(lam2(suc(suc(suc(X1)))),cons(suc(suc(zero)),X2))=concatMap(lam2(suc(suc(suc(X1)))),X2))).
+%
+%cnf(i_0_221, plain, (concatMap(lam1(cons(suc(zero),nil)),cons(zero,cons(suc(zero),nil)))=lam2_body_case1(true,zero,suc(zero)))).
+%
+%cnf(i_0_219, plain, (concatMap(lam1(nil),concatMap(lam1(cons(suc(X1),nil)),cons(zero,X2)))=concatMap(lam1(nil),concatMap(lam1(cons(suc(X1),nil)),X2)))).
+%%
+%cnf(i_0_110, plain, (concatMap(lam1(cons(X2,cons(zero,X3))),cons(suc(X1),nil))=concatMap(lam1(cons(X2,X3)),cons(suc(X1),nil)))).
+%
+%cnf(i_0_137, plain, (concatMap(lam1(cons(zero,X1)),cons(zero,cons(suc(X2),nil)))=concatMap(lam1(X1),cons(zero,cons(suc(X2),nil))))).
+%% SZS status Theorem
+% SZS answers Tuple [[cons(zero,cons(suc(X1),nil))]|_]
+
+% Proof found!

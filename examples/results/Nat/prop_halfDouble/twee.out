@@ -1,0 +1,203 @@
+Here is the input problem:
+  Axiom 1 (double_1): double(zero) = zero.
+  Axiom 2 (half_1): half(zero) = zero.
+  Axiom 3 (half_2): half(suc(zero)) = zero.
+  Axiom 4 (half_3): half(suc(suc(X))) = suc(half(X)).
+  Axiom 5 (double_2): double(suc(X)) = suc(suc(double(X))).
+  Axiom 6 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 7 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 8 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 9 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 10 (prop_halfDouble_1): prop_halfDouble(X) = eqNat(half(double(X)), X).
+  Axiom 11 (reflexivity): equals(X, X) = true.
+  Axiom 12 (prop_halfDouble): equals(prop_halfDouble(X), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. double(zero) -> zero
+2. half(zero) -> zero
+3. half(suc(zero)) -> zero
+4. suc(half(X)) -> half(suc(suc(X)))
+5. suc(suc(double(X))) -> double(suc(X))
+6. eqNat(zero, zero) -> true
+7. eqNat(zero, suc(X)) -> false
+8. eqNat(suc(X), zero) -> false
+9. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+10. eqNat(half(double(X)), X) -> prop_halfDouble(X)
+11. equals(X, X) -> true
+12. equals(prop_halfDouble(X), false) -> false
+13. prop_halfDouble(zero) -> true
+14. double(suc(zero)) -> suc(suc(zero))
+15. equals(true, false) -> false
+16. half(suc(suc(zero))) -> suc(zero)
+17. eqNat(zero, double(suc(X))) -> false
+18. eqNat(double(suc(X)), zero) -> false
+19. half(suc(suc(suc(zero)))) -> suc(zero)
+20. eqNat(zero, half(suc(suc(X)))) -> false
+21. eqNat(half(suc(suc(X))), zero) -> false
+22. double(suc(suc(zero))) -> suc(suc(suc(suc(zero))))
+23. eqNat(zero, double(double(suc(X)))) -> false
+24. eqNat(double(double(suc(X))), zero) -> false
+25. eqNat(zero, half(double(suc(X)))) -> false
+26. eqNat(half(double(suc(X))), zero) -> false
+27. eqNat(suc(double(X)), Y) -> eqNat(double(suc(X)), suc(Y))
+28. eqNat(double(suc(X)), suc(zero)) -> false
+29. eqNat(suc(X), double(suc(Y))) -> eqNat(X, suc(double(Y)))
+30. prop_halfDouble(suc(zero)) -> true
+31. half(suc(suc(suc(suc(zero))))) -> suc(suc(zero))
+32. eqNat(zero, double(half(suc(suc(X))))) -> false
+33. eqNat(double(half(suc(suc(X)))), zero) -> false
+34. eqNat(zero, half(suc(double(suc(X))))) -> false
+35. eqNat(half(suc(double(suc(X)))), zero) -> false
+36. eqNat(half(suc(suc(X))), suc(Y)) -> eqNat(half(X), Y)
+37. eqNat(suc(X), half(suc(suc(Y)))) -> eqNat(X, half(Y))
+38. eqNat(zero, double(double(double(suc(X))))) -> false
+39. eqNat(double(double(double(suc(X)))), zero) -> false
+40. eqNat(zero, half(double(double(suc(X))))) -> false
+41. eqNat(half(double(double(suc(X)))), zero) -> false
+42. eqNat(double(double(suc(X))), suc(zero)) -> false
+43. eqNat(zero, double(half(double(suc(X))))) -> false
+44. eqNat(double(half(double(suc(X)))), zero) -> false
+45. eqNat(double(suc(X)), suc(suc(Y))) -> eqNat(double(X), Y)
+46. half(suc(suc(suc(suc(suc(zero)))))) -> suc(suc(zero))
+47. eqNat(half(double(suc(X))), suc(Y)) -> eqNat(half(double(X)), Y)
+48. prop_halfDouble(suc(X)) -> prop_halfDouble(X)
+49. prop_halfDouble(double(suc(X))) -> prop_halfDouble(double(X))
+50. prop_halfDouble(half(suc(suc(X)))) -> prop_halfDouble(half(X))
+51. prop_halfDouble(double(double(suc(X)))) -> prop_halfDouble(double(double(X)))
+52. prop_halfDouble(half(double(suc(X)))) -> prop_halfDouble(half(double(X)))
+53. eqNat(suc(X), half(double(suc(Y)))) -> eqNat(X, half(double(Y)))
+54. prop_halfDouble(double(half(suc(suc(X))))) -> prop_halfDouble(double(half(X)))
+55. eqNat(suc(X), double(double(suc(Y)))) -> eqNat(X, suc(double(suc(double(Y)))))
+56. eqNat(double(suc(X)), double(suc(Y))) -> eqNat(double(X), double(Y))
+57. prop_halfDouble(half(suc(double(suc(X))))) -> prop_halfDouble(half(suc(double(X))))
+58. eqNat(zero, double(double(half(suc(suc(X)))))) -> false
+59. eqNat(double(double(half(suc(suc(X))))), zero) -> false
+60. eqNat(zero, half(double(half(suc(suc(X)))))) -> false
+61. eqNat(half(double(half(suc(suc(X))))), zero) -> false
+62. eqNat(double(half(suc(suc(X)))), suc(zero)) -> false
+63. eqNat(zero, double(half(suc(double(suc(X)))))) -> false
+64. eqNat(double(half(suc(double(suc(X))))), zero) -> false
+65. eqNat(zero, half(suc(double(double(suc(X)))))) -> false
+66. eqNat(half(suc(double(double(suc(X))))), zero) -> false
+67. double(suc(suc(suc(zero)))) -> suc(suc(suc(suc(suc(suc(zero))))))
+68. prop_halfDouble(double(double(double(suc(X))))) -> prop_halfDouble(double(double(double(X))))
+69. prop_halfDouble(half(double(double(suc(X))))) -> prop_halfDouble(half(double(double(X))))
+70. prop_halfDouble(double(half(double(suc(X))))) -> prop_halfDouble(double(half(double(X))))
+71. eqNat(zero, half(half(suc(suc(suc(suc(X))))))) -> false
+72. eqNat(zero, half(half(double(suc(suc(X)))))) -> false
+73. eqNat(half(half(suc(suc(suc(suc(X)))))), zero) -> false
+74. eqNat(half(half(double(suc(suc(X))))), zero) -> false
+75. eqNat(zero, double(double(double(double(suc(X)))))) -> false
+76. eqNat(double(double(double(double(suc(X))))), zero) -> false
+77. eqNat(zero, half(double(double(double(suc(X)))))) -> false
+78. eqNat(half(double(double(double(suc(X))))), zero) -> false
+79. eqNat(double(double(double(suc(X)))), suc(zero)) -> false
+80. eqNat(zero, double(half(double(double(suc(X)))))) -> false
+81. eqNat(double(half(double(double(suc(X))))), zero) -> false
+82. eqNat(zero, double(double(half(double(suc(X)))))) -> false
+83. eqNat(double(double(half(double(suc(X))))), zero) -> false
+84. eqNat(zero, half(double(half(double(suc(X)))))) -> false
+85. eqNat(half(double(half(double(suc(X))))), zero) -> false
+
+[... hs2fol: 13361 lines of search output omitted to keep the repository small; rerun to regenerate ...]
+
+13425. eqNat(half(half(suc(suc(suc(suc(X)))))), double(half(double(half(suc(suc(Y))))))) -> eqNat(half(half(X)), suc(double(half(double(half(Y))))))
+13426. eqNat(half(suc(suc(X))), double(half(double(half(half(suc(suc(suc(suc(Y)))))))))) -> eqNat(half(X), suc(double(half(double(half(half(Y)))))))
+13427. eqNat(double(suc(X)), suc(double(half(double(half(half(suc(suc(suc(suc(Y))))))))))) -> eqNat(double(X), suc(double(half(double(half(half(Y)))))))
+13428. eqNat(double(double(suc(X))), suc(double(half(double(half(suc(suc(suc(suc(Y)))))))))) -> eqNat(double(double(X)), suc(double(half(double(half(Y))))))
+13429. eqNat(double(half(half(suc(suc(suc(suc(X))))))), suc(double(half(double(suc(Y)))))) -> eqNat(double(half(half(X))), suc(double(half(double(Y)))))
+13430. eqNat(double(double(double(suc(X)))), suc(double(half(double(suc(suc(suc(suc(Y))))))))) -> eqNat(double(double(double(X))), suc(double(half(double(Y)))))
+13431. eqNat(half(double(half(suc(double(half(half(suc(suc(suc(suc(X))))))))))), suc(Y)) -> eqNat(half(double(half(suc(double(half(half(X))))))), Y)
+13432. eqNat(half(double(half(suc(double(half(half(double(suc(suc(X)))))))))), suc(Y)) -> eqNat(half(double(half(suc(double(half(half(double(X)))))))), Y)
+13433. eqNat(half(double(half(suc(double(suc(X)))))), half(half(suc(suc(suc(suc(Y))))))) -> eqNat(half(double(half(suc(double(X))))), half(half(Y)))
+13434. eqNat(half(double(half(suc(double(double(suc(X))))))), half(suc(suc(suc(suc(Y)))))) -> eqNat(half(double(half(suc(double(double(X)))))), half(Y))
+13435. eqNat(half(double(half(half(suc(suc(suc(suc(X)))))))), half(suc(double(suc(Y))))) -> eqNat(half(double(half(half(X)))), half(suc(double(Y))))
+13436. eqNat(half(double(suc(X))), half(suc(double(half(half(suc(suc(suc(suc(Y)))))))))) -> eqNat(half(double(X)), half(suc(double(half(half(Y))))))
+13437. eqNat(half(double(double(suc(X)))), half(suc(double(half(suc(suc(suc(suc(Y))))))))) -> eqNat(half(double(double(X))), half(suc(double(half(Y)))))
+13438. eqNat(half(double(double(double(suc(X))))), half(suc(double(suc(suc(suc(suc(Y)))))))) -> eqNat(half(double(double(double(X)))), half(suc(double(Y))))
+13439. eqNat(half(suc(double(half(half(suc(suc(suc(suc(X))))))))), half(double(suc(Y)))) -> eqNat(half(suc(double(half(half(X))))), half(double(Y)))
+13440. eqNat(half(suc(double(suc(X)))), half(double(half(half(suc(suc(suc(suc(Y))))))))) -> eqNat(half(suc(double(X))), half(double(half(half(Y)))))
+13441. eqNat(half(suc(double(double(suc(X))))), half(double(half(suc(suc(suc(suc(Y)))))))) -> eqNat(half(suc(double(double(X)))), half(double(half(Y))))
+13442. eqNat(half(suc(double(double(double(suc(X)))))), half(double(suc(suc(suc(suc(Y))))))) -> eqNat(half(suc(double(double(double(X))))), half(double(Y)))
+13443. eqNat(half(half(suc(suc(suc(suc(X)))))), half(double(half(suc(double(suc(Y))))))) -> eqNat(half(half(X)), half(double(half(suc(double(Y))))))
+13444. eqNat(suc(X), half(double(half(suc(double(half(half(suc(suc(suc(suc(Y)))))))))))) -> eqNat(X, half(double(half(suc(double(half(half(Y))))))))
+13445. eqNat(suc(X), half(double(half(suc(double(half(half(double(suc(suc(Y))))))))))) -> eqNat(X, half(double(half(suc(double(half(half(double(Y)))))))))
+13446. eqNat(double(suc(X)), half(double(half(suc(double(half(suc(suc(suc(suc(Y))))))))))) -> eqNat(double(X), half(double(half(suc(double(half(Y)))))))
+13447. eqNat(double(double(suc(X))), half(double(half(suc(double(suc(suc(suc(suc(Y)))))))))) -> eqNat(double(double(X)), half(double(half(suc(double(Y))))))
+13448. eqNat(double(half(half(suc(suc(suc(suc(X))))))), double(half(suc(double(suc(Y)))))) -> eqNat(double(half(half(X))), double(half(suc(double(Y)))))
+13449. eqNat(double(suc(X)), double(half(suc(double(half(half(suc(suc(suc(suc(Y))))))))))) -> eqNat(double(X), double(half(suc(double(half(half(Y)))))))
+13450. eqNat(double(double(suc(X))), double(half(suc(double(half(suc(suc(suc(suc(Y)))))))))) -> eqNat(double(double(X)), double(half(suc(double(half(Y))))))
+13451. eqNat(double(double(double(suc(X)))), double(half(suc(double(suc(suc(suc(suc(Y))))))))) -> eqNat(double(double(double(X))), double(half(suc(double(Y)))))
+13452. eqNat(half(half(double(suc(double(half(half(suc(suc(suc(suc(X))))))))))), suc(Y)) -> eqNat(half(half(double(suc(double(half(half(X))))))), Y)
+13453. eqNat(half(half(double(suc(double(half(half(double(suc(suc(X)))))))))), suc(Y)) -> eqNat(half(half(double(suc(double(half(half(double(X)))))))), Y)
+13454. eqNat(half(half(double(suc(double(suc(X)))))), half(half(suc(suc(suc(suc(Y))))))) -> eqNat(half(half(double(suc(double(X))))), half(half(Y)))
+13455. eqNat(half(half(double(suc(double(double(suc(X))))))), half(suc(suc(suc(suc(Y)))))) -> eqNat(half(half(double(suc(double(double(X)))))), half(Y))
+13456. eqNat(half(half(double(half(suc(suc(suc(suc(X)))))))), double(half(suc(suc(Y))))) -> eqNat(half(half(double(half(X)))), suc(double(half(Y))))
+13457. eqNat(half(half(double(suc(suc(X))))), double(half(half(suc(suc(suc(suc(Y)))))))) -> eqNat(half(half(double(X))), suc(double(half(half(Y)))))
+13458. eqNat(half(half(double(suc(suc(X))))), double(half(half(double(suc(suc(Y))))))) -> eqNat(half(half(double(X))), suc(double(half(half(double(Y))))))
+13459. eqNat(half(half(suc(suc(suc(suc(X)))))), half(half(double(suc(double(suc(Y))))))) -> eqNat(half(half(X)), half(half(double(suc(double(Y))))))
+13460. eqNat(suc(X), half(half(double(suc(double(half(half(suc(suc(suc(suc(Y)))))))))))) -> eqNat(X, half(half(double(suc(double(half(half(Y))))))))
+13461. eqNat(suc(X), half(half(double(suc(double(half(half(double(suc(suc(Y))))))))))) -> eqNat(X, half(half(double(suc(double(half(half(double(Y)))))))))
+13462. eqNat(double(suc(X)), half(half(double(suc(double(half(suc(suc(suc(suc(Y))))))))))) -> eqNat(double(X), half(half(double(suc(double(half(Y)))))))
+13463. eqNat(double(double(suc(X))), half(half(double(suc(double(suc(suc(suc(suc(Y)))))))))) -> eqNat(double(double(X)), half(half(double(suc(double(Y))))))
+13464. eqNat(half(suc(double(double(half(half(suc(suc(suc(suc(X)))))))))), double(suc(Y))) -> eqNat(half(suc(double(double(half(half(X)))))), double(Y))
+13465. eqNat(half(suc(double(double(half(half(double(suc(suc(X))))))))), double(suc(Y))) -> eqNat(half(suc(double(double(half(half(double(X))))))), double(Y))
+13466. eqNat(half(suc(double(double(suc(X))))), double(half(half(suc(suc(suc(suc(Y)))))))) -> eqNat(half(suc(double(double(X)))), double(half(half(Y))))
+13467. eqNat(half(suc(double(double(double(suc(X)))))), double(half(suc(suc(suc(suc(Y))))))) -> eqNat(half(suc(double(double(double(X))))), double(half(Y)))
+13468. eqNat(double(half(double(half(half(suc(suc(suc(suc(X))))))))), suc(double(suc(Y)))) -> eqNat(double(half(double(half(half(X))))), suc(double(Y)))
+13469. eqNat(double(half(double(half(half(double(suc(suc(X)))))))), suc(double(suc(Y)))) -> eqNat(double(half(double(half(half(double(X)))))), suc(double(Y)))
+13470. eqNat(double(half(double(suc(X)))), suc(double(half(half(suc(suc(suc(suc(Y))))))))) -> eqNat(double(half(double(X))), suc(double(half(half(Y)))))
+13471. eqNat(double(half(double(double(suc(X))))), suc(double(half(suc(suc(suc(suc(Y)))))))) -> eqNat(double(half(double(double(X)))), suc(double(half(Y))))
+13472. eqNat(half(suc(double(half(double(half(half(suc(suc(suc(suc(X))))))))))), suc(Y)) -> eqNat(half(suc(double(half(double(half(half(X))))))), Y)
+13473. eqNat(half(suc(double(half(double(half(half(double(suc(suc(X)))))))))), suc(Y)) -> eqNat(half(suc(double(half(double(half(half(double(X)))))))), Y)
+13474. eqNat(half(suc(double(half(double(suc(X)))))), half(half(suc(suc(suc(suc(Y))))))) -> eqNat(half(suc(double(half(double(X))))), half(half(Y)))
+13475. eqNat(half(suc(double(half(double(double(suc(X))))))), half(suc(suc(suc(suc(Y)))))) -> eqNat(half(suc(double(half(double(double(X)))))), half(Y))
+13476. eqNat(half(half(suc(suc(suc(suc(X)))))), half(suc(double(half(double(suc(Y))))))) -> eqNat(half(half(X)), half(suc(double(half(double(Y))))))
+13477. eqNat(suc(X), half(suc(double(half(double(half(half(suc(suc(suc(suc(Y)))))))))))) -> eqNat(X, half(suc(double(half(double(half(half(Y))))))))
+13478. eqNat(suc(X), half(suc(double(half(double(half(half(double(suc(suc(Y))))))))))) -> eqNat(X, half(suc(double(half(double(half(half(double(Y)))))))))
+13479. eqNat(double(suc(X)), half(suc(double(half(double(half(suc(suc(suc(suc(Y))))))))))) -> eqNat(double(X), half(suc(double(half(double(half(Y)))))))
+13480. eqNat(double(double(suc(X))), half(suc(double(half(double(suc(suc(suc(suc(Y)))))))))) -> eqNat(double(double(X)), half(suc(double(half(double(Y))))))
+13481. eqNat(double(half(half(suc(suc(suc(suc(X))))))), half(suc(double(double(suc(Y)))))) -> eqNat(double(half(half(X))), half(suc(double(double(Y)))))
+13482. eqNat(double(suc(X)), half(suc(double(double(half(half(suc(suc(suc(suc(Y))))))))))) -> eqNat(double(X), half(suc(double(double(half(half(Y)))))))
+13483. eqNat(double(double(suc(X))), half(suc(double(double(half(suc(suc(suc(suc(Y)))))))))) -> eqNat(double(double(X)), half(suc(double(double(half(Y))))))
+13484. eqNat(double(double(double(suc(X)))), half(suc(double(double(suc(suc(suc(suc(Y))))))))) -> eqNat(double(double(double(X))), half(suc(double(double(Y)))))
+13485. eqNat(half(half(suc(double(double(half(half(suc(suc(suc(suc(X))))))))))), suc(Y)) -> eqNat(half(half(suc(double(double(half(half(X))))))), Y)
+13486. eqNat(half(half(suc(double(double(half(half(double(suc(suc(X)))))))))), suc(Y)) -> eqNat(half(half(suc(double(double(half(half(double(X)))))))), Y)
+13487. eqNat(half(half(suc(double(double(suc(X)))))), half(half(suc(suc(suc(suc(Y))))))) -> eqNat(half(half(suc(double(double(X))))), half(half(Y)))
+13488. eqNat(half(half(suc(double(double(double(suc(X))))))), half(suc(suc(suc(suc(Y)))))) -> eqNat(half(half(suc(double(double(double(X)))))), half(Y))
+13489. eqNat(half(half(suc(suc(suc(suc(X)))))), half(half(suc(double(double(suc(Y))))))) -> eqNat(half(half(X)), half(half(suc(double(double(Y))))))
+13490. eqNat(suc(X), half(half(suc(double(double(half(half(suc(suc(suc(suc(Y)))))))))))) -> eqNat(X, half(half(suc(double(double(half(half(Y))))))))
+13491. eqNat(suc(X), half(half(suc(double(double(half(half(double(suc(suc(Y))))))))))) -> eqNat(X, half(half(suc(double(double(half(half(double(Y)))))))))
+13492. eqNat(double(suc(X)), half(half(suc(double(double(half(suc(suc(suc(suc(Y))))))))))) -> eqNat(double(X), half(half(suc(double(double(half(Y)))))))
+13493. eqNat(double(double(suc(X))), half(half(suc(double(double(suc(suc(suc(suc(Y)))))))))) -> eqNat(double(double(X)), half(half(suc(double(double(Y))))))
+13494. eqNat(half(half(suc(suc(suc(suc(X)))))), double(half(half(double(suc(suc(Y))))))) -> eqNat(half(half(X)), suc(double(half(half(double(Y))))))
+13495. eqNat(half(suc(suc(X))), double(half(half(double(half(suc(suc(suc(suc(Y)))))))))) -> eqNat(half(X), suc(double(half(half(double(half(Y)))))))
+13496. eqNat(double(suc(X)), suc(double(half(half(double(half(suc(suc(suc(suc(Y))))))))))) -> eqNat(double(X), suc(double(half(half(double(half(Y)))))))
+13497. eqNat(double(double(suc(X))), suc(double(half(half(double(suc(suc(suc(suc(Y)))))))))) -> eqNat(double(double(X)), suc(double(half(half(double(Y))))))
+13498. eqNat(double(half(suc(double(suc(X))))), half(double(half(suc(suc(suc(suc(Y)))))))) -> eqNat(double(half(suc(double(X)))), half(double(half(Y))))
+13499. eqNat(double(half(suc(double(double(suc(X)))))), half(double(suc(suc(suc(suc(Y))))))) -> eqNat(double(half(suc(double(double(X))))), half(double(Y)))
+13500. eqNat(double(half(suc(double(suc(X))))), double(half(half(suc(suc(suc(suc(Y)))))))) -> eqNat(double(half(suc(double(X)))), double(half(half(Y))))
+13501. eqNat(double(half(suc(double(double(suc(X)))))), double(half(suc(suc(suc(suc(Y))))))) -> eqNat(double(half(suc(double(double(X))))), double(half(Y)))
+13502. eqNat(half(half(double(half(suc(suc(suc(suc(X)))))))), half(suc(double(suc(Y))))) -> eqNat(half(half(double(half(X)))), half(suc(double(Y))))
+13503. eqNat(half(suc(double(suc(X)))), half(half(double(half(suc(suc(suc(suc(Y))))))))) -> eqNat(half(suc(double(X))), half(half(double(half(Y)))))
+13504. eqNat(half(suc(double(double(suc(X))))), half(half(double(suc(suc(suc(suc(Y)))))))) -> eqNat(half(suc(double(double(X)))), half(half(double(Y))))
+13505. eqNat(double(double(suc(X))), suc(double(double(half(half(suc(suc(suc(suc(Y)))))))))) -> eqNat(double(double(X)), suc(double(double(half(half(Y))))))
+13506. eqNat(double(double(double(suc(X)))), suc(double(double(half(suc(suc(suc(suc(Y))))))))) -> eqNat(double(double(double(X))), suc(double(double(half(Y)))))
+13507. eqNat(double(suc(X)), double(half(half(suc(double(half(suc(suc(suc(suc(Y))))))))))) -> eqNat(double(X), double(half(half(suc(double(half(Y)))))))
+13508. eqNat(double(double(suc(X))), double(half(half(suc(double(suc(suc(suc(suc(Y)))))))))) -> eqNat(double(double(X)), double(half(half(suc(double(Y))))))
+13509. eqNat(half(double(half(half(suc(double(half(suc(suc(suc(suc(X))))))))))), suc(Y)) -> eqNat(half(double(half(half(suc(double(half(X))))))), Y)
+13510. eqNat(half(double(half(half(suc(double(half(double(suc(suc(X)))))))))), suc(Y)) -> eqNat(half(double(half(half(suc(double(half(double(X)))))))), Y)
+13511. eqNat(half(half(double(half(suc(double(half(suc(suc(suc(suc(X))))))))))), suc(Y)) -> eqNat(half(half(double(half(suc(double(half(X))))))), Y)
+13512. eqNat(half(half(double(half(suc(double(half(double(suc(suc(X)))))))))), suc(Y)) -> eqNat(half(half(double(half(suc(double(half(double(X)))))))), Y)
+13513. eqNat(half(double(suc(X))), half(half(suc(double(half(suc(suc(suc(suc(Y)))))))))) -> eqNat(half(double(X)), half(half(suc(double(half(Y))))))
+13514. eqNat(half(double(double(suc(X)))), half(half(suc(double(suc(suc(suc(suc(Y))))))))) -> eqNat(half(double(double(X))), half(half(suc(double(Y)))))
+13515. eqNat(half(half(suc(double(half(suc(suc(suc(suc(X))))))))), half(double(suc(Y)))) -> eqNat(half(half(suc(double(half(X))))), half(double(Y)))
+13516. eqNat(suc(X), half(double(half(half(suc(double(half(suc(suc(suc(suc(Y)))))))))))) -> eqNat(X, half(double(half(half(suc(double(half(Y))))))))
+13517. eqNat(suc(X), half(double(half(half(suc(double(half(double(suc(suc(Y))))))))))) -> eqNat(X, half(double(half(half(suc(double(half(double(Y)))))))))
+13518. eqNat(double(suc(X)), half(double(half(half(suc(double(suc(suc(suc(suc(Y))))))))))) -> eqNat(double(X), half(double(half(half(suc(double(Y)))))))
+13519. eqNat(suc(X), half(half(double(half(suc(double(half(suc(suc(suc(suc(Y)))))))))))) -> eqNat(X, half(half(double(half(suc(double(half(Y))))))))
+13520. eqNat(suc(X), half(half(double(half(suc(double(half(double(suc(suc(Y))))))))))) -> eqNat(X, half(half(double(half(suc(double(half(double(Y)))))))))
+13521. eqNat(double(suc(X)), half(half(double(half(suc(double(suc(suc(suc(suc(Y))))))))))) -> eqNat(double(X), half(half(double(half(suc(double(Y)))))))
+13522. eqNat(double(half(double(suc(X)))), half(suc(double(half(suc(suc(suc(suc(Y))))))))) -> eqNat(double(half(double(X))), half(suc(double(half(Y)))))
+13523. eqNat(double(half(double(double(suc(X))))), half(suc(double(suc(suc(suc(suc(Y)))))))) -> eqNat(double(half(double(double(X)))), half(suc(double(Y))))
+13524. eqNat(double(half(half(double(half(suc(suc(suc(suc(X))))))))), suc(double(suc(Y)))) -> eqNat(double(half(half(double(half(X))))), suc(double(Y)))

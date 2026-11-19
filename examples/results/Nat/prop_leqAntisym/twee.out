@@ -1,0 +1,58 @@
+Here is the input problem:
+  Axiom 1 (implies_2): implies(true, X) = X.
+  Axiom 2 (implies_1): implies(false, X) = true.
+  Axiom 3 (leq_1): leq(zero, X) = true.
+  Axiom 4 (leq_2): leq(suc(X), zero) = false.
+  Axiom 5 (leq_3): leq(suc(X), suc(Y)) = leq(X, Y).
+  Axiom 6 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 7 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 8 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 9 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 10 (prop_leqAntisym_1): prop_leqAntisym(X, Y) = implies(leq(X, Y), eqNat(X, Y)).
+  Axiom 11 (reflexivity): equals(X, X) = true.
+  Axiom 12 (prop_leqAntisym): equals(prop_leqAntisym(X, Y), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. implies(true, X) -> X
+2. implies(false, X) -> true
+3. leq(zero, X) -> true
+4. leq(suc(X), zero) -> false
+5. leq(suc(X), suc(Y)) -> leq(X, Y)
+6. eqNat(zero, zero) -> true
+7. eqNat(zero, suc(X)) -> false
+8. eqNat(suc(X), zero) -> false
+9. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+10. implies(leq(X, Y), eqNat(X, Y)) -> prop_leqAntisym(X, Y)
+11. equals(X, X) -> true
+12. equals(prop_leqAntisym(X, Y), false) -> false
+13. prop_leqAntisym(zero, zero) -> true
+14. eqNat(zero, X) -> prop_leqAntisym(zero, X)
+15. equals(true, false) -> false
+16. prop_leqAntisym(suc(X), zero) -> true
+17. prop_leqAntisym(zero, suc(X)) -> false
+18. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (implies_2): implies(true, X) = X.
+Axiom 2 (leq_1): leq(zero, X) = true.
+Axiom 3 (eqNat_2): eqNat(zero, suc(X)) = false.
+Axiom 4 (prop_leqAntisym_1): prop_leqAntisym(X, Y) = implies(leq(X, Y), eqNat(X, Y)).
+
+Goal 1 (prop_leqAntisym): prop_leqAntisym(X, Y) = false.
+The goal is true when:
+  X = zero
+  Y = suc(X)
+
+Proof:
+  prop_leqAntisym(zero, suc(X))
+= { by axiom 4 (prop_leqAntisym_1) }
+  implies(leq(zero, suc(X)), eqNat(zero, suc(X)))
+= { by axiom 3 (eqNat_2) }
+  implies(leq(zero, suc(X)), false)
+= { by axiom 2 (leq_1) }
+  implies(true, false)
+= { by axiom 1 (implies_2) }
+  false
+
+RESULT: Theorem (the conjecture is true).

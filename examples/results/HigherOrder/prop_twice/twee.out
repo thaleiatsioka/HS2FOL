@@ -1,0 +1,66 @@
+Here is the input problem:
+  Axiom 1 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 2 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 3 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 4 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 5 (app_fn_id_1): app(fn_id, X) = X.
+  Axiom 6 (app_fn_const_1): app(fn_const(X), Y) = X.
+  Axiom 7 (app_fn_case_Nat_1): app(fn_case_Nat(X, Y), zero) = X.
+  Axiom 8 (app_fn_case_Nat_2): app(fn_case_Nat(X, Y), suc(Z)) = app(Y, Z).
+  Axiom 9 (prop_twice_1): prop_twice(X, Y) = eqNat(app(X, app(X, Y)), app(X, Y)).
+  Axiom 10 (reflexivity): equals(X, X) = true.
+  Axiom 11 (prop_twice): equals(prop_twice(X, Y), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. eqNat(zero, zero) -> true
+2. eqNat(zero, suc(X)) -> false
+3. eqNat(suc(X), zero) -> false
+4. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+5. app(fn_id, X) -> X
+6. app(fn_const(X), Y) -> X
+7. app(fn_case_Nat(X, Y), zero) -> X
+8. app(fn_case_Nat(X, Y), suc(Z)) -> app(Y, Z)
+9. eqNat(app(X, app(X, Y)), app(X, Y)) -> prop_twice(X, Y)
+10. equals(X, X) -> true
+11. equals(prop_twice(X, Y), false) -> false
+12. eqNat(X, X) -> prop_twice(fn_id, X)
+13. prop_twice(fn_id, zero) -> true
+14. equals(true, false) -> false
+15. prop_twice(fn_const(X), Y) -> prop_twice(fn_id, X)
+16. prop_twice(fn_id, suc(X)) -> prop_twice(fn_id, X)
+17. eqNat(app(fn_case_Nat(X, Y), X), X) -> prop_twice(fn_case_Nat(X, Y), zero)
+18. prop_twice(fn_case_Nat(zero, X), zero) -> true
+19. eqNat(app(X, Y), suc(Y)) -> prop_twice(fn_case_Nat(suc(Y), X), zero)
+20. prop_twice(fn_case_Nat(suc(X), fn_id), zero) = eqNat(X, suc(X))
+21. equals(eqNat(X, suc(X)), false) -> false
+22. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (eqNat_2): eqNat(zero, suc(X)) = false.
+Axiom 2 (app_fn_id_1): app(fn_id, X) = X.
+Axiom 3 (app_fn_case_Nat_1): app(fn_case_Nat(X, Y), zero) = X.
+Axiom 4 (app_fn_case_Nat_2): app(fn_case_Nat(X, Y), suc(Z)) = app(Y, Z).
+Axiom 5 (prop_twice_1): prop_twice(X, Y) = eqNat(app(X, app(X, Y)), app(X, Y)).
+
+Goal 1 (prop_twice): prop_twice(X, Y) = false.
+The goal is true when:
+  X = fn_case_Nat(suc(zero), fn_id)
+  Y = zero
+
+Proof:
+  prop_twice(fn_case_Nat(suc(zero), fn_id), zero)
+= { by axiom 5 (prop_twice_1) }
+  eqNat(app(fn_case_Nat(suc(zero), fn_id), app(fn_case_Nat(suc(zero), fn_id), zero)), app(fn_case_Nat(suc(zero), fn_id), zero))
+= { by axiom 3 (app_fn_case_Nat_1) }
+  eqNat(app(fn_case_Nat(suc(zero), fn_id), suc(zero)), app(fn_case_Nat(suc(zero), fn_id), zero))
+= { by axiom 3 (app_fn_case_Nat_1) }
+  eqNat(app(fn_case_Nat(suc(zero), fn_id), suc(zero)), suc(zero))
+= { by axiom 4 (app_fn_case_Nat_2) }
+  eqNat(app(fn_id, zero), suc(zero))
+= { by axiom 2 (app_fn_id_1) }
+  eqNat(zero, suc(zero))
+= { by axiom 1 (eqNat_2) }
+  false
+
+RESULT: Theorem (the conjecture is true).

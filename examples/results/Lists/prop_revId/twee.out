@@ -1,0 +1,91 @@
+Here is the input problem:
+  Axiom 1 (opAnd_2): opAnd(true, X) = X.
+  Axiom 2 (opAnd_1): opAnd(false, X) = false.
+  Axiom 3 (rev_1): rev(X) = rev_go(X, nil).
+  Axiom 4 (rev_go_1): rev_go(nil, X) = X.
+  Axiom 5 (eqListNat_1): eqListNat(nil, nil) = true.
+  Axiom 6 (eqNat_1): eqNat(zero, zero) = true.
+  Axiom 7 (eqNat_2): eqNat(zero, suc(X)) = false.
+  Axiom 8 (eqNat_3): eqNat(suc(X), zero) = false.
+  Axiom 9 (eqNat_4): eqNat(suc(X), suc(Y)) = eqNat(X, Y).
+  Axiom 10 (prop_revId_1): prop_revId(X) = eqListNat(rev(X), X).
+  Axiom 11 (rev_go_2): rev_go(cons(X, Y), Z) = rev_go(Y, cons(X, Z)).
+  Axiom 12 (eqListNat_2): eqListNat(nil, cons(X, Y)) = false.
+  Axiom 13 (eqListNat_3): eqListNat(cons(X, Y), nil) = false.
+  Axiom 14 (eqListNat_4): eqListNat(cons(X, Y), cons(Z, W)) = opAnd(eqNat(X, Z), eqListNat(Y, W)).
+  Axiom 15 (reflexivity): equals(X, X) = true.
+  Axiom 16 (prop_revId): equals(prop_revId(X), false) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. opAnd(true, X) -> X
+2. opAnd(false, X) -> false
+3. rev_go(X, nil) -> rev(X)
+4. rev_go(nil, X) -> X
+5. eqListNat(nil, nil) -> true
+6. eqNat(zero, zero) -> true
+7. eqNat(zero, suc(X)) -> false
+8. eqNat(suc(X), zero) -> false
+9. eqNat(suc(X), suc(Y)) -> eqNat(X, Y)
+10. eqListNat(rev(X), X) -> prop_revId(X)
+11. rev_go(cons(X, Y), Z) -> rev_go(Y, cons(X, Z))
+12. eqListNat(nil, cons(X, Y)) -> false
+13. eqListNat(cons(X, Y), nil) -> false
+14. eqListNat(cons(X, Y), cons(Z, W)) -> opAnd(eqNat(X, Z), eqListNat(Y, W))
+15. equals(X, X) -> true
+16. equals(prop_revId(X), false) -> false
+17. rev(nil) -> nil
+18. prop_revId(nil) -> true
+19. equals(true, false) -> false
+20. rev_go(X, cons(Y, nil)) -> rev(cons(Y, X))
+21. rev(cons(X, nil)) -> cons(X, nil)
+22. opAnd(eqNat(X, X), true) -> prop_revId(cons(X, nil))
+23. prop_revId(cons(zero, nil)) -> true
+24. prop_revId(cons(suc(X), nil)) -> prop_revId(cons(X, nil))
+25. rev_go(X, cons(Y, cons(Z, nil))) -> rev(cons(Z, cons(Y, X)))
+26. rev(cons(X, cons(Y, nil))) -> cons(Y, cons(X, nil))
+27. rev_go(X, cons(Y, cons(Z, cons(W, nil)))) -> rev(cons(W, cons(Z, cons(Y, X))))
+28. rev(cons(X, cons(Y, cons(Z, nil)))) -> cons(Z, cons(Y, cons(X, nil)))
+29. opAnd(eqNat(X, Y), opAnd(eqNat(Y, X), true)) -> prop_revId(cons(Y, cons(X, nil)))
+30. prop_revId(cons(zero, cons(zero, nil))) -> true
+31. prop_revId(cons(suc(X), cons(zero, nil))) -> false
+32. false -> true
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (opAnd_1): opAnd(false, X) = false.
+Axiom 2 (rev_1): rev(X) = rev_go(X, nil).
+Axiom 3 (rev_go_1): rev_go(nil, X) = X.
+Axiom 4 (eqListNat_1): eqListNat(nil, nil) = true.
+Axiom 5 (eqNat_2): eqNat(zero, suc(X)) = false.
+Axiom 6 (prop_revId_1): prop_revId(X) = eqListNat(rev(X), X).
+Axiom 7 (rev_go_2): rev_go(cons(X, Y), Z) = rev_go(Y, cons(X, Z)).
+Axiom 8 (eqListNat_4): eqListNat(cons(X, Y), cons(Z, W)) = opAnd(eqNat(X, Z), eqListNat(Y, W)).
+
+Goal 1 (prop_revId): prop_revId(X) = false.
+The goal is true when:
+  X = cons(suc(X), cons(zero, nil))
+
+Proof:
+  prop_revId(cons(suc(X), cons(zero, nil)))
+= { by axiom 6 (prop_revId_1) }
+  eqListNat(rev(cons(suc(X), cons(zero, nil))), cons(suc(X), cons(zero, nil)))
+= { by axiom 2 (rev_1) }
+  eqListNat(rev_go(cons(suc(X), cons(zero, nil)), nil), cons(suc(X), cons(zero, nil)))
+= { by axiom 7 (rev_go_2) }
+  eqListNat(rev_go(cons(zero, nil), cons(suc(X), nil)), cons(suc(X), cons(zero, nil)))
+= { by axiom 7 (rev_go_2) }
+  eqListNat(rev_go(nil, cons(zero, cons(suc(X), nil))), cons(suc(X), cons(zero, nil)))
+= { by axiom 3 (rev_go_1) }
+  eqListNat(cons(zero, cons(suc(X), nil)), cons(suc(X), cons(zero, nil)))
+= { by axiom 8 (eqListNat_4) }
+  opAnd(eqNat(zero, suc(X)), eqListNat(cons(suc(X), nil), cons(zero, nil)))
+= { by axiom 8 (eqListNat_4) }
+  opAnd(eqNat(zero, suc(X)), opAnd(eqNat(suc(X), zero), eqListNat(nil, nil)))
+= { by axiom 4 (eqListNat_1) }
+  opAnd(eqNat(zero, suc(X)), opAnd(eqNat(suc(X), zero), true))
+= { by axiom 5 (eqNat_2) }
+  opAnd(false, opAnd(eqNat(suc(X), zero), true))
+= { by axiom 1 (opAnd_1) }
+  false
+
+RESULT: Theorem (the conjecture is true).
