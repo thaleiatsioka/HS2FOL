@@ -1,0 +1,52 @@
+@@ prop_DeletePost
+*** Failed! Falsified (after 39 tests and 81 shrinks):
+Suc (Suc (Suc (Suc (Suc (Suc Zero)))))
+[(Suc (Suc (Suc (Suc (Suc (Suc Zero))))),Zero),(Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))),Zero)]
+Suc (Suc (Suc (Suc (Suc (Suc Zero)))))
+Just Zero /= Nothing
+@@ prop_FindPostAbsent
+*** Failed! Falsified (after 8 tests and 14 shrinks):
+Suc (Suc Zero)
+[(Suc (Suc Zero),Zero),(Suc (Suc (Suc Zero)),Zero)]
+Just Zero /= Nothing
+@@ prop_DeleteInsert
+*** Failed! Falsified (after 6 tests and 8 shrinks):
+Suc (Suc (Suc (Suc Zero)))
+(Suc (Suc (Suc (Suc Zero))),Zero)
+[(Zero,Zero)]
+[(Zero,Zero),(Suc (Suc (Suc (Suc Zero))),Zero)] /= [(Zero,Zero)]
+@@ prop_DeleteDelete
+*** Failed! Falsified (after 206 tests and 9 shrinks):
+Suc Zero
+Suc (Suc Zero)
+[(Suc Zero,Zero),(Suc (Suc Zero),Zero)]
+[] /= [(Suc Zero,Zero)]
+@@ prop_DeleteUnion
+*** Failed! Falsified (after 130 tests and 57 shrinks):
+Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))))
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))))))))))),Zero)]
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))))))))))),Zero),(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))))),Zero)]
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))))),Zero)] /= [(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))))))))))),Zero),(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))))),Zero)]
+@@ prop_UnionDeleteInsert
+*** Failed! Falsified (after 7 tests and 18 shrinks):
+[(Zero,Zero),(Suc Zero,Zero)]
+[]
+(Zero,Suc Zero)
+[(Zero,Zero),(Suc Zero,Zero)] /= [(Zero,Suc Zero),(Suc Zero,Zero)]
+@@ prop_UnionDeleteDelete
+*** Failed! Falsified (after 122 tests and 22 shrinks):
+[(Zero,Zero)]
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))),Zero)]
+Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))))
+[(Zero,Zero)] /= [(Zero,Zero),(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))),Zero)]
+@@ prop_FindDelete
+*** Failed! Falsified (after 581 tests and 106 shrinks):
+Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))))))))))))))))))))))))))))
+Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))))))))))))))))))))))))))))
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))))))))))))))))))))),Zero),(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))))))))))))))))))))))))))))),Zero)]
+Just Zero /= Nothing
+@@ prop_DeleteModel
+*** Failed! Falsified (after 5 tests and 10 shrinks):
+Suc (Suc Zero)
+[(Suc (Suc Zero),Zero),(Suc (Suc (Suc Zero)),Zero)]
+[(Suc (Suc Zero),Zero),(Suc (Suc (Suc Zero)),Zero)] /= [(Suc (Suc (Suc Zero)),Zero)]

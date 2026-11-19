@@ -1,0 +1,54 @@
+@@ prop_InsertPost
+*** Failed! Falsified (after 3 tests and 2 shrinks):
+Zero
+Suc Zero
+[(Zero,Zero)]
+Zero
+Just Zero /= Just (Suc Zero)
+@@ prop_FindPostPresent
+*** Failed! Falsified (after 10 tests and 6 shrinks):
+Suc (Suc Zero)
+Zero
+[(Suc (Suc Zero),Suc Zero)]
+Just (Suc Zero) /= Just Zero
+@@ prop_InsertInsert
+*** Failed! Falsified (after 4 tests and 2 shrinks):
+(Suc Zero,Zero)
+(Suc Zero,Suc Zero)
+[]
+[(Suc Zero,Suc Zero)] /= [(Suc Zero,Zero)]
+@@ prop_InsertDelete
+*** Failed! Falsified (after 7 tests and 8 shrinks):
+(Suc (Suc (Suc (Suc (Suc (Suc Zero))))),Zero)
+Suc (Suc (Suc (Suc (Suc (Suc Zero)))))
+[(Suc (Suc (Suc (Suc (Suc (Suc Zero))))),Suc Zero)]
+[(Suc (Suc (Suc (Suc (Suc (Suc Zero))))),Zero)] /= [(Suc (Suc (Suc (Suc (Suc (Suc Zero))))),Suc Zero)]
+@@ prop_InsertUnion
+*** Failed! Falsified (after 2 tests and 1 shrink):
+(Zero,Zero)
+[]
+[(Zero,Suc Zero)]
+[(Zero,Suc Zero)] /= [(Zero,Zero)]
+@@ prop_UnionInsert
+*** Failed! Falsified (after 28 tests and 36 shrinks):
+[]
+[(Suc (Suc (Suc (Suc (Suc (Suc Zero))))),Zero)]
+(Suc (Suc (Suc (Suc (Suc (Suc Zero))))),Suc Zero)
+[(Suc (Suc (Suc (Suc (Suc (Suc Zero))))),Suc Zero)] /= [(Suc (Suc (Suc (Suc (Suc (Suc Zero))))),Zero)]
+@@ prop_UnionDeleteInsert
+*** Failed! Falsified (after 5 tests and 8 shrinks):
+[(Zero,Suc Zero)]
+[]
+(Zero,Zero)
+[(Zero,Zero)] /= [(Zero,Suc Zero)]
+@@ prop_FindInsert
+*** Failed! Falsified (after 3 tests):
+Suc (Suc Zero)
+(Suc (Suc Zero),Zero)
+[(Suc (Suc Zero),Suc Zero)]
+Just (Suc Zero) /= Just Zero
+@@ prop_InsertModel
+*** Failed! Falsified (after 6 tests and 2 shrinks):
+(Zero,Zero)
+[(Zero,Suc Zero)]
+[(Zero,Suc Zero)] /= [(Zero,Zero)]
