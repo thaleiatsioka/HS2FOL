@@ -1,0 +1,120 @@
+@@ prop_ArbitraryValid
+*** Failed! Falsified (after 7 tests and 5 shrinks):
+[(Suc (Suc (Suc (Suc Zero))),Zero),(Suc (Suc (Suc (Suc Zero))),Zero)]
+@@ prop_InsertValid
+*** Failed! Falsified (after 4 tests and 6 shrinks):
+Zero
+Zero
+[(Zero,Zero)]
+@@ prop_DeleteValid
+*** Failed! Falsified (after 4 tests and 5 shrinks):
+Zero
+[(Suc Zero,Zero),(Suc Zero,Zero)]
+@@ prop_UnionValid
+*** Failed! Falsified (after 5 tests and 4 shrinks):
+[(Suc (Suc (Suc (Suc Zero))),Zero),(Suc (Suc (Suc (Suc Zero))),Zero)]
+[]
+@@ prop_InsertPost
+*** Failed! Falsified (after 144 tests and 46 shrinks):
+Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))))))))))))))))))))
+Suc Zero
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))))))))))))),Zero)]
+Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))))))))))))))))))))
+Just Zero /= Just (Suc Zero)
+@@ prop_DeletePost
+*** Failed! Falsified (after 7 tests and 9 shrinks):
+Suc (Suc Zero)
+[(Suc (Suc Zero),Zero),(Suc (Suc Zero),Zero)]
+Suc (Suc Zero)
+Just Zero /= Nothing
+@@ prop_FindPostPresent
+*** Failed! Falsified (after 4 tests and 2 shrinks):
+Suc Zero
+Zero
+[(Suc Zero,Suc Zero)]
+Just (Suc Zero) /= Just Zero
+@@ prop_FindPostAbsent
+*** Failed! Falsified (after 33 tests and 35 shrinks):
+Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))),Zero),(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))),Zero)]
+Just Zero /= Nothing
+@@ prop_InsertDeleteComplete
+*** Failed! Falsified (after 7 tests and 5 shrinks):
+Suc (Suc (Suc (Suc (Suc Zero))))
+[(Suc (Suc (Suc (Suc (Suc Zero)))),Zero)]
+Branch Leaf (Suc (Suc (Suc (Suc (Suc Zero))))) Zero Leaf /= Branch Leaf (Suc (Suc (Suc (Suc (Suc Zero))))) Zero (Branch Leaf (Suc (Suc (Suc (Suc (Suc Zero))))) Zero Leaf)
+@@ prop_InsertInsert
+*** Failed! Falsified (after 1 test):
+(Zero,Zero)
+(Zero,Zero)
+[]
+[(Zero,Zero),(Zero,Zero)] /= [(Zero,Zero)]
+@@ prop_InsertDelete
+*** Failed! Falsified (after 42 tests and 34 shrinks):
+(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))),Zero)
+Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))))
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))),Zero)]
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))),Zero)] /= [(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))),Zero),(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))),Zero)]
+@@ prop_InsertUnion
+*** Failed! Falsified (after 10 tests and 7 shrinks):
+(Suc Zero,Zero)
+[]
+[(Suc Zero,Zero)]
+[(Suc Zero,Zero),(Suc Zero,Zero)] /= [(Suc Zero,Zero)]
+@@ prop_DeleteInsert
+*** Failed! Falsified (after 43 tests and 84 shrinks):
+Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))))))))))))))))))
+(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))))))))))))))))))))))))),Zero)
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))))))))))))))))))))))))),Zero)]
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))))))))))))))))))))))))),Zero)] /= []
+@@ prop_DeleteUnion
+*** Failed! Falsified (after 52 tests and 80 shrinks):
+Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))))))))))))))))))))))))))))
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))))))))))))))))))))),Zero)]
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))))))))))))))))))))),Zero),(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))))))))))))))))))))),Zero)]
+[] /= [(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))))))))))))))))))))),Zero)]
+@@ prop_UnionInsert
+*** Failed! Falsified (after 9 tests and 6 shrinks):
+[]
+[(Suc (Suc Zero),Zero)]
+(Suc (Suc Zero),Zero)
+[(Suc (Suc Zero),Zero)] /= [(Suc (Suc Zero),Zero),(Suc (Suc Zero),Zero)]
+@@ prop_UnionDeleteInsert
+*** Failed! Falsified (after 7 tests and 4 shrinks):
+[(Suc (Suc Zero),Zero)]
+[]
+(Suc (Suc Zero),Zero)
+[(Suc (Suc Zero),Zero)] /= [(Suc (Suc Zero),Zero),(Suc (Suc Zero),Zero)]
+@@ prop_UnionDeleteDelete
+*** Failed! Falsified (after 25 tests and 70 shrinks):
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))),Zero)]
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))),Zero),(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))),Zero)]
+Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))))))))))
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))),Zero)] /= []
+@@ prop_FindInsert
+*** Failed! Falsified (after 38 tests and 45 shrinks):
+Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))))))))))))))))))))
+(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))))))))))))),Suc Zero)
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))))))))))))),Zero)]
+Just Zero /= Just (Suc Zero)
+@@ prop_FindDelete
+*** Failed! Falsified (after 174 tests and 42 shrinks):
+Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))
+Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))),Zero),(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))),Zero)]
+Just Zero /= Nothing
+@@ prop_InsertModel
+*** Failed! Falsified (after 3 tests and 1 shrink):
+(Zero,Zero)
+[(Zero,Zero)]
+[(Zero,Zero),(Zero,Zero)] /= [(Zero,Zero)]
+@@ prop_DeleteModel
+*** Failed! Falsified (after 16 tests and 20 shrinks):
+Suc Zero
+[(Suc Zero,Zero),(Suc Zero,Zero)]
+[(Suc Zero,Zero)] /= []
+@@ prop_UnionModel
+*** Failed! Falsified (after 3 tests and 2 shrinks):
+[]
+[(Suc Zero,Zero),(Suc Zero,Zero)]
+[(Suc Zero,Zero),(Suc Zero,Zero)] /= [(Suc Zero,Zero)]

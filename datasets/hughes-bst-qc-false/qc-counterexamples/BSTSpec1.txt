@@ -1,0 +1,59 @@
+@@ prop_InsertPost
+*** Failed! Falsified (after 43 tests and 79 shrinks):
+Zero
+Zero
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))))))))))))))))))),Zero)]
+Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero)))))))))))))))))))))))))
+Nothing /= Just Zero
+@@ prop_InsertInsertWeak
+*** Failed! Falsified (after 1 test and 1 shrink):
+(Zero,Zero)
+(Suc Zero,Zero)
+[]
+[(Zero,Zero)] /= [(Suc Zero,Zero)]
+@@ prop_InsertInsert
+*** Failed! Falsified (after 4 tests and 6 shrinks):
+(Zero,Zero)
+(Suc Zero,Zero)
+[]
+[(Zero,Zero)] /= [(Suc Zero,Zero)]
+@@ prop_InsertUnion
+*** Failed! Falsified (after 2 tests and 3 shrinks):
+(Zero,Zero)
+[]
+[(Suc Zero,Zero)]
+[(Zero,Zero)] /= [(Zero,Zero),(Suc Zero,Zero)]
+@@ prop_DeleteInsert
+*** Failed! Falsified (after 6 tests and 7 shrinks):
+Suc (Suc (Suc Zero))
+(Suc (Suc (Suc Zero)),Zero)
+[(Zero,Zero)]
+[] /= [(Zero,Zero)]
+@@ prop_UnionInsert
+*** Failed! Falsified (after 4 tests and 10 shrinks):
+[]
+[(Zero,Zero)]
+(Suc Zero,Zero)
+[(Zero,Zero),(Suc Zero,Zero)] /= [(Suc Zero,Zero)]
+@@ prop_UnionDeleteInsert
+*** Failed! Falsified (after 4 tests and 4 shrinks):
+[(Suc Zero,Zero)]
+[]
+(Zero,Zero)
+[(Zero,Zero),(Suc Zero,Zero)] /= [(Zero,Zero)]
+@@ prop_FindInsert
+*** Failed! Falsified (after 2 tests):
+Zero
+(Suc Zero,Zero)
+[(Zero,Zero)]
+Nothing /= Just Zero
+@@ prop_InsertCompleteForUnion
+*** Failed! Falsified (after 2 tests and 2 shrinks):
+[(Suc Zero,Zero)]
+[(Zero,Zero)]
+Branch (Branch Leaf Zero Zero Leaf) (Suc Zero) Zero Leaf /= Branch Leaf Zero Zero Leaf
+@@ prop_InsertModel
+*** Failed! Falsified (after 5 tests and 9 shrinks):
+(Suc Zero,Zero)
+[(Zero,Zero)]
+[(Suc Zero,Zero)] /= [(Zero,Zero),(Suc Zero,Zero)]

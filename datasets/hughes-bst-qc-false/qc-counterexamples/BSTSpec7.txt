@@ -1,0 +1,62 @@
+@@ prop_UnionValid
+*** Failed! Falsified (after 7 tests and 10 shrinks):
+[(Zero,Zero)]
+[(Zero,Zero),(Suc Zero,Zero)]
+@@ prop_UnionPost
+*** Failed! Falsified (after 12 tests and 23 shrinks):
+[(Suc Zero,Zero)]
+[(Suc (Suc (Suc (Suc (Suc Zero)))),Zero),(Zero,Zero)]
+Suc (Suc (Suc (Suc (Suc Zero))))
+Nothing /= Just Zero
+@@ prop_InsertUnion
+*** Failed! Falsified (after 4 tests and 9 shrinks):
+(Zero,Zero)
+[]
+[(Zero,Zero),(Suc Zero,Zero)]
+[(Zero,Zero),(Suc Zero,Zero)] /= [(Zero,Zero),(Zero,Zero),(Suc Zero,Zero)]
+@@ prop_DeleteUnion
+*** Failed! Falsified (after 8 tests and 21 shrinks):
+Zero
+[(Zero,Zero)]
+[(Zero,Zero),(Suc Zero,Zero)]
+[(Zero,Zero),(Suc Zero,Zero)] /= [(Suc Zero,Zero)]
+@@ prop_UnionInsert
+*** Failed! Falsified (after 7 tests and 20 shrinks):
+[(Zero,Zero)]
+[(Suc Zero,Zero)]
+(Suc Zero,Zero)
+[(Zero,Zero),(Suc Zero,Zero),(Suc Zero,Zero)] /= [(Zero,Zero),(Suc Zero,Zero)]
+@@ prop_UnionDeleteInsert
+*** Failed! Falsified (after 11 tests and 54 shrinks):
+[(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))),Zero),(Zero,Zero)]
+[(Suc Zero,Zero)]
+(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))),Zero)
+[(Zero,Zero),(Suc Zero,Zero),(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))),Zero)] /= [(Zero,Zero),(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))),Zero),(Suc Zero,Zero),(Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc (Suc Zero))))))))),Zero)]
+@@ prop_UnionDeleteDelete
+*** Failed! Falsified (after 8 tests and 17 shrinks):
+[(Zero,Zero)]
+[(Zero,Zero),(Suc (Suc (Suc (Suc (Suc Zero)))),Zero)]
+Suc (Suc (Suc (Suc (Suc Zero))))
+[(Zero,Zero)] /= [(Zero,Zero),(Zero,Zero)]
+@@ prop_UnionUnionAssoc
+*** Failed! Falsified (after 6 tests and 17 shrinks):
+[(Suc Zero,Zero)]
+[(Zero,Zero)]
+[(Suc Zero,Suc Zero)]
+Branch Leaf Zero Zero (Branch (Branch Leaf (Suc Zero) Zero Leaf) (Suc Zero) (Suc Zero) Leaf) /= Branch Leaf Zero Zero (Branch (Branch Leaf (Suc Zero) (Suc Zero) Leaf) (Suc Zero) Zero Leaf)
+@@ prop_FindUnion
+*** Failed! Falsified (after 13 tests and 26 shrinks):
+Suc (Suc Zero)
+[(Suc (Suc Zero),Zero),(Suc (Suc (Suc Zero)),Zero)]
+[(Suc (Suc Zero),Suc Zero)]
+Just (Suc Zero) /= Just Zero
+@@ prop_InsertCompleteForUnion
+*** Failed! Falsified (after 5 tests and 7 shrinks):
+[(Suc Zero,Zero)]
+[(Suc Zero,Zero),(Zero,Zero)]
+Branch Leaf Zero Zero (Branch (Branch Leaf (Suc Zero) Zero Leaf) (Suc Zero) Zero Leaf) /= Branch Leaf Zero Zero (Branch Leaf (Suc Zero) Zero Leaf)
+@@ prop_UnionModel
+*** Failed! Falsified (after 3 tests and 4 shrinks):
+[(Zero,Zero),(Suc Zero,Zero)]
+[(Zero,Zero)]
+[(Zero,Zero),(Zero,Zero),(Suc Zero,Zero)] /= [(Zero,Zero),(Suc Zero,Zero)]
