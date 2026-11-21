@@ -25,6 +25,7 @@ data SBind = SBind
   , sbType :: Type
   , sbBody :: Maybe CExpr
   , sbKind :: SKind
+  , sbArity :: Int -- ^ arity of the generic (unspecialised) type
   }
 
 data SpState = SpState
@@ -67,6 +68,7 @@ specialise full prog tc = evalStateT run (SpState M.empty [] [])
             , sbType = substType sub0 (schemeType (schemeOf (bindKey b)))
             , sbBody = body'
             , sbKind = if bindKind b == BPrelude then SKPrelude else SKUser
+            , sbArity = typeArity (schemeType (schemeOf (bindKey b)))
             }
       drain
       gets (reverse . ssOut)
@@ -88,7 +90,7 @@ specialise full prog tc = evalStateT run (SpState M.empty [] [])
         ((k, orig, sub, fol, hask) : rest) -> do
           modify (\s -> s { ssQueue = rest })
           body' <- traverse (specExpr sub) (M.lookup orig (tcBodies tc))
-          emit (SBind k hask fol (substType sub (schemeType (schemeOf orig))) body' SKSpec)
+          emit (SBind k hask fol (substType sub (schemeType (schemeOf orig))) body' SKSpec (typeArity (schemeType (schemeOf orig))))
           drain
 
     specExpr :: M.Map String Type -> CExpr -> SM CExpr
@@ -121,7 +123,7 @@ specialise full prog tc = evalStateT run (SpState M.empty [] [])
           Nothing -> do
             let k = "abstract:" ++ g ++ "@" ++ prettyType ct
             new <- markNew k
-            when new $ emit (SBind k (methodName mi) (funFolBase (methodName mi) ++ mangleType ct) t Nothing SKSpec)
+            when new $ emit (SBind k (methodName mi) (funFolBase (methodName mi) ++ mangleType ct) t Nothing SKSpec (typeArity (schemeType (methodScheme mi))))
             return k
       Nothing
         | null (relOf g) -> return g

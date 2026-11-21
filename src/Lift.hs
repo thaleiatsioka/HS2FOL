@@ -57,12 +57,12 @@ liftProgram cnt prog undefKey sbs = evalStateT run st0
     run = do
       prepared <- forM sbs $ \sb -> case sbBody sb of
         Nothing -> do
-          register (sbKey sb) (FunInfo (typeArity (sbType sb)) (sbFol sb) (sbHask sb) KAbstract)
+          register (sbKey sb) (FunInfo (sbArity sb) (sbFol sb) (sbHask sb) KAbstract)
           return Nothing
         Just body -> do
           b1 <- freshen M.empty body
           let (ps, inner) = collectLams (simplifyFix b1)
-              ar = max (length ps) (typeArity (sbType sb))
+              ar = max (length ps) (sbArity sb)
           extra <- forM [length ps + 1 .. ar] $ \i -> newName ("x" ++ show i)
           inner' <- freshen M.empty (simplifyFix (cApps inner (map lvar extra)))
           register (sbKey sb) (FunInfo ar (sbFol sb) (sbHask sb) (kindOf sb))
