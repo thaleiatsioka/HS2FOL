@@ -31,7 +31,7 @@ HS2FOL=${HS2FOL:-$HERE/hs2fol}
 WITNESS2INPUT=${WITNESS2INPUT:-$HERE/witness2input}
 TIME=60
 JOBS=1
-PROVERS=vampire,eprover,twee
+PROVERS=${PROVERS:-vampire}  # TF1: only Vampire reads polymorphic TFF; use hs2fol --tff0 or --untyped for E and Twee
 OUT=results
 PROPRE=.
 

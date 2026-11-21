@@ -29,10 +29,11 @@ data Opts = Opts
   , oProver :: String
   , oTimeout :: Int
   , oUntyped :: Bool
+  , oTff0 :: Bool
   }
 
 defaultOpts :: Opts
-defaultOpts = Opts Nothing Nothing Nothing [] "runghc" False False Nothing "" 10 False
+defaultOpts = Opts Nothing Nothing Nothing [] "runghc" False False Nothing "" 10 False False
 
 usage :: String
 usage = unlines
@@ -48,6 +49,7 @@ usage = unlines
   , "  --no-run        only print the Haskell input, do not run it"
   , "  --keep          keep the generated check program"
   , "  --untyped       the problem was made with hs2fol --untyped (FOF)"
+  , "  --tff0          the problem was made with hs2fol --tff0 (monomorphic TFF)"
   , "  --prover NAME   name of the prover (only used in the report)"
   , "  -o FILE         also write the report to FILE"
   , ""
@@ -68,6 +70,7 @@ parseOpts args o = case args of
   ("--no-run" : r) -> parseOpts r o { oNoRun = True }
   ("--keep" : r) -> parseOpts r o { oKeep = True }
   ("--untyped" : r) -> parseOpts r o { oUntyped = True }
+  ("--tff0" : r) -> parseOpts r o { oTff0 = True }
   ("--prover" : p : r) -> parseOpts r o { oProver = p }
   ("-o" : f : r) -> parseOpts r o { oOut = Just f }
   (a : r)
@@ -99,12 +102,12 @@ mainBody = do
     Just w | w /= "-" -> readFileUtf8 w
     _ -> hSetEncoding stdin utf8 >> getContents
   (pre, usr, _) <- loadProgram (oIncludes opts) file
-  tr <- either (fatal . ("hs2fol: " ++)) return (translateProgram (not (oUntyped opts)) pre usr)
+  tr <- either (fatal . ("hs2fol: " ++)) return (translateProgram (modeOf opts) pre usr)
   prop <- case [ p | p <- trProps tr, psName p == propName ] of
     (p : _) -> return p
     [] -> fatal ("no (translatable) property " ++ propName)
   witnesses <- either (fatal . ("could not find a witness in the prover output: " ++)) return
-                 (extractWitnesses (psArity prop) input)
+                 (map (stripTypeArgs tr) <$> extractWitnesses (psArity prop) input)
   w <- case witnesses of
     (w : _) | length w == psArity prop -> return w
             | otherwise -> fatal ("the witness has " ++ show (length w) ++ " values, but " ++ propName ++ " takes " ++ show (psArity prop) ++ " arguments")
@@ -267,3 +270,10 @@ checkProgram usesQC imports secs propName argExprs = unlines $
       , "    W2I_QC.Failure {} -> \"FALSE\""
       , "    _ -> \"OTHER: \" ++ w2iOneLine (W2I_QC.output res)"
       ]
+
+-- | Output format: TF1 (polymorphic typed) unless --untyped or --tff0.
+modeOf :: Opts -> Mode
+modeOf o
+  | oUntyped o = MUntyped
+  | oTff0 o = MTFF0
+  | otherwise = MTF1

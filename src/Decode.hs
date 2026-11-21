@@ -6,6 +6,7 @@ module Decode
   , VarMode (..)
   , PT (..)
   , normaliseWitness
+  , stripTypeArgs
   ) where
 
 import Data.Char (isAlphaNum, isDigit, isLower, isSpace, isUpper, toLower)
@@ -36,7 +37,7 @@ data VarMode = VarsAsHoles | VarsAsUndefined
 extractWitnesses :: Int -> String -> Either String [[PT]]
 extractWitnesses arity input =
   case [ l | l <- lines input, "SZS answers Tuple" `isInfixOf` l ] of
-    (l : _) -> parseAnswers (afterTuple l)
+    (l : _) -> map (map (expandDefs (vampireDefinitions input))) <$> parseAnswers (afterTuple l)
     [] -> case break isGoalTrue (lines input) of
       (before, _ : rest) -> do
         let block = takeWhile (not . all isSpace) (dropWhile (all isSpace) rest)
@@ -97,7 +98,7 @@ decodeArgs mode tr ts = map atomS <$> mapM (decodeTerm mode tr 0) ts
 -- | Decode the prover output for a property. Returns lines to print.
 decodeAnswer :: Translation -> Maybe PropSpec -> String -> Either String [String]
 decodeAnswer tr mprop input = do
-  tuples <- extractWitnesses (maybe 0 psArity mprop) input
+  tuples <- map (stripTypeArgs tr) <$> extractWitnesses (maybe 0 psArity mprop) input
   case tuples of
     [] -> Left "no answer found"
     _ -> mapM decodeTuple tuples
@@ -107,6 +108,51 @@ decodeAnswer tr mprop input = do
       return $ case mprop of
         Just p -> psName p ++ (if null args then "" else " " ++ args) ++ "   -- evaluates to False"
         Nothing -> args
+
+-- | Drop the leading type arguments of polymorphic symbols (TF1 answers
+-- such as @cons(nat, zero, nil(nat))@).
+stripTypeArgs :: Translation -> [PT] -> [PT]
+stripTypeArgs tr = map go
+  where
+    go (PV v) = PV v
+    go (PF n args) = PF n (map go (drop (M.findWithDefault 0 n (trTypeArgs tr)) args))
+
+-- | Symbols Vampire introduces by definition (e.g. @sF1 = nil(nat)@ from
+-- function definition elimination) can occur in its answers. Read the
+-- definitions from the proof: an equation @sFn(X..) = t@ on the line before
+-- @introduced(definition,[new_symbols(definition,[sFn])],...)@.
+vampireDefinitions :: String -> M.Map String ([String], PT)
+vampireDefinitions input = M.fromList
+  [ d | (prev, l) <- zip ls (drop 1 ls), "introduced(definition,[new_symbols(definition," `isInfixOf` l
+      , Right d <- [parse defn "definition" (stripQuant (dropWhile (\c -> isSpace c || c == '(') prev))] ]
+  where
+    ls = lines input
+    stripQuant t
+      | "! [" `isPrefixOf` t = case [ drop 4 r | r <- tails t, take 4 r == "] : " ] of
+          (r : _) -> dropWhile (== '(') r
+          [] -> t
+      | otherwise = t
+    defn = do
+      lhs <- term
+      _ <- symbol "="
+      rhs <- term
+      case lhs of
+        PF f args | all isV args -> return (f, ([ v | PV v <- args ], rhs))
+        _ -> fail "not a definition"
+    isV (PV _) = True
+    isV _ = False
+
+-- | Expand introduced symbols (repeatedly, they can refer to each other).
+expandDefs :: M.Map String ([String], PT) -> PT -> PT
+expandDefs defs = go (20 :: Int)
+  where
+    go 0 t = t
+    go _ (PV v) = PV v
+    go n (PF f args) = case M.lookup f defs of
+      Just (vs, body) | length vs == length args -> go (n - 1) (subst (M.fromList (zip vs (map (go n) args))) body)
+      _ -> PF f (map (go n) args)
+    subst m (PV v) = M.findWithDefault (PV v) v m
+    subst m (PF f as) = PF f (map (subst m) as)
 
 parseAnswers :: String -> Either String [[PT]]
 parseAnswers s = either (Left . show) Right (parse answers "answer" s)

@@ -7,6 +7,8 @@ module Translate
   , renderProblem
   , funDisplay
   , TypedData (..)
+  , PolyData (..)
+  , Mode (..)
   ) where
 
 import Data.List (intercalate, isPrefixOf, sortOn)
@@ -38,7 +40,21 @@ data Translation = Translation
   , trFuns :: M.Map String FunInfo
   , trCons :: M.Map Ident ConInfo
   , trWarnings :: [String]
-  , trTyped :: Maybe TypedData -- ^ present in typed (TFF) mode
+  , trTyped :: Maybe TypedData -- ^ present in typed (TFF0) mode
+  , trPoly :: Maybe PolyData -- ^ present in polymorphic (TF1) mode
+  , trTypeArgs :: M.Map String Int -- ^ printed name -> number of leading type arguments (TF1)
+  }
+
+-- | Output format.
+data Mode = MUntyped | MTFF0 | MTF1
+  deriving (Eq, Show)
+
+-- | Polymorphic (TF1) view of the equations.
+data PolyData = PolyData
+  { pdEqs :: [TEq] -- ^ program and builder equations; type variables are TVar
+  , pdSig :: Sym -> Maybe ([String], [Type], Type)
+  , pdNames :: M.Map (Either String Sym) String -- ^ type constructors and symbols
+  , pdTyArity :: M.Map String Int -- ^ type constructor -> number of parameters
   }
 
 -- | Typed (TFF) view of the equations.
@@ -51,17 +67,18 @@ data TypedData = TypedData
 
 -- | Translate; with @typed@, also infer sorts for TFF output (this needs
 -- full monomorphisation).
-translateProgram :: Bool -> [Decl] -> [Decl] -> Either String Translation
-translateProgram typed pre usr = do
+translateProgram :: Mode -> [Decl] -> [Decl] -> Either String Translation
+translateProgram mode pre usr = do
+  let typed = mode == MTFF0
   (prog, warns) <- desugarProgram pre usr
   tc <- typecheck prog
-  sbs <- specialise typed prog tc
+  sbs <- specialise typed (mode == MTF1) prog tc
   let undefKey = if any ((== "Prelude.undefined") . bindKey) (progBinds prog) then "Prelude.undefined" else "undefined"
   (funs, eqs) <- liftProgram (progFresh prog) prog undefKey sbs
   let candidates = [ b | b <- progBinds prog, bindKind b == BUser, "prop" `isPrefixOf` bindHask b, isJust (bindBody b) ]
       checked = map (checkProp tc funs) candidates
       sbTypes = M.fromList [ (sbKey sb, sbType sb) | sb <- sbs ]
-      props = [ if typed then p { psType = M.findWithDefault (psType p) (psKey p) sbTypes } else p | Right p <- checked ]
+      props = [ if mode /= MUntyped then p { psType = M.findWithDefault (psType p) (psKey p) sbTypes } else p | Right p <- checked ]
       propWarnings = [ w | Left w <- checked ]
       datas = progDatas prog
       withBuilders = [ p { psBuilders = propBuilders datas (argTypes p) } | p <- props ]
@@ -84,8 +101,24 @@ translateProgram typed pre usr = do
           ([ (Left t, -1, sortName t) | t <- sorts ]
            ++ [ let (pr, b) = symBase funs s in (Right (s, inst), pr, b ++ concatMap (("_" ++) . sortName) inst) | (s, inst) <- keys ])
     return (Just (TypedData teqs builders tnames sig))
+  polyData <- if mode /= MTF1 then return Nothing else do
+    (peqs, auxSigs) <- typeEquationsPoly sbTypes funs (progCons prog) datas allEqs
+    let sig = polySig sbTypes funs (progCons prog) datas auxSigs
+        symsP = S.toList (S.fromList syms)
+        tys = concat [ r : as | Just (_, as, r) <- map sig symsP ]
+              ++ [ t | TEq _ l r <- peqs, (_, t) <- ttermVars l ++ ttermVars r ]
+              ++ [ t | p <- withBuilders, t <- argTypes p ]
+        tycons = M.fromList (concatMap tyconsOf tys)
+        pnames = assignNames
+          ([ (Left c, -1, tyconName c) | c <- M.keys tycons ]
+           ++ [ let (pr, b) = symBase funs sy in (Right sy, pr, b) | sy <- symsP ])
+    return (Just (PolyData peqs sig pnames tycons))
   let (names, inverse) = case typedData of
-        Nothing -> (untypedNames, M.fromList [ (v, k) | (k, v) <- M.toList untypedNames ])
+        Nothing
+          | Just pd <- polyData ->
+              let symNames = [ (sy, n) | (Right sy, n) <- M.toList (pdNames pd) ]
+              in (M.fromList symNames, M.fromList [ (n, sy) | (sy, n) <- symNames ])
+          | otherwise -> (untypedNames, M.fromList [ (v, k) | (k, v) <- M.toList untypedNames ])
         Just td ->
           let symNames = [ (s, n) | (Right (s, _), n) <- M.toList (tdNames td) ]
           in (M.fromListWith (\_ old -> old) symNames, M.fromList [ (n, s) | (s, n) <- symNames ])
@@ -98,9 +131,19 @@ translateProgram typed pre usr = do
     , trCons = progCons prog
     , trWarnings = warns ++ propWarnings
     , trTyped = typedData
+    , trPoly = polyData
+    , trTypeArgs = case polyData of
+        Nothing -> M.empty
+        Just pd -> M.fromList [ (n, length vs) | (Right sy, n) <- M.toList (pdNames pd), Just (vs, _, _) <- [pdSig pd sy], not (null vs) ]
     }
   where
     argTypes p = take (psArity p) (fst (funArgs (psType p)))
+    tyconsOf (TVar _) = []
+    tyconsOf (TCon c ts) = (c, length ts) : concatMap tyconsOf ts
+
+-- | TPTP name of a type constructor: nat, list, fun, pair, ...
+tyconName :: Ident -> String
+tyconName c = sortName (TCon c [])
 
 checkProp :: TcResult -> M.Map String FunInfo -> Binding -> Either String PropSpec
 checkProp tc funs b
@@ -183,9 +226,99 @@ funDisplay funs k = case M.lookup k funs of
 
 -- | One TPTP problem for a property.
 renderProblem :: FilePath -> Translation -> PropSpec -> String
-renderProblem src tr p = case trTyped tr of
-  Just td -> renderTyped src tr td p
-  Nothing -> renderUntyped src tr p
+renderProblem src tr p = case (trTyped tr, trPoly tr) of
+  (Just td, _) -> renderTyped src tr td p
+  (_, Just pd) -> renderPoly src tr pd p
+  _ -> renderUntyped src tr p
+
+-- | One polymorphic (TF1) problem for a property.
+renderPoly :: FilePath -> Translation -> PolyData -> PropSpec -> String
+renderPoly src tr pd p = unlines (header ++ tyDecls ++ symDecls ++ axioms ++ ["", conj])
+  where
+    roots = SFun (psKey p) : psBuilders p
+    reached = reachableSyms (trEqns tr) roots
+    eqs = groupOwners [ e | e <- pdEqs pd, S.member (teOwner e) reached ]
+    nm s = M.findWithDefault ("unknown_" ++ sanitize (show s)) (Right s) (pdNames pd)
+    tcNm c = M.findWithDefault (tyconName c) (Left c) (pdNames pd)
+    syms = S.toList (S.fromList (SFun (psKey p) : SCon "False" : concat [ map fst (ttermSyms l ++ ttermSyms r) | TEq _ l r <- eqs ]))
+    sigs = [ (s, sg) | s <- syms, Just sg <- [pdSig pd s] ]
+    argSorts = take (psArity p) (fst (funArgs (psType p)))
+    usedTycons = S.toList (S.fromList (concat
+      ([ concatMap tcs (r : as) | (_, (_, as, r)) <- sigs ]
+       ++ [ tcs t | TEq _ l r <- eqs, (_, t) <- ttermVars l ++ ttermVars r ]
+       ++ map tcs argSorts)))
+    tcs (TVar _) = []
+    tcs (TCon c ts) = c : concatMap tcs ts
+    header =
+      [ "% Generated by hs2fol (polymorphic typed, TF1) from " ++ src
+      , "% Property: " ++ psName p ++ " :: " ++ prettyType (psType p)
+      , "% A proof of the conjecture is a counterexample; the answer substitution gives the arguments."
+      , "% Polymorphic symbols take their type arguments first: cons(nat, X, Xs)."
+      , ""
+      , "% type constructors" ]
+    tyDecls = [ "tff(" ++ tcNm c ++ "_type, type, " ++ tcNm c ++ ": " ++ kind (M.findWithDefault 0 c (pdTyArity pd)) ++ ")." | c <- usedTycons ] ++ ["", "% symbols"]
+    kind 0 = "$tType"
+    kind 1 = "$tType > $tType"
+    kind n = "(" ++ intercalate " * " (replicate n "$tType") ++ ") > $tType"
+    symDecls = [ "tff(" ++ nm s ++ "_decl, type, " ++ nm s ++ ": " ++ sigText sg ++ ")." | (s, sg) <- sigs ] ++ [""]
+    sigText (vs, as, r) =
+      let tvm = M.fromList (zip vs (tyVarNames S.empty (length vs)))
+          ty = showTy tvm
+          body = case as of
+            [] -> ty r
+            [a] -> ty a ++ " > " ++ ty r
+            _ -> "(" ++ intercalate " * " (map ty as) ++ ") > " ++ ty r
+      in if null vs then body else "!>[" ++ intercalate ", " [ tvm M.! v ++ ": $tType" | v <- vs ] ++ "]: " ++ body
+    showTy tvm (TVar v) = M.findWithDefault "TUnknown" v tvm
+    showTy tvm (TCon c []) = let _ = tvm in tcNm c
+    showTy tvm (TCon c ts) = tcNm c ++ "(" ++ intercalate ", " (map (showTy tvm) ts) ++ ")"
+    (axioms, labels) = labelled S.empty eqs
+    labelled used [] = ([], used)
+    labelled used (e : rest) =
+      let base = case teLhs e of
+            TTF SApp _ (TTF s _ _ : _) -> "app_" ++ nm s
+            TTF s _ _ -> nm s
+            _ -> "eq"
+          label = head [ c | i <- [1 :: Int ..], let c = base ++ "_" ++ show i, not (S.member c used) ]
+          vs = nubOrd (ttermVars (teLhs e) ++ ttermVars (teRhs e))
+          vm = varNames (map fst vs)
+          tvs = nubS (concatMap ftv (concat [ inst | (_, inst) <- ttermSyms (teLhs e) ++ ttermSyms (teRhs e) ] ++ map snd vs))
+          tvm = M.fromList (zip tvs (tyVarNames (S.fromList (M.elems vm)) (length tvs)))
+          binders = [ n ++ ": $tType" | n <- map (tvm M.!) tvs ] ++ [ vm M.! v ++ ": " ++ showTy tvm t | (v, t) <- vs ]
+          quant = if null binders then "" else "![" ++ intercalate ", " binders ++ "]: "
+          line = "tff(" ++ label ++ ", axiom, " ++ quant ++ showT tvm vm (teLhs e) ++ " = " ++ showT tvm vm (teRhs e) ++ ")."
+          (ls, used') = labelled (S.insert label used) rest
+      in (line : ls, used')
+    showT _ vm (TTV v _) = M.findWithDefault "V" v vm
+    showT tvm vm (TTF s inst ts) =
+      let args = map (showTy tvm) inst ++ map (showT tvm vm) ts
+      in nm s ++ (if null args then "" else "(" ++ intercalate ", " args ++ ")")
+    vars = [ ("X" ++ show i, t) | (i, t) <- zip [1 :: Int ..] argSorts ]
+    call = if null vars then nm (SFun (psKey p)) else nm (SFun (psKey p)) ++ "(" ++ intercalate ", " (map fst vars) ++ ")"
+    plabel = head [ l | l <- sanitize (psName p) : [ sanitize (psName p) ++ "_conjecture" ++ show i | i <- [1 :: Int ..] ], not (S.member l labels) ]
+    conj
+      | null vars = "tff(" ++ plabel ++ ", conjecture, " ++ call ++ " = " ++ nm (SCon "False") ++ ")."
+      | otherwise = "tff(" ++ plabel ++ ", conjecture, ?[" ++ intercalate ", " [ v ++ ": " ++ showTy M.empty t | (v, t) <- vars ] ++ "]: " ++ call ++ " = " ++ nm (SCon "False") ++ ")."
+    nubOrd = go S.empty
+      where
+        go _ [] = []
+        go seen ((v, t) : xs)
+          | S.member v seen = go seen xs
+          | otherwise = (v, t) : go (S.insert v seen) xs
+    nubS = go S.empty
+      where
+        go _ [] = []
+        go seen (x : xs)
+          | S.member x seen = go seen xs
+          | otherwise = x : go (S.insert x seen) xs
+    groupOwners es = concatMap snd (sortOn fst (M.elems (M.fromListWith (\(_, new) (i, old) -> (i, old ++ new)) [ (teOwner e, (i, [e])) | (i, e) <- zip [0 :: Int ..] es ])))
+
+-- | n type variable names (TA, TB, ..., TA1, ...) avoiding the given names.
+tyVarNames :: S.Set String -> Int -> [String]
+tyVarNames avoid n = take n [ c | c <- cands, not (S.member c avoid) ]
+  where
+    letters = [ [l] | l <- ['A' .. 'Z'] ]
+    cands = [ "T" ++ l | l <- letters ] ++ [ "T" ++ l ++ show i | i <- [1 :: Int ..], l <- letters ]
 
 -- | One typed (TFF) problem for a property.
 renderTyped :: FilePath -> Translation -> TypedData -> PropSpec -> String

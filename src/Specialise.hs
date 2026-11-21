@@ -41,8 +41,11 @@ type SM a = StateT SpState (Either String) a
 -- gets a monomorphic type (needed for typed TPTP). Type variables of a
 -- property that remain free are turned into abstract sorts, and ambiguous
 -- type variables default to ().
-specialise :: Bool -> Program -> TcResult -> Either String [SBind]
-specialise full prog tc = evalStateT run (SpState M.empty [] [])
+--
+-- @absProps@ turns the free type variables of properties into abstract sorts
+-- even without full specialisation (used for polymorphic TF1 output).
+specialise :: Bool -> Bool -> Program -> TcResult -> Either String [SBind]
+specialise full absProps prog tc = evalStateT run (SpState M.empty [] [])
   where
     bindMap = M.fromList [ (bindKey b, b) | b <- progBinds prog ]
     relOf k
@@ -55,8 +58,9 @@ specialise full prog tc = evalStateT run (SpState M.empty [] [])
 
     run = do
       forM_ (progBinds prog) $ \b -> do
-        let root = bindKind b /= BInstance && (null (relOf (bindKey b)) || (full && isProp b))
-            sub0 = if full && isProp b then abstractSorts b else M.empty
+        let absP = (full || absProps) && isProp b
+            root = bindKind b /= BInstance && (null (relOf (bindKey b)) || (full && isProp b))
+            sub0 = if absP then abstractSorts b else M.empty
         when root $ do
           body' <- traverse (specExpr sub0) (bindBody b >> M.lookup (bindKey b) (tcBodies tc))
           markNew (bindKey b) >> return ()

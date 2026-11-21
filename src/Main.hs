@@ -22,10 +22,11 @@ data Opts = Opts
   , oIncludes :: [FilePath]
   , oDecode :: Bool
   , oUntyped :: Bool
+  , oTff0 :: Bool
   }
 
 defaultOpts :: Opts
-defaultOpts = Opts Nothing Nothing [] False False [] False False
+defaultOpts = Opts Nothing Nothing [] False False [] False False False
 
 usage :: String
 usage = unlines
@@ -39,7 +40,8 @@ usage = unlines
   , "  --stdout        print the problems instead of writing files"
   , "  --list          list the properties"
   , "  -I DIR          extra directory to search for imported modules"
-  , "  --untyped       write untyped FOF instead of typed TFF problems"
+  , "  --untyped       write untyped FOF instead of polymorphic TF1 problems"
+  , "  --tff0          write monomorphic typed TFF0 problems (full monomorphisation)"
   , "  --decode        read prover output on stdin and print the counterexample"
   , "                  (use with -p PROP)"
   ]
@@ -55,6 +57,7 @@ parseOpts args o = case args of
   ("-I" : d : r) -> parseOpts r o { oIncludes = oIncludes o ++ [d] }
   ("--decode" : r) -> parseOpts r o { oDecode = True }
   ("--untyped" : r) -> parseOpts r o { oUntyped = True }
+  ("--tff0" : r) -> parseOpts r o { oTff0 = True }
   (f : r)
     | f `elem` ["-h", "--help"] -> Left usage
     | "-" `isPrefixOf` f -> Left ("unknown option " ++ f ++ "\n\n" ++ usage)
@@ -71,7 +74,7 @@ main = do
   opts <- either die' return (parseOpts args defaultOpts)
   file <- maybe (die' usage) return (oFile opts)
   (pre, usr, own) <- loadProgram (oIncludes opts) file
-  tr <- either (\e -> die' ("hs2fol: " ++ e)) return (translateProgram (not (oUntyped opts)) pre usr)
+  tr <- either (\e -> die' ("hs2fol: " ++ e)) return (translateProgram (modeOf opts) pre usr)
   forM_ (trWarnings tr) $ \w -> hPutStrLn stderr ("warning: " ++ w)
   let props = [ p | p <- trProps tr, psName p `elem` own ]
   selected <- case oProps opts of
@@ -105,3 +108,10 @@ main = do
             let path = dir </> (psName p ++ ".p")
             writeFile path (renderProblem file tr p)
             putStrLn ("wrote " ++ path)
+
+-- | Output format: TF1 (polymorphic typed) unless --untyped or --tff0.
+modeOf :: Opts -> Mode
+modeOf o
+  | oUntyped o = MUntyped
+  | oTff0 o = MTFF0
+  | otherwise = MTF1

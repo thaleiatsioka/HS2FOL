@@ -12,6 +12,8 @@ module Typed
   , TEq (..)
   , TKey
   , typeEquations
+  , typeEquationsPoly
+  , polySig
   , typedBuilders
   , sortName
   , symSignature
@@ -70,6 +72,7 @@ data Env = Env
   { envTypes :: M.Map String Type -- ^ monomorphic types of program functions
   , envFuns :: M.Map String FunInfo
   , envCons :: M.Map Ident ConInfo
+  , envDatas :: M.Map Ident DataInfo
   }
 
 data TS = TS
@@ -150,7 +153,20 @@ sigOf env s = case s of
     a <- fresh
     b <- fresh
     return ([a, b], [tFun a b, a], b)
-  _ -> throwError "internal: builders are typed separately"
+  SFnConst -> do
+    a <- fresh
+    b <- fresh
+    return ([a, b], [b], tFun a b)
+  SFnId -> do
+    a <- fresh
+    return ([a], [], tFun a a)
+  SFnCase tc -> case M.lookup tc (envDatas env) of
+    Just d -> do
+      ts <- mapM (const fresh) (dataVars d)
+      b <- fresh
+      let sub = M.fromList (zip (dataVars d) ts)
+      return (ts ++ [b], [ foldr tFun b (map (substType sub) fs) | (_, fs) <- dataCons d ], tFun (TCon tc ts) b)
+    Nothing -> throwError ("unknown data type " ++ tc)
 
 inferTerm :: Env -> Term -> TM (TTerm, Type)
 inferTerm env t = case t of
@@ -176,9 +192,20 @@ inferTerm env t = case t of
 -- | Infer sorts for all equations together (lifted functions are shared
 -- between equations). Remaining unknown sorts default to unit.
 typeEquations :: M.Map String Type -> M.Map String FunInfo -> M.Map Ident ConInfo -> [Equation] -> Either String ([TEq], M.Map String ([Type], Type))
-typeEquations types funs cons eqs = evalStateT run (TS 0 M.empty M.empty M.empty)
+typeEquations types funs cons eqs = typeEquationsWith False types funs cons M.empty eqs
+
+-- | Like 'typeEquations', but for polymorphic (TF1) output: sorts that stay
+-- unknown are kept as type variables (named @?n@) instead of defaulting to
+-- unit, builders are typed generically, and every occurrence of a lifted
+-- function carries its type parameters (the type variables of its inferred
+-- signature, in order of appearance) as its instance.
+typeEquationsPoly :: M.Map String Type -> M.Map String FunInfo -> M.Map Ident ConInfo -> M.Map Ident DataInfo -> [Equation] -> Either String ([TEq], M.Map String ([Type], Type))
+typeEquationsPoly = typeEquationsWith True
+
+typeEquationsWith :: Bool -> M.Map String Type -> M.Map String FunInfo -> M.Map Ident ConInfo -> M.Map Ident DataInfo -> [Equation] -> Either String ([TEq], M.Map String ([Type], Type))
+typeEquationsWith poly types funs cons datas eqs = evalStateT run (TS 0 M.empty M.empty M.empty)
   where
-    env = Env types funs cons
+    env = Env types funs cons datas
     run = do
       teqs <- forM eqs $ \e -> do
         modify (\st -> st { tsVars = M.empty })
@@ -191,12 +218,61 @@ typeEquations types funs cons eqs = evalStateT run (TS 0 M.empty M.empty M.empty
         return r
       s <- gets tsSubst
       aux <- gets tsAux
-      return (map (finish s) teqs, M.map (\(as, r) -> (map (dflt . zonk s) as, dflt (zonk s r))) aux)
-    finish s (TEq o l r) = TEq o (fin s l) (fin s r)
-    fin s (TTV v t) = TTV v (dflt (zonk s t))
-    fin s (TTF sym inst ts) = TTF sym (map (dflt . zonk s) inst) (map (fin s) ts)
+      let auxZ = M.map (\(as, r) -> (map (dflt . zonk s) as, dflt (zonk s r))) aux
+          auxParams k = maybe [] (\(as, r) -> map TVar (sigVars (as, r))) (M.lookup k auxZ)
+      return (map (finish s auxParams) teqs, auxZ)
+    finish s ap (TEq o l r) = TEq o (fin s ap l) (fin s ap r)
+    fin s _ (TTV v t) = TTV v (dflt (zonk s t))
+    fin s ap (TTF sym inst ts) = TTF sym inst' (map (fin s ap) ts)
+      where
+        inst' = case sym of
+          SFun k | poly, not (M.member k types) -> ap k
+          SClo (ToFun k) _ | poly, not (M.member k types) -> ap k
+          _ -> map (dflt . zonk s) inst
+    dflt t | poly = t
     dflt (TVar _) = TCon "()" []
     dflt (TCon c ts) = TCon c (map dflt ts)
+
+-- | Type variables of a signature, in order of first appearance.
+sigVars :: ([Type], Type) -> [String]
+sigVars (as, r) = nubL (concatMap ftv (as ++ [r]))
+  where
+    nubL = go S.empty
+    go _ [] = []
+    go seen (x : xs)
+      | S.member x seen = go seen xs
+      | otherwise = x : go (S.insert x seen) xs
+
+-- | Generic (TF1) signature of a symbol: type parameters, argument types
+-- and result type. Type parameters are type variables of the returned
+-- types.
+polySig :: M.Map String Type -> M.Map String FunInfo -> M.Map Ident ConInfo -> M.Map Ident DataInfo -> M.Map String ([Type], Type) -> Sym -> Maybe ([String], [Type], Type)
+polySig types funs cons datas auxSigs s = case s of
+  SFun k -> do
+    fi <- M.lookup k funs
+    case M.lookup k types of
+      Just t -> do
+        (as, r) <- splitArgs (fiArity fi) t
+        return (ftv t, as, r)
+      Nothing -> do
+        sg@(as, r) <- M.lookup k auxSigs
+        return (sigVars sg, as, r)
+  SCon c -> do
+    ci <- M.lookup c cons
+    let Forall vs t = conScheme ci
+    (as, r) <- splitArgs (conArity ci) t
+    return (vs, as, r)
+  SClo callee j -> do
+    (vs, as, r) <- polySig types funs cons datas auxSigs (calleeSym callee)
+    return (vs, take j as, foldr tFun r (drop j as))
+  SLit _ -> Just ([], [], tInt)
+  SApp -> Just (["A", "B"], [tFun (TVar "A") (TVar "B"), TVar "A"], TVar "B")
+  SFnConst -> Just (["A", "B"], [TVar "B"], tFun (TVar "A") (TVar "B"))
+  SFnId -> Just (["A"], [], tFun (TVar "A") (TVar "A"))
+  SFnCase tc -> do
+    d <- M.lookup tc datas
+    let b = "B_res"
+    return (dataVars d ++ [b], [ foldr tFun (TVar b) fs | (_, fs) <- dataCons d ], tFun (TCon tc (map TVar (dataVars d))) (TVar b))
 
 --------------------------------------------------------------------------------
 -- Builders

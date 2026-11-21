@@ -311,6 +311,40 @@ Haskell types and every symbol is declared at its Haskell type, so the
 witness is a well-typed Haskell input. The soundness argument of section 5
 then applies to the witness itself, not only to the untyped model.
 
+## 9b. Polymorphic typed output (TF1), branch `typed-tf1`
+
+On this branch hs2fol writes TPTP TF1 (polymorphic many-sorted logic) by
+default. `--tff0` gives the monomorphic TFF0 of section 9a, and `--untyped`
+gives the FOF of sections 1–8.
+
+* **No full monomorphisation.** As in the untyped translation, only
+  overloading is specialised (`eqListNat`). Polymorphic functions stay
+  polymorphic, and arities come from the polymorphic types. `uncurry`
+  keeps 2 arguments, while TFF0 expanded it to 3 when `c` was a function type.
+* **Type constructors, not sorts.** Each Haskell type constructor is
+  declared with its arity: `nat: $tType`, `list: $tType > $tType`,
+  `fun: ($tType * $tType) > $tType`. Sorts are type expressions such as
+  `list(pair(nat, nat))`. A property's free type variables become abstract
+  types without constructors, as in 9a.
+* **One symbol per function, with type parameters.**
+  `cons: !>[TA: $tType]: (TA * list(TA)) > list(TA)`, and a single
+  `app: !>[TA: $tType, TB: $tType]: (fun(TA, TB) * TA) > TB`. Type
+  arguments come first in every term: `cons(nat, X, nil(nat))`. The sorts of
+  lifted functions are inferred, and type variables left unresolved become
+  their type parameters.
+* **Generic builders.** `fn_const`, `fn_id` and `fn_case_T` are polymorphic,
+  so one set of builder axioms covers every function sort.
+* **Axioms** quantify their type variables first:
+  `![TA: $tType, X: TA, Xs: list(TA)]: ...`.
+* **Decoding** drops the leading type arguments of polymorphic symbols in the
+  prover's answer. It also expands symbols that Vampire introduces by
+  definition and that can occur in answers (`sF1 = nil(nat)`).
+
+Only Vampire reads TF1 (E 3.5.10: "Polymorphic types ... are not supported";
+Twee/jukebox: "invalid type"). So `scripts/run-benchmarks.sh` on this branch
+runs Vampire by default. To run E or Twee, generate problems with `--tff0`
+or `--untyped`.
+
 ## 9. Issues found in the original description, and how they are resolved
 
 1. **Monomorphised names must include element types.** `eqList` cannot serve
