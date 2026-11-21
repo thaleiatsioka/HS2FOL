@@ -1,9 +1,10 @@
 # hs2fol
 
-> **Branch `typed`:** this branch produces *typed* first-order problems
-> (TPTP TFF) instead of untyped FOF; `hs2fol --untyped` gives the old
-> output. With sorts, provers can no longer return ill-typed witnesses. See
-> section 9a of SPEC.md and `typed-results/COMPARISON.md`.
+> **Branch `typed-arity`:** the typed (TFF0) translation of branch `typed`,
+> with one change: a function's arity comes from its polymorphic type, not
+> from the specialised one (`uncurry` keeps 2 arguments when its result type
+> is a function type). See section 9a of SPEC.md and
+> `variants-results/COMPARISON.md`.
 
 Translate a well-behaved subset of Haskell into first-order logic (TPTP), so
 that theorem provers (E, Vampire, Twee) can search for counterexamples to

@@ -288,6 +288,11 @@ default; `--untyped` writes the FOF of sections 1–8.
   type it is used at, not only the overloaded ones (`map` at `Nat -> Nat`
   becomes `mapNatNat`). Type variables of a property that stay free
   become abstract sorts without constructors; ambiguous ones default to `()`.
+* **Arity from the polymorphic type** (branch `typed-arity`). A specialised
+  copy keeps the arity of the polymorphic function. `uncurry :: (a -> b ->
+  c) -> (a, b) -> c` used at `c = BST -> BST` has 2 arguments and returns a
+  value of sort `fun_bst_nat_nat_bst_nat_nat`. Branch `typed` used the
+  specialised type and gave it 3, which added a closure and an `app` step.
 * **Sorts.** Every Haskell type becomes a sort: `nat`, `bool`,
   `list_nat`, `bst_nat_nat`, `pair_nat_nat`. Function types become
   uninterpreted sorts such as `fun_nat_bool`.
