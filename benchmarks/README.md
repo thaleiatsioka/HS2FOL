@@ -7,6 +7,7 @@ benchmark problem.
 | directory | source | problems |
 |---|---|---|
 | [hughes-bst](hughes-bst) | Hughes, *How to Specify It!* (TFP 2019): BST with 8 bugs | 9 × 40 |
+| [etna](etna) | Etna (Shi et al., ICFP 2023): red-black trees with 15 mutants, STLC with 10 mutants | 16 × 10 + 11 × 2 |
 
 ## Running
 
